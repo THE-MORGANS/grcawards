@@ -49,9 +49,9 @@
 					</div>
 					<div class="col-12" style="text-align:justify;">
 						<ul class="mission-meta">
-							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Oriental Hotel, VI, Lagos</li>
-							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>25th Nov, 2022</li>
-							<li><i class="mdi mdi-clock-outline"></i>10am - 12noon</li>
+							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Virtual / Online - Microsoft Teams </li>
+							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023</li>
+							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
 						</ul>
 						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">Topic: 'Managing 3rd Party Ecosystem Risks & Data Sharing Amongst FIs to combat Money Laundering/Terrorist Financing'</h4>
 						<div class="mission-info-text">
@@ -83,14 +83,14 @@
 			<div class="slider-our-speaker">
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1668086996/grcfincrimeawards/summit_speakers/kevin_kw3v7y.jpg" alt="img">
+						<img src="{{asset('/assets/2023/elena.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Kevin Ugwuoke</h3>
+							<h3 class="name" style="font-size:18px">Elena Pykhova</h3>
 							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Executive Director, Fidelity Bank Plc</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director and Founder, The OpRisk Company</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/kevin-ugwuoke-65188a23/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/elenapykhova/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -101,14 +101,14 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472969/grcfincrimeawards/summit_speakers/Dr._Ehi_kjlgxv.jpg" alt="img">
+						<img src="{{asset('/assets/2023/ola.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Dr. Ehi Eric Esoimeme <small style="font-size: smaller;">Esq.</small></h3>
+							<h3 class="name" style="font-size:18px">Ola Olayinka  <small style="font-size: smaller;">FICA</small></h3>
 							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Managing Partner, E-Four and AAF</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer and Group MLRO at Whites Group</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/ehi-eric-esoimeme-b3b91270/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/ola-olayinka/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -119,14 +119,15 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472965/grcfincrimeawards/summit_speakers/Diriyai_dpyu0m.jpg" alt="img">
+						<img src="{{asset('/assets/2023/daniel.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Womoemi Diriyai</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Country Head, Dun & BradStreet</p>
+							<h3 class="name" style="font-size:18px">Daniel Saliba (formerly Ibrahim)</h3>
+							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Chief Risk and Compliance Officer, & MLRO
+							</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="#" tabindex="-1">
+									<a href="https://www.linkedin.com/in/daniel-saliba-formerly-ibrahim-0b657026/" tabindex="-1">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -137,14 +138,14 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472970/grcfincrimeawards/summit_speakers/nneka_yjupdy.jpg" alt="img">
+						<img src="{{asset('/assets/2023/jed.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Nneka Nwaka</h3>
+							<h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
 							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer, Interswitch</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Executive Officer - Lawyer - Entrepreneur</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/nneka-nwaka-bl-llb-cams-fcin-cfe-ba508545/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/george-lawrence-badejo-adegbenga-261a61b/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -153,74 +154,10 @@
 
 					</div>
 				</div>
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472970/grcfincrimeawards/summit_speakers/stephen_np9xok.jpg" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Stephen Olalere</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Risk Control & Compliance, Accion Microfinance Bank</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/kehinde-olalere-492aa319/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667561072/grcfincrimeawards/summit_speakers/tomi_gsbdbx.jpg" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Oluwatomi Ojo</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Office, Heritage Bank</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/kehinde-olalere-492aa319/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472964/grcfincrimeawards/summit_speakers/bright_fqs4zr.jpg" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Bright Anyanwu</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">ACFCS President, Nigeria Chapter</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/anyanwubrightc/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1667472965/grcfincrimeawards/summit_speakers/morakinyo_r4isof.jpg" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Morakinyo Animasaun</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Co-Founder, Wimika RMS</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/morakinyoanimasaun/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				
+				
+				
+				
 			</div>
 		</div>
 	</section>
