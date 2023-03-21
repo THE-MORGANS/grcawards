@@ -53,7 +53,7 @@
 							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023</li>
 							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
 						</ul>
-						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">Topic: 'Managing 3rd Party Ecosystem Risks & Data Sharing Amongst FIs to combat Money Laundering/Terrorist Financing'</h4>
+						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public</h4>
 						<div class="mission-info-text">
 							<h6 class="col-12" style="padding-left:0;padding-right:0;">Objectives: </h6>
 							<p>The summit aims to help businesses especially financial organisations comply with GRC & Financial Crime Prevention regulations by providing them with the necessary information, motivation and recognition on a national and international level. It also helps businesses showcase the need and benefits of being GRC compliant because this would improve the world.</p>
@@ -138,7 +138,7 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="{{asset('/assets/2023/jed.jpeg')}}" alt="img">
+						<img src="{{asset('/assets/2023/ged.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
 							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
