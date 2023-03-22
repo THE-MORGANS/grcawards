@@ -54,21 +54,35 @@
 							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
 						</ul>
 						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public</h4>
+						
 						<div class="mission-info-text">
+							<p>This Summit is organised by THE MORGANS, a globally recognised advocate for effective Governance, Risk & Compliance systems in organisations and a promoter of Anti-Money Laundering and Counter-Terrorism Measures. </p>
+							<p> It strives to elucidate on Senior Managers and Certification Regime (SMCR) as a crucial financial service regulation in corporate institutions while underscoring the ingenuity in its design in imposing personal accountability 
+								on senior managers at financial services firms to improve the conduct of all employees at these firms. By so doing, individuals and organisations across the various industries in Nigeria, 
+								the United Kingdom and other countries, who have demonstrated expertise in this field, would be equipped with the knowledge capacity to effect needed change and adopt newer procedural workflows. </p>
+						<p>	Amongst discussions and intricate details to be shared, the importance of Ring Fencing FIs Against Financial Crime and Conduct will also play a major role in the discourse of the Summit.  </p>
+						<p>	This is because THE MORGANS understands that as a financial policy, Ring Fencing FIs doesn't just provide a virtual barrier 
+							that segregates part of an individual's or company's financial assets from the rest. 
+							It does more than protect retail banking functions used by customers by separating them 
+							from other activities. Ring Fencing in itself, results in the separation of core banking 
+							services — taking deposits, making payments and providing overdrafts for retail customers and 
+							small businesses — from other activities that banks undertake. This goes on to help protect 
+							core services and the customer from problems which may arise elsewhere within a banking group. </p>
+							<p class="p-3"></p>
 							<h6 class="col-12" style="padding-left:0;padding-right:0;">Objectives: </h6>
-							<p>The summit aims to help businesses especially financial organisations comply with GRC & Financial Crime Prevention regulations by providing them with the necessary information, motivation and recognition on a national and international level. It also helps businesses showcase the need and benefits of being GRC compliant because this would improve the world.</p>
-							<p>In order to strengthen the efforts spent for the fight against financial crimes of money laundering and terrorism funding, there is a need for the government, financial institutions and businesses to cooperate among each other by sharing information. Since the financial industry suffers from the common issues regarding the quality, quantity, transparency and treatment of information, sharing of it among FIs is expected to alleviate the workload and save time.</p>
-							<p>As the technology continues to offer endless possibilities, it is likely that the financial criminals will discover new methods to manipulate the financial industry to commit money laundering or terrorist financing crimes. However, at the same time, it is possible to use the technologies in detecting those criminal activities as well. Therefore, to minimize the risk of financial crimes, it is essential for all the stakeholders of the financial environment to embrace the importance of adopting a strong AML compliance framework and follow the trends in the industry to remain aware of the potential risks.</p>
-							<p>Likewise, with the growing reliance on third parties (business consultants, partners, contractors, service providers, etc.) effective management of the risks stemming from the extended enterprise is paramount. Third-party risk management (TPRM) has risen in importance and will continue to be a key focus area for organizations around the world this year and beyond.</p>
-							<p>TPRM is evolving and expanding its scope to include fourth and nth parties with which an organization can have indirect business relationships. A disruption anywhere on the value chain can create a domino effect, sending ripples down the chain and across the market. Visibility and GRC alignment across the network will continue to be key with growing interdependencies between organizations.</p>
-							<p>Furthermore, with the amplified digital interconnectedness of organizations, third-party cyber risks have become a major area of concern for organizations.</p>
-						</div>
+							<p>To help businesses especially financial organisations understand the need for Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
+								<p>To equip businesses with the needed knowledge and tools to enable them to effectively comply with the Senior Managers and Certification Regime (SMCR) and Ring Fencing policies.</p>
+							<p>To share insights and updated information on Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
+
+							</div>
+						
 						<div class="mission-info-text">
 							<h6 class="col-12" style="padding-left:0;padding-right:0;">Benefits: </h6>
 							<ol style="list-style-type: lower-roman;padding-right:10px;padding-left:10px;">
-								<li style="font-size: 14px;">To promote awareness about GRC & Financial Crime Prevention in Nigeria and the United Kingdom.</li>
-								<li style="font-size: 14px;">To encourage and promote industry best practices and adherence to prevailing local and international regulations and standards.</li>
-								<li style="font-size: 14px;">To encourage tertiary institutions in Nigeria and UK to include GRC & Financial Crime Prevention courses in their curriculum.</li>
+								<li style="font-size: 14px;">To promote awareness about Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct in Nigeria and the United Kingdom.</li>
+								<li style="font-size: 14px;">To encourage and promote industry best practices and adherence to prevailing local and international regulations and standards. </li>
+									<li style="font-size: 14px;">To encourage tertiary institutions in Nigeria and UK to include GRC & Financial Crime Prevention courses in their curriculum.</li>
+										<li style="font-size: 14px;">To create healthy relationships amongst financial institutions in the area of promoting good governance systems as well as effective risk management and compliance programs. </li>
 							</ol>
 						</div>
 					</div>

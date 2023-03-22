@@ -155,4 +155,8 @@ class LandingPageController extends Controller
     public function showSummitPage(){
         return view('contents.voter.summit');
     }
+public function showSummitPageOld(){
+    return view('contents.voter.summit_2022');
+}
+
 }

@@ -31,9 +31,17 @@
                                     <li class="{{request()->is('the-award/contact-us') ? 'active-page' : '' }}"><a href="{{route('show_contact')}}">Contact us</a></li>
                                 </ul>
                             </li>
-                            <li class="{{request()->is('/summit') ? 'active-page' : '' }}">
-                                <a href="{{route('show_summit')}}">Summit</a>
+
+                            <li class="dropdown {{request()->is('the-award/*') ? 'active-page' : ''}}">
+                                <a href="#">Summit 
+                                    <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
+                                </a>
+                                <ul>
+                                    <li class="{{request()->is('/summit') ? 'active-page' : '' }}"><a href="{{route('show_summit')}}">Summit 2023</a></li>
+                                    <li class="{{request()->is('/summit/2022') ? 'active-page' : '' }}"><a href="{{route('show_summit_old')}}">Summit 2022</a></li>
+                                </ul>
                             </li>
+                            
                             <li class="dropdown {{request()->is('winners/*') ? 'active-page' : ''}}">
                                 <a href="#">Winners
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
