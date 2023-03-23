@@ -100,7 +100,7 @@
 						<img src="{{asset('/assets/2023/elena.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Elena Pykhova</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director and Founder, The OpRisk Company</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -118,7 +118,7 @@
 						<img src="{{asset('/assets/2023/ola.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Ola Olayinka  <small style="font-size: smaller;">FICA</small></h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer and Group MLRO at Whites Group</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -136,7 +136,7 @@
 						<img src="{{asset('/assets/2023/daniel.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Daniel Saliba (formerly Ibrahim)</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Chief Risk and Compliance Officer, & MLRO
 							</p>
 							<div class="meta">
@@ -155,7 +155,7 @@
 						<img src="{{asset('/assets/2023/ged.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Executive Officer - Lawyer - Entrepreneur</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
