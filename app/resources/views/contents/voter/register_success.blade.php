@@ -28,7 +28,7 @@
             <div class="row conference-header-row">
                 <div class="col-sm-3 col-lg-2 col-xl-3">
                     <a href="index.html" class="logo">
-                        <img src="{{asset('assets/images/grc_awards_logo.png')}}" alt="logo" style="height:100px; width:100px; position:absolute;"/>
+                        <img src="{{asset('assets/logo.png')}}" alt="logo" style="height:100px; width:100px; position:absolute;"/>
                     </a>
                 </div>
                 <div class="col-sm-9 col-lg-10 col-xl-9">

@@ -6,14 +6,7 @@
 	@include('partials.voter.head')
 </head>
 <body id="conference-page">
-<div class="page-preloader-cover">
-		<div class="cssload-loader">
-			<div class="cssload-inner" >
-				<img class="ball" src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067165/grcfincrimeawards/landing_page/grc_awards_summit_logo_y8nqdz.png"/>
-			</div>
-		</div>
-		
-	</div>
+	@include('partials.voter.preloader')
 	<!-- ================= HEADER ================= -->
 	@include('partials.voter.topbar')
 	<!-- =============== HEADER END =============== -->

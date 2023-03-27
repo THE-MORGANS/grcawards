@@ -12,7 +12,7 @@
             <div class="row conference-header-row">
                 <div class="col-sm-2 col-lg-2 col-xl-2">
                     <a href="{{route('landing.index')}}" class="logo">
-                        <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067165/grcfincrimeawards/landing_page/grc_awards_summit_logo_y8nqdz.png" loading="lazy" alt="GRC & FinCrime Awards and Summit" style="height: 80px;width: 80px;position:absolute;margin-top: -20px;" />
+                        <img src="{{asset('/assets/logo.png')}}" loading="lazy" alt="GRC & FinCrime Awards and Summit" style="height: 80px;width: 80px;position:absolute;margin-top: -20px;" />
                     </a>
                 </div>
                 <div class="col-sm-10 col-lg-10 col-xl-10">
