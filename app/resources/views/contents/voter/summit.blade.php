@@ -29,9 +29,33 @@
 	<!-- page title -->
 	<!-- =========== S-CONFERENCE-COUNTER =========== -->
 	<section id="about" class="s-conference-mission pt-0">
-		<div class="s-our-mission s-about-speaker">
+		<div class="s-our-mission ">
 			<div class="container">
-				<h2 class="title-conference"><span>About The Summit</span></h2>
+				<div class="conference-counter-wrap">
+						<div class="conference-counter-cover">
+							<h4>The event will begin through</h4>
+							<div id="" class="clock-timer clock-timer-conference">
+								<div class="clock-item days-item">
+									<span class="days" id="days">30</span>
+									<div class="smalltext">Days</div>
+								</div>
+								<div class="clock-item hours-item">
+									<span class="hours" id="hours">23</span>
+									<div class="smalltext">Hours</div>
+								</div>
+								<div class="clock-item minutes-item">
+									<span class="minutes" id="minutes">59</span>
+									<div class="smalltext">Minutes</div>
+								</div>
+								<div class="clock-item seconds-item">
+									<span class="seconds" id="seconds">37</span>
+									<div class="smalltext">Seconds</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				<h2 class="title-conference pt-5"><span>About The Summit</span></h2>
+
 				<div class="row">
 					<div class="col-lg-6 our-mission-img">
 						<span>
@@ -40,6 +64,7 @@
 							<img src="assets/img/placeholder-all.png" data-src="assets/img/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						</span>
 					</div>
+					
 					<div class="col-12" style="text-align:justify;">
 						<ul class="mission-meta">
 							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Virtual / Online - Microsoft Teams </li>
@@ -202,6 +227,38 @@
 
 	<!--=================== SCRIPT	===================-->
 	@include('partials.voter.scripts')
+
+
+	<script>
+		// Set the date we're counting down to
+		var countDownDate = new Date("Jun 15, 2023 12:00:00").getTime();
+		
+		// Update the count down every 1 second
+		var x = setInterval(function() {
+		
+		  // Get today's date and time
+		  var now = new Date().getTime();
+			
+		  // Find the distance between now and the count down date
+		  var distance = countDownDate - now;
+			
+		  // Time calculations for days, hours, minutes and seconds
+		  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+		  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			
+		  // Output the result in an element with id="demo"
+		  document.getElementById("days").innerHTML = days;
+		  document.getElementById("hours").innerHTML = hours ;
+		  document.getElementById("minutes").innerHTML =  minutes 
+		  document.getElementById("seconds").innerHTML =  seconds;
+			
+		  // If the count down is over, write some text 
+		}, 1000);
+		</script>
+
 </body>
+
 
 </html>
