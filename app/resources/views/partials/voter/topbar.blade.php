@@ -59,7 +59,7 @@
                             <li class="dropdown {{request()->is('judges/*') ? 'active-page' : ''}}">
                                 <a href="#">Judges <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>
-                                    <li class="{{request()->is('judges/meet-our-judges') ? 'active-page' : '' }}"><a href="{{route('meet_judges')}}">Meet our Judges</a></li>
+                                    <li class="{{request()->is('judges/meet-our-judges') ? 'active-page' : '' }}"><a href="{{route('meet_judges')}}">Meet 2023 Awards Judges</a></li>
                                     <li class="{{request()->is('judges/judging-process') ? 'active-page' : '' }}"><a href="{{route('judging_process')}}">Judging Process</a></li>
                                 </ul>
                             </li>

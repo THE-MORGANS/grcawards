@@ -163,9 +163,10 @@
 							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
 								<div class="date">15th June. 2023</div>
-								<h4>Summit & Award Ceremony</h4>
+								<h4>Summit </h4>
 								<div class="schedule-info-content">
-									<p>Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public.</p>
+									<p>Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public.</p>
+									<a href="{{route('show_summit')}}"> Learn More</a>
 								</div>
 							</div>
 						</div>
