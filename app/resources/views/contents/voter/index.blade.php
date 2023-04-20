@@ -82,7 +82,7 @@
 					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
 					<div class="conference-counter-cover">
 						<!--<h4>Voting ends on the 25th October, 2022</h4>-->
-						<h3>Voting Now Closed for this year entries</h3>
+						<h3>Voting is not open for the year, Please check back</h3>
 						 <h4>To view the shortlisted finalists, <a href="{{route('show_shortlisted_nomineees')}}" class="" tabindex="-1" style="color:rgba(39, 39, 39, .9)"><span>click here</span></a></h4> 
 						<!--<div id="clockdiv" class="clock-timer clock-timer-conference">-->
 						<!--	<div class="clock-item days-item">-->
