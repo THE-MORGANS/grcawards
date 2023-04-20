@@ -23,7 +23,7 @@
                     <li>Judges</li>
                 </ul>
             </div>
-            <h3 class="title">Our Judges</h3>
+            <h3 class="title">Meet 2022 Awards Judges</h3>
         </div>
     </div>
     <!-- page title -->
