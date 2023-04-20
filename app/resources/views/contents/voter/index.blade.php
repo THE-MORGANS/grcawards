@@ -27,7 +27,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">25 Nov 2022</div>
+						<div class="date">25 Nov 2023</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -39,7 +39,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">25 Nov 2022</div>
+						<div class="date">25 Nov 2023</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -51,7 +51,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">25 Nov 2022</div>
+						<div class="date">25 Nov 2023</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -63,7 +63,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">25 Nov 2022</div>
+						<div class="date">25 Nov 2023</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -160,17 +160,18 @@
 				<div class="col-xl-6" style="margin-bottom: 15px;">
 					<div class="event-schedule-tabs">
 						<div class="event-schedule-item">
-							<div class="schedule-item-img"><i class="mdi mdi-ballot-outline mdi-48px" style="color:#D4AF37"></i></div>
+							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">28th Oct. 2022 - 11th Nov. 2022</div>
-								<h4>Shortlisting and Judging Process</h4>
+								<div class="date">15th June. 2023</div>
+								<h4>Summit & Award Ceremony</h4>
 								<div class="schedule-info-content">
-									<p>The Votes are counted inorder to shortlist top 3 nominees under every category. Afterwhich, further screening and examination is done by the Judges to select the winners.</p>
+									<p>Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 			</div>
 			<div class="row">
 				<div class="col-xl-6" style="margin-bottom: 15px;">
@@ -180,7 +181,7 @@
 								<i class="mdi mdi-bell-ring-outline mdi-48px" style="color:#D4AF37"></i>
 							</div>
 							<div class="schedule-item-info">
-								<div class="date">14th Nov. 2021 - 18th Nov. 2022</div>
+								<div class="date">14th Nov. 2023 - 18th Nov. 2023</div>
 								<h4>Notification of Shortlisted Nominees</h4>
 								<div class="schedule-info-content" style="display: none;">
 									<p>After nominees have been shortlisted, they are sent a notification informing them that they have been shortlisted and also inviting them to the award ceremony. </p>
@@ -192,17 +193,18 @@
 				<div class="col-xl-6" style="margin-bottom: 15px;">
 					<div class="event-schedule-tabs">
 						<div class="event-schedule-item">
-							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
+							<div class="schedule-item-img"><i class="mdi mdi-ballot-outline mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">25th Nov. 2022</div>
-								<h4>Summit & Award Ceremony</h4>
+								<div class="date">28th Oct. 2023 - 11th Nov. 2023</div>
+								<h4>Shortlisting and Judging Process</h4>
 								<div class="schedule-info-content">
-									<p>Winners will be unveiled at the award ceremony. Atttending the award ceremony is strictly by invitation.</p>
+									<p>The Votes are counted inorder to shortlist top 3 nominees under every category. Afterwhich, further screening and examination is done by the Judges to select the winners.</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			
 			</div>
 		</div>
 	</section>
@@ -210,7 +212,7 @@
 	<!-- ========== SPEAKER & SCHEDULE END ========== -->
 	<section class="s-our-speaker s-event-schedule">
 		<div class="container">
-			<h2 class="title-conference"><span>Meet Our Judges</span></h2>
+			<h2 class="title-conference"><span>Meet 2022 Award Judges </span></h2>
 			<div class="slider-our-speaker">
 				@foreach($judges as $judge)
 				<div class="slide-our-speaker">
