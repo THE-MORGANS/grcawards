@@ -11,4 +11,5 @@
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.css')}}"/>
 <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"/>
+<meta name="facebook-domain-verification" content="v748fz4h238iy7i18idwpmlmk0kjct" />
 @yield('style')
