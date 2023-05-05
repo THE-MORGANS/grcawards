@@ -5,7 +5,7 @@
     <meta content="GRC Awards" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
-
+    <meta name="facebook-domain-verification" content="v748fz4h238iy7i18idwpmlmk0kjct" />
     <!-- third party css -->
     <link href="{{asset('assets/css/vendor/jquery-jvectormap-1.2.2.css')}}" rel="stylesheet" type="text/css" />
     <!-- third party css end -->

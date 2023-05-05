@@ -4,6 +4,10 @@
 <script src="{{asset('assets/js/parallax.min.js')}}"></script>
 <script src="{{asset('assets/js/scripts.js')}}"></script>
 <!-- Meta Pixel Code -->
+
+    <!-- End Meta Pixel Code -->
+<!-- Meta Pixel Code -->
+<!-- Meta Pixel Code -->
 <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,9 +23,5 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=2392242014282784&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
-<!-- Meta Pixel Code -->
-<!-- Meta Pixel Code -->
-
     <!-- End Meta Pixel Code -->
 @yield('scripts')
