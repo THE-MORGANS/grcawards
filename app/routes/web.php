@@ -1,9 +1,7 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\VoterLoginController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AwardProgramsController;
 use App\Http\Controllers\SectorController;
 use App\Http\Controllers\CategoryController;
@@ -141,3 +139,4 @@ Route::get('{sector}/vote', [VoteController::class, 'showVotingPage'])->name('sh
 Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/other/{nominee}', [VoteController::class, 'addOtherVote'])->name('add.other.vote');
 Route::get('logout', [VoterLoginController::class, 'logout'])->name('logout');
+Route::get('/summit/programme', [VoteController::class, 'SummitProgramme'])->name('summit_programme');

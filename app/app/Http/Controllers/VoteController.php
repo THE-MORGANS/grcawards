@@ -103,4 +103,8 @@ class VoteController extends Controller
 
     }
 
+    public function SummitProgramme(){
+        return view('contents.voter.programme');
+    }
+
 }
