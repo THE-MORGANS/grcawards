@@ -125,6 +125,24 @@
 			<div class="slider-our-speaker">
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
+						<img src="https://media.licdn.com/dms/image/C5603AQEUgYKbsoY1cA/profile-displayphoto-shrink_800_800/0/1542199641672?e=1689206400&v=beta&t=OCR8_S6kk24GNdnPwd9jwrCjsSXO-Ah2-0jiddGWBaY" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Mateo Jarrin Cuv </h3>
+							<p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Global Manager for Partners & Media at The Association of Governance, Risk & Compliance</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/mateojarrincuvi/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
 						<img src="{{asset('/assets/2023/elena.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Elena Pykhova</h3>
@@ -164,7 +182,7 @@
 						<img src="{{asset('/assets/2023/daniel.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Daniel Saliba (formerly Ibrahim)</h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
+							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Chief Risk and Compliance Officer, & MLRO
 							</p>
 							<div class="meta">
@@ -183,7 +201,7 @@
 						<img src="{{asset('/assets/2023/ged.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Panelist</p> --}}
+							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Executive Officer - Lawyer - Entrepreneur</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -196,6 +214,67 @@
 
 					</div>
 				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="https://media.licdn.com/dms/image/C4D03AQFpNfd_khB6Qw/profile-displayphoto-shrink_800_800/0/1603547633866?e=1689206400&v=beta&t=boEj6DE_2ZKTD8qJhRRegUiuUjUAAltcE0gP_f8fXBQ" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Dr. Emmanuel Moore ABOLO, PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </h3>
+							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group MD/CEO The Risk Management Academy LTD; Riskmap Consulting Ltd & DG, The Economic Thinktank CeGroup</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/dr-emmanuel-moore-abolo-phd-econs-fgrcp-fimc-fnimn-fpssn-2a096a6/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="https://media.licdn.com/dms/image/C4D03AQHXYc3cFlMFfg/profile-displayphoto-shrink_800_800/0/1653543590268?e=1689206400&v=beta&t=T7aeQm3kP36EXEpwdnl-1tbHYP02C1rbBefxlHOyBzY" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Adekunle Koleosho PhD, FCA, ACS </h3>
+							<p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director, Head of Audit and Risk; Ex Head of Corporate & Investment Banking Audit at Stanbic IBTC. Ex Equity Trader for Foreign &</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/adekunle-koleosho-phd-fca-acs-b9173011a/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="https://media.licdn.com/dms/image/C4D03AQGPYL1O253Y_Q/profile-displayphoto-shrink_800_800/0/1630400633937?e=1689206400&v=beta&t=8ejOMrVBjgYpFv0HaCA8pal4P78hvMqg2Og9r6j7tbc" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Theophilus Oladipo </h3>
+							<p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Fintech | Financial Crimes Compliance | Digital Economy</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/theophilus-oladipo-79a35654/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				
+
+
 				
 				
 				
