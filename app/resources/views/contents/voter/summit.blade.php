@@ -101,7 +101,6 @@
 							<p>To help businesses especially financial organisations understand the need for Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
 								<p>To equip businesses with the needed knowledge and tools to enable them to effectively comply with the Senior Managers and Certification Regime (SMCR) and Ring Fencing policies.</p>
 							<p>To share insights and updated information on Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
-
 							</div>
 						
 						<div class="mission-info-text">
