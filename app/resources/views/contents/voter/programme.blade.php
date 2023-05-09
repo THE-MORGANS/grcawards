@@ -88,25 +88,25 @@
 								<div class="col-8">
 									<ol style="list-style-type:none;padding-right:10px;">
 										<li style="font-size: 14px;padding-bottom:10px ">    General Introduction</li>
-										<li style="font-size: 14px;padding-bottom:10px ">   Welcome Address (Dr. Foluso Amusa, by the Host)</li>
-										<li style="font-size: 14px;padding-bottom:10px "> First Poll (Theme Centered) </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Introduction to the Summit (Summary of Summit theme)
+										<li style="font-size: 14px;padding-bottom:10px ">   Welcome Address <span style="color:#D4AF37">(Dr. Foluso Amusa, by the Host) </span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> First Poll <span style="color:#D4AF37">(Theme Centered) </span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> Introduction to the Summit  <span style="color:#D4AF37">(Summary of Summit theme) </span>
 
-											<br> Speakers Introduction (Keynote and Panelists) </li>
-										<li style="font-size: 14px; padding-bottom:10px"> 1st Keynote Speaker: Elena (SMCR & Conduct Risk from the UK/ Europe Perspective) </span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> 2nd Keynote Speaker: Koleosho (The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa) </span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker: Saliba (Ring Fencing in the FinCrime Space) </span></li>
+											<br> Speakers Introduction <span style="color:#D4AF37">(Keynote and Panelists)</span> </li>
+										<li style="font-size: 14px; padding-bottom:10px"> 1st Keynote Speaker: Elena  <span style="color:#D4AF37">(SMCR & Conduct Risk from the UK/ Europe Perspective) </span></li>
+										<li style="font-size: 14px; padding-bottom:10px"> 2nd Keynote Speaker: Koleosho <span style="color:#D4AF37"> (The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa) </span></li>
+										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker: Saliba<span style="color:#D4AF37"> (Ring Fencing in the FinCrime Space) </span></li>
 										<li style="font-size: 14px; padding-bottom:10px"> TMC Institute video
 
-											<br> TMC Institute Partner Video (AGRC/LGCA)</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> 4th Keynote Speaker: George (Legal & regulatory view of the theme in line with UK& Nigeria)</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> 5th Keynote Speaker: Abolo (Conduct Risk from the Nigeria/ Africa Perspective) </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Panel Session</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Interactive Poll</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partner(s) </span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> General Q&A </span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> Closing remarks </span></li>
+											<br> TMC Institute Partner Video <span style="color:#D4AF37">(AGRC/LGCA)</span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> 4th Keynote Speaker: George <span style="color:#D4AF37"> (Legal & regulatory view of the theme in line with UK& Nigeria)</span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> 5th Keynote Speaker: Abolo <span style="color:#D4AF37"> (Conduct Risk from the Nigeria/ Africa Perspective) </span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker</li>
+										<li style="font-size: 14px;padding-bottom:10px "> Panel Session</li>
+										<li style="font-size: 14px;padding-bottom:10px "> Interactive Poll</li>
+										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partner(s)</li>
+										<li style="font-size: 14px; padding-bottom:10px"> General Q&A</li>
+										<li style="font-size: 14px; padding-bottom:10px"> Closing remarks </li>
 									</ol> </div>
 							</div>
 							
