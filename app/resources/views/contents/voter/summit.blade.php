@@ -30,7 +30,7 @@
 	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
 	<section id="about" class="s-conference-mission pt-0">
 		<div class="s-our-mission ">
-		<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="500px"></center>	
+		<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="40%"></center>	
 			<div class="container">
 			
 				<div class="conference-counter-wrap">
