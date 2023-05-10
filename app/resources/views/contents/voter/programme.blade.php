@@ -6,7 +6,7 @@
 	@include('partials.voter.head')
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
 </head>
-
+ 
 <body id="conference-page">
 	<!-- =============== PRELOADER =============== -->
 	@include('partials.voter.preloader')
@@ -18,7 +18,7 @@
 	<div class="page-title" style="background-color:#D4AF37">
 		<div class="container"  style="min-height:10px">
 			{{-- <div class="breadcrumbs"> --}}
-				{{-- <ul>
+				{{-- <ul> 
 					<li><a href="{{route('landing.index')}}">Home</a></li>
 					<li>Summit</li>
 				</ul> --}}
@@ -72,23 +72,23 @@
 										<li style="font-size: 14px; padding-bottom:25px ">   12:30pm   </li>
 										<li style="font-size: 14px; padding-bottom:40px ">   12:33pm   </li>
 										<li style="font-size: 14px;  padding-bottom:65px">   12:43pm   </li>
-										<li style="font-size: 14px; padding-bottom:40px">   12:53pm   </li>
-										<li style="font-size: 14px; padding-bottom:30px">   1:03pm   </li>
+										<li style="font-size: 14px; padding-bottom:30px">   12:53pm   </li>
+										<li style="font-size: 14px; padding-bottom:15px">   1:03pm   </li>
 										<li style="font-size: 14px; padding-bottom:40px">   1:08pm   </li>
-										<li style="font-size: 14px; padding-bottom:30px">   1:18pm   </li>
-										<li style="font-size: 14px; padding-bottom:40px">   1:28pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   1:38pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   1:58pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   2:00pm   </li>
-										<li style="font-size: 14px; padding-bottom:5px">   2:05pm   </li>
-										<li style="font-size: 14px; padding-bottom:5px">   2:15pm   </li>
+										<li style="font-size: 14px; padding-bottom:25px">   1:18pm   </li>
+										<li style="font-size: 14px; padding-bottom:15px">   1:28pm   </li>
+										<li style="font-size: 14px; padding-bottom:35px">   1:38pm   </li>
+										<li style="font-size: 14px; padding-bottom:10px">   1:48pm   </li>
+										<li style="font-size: 14px; padding-bottom:10px">   1:50pm   </li>
+										<li style="font-size: 14px; padding-bottom:10px">   1:55pm   </li>
+										<li style="font-size: 14px; padding-bottom:10px">   2:05pm   </li>
 				
 
 									</ol> </div> 
 								<div class="col-8">
 									<ol style="list-style-type:none;padding-right:10px;">
 										<li style="font-size: 14px;padding-bottom:10px ">    General Introduction</li>
-										<li style="font-size: 14px;padding-bottom:10px ">   Welcome Address  - <span style="color:#D4AF37">Dr. Foluso Amusa, by the Host </span></li>
+										<li style="font-size: 14px;padding-bottom:10px ">   Welcome Address  - <span style="color:#D4AF37">Dr. Foluso Amusa, Host </span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> First Poll - <span style="color:#D4AF37">Theme Centered </span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> Introduction to the Summit -  <span style="color:#D4AF37">Summary of Summit theme </span>
 
@@ -96,17 +96,15 @@
 										<li style="font-size: 14px; padding-bottom:10px"> 1st Keynote Speaker  <span style="color:#D4AF37">SMCR & Conduct Risk from the UK/ Europe Perspective</span> <br>  <span style="color:chocolate"> <strong> Speaker:  </strong>Elena Pykhova</span> </li>
 										<li style="font-size: 14px; padding-bottom:10px"> 2nd Keynote Speaker <span style="color:#D4AF37"> The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa</span> <br>  <span style="color:chocolate"><strong> Speaker:  </strong> Adekunle Koleosho PhD, FCA, ACS</span></li>
 										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker -<span style="color:#D4AF37"> Ring Fencing in the FinCrime Space </span>  <br>  <span style="color:chocolate"> <strong> Speaker:  </strong> Daniel Saliba (formerly Ibrahim) </span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> TMC Institute video
-
-											<br> TMC Institute Partner Video <span style="color:#D4AF37">-AGRC/LGCA</span></li>
+										<li style="font-size: 14px; padding-bottom:10px">  <span style="color:#D4AF37">Sponsors/Promotional Ads</span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> 4th Keynote Speaker  <span style="color:#D4AF37"> -Legal & regulatory view of the theme in line with UK& Nigeria</span><br><span style="color:chocolate"> <strong> Speaker:  </strong>  George, Lawrence Badejo-Adegbenga </span> </li>
 										<li style="font-size: 14px;padding-bottom:10px "> 5th Keynote Speaker - <span style="color:#D4AF37"> Conduct Risk from the Nigeria/ Africa Perspective </span> <br><span style="color:chocolate"> <strong> Speaker:  </strong> Dr. Emmanuel Moore ABOLO, PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker <br><span style="color:chocolate"> <strong> Speaker:  </strong> Ola Olayinka </span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> Panel Session</li>
-										<li style="font-size: 14px;padding-bottom:10px "> Interactive Poll</li>
-										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partner(s)</li>
+										<li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker <br><span style="color:chocolate"> <strong> Speaker:  </strong> Ola Olayinka </span></li>
+										<li style="font-size: 14px;padding-bottom:10px "> Interraction Polls</li>
+										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partners</li>
 										<li style="font-size: 14px; padding-bottom:10px"> General Q&A</li>
-										<li style="font-size: 14px; padding-bottom:10px"> Closing remarks </li>
+										<li style="font-size: 14px; padding-bottom:10px"> Closing remarks  <span style="color:chocolate">Esosa Balogun Bsc, FCA, CCSA, CRMA </span></li>
 									</ol> </div>
 							</div>
 							
@@ -132,6 +130,7 @@
 	@include('partials.voter.scripts')
 
 </body>
+
 
 
 </html>
