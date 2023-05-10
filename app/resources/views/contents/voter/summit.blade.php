@@ -15,22 +15,24 @@
 	@include('partials.voter.topbar')
 	<!-- =============== HEADER END =============== -->
 	<!-- Page title -->
-	<div class="page-title" style="background-color:#D4AF37">
-		<div class="container">
-			<div class="breadcrumbs">
+	<div class="page-title" style="background-color:#D4AF37; height:150px">
+		<div class="container" > 
+			{{-- <div class="breadcrumbs">
 				<ul>
 					<li><a href="{{route('landing.index')}}">Home</a></li>
 					<li>Summit</li>
 				</ul>
-			</div>
+			</div> --}}
 			<h1 class="title">The Summit</h1>
 		</div>
 	</div>
 	<!-- page title -->
-	<!-- =========== S-CONFERENCE-COUNTER =========== -->
+	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
 	<section id="about" class="s-conference-mission pt-0">
 		<div class="s-our-mission ">
+		<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="500px"></center>	
 			<div class="container">
+			
 				<div class="conference-counter-wrap">
 						<div class="conference-counter-cover">
 							<h4>The event will begin through</h4>
