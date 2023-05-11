@@ -54,6 +54,8 @@
 				    	</ul> --}}
 
 						<h5 class="col-12" style="max-width:1300px;line-height:20%; ;margin-bottom:20px; padding-left:0;padding-right:0; color:#D4AF37">Welcome</h5>
+						<li style="list-style-type:none"> <i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023 <i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
+						<br>
 						<hr style="margin-bottom:32px; border-color:#D4AF37; :20px">
 						<h4 class="col-12" style="max-width:1300px;line-height:10%; margin-bottom:32px;padding-left:0;padding-right:0; color:#D4AF37">PROGRAMME</h4>
 					
@@ -62,8 +64,7 @@
 							<h6 class="col-12" style="padding-left:0;padding-right:0; color:#D4AF37; margin-bottom:10px;" >Main Summit </h6>
 							<hr style="margin-bottom:32px; border-color:#D4AF37; :20px; width:50px; border-style:dotted; float:left">
 							<br>
-							<li style="list-style-type:none"> <i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023 <i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
-							<br>
+						
 
 							<div class="row">
 								<div class="col-1">
