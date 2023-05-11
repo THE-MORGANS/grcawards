@@ -62,7 +62,7 @@
 						
 						<div class="mission-info-text">
 							<h6 class="col-12" style="padding-left:0;padding-right:0; color:#D4AF37; margin-bottom:10px;" >Main Summit </h6>
-							<hr style="margin-bottom:32px; border-color:#D4AF37; :20px; width:50px; border-style:dotted; float:left">
+						{{-- <hr style="margin-bottom:32px; border-color:#D4AF37; :20px; width:50px; border-style:dotted; float:left"> --}}
 							<br>
 						
 
