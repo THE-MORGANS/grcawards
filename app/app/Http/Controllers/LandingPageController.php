@@ -117,4 +117,15 @@ class LandingPageController extends Controller
     public function showPictures($award_program){
         return view('contents.voter.pictures');
     }
+
+    public function showSummit(){
+        return view('contents.voter.summit');
+    }
+    public function showSummitOld(){
+        return view('contents.voter.summit_2022');
+    }
+    public function Programme(){
+        return view('contents.voter.programme');
+    }
+
 }
