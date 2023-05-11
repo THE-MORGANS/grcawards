@@ -53,7 +53,7 @@
 							<li><i aria-hidden="true" class="mdi mdi-linkedin"></i><a href="https://www.linkedin.com/posts/the-morgans-grc-fin-crime-awards_fis-professionals-finance-activity-7045015444889440256-Jbjz?utm_source=share&utm_medium=member_desktop"> Follow on LinkedIn</a></li>			
 				    	</ul> --}}
 
-						<h5 class="col-12" style="max-width:1300px;line-height:20%; ;margin-bottom:50px; padding-left:0;padding-right:0; color:#D4AF37">Welcome</h5>
+						<h5 class="col-12" style="max-width:1300px;line-height:20%; ;margin-bottom:20px; padding-left:0;padding-right:0; color:#D4AF37">Welcome</h5>
 						<hr style="margin-bottom:32px; border-color:#D4AF37; :20px">
 						<h4 class="col-12" style="max-width:1300px;line-height:10%; margin-bottom:32px;padding-left:0;padding-right:0; color:#D4AF37">PROGRAMME</h4>
 					
