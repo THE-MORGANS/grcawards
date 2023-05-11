@@ -5,6 +5,13 @@
 <head>
 	@include('partials.voter.head')
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
+	<style>
+		.prog {
+			height: 100%;
+			min-height: 120px;
+			line-height: 20px;
+		}
+	</style>
 </head>
  
 <body id="conference-page">
@@ -58,56 +65,52 @@
 						<br>
 						<hr style="margin-bottom:32px; border-color:#D4AF37; :20px">
 						<h4 class="col-12" style="max-width:1300px;line-height:10%; margin-bottom:32px;padding-left:0;padding-right:0; color:#D4AF37">PROGRAMME</h4>
-					
-						
 						<div class="mission-info-text">
 							<h6 class="col-12" style="padding-left:0;padding-right:0; color:#D4AF37; margin-bottom:10px;" >Main Summit </h6>
 						{{-- <hr style="margin-bottom:32px; border-color:#D4AF37; :20px; width:50px; border-style:dotted; float:left"> --}}
 							<br>
-						
-
 							<div class="row">
-								<div class="col-1">
+								<div class="col-2">
 									<ol style="list-style-type:none;padding-right:0px; padding-bottom:50px; ;">
-										<li style="font-size: 14px; padding-bottom:10px;">   12:00pm  </li> 
-										<li style="font-size: 14px; padding-bottom:10px">   12:10pm   </li>
-										<li style="font-size: 14px; padding-bottom:15px ">   12:15pm  </li>
-										<li style="font-size: 14px; padding-bottom:25px ">   12:30pm   </li>
-										<li style="font-size: 14px; padding-bottom:40px ">   12:33pm   </li>
-										<li style="font-size: 14px;  padding-bottom:65px">   12:43pm   </li>
-										<li style="font-size: 14px; padding-bottom:30px">   12:53pm   </li>
-										<li style="font-size: 14px; padding-bottom:15px">   1:03pm   </li>
-										<li style="font-size: 14px; padding-bottom:40px">   1:08pm   </li>
-										<li style="font-size: 14px; padding-bottom:25px">   1:18pm   </li>
-										<li style="font-size: 14px; padding-bottom:15px">   1:28pm   </li>
+										<li class="prog">   12:00pm  </li> 
+										<li class="prog">   12:10pm   </li>
+										<li class="prog">   12:15pm  </li>
+										<li class="prog">   12:30pm   </li>
+										<li class="prog">   12:33pm   </li>
+										<li class="prog">   12:43pm   </li>
+										<li class="prog">   12:53pm   </li>
+										<li class="prog">   1:03pm   </li>
+										<li class="prog">   1:08pm   </li>
+										<li class="prog">   1:18pm   </li>
+										<li class="prog">   1:28pm   </li>
 										{{-- <li style="font-size: 14px; padding-bottom:35px">   1:38pm   </li> --}}
-										<li style="font-size: 14px; padding-bottom:10px">   1:48pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   1:50pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   1:55pm   </li>
-										<li style="font-size: 14px; padding-bottom:10px">   2:05pm   </li>
+										<li class="prog">   1:48pm   </li>
+										<li class="prog">   1:50pm   </li>
+										<li class="prog">   1:55pm   </li>
+										<li class="prog">   2:05pm   </li>
 				
 
 									</ol> </div> 
-								<div class="col-8">
-									<ol style="list-style-type:none;padding-right:10px;">
-										<li style="font-size: 14px;padding-bottom:10px ">    General Introduction</li>
-										<li style="font-size: 14px;padding-bottom:10px ">   Welcome Address  - <span style="color:#D4AF37">Dr. Foluso Amusa, Host </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> First Poll - <span style="color:#D4AF37">Theme Centered </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Introduction to the Summit -  <span style="color:#D4AF37">Summary of Summit theme </span>
+								<div class="col-10">
+									<ol style="list-style-type:none">
+										<li class="prog">    General Introduction</li>
+										<li class="prog">   Welcome Address  - <span style="color:#D4AF37">Dr. Foluso Amusa, Host </span></li>
+										<li class="prog"> First Poll - <span style="color:#D4AF37">Theme Centered </span></li>
+										<li class="prog"> Introduction to the Summit -  <span style="color:#D4AF37">Summary of Summit theme </span>
 
 											<br> Speakers Introduction <span style="color:#D4AF37">(Keynote and Panelists)</span> </li>
-										<li style="font-size: 14px; padding-bottom:10px"> 1st Keynote Speaker  <span style="color:#D4AF37">SMCR & Conduct Risk from the UK/ Europe Perspective</span> <br>  <span style="color:chocolate"> <strong> Speaker:  </strong>Elena Pykhova</span> </li>
-										<li style="font-size: 14px; padding-bottom:10px"> 2nd Keynote Speaker <span style="color:#D4AF37"> The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa</span> <br>  <span style="color:chocolate"><strong> Speaker:  </strong> Adekunle Koleosho PhD, FCA, ACS</span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker -<span style="color:#D4AF37"> Ring Fencing in the FinCrime Space </span>  <br>  <span style="color:chocolate"> <strong> Speaker:  </strong> Daniel Saliba  </span></li>
-										<li style="font-size: 14px; padding-bottom:10px">  <span style="color:#D4AF37">Sponsors/Promotional Ads</span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> 4th Keynote Speaker  <span style="color:#D4AF37"> -Legal & regulatory view of the theme in line with UK& Nigeria</span><br><span style="color:chocolate"> <strong> Speaker:  </strong>  George, Lawrence Badejo-Adegbenga </span> </li>
-										<li style="font-size: 14px;padding-bottom:10px "> 5th Keynote Speaker - <span style="color:#D4AF37"> Conduct Risk from the Nigeria/ Africa Perspective </span> <br><span style="color:chocolate"> <strong> Speaker:  </strong> Dr. Emmanuel Moore ABOLO, PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </span></li>
-										<li style="font-size: 14px;padding-bottom:10px "> Panel Session</li>
+										<li class="prog"> 1st Keynote Speaker  <span style="color:#D4AF37">SMCR & Conduct Risk from the UK/ Europe Perspective</span> <br>  <span style="color:chocolate"> <strong> Speaker:  </strong>Elena Pykhova</span> </li>
+										<li class="prog"> 2nd Keynote Speaker <span style="color:#D4AF37"> The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa</span> <br>  <span style="color:chocolate"><strong> Speaker:  </strong> Adekunle Koleosho PhD, FCA, ACS</span></li>
+										<li class="prog"> 3rd Keynote Speaker -<span style="color:#D4AF37"> Ring Fencing in the FinCrime Space </span>  <br>  <span style="color:chocolate"> <strong> Speaker:  </strong> Daniel Saliba  </span></li>
+										<li class="prog">  <span style="color:#D4AF37">Sponsors/Promotional Ads</span></li>
+										<li class="prog"> 4th Keynote Speaker  <span style="color:#D4AF37"> -Legal & regulatory view of the theme in line with UK& Nigeria</span><br><span style="color:chocolate"> <strong> Speaker:  </strong>  George, Lawrence Badejo-Adegbenga </span> </li>
+										<li class="prog"> 5th Keynote Speaker - <span style="color:#D4AF37"> Conduct Risk from the Nigeria/ Africa Perspective </span> <br><span style="color:chocolate"> <strong> Speaker:  </strong> Dr. Emmanuel Moore ABOLO, PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </span></li>
+										<li class="prog"> Panel Session</li>
 										{{-- <li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker <br><span style="color:chocolate"> <strong> Speaker:  </strong> Ola Olayinka </span></li> --}}
-										<li style="font-size: 14px;padding-bottom:10px "> Interraction Polls</li>
-										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partners</li>
-										<li style="font-size: 14px; padding-bottom:10px"> General Q&A</li>
-										<li style="font-size: 14px; padding-bottom:10px"> Closing remarks  <span style="color:chocolate">Esosa Balogun Bsc, FCA, CCSA, CRMA </span></li>
+										<li class="prog"> Interraction Polls</li>
+										<li class="prog"> Sponsors roll call + Media Partners</li>
+										<li class="prog"> General Q&A</li>
+										<li class="prog"> Closing remarks  <span style="color:chocolate">Esosa Balogun Bsc, FCA, CCSA, CRMA </span></li>
 									</ol> </div>
 							</div>
 							
