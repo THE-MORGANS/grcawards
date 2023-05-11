@@ -77,7 +77,7 @@
 										<li style="font-size: 14px; padding-bottom:40px">   1:08pm   </li>
 										<li style="font-size: 14px; padding-bottom:25px">   1:18pm   </li>
 										<li style="font-size: 14px; padding-bottom:15px">   1:28pm   </li>
-										<li style="font-size: 14px; padding-bottom:35px">   1:38pm   </li>
+										{{-- <li style="font-size: 14px; padding-bottom:35px">   1:38pm   </li> --}}
 										<li style="font-size: 14px; padding-bottom:10px">   1:48pm   </li>
 										<li style="font-size: 14px; padding-bottom:10px">   1:50pm   </li>
 										<li style="font-size: 14px; padding-bottom:10px">   1:55pm   </li>
@@ -95,12 +95,12 @@
 											<br> Speakers Introduction <span style="color:#D4AF37">(Keynote and Panelists)</span> </li>
 										<li style="font-size: 14px; padding-bottom:10px"> 1st Keynote Speaker  <span style="color:#D4AF37">SMCR & Conduct Risk from the UK/ Europe Perspective</span> <br>  <span style="color:chocolate"> <strong> Speaker:  </strong>Elena Pykhova</span> </li>
 										<li style="font-size: 14px; padding-bottom:10px"> 2nd Keynote Speaker <span style="color:#D4AF37"> The audit view on the theme in line with the standards and prevailing regulations in Nigeria/Africa</span> <br>  <span style="color:chocolate"><strong> Speaker:  </strong> Adekunle Koleosho PhD, FCA, ACS</span></li>
-										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker -<span style="color:#D4AF37"> Ring Fencing in the FinCrime Space </span>  <br>  <span style="color:chocolate"> <strong> Speaker:  </strong> Daniel Saliba (formerly Ibrahim) </span></li>
+										<li style="font-size: 14px; padding-bottom:10px"> 3rd Keynote Speaker -<span style="color:#D4AF37"> Ring Fencing in the FinCrime Space </span>  <br>  <span style="color:chocolate"> <strong> Speaker:  </strong> Daniel Saliba  </span></li>
 										<li style="font-size: 14px; padding-bottom:10px">  <span style="color:#D4AF37">Sponsors/Promotional Ads</span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> 4th Keynote Speaker  <span style="color:#D4AF37"> -Legal & regulatory view of the theme in line with UK& Nigeria</span><br><span style="color:chocolate"> <strong> Speaker:  </strong>  George, Lawrence Badejo-Adegbenga </span> </li>
 										<li style="font-size: 14px;padding-bottom:10px "> 5th Keynote Speaker - <span style="color:#D4AF37"> Conduct Risk from the Nigeria/ Africa Perspective </span> <br><span style="color:chocolate"> <strong> Speaker:  </strong> Dr. Emmanuel Moore ABOLO, PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </span></li>
 										<li style="font-size: 14px;padding-bottom:10px "> Panel Session</li>
-										<li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker <br><span style="color:chocolate"> <strong> Speaker:  </strong> Ola Olayinka </span></li>
+										{{-- <li style="font-size: 14px;padding-bottom:10px "> 6th Keynote Speaker <br><span style="color:chocolate"> <strong> Speaker:  </strong> Ola Olayinka </span></li> --}}
 										<li style="font-size: 14px;padding-bottom:10px "> Interraction Polls</li>
 										<li style="font-size: 14px;padding-bottom:10px "> Sponsors roll call + Media Partners</li>
 										<li style="font-size: 14px; padding-bottom:10px"> General Q&A</li>
