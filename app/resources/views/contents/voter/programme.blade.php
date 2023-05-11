@@ -94,16 +94,17 @@
                                     </tr>
                                     <tr>
                                         <td class="prog"> 12:15pm </td>
-										<td class="prog"> First Poll - <span style="color:#D4AF37">Theme Centered
-										</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="prog"> 12:30pm </td>
 										<td class="prog"> Introduction to the Summit - <span
 											style="color:#D4AF37">Summary of Summit theme </span>
 
 										<br> Speakers Introduction <span style="color:#D4AF37">(Keynote and
 											Panelists)</span>
+										
+                                    </tr>
+                                    <tr>
+                                        <td class="prog"> 12:30pm </td>
+										<td class="prog"> First Poll - <span style="color:#D4AF37">Theme Centered
+										</span></td>
 									</td>
 									</tr>
                                     <tr>
