@@ -30,7 +30,7 @@
 	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
 	<section id="about" class="s-conference-mission pt-0">
 		<div class="s-our-mission ">
-		<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="40%"></center>	
+		
 			<div class="container">
 			
 				<div class="conference-counter-wrap">
@@ -56,7 +56,7 @@
 							</div>
 						</div>
 					</div>
-
+					<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="45%"></center>	
 				<h2 class="title-conference pt-5"><span>About The Summit</span></h2>
 					<h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5> 
 				<div class="row">
