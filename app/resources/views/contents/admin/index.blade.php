@@ -74,7 +74,7 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-4">
                             <div class="text-center">
-                                <img src="{{asset('assets/images/no-result.svg')}}" height="300" alt="no-result-found-image">
+                                <img src="{{asset('public/assets/images/no-result.svg')}}" height="300" alt="no-result-found-image">
                                 <!-- <h1 class="text-error mt-4">404</h1> -->
                                 <h3 class="text-uppercase text-primary mt-4">No results found</h3>
                             </div> <!-- end /.text-center-->
@@ -208,7 +208,7 @@
 
     <!-- scripts -->
     @include('partials.admin.scripts')
-    <script src="{{asset('assets/js/pages/index-page.js')}}"></script>
+    <script src="{{asset('public/assets/js/pages/index-page.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     @if(Session::has('success'))

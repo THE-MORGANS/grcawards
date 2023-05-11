@@ -3,20 +3,20 @@
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-light">
         <span class="logo-lg">
-            <img src="{{asset('/assets/logo.png')}}" alt="" height="16">
+            <img src="public/assets/images/logo.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="{{asset('/assets/logo.png')}}" alt="" height="16">
+            <img src="public/assets/images/logo_sm.png" alt="" height="16">
         </span>
     </a>
 
     <!-- LOGO -->
     <a href="index.html" class="logo text-center logo-dark">
         <span class="logo-lg">
-            <img src="assets/images/logo-dark.png" alt="" height="16">
+            <img src="public/assets/images/logo-dark.png" alt="" height="16">
         </span>
         <span class="logo-sm">
-            <img src="{{asset('/assets/logo.png')}}" alt="" height="16">
+            <img src="public/assets/images/logo_sm_dark.png" alt="" height="16">
         </span>
     </a>
 
@@ -28,11 +28,39 @@
             <li class="side-nav-item">
                 <a href="{{route('award.program', request()->segment(3))}}" class="side-nav-link">
                     <i class="uil-home-alt"></i>
-                    <span> Dashboards </span>
+                    <span> Dashboard </span>
                 </a>
             </li>
 
-            @if(Auth::guard('admin')->user()->role_id == 1)
+           @if (Auth::guard('admin')->user()->role_id == 3)
+           <li class="side-nav-item">
+            <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" class="side-nav-link">
+                <i class="uil-balance-scale"></i>
+                <span> Judging Criteria </span>
+            </a>
+        </li>
+           @endif
+
+            @if (Auth::guard('admin')->user()->role_id == 1)
+
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#evaluation" aria-expanded="false" aria-controls="evaluation" class="side-nav-link">
+                    <i class="mdi mdi-clipboard-text-search-outline"></i>
+                    <span> Evaluation </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="evaluation">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.get_cat_sec', request()->segment(3))}}">Votes</a>
+                        </li>
+                        <li>
+                            <a href="#">Results</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+                
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="settings" class="side-nav-link">
                     <i class="dripicons-gear"></i>
@@ -56,31 +84,7 @@
                     </ul>
                 </div>
             </li>
-            @endif
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#evaluation" aria-expanded="false" aria-controls="evaluation" class="side-nav-link">
-                    <i class="mdi mdi-clipboard-text-search-outline"></i>
-                    <span> Evaluation </span>
-                    <span class="menu-arrow"></span>
-                </a>
-                <div class="collapse" id="evaluation">
-                    <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('admin.get_cat_sec', request()->segment(3))}}">Votes</a>
-                        </li>
-                        
-                        <li>
-                            <a href="#">Shortlisted Nominees</a>
-                        </li>
-                        @if(Auth::guard('admin')->user()->role_id == 1)
-                        <li>
-                            <a href="{{route('admin.judging_criteria',request()->segment(3))}}">Judging Criteria</a>
-                        </li>
-                        @endif
-                    </ul>
-                </div>
-            </li>
-            @if(Auth::guard('admin')->user()->role_id == 1)
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#people" aria-expanded="false" aria-controls="people" class="side-nav-link">
                     <i class="uil uil-users-alt"></i>
@@ -90,18 +94,18 @@
                 <div class="collapse" id="people">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="#">Voters</a>
+                            <a href="{{route('admin.get_voters', request()->segment(3))}}">Voters</a>
                         </li>
                         <li>
-                            <a href="#">Admins</a>
+                            <a href="{{route('admin.get_admins', request()->segment(3))}}">Admins</a>
                         </li>
                         <li>
-                            <a href="#">Judges</a>
+                            <a href="{{route('admin.get_judges', request()->segment(3))}}">Judges</a>
                         </li>
                     </ul>
                 </div>
             </li>
-            @endif
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
                     <i class="mdi mdi-database-cog-outline"></i>
@@ -119,6 +123,7 @@
                     </ul>
                 </div>
             </li>
+            @endif
         </ul>
         <div class="clearfix"></div>
     </div>

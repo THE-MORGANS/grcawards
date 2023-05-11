@@ -6,11 +6,9 @@ use App\Models\Sector;
 use App\Models\Award;
 use App\Models\Nominee;
 use App\Models\Vote;
-use App\Models\AwardProgram;
-use App\Models\OtherVote;
+use App\Models\MediaVote;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
-use Illuminate\Support\Facades\Session;
 
 
 class VoteController extends Controller
@@ -25,7 +23,6 @@ class VoteController extends Controller
 
     public function showVotingPage(Request $request, $sector)
     {
-        
         $sector_id = Hashids::connection('sector')->decode($sector)[0];
         
         if (isset($sector_id) && Sector::where('id', $sector_id)->exists()){
@@ -51,22 +48,20 @@ class VoteController extends Controller
     {
         $real_award = Hashids::connection('award')->decode($award_id)[0];
         $real_nominee = Hashids::connection('nominee')->decode($nominee_id)[0];
-        $award_program = AwardProgram::where('status',1)->first();
+
         $ip_address = $request->getClientIp();
-        $user = Session::get('user');
         
-        
-        if (Vote::where([['voter','=',$user],['award_id','=',$real_award],['ip_address', '=',$ip_address]])->exists()){
+        if(Vote::where([['voter_id','=',Auth()->guard('voter')->user()->id],['award_id','=',$real_award]])->exists()){
+            return response()->json('warning',200);
+        }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
             return response()->json('warning');
-        }
-        // elseif (Session::get('ip_address') != $ip_address){
-        //     return response()->json('danger');
-        // }
-        else{
+        }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
+            return response()->json('danger');
+        }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
-            $new_vote->award_program_id = $award_program->id;
-            $new_vote->voter = $user;
+            $new_vote->award_program_id = 1;
+            $new_vote->voter_id = Auth()->guard('voter')->user()->id;
             $new_vote->award_id = $real_award;
             $new_vote->nominee_id = $real_nominee;
             $new_vote->save();
@@ -76,35 +71,30 @@ class VoteController extends Controller
 
     }
 
-    public function addOtherVote(Request $request, $award_id, $nominee)
+    public function addMediaVote(Request $request, $award_id, $nominee)
     {
         $real_award = Hashids::connection('award')->decode($award_id)[0];
-        $award_program = AwardProgram::where('status',1)->first();
-        $ip_address = $request->getClientIp();
-        $user = Session::get('user');
 
-        if (OtherVote::where([['voter','=',$user],['award_id','=',$real_award],['ip_address', '=',$ip_address]])->exists()){
+        $ip_address = $request->getClientIp();
+        
+        if(MediaVote::where([['voter_id','=',Auth()->guard('voter')->user()->id],['award_id','=',$real_award]])->exists()){
+            return response()->json('warning',200);
+        }elseif (MediaVote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
             return response()->json('warning');
-        }
-        // elseif (Session::get('ip_address') != $ip_address){
-        //     return response()->json('danger');
-        // }
-        else{
-            $new_vote = new OtherVote;
+        }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
+            return response()->json('danger');
+        }else{
+            $new_vote = new MediaVote;
             $new_vote->ip_address = $ip_address;
-            $new_vote->award_program_id = $award_program->id;
+            $new_vote->award_program_id = 1;
+            $new_vote->voter_id = Auth()->guard('voter')->user()->id;
             $new_vote->award_id = $real_award;
-            $new_vote->voter = $user;
             $new_vote->nominee = $nominee;
             $new_vote->save();
             return response()->json('success');
 
         }
 
-    }
-
-    public function SummitProgramme(){
-        return view('contents.voter.programme');
     }
 
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Judge;
 
 class Admin extends Authenticatable
 {
@@ -61,5 +62,10 @@ class Admin extends Authenticatable
     public function awardPrograms()
     {
         return $this->hasOne(AwardProgram::class, 'admin_id');
+    }
+
+    public function judges()
+    {
+        return $this->hasOne(Judge::class, 'admin_id');
     }
 }

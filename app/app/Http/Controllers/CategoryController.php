@@ -16,7 +16,6 @@ class CategoryController extends Controller
     public function getCategories(Request $request, $award_program)
     {
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
-        // dd($award_program_id[0]);
         if (isset($award_program_id[0])){
         $categories = Category::where('award_program_id', $award_program_id[0])->get();
         foreach ($categories as $category) {
