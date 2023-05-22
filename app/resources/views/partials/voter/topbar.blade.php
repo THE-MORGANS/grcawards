@@ -47,14 +47,14 @@
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
                                 </a>
                                 <ul>
-                                    @foreach($award_program_years as $award_program_year)
+                                    {{-- @foreach($award_program_years as $award_program_year)
                                         <li class="{{request()->is('winners/$award_program_year->year') ? 'active-page' : ''}}"><a href="{{route('show_winners', $award_program_year->year)}}">{{$award_program_year->year}} Winners</a></li>
-                                    @endforeach
+                                    @endforeach --}}
                                 </ul>
                             </li>
                             <li class="{{request()->is('vote') ? 'active-page' : '' }}">
-                                {{-- <a href="{{route('show_vote')}}">vote</a> --}}
-                                <a href="#">vote</a>
+                                <a href="{{route('show_vote')}}">vote</a>
+                                {{-- <a href="#">vote</a> --}}
                             </li>
                             <li class="dropdown {{request()->is('judges/*') ? 'active-page' : ''}}">
                                 <a href="#">Judges <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>

@@ -15,10 +15,9 @@ class CreateAwardsCriteriasTable extends Migration
     {
         Schema::create('awards_criterias', function (Blueprint $table) {
             $table->id();
-            //  $table->foreign('judging_id')->references('id')->on('judgings')->onDelete('cascade')->nullable();
-            // $table->foreignId('judging_id')->constrained()->nullable();
-            $table->foreignId('judgings_id')->references('id')->on('judgings')->nullable();
-            $table->string('criteria')->nullable();
+            $table->text('details')->nullable();
+            $table->text('criteria')->nullable();
+            $table->string('nominees_id')->nullable();
             $table->timestamps();
         });
     }

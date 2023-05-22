@@ -7,6 +7,7 @@ use App\Models\Award;
 use App\Models\Nominee;
 use App\Models\Vote;
 use App\Models\MediaVote;
+use App\Models\VoteCount;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
 
@@ -23,6 +24,7 @@ class VoteController extends Controller
 
     public function showVotingPage(Request $request, $sector)
     {
+        // dd(Auth()->guard('voter')->user()->id);
         $sector_id = Hashids::connection('sector')->decode($sector)[0];
         
         if (isset($sector_id) && Sector::where('id', $sector_id)->exists()){
@@ -46,25 +48,41 @@ class VoteController extends Controller
 
     public function addVote(Request $request, $award_id, $nominee_id)
     {
+
         $real_award = Hashids::connection('award')->decode($award_id)[0];
         $real_nominee = Hashids::connection('nominee')->decode($nominee_id)[0];
 
         $ip_address = $request->getClientIp();
         
-        if(Vote::where([['voter_id','=',Auth()->guard('voter')->user()->id],['award_id','=',$real_award]])->exists()){
-            return response()->json('warning',200);
-        }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
+        // if(Vote::where(['award_id' => $real_award])->exists()){
+        //     return response()->json('warning',200);
+        // }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
+        //     return response()->json('warning');
+        // }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
+        //     return response()->json('danger');
+        if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
             return response()->json('warning');
-        }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
-            return response()->json('danger');
         }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
             $new_vote->award_program_id = 1;
-            $new_vote->voter_id = Auth()->guard('voter')->user()->id;
+            $new_vote->voter = 1;
             $new_vote->award_id = $real_award;
             $new_vote->nominee_id = $real_nominee;
             $new_vote->save();
+
+
+           $votes = VoteCount::where(['nominee_id' => $real_nominee, 'award_id' => $real_award])->first();
+           if($votes){
+            $votes->update(['voteCount' => $votes->voteCount + 1]);
+           }else{
+            VoteCount::create([
+                'nominee_id' => $real_nominee,
+                'award_id' => $real_award,
+                'award_program_id' => 2,
+                'voteCount' => 1
+            ]);
+           }
             return response()->json('success');
 
         }

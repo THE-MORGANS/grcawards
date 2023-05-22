@@ -11,9 +11,9 @@
     <!-- third party css end -->
 
     <!-- App css -->
-    <link href="{{asset('public/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="{{asset('public/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
+    <link href="{{asset('/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="{{asset('/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     @yield('style')

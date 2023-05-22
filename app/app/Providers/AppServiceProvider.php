@@ -31,14 +31,14 @@ class AppServiceProvider extends ServiceProvider
         // if(config('app.env') === 'production') {
         //     URL::forceScheme('https');
         // }
-        Session::put('user', 'user'.$this->getToken(16));
-        Schema::defaultStringLength(191);
+        // Session::put('user', 'user'.$this->getToken(16));
+        // Schema::defaultStringLength(191);
 
-        $award_program_years = \App\Models\AwardProgram::all(['year']);
+        // $award_program_years = \App\Models\AwardProgram::all(['year']);
 
-        $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
-        view()->share('award_program_years', $award_program_years);
-        view()->share('pictures', $pictures);
+        // $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
+        // view()->share('award_program_years', $award_program_years);
+        // view()->share('pictures', $pictures);
 
     }
 }

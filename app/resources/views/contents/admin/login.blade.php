@@ -8,12 +8,12 @@
     <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
     <meta content="GRCFinCrimeAwards" name="GRCFinCrimeAwards" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{asset('public/assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
     <!-- App css -->
-    <link href="{{asset('public/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('public/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="{{asset('public/assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
+    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style" />
+    <link href="{{asset('assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
 </head>
 
 <body class="loading authentication-bg" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -23,7 +23,7 @@
                 <div class="col-xxl-4 col-lg-5">
                     <div class="pt-3 pb-3 text-center">
                         <a href="index.html">
-                            <span><img src="{{asset('public/assets/images/grc_awards_logo.png')}}" alt="" width="150" height="100"></span>
+                            <span><img src="{{asset('/assets/images/grc_awards_logo.png')}}" alt="" width="150" height="100"></span>
                         </a>
                     </div>
                     <div class="card">

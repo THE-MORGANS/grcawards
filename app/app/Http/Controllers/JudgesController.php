@@ -90,6 +90,7 @@ class JudgesController extends Controller
     public function loadJudgingCategoryPage(Request $request, $award_program){ 
         
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+     //   dd( $award_program_id);
         
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
             $data['categories'] = AwardProgram::find($award_program_id[0])->categories;

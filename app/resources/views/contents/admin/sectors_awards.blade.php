@@ -66,17 +66,18 @@
                                                         <td>
                                                             <p class="m-0 d-inline-block align-middle">
                                                                 <a href="#" class="text-body fw-semibold">{{$nominee->name}}</a>
-                                                                @for($i=1; $i<= count($big_votes);$i++)
+                                                               
                                                                 @if(array_key_exists($nominee->id,$big_votes))
+                                                                {{-- {{dd($nominee->id)}} --}}
                                                                 <span class="badge badge-outline-success ms-1" style="padding:3px; font-size:14px;">
-                                                                    {{$big_votes[$i][$award->id]}} Votes
+                                                                    {{$big_votes[$nominee->id][$award->id]}} Votes
                                                                 </span>
                                                                 @else
                                                                 <span class="badge badge-outline-success ms-1" style="padding:3px; font-size:14px;">
                                                                     0 Votes
                                                                 </span>
                                                                 @endif
-                                                               @endfor
+                                                             
 
                                                             </p>
                                                         </td>
