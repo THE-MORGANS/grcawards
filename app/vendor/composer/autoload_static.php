@@ -643,6 +643,8 @@ class ComposerStaticInit4eb97cd58c29ecb8c9452e5450f18140
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
         'App\\Models\\Gallery' => __DIR__ . '/../..' . '/app/Models/Gallery.php',
         'App\\Models\\Judge' => __DIR__ . '/../..' . '/app/Models/Judge.php',
+        'App\\Models\\JudgesCriteria' => __DIR__ . '/../..' . '/app/Models/JudgesCriteria.php',
+        'App\\Models\\JudgesVotes' => __DIR__ . '/../..' . '/app/Models/JudgesVotes.php',
         'App\\Models\\Nominee' => __DIR__ . '/../..' . '/app/Models/Nominee.php',
         'App\\Models\\OtherVote' => __DIR__ . '/../..' . '/app/Models/OtherVote.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',

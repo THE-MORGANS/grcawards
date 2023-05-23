@@ -50,6 +50,8 @@ return array(
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\Models\\Gallery' => $baseDir . '/app/Models/Gallery.php',
     'App\\Models\\Judge' => $baseDir . '/app/Models/Judge.php',
+    'App\\Models\\JudgesCriteria' => $baseDir . '/app/Models/JudgesCriteria.php',
+    'App\\Models\\JudgesVotes' => $baseDir . '/app/Models/JudgesVotes.php',
     'App\\Models\\Nominee' => $baseDir . '/app/Models/Nominee.php',
     'App\\Models\\OtherVote' => $baseDir . '/app/Models/OtherVote.php',
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
