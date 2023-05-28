@@ -13,7 +13,7 @@
                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                     </div>
                     <h4 style="display: block;">Award Year 2021</h4>
-                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">sdfondsfjvnfv
+                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
                     </h4>
                 </div>
             </div>
@@ -71,7 +71,6 @@
     <div class="collapse show">
         <div class="card card-body" id="sectorsfromajax">
           @if (isset($awards))
-
             @php
             $sector = Hashids::connection('sector')->decode(request()->segment(7));
             $sector_name = DB::table('sectors')->find($sector[0])->name;
@@ -93,12 +92,17 @@
             </thead>
             <tbody>
                 @foreach ($awards as $award)
+                @php
+               
+                 $award->hashid = Hashids::connection('award')->encode($award->id);
+              
+                @endphp
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$award->name}}</td>
                     <td>{{$award->description}}</td>
                     <td>{{$award->criteria}}</td>
-                    <td><a href="" class="btn btn-sm btn-success">Vote</a></td>
+                    <td><a href="{{route('admin.create_nominess_awards', $award->hashid)}}" class="btn btn-sm btn-success">Add Nominee Voting Criteria</a></td>
                 </tr>  
                   <br>
               @endforeach
@@ -106,7 +110,7 @@
           </table>
         @else
         <div class="d-flex justify-content-center">
-            <div class="alert alert-danger text-center" role="alert" style="width:25%;">
+            <div class=" badge bg-primary text-center" role="alert" style="width:25%;">
                 <p>Please Select a Sector above to load awards.</p>
               </div>
         </div>

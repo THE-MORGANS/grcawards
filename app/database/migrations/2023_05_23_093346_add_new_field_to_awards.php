@@ -14,11 +14,8 @@ class AddNewFieldToAwards extends Migration
     public function up()
     {
         Schema::table('awards', function (Blueprint $table) {
-            //
-            $table->tinyText('judging_criterias')->nullable();
-            $table->tinyText('nominess')->nullable();
-            
-
+            // $table->tinyText('judging_criterias')->nullable();
+            // $table->tinyText('nominess')->nullable();
         });
     }
 

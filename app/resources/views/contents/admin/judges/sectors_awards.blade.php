@@ -1,3 +1,5 @@
+
+
 @extends('layouts.admin.master')
 
 @section('title', 'Admin Dashboard')
@@ -13,7 +15,7 @@
                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                     </div>
                     <h4 style="display: block;">Award Year 2021</h4>
-                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
+                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">sdfondsfjvnfv
                     </h4>
                 </div>
             </div>
@@ -39,9 +41,9 @@
                   @php
                       $category->hashid = Hashids::connection('category')->encode($category->id);
                   @endphp
-                  <a href="{{route('admin.load_judging_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary"> {{count($category->sectors)}} Sectors - View All </a>
+                  <a href="{{route('admin.load_judging_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary">Cast Vote</a>
                 </div>
-              </div>
+              </div> 
         </div>    
         @endforeach
     </div>

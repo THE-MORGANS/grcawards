@@ -13,16 +13,16 @@ class CreateJudgesCriteriasTable extends Migration
      */
     public function up()
     {
-        Schema::create('judges_criterias', function (Blueprint $table) {
-            $table->id();
-            $table->integer('award_id')->nullable();
-            $table->unsignedBigInteger('sector_id');
-            $table->foreign('sector_id')->references('id')->on('sectors')->onDelete('cascade');
-            $table->string('criteria')->nullable();
-            $table->text('details')->nullable();
-            $table->integer('award_program_id')->nullable();
-            $table->timestamps();
-        });
+        // Schema::create('judges_criterias', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->integer('award_id')->nullable();
+        //     $table->unsignedBigInteger('sector_id');
+        //     $table->foreign('sector_id')->references('id')->on('sectors')->onDelete('cascade');
+        //     $table->string('criteria')->nullable();
+        //     $table->text('details')->nullable();
+        //     $table->integer('award_program_id')->nullable();
+        //     $table->timestamps();
+        // });
     }
 
     /**

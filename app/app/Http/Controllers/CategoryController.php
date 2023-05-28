@@ -24,6 +24,7 @@ class CategoryController extends Controller
             return view('contents.admin.categories')->with(['categories' => $categories, 'award_program'=>$award_program]);
         }
             $request->session()->flash('danger', 'Could not the data you requested!');
+            
             return redirect()->back();
     }
     

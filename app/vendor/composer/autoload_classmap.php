@@ -48,6 +48,7 @@ return array(
     'App\\Models\\Award' => $baseDir . '/app/Models/Award.php',
     'App\\Models\\AwardProgram' => $baseDir . '/app/Models/AwardProgram.php',
     'App\\Models\\Category' => $baseDir . '/app/Models/Category.php',
+    'App\\Models\\CommBanksAwards' => $baseDir . '/app/Models/CommBanksAwards.php',
     'App\\Models\\Gallery' => $baseDir . '/app/Models/Gallery.php',
     'App\\Models\\Judge' => $baseDir . '/app/Models/Judge.php',
     'App\\Models\\JudgesCriteria' => $baseDir . '/app/Models/JudgesCriteria.php',

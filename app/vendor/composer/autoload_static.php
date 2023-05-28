@@ -641,6 +641,7 @@ class ComposerStaticInit4eb97cd58c29ecb8c9452e5450f18140
         'App\\Models\\Award' => __DIR__ . '/../..' . '/app/Models/Award.php',
         'App\\Models\\AwardProgram' => __DIR__ . '/../..' . '/app/Models/AwardProgram.php',
         'App\\Models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
+        'App\\Models\\CommBanksAwards' => __DIR__ . '/../..' . '/app/Models/CommBanksAwards.php',
         'App\\Models\\Gallery' => __DIR__ . '/../..' . '/app/Models/Gallery.php',
         'App\\Models\\Judge' => __DIR__ . '/../..' . '/app/Models/Judge.php',
         'App\\Models\\JudgesCriteria' => __DIR__ . '/../..' . '/app/Models/JudgesCriteria.php',

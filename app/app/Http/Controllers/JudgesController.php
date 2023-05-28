@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Award;
 use App\Models\Judge;
 use App\Models\Sector;
 use App\Models\Category;
 use App\Models\AwardProgram;
+use App\Models\CommBanksAwards;
+use App\Models\Vote;
+use App\Models\VoteCount;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
@@ -138,4 +142,28 @@ class JudgesController extends Controller
     // public function loadJudgingAwards(){
     //     return 'That was a BANG !!!';
     // }
+
+    public function CreateNominessVotes($award_id, $award_program = 2,){
+       // dd($award_id);
+       $award_hashids = Hashids::connection('award')->encode(54);
+        $award_hashid = Hashids::connection('award')->decode($award_hashids);
+     //  $awards = Award::whereId($award_hashid)->get();
+       $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
+       if(count($votes) > 0){
+    //     foreach($votes as $vote){
+    //         $data[$vote->id] = $vote->voteCount; 
+    //     }
+    //    arsort($data);
+ //   $vot = VoteCount::whereId($key)->first();
+        foreach($votes  as $vote){
+            CommBanksAwards::create([
+            'award_id' => $vote->award_id,
+            'nominee_id' =>  $vote->nominee_id,
+            'number_of_votes' => $vote->voteCount, 
+            'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount'),
+        ]);
+        }
+        dd($votes);
+       }
+    }  
 }

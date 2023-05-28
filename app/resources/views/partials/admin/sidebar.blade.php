@@ -32,7 +32,7 @@
                 </a>
             </li>
 
-           @if (Auth::guard('admin')->user()->role_id == 3)
+           @if (Auth::guard('admin')->user()->role_id == 1)
            <li class="side-nav-item">
             <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" class="side-nav-link">
                 <i class="uil-balance-scale"></i>
@@ -119,6 +119,22 @@
                         </li>
                         <li>
                             <a href="#">Exports</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#nominees" aria-expanded="false" aria-controls="data" class="side-nav-link">
+                    <i class="mdi mdi-database-cog-outline"></i>
+                    <span> Judges Votes </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="nominees">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.show_categories',request()->segment(3))}}">View Nominess</a>
                         </li>
                     </ul>
                 </div>
