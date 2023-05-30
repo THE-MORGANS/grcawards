@@ -102,7 +102,7 @@
                     <td>{{$award->name}}</td>
                     <td>{{$award->description}}</td>
                     <td>{{$award->criteria}}</td>
-                    <td><a href="{{route('admin.create_nominess_awards', $award->hashid)}}" class="btn btn-sm btn-success">Add Nominee Voting Criteria</a></td>
+                    <td><a href="{{route('admin.create_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">Add Nominee Voting Criteria</a></td>
                 </tr>  
                   <br>
               @endforeach

@@ -11,6 +11,9 @@ use App\Models\AwardProgram;
 use App\Models\CommBanksAwards;
 use App\Models\Vote;
 use App\Models\VoteCount;
+use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
+ComBankRiskComplaince, GrcAntiFinCrimReporter, GrcEmployer, 
+GrcSolutionProvider, GrcTrainingProvider};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
@@ -94,8 +97,6 @@ class JudgesController extends Controller
     public function loadJudgingCategoryPage(Request $request, $award_program){ 
         
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
-     //   dd( $award_program_id);
-        
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
             $data['categories'] = AwardProgram::find($award_program_id[0])->categories;
         } else {
@@ -143,27 +144,64 @@ class JudgesController extends Controller
     //     return 'That was a BANG !!!';
     // }
 
-    public function CreateNominessVotes($award_id, $award_program = 2,){
-       // dd($award_id);
+
+    public function Index(Request $request, $award_program = 2){
+        // $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        
+        $categories = Category::where('award_program_id', $award_program)->get();
+
+        foreach ($categories as $category) {
+            $category->hashid = Hashids::connection('category')->encode($category->id);
+        
+            return view('contents.admin.judges.category')->with(['categories' => $categories, 'award_program'=> $award_program]);
+        }
+            $request->session()->flash('danger', 'Could not the data you requested!');
+            return redirect()->back();
+    }
+
+    public function CreateNominessVotes(Request $request, $award_program_id = 2,$award_id = 2){
+    
+        $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
        $award_hashids = Hashids::connection('award')->encode(54);
         $award_hashid = Hashids::connection('award')->decode($award_hashids);
-     //  $awards = Award::whereId($award_hashid)->get();
+    
+
        $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
        if(count($votes) > 0){
-    //     foreach($votes as $vote){
-    //         $data[$vote->id] = $vote->voteCount; 
-    //     }
-    //    arsort($data);
- //   $vot = VoteCount::whereId($key)->first();
-        foreach($votes  as $vote){
-            CommBanksAwards::create([
-            'award_id' => $vote->award_id,
-            'nominee_id' =>  $vote->nominee_id,
-            'number_of_votes' => $vote->voteCount, 
-            'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount'),
-        ]);
-        }
-        dd($votes);
+
+    $award_group_one = [1, 2, 3,9,]; //ComBankRiskComplainces
+    $award_group_two = [4,16]; //com_bank_fraud_awarenesses
+    $award_group_three = [10, 11, 12, 13,15,18,20,22,23,24,26,27,28,30,31,32]; //com_bank_chief_risk_officers
+    $award_group_four = [14,18,5,14,17,21,25,29]; //grc_employers
+    $award_group_five = [37,38]; //grc_training_providers
+    $award_group_six = [35,36]; //grc_solution_providers
+    $award_group_seven = [34]; //grc_anti_fin_crim_reporters
+
+    
+        // foreach($votes  as $vote){
+        //     CommBanksAwards::create([
+        //     'award_id' => $vote->award_id,
+        //     'nominee_id' =>  $vote->nominee_id,
+        //     'number_of_votes' => $vote->voteCount, 
+        //     'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount'),
+        // ]);
+        // }
        }
+       if (isset($award_program)){
+           $categories = Category::where('award_program_id', $award_program[0])->get();
+       foreach ($categories as $category){ 
+                   $category->hashid = Hashids::connection('category')->encode($category->id);
+           foreach($category->sectors as $sector){
+               $sector->hashid = Hashids::connection('sector')->encode($sector->id);
+               foreach($sector->awards as $award){
+               $award->hashid = Hashids::connection('award')->encode($award->id);
+               }
+           }
+           }
+       return view('contents.admin.create_vote_criteria')->with(['categories' => $categories,'award_program'=>$award_program]);
+       }
+           $request->session()->flash('danger', 'Could not find the data requested');
+           return redirect()->back();
+
     }  
 }

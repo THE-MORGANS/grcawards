@@ -93,11 +93,12 @@ Route::prefix('admin')->group(function(){
                 Route::get('judgingcategory', [JudgesController::class, 'loadJudgingCategoryPage'])->name('admin.load_judging_category_page');
                 Route::get('judgingsector/{category_id}', [JudgesController::class, 'loadJudgingCategorySectorPage'])->name('admin.load_judging_category_sector_page');
                 Route::get('judging/{category_id}/{sector_id}', [JudgesController::class, 'loadJudgingAwards'])->name('admin.load_judging_awards');
-                Route::get('/create/criteria', [JudgesController::class, 'CreateNominessVotes'])->name('admin.create_nominess_awards');
+                Route::get('criteria/{category_id}', [JudgesController::class, 'CreateNominessVotes'])->name('admin.create_nominess_awards');
+                Route::get('/index/{id}', [JudgesController::class, 'Index'])->name('judgeVotes.index');
             });
         
 
-Route::get('/judging/category{id}', [JudgeController::class, 'Index'])->name('judgeVotes.index');
+
 
         });
     });
