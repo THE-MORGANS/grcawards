@@ -13,4 +13,6 @@ class VoteCount extends Model
     protected $fillable = [
         'nominee_id', 'award_id', 'award_program_id', 'voteCount'
     ];
+
+    
 }

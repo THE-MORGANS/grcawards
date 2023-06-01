@@ -95,12 +95,14 @@ Route::prefix('admin')->group(function(){
                 Route::get('judging/{category_id}/{sector_id}', [JudgesController::class, 'loadJudgingAwards'])->name('admin.load_judging_awards');
                 Route::get('criteria/{category_id}', [JudgesController::class, 'CreateNominessVotes'])->name('admin.create_nominess_awards');
                 Route::get('/index/{id}', [JudgesController::class, 'Index'])->name('judgeVotes.index');
+                Route::post('nominess/details', [JudgesController::class, 'getNominessDetails'])->name('admin.getNominessDetails');
+ 
             });
         
 
 
-
         });
+
     });
 
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
