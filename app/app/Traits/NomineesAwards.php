@@ -10,7 +10,7 @@ trait NomineesAwards {
 
     public function BankChiefRiskOfficer($votes, $award_hashid){
         $check = ComBankChiefRiskOfficer::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -30,7 +30,7 @@ trait NomineesAwards {
 
     public function BankFraudAwareness($votes, $award_hashid){
         $check = ComBankFraudAwareness::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -51,12 +51,12 @@ trait NomineesAwards {
 
     public function BankRiskComplainces($votes, $award_hashid){
         $check = ComBankRiskComplaince::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+      
+        if(count($check) > 0){
            foreach($check as $cc => $val){
            $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
            }
-           
         }else {
         foreach($votes as $vote){
             ComBankRiskComplaince::create([
@@ -73,7 +73,7 @@ trait NomineesAwards {
 
     public function GrcAntiFinCrimReporters($votes, $award_hashid){
         $check = GrcAntiFinCrimReporter::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -95,7 +95,7 @@ trait NomineesAwards {
 
     public function GrcSolutionProviders($votes, $award_hashid){
         $check = GrcSolutionProvider::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
            $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -116,7 +116,7 @@ trait NomineesAwards {
 
     public function GrcEmployers($votes, $award_hashid){
         $check =  GrcEmployer::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
               $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -137,7 +137,7 @@ trait NomineesAwards {
 
     public function GrcTrainingProvider($votes, $award_hashid){
         $check =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
-        if(!empty($check)){
+        if(count($check) > 0){
            foreach($check as $cc => $val){
              $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
           'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
@@ -155,9 +155,7 @@ trait NomineesAwards {
     $data =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
     return $data;
     }
-
-
-    ######################## 
+  
 
 }
 

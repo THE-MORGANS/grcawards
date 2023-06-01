@@ -171,42 +171,41 @@ class JudgesController extends Controller
     {
         $award_program_id = Hashids::connection('awardProgram')->encode(1);
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
-        $award_hashids = Hashids::connection('award')->encode(54);
+        $award_hashids = Hashids::connection('award')->encode(80);
         $award_hashid = Hashids::connection('award')->decode($award_hashids);
         $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
         if (count($votes) > 0) {
-            $award_group_one = [1, 2, 3, 9,]; //ComBankRiskComplainces
+            $award_group_one = [1, 2, 3, 9,43]; //ComBankRiskComplainces
             $award_group_two = [4, 16, 54]; //com_bank_fraud_awarenesses
-            $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32]; //com_bank_chief_risk_officers
-            $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29]; //grc_employers
+            $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 77]; //com_bank_chief_risk_officers
+            $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29,80]; //grc_employers
             $award_group_five = [37, 38]; //grc_training_providers
             $award_group_six = [35, 36]; //grc_solution_providers
             $award_group_seven = [34]; //grc_anti_fin_crim_reporters
 
             if (in_array($award_hashid[0],  $award_group_one)) {
-              $data =  $this->BankChiefRiskOfficer($votes, $award_hashid);
-
+                $data =  $this->BankRiskComplainces($votes, $award_hashid);
+                return view('contents.admin.ComBankRiskComplainces')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid[0],  $award_group_two)) {
                $data = $this->BankFraudAwareness($votes, $award_hashid);
+               return view('contents.admin.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid[0],  $award_group_three)) {
-                $data =  $this->BankRiskComplainces($votes, $award_hashid);
+                $data =  $this->BankChiefRiskOfficer($votes, $award_hashid);
+                return view('contents.admin.com_bank_chief_risk_officers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid[0],  $award_group_four)) {
-                $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
+                $data = $this->GrcEmployers($votes, $award_hashid);
+                return view('contents.admin.grc_employers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid[0],  $award_group_five)) {
                 $data = $this->GrcSolutionProviders($votes, $award_hashid);
             } else if (in_array($award_hashid[0],  $award_group_six)) {
-                $data = $this->GrcEmployers($votes, $award_hashid);
-            } else if (in_array($award_hashid[0],  $award_group_seven)) {
                 $data =  $this->GrcTrainingProvider($votes, $award_hashid);
+            } else if (in_array($award_hashid[0],  $award_group_seven)) {
+                $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
             } else {
                 return back();
             }
-
-
-         //   dd($data);
-
         }
-            return view('contents.admin.create_fraud_prevention')->with(['awards' => $data, 'nominessDetails' => [], 'award_program' => $award_program]);
+        return back();
     
     }
 
@@ -214,44 +213,55 @@ class JudgesController extends Controller
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->encode(1);
         $award_id = $request->award_id;
-        $award_group_one = [1, 2, 3, 9,]; //ComBankRiskComplainces
+        $award_group_one = [1, 2, 3, 9,43]; //ComBankRiskComplainces
         $award_group_two = [4, 16, 54]; //com_bank_fraud_awarenesses
-        $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32]; //com_bank_chief_risk_officers
-        $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29]; //grc_employers
+        $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32,77]; //com_bank_chief_risk_officers
+        $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29,80]; //grc_employers
         $award_group_five = [37, 38]; //grc_training_providers
         $award_group_six = [35, 36]; //grc_solution_providers
         $award_group_seven = [34]; //grc_anti_fin_crim_reporters
 
         if (in_array($award_id,  $award_group_one)) {
-                $data = ComBankChiefRiskOfficer::whereId($id)->first();
-                return back()->with('nominessDetails', $data);
+            $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = ComBankRiskComplaince::whereId($id)->first();
+            if($request->submitButton){
+                $data['nominessDetails']->fill($request->all())->save();
+            }
+                return view('contents.admin.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
           } else if (in_array($award_id,  $award_group_two)) {
             $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankFraudAwareness::whereId($id)->first();
             if($request->submitButton){
-              $this->UpdateBankFraudAwareness($request);
+                $data['nominessDetails']->fill($request->all())->save();
             }
-                return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]);
+                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
           } else if (in_array($award_id,  $award_group_three)) {
-                $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
-                $data['nominessDetails'] = ComBankRiskComplaince::whereId($id)->first();
-                    return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]);
+            $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = ComBankChiefRiskOfficer::whereId($id)->first();
+            if($request->submitButton){
+                $data['nominessDetails']->fill($request->all())->save();
+            }
+            return view('contents.admin.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
           } else if (in_array($award_id,  $award_group_four)) {
-                $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
-                $data['nominessDetails'] = GrcAntiFinCrimReporter::whereId($id)->first();
-                return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]); 
+            $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
+                $data['nominessDetails'] = GrcEmployer::whereId($id)->first();
+                if($request->submitButton){
+                    $data['nominessDetails']->fill($request->all())->save();
+                }
+                return view('contents.admin.grc_employers', $data)->with(['award_program' => $award_program]); 
           } else if (in_array($award_id,  $award_group_five)) {
                 $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
                 $data['nominessDetails'] = GrcSolutionProvider::whereId($id)->first();
-                return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]);
+                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
           } else if (in_array($award_id,  $award_group_six)) {
-                $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
-                $data['nominessDetails'] = GrcEmployer::whereId($id)->first();
-                return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]);
+            $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = GrcTrainingProvider::whereId($id)->first();
+                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
           } else if (in_array($award_id,  $award_group_seven)) {
-                $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
-                $data['nominessDetails'] = GrcTrainingProvider::whereId($id)->first();
-                return view('contents.admin.create_fraud_prevention', $data)->with(['award_program' => $award_program]);
+
+            $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = GrcAntiFinCrimReporter::whereId($id)->first();
+                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
           } else {
               return back();
           }

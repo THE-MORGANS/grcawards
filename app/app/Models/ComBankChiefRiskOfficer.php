@@ -14,4 +14,11 @@ class ComBankChiefRiskOfficer extends Model
         'award_id', 'nominee_id', 'sector_id', 'number_of_votes', 'percentage_votes', 'names', 'title', 'profile_on_linkedIn', 'recognised_professional_association_membership', 'number_of_independent_non_executive_directors', 'board_committee_in_place_covering_risk_management', 'evidence_of_policy_on_fin_crime_prevention', 'aml_policy', 'documentation', 'adverse_media', '80_percent_score', '20_percent_votes', 'overall_core', 'Status'
     ];
 
+
+    public function awards(){
+        return $this->belongsTo(Award::class, 'award_id', 'id');
+    }
+    public function nominee(){
+        return $this->belongsTo(Nominee::class, 'nominee_id', 'id');
+    }
 }

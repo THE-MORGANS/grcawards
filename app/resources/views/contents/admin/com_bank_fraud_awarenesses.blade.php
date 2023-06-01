@@ -44,7 +44,7 @@
                                     <select class="form-select nominee_awards @error('nominees') is-invalid @enderror" value="" name="nominess" id="nominee_awards" onchange="form1.submit()">
                                         <option id="init" value="">Please select...</option>
                                         @foreach($awards as $award)
-                                        <option value="{{$award->id}}">{{$award->nominee->name}}</option>
+                                        <option value="{{$award->id}}" @if(!empty($nominessDetails) && $nominessDetails->id == $award->id) selected @endif >{{$award->nominee->name}}</option>
                                         @endforeach
                                     </select>
                                     <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}"> 
@@ -87,13 +87,10 @@
                                    </table>
                                 
                             </div>
-
-
-
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label"> Fraud Awareness</label>
-                                    <input class="form-control @error('fraud_awareness') is-invalid @enderror"  @if(isset($nominessDetails->fraud_awareness)) value = {{$nominessDetails->fraud_awareness}} @endif placeholder="Select a Sector first..." type="text" name="fraud_awareness" id="fraud_awareness"  />
+                                    <input class="form-control @error('fraud_awareness') is-invalid @enderror"  @if(isset($nominessDetails->fraud_awareness)) value="{{$nominessDetails->fraud_awareness}}" @endif placeholder="fraud awareness" type="text" name="fraud_awareness" id="fraud_awareness"  />
                                     @error('fraud_awareness')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -105,7 +102,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label">Fraud Prevention Policies</label>
-                                    <input class="form-control @error('fraud_prevention_policies') is-invalid @enderror"  @if(isset($nominessDetails->fraud_prevention_policies)) value = {{$nominessDetails->fraud_prevention_policiess}} @endif placeholder="Select a Sector first..." type="text" name="fraud_prevention_policies" id="fraud_prevention_policies"  />
+                                    <input class="form-control @error('fraud_prevention_policies') is-invalid @enderror"  @if(isset($nominessDetails->fraud_prevention_policies)) value="{{$nominessDetails->fraud_prevention_policies}}" @endif placeholder="fraud prevention policies" type="text" name="fraud_prevention_policies" id="fraud_prevention_policies"  />
                                     @error('fraud_prevention_policies')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -116,7 +113,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label">Additional Information</label>
-                                    <input class="form-control @error('additional_information') is-invalid @enderror" @if(isset($nominessDetails->additional_information)) value = {{$nominessDetails->additional_information}} @endif placeholder="Select a Sector first..." type="text" name="additional_information" id="additional_information"  />
+                                    <input class="form-control @error('additional_information') is-invalid @enderror" @if(isset($nominessDetails->additional_information)) value="{{$nominessDetails->additional_information}}" @endif placeholder="additional information" type="text" name="additional_information"  />
                                     @error('additional_information')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -127,7 +124,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label">Adverse Media</label> 
-                                    <input class="form-control @error('award_name') is-invalid @enderror" @if(isset($nominessDetails->award_name)) value = {{$nominessDetails->award_name}} @endif  placeholder="Select a Sector first..." type="text" name="adverse_media" id="adverse_media"  />
+                                    <input class="form-control @error('award_name') is-invalid @enderror" @if(isset($nominessDetails->adverse_media)) value="{{$nominessDetails->adverse_media}}" @endif  placeholder="adverse media" type="text" name="adverse_media"  />
                                     @error('adverse_media')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
