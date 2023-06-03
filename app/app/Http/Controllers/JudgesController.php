@@ -18,12 +18,14 @@ use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
+use App\Traits\JudgeVotes;
 use Illuminate\Support\Facades\Hash;
 
 class JudgesController extends Controller
 {
 
     use NomineesAwards;
+    use JudgeVotes;
 
 
     public function getJudges(Request $request, $award_program)
@@ -169,42 +171,41 @@ class JudgesController extends Controller
 
     public function CreateNominessVotes(Request $request, $award_program_id = 1, $award_id = 2)
     {
+        $data = $this->getAwardId();
         $award_program_id = Hashids::connection('awardProgram')->encode(1);
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
-        $award_hashids = Hashids::connection('award')->encode(80);
+        $award_hashids = Hashids::connection('award')->encode($data['award_id']);
         $award_hashid = Hashids::connection('award')->decode($award_hashids);
+
         $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
         if (count($votes) > 0) {
-            $award_group_one = [1, 2, 3, 9,43]; //ComBankRiskComplainces
-            $award_group_two = [4, 16, 54]; //com_bank_fraud_awarenesses
-            $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32, 77]; //com_bank_chief_risk_officers
-            $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29,80]; //grc_employers
-            $award_group_five = [37, 38]; //grc_training_providers
-            $award_group_six = [35, 36]; //grc_solution_providers
-            $award_group_seven = [34]; //grc_anti_fin_crim_reporters
-
-            if (in_array($award_hashid[0],  $award_group_one)) {
+            if (in_array($award_hashid[0],  $data['award_group_one'])) {
                 $data =  $this->BankRiskComplainces($votes, $award_hashid);
-                return view('contents.admin.ComBankRiskComplainces')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-            } else if (in_array($award_hashid[0],  $award_group_two)) {
+                return view('contents.admin.judge.ComBankRiskComplainces')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_two'])) {
                $data = $this->BankFraudAwareness($votes, $award_hashid);
-               return view('contents.admin.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-            } else if (in_array($award_hashid[0],  $award_group_three)) {
+               return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_three'])) {
                 $data =  $this->BankChiefRiskOfficer($votes, $award_hashid);
-                return view('contents.admin.com_bank_chief_risk_officers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-            } else if (in_array($award_hashid[0],  $award_group_four)) {
+                return view('contents.admin.judge.com_bank_chief_risk_officers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_four'])) {
                 $data = $this->GrcEmployers($votes, $award_hashid);
-                return view('contents.admin.grc_employers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-            } else if (in_array($award_hashid[0],  $award_group_five)) {
+                return view('contents.admin.judge.grc_employers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_five'])) {
                 $data = $this->GrcSolutionProviders($votes, $award_hashid);
-            } else if (in_array($award_hashid[0],  $award_group_six)) {
+                return view('contents.admin.judge.grc_solution_providers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_six'])) {
                 $data =  $this->GrcTrainingProvider($votes, $award_hashid);
-            } else if (in_array($award_hashid[0],  $award_group_seven)) {
+                return view('contents.admin.judge.grc_training_providers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            } else if (in_array($award_hashid[0],  $data['award_group_seven'])) {
                 $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
+                return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else {
+                $request->session()->flash('danger', 'Somthing went wrong, try again');
                 return back();
             }
         }
+        $request->session()->flash('danger', 'Somthing went wrong, try again');
         return back();
     
     }
@@ -212,59 +213,201 @@ class JudgesController extends Controller
     public function getNominessDetails(Request $request, $award_program = 1){
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->encode(1);
-        $award_id = $request->award_id;
-        $award_group_one = [1, 2, 3, 9,43]; //ComBankRiskComplainces
-        $award_group_two = [4, 16, 54]; //com_bank_fraud_awarenesses
-        $award_group_three = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32,77]; //com_bank_chief_risk_officers
-        $award_group_four = [14, 18, 5, 14, 17, 21, 25, 29,80]; //grc_employers
-        $award_group_five = [37, 38]; //grc_training_providers
-        $award_group_six = [35, 36]; //grc_solution_providers
-        $award_group_seven = [34]; //grc_anti_fin_crim_reporters
-
-        if (in_array($award_id,  $award_group_one)) {
+        // $award_id = $request->award_id;
+        $data = $this->getAwardId();
+        $award_id =  $data['award_id'];
+        if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankRiskComplaince::whereId($id)->first();
             if($request->submitButton){
                 $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
             }
-                return view('contents.admin.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
-          } else if (in_array($award_id,  $award_group_two)) {
+                return view('contents.admin.judge.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_two'])) {
             $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankFraudAwareness::whereId($id)->first();
             if($request->submitButton){
                 $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
             }
-                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
-          } else if (in_array($award_id,  $award_group_three)) {
+                return view('contents.admin.judge.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_three'])) {
             $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankChiefRiskOfficer::whereId($id)->first();
             if($request->submitButton){
                 $data['nominessDetails']->fill($request->all())->save();
+            $request->session()->flash('success', 'Requested Updated Successfully');
             }
-            return view('contents.admin.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
-          } else if (in_array($award_id,  $award_group_four)) {
+            return view('contents.admin.judge.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_three'])) {
             $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
                 $data['nominessDetails'] = GrcEmployer::whereId($id)->first();
                 if($request->submitButton){
                     $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
                 }
-                return view('contents.admin.grc_employers', $data)->with(['award_program' => $award_program]); 
-          } else if (in_array($award_id,  $award_group_five)) {
+                return view('contents.admin.judge.grc_employers', $data)->with(['award_program' => $award_program]); 
+          } else if (in_array($award_id,  $data['award_group_five'])) {
                 $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
                 $data['nominessDetails'] = GrcSolutionProvider::whereId($id)->first();
-                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
-          } else if (in_array($award_id,  $award_group_six)) {
+                if($request->submitButton){
+                    $data['nominessDetails']->fill($request->all())->save();
+                    $request->session()->flash('success', 'Requested Updated Successfully');
+                }  
+                return view('contents.admin.judge.grc_solution_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_six'])) {
             $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
             $data['nominessDetails'] = GrcTrainingProvider::whereId($id)->first();
-                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
-          } else if (in_array($award_id,  $award_group_seven)) {
-
+            if($request->submitButton){
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+                return view('contents.admin.judge.grc_training_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_seven'])) {
             $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
             $data['nominessDetails'] = GrcAntiFinCrimReporter::whereId($id)->first();
-                return view('contents.admin.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
+            if($request->submitButton){
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+                return view('contents.admin.judge.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
+          } else {
+            $request->session()->flash('danger', 'Requested failed, Try again');
+              return back();
+          }
+    }
+
+    public function ViewJudgingCategoryPage(Request $request, $award_program)
+    {
+
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+            $data['categories'] = AwardProgram::find($award_program_id[0])->categories;
+        } else {
+            $request->session()->flash('danger', 'Invalid Award Program');
+            return redirect()->route('admin.judge.get_judges', $award_program);
+        }
+
+        // echo 'This is the Judging Page';
+        return view('contents.admin.judge.judgeCategories', $data);
+    }
+
+    public function loadJudgeCategorySectorPage(Request $request, $award_program, $category_id)
+    {
+        //=============todo===================//
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        $category = Hashids::connection('category')->decode($category_id);
+        if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+            $data['sectors'] = Category::find($category[0])->sectors()->where('award_program_id', $award_program_id[0])->get();
+            $data['category'] = Category::find($category[0]);
+        } else {
+            $request->session()->flash('danger', 'Invalid Award Program');
+            return redirect()->route('admin.get_judges', $award_program);
+        }
+        return view('contents.admin.judge.judgeCategoriesSectors', $data);
+    }
+    public function loadJudgeAwards(Request $request, $award_program, $category_id, $sector_id)
+    {
+        //=============todo===================//
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        $category = Hashids::connection('category')->decode($category_id);
+        $sector = Hashids::connection('sector')->decode($sector_id);
+        if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+            $data['awards'] = Sector::find($sector[0])->awards()->where('award_program_id', $award_program_id[0])->get();
+            $data['sectors'] = Category::find($category[0])->sectors()->where('award_program_id', $award_program_id[0])->get();
+            $data['category'] = Category::find($category[0]);
+        } else {
+            $request->session()->flash('danger', 'Invalid Award Program');
+            return redirect()->route('admin.get_judges', $award_program);
+        }
+        return view('contents.admin.judge.judgeCategoriesSectors', $data);
+    }
+
+    public function ViewNominessVotes(Request $request, $award_program_id = 1, $award_id = 2){
+        $id = $request->nominess;
+        $award_program = Hashids::connection('awardProgram')->encode(1);
+       // dd($id);
+        // $award_id = $request->award_id;
+        $data = $this->getAwardId();
+        $award_id = $data['award_id'];
+         $data = $this->getAwardId();
+        if (in_array($award_id,  $data['award_group_one'])) {
+            $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
+                return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_two'])) {
+            $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
+                return view('contents.admin.table.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_three'])) {
+            $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
+            return view('contents.admin.table.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id, $data['award_group_four'])) {
+            $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_employers', $data)->with(['award_program' => $award_program]); 
+            } else if (in_array($award_id,  $data['award_group_five'])) {
+                $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_solution_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_six'])) {
+            $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_training_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_seven'])) {
+            $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
           } else {
               return back();
           }
     }
+
+    public function StoreNominessVotes(Request $request, $award_program_id = 1, $award_id = 2){
+        $id = $request->nominess;
+        $award_program = Hashids::connection('awardProgram')->encode(1);
+       // dd($request->all());
+        // $award_id = $request->award_id;
+        $data = $this->getAwardId();
+        $award_id = $data['award_id'];
+
+        if (in_array($award_id,  $data['award_group_one'])) {
+            $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
+                return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_two'])) {
+            $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
+                return view('contents.admin.table.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_three'])) {
+            $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
+            return view('contents.admin.table.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_four'])) {
+            $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_employers', $data)->with(['award_program' => $award_program]); 
+            } else if (in_array($award_id,  $data['award_group_five'])) {
+               $data = $this->GrcSolutionProvidersVote($request->judges_votes, $request->nominee_ids, $award_id);
+                if($data == null){
+                    $request->session()->flash('danger', 'You have voted for this category already');
+                    return back();
+                }
+                $request->session()->flash('success', 'Vote Updated Successfully');
+                return back();
+          } else if (in_array($award_id,  $data['award_group_six'])) {
+            $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_training_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_seven'])) {
+            $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
+                return view('contents.admin.table.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
+          } else {
+              return back();
+          }
+
+    }
+
+    public function getAwardId(){
+        $data['award_id'] = 80;
+        $data['award_group_one'] = [1, 2, 3, 9,43]; //ComBankRiskComplainces
+        $data['award_group_two'] = [4, 16, 54]; //com_bank_fraud_awarenesses
+        $data['award_group_three'] = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32]; //com_bank_chief_risk_officers
+        $data['award_group_four'] = [14, 18, 5, 14, 17, 21, 25, 29]; //grc_employers
+        $data['award_group_five'] = [37, 38,53,80]; //grc_solution_providers
+        $data['award_group_six'] = [35, 36]; //grc_training_providers
+        $data['award_group_seven'] = [34,80]; //grc_anti_fin_crim_reporters
+        return $data;
+      }
 
 }

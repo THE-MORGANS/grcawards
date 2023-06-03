@@ -55,7 +55,7 @@
                       $sector->hashid = Hashids::connection('sector')->encode($sector->id);
                       $category->hashid = Hashids::connection('category')->encode($category->id);
                         @endphp
-                       <a href="{{route('admin.load_judging_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" >
+                       <a href="{{route('admin.load_judge_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" >
                         {{$sector->name}}
                       </a>
 
@@ -93,16 +93,14 @@
             <tbody>
                 @foreach ($awards as $award)
                 @php
-               
                  $award->hashid = Hashids::connection('award')->encode($award->id);
-              
                 @endphp
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$award->name}}</td>
                     <td>{{$award->description}}</td>
                     <td>{{$award->criteria}}</td>
-                    <td><a href="{{route('admin.create_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">Add Nominee Voting Criteria</a></td>
+                    <td><a href="{{route('admin.view_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">View Nominee Information</a></td>
                 </tr>  
                   <br>
               @endforeach
@@ -127,27 +125,4 @@
 <!-- demo app -->
 <script src="assets/js/pages/demo.dashboard-analytics.js"></script>
 <!-- end demo js-->
-@if(Session::has('success'))
-<script>
-    toastr.options = {
-        "closeButton": true,
-        "progressBar": true,
-        "preventDuplicates": true,
-        "preventOpenDuplicates": true
-    }
-    toastr.success("{{ session('success') }}");
-</script>
-@endif
-
-@if(Session::has('danger'))
-<script>
-    toastr.options = {
-        "closeButton": true,
-        "progressBar": true,
-        "preventDuplicates": true,
-        "preventOpenDuplicates": true
-    }
-    toastr.error("{{ session('danger') }}");
-</script>
-@endif
 @endsection

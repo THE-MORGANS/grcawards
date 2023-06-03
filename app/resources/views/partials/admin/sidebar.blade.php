@@ -34,11 +34,26 @@
 
            @if (Auth::guard('admin')->user()->role_id == 1)
            <li class="side-nav-item">
-            <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" class="side-nav-link">
-                <i class="uil-balance-scale"></i>
-                <span> Judging Criteria </span>
+            <a data-bs-toggle="collapse" href="#evaluation" aria-expanded="false" aria-controls="evaluation" class="side-nav-link">
+                <i class="mdi mdi-clipboard-text-search-outline"></i>
+                <span>Judging Criteria </span>
+                <span class="menu-arrow"></span>
             </a>
+            <div class="collapse" id="evaluation">
+                <ul class="side-nav-second-level">
+                    <li class="side-nav-item">
+                        <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" class="side-nav-link">
+                            <i class="uil-balance-scale"></i>
+                            <span> Create Judging Criteria </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
+                    </li>
+                </ul>
+            </div>
         </li>
+          
            @endif
 
             @if (Auth::guard('admin')->user()->role_id == 1)

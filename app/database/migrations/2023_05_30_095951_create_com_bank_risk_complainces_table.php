@@ -24,10 +24,12 @@ class CreateComBankRiskComplaincesTable extends Migration
             $table->text('policies_and_framework_in_place_enhancing_customer_experience')->nullable();
             $table->text('additional_information')->nullable();
             $table->text('adverse_media')->nullable();
-            $table->string('80_percent_score')->nullable();
-            $table->string('20_percent_votes')->nullable();
-            $table->string('overall_core')->nullable();
-            $table->string('Status')->nullable();
+            $table->string('judges_votes')->nullable(); 
+            $table->text('total_of_judges_score_converted_to_percentage')->nullable(); 
+            $table->string('eighty_percent_of_judges_score')->nullable();
+            $table->string('twenty_percent_votes')->nullable();
+            $table->string('overall_score')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

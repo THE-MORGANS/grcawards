@@ -155,7 +155,6 @@ trait NomineesAwards {
     $data =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
     return $data;
     }
-  
 
 }
 

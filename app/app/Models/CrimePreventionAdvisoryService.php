@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JudgesVotes extends Model
+class CrimePreventionAdvisoryService extends Model
 {
     use HasFactory;
-
-    protected $fillable = ['judge_id', 'nominee', 'votes', 'award_id', 'nominee_id'];
 }

@@ -11,7 +11,7 @@ class ComBankRiskComplaince extends Model
 
     protected $table = 'com_bank_risk_complainces';
     protected $fillable = [
-        'award_id', 'nominee_id', 'sector_id', 'number_of_votes', 'percentage_votes', 'board_composition', 'policies_and_framework_in_place_enhancing_customer_experience', 'additional_information', 'adverse_media', '80_percent_score', '20_percent_votes', 'overall_core', 'Status'
+        'award_id', 'nominee_id', 'sector_id', 'number_of_votes', 'percentage_votes', 'board_composition', 'policies_and_framework_in_place_enhancing_customer_experience', 'additional_information', 'adverse_media', '80_percent_score', '20_percent_votes', 'overall_core', 'Status', 'judges_votes'
     ];
 
     public function awards(){

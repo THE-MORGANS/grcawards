@@ -25,12 +25,14 @@ class CreateGrcEmployersTable extends Migration
             $table->text('pay_and_benefits')->nullable();
             $table->text('job_security_and_advancement')->nullable();
             $table->text('management')->nullable();
-            $table->string('culture')->nullable(); 
+            $table->text('culture')->nullable(); 
             $table->string('average_rating')->nullable(); 
-            $table->string('80_percent_score')->nullable();
-            $table->string('20_percent_votes')->nullable();
-            $table->string('overall_core')->nullable();
-            $table->string('Status')->nullable();
+            $table->string('judges_votes')->nullable(); 
+            $table->text('total_of_judges_score_converted_to_percentage')->nullable(); 
+            $table->string('eighty_percent_of_judges_score')->nullable();
+            $table->string('twenty_percent_votes')->nullable();
+            $table->string('overall_score')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }
