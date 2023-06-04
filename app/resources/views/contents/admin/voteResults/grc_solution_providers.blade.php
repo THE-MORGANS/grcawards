@@ -44,7 +44,7 @@
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table
-                                                class="table table-responsive table-hover table-striped  table-bordered mb-0">
+                                                class="table table-responsive  table-striped  table-bordered mb-0">
                                                 <thead>
                                                     <tr style="background:yellow;">
                                                         {{-- <th> Award Name</th> --}}
