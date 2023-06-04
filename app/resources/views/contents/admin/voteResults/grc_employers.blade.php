@@ -51,10 +51,13 @@
                                                         <th>Nominee Name</th>
                                                         <th>Number of vote </th>
                                                         <th>Percentage votes</th>
-                                                        <th>Profile of the software provider</th>
-                                                        <th>Areas of GRC the Software Covers</th>
-                                                        <th>Clients of GRC Software Providers </th>
-                                                        <th>Client's Rating of GRC Software Provider </th>
+                                                        <th>NO. OF EMPLOYEES WHO RATED</th>
+                                                        <th>WORKLIFE BALANCE</th>
+                                                        <th>COMPENSATION & BENEFITS </th>
+                                                        <th>JOB SECURITY & ADVANCEMENT</th>
+                                                        <th>MANAGEMENT</th>
+                                                        <th>CULTURE </th>
+                                                        <th>AEVERAGE RATING </th>
                                                         <th>Total Judges Votes</th>
                                                         <th>Total of judges score converted to percentage</th>
                                                         <th>80% of judges score</th>
@@ -71,13 +74,19 @@
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
                                                             <td style=" min-width: 250px;">
-                                                                {{ $awp->profile_of_the_software_provider }} </td>
+                                                                {{ $awp->No_of_employees_who_rated}} </td>
                                                             <td style=" min-width: 250px;">
-                                                                {{ $awp->areas_of_grc_the_software_covers }} </td>
+                                                                {{ $awp->worklife_balance}} </td>
                                                             <td style=" min-width: 250px;">
-                                                                {{ $awp->clients_of_grc_software_providers }} </td>
+                                                                {{ $awp->pay_and_benefits}} </td>
                                                             <td style=" min-width: 250px;">
-                                                                {{ $awp->clients_rating_of_grc_software_provider }} </td>
+                                                                {{ $awp->job_security_and_advancement}} </td>
+                                                            <td style=" min-width: 250px;">
+                                                                {{ $awp->management}} </td>
+                                                             <td style=" min-width: 250px;">
+                                                                 {{ $awp->culture}} </td>
+                                                                 <td style=" min-width: 250px;">
+                                                                    {{ $awp->average_rating}} </td>
                                                             <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>

@@ -287,7 +287,7 @@ class JudgesController extends Controller
         }
     }
 
-    public function ViewJudgingCategoryPage(Request $request, $award_program)
+    public function ViewJudgeCategoryPage(Request $request, $award_program)
     {
 
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
@@ -440,12 +440,12 @@ class JudgesController extends Controller
 
     public function getAwardId()
     {
-        $data['award_id'] = 80;
-        $data['award_group_one'] = [1, 2, 3, 9, 43]; //ComBankRiskComplainces
+        $data['award_id'] = 53;
+        $data['award_group_one'] = [1, 2, 3, 9, 53]; //ComBankRiskComplainces
         $data['award_group_two'] = [4, 16, 54]; //com_bank_fraud_awarenesses
         $data['award_group_three'] = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32]; //com_bank_chief_risk_officers
         $data['award_group_four'] = [14, 18, 5, 14, 17, 21, 25, 29]; //grc_employers
-        $data['award_group_five'] = [37, 38, 53, 80]; //grc_solution_providers
+        $data['award_group_five'] = [37, 38, 80]; //grc_solution_providers
         $data['award_group_six'] = [35, 36]; //grc_training_providers
         $data['award_group_seven'] = [34, 80]; //grc_anti_fin_crim_reporters
         return $data;
@@ -518,19 +518,19 @@ class JudgesController extends Controller
         }
 
         if (in_array($award_id,  $data['award_group_one'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->BankRiskComplaincesResults($award_id);
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_two'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->BankFraudAwarenessResults($award_id);
             $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_three'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->BankChiefRiskOfficerResults($award_id);
             $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id, $data['award_group_four'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->GrcEmployersResults($award_id);
             $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.grc_employers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_five'])) {
@@ -538,11 +538,11 @@ class JudgesController extends Controller
             $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.grc_solution_providers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_six'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->GrcTrainingProviderResults($award_id);
             $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.grc_training_providers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_seven'])) {
-            $this->GrcSolutionProviderResults($award_id);
+            $this->GrcAntiFinCrimReportersResults($award_id);
             $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
         } else {

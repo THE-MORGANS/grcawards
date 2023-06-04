@@ -57,11 +57,11 @@
                             </div>
                             <div class="col-12 p-2 ">
                                
-                                   <table class="tabled table-responsive table-bordered w-100">
-                                    <tr>
-                                        <th>Nominee Name</th>
-                                        <th> Vote Count</th>
-                                        <th> Vote Percentage </th>
+                                <table class="table table-responsive  table-bordered mt-2 mb-4">
+                                    <tr >
+                                        <th style="background:green; color:#fff">Nominee Name</th>
+                                        <th style="background:green; color:#fff"> Number of Votes</th>
+                                        <th style="background:green; color:#fff"> Vote Percentage </th>
                                     </tr>
                                    
                                     @if($nominessDetails)
