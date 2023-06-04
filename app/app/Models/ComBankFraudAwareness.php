@@ -10,7 +10,8 @@ class ComBankFraudAwareness extends Model
     use HasFactory;
 
     protected $table = 'com_bank_fraud_awarenesses';
-    protected $fillable = ['award_id', 'nominee_id', 'sector_id', 'number_of_votes', 'percentage_votes', 'fraud_awareness', 'fraud_prevention_policies', 'additional_information', 'adverse_media', '80_percent_score', '20_percent_votes', 'overall_core', 'Status', 'judges_votes'];
+    protected $fillable = ['award_id', 'nominee_id', 'sector_id', 'number_of_votes', 'percentage_votes', 'fraud_awareness', 'fraud_prevention_policies', 'additional_information', 'adverse_media',
+    'judges_votes', 'total_of_judges_score_converted_to_percentage', 'eighty_percent_of_judges_score', 'twenty_percent_votes', 'overall_score', 'status'];
 
 
     public function awards(){

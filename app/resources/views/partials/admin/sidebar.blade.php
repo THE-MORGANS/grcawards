@@ -41,14 +41,16 @@
             </a>
             <div class="collapse" id="evaluation">
                 <ul class="side-nav-second-level">
-                    <li class="side-nav-item">
-                        <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" class="side-nav-link">
-                            <i class="uil-balance-scale"></i>
-                            <span> Create Judging Criteria </span>
+                    <li>
+                        <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" >
+                            Create Judging Criteria 
                         </a>
                     </li>
                     <li>
                         <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
                     </li>
                 </ul>
             </div>

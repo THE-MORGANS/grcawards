@@ -14,10 +14,11 @@ use App\Models\Vote;
 use App\Models\VoteCount;
 use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
     ComBankRiskComplaince, GrcAntiFinCrimReporter, GrcEmployer, 
-    GrcSolutionProvider, GrcTrainingProvider};
+    GrcSolutionProvider, GrcTrainingProvider, JudgesVotes};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
+use App\Traits\NomineeResults;
 use App\Traits\JudgeVotes;
 use Illuminate\Support\Facades\Hash;
 
@@ -26,6 +27,7 @@ class JudgesController extends Controller
 
     use NomineesAwards;
     use JudgeVotes;
+    use NomineeResults;
 
 
     public function getJudges(Request $request, $award_program)
@@ -410,4 +412,97 @@ class JudgesController extends Controller
         return $data;
       }
 
+
+
+
+      #============== calculating voting results and choose winner =============
+
+      public function ViewJudgeCategoryPageResults(Request $request, $award_program)
+    {
+
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+            $data['categories'] = AwardProgram::find($award_program_id[0])->categories;
+        } else {
+            $request->session()->flash('danger', 'Invalid Award Program');
+            return redirect()->route('admin.judge.get_judges', $award_program);
+        }
+
+        // echo 'This is the Judging Page';
+        return view('contents.admin.voteResults.judgeCategories', $data);
+    }
+
+
+      public function loadJudgeCategorySectorPageResults(Request $request, $award_program, $category_id)
+      {
+          $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+          $category = Hashids::connection('category')->decode($category_id);
+          if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+              $data['sectors'] = Category::find($category[0])->sectors()->where('award_program_id', $award_program_id[0])->get();
+              $data['category'] = Category::find($category[0]);
+          } else {
+              $request->session()->flash('danger', 'Invalid Award Program');
+              return redirect()->route('admin.get_judges', $award_program);
+          }
+          return view('contents.admin.voteResults.judgeCategoriesSectors', $data);
+      }
+
+      public function loadJudgeAwardsResults(Request $request, $award_program, $category_id, $sector_id)
+      {
+          //=============todo===================//
+          $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+          $category = Hashids::connection('category')->decode($category_id);
+          $sector = Hashids::connection('sector')->decode($sector_id);
+          if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+              $data['awards'] = Sector::find($sector[0])->awards()->where('award_program_id', $award_program_id[0])->get();
+              $data['sectors'] = Category::find($category[0])->sectors()->where('award_program_id', $award_program_id[0])->get();
+              $data['category'] = Category::find($category[0]);
+          } else {
+              $request->session()->flash('danger', 'Invalid Award Program');
+              return redirect()->route('admin.get_judges', $award_program);
+          }
+          return view('contents.admin.voteResults.judgeCategoriesSectors', $data);
+      }
+
+      public function ViewNominessVotesResults(Request $request, $award_program_id = 1, $award_id = 2){
+        $id = $request->nominess;
+        $award_program = Hashids::connection('awardProgram')->encode(1);
+       // dd($id);
+        // $award_id = $request->award_id;
+        $data = $this->getAwardId();
+        $award_id = $data['award_id'];
+        $votes = JudgesVotes::where('award_id', $award_id)->first();
+        if(!$votes){
+            $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
+            return back();
+        }
+
+        if (in_array($award_id,  $data['award_group_one'])) {
+            $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_two'])) {
+            $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_three'])) {
+            $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
+            return view('contents.admin.voteResults.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id, $data['award_group_four'])) {
+            $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.grc_employers', $data)->with(['award_program' => $award_program]); 
+            } else if (in_array($award_id,  $data['award_group_five'])) {
+
+                $this->GrcSolutionProviderResults($award_id);
+
+                $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.grc_solution_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_six'])) {
+            $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.grc_training_providers', $data)->with(['award_program' => $award_program]);
+          } else if (in_array($award_id,  $data['award_group_seven'])) {
+            $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
+          } else {
+              return back();
+          }
+    }
 }
