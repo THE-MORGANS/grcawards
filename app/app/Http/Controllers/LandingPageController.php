@@ -179,6 +179,8 @@ class LandingPageController extends Controller
                 Session::flash('msg','Registration Completed Successfully');
                 return back();
             }
+
+            return back();
           
     }
 
