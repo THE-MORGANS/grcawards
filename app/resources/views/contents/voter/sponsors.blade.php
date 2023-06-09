@@ -40,23 +40,7 @@
                     </div>
                     <div class="instagram-cover">
                         
-                        <a href="#" class="instagram-item">
-
-                            <img class="rx-lazy" src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1668686341/grcfincrimeawards/sponsors/stl_trustees_wfggda.png" data-src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1668686341/grcfincrimeawards/sponsors/stl_trustees_wfggda.png" alt="BIMSIX">
-                        </a>
-                        <a href="#" class="instagram-item">
-
-                            <img class="rx-lazy" src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067413/grcfincrimeawards/sponsors/lgca_logo_xjukqv.png" data-src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067413/grcfincrimeawards/sponsors/lgca_logo_xjukqv.png" alt="LGCA">
-                        </a>
-                        <a href="#" class="instagram-item">
-
-                            <img class="rx-lazy" src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067412/grcfincrimeawards/sponsors/agrc_logo_pucb1a.png" data-src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067412/grcfincrimeawards/sponsors/agrc_logo_pucb1a.png" alt="AGRC">
-                        </a>
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/portreclogo.png')}}" data-src="{{asset('assets/images/sponsors/portreclogo.png')}}" alt="img">
-                        </a>
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067413/grcfincrimeawards/sponsors/mtn_logo_clhyme.jpg" data-src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1664067413/grcfincrimeawards/sponsors/mtn_logo_clhyme.jpg" alt="Mtn Nigeria">
+                      
                         </a>
                         <a href="#" class="instagram-item">
                             <img class="rx-lazy" src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" data-src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" alt="img">
