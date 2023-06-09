@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Sector;
 use App\Models\AwardProgram;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\GrcRegister;
 use App\Models\Category;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Judge;
+use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 
 
@@ -126,6 +130,56 @@ class LandingPageController extends Controller
     }
     public function Programme(){
         return view('contents.voter.programme');
+    }
+
+
+    public function SummitRegister(){
+        return view('contents.voter.form_register');
+    }
+
+    public function SubmitRegisterForm(Request $req){
+
+    
+            $valid = validator::make($req->all(), [
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'email' => 'required',
+                'phone' => 'required',
+                'city' => 'required',
+                'state' => 'required',
+                'country' => 'required',
+                'message' => 'required',
+                'job_title' => 'required',
+                'organisation' => 'required',
+                'industry' => 'required'
+
+            ]);
+          //  dd($valid->errors());
+            if($valid->fails()){
+                Session::flash('msg',$valid->errors()->first());
+                return back()->withErrors($valid->errors())->withInput($req->all());
+            }
+
+            $data = [
+                'first_name' => $req->first_name,
+                'last_name' => $req->last_name,
+                'email' => $req->email,
+                'phone' => $req->phone,
+                'city' => $req->city,
+                'state' => $req->state,
+                'country' =>$req->country,
+                'message' => $req->message,
+                'job_title' => $req->job_title,
+                'organisation' =>  $req->organisation,
+                'industry' =>  $req->industry,
+            ];
+
+            if($data){
+                Mail::to(['festus.uwabor@morgansconsortium.com', 'mikkynoble@gmail.com'])->send(new GrcRegister($data));
+                Session::flash('msg','Registration Completed Successfully');
+                return back();
+            }
+          
     }
 
 }

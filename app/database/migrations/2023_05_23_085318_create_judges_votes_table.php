@@ -16,7 +16,8 @@ class CreateJudgesVotesTable extends Migration
         Schema::create('judges_votes', function (Blueprint $table) {
             $table->id();
             $table->integer('judge_id')->nullable();
-            $table->string('nominee')->nullable();
+            $table->integer('award_id')->nullable();
+            $table->integer('nominee_id')->nullable();
             $table->string('votes')->nullable();
             $table->timestamps();
         });

@@ -173,7 +173,9 @@ class JudgesController extends Controller
     {
         $data = $this->getAwardId();
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
-        $award_hashid = Hashids::connection('award')->decode($award_id);
+        $award_hashids = Hashids::connection('award')->encode($data['award_id']);
+        $award_hashid = Hashids::connection('award')->decode($award_hashids);
+
 
         $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
         if (count($votes) > 0) {
@@ -212,8 +214,9 @@ class JudgesController extends Controller
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
        // $award_id  = Hashids::connection('award')->decode($request->award_id);
-        $award_id = $request->award_id;
+        
         $data_item = $this->getAwardId();
+        $award_id = $data_item['award_id'];
         if (in_array($award_id,  $data_item['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankRiskComplaince::whereId($id)->first();
@@ -325,7 +328,7 @@ class JudgesController extends Controller
         // $award_id = $request->award_id;
         $data = $this->getAwardId();
         $award_id = $data['award_id'];
-        $data = $this->getAwardId();
+
         if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
@@ -352,15 +355,15 @@ class JudgesController extends Controller
         }
     }
 
-    public function StoreNominessVotes(Request $request, $award_program_id, $award_id)
+    public function StoreNominessVotes(Request $request, $award_program_id, $award_id =2)
     {
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
-        $award_id = Hashids::connection('award')->decode($award_id);
+       // $award_id = Hashids::connection('award')->decode($award_id);
         // dd($request->all());
         // $award_id = $request->award_id;
         $data = $this->getAwardId();
-        //$award_id = $data['award_id'];
+        $award_id = $data['award_id'];
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
@@ -425,10 +428,11 @@ class JudgesController extends Controller
 
     public function getAwardId()
     {
-        $data['award_group_one'] = [1, 2, 3, 9]; //ComBankRiskComplainces
-        $data['award_group_two'] = [4, 16, 54]; //com_bank_fraud_awarenesses
-        $data['award_group_three'] = [10, 11, 12, 13, 15, 18, 20, 22, 23, 24, 26, 27, 28, 30, 31, 32]; //com_bank_chief_risk_officers
-        $data['award_group_four'] = [14, 18, 5, 14, 17, 21, 25, 29]; //grc_employers
+        $data['award_id'] = 40;
+        $data['award_group_one'] = [40, 41, 42, 47]; //ComBankRiskComplainces
+        $data['award_group_two'] = [43, 54]; //com_bank_fraud_awarenesses
+        $data['award_group_three'] = [48, 49, 50, 51, 53,56,60,61,57, 58]; //com_bank_chief_risk_officers
+        $data['award_group_four'] = [44, 45, 46, 52, 55,59,63,64,  14, 55,56, 60, 21, 25, 29]; //grc_employers
         $data['award_group_five'] = [37, 38,]; //grc_solution_providers
         $data['award_group_six'] = [35, 36]; //grc_training_providers
         $data['award_group_seven'] = [34]; //grc_anti_fin_crim_reporters

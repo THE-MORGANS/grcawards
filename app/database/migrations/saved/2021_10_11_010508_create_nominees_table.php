@@ -18,8 +18,7 @@ class CreateNomineesTable extends Migration
         Schema::create('nominees', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('sector_id');
-            $table->foreign('sector_id')->references('id')->on('sectors')->onDelete('cascade');
+            $table->integer('sector_id')->nullable;
             $table->string('award_ids')->nullable();
             $table->unsignedBigInteger('award_program_id');
             $table->foreign('award_program_id')->references('id')->on('award_programs')->onDelete('cascade');
