@@ -175,7 +175,7 @@ class LandingPageController extends Controller
             ];
 
             if($data){
-               // Mail::to(['michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
+                Mail::to(['michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
                 Session::flash('msg','Registration Completed Successfully');
                 return back();
             }
