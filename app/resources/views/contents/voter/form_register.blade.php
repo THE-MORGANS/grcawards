@@ -34,7 +34,7 @@
 			<div class="container">
 			
 				<div class="conference-counter-wrap ">
-						<div  style="background:#fff; color:#000;  text-align:left">
+						<div  style="background:#fff; color:#000; padding:10px 150px; height:1500px; text-align:left">
 							<h6 class=""> GRC & FinCrime Prevention Mid-Year Summit
                                 </h6>
 						<p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p>
