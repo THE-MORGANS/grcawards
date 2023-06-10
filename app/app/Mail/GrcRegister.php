@@ -31,6 +31,6 @@ class GrcRegister extends Mailable
      */
     public function build()
     {
-        return  $this->from(['events@grcfincrimeawards.com'])->subject('New Registration Form')->view('contents.mails.register_form')->with('data', $this->data);
+        return  $this->from('events@grcfincrimeawards.com')->subject('New Registration Form')->view('contents.mails.register_form')->with('data', $this->data);
     }
 }
