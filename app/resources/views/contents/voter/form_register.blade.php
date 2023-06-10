@@ -34,7 +34,7 @@
 			<div class="container">
 			
 				<div class="conference-counter-wrap ">
-						<div  style="background:#fff; color:#000; padding:10px 150px; height:1500px; text-align:left">
+						<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
 							<h6 class=""> GRC & FinCrime Prevention Mid-Year Summit
                                 </h6>
 						<p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p>
@@ -149,8 +149,7 @@
 
                     <div class="p-1">
                         <label for="message"> How did you get to know about this webina</label>
-                        <textarea   name="message" placeholder="How did you get to know about this webina">
-                        </textarea>
+                        <textarea   name="message" placeholder="How did you get to know about this webina"></textarea>
                         @error('message')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -172,7 +171,8 @@
 		</div>
 	</section>
 	
-    <div class="p-5"></div>
+    <div class="p-5 p-5"></div>
+    <div class="p-5 p-5"></div>
 
 	<!--==================== FOOTER ====================-->
 	@include('partials.voter.footer')
