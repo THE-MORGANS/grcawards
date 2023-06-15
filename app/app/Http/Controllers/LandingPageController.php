@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Judge;
 use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
+use App\Models\Award;
+use App\Models\Gallery;
+
 
 
 class LandingPageController extends Controller
@@ -115,11 +118,29 @@ class LandingPageController extends Controller
     }
 
     public function showPicturesCategories(){
-        return view('contents.voter.pictures_categories');
+        $awardPrograms = [];
+        $award_programs = AwardProgram::all();
+        foreach($award_programs as $award_program){
+            $gallery = Gallery::where(['award_program_id'=> $award_program->id,'type'=> 'image' ])->inRandomOrder()->limit(1)->first();
+            $award_program->hashid = Hashids::connection('awardProgram')->encode($award_program->id);
+            if ($gallery->count() > 0){
+                $award_program->random_gallery = $gallery;
+                $awardProgram = $award_program;
+                
+                array_push($awardPrograms, $awardProgram);
+            }
+        }
+        // return response()->json($awardPrograms);
+        return view('contents.voter.pictures_categories', ['award_programs' => $awardPrograms]);
     }
 
     public function showPictures($award_program){
-        return view('contents.voter.pictures');
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program)[0];
+        $award_program = AwardProgram::where('id', $award_program_id)->first();
+        // $gallery = Gallery::where('award_program_id', $award_program->id)->get();
+        $award_program->gallery;
+        // return response()->json($award_program);
+        return view('contents.voter.pictures')->with(['award_program' => $award_program]);
     }
 
     public function showSummit(){

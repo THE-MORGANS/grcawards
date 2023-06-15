@@ -9,7 +9,7 @@
 
 <body id="conference-page">
     <!-- =============== PRELOADER =============== -->
-    @include('partials.voter.preloader')
+    {{-- @include('partials.voter.preloader') --}}
     <!-- ============== PRELOADER END ============== -->
     <!-- ================= HEADER ================= -->
     @include('partials.voter.topbar')
@@ -39,6 +39,7 @@
                     </div>
                     <div class="row">
                         @foreach($award_programs as $award_program)
+                       
                         <div class="col-12 col-md-6">
                             <div class="conference-news-slide wow fadeInUp" data-wow-duration=".35s" data-wow-delay=".4s">
 					            <div class="conference-news-item" style="box-shadow: 0px 0px 15px rgba(0,0,0,0.05);">
