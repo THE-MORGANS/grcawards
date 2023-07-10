@@ -14,8 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Models\Award;
 use App\Models\Gallery;
-
-
+use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
 {
@@ -61,6 +60,9 @@ class LandingPageController extends Controller
 
     public function showVote()
     {
+        if(!Auth::check()){
+            return redirect()->route('register');
+        }
         
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
         $categories = Category::where('award_program_id', $current_award_program->id)->get();
