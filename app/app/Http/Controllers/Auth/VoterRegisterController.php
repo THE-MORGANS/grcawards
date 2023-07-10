@@ -7,6 +7,7 @@ use App\Events\VoterRegistered;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Voter;
 use App\Http\Traits\TokenTrait;
 // use App\Models\AwardProgram;
@@ -34,13 +35,17 @@ class VoterRegisterController extends Controller
         $this->validator($request->only('email'))->validate();
         $ip_address = $request->getClientIp();
         // dd($mac_address, $ip_address);
-        if(Voter::where(['ip_address'=> $ip_address, 'email'=>$request->email])->exists()){
+        if(Voter::where(['ip_address'=> '1218129812'])->exists()){
         $request->session()->flash('danger', 'An account has been created with this device.');
         return redirect()->back();
         }else{
             $voter = $this->create(['email'=>$request->email, 'i_agree'=>$request->i_agree, 'ip_address' => $ip_address]);
-            if ($response = $this->registered($request, $voter)) {
-                return $response;
+            if ($this->registered($request, $voter)) {
+                sleep(3);
+                $voter = Voter::where(['email' => $request->email])->first();
+                Auth::guard('voter')->loginUsingId($voter->id);
+                $request->session()->flash('success', 'Account registered successfully');
+                return redirect()->back();
             }
         }
     }

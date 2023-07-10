@@ -24,7 +24,7 @@ class VoteController extends Controller
 
     public function showVotingPage(Request $request, $sector)
     {
-        // dd(Auth()->guard('voter')->user()->id);
+      
         $sector_id = Hashids::connection('sector')->decode($sector)[0];
         
         if (isset($sector_id) && Sector::where('id', $sector_id)->exists()){
@@ -54,23 +54,25 @@ class VoteController extends Controller
 
         $ip_address = $request->getClientIp();
         
-        if(Vote::where(['award_id' => $real_award])->exists()){
-            return response()->json('warning',200);
-        }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
+        $votes = Vote::where(['voter' => auth('voter')->user()->id,  'award_id' => $real_award])->first();
+        response()->json($votes);
+        if(!empty($votes)){
             return response()->json('warning');
-        }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
-            return response()->json('danger');
-        if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
-            return response()->json('warning');
+        //     return response()->json('warning',200);
+        // }elseif (Vote::where([[auth('voter')->user()->id => $ip_address],['award_id','=',$real_award]])->exists()){
+        //     return response()->json('warning');
+        // }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
+        //     return response()->json('danger');
+        // if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
+        //     return response()->json('warning');
         }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
             $new_vote->award_program_id = 2;
-            $new_vote->voter = 1;
+            $new_vote->voter = auth('voter')->user()->id;
             $new_vote->award_id = $real_award;
             $new_vote->nominee_id = $real_nominee;
             $new_vote->save();
-
 
            $votes = VoteCount::where(['nominee_id' => $real_nominee, 'award_id' => $real_award])->first();
            if($votes){
@@ -83,9 +85,7 @@ class VoteController extends Controller
                 'voteCount' => 1
             ]);
            }
-            return response()->json('success');
-
-        }
+      return response()->json('success');
 
     }
     }
