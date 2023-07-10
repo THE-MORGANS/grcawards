@@ -55,7 +55,6 @@ class VoteController extends Controller
         $ip_address = $request->getClientIp();
         
         $votes = Vote::where(['voter' => auth('voter')->user()->id,  'award_id' => $real_award])->first();
-        response()->json($votes);
         if(!empty($votes)){
             return response()->json('warning');
         //     return response()->json('warning',200);
