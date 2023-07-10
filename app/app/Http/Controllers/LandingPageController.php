@@ -61,7 +61,7 @@ class LandingPageController extends Controller
 
     public function showVote()
     {
-        $this->middleware('auth:voter');
+        
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
         $categories = Category::where('award_program_id', $current_award_program->id)->get();
 

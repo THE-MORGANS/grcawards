@@ -147,7 +147,7 @@ Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategor
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
 
 
-Route::get('vote', [LandingPageController::class, 'showVote'])->name('show_vote');
+Route::get('vote', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
 Route::get('summit/2022', [LandingPageController::class, 'showSumitOld'])->name('show_summit_old');
