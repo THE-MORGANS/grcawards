@@ -98,7 +98,7 @@
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$award->name}}</td>
-                    <td>{{$award->description}}</td>
+                    <td>{{$award->description}}</td> 
                     <td>{{$award->criteria}}</td>
                     <td><a href="{{route('admin.view_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">View Nominee Information</a></td>
                 </tr>  

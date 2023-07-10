@@ -54,15 +54,15 @@ class VoteController extends Controller
 
         $ip_address = $request->getClientIp();
         
-        // if(Vote::where(['award_id' => $real_award])->exists()){
-        //     return response()->json('warning',200);
-        // }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
-        //     return response()->json('warning');
-        // }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
-        //     return response()->json('danger');
-        // if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
-        //     return response()->json('warning');
-        // }else{
+        if(Vote::where(['award_id' => $real_award])->exists()){
+            return response()->json('warning',200);
+        }elseif (Vote::where([['ip_address','=',$ip_address],['award_id','=',$real_award]])->exists()){
+            return response()->json('warning');
+        }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
+            return response()->json('danger');
+        if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
+            return response()->json('warning');
+        }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
             $new_vote->award_program_id = 2;
@@ -82,11 +82,12 @@ class VoteController extends Controller
                 'award_program_id' => 2,
                 'voteCount' => 1
             ]);
-        //    }
+           }
             return response()->json('success');
 
         }
 
+    }
     }
 
     public function addMediaVote(Request $request, $award_id, $nominee)
