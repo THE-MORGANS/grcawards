@@ -17,7 +17,7 @@ class VoteController extends Controller
 
     public function __construct()
     {
-        // $this->middleware('auth:voter');
+         $this->middleware('auth:voter');
         // $this->middleware('guest')->except('logout');
 
     }
