@@ -68,7 +68,7 @@ class VoteController extends Controller
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
             $new_vote->award_program_id = 2;
-            $new_vote->voter = auth('voter')->user()->id;
+            $new_vote->voter =  $votes->voter;
             $new_vote->award_id = $real_award;
             $new_vote->nominee_id = $real_nominee;
             $new_vote->save();
