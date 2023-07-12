@@ -58,7 +58,7 @@
 
                 @foreach($awards as $award)
                 <div class="col-md-6">
-                    <div class="accordion-wrapper" style="margin-top: 30px;">
+                    <div class="accordion-wrapper" style="margin-top: 30px;"> 
                         <div class="accordion">
                             <input class="in-check" type="checkbox" name="radio-a" id="{{$award->hashid}}1">
                             <label class="accordion-label" for="{{$award->hashid}}1">{{$award->name}}</label>

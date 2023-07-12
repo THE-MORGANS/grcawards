@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class MediaVote extends Model
 {
     use HasFactory;
+    protected $table = 'other_votes';
 
     protected $fillable = ['voter', 'ip_address', 'award_id', 'nominee', 'award_program_id'];
 }
