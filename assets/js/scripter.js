@@ -85,7 +85,8 @@ $(document).ready(function(){
                 console.log(response);
                 return response.json();
             }).then((data)=>{
-                console.log(data);
+                console.log(data); 
+                
                 toastr.options = {
                     "closeButton": true,
                     "progressBar": false,
