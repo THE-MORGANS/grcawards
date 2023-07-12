@@ -74,35 +74,43 @@ $(document).ready(function(){
            let baseUrl = $("form[id="+button_id+"2]").attr('action');
            let award = $("form[id="+button_id+"2]").find("input[name="+button_id+"]").attr('name');
            let nominee = $("form[id="+button_id+"2]").find("input[name="+button_id+"]").val();
-
-           jQuery.ajax({
-               url: baseUrl+"/"+award+"/vote/other/"+nominee,
-               type:'GET',
-               cache: false,
-               success: function(data){
-                   console.log(data);
-                   
-                   toastr.options = {
+           let Urls = baseUrl+"/"+award+"/vote/media/"+nominee;
+           try{
+            fetch(Urls, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }).then((response) => {
+                console.log(response);
+                return response.json();
+            }).then((data)=>{
+                console.log(data);
+                toastr.options = {
                     "closeButton": true,
                     "progressBar": false,
                     "preventDuplicates": true,
                     "preventOpenDuplicates": true,
                     "positionClass": "toast-top-center",
                     "showMethod": "slideDown"
-                    };
-                    if(data == 'warning'){
-                        toastr.warning('You already have a vote under this Award');
-
-                    }
-                    if(data == 'danger'){
-                        toastr.warning('Sorry, It appears you have manipulated your device details');
-
-                    }
-                    if (data == 'success'){
-                        toastr.success('Your vote have been added successfully under this Award');
-                    }
-               }
-           })
+                };
+                if(data == 'warning'){
+                    toastr.warning('You already have a vote under this Award');
+           
+                }
+                if(data == 'danger'){
+                    toastr.warning('Sorry, It appears you have manipulated your device details');
+            
+                }
+                if (data == 'success'){
+                    toastr.success('Your vote have been added successfully under this Award');
+                }
+            }).catch(error => {
+                console.log('Error:', error);
+            })
+        }catch (error) {
+            console.log('Error:', error);
+        }
         $("form[id="+button_id+"2]").find("input[name="+button_id+"]").val('');
         // $("form[id="+button_id+"2]").find('div[class=pay-item]').removeAttr('style');
 
