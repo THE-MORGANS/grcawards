@@ -532,7 +532,7 @@ class JudgesController extends Controller
         $data['award_group_two'] = [43, 54]; //com_bank_fraud_awarenesses
         $data['award_group_three'] = [41,42,47,51,52,82,83,86,87,90,91]; //com_bank_chief_risk_officers
         $data['award_group_four'] = [44,45,49,53,54,84,85,88,89,92,93]; //grc_employers
-        $data['award_group_five'] = [97, 38,]; //grc_solution_providers
+        $data['award_group_five'] = [97]; //grc_solution_providers
         $data['award_group_six'] = [94]; //grc_training_providers
         $data['award_group_seven'] = [100,102]; //grc_anti_fin_crim_reporters
         return $data;
