@@ -31,7 +31,7 @@ class VoteController extends Controller
             $sector= Sector::where('id', $sector_id)->first();
             $sector->category;
             $awards = Award::where('sector_id', $sector_id)->get();
-            $nominees = Nominee::where('sector_id', $sector_id)->get();
+            $nominees = Nominee::where('sector_id', $sector_id)->orderBy('name', 'ASC')->get();
             foreach($awards as $award){
                 $award->hashid = Hashids::connection('award')->encode($award->id);
             }

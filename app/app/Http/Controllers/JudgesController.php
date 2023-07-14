@@ -528,13 +528,13 @@ class JudgesController extends Controller
 
     public function getAwardId()
     {
-        $data['award_group_one'] = [40, 41, 42, 47]; //ComBankRiskComplainces
+        $data['award_group_one'] = [40,42,47]; //ComBankRiskComplainces
         $data['award_group_two'] = [43, 54]; //com_bank_fraud_awarenesses
-        $data['award_group_three'] = [48, 49, 50, 51, 53,56,60,61,57, 58]; //com_bank_chief_risk_officers
-        $data['award_group_four'] = [44, 45, 46, 52, 55,59,63,64,  14, 55,56, 60, 21, 25, 29]; //grc_employers
-        $data['award_group_five'] = [37, 38,]; //grc_solution_providers
-        $data['award_group_six'] = [35, 36]; //grc_training_providers
-        $data['award_group_seven'] = [34]; //grc_anti_fin_crim_reporters
+        $data['award_group_three'] = [41,42,47,51,52,82,83,86,87,90,91]; //com_bank_chief_risk_officers
+        $data['award_group_four'] = [44,45,49,53,54,84,85,88,89,92,93]; //grc_employers
+        $data['award_group_five'] = [97, 38,]; //grc_solution_providers
+        $data['award_group_six'] = [94]; //grc_training_providers
+        $data['award_group_seven'] = [100,102]; //grc_anti_fin_crim_reporters
         return $data;
     }
 }
