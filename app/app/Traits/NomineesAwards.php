@@ -3,7 +3,7 @@ namespace App\Traits;
 use App\Models\VoteCount;
 use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
     ComBankRiskComplaince, GrcAntiFinCrimReporter, GrcEmployer, 
-    GrcSolutionProvider, GrcTrainingProvider};
+    GrcSolutionProvider, GrcTrainingProvider, CrimePreventionAdvisoryService};
 
 
 trait NomineesAwards {
@@ -145,6 +145,28 @@ trait NomineesAwards {
         }else{
         foreach($votes as $vote){
            GrcTrainingProvider::create([
+                'award_id' => $vote->award_id,
+                'nominee_id' => $vote->nominee_id,
+                'number_of_votes' => $vote->voteCount,
+                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+            ]);
+        }
+    }
+    $data =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
+    return $data;
+    }
+
+
+    public function crimePreventionAdvisoryServices($votes, $award_hashid){
+        $check =  CrimePreventionAdvisoryService::whereAwardId($award_hashid)->get();
+        if(count($check) > 0){
+           foreach($check as $cc => $val){
+             $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
+              'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+           }
+        }else{
+        foreach($votes as $vote){
+            CrimePreventionAdvisoryService::create([
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,

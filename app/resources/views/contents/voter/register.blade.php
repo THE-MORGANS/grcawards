@@ -55,7 +55,7 @@
 							</div>
 							<div class="btn-form-cover">
 								<button id="#submit" type="submit" class="btn">
-									<span>Submit</span>
+									<span>Proceed to Voting Page</span>
 								</button>
 							</div>
 						</form>

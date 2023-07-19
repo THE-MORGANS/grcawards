@@ -198,6 +198,9 @@ class JudgesController extends Controller
             } else if (in_array($award_hashid[0],  $data['award_group_seven'])) {
                 $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
                 return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+            }else if (in_array($award_hashid[0],  $data['award_group_eight'])) {
+                $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
+                return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else {
                 $request->session()->flash('danger', 'Something went wrong, try again');
                 return back();
@@ -528,13 +531,14 @@ class JudgesController extends Controller
 
     public function getAwardId()
     {
-        $data['award_group_one'] = [40,42,47]; //ComBankRiskComplainces
-        $data['award_group_two'] = [43, 54]; //com_bank_fraud_awarenesses
-        $data['award_group_three'] = [41,42,47,51,52,82,83,86,87,90,91]; //com_bank_chief_risk_officers
+        $data['award_group_one'] = [40,43]; //ComBankRiskComplainces
+        $data['award_group_two'] = [555]; //com_bank_fraud_awarenesses
+        $data['award_group_three'] = [41,42,47,51,52,54,82,83,86,87,90,91]; //com_bank_chief_risk_officers
         $data['award_group_four'] = [44,45,49,53,54,84,85,88,89,92,93]; //grc_employers
         $data['award_group_five'] = [97]; //grc_solution_providers
         $data['award_group_six'] = [94]; //grc_training_providers
         $data['award_group_seven'] = [100,102]; //grc_anti_fin_crim_reporters
+        $data['award_group_eight'] = [100,102]; //Financial Crime Prevention Advisory Service
         return $data;
     }
 }

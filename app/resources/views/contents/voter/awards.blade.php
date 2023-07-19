@@ -97,7 +97,7 @@
                                                     @if(in_array($award->id, json_decode($nominee->award_ids)))
                                                     <div class="pay-item">
                                                         <input type="radio" name="{{$award->hashid}}" data-id="{{$nominee->hashid}}" value="{{$nominee->hashid}}">
-                                                        <span></span>
+                                                        
                                                         <p class="nominee">{{$nominee->name}}</p>
                                                     </div>
                                                     @endif
