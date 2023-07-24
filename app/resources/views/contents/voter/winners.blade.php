@@ -25,7 +25,7 @@
                     <li>Winners</li>
                 </ul>
             </div>
-            <h1 class="title">2021 Winners</h1>
+            <h1 class="title"> Winners</h1>
         </div>
     </div>
     <!-- page title -->
@@ -36,7 +36,7 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">2021 Winners</h4>
+                            <h4 class="title">Winners</h4>
                         </div>
                     </div>
                     <div class="accordion-wrapper" style="margin-top: 30px;">

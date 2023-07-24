@@ -47,9 +47,10 @@
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
                                 </a>
                                 <ul>
-                                    @foreach($award_program_years as $award_program_year)
-                                        <li class="{{request()->is('winners/$award_program_year->year') ? 'active-page' : ''}}"><a href="{{route('show_winners', $award_program_year->year)}}">{{$award_program_year->year}} Winners</a></li>
-                                    @endforeach
+                                    {{-- @foreach($award_program_years as $award_program_year) --}}
+                                        <li class="{{request()->is('winners/$award_program_year->year') ? 'active-page' : ''}}"><a href="{{route('show_winners', '2021')}}">2021 Winners</a></li>
+                                        <li class="{{request()->is('winners/$award_program_year->year') ? 'active-page' : ''}}"><a href="{{route('show_winners', '2023')}}">2022 Winners</a></li>
+                                    {{-- @endforeach --}}
                                 </ul>
                             </li>
                             <li class="{{request()->is('vote') ? 'active-page' : '' }}">
