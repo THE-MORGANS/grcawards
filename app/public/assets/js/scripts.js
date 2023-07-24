@@ -675,10 +675,12 @@
 	// 	if ($('li[class="inp-cover inp-professional"] '
 	// })
 $('#regForm').on('submit', function(e){
+	e.preventDefault();
+	$('#regForm').submit();
 	// if ($('#first_name').val() != ''){
-		if ($('#first_name').val() != '' && $('#last_name').val() != '' && $('#email').val() != ''){
-			$('#regForm').submit();
-		}
+		// if ($('#first_name').val() != '' && $('#last_name').val() != '' && $('#email').val() != ''){
+		// 	$('#regForm').submit();
+		// }
 	// }else{
 		// alert('You must tick the checkbox to certify that you have read the Privcy Policy and T&Cs to continue');
 		// e.preventDefault();
