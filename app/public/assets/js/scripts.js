@@ -675,7 +675,7 @@
 	// 	if ($('li[class="inp-cover inp-professional"] '
 	// })
 $('#regForm').on('submit', function(e){
-	if ($('#i_agree').is(':checked') == true){
+	if ($('#first_name').val() != ''){
 		if ($('#first_name').val() != '' && $('#last_name').val() != '' && $('#email').val() != ''){
 			$('#regForm').submit();
 		}

@@ -27,7 +27,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">25 Nov 2023</div>
+						<div class="date">10th Nov 2023</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>

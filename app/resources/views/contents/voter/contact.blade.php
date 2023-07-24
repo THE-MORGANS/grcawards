@@ -63,7 +63,7 @@
 				<!--=============== SIDEBAR END ===============-->
 			</div>
 		</div>
-	</section>
+	</section> 
 
 	<!--==================== FOOTER ====================-->
 	@include('partials.voter.footer')
