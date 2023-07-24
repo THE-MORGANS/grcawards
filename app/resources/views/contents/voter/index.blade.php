@@ -36,6 +36,18 @@
 					</div>
 				</div>
 			</div>
+			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671454134/grcfincrimeawards/gallery/kovtdfmqtiqzklvq1h0r.jpg);">
+				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
+				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
+				<div class="container" style="justify-content: flex-start;">
+					<div class="conference-slide-item">
+						<div class="date">10th Nov 2023</div>
+						<div class="conference-slider-title">GRC & FinCrime</div>
+						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
+						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+					</div>
+				</div>
+			</div>
 			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671453226/grcfincrimeawards/gallery/sjixjukjwx2gsswnklrl.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
@@ -60,7 +72,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671450236/grcfincrimeawards/gallery/oqgwyhjw5csafhyolj5j.jpg);">
+			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671445217/grcfincrimeawards/gallery/qqfklbem78sosuzscc3a.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
