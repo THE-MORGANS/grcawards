@@ -246,17 +246,17 @@
 		<div class="container">
 			<h2 class="title-conference"><span>Our Sponsors</span></h2>
 			<div class="clients-cover">
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/lgca_logo.png')}}" alt="img">
 					</div>
-				</div>
+				</div> --}}
 			
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/agrc_logo.png')}}" alt="img">
 					</div>
-				</div>
+				</div> --}}
 				<div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/portreclogo.png')}}" alt="img">
@@ -272,11 +272,11 @@
 						<img src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" alt="img">
 					</div>
 				</div>
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/mtn_logo.jpg')}}" alt="img">
 					</div>
-				</div>
+				</div> --}}
 				<div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/tmc_academy.png')}}" alt="img">
