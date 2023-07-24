@@ -47,7 +47,7 @@
 							            <a href="{{route('show_pictures', ['award_program'=> $award_program->hashid])}}"><img src="{{$award_program->random_gallery->path}}" alt="img"></a>
 						            </div>
 						            <div class="conference-post-content">
-							            <h4><a href="{{route('show_pictures', ['award_program'=> $award_program->hashid])}}">{{$award_program->year = '2023'? '2022':$award_program->year}}</a></h4>
+							            <h4><a href="{{route('show_pictures', ['award_program'=> $award_program->hashid])}}">{{$award_program->year == '2023'? '2022':$award_program->year}}</a></h4>
 						            </div>
 						        </div>
 					        </div>
