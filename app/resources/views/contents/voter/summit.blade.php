@@ -34,7 +34,7 @@
 			<div class="container">
 			
 				<div class="conference-counter-wrap">
-						<div class="conference-counter-cover">
+						{{-- <div class="conference-counter-cover">
 							<h4>The event will begin through</h4>
 							<div id="" class="clock-timer clock-timer-conference">
 								<div class="clock-item days-item">
@@ -54,11 +54,11 @@
 									<div class="smalltext">Seconds</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 					</div>
 					<br>
 					<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="42%"></center>	
-				<h2 class="title-conference pt-5"><span>About The Summit</span></h2>
+				{{-- <h2 class="title-conference pt-5"><span>About The Summit</span></h2> --}}
 					<h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5> 
 				<div class="row">
 					<div class="col-lg-6 our-mission-img">
