@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', $award_program->year.'Pictures')
+@section('title', $award_program->year == '2023'? '2022':$award_program->year.'Pictures')
 
 <head>
     @include('partials.voter.head')
