@@ -101,8 +101,8 @@
 							<span class="seconds">--</span>
 							<div class="smalltext">Seconds</div>
 						</div>
-						</div>
-					</div> --}}
+						</div>--}}
+					</div> 
 					<img class="conference-counter-effect-2" src="assets/images/counter-icon-2.svg" alt="img">
 				</div>
 			</div>
