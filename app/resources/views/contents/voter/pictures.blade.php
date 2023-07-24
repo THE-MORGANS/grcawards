@@ -46,7 +46,7 @@
                         @foreach($award_program->gallery as $gallery)
                         <div class="col-12 col-md-6 col-lg-4 mb-4">
                             <div class="instagram-cover">
-                                <a href="#" data-name="imageView-click" class="instagram-item p-0" style="width: 100% !important; height:150px !important;" data-id="{{$loop->iteration}}">
+                                <a href="{{$gallery->path}}" data-name="imageView-click" class="instagram-item p-0" style="width: 100% !important; height:150px !important;" data-id="{{$loop->iteration}}">
                                     <img class="rx-lazy rx-lazy_hidden rx-lazy_item" loading="lazy" src="{{$gallery->path}}" data-src="{{$gallery->path}}" alt="img">
                                     <!-- <ul> -->
 					                    <!-- <li class="comments">234 <i class="far fa-comment"></i></li> -->
