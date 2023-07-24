@@ -8,7 +8,7 @@
                 </div>
                 <p>1, Adeola Adeoye Street, Ikeja, Lagos, Nigeria.<br>
                     <i aria-hidden="true" class="mdi mdi-phone"></i>
-                    <a href="tel:01-7001770">01-7001770</a><br>
+                    {{-- <a href="tel:01-7001770">01-7001770</a><br> --}}
                     <i aria-hidden="true" class="mdi mdi-phone"></i>
                     <a href="tel:09153414314">09153414314</a><br>
                     <i aria-hidden="true" class="mdi mdi-email-outline"></i>
