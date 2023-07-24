@@ -143,6 +143,7 @@ Route::get('others/terms-and-conditions', [LandingPageController::class, 'showTc
 Route::get('media/press-announcements', [LandingPageController::class, 'showPress'])->name('show_press');
 Route::get('2021/shortlisted-nominees', [LandingPageController::class, 'showShortlistedNominees'])->name('show_shortlisted_nomineees');
 Route::get('winners/2021', [LandingPageController::class, 'showWinners'])->name('show_winners');
+Route::get('winners/2022', [LandingPageController::class, 'showWinners2022'])->name('show_winners2022');
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
 
