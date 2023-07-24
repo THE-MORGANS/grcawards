@@ -71,7 +71,7 @@
                                 <div class="accordion-content">
                                     <div class="ticket-contact-cover">
                                         <div class="ticket-contact-item">
-                                            <p>The entry deadline is 25th October 2022 at 23:59pm</p>
+                                            <p>The entry deadline is 10th Nov. 2023 at 23:59pm</p>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
                                 <div class="accordion-content">
                                     <div class="ticket-contact-cover">
                                         <div class="ticket-contact-item">
-                                            <p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 25th November, 2022.</p>
+                                            <p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 10th Nov. 2023.</p>
                                         </div>
                                     </div>
                                 </div>
