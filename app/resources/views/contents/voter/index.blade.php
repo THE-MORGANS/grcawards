@@ -262,11 +262,11 @@
 						<img src="{{asset('assets/images/sponsors/portreclogo.png')}}" alt="img">
 					</div>
 				</div>
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1668686341/grcfincrimeawards/sponsors/stl_trustees_wfggda.png" alt="img">
 					</div>
-				</div>
+				</div> --}}
 				<div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" alt="img">
