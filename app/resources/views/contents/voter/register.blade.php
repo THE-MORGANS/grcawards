@@ -30,7 +30,7 @@
 			<div class="marathon-register-row" style="justify-content: center;">
 					<div class="marathon-register">
 						<h2 class="title"><span>Enter Email</span></h2>
-						<form id='regForm' method="POST" action="{{route('register')}}" name="regForm">
+						<form  method="POST" action="{{route('register')}}" name="regForm">
 							@csrf
 							<ul class="form-cover">
 								<li class="inp-cover inp-email">
@@ -54,7 +54,7 @@
 								</div>
 							</div>
 							<div class="btn-form-cover">
-								<button id="#submit" type="submit" class="btn">
+								<button id="#submits" type="submit" class="btn">
 									<span>Proceed to Voting Page</span>
 								</button>
 							</div>
