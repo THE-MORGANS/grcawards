@@ -171,6 +171,7 @@
                                 @empty
                                     
                                 @endforelse
+                            <p> {{$item->links()}}</p>
                             </tbody>
                         </table>
                     </div> <!-- end table-responsive-->
