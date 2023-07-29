@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Award;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Models\AwardProgram;
-
+use App\Models\Category;
+use App\Models\Nominee;
+use App\Models\Sector;
+use App\Models\Vote;
+use App\Models\Voter;
 
 class AwardProgramsController extends Controller
 {
@@ -18,17 +23,25 @@ class AwardProgramsController extends Controller
             $awp->hashid = Hashids::connection('awardProgram')->encode($awp->id);
             $awp->admin;
         }
-
         return view('contents.admin.index')->with(['awps' => $awps]);
     }
 
     public function  getAwardProgramDashboard($award_program)
     {
         $awp_id = Hashids::connection('awardProgram')->decode($award_program);
+        $data['votes'] = Vote::get();
+        $data['voters'] = Voter::get();
+        $data['category'] = Category::get();
+        $data['sector'] = Sector::get();
+        $data['awards'] = Award::get();
+        $data['nominees'] = Nominee::get();
+        $data['voters_pg'] = Voter::latest()->simplePaginate(10);
+        $data['recent_votes'] = Vote::latest()->simplePaginate(10);
         if (AwardProgram::where('id', $awp_id)->exists()) {
             session('award_program_id', $award_program);
-            return view('contents.admin.dashboard');
+            return view('contents.admin.dashboard', $data);
         }
+       
     }
 
     public function addAwardProgram(Request $request)

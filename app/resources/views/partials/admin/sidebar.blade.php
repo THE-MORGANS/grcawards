@@ -34,12 +34,12 @@
 
            @if (Auth::guard('admin')->user()->role_id == 1)
            <li class="side-nav-item">
-            <a data-bs-toggle="collapse" href="#evaluation" aria-expanded="false" aria-controls="evaluation" class="side-nav-link">
+            <a data-bs-toggle="collapse" href="#judgings" aria-expanded="false" aria-controls="judgings" class="side-nav-link">
                 <i class="mdi mdi-clipboard-text-search-outline"></i>
                 <span>Judging Criteria </span>
                 <span class="menu-arrow"></span>
             </a>
-            <div class="collapse" id="evaluation">
+            <div class="collapse" id="judgings">
                 <ul class="side-nav-second-level">
                     <li>
                         <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" >
@@ -101,7 +101,7 @@
                     </ul>
                 </div>
             </li>
-
+{{-- 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#people" aria-expanded="false" aria-controls="people" class="side-nav-link">
                     <i class="uil uil-users-alt"></i>
@@ -121,9 +121,9 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
                     <i class="mdi mdi-database-cog-outline"></i>
                     <span> Data </span>
@@ -139,10 +139,10 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
             
-            <li class="side-nav-item">
+            {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#nominees" aria-expanded="false" aria-controls="data" class="side-nav-link">
                     <i class="mdi mdi-database-cog-outline"></i>
                     <span> Judges Votes </span>
@@ -155,7 +155,7 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
             @endif
         </ul>
         <div class="clearfix"></div>
