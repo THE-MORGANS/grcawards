@@ -171,9 +171,10 @@
                                 @empty
                                     
                                 @endforelse
-                            <p> {{$voters_pg->links()}}</p>
+                           
                             </tbody>
                         </table>
+                        <p> {{$voters_pg->links()}}</p>
                     </div> <!-- end table-responsive-->
                 </div> <!-- end card-body-->
             </div> <!-- end card-->
