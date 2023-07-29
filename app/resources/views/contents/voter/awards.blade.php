@@ -96,7 +96,7 @@
                                                     @foreach($nominees as $nominee)
                                                     @if(in_array($award->id, json_decode($nominee->award_ids)))
                                                     <div class="pay-item">
-                                                        <input type="radio" name="{{$award->hashid}}" data-id="{{$nominee->hashid}}" value="{{$nominee->hashid}}">
+                                                        <input type="radio"  name="{{$award->hashid}}" data-id="{{$nominee->hashid}}" value="{{$nominee->hashid}}">
                                                         
                                                         <p class="nominee">{{$nominee->name}}</p>
                                                     </div>
