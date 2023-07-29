@@ -171,7 +171,7 @@
                                 @empty
                                     
                                 @endforelse
-                            <p> {{$item->links()}}</p>
+                            <p> {{$voters_pg->links()}}</p>
                             </tbody>
                         </table>
                     </div> <!-- end table-responsive-->
