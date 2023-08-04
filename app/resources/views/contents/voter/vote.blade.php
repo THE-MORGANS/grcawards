@@ -48,8 +48,8 @@
 						</div>
 						<div class="post-content">
 							<div class="text">
-								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 26th September and ends 25th October, 2022.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 25th November, 2022.</p>
+								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 26th July and ends 31st August, 2023.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 25th November, 2023.</p>
 							</div>
 						</div>
 					</div>
