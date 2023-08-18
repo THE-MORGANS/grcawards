@@ -5,11 +5,9 @@
 <link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 @endsection
-
 <head>
     @include('partials.voter.head')
 </head>
-
 <body id="conference-page">
     <!-- =============== PRELOADER =============== -->
     <div class="page-preloader-cover">
