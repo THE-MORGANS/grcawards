@@ -33,9 +33,7 @@ class AppServiceProvider extends ServiceProvider
         }
         Session::put('user', 'user'.$this->getToken(16));
         Schema::defaultStringLength(191);
-
         $award_program_years = \App\Models\AwardProgram::all(['year']);
-
         $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
         view()->share('award_program_years', $award_program_years);
         view()->share('pictures', $pictures);
