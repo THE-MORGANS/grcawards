@@ -17,11 +17,14 @@
         <div class="content-page">
             <div class="content">
                 <!-- Topbar Start -->
+                @guest 
+                @else 
                 @include('partials.admin.topbar')
                 <!-- end Topbar -->
 
                 <!-- Start Content-->
                 @yield('content')
+                @endguest
                 <!-- container -->
             </div>
             <!-- Footer Start -->

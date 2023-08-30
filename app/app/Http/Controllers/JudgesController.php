@@ -330,7 +330,7 @@ class JudgesController extends Controller
         $data = $this->getAwardId();
         $award_id = $request->award_id;
 
-        dd($award_id.$award_program_id );
+     //   dd($award_id.$award_program_id );
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
@@ -365,9 +365,9 @@ class JudgesController extends Controller
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
        // $award_id = Hashids::connection('award')->decode($award_id);
         // dd($request->all());
-        // $award_id = $request->award_id;
+         $award_id = $request->award_id;
         $data = $this->getAwardId();
-        $award_id = $data['award_id'];
+       // $award_id = $data['award_id'];
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
@@ -486,9 +486,9 @@ class JudgesController extends Controller
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->encode(1);
         // dd($id);
-        // $award_id = $request->award_id;
+        $award_id = $request->award_id;
         $data = $this->getAwardId();
-        $award_id = $data['award_id'];
+        
         $votes = JudgesVotes::where('award_id', $award_id)->first();
         if (!$votes) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
