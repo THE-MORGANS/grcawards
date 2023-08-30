@@ -23,7 +23,7 @@
                 <div class="col-xxl-4 col-lg-5">
                     <div class="pt-3 pb-3 text-center">
                         <a href="index.html">
-                            <span><img src="{{asset('/assets/images/logo.png')}}" alt="" width="150" height="100"></span>
+                            <span><img src="{{asset('/assets/logo.png')}}" alt="" width="150" height="100"></span>
                         </a>
                     </div>
                     <div class="card">
