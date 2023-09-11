@@ -229,7 +229,7 @@
 	<!-- ========== SPEAKER & SCHEDULE END ========== -->
 	<section class="s-our-speaker s-event-schedule">
 		<div class="container">
-			<h2 class="title-conference"><span>Meet 2022 Awards Judges </span></h2>
+			<h2 class="title-conference"><span>Meet the Awards Judges </span></h2>
 			<div class="slider-our-speaker">
 				@foreach($judges as $judge)
 				<div class="slide-our-speaker">
