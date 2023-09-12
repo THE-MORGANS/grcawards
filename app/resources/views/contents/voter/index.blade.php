@@ -6,8 +6,6 @@
 	@include('partials.voter.head')
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
 	<style>
-
-
 	</style>
 </head>
 
@@ -36,7 +34,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671454134/grcfincrimeawards/gallery/kovtdfmqtiqzklvq1h0r.jpg);">
+			{{-- <div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671454134/grcfincrimeawards/gallery/kovtdfmqtiqzklvq1h0r.jpg);"> --}}
+				<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453416/grcfincrimeawards/gallery/rb6xu9gaqe38igyleywp.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
@@ -48,7 +47,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671453226/grcfincrimeawards/gallery/sjixjukjwx2gsswnklrl.jpg);">
+			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453427/grcfincrimeawards/gallery/afgdyjbjgtlrhqnd48zn.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
