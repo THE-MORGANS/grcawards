@@ -59,7 +59,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671452414/grcfincrimeawards/gallery/abbxgbuqjwpu0bwysxk9.jpg);">
+			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1664454804/grcfincrimeawards/gallery/rjhnk2j9a5oq5j5kzqpw.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
