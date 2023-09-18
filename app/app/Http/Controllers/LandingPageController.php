@@ -82,6 +82,8 @@ class LandingPageController extends Controller
         foreach($judges as $judge){
             $judge->hashid = Hashids::connection('email')->encode($judge->id);
         }
+
+        
         return view('contents.voter.meet_judges')->with(['judges'=>$judges]);
     }
 

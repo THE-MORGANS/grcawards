@@ -34,7 +34,7 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">Meet 2022 Awards Judges</h4>
+                            <h4 class="title">Awards Judges</h4>
                         </div>
                     </div>
                     <div class="row">
