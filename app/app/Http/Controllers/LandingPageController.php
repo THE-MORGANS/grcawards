@@ -78,7 +78,7 @@ class LandingPageController extends Controller
     }
 
     public function showJudges(){
-        $judges = Judge::where('award_program_id', 1)->get();
+        $judges = Judge::where('award_program_id',2)->get();
         foreach($judges as $judge){
             $judge->hashid = Hashids::connection('email')->encode($judge->id);
         }
