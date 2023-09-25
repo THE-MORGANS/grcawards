@@ -11,6 +11,8 @@ use App\Models\Category;
 use App\Models\AwardProgram;
 use App\Models\CommBanksAwards;
 use App\Models\Vote;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\JudgesRegister;
 use App\Models\VoteCount;
 use App\Models\{
     ComBankChiefRiskOfficer,
@@ -28,6 +30,7 @@ use Vinkla\Hashids\Facades\Hashids;
 use App\Traits\NomineeResults;
 use App\Traits\JudgeVotes;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class JudgesController extends Controller
 {
@@ -47,7 +50,7 @@ class JudgesController extends Controller
             $data['award_program'] = $award_program;
             //mask the id for each judge
             foreach ($data['judges'] as $judge) {
-                $judge->hashid = Hashids::connection('judge')->encode($judge->id);
+                 $judge->hashid = Hashids::connection('judges')->encode($judge->id);
             }
             //load view
             return view('contents.admin.judges', $data);
@@ -59,54 +62,72 @@ class JudgesController extends Controller
 
     public function addJudges(Request $request, $award_program)
     {
-        //validate input
-        $validated = $request->validate([
-            'judge_fullname' => 'required',
-            'judge_email' => 'required|unique:admins,email',
-            'judge_password' => 'required|min:5',
+        $validated = Validator::make($request->all(),[
+            'fullname' => 'required',
+            'email' => 'required|unique:admins,email',
+            'password' => 'required|min:5',
         ]);
-        //not sure what this does
+        if($validated->fails()){
+            $request->session()->flash('error', 'Some Fields are missing');
+            return back()->withInput($request->all())->withErrors($validated);
+        }
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-            //add judge details to admin DB
-            $name = explode(" ", $request->judge_fullname);
-            $judgeAdmin = new Admin;
-            $judgeAdmin->firstname = $name[0];
-            $judgeAdmin->lastname = $name[1];
-            $judgeAdmin->email = $request->judge_email;
-            $judgeAdmin->password = Hash::make($request->judge_password);
-            $judgeAdmin->role_id  = 3;
-            $judgeAdmin->is_super  = 0;
-
-            //save judge data to admin table
-            if ($judgeAdmin->save()) {
-                $latestjudge = Admin::where(['email' => $request->judge_email])->first();
-                // $latestjudge = DB::table('admins')->select('id')->where('email', $request->judge_email)->get();
-                //add judge details to judge DB
+                // $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
                 $judge = new Judge;
-                $judge->admin_id = $latestjudge->id;
-                $judge->name = $request->judge_fullname;
+                $judge->name = $request->fullname;
                 $judge->award_program_id  = $award_program_id[0];
-                $judge->position = ''; 
-                $judge->profile = ''; 
+                $judge->position = $request->position; 
+                $judge->profile = $request->profile; 
+                $judge->email = $request->email;
+                $judge->password = bcrypt($request->password);
                 $judge->save();
-                if ($request->ajax()) {
-                    //return json response
-                    return response()->json(['data' => [$judgeAdmin, $award_program]]);
-                } else {
-                    //set flash message
+
+                $data = [
+                    'name' => $request->fullname,
+                    'email' => $request->email,
+                    'password' => $request->password
+                ];
+
+                Mail::to($request->email)->send(new JudgesRegister($data));
                     $request->session()->flash('success', 'Judge Added Successfully');
-                    //reload page
                     return redirect()->route('admin.get_judges', $award_program);
-                }
             } else {
                 $request->session()->flash('danger', 'Error. Pleae Try Again!'); // return error
                 return redirect()->route('admin.get_judges', $award_program);
             }
-        } else {
-            $request->session()->flash('danger', 'Invalid Award Program');
-            return redirect()->route('admin.get_judges', $award_program);
-        }
+    }
+
+
+
+    public function UpdateJudges(Request $request, $award_program)
+    {
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
+                // $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
+                $judge = Judge::where('id', $request->judge_id)->first();
+                $judge->name = $request->judge_fullname;
+                $judge->award_program_id  = $award_program_id[0];
+                $judge->position = $request->position; 
+                $judge->profile = $request->profile; 
+                $judge->email = $request->judge_email;
+                $judge->password = bcrypt($request->judge_password);
+                $judge->save();
+
+
+                $data = [
+                    'name' => $request->judge_fullname,
+                    'email' => $request->judge_email,
+                    'password' => $request->judge_password
+                ];
+
+                Mail::to($request->email)->send(new JudgesRegister($data));
+                    $request->session()->flash('success', 'Judge Added Successfully');
+                    return redirect()->route('admin.get_judges', $award_program);
+            } else {
+                $request->session()->flash('danger', 'Error. Pleae Try Again!'); // return error
+                return redirect()->route('admin.get_judges', $award_program);
+            }
     }
 
     public function loadJudgingCategoryPage(Request $request, $award_program)

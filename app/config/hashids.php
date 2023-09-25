@@ -48,6 +48,12 @@ return [
             'length' => 10,
             'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
         ],
+        
+        'judges' => [
+            'salt' => 'Sector'.'8051b1ed8452c99e1b7cd3332635f59a1c20e581',
+            'length' => 10,
+            'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        ],
         'category' => [
             'salt' => 'Category'.'8051b1ed8452c99e1b7cd3332635f59a1c20e581',
             'length' => 10,

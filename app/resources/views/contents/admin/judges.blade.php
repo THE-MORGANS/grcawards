@@ -33,8 +33,8 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label">Judge Full Name</label>
-                                    <input type="text" class="form-control @error('judge_fullname') is-invalid @enderror" placeholder="John Doe" name="judge_fullname" id="judge_fullname" required autocomplete="off" />
-                                    @error('judge_fullname')
+                                    <input type="text" class="form-control @error('fullname') is-invalid @enderror" placeholder="John Doe" name="fullname" id="judge_fullname" required autocomplete="off" />
+                                    @error('fullname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -45,7 +45,7 @@
                             <div class="col-12">
                                 <div class="mb-3">
                                     <label class="control-label form-label">Judge Email</label>
-                                    <input type="email" class="form-control @error('judge_email') is-invalid @enderror" placeholder="Judge Mail Address" name="judge_email" id="judge_email" required autocomplete="off" />
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Judge Mail Address" name="email" id="judge_email" required autocomplete="off" />
                                     @error('judge_email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -56,9 +56,9 @@
 
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="control-label form-label">Judge Password</label>
-                                    <input type="password" class="form-control @error('judge_password') is-invalid @enderror" placeholder="Password" name="judge_password" id="judge_password" required autocomplete="off" />
-                                    @error('judge_password')
+                                    <label class="control-label form-label">Position</label>
+                                    <textarea name="position"  class="form-control @error('position') is-invalid  @enderror"  cols="30" rows="10"></textarea>
+                                    @error('position')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -66,7 +66,29 @@
                                 </div>
                             </div>
 
-                           
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Profile</label>
+                                    <textarea name="profile" class="form-control @error('profile') is-invalid  @enderror" id="" cols="30" rows="10"></textarea>
+                                    @error('profile')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Judge Password</label>
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" id="judge_password" required autocomplete="off" />
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>  
                         </div>
 
                         <div class="row">
@@ -91,6 +113,7 @@
                                 <tr>
                                     <th>S/N</th>
                                     <th class="all">Name</th>
+                                    <th class="all">Email</th>
                                     <th class="all">Postion</th>
                                     <th class="all">Profile</th>
                                     <th style="width: 85px;">Action</th>
@@ -102,8 +125,12 @@
                                     <td>
                                         {{$loop->iteration}}
                                     </td>
+                                    
                                     <td>
                                         {{$judge->name}}
+                                    </td>
+                                    <td>
+                                        {{$judge->email}}
                                     </td>
                                     <td>
                                         {{$judge->position}}
@@ -114,13 +141,95 @@
                                         @endphp
                                         {{$profile}}
                                     </td>
-                                   
-
                                     <td class="table-action">
-                                        <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="edit" data-id="{{$judge->hashid}}" data-name="{{$judge->name}}" data-desc="{{$judge->profile}}" data-bs-toggle="modal" data-bs-target="#edit-judge-modal"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                        <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="delete" data-id="{{$judge->hashid}}" data-bs-toggle="modal" data-bs-target="#delete-alert-modal"> <i class="mdi mdi-delete"></i></a>
+                                        <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="edit" data-id="{{$judge->hashid}}" data-name="{{$judge->name}}" data-desc="{{$judge->profile}}" data-bs-toggle="modal" data-bs-target="#edit-judge-modal{{$judge->id}}"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                        {{-- <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="delete" data-id="{{$judge->hashid}}" data-bs-toggle="modal" data-bs-target="#delete-alert-modal"> <i class="mdi mdi-delete"></i></a> --}}
                                     </td>
                                 </tr>
+                                <form class="needs-validation" method="POST" action="{{route('admin.update_judges', $award_program)}}">
+                                    @csrf
+                                <div class="modal fade" id="edit-judge-modal{{$judge->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                                <div class="modal-header py-3 px-4 border-bottom-0">
+                                                    <h5 class="modal-title" id="modal-title">Edit Judges</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body px-4 pb-4 pt-0">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <input type="hidden" name="judge_id" value="{{$judge->id}}">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Judge Full Name</label>
+                                                                <input type="text" value="{{$judge->name}}" class="form-control @error('judge_fullname') is-invalid @enderror" placeholder="John Doe" name="judge_fullname" id="judge_fullname" required autocomplete="off" />
+                                                                @error('judge_fullname')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Judge Email</label>
+                                                                <input type="email" name="judge_email" value="{{$judge->email}}" class="form-control @error('judge_email') is-invalid @enderror" placeholder="Judge Mail Address"  id="judge_email" required autocomplete="off" />
+                                                                @error('judge_email')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-12">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Position</label>
+                                                                <textarea name="position" value=""  class="form-control @error('position') is-invalid  @enderror"  cols="30" rows="10"> {{$judge->position}}</textarea>
+                                                                @error('position')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                            
+                                                        <div class="col-12">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Profile</label>
+                                                                <textarea name="profile"  value="" class="form-control @error('profile') is-invalid  @enderror" id="" cols="30" rows="10"> {{$judge->profile}}</textarea>
+                                                                @error('profile')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Judge Password</label>
+                                                                <input type="password" class="form-control @error('judge_password') is-invalid @enderror" placeholder="Password" name="judge_password" id="judge_password" required autocomplete="off" />
+                                                                @error('judge_password')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div> 
+                        
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-6"></div>
+                                                        <div class="col-6 text-end">
+                                                            <button type="button" class="btn btn-light me-1" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-success" id="btn-save-category">Update</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
                                 @endforeach 
                             </tbody>
                         </table>
@@ -130,52 +239,7 @@
             </div> <!-- end card-->
         </div> <!-- end col -->
         <!-- Update Sector MODAL -->
-        <div class="modal fade" id="edit-category-modal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form class="needs-validation" method="POST" action="" name="edit-category-form" id="edit-category-form">
-                        @csrf
-                        <div class="modal-header py-3 px-4 border-bottom-0">
-                            <h5 class="modal-title" id="modal-title">Edit Category</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body px-4 pb-4 pt-0">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <label class="control-label form-label">Category Name</label>
-                                        <input class="form-control @error('category_name') is-invalid @enderror" placeholder="e.g. Excellence Awards" type="text" name="category_name" id="category-name" value required autocomplete="off" />
-                                        @error('category_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <label class="control-label form-label">Description</label>
-                                        <textarea class="form-control @error('category_description') is-invalid @enderror" placeholder="Short description of this category" name="category_description" id="category-description" required style="min-height: 100px;"></textarea>
-                                        @error('category_description')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6"></div>
-                                <div class="col-6 text-end">
-                                    <button type="button" class="btn btn-light me-1" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" id="btn-save-category">Update</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+       
         <div id="delete-alert-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-sm modal-dialog-centered">
                 <div class="modal-content">

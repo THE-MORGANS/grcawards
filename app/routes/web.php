@@ -90,6 +90,7 @@ Route::prefix('admin')->group(function(){
             Route::prefix('judges')->group(function(){
                 Route::get('', [JudgesController::class, 'getJudges'])->name('admin.get_judges');
                 Route::post('create', [JudgesController::class, 'addJudges'])->name('admin.create_judges');
+                Route::post('update', [JudgesController::class, 'UpdateJudges'])->name('admin.update_judges');
                 Route::get('judgingcategory', [JudgesController::class, 'loadJudgingCategoryPage'])->name('admin.load_judging_category_page');
                 Route::get('judgescategory', [JudgesController::class, 'ViewJudgeCategoryPage'])->name('admin.load_judge_category_page');
                 Route::get('judgescategoryresults', [JudgesController::class, 'ViewJudgeCategoryPageResults'])->name('admin.load_judge_category_page_results');

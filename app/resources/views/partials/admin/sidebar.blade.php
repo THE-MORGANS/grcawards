@@ -101,27 +101,21 @@
                     </ul>
                 </div>
             </li>
-{{-- 
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#people" aria-expanded="false" aria-controls="people" class="side-nav-link">
                     <i class="uil uil-users-alt"></i>
-                    <span> People </span>
+                    <span> Judges</span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="people">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{route('admin.get_voters', request()->segment(3))}}">Voters</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.get_admins', request()->segment(3))}}">Admins</a>
-                        </li>
-                        <li>
-                            <a href="{{route('admin.get_judges', request()->segment(3))}}">Judges</a>
+                            <a href="{{route('admin.get_judges', request()->segment(3))}}">View Judges</a>
                         </li>
                     </ul>
                 </div>
-            </li> --}}
+            </li>
 
             {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
