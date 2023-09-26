@@ -7,9 +7,10 @@ use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
 
 
 trait NomineesAwards {
-
+ 
     public function BankChiefRiskOfficer($votes, $award_hashid){
         $check = ComBankChiefRiskOfficer::whereAwardId($award_hashid)->get();
+      
         if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 

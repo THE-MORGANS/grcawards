@@ -31,13 +31,14 @@ use App\Traits\NomineeResults;
 use App\Traits\JudgeVotes;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use App\Traits\AwardsGroups;
 class JudgesController extends Controller
 {
 
     use NomineesAwards;
     use JudgeVotes;
     use NomineeResults;
+    use AwardsGroups;
 
 
     public function getJudges(Request $request, $award_program)
@@ -195,8 +196,7 @@ class JudgesController extends Controller
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
         // $award_hashids = Hashids::connection('award')->encode($award_id);
         $award_hashid = Hashids::connection('award')->decode($award_id);
-
-        $votes = VoteCount::whereAwardId($award_hashid)->take(3)->orderBy('voteCount', 'DESC')->get();
+        $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
         if (count($votes) > 0) {
             if (in_array($award_hashid[0],  $data['award_group_one'])) {
                 $data =  $this->BankRiskComplainces($votes, $award_hashid);
@@ -547,19 +547,5 @@ class JudgesController extends Controller
         } else {
             return back();
         }
-    }
-
-
-    public function getAwardId()
-    {
-        $data['award_group_one'] = [40,43]; //ComBankRiskComplainces
-        $data['award_group_two'] = [555]; //com_bank_fraud_awarenesses
-        $data['award_group_three'] = [41,42,47,51,52,54,82,83,86,87,90,91]; //com_bank_chief_risk_officers
-        $data['award_group_four'] = [44,45,46,49,53,54,84,85,88,89,92,93]; //grc_employers
-        $data['award_group_five'] = [97]; //grc_solution_providers
-        $data['award_group_six'] = [94]; //grc_training_providers
-        $data['award_group_seven'] = [100,102]; //grc_anti_fin_crim_reporters
-        // $data['award_group_eight'] = [100,102]; //Financial Crime Prevention Advisory Service
-        return $data;
     }
 }
