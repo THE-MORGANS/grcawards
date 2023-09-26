@@ -25,6 +25,8 @@ class VoteController extends Controller
     public function showVotingPage(Request $request, $sector)
     {
       
+        $request->session()->flash('danger', 'Voting closed, Thanks!');
+        return back();
         $sector_id = Hashids::connection('sector')->decode($sector)[0];
         
         if (isset($sector_id) && Sector::where('id', $sector_id)->exists()){
