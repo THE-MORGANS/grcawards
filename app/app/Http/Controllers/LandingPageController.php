@@ -33,8 +33,8 @@ class LandingPageController extends Controller
     }
 
     public function showSectorsAndCategories()
-    {
-        
+    {  
+
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
         $categories = Category::where('award_program_id', $current_award_program->id)->get();
 
@@ -60,6 +60,8 @@ class LandingPageController extends Controller
 
     public function showVote()
     {
+
+      
         if(!Auth::check()){
             return redirect()->route('register');
         }

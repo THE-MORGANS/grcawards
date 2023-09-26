@@ -40,6 +40,9 @@
 
 	<section class="s-news s-single-news" style="background-color: #fff;">
 		<div class="container">
+
+		<center> <p class="btn btn-primary btn-lg" style="font-size:20px"> Voting is closed, Thanks!</p>
+		</center>
 			<div class="row">
 				<div class="col-12 blog-cover">
 					<div class="post-item-cover">
