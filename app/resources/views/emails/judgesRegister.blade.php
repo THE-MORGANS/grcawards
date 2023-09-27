@@ -42,6 +42,9 @@
     <td> {{ $data['password'] }}</td>
     </tr>
   
+    <tr>
+        <td> <a href=""> Click Here to Login </a> </td>
+    </tr>
     </tbody>
 </table>
 

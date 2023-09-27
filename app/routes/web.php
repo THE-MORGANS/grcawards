@@ -40,7 +40,7 @@ Route::prefix('admin')->group(function(){
     Route::post('login', [AdminLoginController::class, 'login'])->name('admin.loginn');
 
     Route::get('', [AwardProgramsController::class, 'getAllAwardPrograms'])->name('award.programs');
-    Route::prefix('award-programs')->group(function(){
+    Route::middleware('auth:admin')->prefix('award-programs')->group(function(){
         Route::post('create', [AwardProgramsController::class, 'AddAwardProgram'])->name('award.program.create');
         Route::prefix('{award_program}')->group(function(){
             Route::get('dashboard', [AwardProgramsController::class, 'getAwardProgramDashboard'])->name('award.program');
@@ -159,5 +159,6 @@ Route::post('summit/register/submit', [LandingPageController::class, 'SubmitRegi
 Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
 Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
+
 
 

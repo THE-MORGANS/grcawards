@@ -135,5 +135,10 @@ class AdminAuthController extends Controller
         // ]);
         $error = ['auth_failed'=>'Unauthorized. Invalid email or password'];
         return response()->json(['error'=> $error]);
-    }    
+    } 
+    
+    public function logout(){
+       Auth('admin')->logout();
+      return redirect()->route('admin.login');
+    }
 }

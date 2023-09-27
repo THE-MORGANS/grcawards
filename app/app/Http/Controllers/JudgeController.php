@@ -10,6 +10,11 @@ use Vinkla\Hashids\Facades\Hashids;
 class JudgeController extends Controller
 {
     
+    public function __construct() {
+        return $this->middleware('auth:admin');
+       }
+
+       
     public function Index(Request $request, $award_program){
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         $categories = Category::where('award_program_id', $award_program)->get();
