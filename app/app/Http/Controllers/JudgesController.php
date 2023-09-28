@@ -22,7 +22,8 @@ use App\Models\{
     GrcEmployer,
     GrcSolutionProvider,
     GrcTrainingProvider,
-    JudgesVotes
+    JudgesVotes,
+    CrimePreventionAdvisoryService
 };
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -275,8 +276,8 @@ class JudgesController extends Controller
                 $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
                 return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             }else if (in_array($award_hashid[0],  $data['award_group_eight'])) {
-                $data = $this->CrimePreventionAdvisoryService($votes, $award_hashid);
-                return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                $data = $this->crimePreventionAdvisoryServices($votes, $award_hashid);
+                return view('contents.admin.judge.crime_prevention_advisory_service')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else {
                 $request->session()->flash('danger', 'Something went wrong, try again');
                 return back();
@@ -351,9 +352,16 @@ class JudgesController extends Controller
                 $request->session()->flash('success', 'Requested Updated Successfully');
             }
             return view('contents.admin.judge.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
+        } 
+        else if (in_array($award_id,  $data_item['award_group_eight'])) {
+            $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = CrimePreventionAdvisoryService::whereId($id)->first();
+            if ($request->submitButton) {
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+            return view('contents.admin.judge.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
         } else {
-
-
             $request->session()->flash('danger', 'No votes for this awards yet');
             return back();
         }
@@ -429,7 +437,10 @@ class JudgesController extends Controller
         } else if (in_array($award_id,  $data['award_group_seven'])) {
             $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
             return view('contents.admin.table.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
-        } else {
+        }else if (in_array($award_id,  $data['award_group_eight'])) {
+            $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
+            return view('contents.admin.table.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
+        }else {
             $request->session()->flash('danger', 'No nominees for this awards at the moment');
             return back();
         }
