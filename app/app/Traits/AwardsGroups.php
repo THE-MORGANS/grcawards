@@ -12,7 +12,7 @@ trait AwardsGroups{
         $data['award_group_five'] = [97]; //grc_solution_providers
         $data['award_group_six'] = [94]; //grc_training_providers
         $data['award_group_seven'] = [100,102]; //grc_anti_fin_crim_reporters
-        // $data['award_group_eight'] = [100,102]; //Financial Crime Prevention Advisory Service
+        $data['award_group_eight'] = [96,95]; //Financial Crime Prevention Advisory Service
         return $data;
 
 

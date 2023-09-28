@@ -7,7 +7,7 @@ use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
 
 
 trait NomineesAwards {
- 
+ //award one
     public function BankChiefRiskOfficer($votes, $award_hashid){
         $check = ComBankChiefRiskOfficer::whereAwardId($award_hashid)->get();
       
@@ -29,6 +29,7 @@ trait NomineesAwards {
         return $data;
     }
 
+    #Award Two
     public function BankFraudAwareness($votes, $award_hashid){
         $check = ComBankFraudAwareness::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -50,6 +51,7 @@ trait NomineesAwards {
     return $data;
     }
 
+    #Award 3
     public function BankRiskComplainces($votes, $award_hashid){
         $check = ComBankRiskComplaince::whereAwardId($award_hashid)->get();
       
@@ -72,6 +74,7 @@ trait NomineesAwards {
     return $data;
     }
 
+    #Award 4
     public function GrcAntiFinCrimReporters($votes, $award_hashid){
         $check = GrcAntiFinCrimReporter::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -94,6 +97,7 @@ trait NomineesAwards {
     return $data;
     }
 
+    #Award 5
     public function GrcSolutionProviders($votes, $award_hashid){
         $check = GrcSolutionProvider::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -115,6 +119,7 @@ trait NomineesAwards {
         return $data;
     }
 
+    #Award 6
     public function GrcEmployers($votes, $award_hashid){
         $check =  GrcEmployer::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -136,6 +141,7 @@ trait NomineesAwards {
     return $data;
     }
 
+    #awards 7
     public function GrcTrainingProvider($votes, $award_hashid){
         $check =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -158,6 +164,7 @@ trait NomineesAwards {
     }
 
 
+    #awards 8
     public function crimePreventionAdvisoryServices($votes, $award_hashid){
         $check =  CrimePreventionAdvisoryService::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
@@ -175,7 +182,7 @@ trait NomineesAwards {
             ]);
         }
     }
-    $data =  GrcTrainingProvider::whereAwardId($award_hashid)->get();
+    $data =  CrimePreventionAdvisoryService::whereAwardId($award_hashid)->get();
     return $data;
     }
 

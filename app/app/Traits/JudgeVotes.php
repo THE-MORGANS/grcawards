@@ -8,6 +8,7 @@ use App\Models\JudgesVotes;
 
 trait JudgeVotes {
 
+      #awardsOne
     public function BankChiefRiskOfficerVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -45,6 +46,7 @@ trait JudgeVotes {
     }
 
 
+      #awardsTwo
     public function BankFraudAwarenessVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -82,6 +84,7 @@ trait JudgeVotes {
     }
 
 
+      #awardsThree
     public function BankRiskComplaincesVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -118,6 +121,7 @@ trait JudgeVotes {
         return $data;
     }
 
+      #awardsFour
     public function GrcAntiFinCrimReportersVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -155,6 +159,7 @@ trait JudgeVotes {
     }
 
 
+      #awardsFive
     public function GrcSolutionProvidersVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -191,6 +196,8 @@ trait JudgeVotes {
         return $data;
     }
 
+    
+  #awardsSix
     public function GrcEmployersVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
@@ -229,6 +236,7 @@ trait JudgeVotes {
 
 
 
+    #awardsSeven
     public function GrcTrainingProviderVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];

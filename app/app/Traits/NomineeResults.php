@@ -7,6 +7,7 @@ use App\Models\{ComBankChiefRiskOfficer, ComBankFraudAwareness,
 
 trait NomineeResults{
 
+    #awardsOne
     public function BankChiefRiskOfficerResults($award_id){
 
         $awards = ComBankChiefRiskOfficer::where('award_id', $award_id)->get();
@@ -30,6 +31,7 @@ trait NomineeResults{
         $total_votes->update(['status' => 'WINNER']);
     }
 
+      #awardsTwo
     public function BankFraudAwarenessResults($award_id){
 
         $awards = ComBankFraudAwareness::where('award_id', $award_id)->get();
@@ -53,7 +55,7 @@ trait NomineeResults{
         $total_votes->update(['status' => 'WINNER']);
     }
 
-
+  #awardsThree
     public function BankRiskComplaincesResults($award_id){
 
         $awards = ComBankRiskComplaince::where('award_id', $award_id)->get();
@@ -77,6 +79,7 @@ trait NomineeResults{
         $total_votes->update(['status' => 'WINNER']);
     }
 
+      #awardsFour
     public function GrcAntiFinCrimReportersResults($award_id){
         $awards = GrcAntiFinCrimReporter::where('award_id', $award_id)->get();
         $total_votes = GrcAntiFinCrimReporter::where('award_id', $award_id)->sum('number_of_votes');
@@ -100,6 +103,7 @@ trait NomineeResults{
     }
 
 
+      #awardsFive
     public function GrcSolutionProviderResults($award_id){
 
         $awards = GrcSolutionProvider::where('award_id', $award_id)->get();
@@ -123,6 +127,7 @@ trait NomineeResults{
         $total_votes->update(['status' => 'WINNER']);
     }
 
+      #awardsSix
     public function GrcEmployersResults($award_id){
         $awards = GrcEmployer::where('award_id', $award_id)->get();
         $total_votes = GrcEmployer::where('award_id', $award_id)->sum('number_of_votes');
@@ -146,6 +151,7 @@ trait NomineeResults{
     }
 
 
+      #awardsSeven
     public function GrcTrainingProviderResults($award_id){
         $awards = GrcTrainingProvider::where('award_id', $award_id)->get();
         $total_votes = GrcTrainingProvider::where('award_id', $award_id)->sum('number_of_votes');

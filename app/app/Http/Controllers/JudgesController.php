@@ -275,7 +275,7 @@ class JudgesController extends Controller
                 $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
                 return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             }else if (in_array($award_hashid[0],  $data['award_group_eight'])) {
-                $data = $this->GrcAntiFinCrimReporters($votes, $award_hashid);
+                $data = $this->CrimePreventionAdvisoryService($votes, $award_hashid);
                 return view('contents.admin.judge.grc_anti_fin_crim_reporters')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else {
                 $request->session()->flash('danger', 'Something went wrong, try again');
