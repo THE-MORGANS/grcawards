@@ -68,18 +68,19 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->profile_of_the_reporter }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->areas_anti_fincrime_the_reporter_covers}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->evidence_of_reporter_work}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->achievements }} </td>
-                                                                <td style=" min-width: 250px;">
+                                                                <td style=" min-width: 450px;">
                                                                     {{ $awp->adverse_media}} </td>
-                                                            <td style=" min-width: 250px;">
-                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> </td>
+                                                            <td style=" min-width: 450px;">
+                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> 
+                                                            <small>Enter Vote betweeen 1 - 10</small></td>
                                                             <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">  
                                                             
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>

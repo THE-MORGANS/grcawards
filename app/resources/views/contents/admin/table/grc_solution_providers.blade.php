@@ -67,16 +67,17 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->profile_of_the_software_provider }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->areas_of_grc_the_software_covers }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->clients_of_grc_software_providers }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->clients_rating_of_grc_software_provider }} </td>
-                                                            <td style=" min-width: 250px;">
-                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> </td>
+                                                            <td style=" min-width: 450px;">
+                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote">
+                                                            <small>Enter Vote betweeen 1 - 10</small> </td>
                                                             <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">  
                                                             
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>

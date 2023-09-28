@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <h4 class="header-title mb-4">Add Judges Votes for <span style="color:red">
+                                <h4 class="header-title mb-4">Results for <span style="color:red">
                                         {{ $awards[0]->awards->name }} Awards </span> </h4>
                             </div>
                             {{-- <div class="col-12 text-end"> 
@@ -36,28 +36,32 @@
                             </button>
                         </div> --}}
                         </div>
-                        <form class="needs-validation" method="POST" action="{{route('admin.StoreNominessVotes',[request()->segment(3)])}}"  id="form1">
+                        <form class="needs-validation" method="POST"
+                            action="{{ route('admin.StoreNominessVotes', [request()->segment(3)]) }}" id="form1">
                             @csrf
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="table-responsive">
                                             <table
-                                                class="table table-responsive table-hover table-striped  table-bordered mb-0">
+                                                class="table table-responsive  table-striped  table-bordered mb-0">
                                                 <thead>
                                                     <tr style="background:yellow;">
                                                         {{-- <th> Award Name</th> --}}
                                                         <th>Nominee Name</th>
                                                         <th>Number of vote </th>
                                                         <th>Percentage votes</th>
-                                                        <th>Fraud Awarenessr</th>
-                                                        <th>Fraud Prevention Policies, Whistle Blowing etc</th>
-                                                        <th>Additional Information </th>
-                                                        <th>Adverse Media</th>
-                                                        {{-- <th>80% score</th>
-                                                    <th>20% votes</th>
-                                                    <th>Overall Score</th> --}}
-                                                        <th style="background: green; color:#fff">Judges Votes</th>
+                                                        <th>Profile of the Advisory Service Provider</th>
+                                                        <th>Evidence of Innovative Ways of promoting & demonstrating leadership</th>
+                                                        <th>Clients of Advisory Services  </th>
+                                                        <th>Client's Rating of Advisory Service Provider  </th>
+                                                        <th>Affiliations/Licencing/Regulatory Information </th>
+                                                        <th>Total Judges Votes</th>
+                                                        <th>Total of judges score converted to percentage</th>
+                                                        <th>80% of judges score</th>
+                                                        <th>20% of Votes Cast</th>
+                                                         <th style="background:red; color:#fff">Overall Score</th>
+                                                        <th style="background: green; color:#fff">Results</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -68,25 +72,25 @@
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->fraud_awareness }} </td>
+                                                                {{ $awp->profile_of_the_advisory_service_provider }} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->fraud_prevention_policies}} </td>
+                                                                {{ $awp->evidence_of_innovative_ways_of_promoting}} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->additional_information}} </td>
+                                                                {{ $awp->clients_of_advisory_services}} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->adverse_media}} </td>
-                                                            <td style=" min-width: 450px;">
-                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> 
-                                                            <small>Enter Vote betweeen 1 - 10</small></td>
-                                                            <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">  
-                                                            
-                                                            {{-- <td>   {{$awp->eight_percent_score}} </td>
-                                                     <td>   {{$awp->twenty_percent_votes}} </td>
-                                                     <td>   {{$awp->overall_core}} </td>
-                                                     <td>   {{$awp->number_of_votes}} </td> --}}
+                                                                {{ $awp->client_rating_of_advisory_service_provide }} </td>
+                                                                <td style=" min-width: 450px;">
+                                                                    {{ $awp->affiliations}} </td>
+                                                            <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
+                                                            <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
+                                                            <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>
+                                                            <td style=" min-width: 250px;"> {{ number_format($awp->twenty_percent_votes,2)}}% </td>
+                                                            <td style=" min-width: 250px; color:red; font-weight:600"> {{ number_format($awp->overall_score,2)}}%</td>
+                                                            <td style=" min-width: 250px;"> @if($awp->status == 'WINNER') <span style="color:green; font-weight:700"> {{$awp->status}}</span> @else {{ $awp->status }} @endif </td>
                                                         </tr>
                                                     @endforeach
-                                                    <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}">
+                                                    <input type="hidden" name="award_id"
+                                                        value="{{ $awards[0]->award_id }}">
                                                 </tbody>
                                             </table>
                                         </div> <!-- end table-responsive-->
@@ -95,9 +99,10 @@
                             </div>
                             <div class="row">
                                 <div class="col-6"></div>
-                                <div class="col-6 text-end">
-                                    <input type="submit" class="btn btn-success" value="Submit Votes for this Awards" name="submitButton">
-                                </div>
+                                {{-- <div class="col-6 text-end">
+                                    <input type="submit" class="btn btn-success" value="Submit Votes for this Awards"
+                                        name="submitButton">
+                                </div> --}}
                             </div>
                         </form>
                     </div> <!-- end card-body-->

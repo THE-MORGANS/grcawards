@@ -50,11 +50,11 @@
                                                         <th>Nominee Name</th>
                                                         <th>Number of vote </th>
                                                         <th>Percentage votes</th>
-                                                        <th>Profile of the Reporter</th>
-                                                        <th>Areas of GRC and Anti-FinCrime the Reporter Covers</th>
-                                                        <th>Evidence(s) of Reporter's Work  </th>
-                                                        <th>Achievements  </th>
-                                                        <th>	Adverse media </th>
+                                                        <th>Profile of the Advisory Service Provider</th>
+                                                        <th>Evidence of Innovative Ways of promoting & demonstrating leadership</th>
+                                                        <th>Clients of Advisory Services  </th>
+                                                        <th>Client's Rating of Advisory Service Provider  </th>
+                                                        <th>Affiliations/Licencing/Regulatory Information </th>
                                                         {{-- <th>80% score</th>
                                                     <th>20% votes</th>
                                                     <th>Overall Score</th> --}}
@@ -68,18 +68,19 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
-                                                                {{ $awp->profile_of_the_reporter }} </td>
-                                                            <td style=" min-width: 250px;">
-                                                                {{ $awp->areas_anti_fincrime_the_reporter_covers}} </td>
-                                                            <td style=" min-width: 250px;">
-                                                                {{ $awp->evidence_of_reporter_work}} </td>
-                                                            <td style=" min-width: 250px;">
-                                                                {{ $awp->achievements }} </td>
-                                                                <td style=" min-width: 250px;">
-                                                                    {{ $awp->adverse_media}} </td>
-                                                            <td style=" min-width: 250px;">
-                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->profile_of_the_advisory_service_provider }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->evidence_of_innovative_ways_of_promoting}} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->clients_of_advisory_services}} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->client_rating_of_advisory_service_provide }} </td>
+                                                                <td style=" min-width: 450px;">
+                                                                    {{ $awp->affiliations}} </td>
+                                                            <td style=" min-width: 450px;">
+                                                            <input type="text" name="judges_votes[]" placeholder="Enter Vote"> 
+                                                            <small>Enter Vote betweeen 1 - 10</small></td>
                                                             <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">  
                                                             
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>

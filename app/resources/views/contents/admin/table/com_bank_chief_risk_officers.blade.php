@@ -74,30 +74,36 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->names }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->title }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->profile_on_linkedIn}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->recognised_professional_association_membership}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                                <td style=" min-width: 450px;">
+                                                                    {{ $awp->number_of_independent_non_executive_directors}} </td>
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->board_committee_in_place_covering_risk_management}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->evidence_of_policy_on_fin_crime_prevention}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->aml_policy }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->documentation}} </td>
-                                                                <td style=" min-width: 250px;">
+                                                                <td style=" min-width: 450px;">
                                                                     {{ $awp->adverse_media}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 <input type="text" name="judges_votes[]"
-                                                                    placeholder="Enter Vote">
+                                                                    placeholder="Enter Vote" >
+                                                                    <small>Enter Vote betweeen 1 - 10</small>
+                                                                    
+                                                                    <input type="hidden" name="nominee_ids[]"
+                                                                    value="{{ $awp->nominee_id }}">
                                                             </td>
-                                                            <input type="hidden" name="nominee_ids[]"
-                                                                value="{{ $awp->nominee_id }}">
+                                                          
+                                                           
 
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>
                                                      <td>   {{$awp->twenty_percent_votes}} </td>

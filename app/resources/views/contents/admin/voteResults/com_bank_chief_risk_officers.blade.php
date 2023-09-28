@@ -76,24 +76,23 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->names }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->title }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->profile_on_linkedIn}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->recognised_professional_association_membership}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->board_committee_in_place_covering_risk_management}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->evidence_of_policy_on_fin_crime_prevention}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->aml_policy }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->documentation}} </td>
-                                                                <td style=" min-width: 250px;">
-                                                                    {{ $awp->adverse_media}} </td>
+                                                                <td style=" min-width: 450px;"> {{ $awp->adverse_media}} </td>
                                                             <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>

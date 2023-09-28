@@ -411,11 +411,9 @@ class JudgesController extends Controller
     public function ViewNominessVotes(Request $request, $award_program_id, $award_id)
     {
         $award_program = Hashids::connection('awardProgram')->encode(1);
+        $award = Hashids::connection('award')->decode($award_id);
         $data = $this->getAwardId();
-        $award_id = $request->award_id;
-
-     //   dd($award_id.$award_program_id );
-
+        $award_id = $award[0];
         if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
@@ -455,15 +453,19 @@ class JudgesController extends Controller
          $award_id = $request->award_id;
         $data = $this->getAwardId();
        // $award_id = $data['award_id'];
+       if(array_sum($request->judges_votes) > 40){
+        $request->session()->flash('danger', 'Vote Must be between 1 - 10');
+        return back()->withInput($request->all());
+       } 
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
             if ($data == false) {
                 $request->session()->flash('danger', 'You have voted for this category already');
-                return back();
+                return back()->withInput($request->all());
             }
             $request->session()->flash('success', 'Vote Updated Successfully');
-            return back();
+            return back()->withInput($request->all());
         } else if (in_array($award_id,  $data['award_group_two'])) {
             $data = $this->BankFraudAwarenessVote($request->judges_votes, $request->nominee_ids, $award_id);
             if ($data == false) {
@@ -506,6 +508,12 @@ class JudgesController extends Controller
             return back();
         } else if (in_array($award_id,  $data['award_group_seven'])) {
             $data = $this->GrcAntiFinCrimReportersVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+        } else if (in_array($award_id,  $data['award_group_eight'])) {
+            $data = $this->crimePreventionAdvisoryServicesVote($request->judges_votes, $request->nominee_ids, $award_id);
             if ($data == null) {
                 $request->session()->flash('danger', 'You have voted for this category already');
                 return back();
@@ -610,7 +618,11 @@ class JudgesController extends Controller
             $this->GrcAntiFinCrimReportersResults($award_id);
             $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
-        } else {
+        }else if (in_array($award_id,  $data['award_group_eight'])) {
+        $this->crimePreventionAdvisoryResults($award_id);
+        $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
+        return view('contents.admin.voteResults.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
+    }  else {
             return back();
         }
     }

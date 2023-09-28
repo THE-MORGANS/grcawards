@@ -71,15 +71,15 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->profile_of_the_training_provider_and_areas_of_grc_covered }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->evidence_of_innovative_ways_of_teaching }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->clients_of_training_providers}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->clients_rating_of_training_provider }} </td>
-                                                                <td style=" min-width: 250px;">
+                                                                <td style=" min-width: 450px;">
                                                                     {{ $awp->affiliations }} </td>
                                                                 
                                                             <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>

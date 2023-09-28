@@ -70,13 +70,13 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->fraud_awareness }} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->fraud_prevention_policies}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->additional_information}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->adverse_media}} </td>
                                                             <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>

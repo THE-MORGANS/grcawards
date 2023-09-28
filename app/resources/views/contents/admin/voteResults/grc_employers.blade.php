@@ -73,19 +73,19 @@
                                                             <td style=" min-width: 150px;"> {{ $awp->nominee->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->No_of_employees_who_rated}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->worklife_balance}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->pay_and_benefits}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->job_security_and_advancement}} </td>
-                                                            <td style=" min-width: 250px;">
+                                                            <td style=" min-width: 450px;">
                                                                 {{ $awp->management}} </td>
-                                                             <td style=" min-width: 250px;">
+                                                             <td style=" min-width: 450px;">
                                                                  {{ $awp->culture}} </td>
-                                                                 <td style=" min-width: 250px;">
+                                                                 <td style=" min-width: 450px;">
                                                                     {{ $awp->average_rating}} </td>
                                                             <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
                                                             <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
