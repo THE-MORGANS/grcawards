@@ -23,7 +23,9 @@ use App\Models\{
     GrcSolutionProvider,
     GrcTrainingProvider,
     JudgesVotes,
-    CrimePreventionAdvisoryService
+    CrimePreventionAdvisoryService,
+    OtherVote,
+    WomenInGrc
 };
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -33,6 +35,7 @@ use App\Traits\JudgeVotes;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\AwardsGroups;
+use App\Traits\OtherVotes;
 class JudgesController extends Controller
 {
 
@@ -40,6 +43,7 @@ class JudgesController extends Controller
     use JudgeVotes;
     use NomineeResults;
     use AwardsGroups;
+    use OtherVotes;
 
  public function __construct() {
  return $this->middleware('auth:admin');
@@ -253,6 +257,7 @@ class JudgesController extends Controller
         // $award_hashids = Hashids::connection('award')->encode($award_id);
         $award_hashid = Hashids::connection('award')->decode($award_id);
         $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
+
         if (count($votes) > 0) {
             if (in_array($award_hashid[0],  $data['award_group_one'])) {
                 $data =  $this->BankRiskComplainces($votes, $award_hashid);
@@ -282,7 +287,32 @@ class JudgesController extends Controller
                 $request->session()->flash('danger', 'Something went wrong, try again');
                 return back();
             }
+        }else{
+
+            #============ for other votes =======================
+
+            $otherVotes = OtherVote::where('award_id', $award_hashid)->pluck('nominee')->toArray();
+
+            if (count($otherVotes) > 0 ) {
+                if (in_array($award_hashid[0],  $data['award_group_nine'])) {
+                    $data =  $this->WomenInGrc($otherVotes, $award_hashid);
+                    // dd($data);
+                    return view('contents.admin.judge.women_in_grcs')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                } else if (in_array($award_hashid[0],  $data['award_group_ten'])) {
+                    $data = $this->BankFraudAwareness($votes, $award_hashid);
+                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                } 
+                else if (in_array($award_hashid[0],  $data['award_group_eleven'])) {
+                    $data = $this->BankFraudAwareness($votes, $award_hashid);
+                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                } 
+                else if (in_array($award_hashid[0],  $data['award_group_twelve'])) {
+                    $data = $this->BankFraudAwareness($votes, $award_hashid);
+                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                } 
+
         }
+    }
         $request->session()->flash('danger', 'No Nominee votes for this award yet');
         return back();
     }
@@ -361,7 +391,15 @@ class JudgesController extends Controller
                 $request->session()->flash('success', 'Requested Updated Successfully');
             }
             return view('contents.admin.judge.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
-        } else {
+        }else if (in_array($award_id,  $data_item['award_group_nine'])) {
+            $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = WomenInGrc::whereId($id)->first();
+            if ($request->submitButton) {
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+            return view('contents.admin.judge.women_in_grcs', $data)->with(['award_program' => $award_program]);
+        }  else {
             $request->session()->flash('danger', 'No votes for this awards yet');
             return back();
         }

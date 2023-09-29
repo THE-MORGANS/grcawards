@@ -14,14 +14,14 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount )* (100/VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else{foreach($votes as $vote){
             ComBankChiefRiskOfficer::create([
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)* (100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -35,7 +35,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)* (100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else{
         foreach($votes as $vote){
@@ -43,7 +43,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)* (100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -58,7 +58,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
            $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)* (100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else {
         foreach($votes as $vote){
@@ -66,7 +66,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -80,7 +80,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
           $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();;
            }
           
         }else{
@@ -89,7 +89,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -103,7 +103,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
            $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else{
         foreach($votes as $vote){
@@ -111,7 +111,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
         }
@@ -125,7 +125,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
               $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else{
         foreach($votes as $vote){
@@ -133,7 +133,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -147,7 +147,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
              $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-          'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+          'percentage_votes' => ($votes[$cc]->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))])->save();
            }
         }else{
         foreach($votes as $vote){
@@ -155,7 +155,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100 / VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
@@ -170,7 +170,7 @@ trait NomineesAwards {
         if(count($check) > 0){
            foreach($check as $cc => $val){
              $val->fill(['award_id'=> $votes[$cc]->award_id,  'nominee_id'=>$votes[$cc]->nominee_id,'number_of_votes' => $votes[$cc]->voteCount, 
-              'percentage_votes' => ($votes[$cc]->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount') ])->save();
+              'percentage_votes' => ($votes[$cc]->voteCount)*(100/VoteCount::whereAwardId($award_hashid)->sum('voteCount')) ])->save();
            }
         }else{
         foreach($votes as $vote){
@@ -178,7 +178,7 @@ trait NomineesAwards {
                 'award_id' => $vote->award_id,
                 'nominee_id' => $vote->nominee_id,
                 'number_of_votes' => $vote->voteCount,
-                'percentage_votes' => ($vote->voteCount * 100)/VoteCount::whereAwardId($award_hashid)->sum('voteCount')
+                'percentage_votes' => ($vote->voteCount)*(100/VoteCount::whereAwardId($award_hashid)->sum('voteCount'))
             ]);
         }
     }
