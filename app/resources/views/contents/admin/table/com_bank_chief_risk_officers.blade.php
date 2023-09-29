@@ -103,8 +103,7 @@
                                                                     value="{{ $awp->nominee_id }}">
                                                             </td>
                                                           
-                                                           
-
+                                            
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>
                                                      <td>   {{$awp->twenty_percent_votes}} </td>
                                                      <td>   {{$awp->overall_core}} </td>
