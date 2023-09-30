@@ -18,6 +18,7 @@ trait OtherVotes {
         }
         $nominees = array_count_values($votes);
         arsort($nominees);
+        dd($nominees);
         $x = 0;
         $Totalvotes = 0;
         if(count($nominees) > 0){

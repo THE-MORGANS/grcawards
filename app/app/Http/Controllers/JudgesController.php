@@ -295,7 +295,7 @@ class JudgesController extends Controller
             #============ for other votes =======================
 
             $otherVotes = OtherVote::where('award_id', $award_hashid)->pluck('nominee')->toArray();
-            dd( $otherVotes);
+         
             if (count($otherVotes) > 0 ) {
                 if (in_array($award_hashid[0],  $data['award_group_nine'])) {
                     $data =  $this->WomenInGrc($otherVotes, $award_hashid);
