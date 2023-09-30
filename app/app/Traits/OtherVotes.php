@@ -96,12 +96,10 @@ return $check;
     }
 
     public function NonFiVote($votes, $award_hashid){
-        $check = NonfiVotes::whereAwardId($award_hashid)->get();
-            
+        $check = NonfiVotes::whereAwardId($award_hashid)->get();   
         if(count($check) > 0){
             return $check;
         }
-
         $nominees = array_count_values($votes);
         arsort($nominees);
         $x = 0;
@@ -120,6 +118,6 @@ return $check;
         }   
 }
 return $check;
-
+}
 
 }

@@ -26,6 +26,7 @@ use App\Models\{
     CrimePreventionAdvisoryService,
     GovernorsVotes,
     MediaVotes,
+    NonfiVotes,
     OtherVote,
     WomenInGrc
 };
@@ -309,7 +310,7 @@ class JudgesController extends Controller
                     return view('contents.admin.judge.governors_vote')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } 
                 else if (in_array($award_hashid[0],  $data['award_group_twelve'])) {
-                    $data = $this->NonFiVote($otherVotes, $award_hashid);
+                    $data = $this->NonFiVote($otherVotes, $award_hashid[0]);
                     return view('contents.admin.judge.nonfi_votes')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } 
 
@@ -417,7 +418,16 @@ class JudgesController extends Controller
                 $request->session()->flash('success', 'Requested Updated Successfully');
             }
             return view('contents.admin.judge.governors_vote', $data)->with(['award_program' => $award_program]);
-        }  else {
+        }
+        else if (in_array($award_id,  $data_item['award_group_twelve'])) {
+            $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = NonfiVotes::whereId($id)->first();
+            if ($request->submitButton) {
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+            return view('contents.admin.judge.nonfi_votes', $data)->with(['award_program' => $award_program]);
+        }   else {
             $request->session()->flash('danger', 'No votes for this awards yet');
             return back();
         }
