@@ -18,9 +18,9 @@ trait OtherVotes {
         }
         $nominees = array_count_values($votes);
         arsort($nominees);
-        dd($nominees);
         $x = 0;
         $Totalvotes = 0;
+        dd($award_hashid);
         if(count($nominees) > 0){
             $Totalvotes = array_sum($nominees);
             foreach($nominees as $nominees_name => $nominees_votes){
