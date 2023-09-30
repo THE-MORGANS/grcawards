@@ -24,6 +24,8 @@ use App\Models\{
     GrcTrainingProvider,
     JudgesVotes,
     CrimePreventionAdvisoryService,
+    GovernorsVotes,
+    MediaVotes,
     OtherVote,
     WomenInGrc
 };
@@ -292,23 +294,23 @@ class JudgesController extends Controller
             #============ for other votes =======================
 
             $otherVotes = OtherVote::where('award_id', $award_hashid)->pluck('nominee')->toArray();
-
             if (count($otherVotes) > 0 ) {
                 if (in_array($award_hashid[0],  $data['award_group_nine'])) {
                     $data =  $this->WomenInGrc($otherVotes, $award_hashid);
                     // dd($data);
                     return view('contents.admin.judge.women_in_grcs')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } else if (in_array($award_hashid[0],  $data['award_group_ten'])) {
-                    $data = $this->BankFraudAwareness($votes, $award_hashid);
-                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                    $data = $this->Medias($otherVotes, $award_hashid);
+                    return view('contents.admin.judge.medias')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } 
                 else if (in_array($award_hashid[0],  $data['award_group_eleven'])) {
-                    $data = $this->BankFraudAwareness($votes, $award_hashid);
-                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                    $data = $this->GovernorsVotes($otherVotes, $award_hashid[0]);
+                    
+                    return view('contents.admin.judge.governors_vote')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } 
                 else if (in_array($award_hashid[0],  $data['award_group_twelve'])) {
-                    $data = $this->BankFraudAwareness($votes, $award_hashid);
-                    return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                    $data = $this->NonFiVote($otherVotes, $award_hashid);
+                    return view('contents.admin.judge.nonfi_votes')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } 
 
         }
@@ -324,7 +326,6 @@ class JudgesController extends Controller
        // $award_id  = Hashids::connection('award')->decode($request->award_id);
         $data_item = $this->getAwardId();
         $award_id = $request->award_id;
-
         if (in_array($award_id,  $data_item['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             $data['nominessDetails'] = ComBankRiskComplaince::whereId($id)->first();
@@ -399,6 +400,23 @@ class JudgesController extends Controller
                 $request->session()->flash('success', 'Requested Updated Successfully');
             }
             return view('contents.admin.judge.women_in_grcs', $data)->with(['award_program' => $award_program]);
+        }else if (in_array($award_id,  $data_item['award_group_ten'])) {
+            $data['awards'] = MediaVotes::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = MediaVotes::whereId($id)->first();
+            if ($request->submitButton) {
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+            return view('contents.admin.judge.medias', $data)->with(['award_program' => $award_program]);
+        } 
+        else if (in_array($award_id,  $data_item['award_group_eleven'])) {
+            $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
+            $data['nominessDetails'] = GovernorsVotes::whereId($id)->first();
+            if ($request->submitButton) {
+                $data['nominessDetails']->fill($request->all())->save();
+                $request->session()->flash('success', 'Requested Updated Successfully');
+            }
+            return view('contents.admin.judge.governors_vote', $data)->with(['award_program' => $award_program]);
         }  else {
             $request->session()->flash('danger', 'No votes for this awards yet');
             return back();
