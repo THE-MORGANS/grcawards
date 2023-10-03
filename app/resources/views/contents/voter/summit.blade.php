@@ -57,7 +57,7 @@
 						</div> --}}
 					</div>
 					<br>
-					<center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="42%"></center>	
+					{{-- <center><img src="{{asset('/assets/MicrosoftTeams-image.png')}}" width="42%"></center>	 --}}
 				{{-- <h2 class="title-conference pt-5"><span>About The Summit</span></h2> --}}
 					<h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5> 
 				<div class="row">
