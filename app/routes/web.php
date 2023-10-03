@@ -104,7 +104,7 @@ Route::prefix('admin')->group(function(){
                 Route::get('index/{id}', [JudgesController::class, 'Index'])->name('judgeVotes.index');
                 Route::post('nominess/details', [JudgesController::class, 'getNominessDetails'])->name('admin.getNominessDetails');
                 Route::get('nominees/{category_id}', [JudgesController::class, 'ViewNominessVotes'])->name('admin.view_nominess_awards'); 
-                Route::get('nomineesresults/{category_id}', [JudgesController::class, 'ViewNominessVotesResults'])->name('admin.view_nominess_awards_results'); 
+                Route::get('nomineesresults/{award_id}', [JudgesController::class, 'ViewNominessVotesResults'])->name('admin.view_nominess_awards_results'); 
                 Route::post('nominess/store', [JudgesController::class, 'StoreNominessVotes'])->name('admin.StoreNominessVotes');
             });
         });

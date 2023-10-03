@@ -95,14 +95,13 @@
                 @php
                
                  $award->hashid = Hashids::connection('award')->encode($award->id);
-              
                 @endphp
                 <tr>
                     <th scope="row">{{$loop->iteration}}</th>
                     <td>{{$award->name}}</td>
                     <td>{{$award->description}}</td>
                     <td>{{$award->criteria}}</td>
-                    <td><a href="{{route('admin.view_nominess_awards_results',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">View Calculated Results</a></td>
+                    <td><a href="{{route('admin.view_nominess_awards_results',[request()->segment(3),$award->hashid])}}" class="btn btn-sm btn-success">View Calculated Results</a></td>
                 </tr>  
                   <br>
               @endforeach

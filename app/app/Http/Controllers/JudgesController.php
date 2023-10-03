@@ -13,6 +13,7 @@ use App\Models\CommBanksAwards;
 use App\Models\Vote;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JudgesRegister;
+use App\Traits\OtherVotesResults;
 use App\Models\VoteCount;
 use App\Traits\JudgeOtherVotes;
 use App\Models\{
@@ -48,7 +49,7 @@ class JudgesController extends Controller
     use NomineeResults;
     use AwardsGroups;
     use OtherVotes;
-    use JudgeOtherVotes;
+    use JudgeOtherVotes, OtherVotesResults;
 
  public function __construct() {
  return $this->middleware('auth:admin');
@@ -532,7 +533,7 @@ class JudgesController extends Controller
         }
     }
 
-    public function StoreNominessVotes(Request $request, $award_program_id, $award_id =2)
+    public function StoreNominessVotes(Request $request, $award_program_id, $award_id)
     {
         $id = $request->nominess;
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
@@ -704,16 +705,18 @@ class JudgesController extends Controller
         return view('contents.admin.voteResults.judgeCategoriesSectors', $data);
     }
 
-    public function ViewNominessVotesResults(Request $request, $award_program_id = 1, $award_id = 2)
+    public function ViewNominessVotesResults(Request $request,$award_program_id,$award_id,)
     {
-        $id = $request->nominess;
-        $award_program = Hashids::connection('awardProgram')->encode(1);
-        // dd($id);
-        $award_id = $request->award_id;
+     
+        $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
+        $award_id= Hashids::connection('award')->decode($award_id)[0];
+        //$award_id = Hashids::connection('award')->decode($award_id);
+        // dd($award_id);
+        
         $data = $this->getAwardId();
         
-        $votes = JudgesVotes::where('award_id', $award_id)->first();
-        if (!$votes) {
+        $votes = JudgesVotes::where('award_id', $award_id)->get();
+        if (count($votes) < 0) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
             return back();
         }
@@ -750,7 +753,31 @@ class JudgesController extends Controller
         $this->crimePreventionAdvisoryResults($award_id);
         $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
         return view('contents.admin.voteResults.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
-    }  else {
+    } 
+            #===============NONE NOMINEES VOTES RESULTS ========================
+
+            else if (in_array($award_id,  $data['award_group_nine'])) {
+                $this->WomenInGrcResults($award_id);
+                $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.women_in_grc', $data)->with(['award_program' => $award_program]);
+            } 
+            else if (in_array($award_id,  $data['award_group_ten'])) {
+                $this->MediaVotesResults($award_id);
+                $data['awards'] = MediaVotes::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.media_votes', $data)->with(['award_program' => $award_program]);
+            } 
+            else if (in_array($award_id,  $data['award_group_eleven'])) {
+                $this->GovernorsVotesResult($award_id);
+                $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.crime_governors_votes', $data)->with(['award_program' => $award_program]);
+            } 
+            else if (in_array($award_id,  $data['award_group_twelve'])) {
+                $this->NonFiVotesResults($award_id);
+                $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
+                return view('contents.admin.voteResults.nonfi_votes', $data)->with(['award_program' => $award_program]);
+            } 
+
+    else {
             return back();
         }
     }

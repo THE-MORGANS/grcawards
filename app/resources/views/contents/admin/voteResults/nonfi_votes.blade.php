@@ -50,9 +50,22 @@
                                                         <th>Nominee Name</th>
                                                         <th>Number of vote </th>
                                                         <th>Percentage votes</th>
-                                                        <th>Company and linkedin profile link</th>
-                                                        <th>Recognised professional association membership</th>
-                                                        <th>Adverse media </th>
+                                                        <th>NO. OF EMPLOYEES WHO RATED</th>
+                                                        <th>WORKLIFE BALANCE</th>
+                                                        <th>COMPENSATION & BENEFITS </th>
+                                                        <th>JOB SECURITY & ADVANCEMENT</th>
+                                                        <th>MANAGEMENT</th>
+                                                        <th>CULTURE </th>
+                                                        <th>AEVERAGE RATING </th>
+                                                        <th>Additional Information </th>
+                                                        <th>Adverse Media</th>
+                                                        <th>Total Judges Votes</th>
+                                                        <th>Total of judges score converted to percentage</th>
+                                                        <th>80% of judges score</th>
+                                                        <th>20% of Votes Cast</th>
+                                                         <th style="background:red; color:#fff">Overall Score</th>
+                                                        <th style="background: green; color:#fff">Results</th>
+                                                        
                                                         {{-- <th>80% score</th>
                                                     <th>20% votes</th>
                                                     <th>Overall Score</th> --}}
@@ -67,17 +80,31 @@
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->Company_and_linkedin_profile_link }} </td>
+                                                                {{ $awp->No_of_employees_who_rated}} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->recognised_professional_association_membership }} </td>
+                                                                {{ $awp->worklife_balance}} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->adverse_media}} </td>
-                                                                
+                                                                {{ $awp->pay_and_benefits}} </td>
                                                             <td style=" min-width: 450px;">
-                                                            <input type="text" max="10" name="judges_votes[]" placeholder="Enter Vote"> 
-                                                            <small>Enter Vote betweeen 1 - 10</small></td>
-                                                            <input type="hidden" max="10" name="nominee_ids[]" value="{{$awp->nominee_name}}">  
-                                                            
+                                                                {{ $awp->job_security_and_advancement}} </td>
+                                                            <td style=" min-width: 450px;"> 
+                                                                {{ $awp->management}} </td>
+                                                             <td style=" min-width: 450px;">
+                                                                 {{ $awp->culture}} </td>
+                                                                 <td style=" min-width: 450px;">
+                                                                    {{ $awp->average_rating}} </td>
+                                                                    <td style=" min-width: 450px;">
+                                                                        {{ $awp->additional_information}} </td>
+                                                                <td style=" min-width: 450px;">
+                                                                            {{ $awp->adverse_media}} </td>
+                                                                            <td style=" min-width: 450px;">
+                                                                                {{ $awp->average_rating}} </td>
+                                                                        <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
+                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
+                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>
+                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->twenty_percent_votes,2)}}% </td>
+                                                                        <td style=" min-width: 250px; color:red; font-weight:600"> {{ number_format($awp->overall_score,2)}}%</td>
+                                                                        <td style=" min-width: 250px;"> @if($awp->status == 'WINNER') <span style="color:green; font-weight:700"> {{$awp->status}}</span> @else {{ $awp->status }} @endif </td>
                                                             
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>
                                                      <td>   {{$awp->twenty_percent_votes}} </td>
@@ -85,7 +112,6 @@
                                                      <td>   {{$awp->number_of_votes}} </td> --}}
                                                         </tr>
                                                     @endforeach
-                                                    <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}">
                                                 </tbody>
                                             </table>
                                         </div> <!-- end table-responsive-->
