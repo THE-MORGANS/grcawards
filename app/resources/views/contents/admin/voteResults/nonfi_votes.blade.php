@@ -36,7 +36,8 @@
                             </button>
                         </div> --}}
                         </div>
-                        <form class="needs-validation" method="POST" action="{{route('admin.StoreNominessVotes',[request()->segment(3)])}}"  id="form1">
+                        <form class="needs-validation" method="POST"
+                            action="{{ route('admin.StoreNominessVotes', [request()->segment(3)]) }}" id="form1">
                             @csrf
                             <div class="col-xl-12">
                                 <div class="card">
@@ -63,13 +64,8 @@
                                                         <th>Total of judges score converted to percentage</th>
                                                         <th>80% of judges score</th>
                                                         <th>20% of Votes Cast</th>
-                                                         <th style="background:red; color:#fff">Overall Score</th>
+                                                        <th style="background:red; color:#fff">Overall Score</th>
                                                         <th style="background: green; color:#fff">Results</th>
-                                                        
-                                                        {{-- <th>80% score</th>
-                                                    <th>20% votes</th>
-                                                    <th>Overall Score</th> --}}
-                                                        <th style="background: green; color:#fff">Judges Votes</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -80,36 +76,43 @@
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->No_of_employees_who_rated}} </td>
+                                                                {{ $awp->No_of_employees_who_rated }} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->worklife_balance}} </td>
+                                                                {{ $awp->worklife_balance }} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->pay_and_benefits}} </td>
+                                                                {{ $awp->pay_and_benefits }} </td>
                                                             <td style=" min-width: 450px;">
-                                                                {{ $awp->job_security_and_advancement}} </td>
-                                                            <td style=" min-width: 450px;"> 
-                                                                {{ $awp->management}} </td>
-                                                             <td style=" min-width: 450px;">
-                                                                 {{ $awp->culture}} </td>
-                                                                 <td style=" min-width: 450px;">
-                                                                    {{ $awp->average_rating}} </td>
-                                                                    <td style=" min-width: 450px;">
-                                                                        {{ $awp->additional_information}} </td>
-                                                                <td style=" min-width: 450px;">
-                                                                            {{ $awp->adverse_media}} </td>
-                                                                            <td style=" min-width: 450px;">
-                                                                                {{ $awp->average_rating}} </td>
-                                                                        <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
-                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
-                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>
-                                                                        <td style=" min-width: 250px;"> {{ number_format($awp->twenty_percent_votes,2)}}% </td>
-                                                                        <td style=" min-width: 250px; color:red; font-weight:600"> {{ number_format($awp->overall_score,2)}}%</td>
-                                                                        <td style=" min-width: 250px;"> @if($awp->status == 'WINNER') <span style="color:green; font-weight:700"> {{$awp->status}}</span> @else {{ $awp->status }} @endif </td>
-                                                            
-                                                            {{-- <td>   {{$awp->eight_percent_score}} </td>
-                                                     <td>   {{$awp->twenty_percent_votes}} </td>
-                                                     <td>   {{$awp->overall_core}} </td>
-                                                     <td>   {{$awp->number_of_votes}} </td> --}}
+                                                                {{ $awp->job_security_and_advancement }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->management }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->culture }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->average_rating }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->additional_information }} </td>
+                                                            <td style=" min-width: 450px;">
+                                                                {{ $awp->adverse_media }} </td>
+                                                            <td style=" min-width: 250px;">
+                                                                {{ array_sum(json_decode($awp->judges_votes)) }} </td>
+                                                            <td style=" min-width: 250px;">
+                                                                {{ number_format($awp->total_of_judges_score_converted_to_percentage, 2) }}%
+                                                            </td>
+                                                            <td style=" min-width: 250px;">
+                                                                {{ number_format($awp->eighty_percent_of_judges_score, 2) }}%
+                                                            </td>
+                                                            <td style=" min-width: 250px;">
+                                                                {{ number_format($awp->twenty_percent_votes, 2) }}% </td>
+                                                            <td style=" min-width: 250px; color:red; font-weight:600">
+                                                                {{ number_format($awp->overall_score, 2) }}%</td>
+                                                            <td style=" min-width: 250px;">
+                                                                @if ($awp->status == 'WINNER')
+                                                                    <span style="color:green; font-weight:700">
+                                                                        {{ $awp->status }}</span>
+                                                                @else
+                                                                    {{ $awp->status }}
+                                                                @endif
+                                                            </td>
                                                         </tr>
                                                     @endforeach
                                                 </tbody>
@@ -121,7 +124,8 @@
                             <div class="row">
                                 <div class="col-6"></div>
                                 <div class="col-6 text-end">
-                                    <input type="submit" class="btn btn-success" value="Submit Votes for this Awards" name="submitButton">
+                                    <input type="submit" class="btn btn-success" value="Submit Votes for this Awards"
+                                        name="submitButton">
                                 </div>
                             </div>
                         </form>

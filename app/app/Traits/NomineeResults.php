@@ -19,9 +19,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -43,9 +46,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -67,9 +73,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -90,9 +99,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -115,9 +127,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -138,9 +153,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -162,9 +180,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,
@@ -185,9 +206,12 @@ trait NomineeResults{
         foreach($awards as $award){
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
-            $judge_votes_to_percentage = ($total_judges_votes * 100)/(count($judge_votes) * 10);
-            $eighty_percent_of_judges_score = ($total_judges_votes * 80)/(count($judge_votes) * 10);
-            $twenty_percent_of_votes_score  = ($award->number_of_votes * 20)/($total_votes); 
+            
+            $total_attainable_judge_scores = count($judge_votes) * 10;
+            $judge_votes_to_percentage = ($total_judges_votes/$total_attainable_judge_scores)*100;
+            $eighty_percent_of_judges_score = ($judge_votes_to_percentage*0.8);
+            $percentage_of_votes = ($award->number_of_votes/$total_votes)*100;
+            $twenty_percent_of_votes_score  = $percentage_of_votes * 0.2; 
             $overall_score = $eighty_percent_of_judges_score + $twenty_percent_of_votes_score;
             $award->fill(['total_of_judges_score_converted_to_percentage' => $judge_votes_to_percentage, 
             'eighty_percent_of_judges_score' => $eighty_percent_of_judges_score, 'twenty_percent_votes' => $twenty_percent_of_votes_score,

@@ -65,7 +65,7 @@
                                                         <th>Total of judges score converted to percentage</th>
                                                         <th>80% of judges score</th>
                                                         <th>20% of Votes Cast</th>
-                                                         <th style="background:red; color:#fff">Overall Score</th>
+                                                        <th style="background:red; color:#fff">Overall Score</th>
                                                         <th style="background: green; color:#fff">Results</th>
                                                     </tr>
                                                 </thead>
@@ -92,14 +92,26 @@
                                                                 {{ $awp->aml_policy }} </td>
                                                             <td style=" min-width: 450px;">
                                                                 {{ $awp->documentation}} </td>
-                                                                <td style=" min-width: 450px;"> {{ $awp->adverse_media}} </td>
-                                                            <td style=" min-width: 250px;"> {{ array_sum(json_decode($awp->judges_votes))}} </td>
-                                                            <td style=" min-width: 250px;"> {{ number_format($awp->total_of_judges_score_converted_to_percentage,2)}}% </td>
-                                                            <td style=" min-width: 250px;"> {{ number_format($awp->eighty_percent_of_judges_score,2)}}% </td>
-                                                            <td style=" min-width: 250px;"> {{ number_format($awp->twenty_percent_votes,2)}}% </td>
-                                                            <td style=" min-width: 250px; color:red; font-weight:600"> {{ number_format($awp->overall_score,2)}}%</td>
-                                                            <td style=" min-width: 250px;"> @if($awp->status == 'WINNER') <span style="color:green; font-weight:700"> {{$awp->status}}</span> @else {{ $awp->status }} @endif </td>
-                                                        </tr>
+                                                                <td style=" min-width: 250px;">
+                                                                    {{ array_sum(json_decode($awp->judges_votes)) }} </td>
+                                                                <td style=" min-width: 250px;">
+                                                                    {{ number_format($awp->total_of_judges_score_converted_to_percentage, 2) }}%
+                                                                </td>
+                                                                <td style=" min-width: 250px;">
+                                                                    {{ number_format($awp->eighty_percent_of_judges_score, 2) }}%
+                                                                </td>
+                                                                <td style=" min-width: 250px;">
+                                                                    {{ number_format($awp->twenty_percent_votes, 2) }}% </td>
+                                                                <td style=" min-width: 250px; color:red; font-weight:600">
+                                                                    {{ number_format($awp->overall_score, 2) }}%</td>
+                                                                <td style=" min-width: 250px;">
+                                                                    @if ($awp->status == 'WINNER')
+                                                                        <span style="color:green; font-weight:700">
+                                                                            {{ $awp->status }}</span>
+                                                                    @else
+                                                                        {{ $awp->status }}
+                                                                    @endif
+                                                                </td></tr>
                                                     @endforeach
                                                     <input type="hidden" name="award_id"
                                                         value="{{ $awards[0]->award_id }}">

@@ -533,10 +533,10 @@ class JudgesController extends Controller
         }
     }
 
-    public function StoreNominessVotes(Request $request, $award_program_id, $award_id)
+    public function StoreNominessVotes(Request $request, $award_id, $award_program_id=2)
     {
         $id = $request->nominess;
-        $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
+        $award_program = Hashids::connection('awardProgram')->decode(2);
        // $award_id = Hashids::connection('award')->decode($award_id);
         // dd($request->all());
          $award_id = $request->award_id;
@@ -546,6 +546,7 @@ class JudgesController extends Controller
         $request->session()->flash('danger', 'Vote Must be between 1 - 10');
         return back()->withInput($request->all());
        } 
+   
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
@@ -722,6 +723,7 @@ class JudgesController extends Controller
         }
 
         if (in_array($award_id,  $data['award_group_one'])) {
+    
             $this->BankRiskComplaincesResults($award_id);
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
@@ -767,9 +769,9 @@ class JudgesController extends Controller
                 return view('contents.admin.voteResults.media_votes', $data)->with(['award_program' => $award_program]);
             } 
             else if (in_array($award_id,  $data['award_group_eleven'])) {
-                $this->GovernorsVotesResult($award_id);
+                $this->GovernorsVotesResults($award_id);
                 $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
-                return view('contents.admin.voteResults.crime_governors_votes', $data)->with(['award_program' => $award_program]);
+                return view('contents.admin.voteResults.governors_votes', $data)->with(['award_program' => $award_program]);
             } 
             else if (in_array($award_id,  $data['award_group_twelve'])) {
                 $this->NonFiVotesResults($award_id);
