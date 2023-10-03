@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
 </head>
 
-<body id="conference-page">
+<body id="conference-page"> 
 	<!-- =============== PRELOADER =============== -->
 	@include('partials.voter.preloader')
 	<!-- ============== PRELOADER END ============== -->
@@ -70,43 +70,108 @@
 					</div>
 					
 					<div class="col-12" style="text-align:justify;">
-						<ul class="mission-meta">
+						{{-- <ul class="mission-meta">
 							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Virtual / Online - Microsoft Teams </li>
 							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023</li>
 							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
 							<li><i class="mdi mdi-account-outline"></i> <a  href="{{route('summit_register')}}" target="_blank" style="font-size:20px"> REGISTER HERE </a> </li>
 							
-						</ul>
+						</ul> --}}
 
 						<ul class="mission-meta">
 							<li><i aria-hidden="true" class="mdi mdi-facebook"></i><a  href="https://web.facebook.com/grcfincrimeawards/posts/pfbid02ByNyK4N1jeNwKTiuvbS9a4AUuLu9X3kkx6Qxj5cRqCL94LFgpQMKcHSpigBEi9Pfl" target="_blank"> Follow on Facebook </a> </li>
 							<li><i aria-hidden="true" class="mdi mdi-instagram "></i><a  href="https://www.instagram.com/p/CqLlPP2MVi7/?utm_source=ig_web_copy_link" target="_blank"> Follow on Instagram </a> </li>
 							<li><i aria-hidden="true" class="mdi mdi-linkedin"></i><a href="https://www.linkedin.com/posts/the-morgans-grc-fin-crime-awards_fis-professionals-finance-activity-7045015444889440256-Jbjz?utm_source=share&utm_medium=member_desktop"> Follow on LinkedIn</a></li>			
-					</ul>
+						</ul>
 
-						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public</h4>
+						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">
+							Topic: Corporate Sustainability Due Diligence - A New Era of Accountability with Implication of Artificial Intelligence on GRC & Financial Crime Prevention
+						</h4>
 						
 						<div class="mission-info-text">
-							<p>This Summit is organised by THE MORGANS, a globally recognised advocate for effective Governance, Risk & Compliance systems in organisations and a promoter of Anti-Money Laundering and Counter-Terrorism Measures. </p>
-							<p> It strives to elucidate on Senior Managers and Certification Regime (SMCR) as a crucial financial service regulation in corporate institutions while underscoring the ingenuity in its design in imposing personal accountability 
-								on senior managers at financial services firms to improve the conduct of all employees at these firms. By so doing, individuals and organisations across the various industries in Nigeria, 
-								the United Kingdom and other countries, who have demonstrated expertise in this field, would be equipped with the knowledge capacity to effect needed change and adopt newer procedural workflows. </p>
-						<p>	Amongst discussions and intricate details to be shared, the importance of Ring Fencing FIs Against Financial Crime and Conduct will also play a major role in the discourse of the Summit.  </p>
-						<p>	This is because THE MORGANS understands that as a financial policy, Ring Fencing FIs doesn't just provide a virtual barrier 
-							that segregates part of an individual's or company's financial assets from the rest. 
-							It does more than protect retail banking functions used by customers by separating them 
-							from other activities. Ring Fencing in itself, results in the separation of core banking 
-							services — taking deposits, making payments and providing overdrafts for retail customers and 
-							small businesses — from other activities that banks undertake. This goes on to help protect 
-							core services and the customer from problems which may arise elsewhere within a banking group. </p>
+							<p>Welcome to the Corporate Sustainability Due Diligence Summit!</p><br>
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Introduction: </h6>
+							<p>
+								The GRC & FinCrime Prevention Summit is organised by THE MORGANS; a global GRC Consultancy and Training firm with an objective geared 
+								towards promoting awareness about GRC & Financial Crime Prevention in Nigeria and the United Kingdom, and encouraging industry best practices
+								and adherence to prevailing local and international regulations and standards.
+							</p>
+							<p>
+								In today's rapidly evolving business landscape, sustainability and accountability have become more than just buzzwords – they're essential pillars for responsible corporate conduct.
+								This summit will delve deep into the realm where sustainability meets technology, ethics meets innovation, and accountability takes centre stage.
+							</p>
+							<p>
+								At the GRC & FinCrime Prevention Awards and Summit 2023, we would embark on a transformative journey into the world of ethical business 
+								practices, accountability, and the powerful integration of artificial intelligence (AI) in Governance, Risk Management, and Compliance 
+								(GRC) as well as Financial Crime Prevention. 
+							</p>
+							
 							<p class="p-3"></p>
-							<h6 class="col-12" style="padding-left:0;padding-right:0;">Objectives: </h6>
-							<p>To help businesses especially financial organisations understand the need for Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
-								<p>To equip businesses with the needed knowledge and tools to enable them to effectively comply with the Senior Managers and Certification Regime (SMCR) and Ring Fencing policies.</p>
-							<p>To share insights and updated information on Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct </p>
-							</div>
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Objectives: </h6>
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Defining Corporate Sustainability Due Diligence:</h6>
+							<p>
+								One of the postures of this enlightening summit is to ensure that all stakeholders and attendees, gain a comprehensive understanding of what corporate sustainability due diligence entails 
+								and its significance in today's dynamic business landscape.	
+							</p>
+							<p>
+								It poses to thoroughly explore how sustainability due diligence goes beyond compliance to drive long-term value creation and 
+								ethical decision-making.
+							</p>
+							
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Navigating Corporate Sustainability Due Diligence:</h6>
+							<p>
+								This Summit will uncover the essence of corporate sustainability due diligence and its pivotal role in modern business operations.
+							<br>It will also shed profound insight into how organizations can integrate sustainability principles across supply chains, operations, and decision-making processes
+							</p>
+
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">The AI Revolution in Governance Risk, and Compliance:</h6>
+							<p>
+								At this exemplary gathering, this Summit poses to uncover the potential of AI-driven technologies and the revolutionary impact on the landscape of Governance, Risk Management, and Compliance.
+							<br>Examination of how AI empowers organizations to streamline processes, detect risks, and respond proactively to regulatory changes.
+							</p>
+
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">AI's Role in Financial Crime Prevention:</h6>
+							<p>
+								This summit will delve into the world of financial crime prevention, where AI's analytical prowess is transforming the way businesses identify and combat illicit activities.
+							<br>It will also expatiate on AI's data-driven insights to enhance fraud detection, anti-money laundering efforts, and overall compliance with anti-corruption regulations.
+							</p>
+
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Creating an Accountable Business Ecosystem:</h6>
+							<p>
+								At this summit, the imperative of accountability in fostering stakeholder trust and promoting sustainable growth will be strongly emphasized.
+							<br>Exploration of how the convergence of corporate sustainability due diligence, AI-enabled GRC, and financial crime prevention contributes to a responsible and accountable business environment will also be done. 
+							</p>
 						
-						<div class="mission-info-text">
+						</div>
+						
+						<div class="mission-info-text mt-4 ">
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Benefits: </h6>
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Expert Insights and Thought Leadership:</h6>
+							<p>
+								Engage with thought leaders, industry veterans, and subject matter experts who bring deep insights into corporate sustainability, AI, GRC, and financial crime prevention.
+							<br>Gain access to a diverse range of perspectives that will expand your horizons and inform your strategic decisions.
+							</p>
+
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Strategic Knowledge Exchange:</h6>
+							<p>
+								Elevate your understanding of current trends and best practices at the intersection of sustainability, AI, and risk management.
+								Equip yourself with actionable strategies that you can implement to drive your organization towards a sustainable and ethically responsible future.
+							</p>
+
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Networking and Collaboration:</h6>
+							<p>
+								Connect with peers, professionals, and innovators in the fields of sustainability, AI, and compliance.
+							<br>Forge valuable connections that could potentially lead to collaborative projects, partnerships, and the sharing of successful strategies.
+							</p>
+
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Real-world Applications and Case Studies:</h6>
+							<p>
+								Dive into real-world examples that illustrate how AI is transforming GRC and financial crime prevention.
+							<br>Learn from practical experiences that highlight the tangible benefits of incorporating AI into your organization's compliance and accountability efforts.
+							</p>
+
+						</div>
+						{{-- <div class="mission-info-text mt-2">
 							<h6 class="col-12" style="padding-left:0;padding-right:0;">Benefits: </h6>
 							<ol style="list-style-type: lower-roman;padding-right:10px;padding-left:10px;">
 								<li style="font-size: 14px;">To promote awareness about Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct in Nigeria and the United Kingdom.</li>
@@ -114,7 +179,7 @@
 									<li style="font-size: 14px;">To encourage tertiary institutions in Nigeria and UK to include GRC & Financial Crime Prevention courses in their curriculum.</li>
 										<li style="font-size: 14px;">To create healthy relationships amongst financial institutions in the area of promoting good governance systems as well as effective risk management and compliance programs. </li>
 							</ol>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
@@ -145,7 +210,7 @@
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="{{asset('/assets/2023/elena.jpeg')}}" alt="img">
+						<img src="{{asset('./assets/2023/elena.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Elena Pykhova</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
@@ -158,12 +223,11 @@
 								</span>
 							</div>
 						</div>
-
 					</div>
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="{{asset('/assets/2023/ola.jpeg')}}" alt="img">
+						<img src="{{asset('../assets/2023/ola.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Ola Olayinka  <small style="font-size: smaller;">FICA</small></h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
