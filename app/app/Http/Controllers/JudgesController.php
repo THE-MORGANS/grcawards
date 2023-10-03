@@ -14,6 +14,7 @@ use App\Models\Vote;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JudgesRegister;
 use App\Models\VoteCount;
+use App\Traits\JudgeOtherVotes;
 use App\Models\{
     ComBankChiefRiskOfficer,
     ComBankFraudAwareness,
@@ -47,6 +48,7 @@ class JudgesController extends Controller
     use NomineeResults;
     use AwardsGroups;
     use OtherVotes;
+    use JudgeOtherVotes;
 
  public function __construct() {
  return $this->middleware('auth:admin');
@@ -479,9 +481,8 @@ class JudgesController extends Controller
     public function ViewNominessVotes(Request $request, $award_program_id, $award_id)
     {
         $award_program = Hashids::connection('awardProgram')->encode(1);
-        $award = Hashids::connection('award')->decode($award_id);
+        $award_id = Hashids::connection('award')->decode($award_id)[0];
         $data = $this->getAwardId();
-        $award_id = $award[0];
         if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
@@ -506,6 +507,25 @@ class JudgesController extends Controller
         }else if (in_array($award_id,  $data['award_group_eight'])) {
             $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
             return view('contents.admin.table.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
+        }
+
+        ///None Nominees awarrds -----------------------------------
+        
+        else if (in_array($award_id,  $data['award_group_nine'])) {
+            $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
+            return view('contents.admin.table.women_in_grc', $data)->with(['award_program' => $award_program]);
+        }
+        else if (in_array($award_id,  $data['award_group_ten'])) {
+            $data['awards'] = MediaVotes::whereAwardId($award_id)->get();
+            return view('contents.admin.table.media_votes', $data)->with(['award_program' => $award_program]);
+        }
+        else if (in_array($award_id,  $data['award_group_eleven'])) {
+            $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
+            return view('contents.admin.table.governors_votes', $data)->with(['award_program' => $award_program]);
+        }
+        else if (in_array($award_id,  $data['award_group_twelve'])) {
+            $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
+            return view('contents.admin.table.nonfi_votes', $data)->with(['award_program' => $award_program]);
         }else {
             $request->session()->flash('danger', 'No nominees for this awards at the moment');
             return back();
@@ -588,7 +608,47 @@ class JudgesController extends Controller
             }
             $request->session()->flash('success', 'Vote Updated Successfully');
             return back();
-        } else {
+        }
+
+        #=================== NON NOMINEES AWARDS ========================
+
+        else if (in_array($award_id,  $data['award_group_nine'])) {
+            $data = $this->WomenInGrcJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }
+        else if (in_array($award_id,  $data['award_group_ten'])) {
+            $data = $this->MediasJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }
+        
+        else if (in_array($award_id,  $data['award_group_eleven'])) {
+            $data = $this->GovernorsJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }
+        else if (in_array($award_id,  $data['award_group_twelve'])) {
+            $data = $this->NonfiJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }  else {
             return back();
         }
     }
