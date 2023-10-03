@@ -130,7 +130,7 @@ trait JudgeOtherVotes{
             $data = false;
         }else{ 
         foreach($nominees as $nominess => $value){
-               $nominee = GovernorsVotes::where(['nominee_name' => $value, 'award_id'=>$award_hashid])->first();
+               $nominee = NonfiVotes::where(['nominee_name' => $value, 'award_id'=>$award_hashid])->first();
                if($nominee->judges_votes != null){    
                $vote =  json_decode($nominee->judges_votes);
                 array_push($vote, $judges_votes[$nominess]);
