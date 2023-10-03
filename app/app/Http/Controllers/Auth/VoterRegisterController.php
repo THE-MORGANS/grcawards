@@ -32,6 +32,7 @@ class VoterRegisterController extends Controller
 
     public function register(Request $request)
     {
+        return back();
         $this->validator($request->only('email'))->validate();
         $ip_address = $request->getClientIp();
         // dd($mac_address, $ip_address);
@@ -54,6 +55,7 @@ class VoterRegisterController extends Controller
     {
         // $award_program = AwardProgram::where('status', 1)->latest()->first();
 
+        return back();
         return Voter::create([
             'email' => $data['email'],
             'token' => $this->getToken(10),

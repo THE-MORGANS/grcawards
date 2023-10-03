@@ -50,6 +50,7 @@ class VoteController extends Controller
     public function addVote(Request $request, $award_id, $nominee_id)
     {
 
+        return back();
         $real_award = Hashids::connection('award')->decode($award_id)[0];
         $real_nominee = Hashids::connection('nominee')->decode($nominee_id)[0];
 
@@ -93,6 +94,7 @@ class VoteController extends Controller
     public function addMediaVote(Request $request, $award_id, $nominee)
     {
        
+        return back();
         $real_award = Hashids::connection('award')->decode($award_id)[0];
        
         $ip_address = $request->getClientIp();
