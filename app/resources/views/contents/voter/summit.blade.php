@@ -195,7 +195,7 @@
 						<img src="https://media.licdn.com/dms/image/C4D03AQFpNfd_khB6Qw/profile-displayphoto-shrink_800_800/0/1603547633866?e=1701907200&v=beta&t=t0vVk6UKMakdV_h3QZPyDUpMDyK1_JwtW3Ub8fiVrGI" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Dr. Emmanuel Moore ABOLO ,PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </h3>
-							<p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">The Risk Master; Global Speaker; Systems Thinker</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
