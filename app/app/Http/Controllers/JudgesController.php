@@ -715,8 +715,7 @@ class JudgesController extends Controller
      
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
         $award_id= Hashids::connection('award')->decode($award_id)[0];
-        //$award_id = Hashids::connection('award')->decode($award_id);
-        // dd($award_id);
+       
         
         $data = $this->getAwardId();
         
