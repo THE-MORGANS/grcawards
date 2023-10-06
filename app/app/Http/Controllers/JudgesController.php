@@ -189,13 +189,14 @@ class JudgesController extends Controller
                     'email' => $request->judge_email,
                     'password' => $request->judge_password
                 ];
-                Mail::to($request->email)->send(new JudgesRegister($data));
+                Mail::to($request->judge_email)->send(new JudgesRegister($data));
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
             } else {
                 $request->session()->flash('danger', 'Error. Pleae Try Again!'); // return error
                 return redirect()->route('admin.get_judges', $award_program);
             }
+            return back();
     }
     public function loadJudgingCategoryPage(Request $request, $award_program)
     {
