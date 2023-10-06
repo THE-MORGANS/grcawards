@@ -26,6 +26,6 @@ class JudgesRegister extends Mailable
      */
     public function build()
     {
-        return $this->from('events@grcfincrimeawards.com')->subject('Judge Registration Details')->view('emails.judgesRegister')->with('data',$this->data);
+        return $this->from('info@grcfincrimeawards.com')->subject('Judge Registration Details')->view('emails.judgesRegister')->with('data',$this->data);
     }
 }
