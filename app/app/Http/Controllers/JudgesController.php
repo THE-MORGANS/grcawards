@@ -62,7 +62,7 @@ class JudgesController extends Controller
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0])) {
             //get judges
-            $data['judges'] = DB::table('judges')->get();
+            $data['judges'] = DB::table('judges')->where('award_program_id', 2)->get();
             $data['award_program'] = $award_program;
             //mask the id for each judge
             foreach ($data['judges'] as $judge) {
