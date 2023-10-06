@@ -721,7 +721,7 @@ class JudgesController extends Controller
         $data = $this->getAwardId();
         
         $votes = JudgesVotes::where('award_id', $award_id)->get();
-        if (count($votes) < 0) {
+        if ($votes = null || count($votes) < 0) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
             return back();
         }
@@ -761,7 +761,10 @@ class JudgesController extends Controller
         return view('contents.admin.voteResults.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
     } 
             #===============NONE NOMINEES VOTES RESULTS ========================
-
+            if (count($votes) < 0) {
+                $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
+                return back();
+            }
             else if (in_array($award_id,  $data['award_group_nine'])) {
                 $this->WomenInGrcResults($award_id);
                 $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
