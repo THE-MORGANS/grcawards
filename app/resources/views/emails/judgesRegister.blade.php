@@ -43,7 +43,10 @@
     </tr>
   
     <tr>
-        <td> <a href=""> Click Here to Login </a> </td>
+        <td> <a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a> </td>
+    </tr>
+    <tr>
+        <td> <a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a> </td>
     </tr>
     </tbody>
 </table>
