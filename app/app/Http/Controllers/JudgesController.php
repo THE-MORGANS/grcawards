@@ -177,8 +177,6 @@ class JudgesController extends Controller
                     $admin = Admin::latest()->first();
                     $judge->admin_id = $admin->id;   
                 }
-                $admin = Admin::latest()->first();
-                $admin->fill($request->all());
                 $judge->name = $request->judge_fullname;
                 $judge->award_program_id  = $award_program_id[0];
                 $judge->position = $request->position; 
@@ -191,6 +189,9 @@ class JudgesController extends Controller
                     'email' => $request->judge_email,
                     'password' => $request->judge_password
                 ];
+                $admin = Admin::where('id', $judge->admin_id)->first();
+                $admin->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
+
                 Mail::to($request->judge_email)->send(new JudgesRegister($data));
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
