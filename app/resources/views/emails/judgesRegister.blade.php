@@ -7,7 +7,7 @@
             <tbody>
             <tr>
                 <td style="text-align:center;padding-bottom:15px">
-                    <img style="max-height:50px;width:auto" src="{{asset('logo.png')}}" alt="mazeoptions logo" class="CToWUd">
+                    <img style="max-height:50px;width:auto" src="https://grcfincrimeawards.com/assets/logo.png" alt="GRC awards" class="CToWUd">
                 </td>
             </tr>
             </tbody>
