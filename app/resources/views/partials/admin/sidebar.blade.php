@@ -136,9 +136,9 @@
                      <li>
                          <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
                      </li>
-                     <li>
+                     {{-- <li>
                          <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
-                     </li>
+                     </li> --}}
                  </ul>
              </div>
          </li>

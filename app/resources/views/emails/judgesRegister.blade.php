@@ -41,15 +41,8 @@
     <td width="25">&nbsp;&nbsp;:&nbsp;&nbsp;</td>
     <td> {{ $data['password'] }}</td>
     </tr>
-  
-    <tr>
-        <td> <a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a> </td>
-    </tr>
-    <tr>
-        <td> <a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a> </td>
-    </tr>
     </tbody>
 </table>
-
+<a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a>
     </center>
 </div>
