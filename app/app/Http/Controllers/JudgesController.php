@@ -175,8 +175,10 @@ class JudgesController extends Controller
                     $admin->save();
                     sleep(2);
                     $admin = Admin::latest()->first();
-                    $judge->admin_id = $admin->id;
+                    $judge->admin_id = $admin->id;   
                 }
+                $admin = Admin::latest()->first();
+                $admin->fill($request->all());
                 $judge->name = $request->judge_fullname;
                 $judge->award_program_id  = $award_program_id[0];
                 $judge->position = $request->position; 
