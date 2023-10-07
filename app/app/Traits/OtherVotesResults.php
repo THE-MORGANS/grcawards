@@ -19,6 +19,9 @@ trait OtherVotesResults {
             $check->update(['status' => '']);
         }
         foreach($awards as $award){
+            if($award->judges_votes == null){
+                return back();
+            }
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
             
@@ -45,6 +48,9 @@ trait OtherVotesResults {
             $check->update(['status' => '']);
         }
         foreach($awards as $award){
+            if($award->judges_votes == null){
+                return back();
+            }
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
             
@@ -72,6 +78,9 @@ trait OtherVotesResults {
             $check->update(['status' => '']);
         }
         foreach($awards as $award){
+            if($award->judges_votes == null){
+                return back();
+            }
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
             
@@ -98,6 +107,9 @@ trait OtherVotesResults {
             $check->update(['status' => '']);
         }
         foreach($awards as $award){
+            if($award->judges_votes == null){
+                return back();
+            }
             $judge_votes = json_decode($award->judges_votes);
             $total_judges_votes = array_sum($judge_votes);
             
