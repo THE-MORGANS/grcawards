@@ -28,7 +28,7 @@
 	</div>
 	<!-- page title -->
 	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
-	<section id="about" class="s-conference-mission pt-0" style="margin:-200px">
+	<section id="about" class="s-conference-mission pt-0" style="margin:-230px">
 		<div class="s-our-mission ">
 		
 			<div class="container">
