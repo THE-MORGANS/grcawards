@@ -720,6 +720,8 @@ class JudgesController extends Controller
         $data = $this->getAwardId();
         
         $votes = JudgesVotes::where('award_id', $award_id)->get();
+
+        dd($votes);
         if ($votes = null || count($votes) < 0) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
             return back();
