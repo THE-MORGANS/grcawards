@@ -70,13 +70,13 @@
 					</div>
 					
 					<div class="col-12" style="text-align:justify;">
-						{{-- <ul class="mission-meta">
-							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Virtual / Online - Microsoft Teams </li>
-							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023</li>
-							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li>
+						<ul class="mission-meta">
+							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i> </li>
+							{{-- <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Thursday, 15th June 2023</li>
+							<li><i class="mdi mdi-clock-outline"></i>12pm - 2pm</li> --}}
 							<li><i class="mdi mdi-account-outline"></i> <a  href="{{route('summit_register')}}" target="_blank" style="font-size:20px"> REGISTER HERE </a> </li>
 							
-						</ul> --}}
+						</ul>
 
 						<ul class="mission-meta">
 							<li><i aria-hidden="true" class="mdi mdi-facebook"></i><a  href="https://web.facebook.com/grcfincrimeawards/posts/pfbid02ByNyK4N1jeNwKTiuvbS9a4AUuLu9X3kkx6Qxj5cRqCL94LFgpQMKcHSpigBEi9Pfl" target="_blank"> Follow on Facebook </a> </li>
@@ -302,7 +302,7 @@
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="img">
+						<img src="{{asset('assets/Chinelo Ubah_20231005_084651_0000.png')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Chinelo Ubah </h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
