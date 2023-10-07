@@ -719,14 +719,14 @@ class JudgesController extends Controller
         
         $data = $this->getAwardId();
         
-        $votes = JudgesVotes::where('award_id', $award_id)->get();
+        $votes = JudgesVotes::where('award_id', $award_id)->first();
 
-        if (empty($votes) || count($votes) < 0) {
+        if ( empty($votes)) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
-            return back();
+            return redirect()->back();
         }
 
-        dd($votes);
+      
 
         if (in_array($award_id,  $data['award_group_one'])) {
             $this->BankRiskComplaincesResults($award_id);
