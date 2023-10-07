@@ -721,8 +721,7 @@ class JudgesController extends Controller
         
         $votes = JudgesVotes::where('award_id', $award_id)->get();
 
-        dd($votes);
-        if ($votes = null || count($votes) < 0) {
+        if (empty($votes) || count($votes) < 0) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
             return back();
         }
