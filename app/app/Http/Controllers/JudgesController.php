@@ -726,8 +726,9 @@ class JudgesController extends Controller
             return back();
         }
 
+        dd($votes);
+
         if (in_array($award_id,  $data['award_group_one'])) {
-    
             $this->BankRiskComplaincesResults($award_id);
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
             return view('contents.admin.voteResults.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
