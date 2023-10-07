@@ -358,6 +358,46 @@
 
 					</div>
 				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="https://media.licdn.com/dms/image/D5603AQGWk79gWOv3gQ/profile-displayphoto-shrink_400_400/0/1682971272930?e=1701907200&v=beta&t=8w6ao3q2cX5fdvoaxHPzCSUvXMZhQZTU7FDyvKmn8hM" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Femi Jaiyeola  </h3>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Chief Conduct & Compliance Officer - Access Bank</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/femi-jaiyeola-025a142/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="https://www.lagoshouseofassembly.gov.ng/wp-content/uploads/2021/02/0e718077-c534-45e1-b9fa-b0b7d203ebc0.jpg" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">HON. FEMI SAHEED </h3>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">STATE SECRETARY APC LAGOS</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/femi-saheed-a500542b/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
 			</div>
 			<ul class="mission-meta">
 				{{-- <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Virtual / Online - Microsoft Teams </li>
