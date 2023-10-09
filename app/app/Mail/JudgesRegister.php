@@ -26,6 +26,6 @@ class JudgesRegister extends Mailable
      */
     public function build()
     {
-        return $this->from('no-reply@grcfincrimeawards.com', 'GRC Awards Judges')->subject('Judges Registration Details')->view('emails.judgesRegister')->with('data',$this->data);
+        return $this->from('noreply@grcfincrimeawards.com', 'GRC Awards Judges')->subject('Judges Registration Details')->view('emails.judgesRegister')->with('data',$this->data);
     }
 }
