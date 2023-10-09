@@ -145,7 +145,7 @@ class JudgesController extends Controller
     {
         $validated = Validator::make($request->all(),[
             'judge_fullname' => 'required',
-            'judge_email' => 'required|unique:admins,email',
+            // 'judge_email' => 'required|unique:admins,email',
             'judge_password' => 'required|min:5',
         ]);
         if($validated->fails()){
