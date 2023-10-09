@@ -22,7 +22,7 @@ class LandingPageController extends Controller
     public function showLandingIndex()
     {
 
-        $judges = Judge::where('award_program_id', 1)->get();
+        $judges = Judge::where('award_program_id', 2)->get();
         return view('contents.voter.index')->with(['judges'=>$judges]);
     }
 

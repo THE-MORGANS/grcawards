@@ -128,7 +128,11 @@ class JudgesController extends Controller
                     'password' => $request->password
                 ];
 
-                Mail::to($request->email)->send(new JudgesRegister($data));
+               $dd = Mail::to($request->email)->send(new JudgesRegister($data));
+               if(!$dd){
+                $request->session()->flash('error', 'Email Not sent');
+                return redirect()->route('admin.get_judges', $award_program);
+               }
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
             } else {
@@ -192,7 +196,11 @@ class JudgesController extends Controller
                 $admins = Admin::where('id', $judge->admin_id)->first();
                 $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
 
-                Mail::to($request->judge_email)->send(new JudgesRegister($data));
+                $dd = Mail::to($request->email)->send(new JudgesRegister($data));
+                if(!$dd){
+                 $request->session()->flash('error', 'Email Not sent');
+                 return redirect()->route('admin.get_judges', $award_program);
+                }
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
             } else {
