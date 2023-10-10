@@ -28,16 +28,16 @@
 	</div>
 	<!-- page title -->
 	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
-	<section id="about" class="s-conference-mission pt-0" style="margin:-230px">
+	<section id="about" class="s-conference-mission pt-0" style="margin-top:-230px">
 		<div class="s-our-mission ">
 		
 			<div class="container">
 			
-				<div class="conference-counter-wrap ">
-						<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
+			<div class="conference-counter-wrap ">
+			<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
 							<h6 class=""> GRC & FinCrime Prevention Year Summit 2023
                                 </h6>
-						{{-- <p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p> --}}
+						<p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p>
                         <hr>
                         <p style="font-size:15px">Registration Details</p>
                         <br>
@@ -45,9 +45,10 @@
                         @if(Session::has('msg'))
                      <span class="btn primary"> {{Session::get('msg')}} </span>   
                         @endif
-                        <form action="{{route('grcformRegister')}}" method="post">
+                 <form action="{{route('grcformRegister')}}" method="post">
                         @csrf
-                        <div class="p-1">
+                    
+                     <div class="p-1">
                         <label for="firstname"> First Name </label>
                         <input id="email" class="form-control" id="firstname" value="{{old('first_name')}}" type="text" name="first_name" placeholder="First Name" required>
                         @error('firstname')
@@ -161,21 +162,16 @@
                     </div>
                    
                     <button type="submit" class="btn btn-primary"> Register</button>
-						</div>
-
-                    
-
-                    
-					</div>
-					<br>
-					
-			
+                 </form>
+				</div>
 			</div>
 		</div>
+        </div>
+    </div>
 	</section>
 	
-    <div class="p-5 p-5"></div>
-    <div class="p-5 p-5"></div>
+ 
+
 
 	<!--==================== FOOTER ====================-->
 	@include('partials.voter.footer')
