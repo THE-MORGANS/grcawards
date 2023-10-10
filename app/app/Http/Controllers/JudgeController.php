@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Award;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\SummitRegistration;
 use Vinkla\Hashids\Facades\Hashids;
 
 class JudgeController extends Controller
@@ -25,6 +26,12 @@ class JudgeController extends Controller
         }
             $request->session()->flash('danger', 'Could not the data you requested!');
             return redirect()->back();
+    }
+
+    public function ShowRegisteredUsers($award_program){
+        $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
+        $registered = SummitRegistration::latest()->get();
+        return view('contents.admin.registered')->with(['registered' => $registered, 'award_program'=> $award_program_id]);
     }
 
 }

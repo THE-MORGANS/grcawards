@@ -117,6 +117,22 @@
                 </div>
             </li>
 
+            
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#summit" aria-expanded="false" aria-controls="people" class="side-nav-link">
+                    <i class="uil uil-users-alt"></i>
+                    <span> Summit Users</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="summit">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.ShowRegisteredUsers', request()->segment(3))}}">View All</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
             @endif
 
             @if (Auth::guard('admin')->user()->role_id == 3)

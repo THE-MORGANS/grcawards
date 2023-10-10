@@ -49,7 +49,7 @@
                         @csrf
                         <div class="p-1">
                         <label for="firstname"> First Name </label>
-                        <input id="email" class="form-control" id="firstname" type="text" name="first_name" placeholder="First Name" required>
+                        <input id="email" class="form-control" id="firstname" value="{{old('first_name')}}" type="text" name="first_name" placeholder="First Name" required>
                         @error('firstname')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -59,7 +59,7 @@
                     
                     <div class="p-1">
                         <label for="firstname"> Last Name </label>
-                        <input id="firstname" class="form-control" id="firstname" type="text" name="last_name" placeholder="Last Name" required>
+                        <input id="firstname" class="form-control" value="{{old('last_name')}}" id="firstname" type="text" name="last_name" placeholder="Last Name" required>
                         @error('last_name')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -69,7 +69,7 @@
 
                     <div class="p-1">
                         <label for="email"> Email </label>
-                        <input id="firstname" class="form-control" id="email" type="email" name="email" placeholder="email" required>
+                        <input id="firstname" class="form-control"  value="{{old('email')}}" id="email" type="email" name="email" placeholder="email" required>
                         @error('email')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -79,7 +79,7 @@
 
                     <div class="p-1">
                         <label for="email"> Phone </label>
-                        <input id="phone" class="form-control" id="phone" type="text" name="phone" placeholder="phone" required>
+                        <input id="phone" class="form-control" id="phone" value="{{old('phone')}}" type="text" name="phone" placeholder="phone" required>
                         @error('phone')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -88,9 +88,9 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="city"> City </label>
-                        <input id="city" class="form-control" id="city" type="text" name="city" placeholder="city" required>
-                        @error('city')
+                        <label for="company"> Company </label>
+                        <input id="company" class="form-control" id="company"  value="{{old('company')}}"type="text" name="company" placeholder="company" required>
+                        @error('company')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -98,9 +98,9 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="State"> State </label>
-                        <input id="firstname" class="form-control" id="state" type="text" name="state" placeholder="state" required>
-                        @error('state')
+                        <label for="State"> Designated role </label>
+                        <input id="role" class="form-control" value="{{old('role')}}" id="role" type="text" name="role" placeholder="" required>
+                        @error('role')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -108,9 +108,10 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="country"> Country/Region </label>
-                        <input id="country" class="form-control" id="country" type="text" name="country" placeholder="country" required>
-                        @error('country')
+                        <label for="award"> Did you nominate your firm for any award </label>
+                        YES: <input id="award" class="form-control" id="award" type="radio" name="award"  value="Yes" placeholder="award" required>
+                        NO: <input id="award" class="form-control" id="award" type="radio" name="award" value="No" placeholder="award" required>
+                        @error('award')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -118,9 +119,9 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="Industry"> Industry </label>
-                        <input id="industry" class="form-control" id="industry" type="text" name="industry" placeholder="industry" required>
-                        @error('industry')
+                        <label for="reason"> (If No,) Why? </label>
+                        <input id="reason" class="form-control" id="reason" value="{{old('reason')}}" type="text" name="reason"  required>
+                        @error('reason')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -128,9 +129,9 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="job_title"> Job Title </label>
-                        <input id="job_title" class="form-control" id="firstname" type="text" name="job_title" placeholder="job_title" required>
-                        @error('job_title')
+                        <label for="about_us"> How did you hear about the Summit/Awa</label>
+                        <input id="about_us" class="form-control" id="about_us" type="text"  value="{{old('about_us')}}" name="about_us" required>
+                        @error('about_us')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -138,9 +139,9 @@
                     </div>
                    
                     <div class="p-1">
-                        <label for="organisation"> Organisation</label>
-                        <input id="organisation" class="form-control" id="organisation" type="text" name="organisation" placeholder="organisation" required>
-                        @error('organisation')
+                        <label for="expectation">What’re your expectations for the Summit/Awards </label>
+                        <input id="expectation" class="form-control" id="expectation" type="text" name="expectation" value="{{old('expectation')}}"required>
+                        @error('expectation')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>
@@ -148,9 +149,11 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="message"> How did you get to know about this webina</label>
-                        <textarea   name="message" placeholder="How did you get to know about this webina"></textarea>
-                        @error('message')
+                        <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards? (Yes/No)-</label>
+                        YES: <input class="form-control" id="speaker" type="radio" name="speaker"  value="Yes"  required>
+                        NO: <input  class="form-control" id="speaker" type="radio" name="speaker" value="No"  required>
+                       
+                        @error('speaker')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
                         </span>

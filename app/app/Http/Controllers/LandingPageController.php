@@ -13,7 +13,9 @@ use App\Models\Judge;
 use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Models\Award;
+use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
+use App\Models\SummitRegistration;
 use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
@@ -178,13 +180,7 @@ class LandingPageController extends Controller
                 'last_name' => 'required',
                 'email' => 'required',
                 'phone' => 'required',
-                'city' => 'required',
-                'state' => 'required',
-                'country' => 'required',
-                'message' => 'required',
-                'job_title' => 'required',
-                'organisation' => 'required',
-                'industry' => 'required'
+                'company' => 'required',
 
             ]);
           //  dd($valid->errors());
@@ -193,27 +189,38 @@ class LandingPageController extends Controller
                 return back()->withErrors($valid->errors())->withInput($req->all());
             }
 
+            try{
+
+          DB::beginTransaction();
+
             $data = [
                 'first_name' => $req->first_name,
                 'last_name' => $req->last_name,
                 'email' => $req->email,
                 'phone' => $req->phone,
-                'city' => $req->city,
-                'state' => $req->state,
-                'country' =>$req->country,
-                'message' => $req->message,
-                'job_title' => $req->job_title,
-                'organisation' =>  $req->organisation,
-                'industry' =>  $req->industry,
+                'company' => $req->company,
+                'role' => $req->role,
+                'award' =>$req->award,
+                'reason' => $req->reason,
+                'about_us' => $req->about_us,
+                'expectation' =>  $req->expectation,
+                'speaker' =>  $req->speaker,
             ];
 
+
+            SummitRegistration::create($data);
+            DB::commit();
             if($data){
-                Mail::to(['festus.uwabor@morgansconsortium.com', 'michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
+                // Mail::to(['festus.uwabor@morgansconsortium.com', 'michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
                 Session::flash('msg','Registration Completed Successfully');
                 return back();
             }
 
-            return back();
+        }catch(\Exception $e){
+        DB::rollback();
+        }
+        Session::flash('msg','Somethin went wrong, try again!');
+        return back()->withErrors($valid->errors())->withInput($req->all());
           
     }
 

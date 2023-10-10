@@ -87,6 +87,10 @@ Route::prefix('admin')->group(function(){
                 Route::get('', [AdminController::class, 'getAdmins'])->name('admin.get_admins');
             });
 
+            Route::prefix('summit')->group(function(){
+                Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
+            });
+
             Route::prefix('judges')->group(function(){
                 Route::get('', [JudgesController::class, 'getJudges'])->name('admin.get_judges');
                 Route::post('create', [JudgesController::class, 'addJudges'])->name('admin.create_judges');
