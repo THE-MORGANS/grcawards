@@ -211,7 +211,7 @@ class LandingPageController extends Controller
             SummitRegistration::create($data);
             DB::commit();
             if($data){
-                // Mail::to(['festus.uwabor@morgansconsortium.com', 'michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
+                 Mail::to(['festus.uwabor@morgansconsortium.com', 'michael.ozoudeh@morgansconsortium.com'])->send(new GrcRegister($data));
                 Session::flash('msg','Registration Completed Successfully');
                 return back();
             }
