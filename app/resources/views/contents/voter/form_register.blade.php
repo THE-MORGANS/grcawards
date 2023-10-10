@@ -35,7 +35,7 @@
 			
 				<div class="conference-counter-wrap ">
 						<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
-							<h6 class=""> GRC & FinCrime Prevention Year Summit
+							<h6 class=""> GRC & FinCrime Prevention Year Summit 2023
                                 </h6>
 						{{-- <p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p> --}}
                         <hr>
