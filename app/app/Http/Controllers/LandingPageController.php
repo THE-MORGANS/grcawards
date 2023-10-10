@@ -218,9 +218,13 @@ class LandingPageController extends Controller
 
         }catch(\Exception $e){
         DB::rollback();
-        }
         Session::flash('msg','Somethin went wrong, try again!');
         return back()->withErrors($valid->errors())->withInput($req->all());
+        }
+        return back()->withErrors($valid->errors())->withInput($req->all());
+
+
+       
           
     }
 
