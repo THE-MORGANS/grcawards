@@ -210,6 +210,24 @@
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
+						<img src="{{asset('/assets/MicrosoftTeams-image2.png')}}" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Funmilayo Ekundayo FCIS</h3>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;"> CEO / MD , STL Trustees &  President , ICSAN</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/funmilayo-ekundayo-67903430/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
 						<img src="https://media.licdn.com/dms/image/D4D03AQG99ImLBVU5uA/profile-displayphoto-shrink_400_400/0/1685298259068?e=1701907200&v=beta&t=kW3w47gwEPE1psZXvZUthTCC-k_VP7mpyqDVh_A59yE" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Dr. Ezekiel Oseni</h3>
