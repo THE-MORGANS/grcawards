@@ -92,9 +92,7 @@
 							<p>Welcome to the Corporate Sustainability Due Diligence Summit!</p><br>
 							<h6 class="col-12" style="padding-left:0;padding-right:0;">Introduction: </h6>
 							<p>
-								The GRC & FinCrime Prevention Summit is organised by THE MORGANS; a global GRC Consultancy and Training firm with an objective geared 
-								towards promoting awareness about GRC & Financial Crime Prevention in Nigeria and the United Kingdom, and encouraging industry best practices
-								and adherence to prevailing local and international regulations and standards.
+								The GRC & FinCrime Prevention Summit is organised by THE MORGANS.
 							</p>
 							<p>
 								In today's rapidly evolving business landscape, sustainability and accountability have become more than just buzzwords – they're essential pillars for responsible corporate conduct.

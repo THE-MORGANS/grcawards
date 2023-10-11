@@ -35,9 +35,9 @@
 			
 			<div class="conference-counter-wrap ">
 			<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
-							<h6 class=""> GRC & FinCrime Prevention Year Summit 2023
+							<h6 class=""> GRC & FinCrime Prevention Year Summit and Awards 2023
                                 </h6>
-						<p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p>
+						{{-- <p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p> --}}
                         <hr>
                         <p style="font-size:15px">Registration Details</p>
                         <br>
@@ -130,7 +130,7 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="about_us"> How did you hear about the Summit/Awa</label>
+                        <label for="about_us"> How did you hear about the Summit/Awards</label>
                         <input id="about_us" class="form-control" id="about_us" type="text"  value="{{old('about_us')}}" name="about_us" required>
                         @error('about_us')
                         <span class="invalid-feedback" role="alert" style="color:red">
@@ -140,7 +140,7 @@
                     </div>
                    
                     <div class="p-1">
-                        <label for="expectation">What’re your expectations for the Summit/Awards </label>
+                        <label for="expectation">What are your expectations for the Summit/Awards </label>
                         <input id="expectation" class="form-control" id="expectation" type="text" name="expectation" value="{{old('expectation')}}"required>
                         @error('expectation')
                         <span class="invalid-feedback" role="alert" style="color:red">
@@ -151,8 +151,9 @@
 
                     <div class="p-1">
                         <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards? (Yes/No)-</label>
-                        YES: <input class="form-control" id="speaker" type="radio" name="speaker"  value="Yes"  required>
-                        NO: <input  class="form-control" id="speaker" type="radio" name="speaker" value="No"  required>
+                        Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
+                        Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
+                        Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
                        
                         @error('speaker')
                         <span class="invalid-feedback" role="alert" style="color:red">

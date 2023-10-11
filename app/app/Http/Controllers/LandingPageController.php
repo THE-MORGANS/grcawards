@@ -222,9 +222,6 @@ class LandingPageController extends Controller
         return back()->withErrors($valid->errors())->withInput($req->all());
         }
         return back()->withErrors($valid->errors())->withInput($req->all());
-
-
-       
           
     }
 
