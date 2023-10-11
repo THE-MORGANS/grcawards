@@ -558,6 +558,13 @@ class JudgesController extends Controller
         $request->session()->flash('danger', 'Vote Must be between 1 - 10');
         return back()->withInput($request->all());
        } 
+
+       foreach($request->judges_votes as  $key => $vt){
+        if($vt == null){
+            $request->session()->flash('danger', 'Please vote for all Nominees');
+            return back()->withInput($request->all());  
+        }
+       }
    
     
 
