@@ -559,9 +559,12 @@ class JudgesController extends Controller
         return back()->withInput($request->all());
        } 
    
+    
 
         if (in_array($award_id,  $data['award_group_one'])) {
+
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
+
             if ($data == false) {
                 $request->session()->flash('danger', 'You have voted for this category already');
                 return back()->withInput($request->all());
@@ -585,7 +588,7 @@ class JudgesController extends Controller
             $request->session()->flash('success', 'Vote Updated Successfully');
             return back();
         } else if (in_array($award_id,  $data['award_group_four'])) {
-            $data = $this->GrcEmployers($request->judges_votes, $request->nominee_ids, $award_id);
+            $data = $this->GrcEmployersVote($request->judges_votes, $request->nominee_ids, $award_id);
             if ($data == false) {
                 $request->session()->flash('danger', 'You have voted for this category already');
                 return back();
@@ -729,6 +732,7 @@ class JudgesController extends Controller
         
         $votes = JudgesVotes::where('award_id', $award_id)->first();
 
+ 
         if ( empty($votes)) {
             $request->session()->flash('danger', 'Judges have not voted for this award, please check back later');
             return redirect()->back();

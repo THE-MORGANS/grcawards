@@ -121,6 +121,7 @@ trait NomineesAwards {
 
     #Award 6
     public function GrcEmployers($votes, $award_hashid){
+ 
         $check =  GrcEmployer::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
            foreach($check as $cc => $val){

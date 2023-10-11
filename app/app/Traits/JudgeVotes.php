@@ -87,6 +87,7 @@ trait JudgeVotes {
       #awardsThree
     public function BankRiskComplaincesVote($judges_votes, $nominee_ids, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
+        dd($check);
        $vote = [];
         if($check){
             $data = false;
