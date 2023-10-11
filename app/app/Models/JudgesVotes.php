@@ -9,5 +9,5 @@ class JudgesVotes extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['judge_id', 'nominee', 'votes', 'award_id', 'nominee_id'];
+    protected $fillable = ['judge_id', 'nominee_name', 'votes', 'award_id', 'nominee_id'];
 }
