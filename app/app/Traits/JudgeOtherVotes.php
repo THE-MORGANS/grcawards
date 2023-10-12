@@ -53,7 +53,7 @@ trait JudgeOtherVotes{
     public function MediasJudgeVote($judges_votes, $nominees, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
-        if(!$check){
+        if($check){
             $data = false;
         }else{ 
         foreach($nominees as $nominess => $value){
@@ -89,7 +89,7 @@ trait JudgeOtherVotes{
     public function GovernorsJudgeVote($judges_votes, $nominees, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
-        if($check){
+        if(!$check){
             $data = false;
         }else{ 
         foreach($nominees as $nominess => $value){
@@ -126,7 +126,7 @@ trait JudgeOtherVotes{
     public function NonfiJudgeVote($judges_votes, $nominees, $award_hashid){
         $check = JudgesVotes::where(['award_id'=>$award_hashid, 'judge_id' => auth('admin')->user()->id])->first();
        $vote = [];
-        if(!$check){
+        if($check){
             $data = false;
         }else{ 
         foreach($nominees as $nominess => $value){
