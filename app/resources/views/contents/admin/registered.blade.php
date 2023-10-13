@@ -28,10 +28,12 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4 class="header-title mb-4">Summit Registered  Users<span style="color:red">
+                                    Total Registered: {{count($registered)}}
+                                    </span>
                                   </h4>
                             </div>
                             <div class="col-12 text-end"> 
-                          Total Registered: {{count($registered)}}
+                     
                         </div>
                         </div>
                         {{-- <form class="needs-validation" method="POST"
