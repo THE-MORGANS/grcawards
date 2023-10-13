@@ -59,8 +59,8 @@
                                                         <th style=" min-width: 150px;">What’re your expectations for the Summit/Awards </th>
                                                         <th style=" min-width: 400px;">Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards? (Yes/No)-</th>
                                                         
-                                                        {{-- <th>80% score</th>
-                                                    <th>20% votes</th>
+                                                       <th>Date Registered</th>
+                                                    {{--  <th>20% votes</th>
                                                     <th>Overall Score</th> --}}
                                                    
                                                     </tr>
@@ -87,6 +87,8 @@
                                                                 {{ $awp->expectation}} </td>
                                                             <td style=" min-width: 450px;">
                                                                 {{ $awp->speaker }} </td>
+                                                                <td style=" min-width: 450px;">
+                                                                    {{ $awp->created_at->diffForHumans() }} </td>
                                                            
                                                           
                                             
