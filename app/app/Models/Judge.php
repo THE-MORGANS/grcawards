@@ -22,5 +22,9 @@ class Judge extends Model
         return $this->belongsTo(Admin::class, 'admin_id', 'id');
     }
 
+    public function judges_votes($id){
+        return JudgesVotes::where('judge_id', $id)->get();
+    }
+
 
 }

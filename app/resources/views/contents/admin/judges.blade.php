@@ -114,6 +114,9 @@
                                     <th>S/N</th>
                                     <th class="all">Name</th>
                                     <th class="all">Email</th>
+
+                                    <th class="all">Awards Voted</th>
+                                    <th class="all">Awards Remaining</th>
                                     <th class="all">Postion</th>
                                     <th class="all">Profile</th>
                                     <th style="width: 85px;">Action</th>
@@ -132,6 +135,10 @@
                                     <td>
                                         {{$judge->email}}
                                     </td>
+                                    <td>
+                                       {{count($judge->judges_votes($judge->id))}}
+                                    </td>
+                                  
                                     <td>
                                         {{$judge->position}}
                                     </td>
