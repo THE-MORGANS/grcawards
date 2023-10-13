@@ -135,7 +135,7 @@
                                         {{$judge->email}}
                                     </td>
                                     <td>
-                                       {{count($judge->judges_votes($judge->id))}}
+                                       {{count($judge->judges_votes($judge->admin_id))}}
                                     </td>
                                   
                                     <td>
