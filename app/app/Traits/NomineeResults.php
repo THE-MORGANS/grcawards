@@ -12,7 +12,7 @@ trait NomineeResults{
 
         $awards = ComBankChiefRiskOfficer::where('award_id', $award_id)->get();
         $total_votes = ComBankChiefRiskOfficer::where('award_id', $award_id)->sum('number_of_votes');
-        $check = ComBankChiefRiskOfficer::where('status', 'WINNER')->first();
+        $check = ComBankChiefRiskOfficer::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -39,7 +39,7 @@ trait NomineeResults{
 
         $awards = ComBankFraudAwareness::where('award_id', $award_id)->get();
         $total_votes = ComBankFraudAwareness::where('award_id', $award_id)->sum('number_of_votes');
-        $check = ComBankFraudAwareness::where('status', 'WINNER')->first();
+        $check = ComBankFraudAwareness::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -66,7 +66,7 @@ trait NomineeResults{
 
         $awards = ComBankRiskComplaince::where('award_id', $award_id)->get();
         $total_votes = ComBankRiskComplaince::where('award_id', $award_id)->sum('number_of_votes');
-        $check = ComBankRiskComplaince::where('status', 'WINNER')->first();
+        $check = ComBankRiskComplaince::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -92,7 +92,7 @@ trait NomineeResults{
     public function GrcAntiFinCrimReportersResults($award_id){
         $awards = GrcAntiFinCrimReporter::where('award_id', $award_id)->get();
         $total_votes = GrcAntiFinCrimReporter::where('award_id', $award_id)->sum('number_of_votes');
-        $check = GrcAntiFinCrimReporter::where('status', 'WINNER')->first();
+        $check = GrcAntiFinCrimReporter::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -120,7 +120,7 @@ trait NomineeResults{
 
         $awards = GrcSolutionProvider::where('award_id', $award_id)->get();
         $total_votes = GrcSolutionProvider::where('award_id', $award_id)->sum('number_of_votes');
-        $check = GrcSolutionProvider::where('status', 'WINNER')->first();
+        $check = GrcSolutionProvider::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -146,7 +146,7 @@ trait NomineeResults{
     public function GrcEmployersResults($award_id){
         $awards = GrcEmployer::where('award_id', $award_id)->get();
         $total_votes = GrcEmployer::where('award_id', $award_id)->sum('number_of_votes');
-        $check = GrcEmployer::where('status', 'WINNER')->first();
+        $check = GrcEmployer::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -173,7 +173,7 @@ trait NomineeResults{
     public function GrcTrainingProviderResults($award_id){
         $awards = GrcTrainingProvider::where('award_id', $award_id)->get();
         $total_votes = GrcTrainingProvider::where('award_id', $award_id)->sum('number_of_votes');
-        $check = GrcTrainingProvider::where('status', 'WINNER')->first();
+        $check = GrcTrainingProvider::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -199,7 +199,7 @@ trait NomineeResults{
     public function crimePreventionAdvisoryResults($award_id){
         $awards = CrimePreventionAdvisoryService::where('award_id', $award_id)->get();
         $total_votes = CrimePreventionAdvisoryService::where('award_id', $award_id)->sum('number_of_votes');
-        $check = CrimePreventionAdvisoryService::where('status', 'WINNER')->first();
+        $check = CrimePreventionAdvisoryService::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }

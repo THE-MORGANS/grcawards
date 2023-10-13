@@ -14,7 +14,7 @@ trait OtherVotesResults {
 
         $awards = WomenInGrc::where('award_id', $award_id)->get();
         $total_votes = WomenInGrc::where('award_id', $award_id)->sum('number_of_votes');
-        $check = WomenInGrc::where('status', 'WINNER')->first();
+        $check = WomenInGrc::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -43,7 +43,7 @@ trait OtherVotesResults {
 
         $awards = MediaVotes::where('award_id', $award_id)->get();
         $total_votes = MediaVotes::where('award_id', $award_id)->sum('number_of_votes');
-        $check = MediaVotes::where('status', 'WINNER')->first();
+        $check = MediaVotes::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -73,7 +73,7 @@ trait OtherVotesResults {
 
         $awards = GovernorsVotes::where('award_id', $award_id)->get();
         $total_votes = GovernorsVotes::where('award_id', $award_id)->sum('number_of_votes');
-        $check = GovernorsVotes::where('status', 'WINNER')->first();
+        $check = GovernorsVotes::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
@@ -102,7 +102,7 @@ trait OtherVotesResults {
 
         $awards = NonfiVotes::where('award_id', $award_id)->get();
         $total_votes = NonfiVotes::where('award_id', $award_id)->sum('number_of_votes');
-        $check = NonfiVotes::where('status', 'WINNER')->first();
+        $check = NonfiVotes::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
         if($check){
             $check->update(['status' => '']);
         }
