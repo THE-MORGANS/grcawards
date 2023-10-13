@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <h4 class="header-title mb-4">Summit Registered  Users<span style="color:red">
+                                <h4 class="header-title mb-4">Summit Registered  Users - <span style="color:red">
                                     Total Registered: {{count($registered)}}
                                     </span>
                                   </h4>
