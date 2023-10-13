@@ -30,11 +30,9 @@
                                 <h4 class="header-title mb-4">Summit Registered  Users<span style="color:red">
                                   </h4>
                             </div>
-                            {{-- <div class="col-12 text-end"> 
-                            <button type="button" id="add-field" class="btn btn-success btn-sm">
-                                <i class="mdi mdi-plus mdi-24px"></i>
-                            </button>
-                        </div> --}}
+                            <div class="col-12 text-end"> 
+                          Total Registered: {{count($registered)}}
+                        </div>
                         </div>
                         {{-- <form class="needs-validation" method="POST"
                             action="{{ route('admin.StoreNominessVotes', [request()->segment(3)]) }}" id="form1">
