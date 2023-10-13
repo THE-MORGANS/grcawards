@@ -55,12 +55,10 @@
                                                         <th>Title</th>
                                                         <th>Profile on linkedIn</th>
                                                         <th>Recognised professional association membership</th>
-                                                        <th>Number of independent non executive directors</th>
                                                         <th>Board committee in place covering risk management</th>
                                                         <th>Evidence of policy on fin crime_prevention</th>
                                                         <th>AML Policy/Framework in Place</th>
                                                         <th>Documentation</th>
-                                                        <th>Adverse Media</th>
                                                         <th>Total Judges Votes</th>
                                                         <th>Total of judges score converted to percentage</th>
                                                         <th>80% of judges score</th>
@@ -93,7 +91,8 @@
                                                             <td style=" min-width: 450px;">
                                                                 {{ $awp->documentation}} </td>
                                                                 <td style=" min-width: 250px;">
-                                                                    {{ array_sum(json_decode($awp->judges_votes)) }} </td>
+                                                                    {{ array_sum(json_decode($awp->judges_votes)) }} 
+                                                                </td>
                                                                 <td style=" min-width: 250px;">
                                                                     {{ number_format($awp->total_of_judges_score_converted_to_percentage, 2) }}%
                                                                 </td>
