@@ -23,7 +23,8 @@ class Judge extends Model
     }
 
     public function judges_votes($id){
-        return JudgesVotes::where('judge_id', $id)->get();
+       return JudgesVotes::where('judge_id', $id)->select('award_id')->distinct()->get();
+       
     }
 
 

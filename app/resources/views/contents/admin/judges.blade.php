@@ -116,7 +116,6 @@
                                     <th class="all">Email</th>
 
                                     <th class="all">Awards Voted</th>
-                                    <th class="all">Awards Remaining</th>
                                     <th class="all">Postion</th>
                                     <th class="all">Profile</th>
                                     <th style="width: 85px;">Action</th>
