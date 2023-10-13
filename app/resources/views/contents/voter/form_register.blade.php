@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards? (Yes/No)-</label>
+                        <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards?</label>
                         Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
                         Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
                         Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
