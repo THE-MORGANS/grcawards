@@ -51,6 +51,7 @@
                                                         <th style=" min-width: 150px;" >First Name</th>
                                                         <th style=" min-width: 150px;">Last Name </th>
                                                         <th style=" min-width: 150px;">Email</th>
+                                                        <th style=" min-width: 150px;">Phone</th>
                                                         <th style=" min-width: 150px;">Company</th>
                                                         <th style=" min-width: 150px;">Designated role</th>
                                                         <th style=" min-width: 150px;">Did you nominate your firm for any award? </th>
@@ -73,6 +74,8 @@
                                                             <td> {{ $awp->last_name }} </td>
                                                             <td style=" min-width: 450px;">
                                                                 {{ $awp->email }} </td>
+                                                                <td style=" min-width: 450px;">
+                                                                    {{ $awp->phone }} </td>
                                                             <td style=" min-width: 450px;">
                                                                 {{ $awp->company }} </td>
                                                             <td style=" min-width: 450px;">
