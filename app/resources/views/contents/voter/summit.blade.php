@@ -400,7 +400,7 @@
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">HON. FEMI SAHEED </h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">STATE SECRETARY APC LAGOS</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Hon. House of Rep</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
 									<a href="https://www.linkedin.com/in/femi-saheed-a500542b/" tabindex="-1" target="_blank">
@@ -413,6 +413,24 @@
 					</div>
 				</div>
 
+				<div class="slide-our-speaker">
+					<div class="our-speaker-item">
+						<img src="{{asset('/assets/images/jide.png')}}" alt="img">
+						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+							<h3 class="name" style="font-size:18px">Jide Ibitayo	</h3>
+							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Company Secretary/Group Legal Counsel at Mutual Benefits Assurance Plc</p>
+							<div class="meta">
+								<span class="post-tag" style="margin-right:7px;">
+									<a href="https://www.linkedin.com/in/jide-ibitayo-381ba480/" tabindex="-1" target="_blank">
+										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
 
 			</div>
 			<ul class="mission-meta">
