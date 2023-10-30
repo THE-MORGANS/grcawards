@@ -178,7 +178,7 @@ class LandingPageController extends Controller
             $valid = validator::make($req->all(), [
                 'first_name' => 'required',
                 'last_name' => 'required',
-                'email' => 'required',
+                'email' => 'required|unique:summit_registrations',
                 'phone' => 'required',
                 'company' => 'required',
 
