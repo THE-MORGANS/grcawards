@@ -642,7 +642,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>Finalists</h6>
                                                     </div>
                                                 </div>
 
@@ -689,7 +689,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>Finalists</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -751,7 +751,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>Finalists</h6>
                                                     </div>
                                                 </div>
 
@@ -793,7 +793,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>Finalist</h6>
                                                     </div>
                                                 </div>
 
@@ -836,7 +836,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNER</h6>
+                                                        <h6>Finalist</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -845,15 +845,11 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/olu.jpeg')}}" height="120">
                                                                 <p>Lagos State Governor: Babajide Sanwo-Olu</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669132425/grcfincrimeawards/nominees/Oluseyi_Makinde_tmo6ak.png" height="120">
                                                                 <p>Oyo State Governor: Seyi Makinde </p>
                                                             </div>
