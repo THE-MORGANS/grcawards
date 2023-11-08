@@ -652,7 +652,7 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
                                                                 <p>Guaranty Trust Bank</p>
                                                             </div>
