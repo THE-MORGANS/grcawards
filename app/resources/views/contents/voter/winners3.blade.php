@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', '2022 Winners')
+@section('title', '2023 Finalists')
 @section('style')
 <link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
 
@@ -22,10 +22,10 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{route('landing.index')}}">Home</a></li>
-                    <li>Winners</li>
+                    <li>Finalist</li>
                 </ul>
             </div>
-            <h1 class="title">2022 Winners</h1>
+            <h1 class="title">2023 Finalists</h1>
         </div>
     </div>
     <!-- page title -->
@@ -36,11 +36,11 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">Winners for Governance Risk Compliance and Financial Crime Prevention Awards 2022</h4>
+                            <h4 class="title">Finalist for Governance Risk Compliance and Financial Crime Prevention Awards 2023</h4>
                         </div>
                     </div>
                     <div class="accordion-wrapper" style="margin-top: 30px;">
-                        <div class="accordion">
+                        <div class="accordion" style="overflow: scroll">
                             <input class="in-check" type="checkbox" name="radio-a" id="category1" checked />
                             <label class="accordion-label" for="category1">GRC & FINANCIAL CRIME PREVENTION EXCELLENCE AWARDS CATEGORY </label>
                             <div class="accordion-content">
@@ -54,61 +54,115 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>FINALISTS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
                                                     <div class="col-6">
-                                                        <p>Risk & Compliance Champion</p>
+                                                        <p>Internal Controller Awards</p>
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035715/grcfincrimeawards/nominees/zenith-bank-logo_1_adpjmj.png" height="50">
-                                                                <p>Zenith Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Risk & Compliance Educator</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
                                                                 <p>Access Bank</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Anti-Bribery & Corruption</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669036293/grcfincrimeawards/nominees/Stanbic_20ibtc_203_dejuep.png" height="40">
-                                                                <p>Stanbic IBTC Bank Ltd.</p>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/firstbank.png')}}" height="50">
+                                                                <p>First Bank</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
                                                     <div class="col-6">
-                                                        <p>Fraud Prevention</p>
+                                                        <p>Chief Risk Officer of the year award</p>
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
+                                                                <p>Access Bank</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
                                                                 <p>Guaranty Trust Bank</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
+                                                                <p>Access Bank</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
+                                                                <p>Guaranty Trust Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>MLRO</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
+                                                                <p>Access Bank</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
+                                                                <p>Guaranty Trust Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/sterling.jpg')}}" height="50">
+                                                                <p>Sterling Bank</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
+                                                                <p>Guaranty Trust Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/wema.png')}}" height="50">
+                                                                <p>Wema Bank</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
+                                                                <p>Access Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
                                             </div>
                                         </div>
                                         <div class="buy-ticket-form mt-5">
@@ -119,20 +173,451 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
+                                                        <h6>Finalists</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
                                                     <div class="col-6">
-                                                        <p>Fraud Prevention</p>
+                                                        <p>Chief Risk Officer of the year award</p>
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037691/grcfincrimeawards/nominees/logo_riqo6g.png" height="40">
-                                                                <p>AXA Mansard Insurance Plc</p>
+                                                                <img src="{{asset('/assets/aiico.png')}}" height="40">
+                                                                <p>AIICO Insurance </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/nem.jpg')}}" height="40">
+                                                                <p>NEM Insurance </p>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/aiico.png')}}" height="40">
+                                                                <p>AIICO Insurance </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/nem.jpg')}}" height="40">
+                                                                <p>NEM Insurance </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buy-ticket-form mt-5">
+                                            <h4>Fintech</h4>
+                                            <div class="ticket-contact-item">
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
+                                                    <div class="col-6">
+                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <h6>Finalists</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Risk Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/flutterwave.png')}}" height="40">
+                                                                <p>Flutterwave</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
+                                                                <p>Interswitch</p>
+                                                            </div>
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                         
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/opay.jpg')}}" height="40">
+                                                                <p>Opay </p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
+                                                                <p>Interswitch</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
+                                                                <p>Interswitch</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/kuda.png')}}" height="40">
+                                                                <p>Kuda </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year   </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
+                                                                <p>Interswitch</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/kuda.png')}}" height="40">
+                                                                <p>Kuda </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="buy-ticket-form mt-5">
+                                            <h4>Microfinance Banks</h4>
+                                            <div class="ticket-contact-item">
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
+                                                    <div class="col-6">
+                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <h6>Finalists</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Risk Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/accion.png')}}" height="40">
+                                                                <p>ACCION Microfinace Bank</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/ab.jpeg')}}" height="40">
+                                                                <p>AB Microfinance Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/accion.png')}}" height="40">
+                                                                <p>ACCION Microfinace Bank</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/vfd.jpeg')}}" height="40">
+                                                                <p>VFD Microfinace Bank</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/accion.png')}}" height="40">
+                                                                <p>ACCION Microfinace Bank</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/ab.jpeg')}}" height="40">
+                                                                <p>AB Microfinance Bank </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year   </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/accion.png')}}" height="40">
+                                                                <p>ACCION Microfinace Bank</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/ab.jpeg')}}" height="40">
+                                                                <p>AB Microfinance Bank</p>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="buy-ticket-form mt-5">
+                                            <h4>Assets Management</h4>
+                                            <div class="ticket-contact-item">
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
+                                                    <div class="col-6">
+                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <h6>Finalists</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Risk Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/aico.png')}}" height="40">
+                                                                <p>AIICO Capital </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
+                                                                <p>STL Trustees</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/axa.png')}}" height="40">
+                                                                <p>AXA Mansard Investments </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
+                                                                <p>STL Trustees</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/chapel.png')}}" height="40">
+                                                                <p>Chapel hill Denham </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
+                                                                <p>STL Trustees </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year   </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/chapel.png')}}" height="40">
+                                                                <p>Chapel hill Denham </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/axa.png')}}" height="40">
+                                                                <p>AXA Mansard Investments</p>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="buy-ticket-form mt-5">
+                                            <h4>Pensions</h4>
+                                            <div class="ticket-contact-item">
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
+                                                    <div class="col-6">
+                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <h6>Finalists</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Risk Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
+                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/crusada.png')}}" height="40">
+                                                                <p>Crusader Sterling Pensions </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
+                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/crusada.png')}}" height="40">
+                                                                <p>Crusader Sterling Pensions </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
+                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/lead.png')}}" height="40">
+                                                                <p>Leadway Pensions  </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year   </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
+                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/lead.png')}}" height="40">
+                                                                <p>Leadway Pensions  </p>
+                                                            </div>
+                                                        </div> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="buy-ticket-form mt-5">
+                                            <h4>Providers</h4>
+                                            <div class="ticket-contact-item">
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
+                                                    <div class="col-6">
+                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <h6>Finalists</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Risk Officer of the year award</p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/verify.png')}}" height="40">
+                                                                <p>You Verify </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/dg.png')}}" height="40">
+                                                                <p>Digital Jewel  </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>Chief Compliance Officer of the year award </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/joba.jpg')}}" height="40">
+                                                                <p>Jobberman</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/chiefs.jpg')}}" height="40">
+                                                                <p>Philips Consulting</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>GRC Employer of the Year  </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/delpotte.jpg')}}" height="40">
+                                                                <p>Delliotte </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/kpmg.jpg')}}" height="40">
+                                                                <p>KPMG</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
+                                                    <div class="col-6">
+                                                        <p>AML Employer of the Year   </p>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class=" row">
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/e4.jpg')}}" height="40">
+                                                                <p>E4 and AAF</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/lagosn.jpg')}}" height="40">
+                                                                <p>Lagos Business School </p>
+                                                            </div>
+                                                        </div> 
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,452 +656,25 @@
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
                                                                 <p>Guaranty Trust Bank</p>
                                                             </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-wrapper" style="margin-top: 10px;">
-                        <div class="accordion">
-                            <input class="in-check" type="checkbox" name="radio-a" id="category2" checked />
-                            <label class="accordion-label" for="category2">GRC & FINANCIAL CRIME PREVENTION ACHIEVEMENT AWARDS CATEGORY</label>
-                            <div class="accordion-content" style="max-height:700vh">
-                                <div class="row">
-                                    <div class="col-md-12" style="margin-bottom:30px">
-                                        <div class="buy-ticket-form">
-                                            <h4>Commercial Banks</h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669039923/grcfincrimeawards/nominees/ocnqdnxhwlegwdcyb021.png" height="50">
-                                                                <p>Sterling Bank Plc</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>AML Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669039923/grcfincrimeawards/nominees/ocnqdnxhwlegwdcyb021.png" height="50">
-                                                                <p>Sterling Bank Plc</p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Risk management Team of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
                                                                 <p>Access Bank</p>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Compliance Officer of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669040725/grcfincrimeawards/nominees/citilogoredesign_zslf64.png" height="50">
-                                                                <p>Citibank Nigeria plc</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Compliance Team of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035715/grcfincrimeawards/nominees/zenith-bank-logo_1_adpjmj.png" height="50">
-                                                                <p>Zenith Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
-                                                                <p>Guaranty Trust Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>MLRO or Head of Anti-Financial Crime of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035715/grcfincrimeawards/nominees/zenith-bank-logo_1_adpjmj.png" height="50">
-                                                                <p>Zenith Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
 
-                                        <div class="buy-ticket-form mt-5">
-                                            <h4>Insurance</h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669038041/grcfincrimeawards/nominees/logo_i4nne8.png" height="40">
-                                                                <p>AIICO Insurance Plc</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037691/grcfincrimeawards/nominees/logo_riqo6g.png" height="40">
-                                                                <p>AXA Mansard Insurance Plc</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="buy-ticket-form mt-5">
-                                            <h4>Fintech</h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
-                                                                <p>Interswitch</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>AML Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
-                                                                <p>Interswitch</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Compliance Officer of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669092936/grcfincrimeawards/nominees/hVkLGMQo2I5nyUCEgAymMQhw6iDCQFm-Xo8xvMu2enzFAMvIGZh30ICC4FPbYO5fB_U_nufnwv.png" height="40">
-                                                                <p>Opay</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669092936/grcfincrimeawards/nominees/hVkLGMQo2I5nyUCEgAymMQhw6iDCQFm-Xo8xvMu2enzFAMvIGZh30ICC4FPbYO5fB_U_nufnwv.png" height="40">
-                                                                <p>Opay</p>
-                                                            </div>
-                                                        </div>
                                                     </div>
                                                 </div>
 
                                             </div>
-                                        </div>
 
-                                        <div class="buy-ticket-form mt-5">
-                                            <h4>Microfinance Banks</h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669093444/grcfincrimeawards/nominees/logo_kvguff.png" height="50">
-                                                                <p>Accion Microfinance Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>AML Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669093444/grcfincrimeawards/nominees/logo_kvguff.png" height="40">
-                                                                <p>Accion Microfinance Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Compliance Officer of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669093444/grcfincrimeawards/nominees/logo_kvguff.png" height="40">
-                                                                <p>Accion Microfinance Bank</p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669093444/grcfincrimeawards/nominees/logo_kvguff.png" height="40">
-                                                                <p>Accion Microfinance Bank</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="buy-ticket-form mt-5">
-                                            <h4>Asset Management </h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669107384/grcfincrimeawards/nominees/login-logo_wblhcz.png" height="40">
-                                                                <p>Chapel Hill Denham Management Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>AML Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669107823/grcfincrimeawards/nominees/IM-logo_gxgcpv.png" height="40">
-                                                                <p>ARM Investment Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Compliance Officer of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class="row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669107679/grcfincrimeawards/nominees/zgvtqfikaioapry55lzl.png" height="40">
-                                                                <p>Stanbic IBTC Asset Management Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669107823/grcfincrimeawards/nominees/IM-logo_gxgcpv.png" height="40">
-                                                                <p>ARM Investment Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="buy-ticket-form mt-5">
-                                            <h4>Pension Fund Operators</h4>
-                                            <div class="ticket-contact-item">
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding-top:15px;padding-bottom:15px;background-color:#d9edf7">
-                                                    <div class="col-6">
-                                                        <h6>AWARDS UNDER THIS CATEGORY</h6>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <h6>WINNERS</h6>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
-                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>AML Employer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114213/grcfincrimeawards/nominees/f038588_j5cvst.png" height="40">
-                                                                <p>ARM Pension Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Compliance Officer of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114213/grcfincrimeawards/nominees/f038588_j5cvst.png" height="40">
-                                                                <p>ARM Pension Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Chief Risk Officer of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114213/grcfincrimeawards/nominees/f038588_j5cvst.png" height="40">
-                                                                <p>ARM Pension Managers Ltd</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
+                   
                     <div class="accordion-wrapper" style="margin-top: 10px;">
                         <div class="accordion">
                             <input class="in-check" type="checkbox" name="radio-a" id="category3" checked />
@@ -641,8 +699,14 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class="row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669118470/grcfincrimeawards/nominees/STL-Funmi-Ekundayo-MD-343x500_mbcbvn.jpg" height="120">
-                                                                <p>Funmi Ekundayo</p>
+                                                                <img src="https://media.licdn.com/dms/image/C4D03AQGTc6LH4AUTVg/profile-displayphoto-shrink_400_400/0/1648735369903?e=1704931200&v=beta&t=GvSrdPqtJAroY5iZgkWMs0Z24la3h2a6gIAhozbSAhM" height="120">
+                                                                <p>Dr Chinyere Almona </p>
+                                                                
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://media.licdn.com/dms/image/D4D03AQH805n6VnfYwA/profile-displayphoto-shrink_800_800/0/1679691420408?e=1704931200&v=beta&t=VXaOyRKKxqNt97Io8Q71n0-QC5aYXx5fRSGgZHd2Zk4" height="120">
+                                                                <p>Ngozi Ikeadigh </p>
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -654,8 +718,12 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669122122/grcfincrimeawards/nominees/Chinelo_Ubah_umnyxz.jpg" height="120">
-                                                                <p>Chinelo Ubah</p>
+                                                                <img src="https://media.licdn.com/dms/image/D4E03AQFPwj6OIxPMyA/profile-displayphoto-shrink_800_800/0/1672529012169?e=1704931200&v=beta&t=kqqH-VQ0L0KYQAAQHQV4UVQrYVqmlDsXKcc02BpBtFw" height="120">
+                                                                <p>Confidence Staveley</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://media.licdn.com/dms/image/D4D03AQH81OXBR4oDbg/profile-displayphoto-shrink_400_400/0/1693233035269?e=1704931200&v=beta&t=SFENJ-9H7S9NqSD0YRNRDCCa17m1tlqB9i6Zswae0XQ" height="120">
+                                                                <p>Nneka Onyeali-Ikpe</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -697,21 +765,10 @@
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669128838/grcfincrimeawards/nominees/img_7896_ydpsmk.jpg" height="120">
                                                                 <p>David Hundeyin</p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>GRC & Anti-financial Crime TV Programme/Stations of the year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669122793/grcfincrimeawards/nominees/Channels_TV_ln3fqb.jpg" height="40">
-                                                                <p>Channels TV</p>
-                                                            </div>
+                                                                <div class="col-12 col-md-6 mt-2">
+                                                                    <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669122793/grcfincrimeawards/nominees/Channels_TV_ln3fqb.jpg" height="40">
+                                                                    <p>Channels TV</p>
+                                                                </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -724,8 +781,8 @@
                     </div>
                     <div class="accordion-wrapper" style="margin-top: 10px;">
                         <div class="accordion">
-                            <input class="in-check" type="checkbox" name="radio-a" id="category4" checked />
-                            <label class="accordion-label" for="category4">GRC & FINANCIAL CRIME PREVENTION PARTNER AWARDS CATEGORY <br>(Microfinance BankS)</label>
+                            <input class="in-check" type="checkbox" name="radio-a" id="category3-1" checked />
+                            <label class="accordion-label" for="category3-1">Non FI Awards </label>
                             <div class="accordion-content">
                                 <div class="row">
                                     <div class="col-md-12" style="margin-bottom:30px">
@@ -739,80 +796,20 @@
                                                         <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
+
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
                                                     <div class="col-6">
-                                                        <p>Best GRC & Financial Crime Prevention Advisory Service</p>
+                                                        <p>ESG Initiative Award </p>
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                     <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669131087/grcfincrimeawards/nominees/kpmg-logo-1_xrsyc8.jpg" height="40">
-                                                                <p>KMPG</p>
+                                                                <img src="{{asset('/assets/bua.png')}}" height="120">
+                                                                <p>BUA </p>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Best GRC & Financial Crime Prevention Recruitment & Talents Firm</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                    <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669131284/grcfincrimeawards/nominees/landscape_sju3fa.svg" height="40">
-                                                                <p>Jobberman</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Best GRC Solution Provider of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                    <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669131645/grcfincrimeawards/nominees/vn8q2twhs8foty8mg4ha.png" height="40">
-                                                                <p>Digital Jewels</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Best Financial Crime Prevention Solution Provider of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                    <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669131926/grcfincrimeawards/nominees/https_3A_2F_2F1560512915-files.gitbook.io_2F_2Ffiles_2Fv0_2Fb_2Fgitbook-x-prod.appspot.com_2Fo_2Fspaces_252FsMPDRW8jU5LkIC7Fv2Jb_252Fsocialpreview_252FzWpcLe5h2AxOcWwaBUJZ_252FYouVerify_Logo_o2wn6j.png" height="40">
-                                                                <p>Youverify</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Best GRC Training Provider of the Year</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                    <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669132112/grcfincrimeawards/nominees/logo-home_gyp2ra.png" height="40">
-                                                                <p>Lagos Business School</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
-                                                    <div class="col-6">
-                                                        <p>Best Financial Crime Prevention Training Provider of the Yea</p>
-                                                    </div>
-                                                    <div class="col-6 widget-archive">
-                                                        <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669132302/grcfincrimeawards/nominees/1666543975468_ccsmwr.jpg" height="40">
-                                                                <p>ACFCS Nigeria Chapter</p>
+                                                                <img src="{{asset('/assets/mtn.png')}}" height="120">
+                                                                <p>MTN Nigeria</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -820,12 +817,11 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+                  
                     <div class="accordion-wrapper" style="margin-top: 10px;">
                         <div class="accordion">
                             <input class="in-check" type="checkbox" name="radio-a" id="category10" checked />
@@ -850,8 +846,16 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class="row">
                                                             <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/olu.jpeg')}}" height="120">
+                                                                <p>Lagos State Governor: Babajide Sanwo-Olu</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6 widget-archive">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669132425/grcfincrimeawards/nominees/Oluseyi_Makinde_tmo6ak.png" height="120">
-                                                                <p>Gov. Seyi Makinde</p>
+                                                                <p>Oyo State Governor: Seyi Makinde </p>
                                                             </div>
                                                         </div>
                                                     </div>

@@ -48,9 +48,10 @@
                                 </a>
                                 <ul>
                                     {{-- @foreach($award_program_years as $award_program_year) --}}
-                                        <li class=""><a href="{{route('show_winners', '2021')}}">2021 Winners</a></li>
+                                    <li class=""><a href="{{route('show_winners2023', '2023')}}">2023 Finalists</a></li>
                                         <li class=""><a href="{{route('show_winners2022', '2022')}}">2022 Winners</a></li>
-                                    {{-- @endforeach --}}
+                                        <li class=""><a href="{{route('show_winners', '2021')}}">2021 Winners</a></li>
+                                    {{-- @endforeach --}} 
                                 </ul>
                             </li>
                             <li class="{{request()->is('vote') ? 'active-page' : '' }}">
