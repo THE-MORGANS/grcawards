@@ -41,7 +41,7 @@
                     <div class="instagram-cover">
                         
                         <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/coca.png')}}" data-src="{{asset('assets/images/sponsors/gtb.png')}}" alt="img">
+                            <img class="rx-lazy" src="{{asset('assets/coca.png')}}" data-src="{{asset('assets/coca.png')}}" alt="img">
                         </a>
                         
                         <a href="#" class="instagram-item">
