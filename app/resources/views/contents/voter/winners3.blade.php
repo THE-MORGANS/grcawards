@@ -803,14 +803,14 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                     <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/bua.png')}}" height="120">
                                                                 <p>BUA </p>
-                                                            </div>
-                                                            {{-- <div class="col-12 col-md-6 mt-2">
+                                                            </div> --}}
+                                                            <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/mtn.png')}}" height="120">
                                                                 <p>MTN Nigeria</p>
-                                                            </div> --}}
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
