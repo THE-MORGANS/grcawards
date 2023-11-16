@@ -70,13 +70,11 @@ Route::prefix('admin')->group(function(){
                 Route::post('create', [AwardController::class, 'addAward'])->name('admin.create_award');
                 Route::put('{award}/update', [AwardController::class, 'updateAward'])->name('admin.update_award');
                 Route::delete('{award}/delete', [AwardController::class, 'deleteAward'])->name('admin.delete_award');
-
             });
             
             Route::prefix('votes')->group(function(){
                 Route::get('', [VoteCountController::class, 'getCatSec'])->name('admin.get_cat_sec');
                 Route::get('categories/{category}', [VoteCountController::class, 'getSectorsAwards'])->name('admin.get_sectors_awards');
-
             });
 
             Route::prefix('voters')->group(function(){
@@ -115,8 +113,6 @@ Route::prefix('admin')->group(function(){
     });
 
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-
-
     
     // Route::get('add', [AdminAuthController::class, 'showAddAdminForm']);
     // Route::post('store', [AdminAuthController::class, 'adminRegister']);
@@ -149,10 +145,9 @@ Route::get('media/press-announcements', [LandingPageController::class, 'showPres
 Route::get('2021/shortlisted-nominees', [LandingPageController::class, 'showShortlistedNominees'])->name('show_shortlisted_nomineees');
 Route::get('winners/2021', [LandingPageController::class, 'showWinners'])->name('show_winners');
 Route::get('winners/2022', [LandingPageController::class, 'showWinners2022'])->name('show_winners2022');
-Route::get('Finalist/2023', [LandingPageController::class, 'showWinners2023'])->name('show_winners2023');
+Route::get('winners/2023', [LandingPageController::class, 'showWinners2023'])->name('show_winners2023');
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
-
 
 
 Route::get('vote', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');

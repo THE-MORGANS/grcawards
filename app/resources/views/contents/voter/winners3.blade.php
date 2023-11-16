@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', '2023 Finalists')
+@section('title', '2023 WINNERS')
 @section('style')
 <link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
 
@@ -22,10 +22,10 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{route('landing.index')}}">Home</a></li>
-                    <li>Finalist</li>
+                    <li>WINNER</li>
                 </ul>
             </div>
-            <h1 class="title">2023 Finalists</h1>
+            <h1 class="title">2023 WINNERS</h1>
         </div>
     </div>
     <!-- page title -->
@@ -36,7 +36,7 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">Finalist for Governance Risk Compliance and Financial Crime Prevention Awards 2023</h4>
+                            <h4 class="title">Winners for Governance Risk Compliance and Financial Crime Prevention Awards 2023</h4>
                         </div>
                     </div>
                     <div class="accordion-wrapper" style="margin-top: 30px;">
@@ -54,7 +54,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>FINALISTS</h6>
+                                                        <h6>WINNER</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -64,12 +64,12 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
-                                                                <p>Access Bank</p>
+                                                                <img src="{{asset('/assets/firstbank.png')}}" height="50">
+                                                                <p>First Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/firstbank.png')}}" height="50">
-                                                                <p>First Bank</p>
+                                                                <p>Mrs. OMOLADE OLUYEMISI </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -81,12 +81,12 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
-                                                                <p>Access Bank</p>
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
+                                                                <p>GT Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
-                                                                <p>Guaranty Trust Bank</p>
+                                                                <img src="{{asset('/assets/olumide.png')}}" height="50">
+                                                                <p>Mr. Olumide Oguntuase</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -102,8 +102,8 @@
                                                                 <p>Access Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
-                                                                <p>Guaranty Trust Bank</p>
+                                                                <img src="{{asset('/assets/femi.png')}}" height="50">
+                                                                <p>Femi Jaiyeola</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -119,8 +119,8 @@
                                                                 <p>Access Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
-                                                                <p>Guaranty Trust Bank</p>
+                                                                <img src="{{asset('/assets/festus.png')}}" height="50">
+                                                                <p>Festus  Aisagbonhi</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -137,10 +137,10 @@
                                                                 <img src="{{asset('/assets/sterling.jpg')}}" height="50">
                                                                 <p>Sterling Bank</p>
                                                             </div>
-                                                            <div class="col-6 col-md-6 mt-2">
+                                                            {{-- <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
                                                                 <p>Guaranty Trust Bank</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -155,10 +155,10 @@
                                                                 <img src="{{asset('/assets/wema.png')}}" height="50">
                                                                 <p>Wema Bank</p>
                                                             </div>
-                                                            <div class="col-6 col-md-6 mt-2">
+                                                            {{-- <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
                                                                 <p>Access Bank</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -173,7 +173,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -187,8 +187,8 @@
                                                                 <p>AIICO Insurance </p>
                                                             </div>
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/nem.jpg')}}" height="40">
-                                                                <p>NEM Insurance </p>
+                                                                <img src="{{asset('/assets/abiodon.png')}}" height="40">
+                                                                <p>Abiodun Adebanjo </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -203,10 +203,10 @@
                                                                 <img src="{{asset('/assets/aiico.png')}}" height="40">
                                                                 <p>AIICO Insurance </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/nem.jpg')}}" height="40">
                                                                 <p>NEM Insurance </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -220,7 +220,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -230,14 +230,15 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/flutterwave.png')}}" height="40">
-                                                                <p>Flutterwave</p>
-                                                            </div>
-                                                            <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
                                                                 <p>Interswitch</p>
                                                             </div>
-                                                           
+
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://media.licdn.com/dms/image/C5603AQEqqafOofdzzQ/profile-displayphoto-shrink_800_800/0/1639671624853?e=1705536000&v=beta&t=W_Jv-Cbw9Q-2qCBj53ZrTwzrw8ioDYKcjKWQvGlUBbQ" height="40">
+                                                                <p>  Griffith Ehebha </p>
+                                                            </div>
+                                                          
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,14 +248,13 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                         
-                                                            <div class="col-6 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/opay.jpg')}}" height="40">
-                                                                <p>Opay </p>
-                                                            </div>
                                                             <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
                                                                 <p>Interswitch</p>
+                                                            </div>
+                                                            <div class="col-6 col-md-6 mt-2">
+                                                                <img src="https://media.licdn.com/dms/image/C4E03AQHuIrGnFJi8ow/profile-displayphoto-shrink_800_800/0/1622659376298?e=1705536000&v=beta&t=wY2AQnWdhAQO1SBiyiylREYvMV4sDHj4cMYX3i1n1Ws" height="40">
+                                                                <p>Alexander Ude</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -269,10 +269,10 @@
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
                                                                 <p>Interswitch</p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/kuda.png')}}" height="40">
                                                                 <p>Kuda </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -282,10 +282,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669091299/grcfincrimeawards/nominees/interswitch_logo_nowti2.svg" height="40">
                                                                 <p>Interswitch</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/kuda.png')}}" height="40">
                                                                 <p>Kuda </p>
@@ -304,7 +304,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -318,8 +318,8 @@
                                                                 <p>ACCION Microfinace Bank</p>
                                                             </div>
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/ab.jpeg')}}" height="40">
-                                                                <p>AB Microfinance Bank</p>
+                                                                <img src="{{asset('/assets/stev.png')}}" height="40">
+                                                                <p>Stephen Olalere</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -331,12 +331,12 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/accion.png')}}" height="40">
-                                                                <p>ACCION Microfinace Bank</p>
-                                                            </div>
-                                                            <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/vfd.jpeg')}}" height="40">
                                                                 <p>VFD Microfinace Bank</p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://media.licdn.com/dms/image/C4D03AQHmPZj9ddnhJQ/profile-displayphoto-shrink_800_800/0/1539641662077?e=1705536000&v=beta&t=0Dz6UKSjlgmvRrOycjaWJH3PBSSKVVoibxcJLxahbYI" height="40">
+                                                                <p>Morenike Ominike</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -351,10 +351,10 @@
                                                                 <img src="{{asset('/assets/accion.png')}}" height="40">
                                                                 <p>ACCION Microfinace Bank</p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/ab.jpeg')}}" height="40">
                                                                 <p>AB Microfinance Bank </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -368,10 +368,10 @@
                                                                 <img src="{{asset('/assets/accion.png')}}" height="40">
                                                                 <p>ACCION Microfinace Bank</p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/ab.jpeg')}}" height="40">
                                                                 <p>AB Microfinance Bank</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div> 
                                                     </div>
                                                 </div>
@@ -386,7 +386,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -400,8 +400,8 @@
                                                                 <p>AIICO Capital </p>
                                                             </div>
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
-                                                                <p>STL Trustees</p>
+                                                                <img src="https://media.licdn.com/dms/image/C4E03AQEg3FAoaIoQ3Q/profile-displayphoto-shrink_800_800/0/1516930720710?e=1705536000&v=beta&t=lepob3dAz_vjwZH_9zi6MeeazZY0qxfQtW8PqHAV-BU" height="40">
+                                                                <p>Mayowa Ogunsola</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -417,8 +417,8 @@
                                                                 <p>AXA Mansard Investments </p>
                                                             </div>
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
-                                                                <p>STL Trustees</p>
+                                                                {{-- <img src="{{asset('/assets/slt.jpeg')}}" height="40"> --}}
+                                                                <p>Oyedoyin Awoyinfa</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -433,10 +433,10 @@
                                                                 <img src="{{asset('/assets/chapel.png')}}" height="40">
                                                                 <p>Chapel hill Denham </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/slt.jpeg')}}" height="40">
                                                                 <p>STL Trustees </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -446,14 +446,14 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/chapel.png')}}" height="40">
-                                                                <p>Chapel hill Denham </p>
+                                                             <div class="col-12 col-md-6 mt-2">
+                                                                <img src="{{asset('/assets/slt.jpeg')}}" height="40">
+                                                                <p>STL Trustees </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/axa.png')}}" height="40">
                                                                 <p>AXA Mansard Investments</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div> 
                                                     </div>
                                                 </div>
@@ -467,7 +467,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -477,12 +477,12 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
-                                                                <p>Stanbic IBTC Pension Managers Ltd</p>
-                                                            </div>
-                                                            <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/crusada.png')}}" height="40">
                                                                 <p>Crusader Sterling Pensions </p>
+                                                            </div>
+                                                            <div class="col-12 col-md-6 mt-2">
+                                                                <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
+                                                                <p>Olusegun Atundaolu</p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -498,8 +498,8 @@
                                                                 <p>Stanbic IBTC Pension Managers Ltd</p>
                                                             </div>
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/crusada.png')}}" height="40">
-                                                                <p>Crusader Sterling Pensions </p>
+                                                                {{-- <img src="{{asset('/assets/crusada.png')}}" height="40"> --}}
+                                                                <p>Edidiong Akan </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -514,10 +514,10 @@
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
                                                                 <p>Stanbic IBTC Pension Managers Ltd</p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/lead.png')}}" height="40">
                                                                 <p>Leadway Pensions  </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -527,10 +527,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669114203/grcfincrimeawards/nominees/stanbic-ibtc-pension_v2atab.jpg" height="40">
                                                                 <p>Stanbic IBTC Pension Managers Ltd</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/lead.png')}}" height="40">
                                                                 <p>Leadway Pensions  </p>
@@ -549,7 +549,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -562,10 +562,10 @@
                                                                 <img src="{{asset('/assets/verify.png')}}" height="40">
                                                                 <p>You Verify </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/dg.png')}}" height="40">
                                                                 <p>Digital Jewel  </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -575,10 +575,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/joba.jpg')}}" height="40">
                                                                 <p>Jobberman</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/chiefs.jpg')}}" height="40">
                                                                 <p>Philips Consulting</p>
@@ -596,10 +596,10 @@
                                                                 <img src="{{asset('/assets/delpotte.jpg')}}" height="40">
                                                                 <p>Delliotte </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/kpmg.jpg')}}" height="40">
                                                                 <p>KPMG</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -609,10 +609,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/e4.jpg')}}" height="40">
                                                                 <p>E4 and AAF</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/lagosn.jpg')}}" height="40">
                                                                 <p>Lagos Business School </p>
@@ -642,7 +642,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
 
@@ -652,10 +652,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-6 col-md-6 mt-2">
+                                                            {{-- <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669037027/grcfincrimeawards/nominees/images_lk8jhy.png" height="50">
                                                                 <p>Guaranty Trust Bank</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669035960/grcfincrimeawards/nominees/access_cbxktx.png" height="50">
                                                                 <p>Access Bank</p>
@@ -689,7 +689,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -703,11 +703,11 @@
                                                                 <p>Dr Chinyere Almona </p>
                                                                 
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://media.licdn.com/dms/image/D4D03AQH805n6VnfYwA/profile-displayphoto-shrink_800_800/0/1679691420408?e=1704931200&v=beta&t=VXaOyRKKxqNt97Io8Q71n0-QC5aYXx5fRSGgZHd2Zk4" height="120">
                                                                 <p>Ngozi Ikeadigh </p>
                                                                 
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -717,10 +717,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://media.licdn.com/dms/image/D4E03AQFPwj6OIxPMyA/profile-displayphoto-shrink_800_800/0/1672529012169?e=1704931200&v=beta&t=kqqH-VQ0L0KYQAAQHQV4UVQrYVqmlDsXKcc02BpBtFw" height="120">
                                                                 <p>Confidence Staveley</p>
-                                                            </div>
+                                                            </div> --}}
                                                             <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://media.licdn.com/dms/image/D4D03AQH81OXBR4oDbg/profile-displayphoto-shrink_400_400/0/1693233035269?e=1704931200&v=beta&t=SFENJ-9H7S9NqSD0YRNRDCCa17m1tlqB9i6Zswae0XQ" height="120">
                                                                 <p>Nneka Onyeali-Ikpe</p>
@@ -751,7 +751,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalists</h6>
+                                                        <h6>WINNERS</h6>
                                                     </div>
                                                 </div>
 
@@ -761,10 +761,10 @@
                                                     </div>
                                                     <div class="col-6 widget-archive">
                                                     <div class=" row">
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669128838/grcfincrimeawards/nominees/img_7896_ydpsmk.jpg" height="120">
                                                                 <p>David Hundeyin</p>
-                                                            </div>
+                                                            </div> --}}
                                                                 <div class="col-12 col-md-6 mt-2">
                                                                     <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669122793/grcfincrimeawards/nominees/Channels_TV_ln3fqb.jpg" height="40">
                                                                     <p>Channels TV</p>
@@ -793,7 +793,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalist</h6>
+                                                        <h6>WINNER</h6>
                                                     </div>
                                                 </div>
 
@@ -807,10 +807,10 @@
                                                                 <img src="{{asset('/assets/bua.png')}}" height="120">
                                                                 <p>BUA </p>
                                                             </div>
-                                                            <div class="col-12 col-md-6 mt-2">
+                                                            {{-- <div class="col-12 col-md-6 mt-2">
                                                                 <img src="{{asset('/assets/mtn.png')}}" height="120">
                                                                 <p>MTN Nigeria</p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -836,7 +836,7 @@
                                                         <h6>AWARDS UNDER THIS CATEGORY</h6>
                                                     </div>
                                                     <div class="col-6 widget-archive">
-                                                        <h6>Finalist</h6>
+                                                        <h6>WINNER</h6>
                                                     </div>
                                                 </div>
                                                 <div class="pay-method row" style="overflow-wrap: break-word; margin:initial;padding:0px;border-top:0px;">
@@ -849,10 +849,10 @@
                                                                 <img src="{{asset('/assets/olu.jpeg')}}" height="120">
                                                                 <p>Lagos State Governor: Babajide Sanwo-Olu</p>
                                                             </div>
-                                                            <div class="col-6 col-md-6 mt-2">
+                                                            {{-- <div class="col-6 col-md-6 mt-2">
                                                                 <img src="https://res.cloudinary.com/the-morgans-consortium/image/upload/v1669132425/grcfincrimeawards/nominees/Oluseyi_Makinde_tmo6ak.png" height="120">
                                                                 <p>Oyo State Governor: Seyi Makinde </p>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
