@@ -68,7 +68,7 @@
                                                                 <p>First Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/firstbank.png')}}" height="50">
+                                                                {{-- <img src="{{asset('/assets/firstbank.png')}}" height="50"> --}}
                                                                 <p>Mrs. OMOLADE OLUYEMISI </p>
                                                             </div>
                                                         </div>
