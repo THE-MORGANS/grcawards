@@ -248,6 +248,7 @@ class LandingPageController extends Controller
 
          ]);
 }
+return back();
 }
 
 }
