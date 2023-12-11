@@ -148,7 +148,8 @@ Route::get('winners/2022', [LandingPageController::class, 'showWinners2022'])->n
 Route::get('winners/2023', [LandingPageController::class, 'showWinners2023'])->name('show_winners2023');
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
-
+Route::get('/images/upload', [LandingPageController::class, 'UploadFile'])->name('UploadFile');
+Route::post('/images/uploads', [LandingPageController::class, 'UploadFiles'])->name('UploadFiles');
 
 Route::get('vote', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
@@ -160,6 +161,3 @@ Route::post('summit/register/submit', [LandingPageController::class, 'SubmitRegi
 Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
 Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
-
-Route::get('/images/upload', [LandingPageController::class, 'UploadFile'])->name('UploadFile');
-Route::post('/images/uploads', [LandingPageController::class, 'UploadFiles'])->name('UploadFiles');
