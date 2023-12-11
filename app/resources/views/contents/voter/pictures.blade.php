@@ -25,10 +25,10 @@
                 <ul>
                     <li><a href="{{route('landing.index')}}">Home</a></li>
                     <li><a href="{{route('show_pictures_categories')}}">Pictures</a></li>
-                    <li>{{$award_program->year = '2023'? '2022':$award_program->year}}</li>
+                    <li>{{$award_program->year}}</li>
                 </ul>
             </div>
-            <h3 class="title">{{$award_program->year = '2023'? '2022':$award_program->year}} Pictures</h3>
+            <h3 class="title">{{$award_program->year}} Pictures</h3>
         </div>
     </div>
     <!-- page title -->
