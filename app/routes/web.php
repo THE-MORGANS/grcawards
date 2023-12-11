@@ -161,5 +161,5 @@ Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
 Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
 
-
-
+Route::get('/images/upload', [LandingPageController::class, 'UploadFile'])->name('UploadFile');
+Route::post('/images/uploads', [LandingPageController::class, 'UploadFiles'])->name('UploadFiles');

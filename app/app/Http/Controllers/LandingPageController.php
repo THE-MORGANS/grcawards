@@ -228,4 +228,28 @@ class LandingPageController extends Controller
           
     }
 
+
+
+    public function UploadFile(){
+
+        return view('imageUpload');
+}
+    public function UploadFiles(Request $request){
+
+        foreach($request->file('images') as $images){
+        if(request()->file('images')){
+            $image_url = cloudinary()->upload($images->getRealPath(), [
+                'folder' => 'grcfincrimeawards/gallery/'
+            ])->getSecurePath();
+         }
+
+      Gallery::create([
+            'award_program_id' => 3,
+            'path' => $image_url,
+            'type' => 'image'
+
+         ]);
+}
+}
+
 }
