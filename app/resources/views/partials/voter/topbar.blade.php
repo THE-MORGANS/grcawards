@@ -37,8 +37,9 @@
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
                                 </a>
                                 <ul>
-                                    <li class="{{request()->is('/summit') ? 'active-page' : '' }}"><a href="{{route('show_summit')}}">Summit 2023</a></li>
-                                    <li class="{{request()->is('/summit/2022') ? 'active-page' : '' }}"><a href="{{route('show_summit_old')}}">Summit 2022</a></li>
+                                    <li class="{{request()->is('/summit') ? 'active-page' : '' }}"><a href="{{route('show_summit')}}">Summit 2024</a></li>
+                                    <li class="{{request()->is('/summit/2023') ? 'active-page' : '' }}"><a href="{{route('show_summit_2023')}}">Summit 2023</a></li>
+                                    <li class="{{request()->is('/summit/2022') ? 'active-page' : '' }}"><a href="{{route('show_summit_2022')}}">Summit 2022</a></li>
                                 </ul>
                             </li>
                             

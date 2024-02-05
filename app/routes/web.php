@@ -154,7 +154,8 @@ Route::post('/images/uploads', [LandingPageController::class, 'UploadFiles'])->n
 Route::get('vote', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
-Route::get('summit/2022', [LandingPageController::class, 'showSumitOld'])->name('show_summit_old');
+Route::get('summit/2023', [LandingPageController::class, 'showSummit2023'])->name('show_summit_2023');
+Route::get('summit/2022', [LandingPageController::class, 'showSummit2022'])->name('show_summit_2022');
 Route::get('programme', [LandingPageController::class, 'Programme'])->name('summit_programme');
 Route::get('summit/register', [LandingPageController::class, 'SummitRegister'])->name('summit_register');
 Route::post('summit/register/submit', [LandingPageController::class, 'SubmitRegisterForm'])->name('grcformRegister');
