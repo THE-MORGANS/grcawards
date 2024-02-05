@@ -28,14 +28,14 @@
 	</div>
 	<!-- page title -->
 	<!-- =========== S-CONFERENCE-COUNTER =========== --> 
-	<section id="about" class="s-conference-mission pt-0" style="margin-top:-230px">
+	<section id="about" class="s-conference-mission pt-0" style="margin-top:-330px">
 		<div class="s-our-mission ">
 		
 			<div class="container">
 			
 			<div class="conference-counter-wrap ">
-			<div  style="background:#fff; color:#000; height:100%; padding:10px 20px;  text-align:left" class="mb-10">
-							<h6 class=""> GRC & FinCrime Prevention Year Summit and Awards 2023
+			<div  style="background:#fff; color:#000; height:100%; padding:100px 20px;  text-align:left" class="mb-10">
+							<h6 class=""> GRC & FinCrime Prevention Year Summit and Awards 2024
                                 </h6>
 						{{-- <p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p> --}}
                         <hr>

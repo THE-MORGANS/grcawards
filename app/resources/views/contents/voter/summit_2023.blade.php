@@ -57,9 +57,9 @@
 						</div> --}}
 					</div>
 					<br>
-					{{-- <center><img src="{{asset('/assets/MicrosoftTeams-image.jpg')}}" width="42%"></center>	 --}}
+					<center><img src="{{asset('/assets/MicrosoftTeams-image.jpg')}}" width="42%"></center>	
 				<h2 class="title-conference pt-5"><span>About The Summit</span></h2>
-					{{-- <h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5>  --}}
+					<h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5> 
 				<div class="row">
 					<div class="col-lg-6 our-mission-img">
 						<span>
@@ -85,102 +85,99 @@
 						</ul>
 
 						<h4 class="col-12" style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">
-							Topic: Unlocking Excellence: GRC & Financial Crime Prevention Summit - An Annual Mid-Year Conclave and Year-End Extravaganza!
+							Topic: Corporate Sustainability Due Diligence - A New Era of Accountability with Implication of Artificial Intelligence on GRC & Financial Crime Prevention
 						</h4>
 						
 						<div class="mission-info-text">
+							<p>Welcome to the Corporate Sustainability Due Diligence Summit!</p><br>
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Introduction: </h6>
 							<p>
-								Embark on a transformative journey with our GRC & Financial Crime Prevention Summit, a biannual spectacle designed to empower and inspire business leaders and professionals in Governance, Risk Management, Compliance (GRC), and Financial Crime Prevention. This unique summit is meticulously crafted to serve as a pivotal event in the calendar, offering immense value, insight, and networking opportunities.
+								The GRC & FinCrime Prevention Summit is organised by THE MORGANS.
 							</p>
-							<p></p><br>
-							<h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 Purpose of the Yearly Summit </h6>
-							
 							<p>
-								The GRC & Financial Crime Prevention Summit is an annual rendezvous designed to facilitate collaboration, innovation, and knowledge exchange among industry thought leaders, experts, and professionals. It serves as a strategic platform to discuss emerging trends, share best practices, and collectively address challenges in the dynamic landscape of governance, risk management, compliance, and financial crime prevention
+								In today's rapidly evolving business landscape, sustainability and accountability have become more than just buzzwords – they're essential pillars for responsible corporate conduct.
+								This summit will delve deep into the realm where sustainability meets technology, ethics meets innovation, and accountability takes centre stage.
+							</p>
+							<p>
+								At the GRC & FinCrime Prevention Awards and Summit 2023, we would embark on a transformative journey into the world of ethical business 
+								practices, accountability, and the powerful integration of artificial intelligence (AI) in Governance, Risk Management, and Compliance 
+								(GRC) as well as Financial Crime Prevention. 
 							</p>
 							
 							<p class="p-3"></p>
-							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Value Proposition: </h6>
-							{{-- <h6 class="col-12" style="padding-left:0;padding-right:0;">Defining Corporate Sustainability Due Diligence:</h6> --}}
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Objectives: </h6>
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Defining Corporate Sustainability Due Diligence:</h6>
 							<p>
-								Insightful Sessions: Engage in thought-provoking sessions featuring industry experts and thought leaders sharing their expertise, case studies, and innovative strategies.
- 
-								Global Networking: Connect with professionals from around the world, fostering invaluable relationships that transcend geographical boundaries and contribute to a global perspective.
-								
-								Knowledge Enhancement: Stay ahead of the curve with in-depth discussions on regulatory updates, technological advancements, and evolving trends that impact GRC and financial crime prevention.
-								
-								Interactive Workshops: Participate in hands-on workshops designed to enhance practical skills, providing actionable takeaways to implement within your organization.
-								
-								Tech Showcase: Explore cutting-edge technologies and solutions during our tech showcase, where industry-leading vendors present the latest tools and innovations.
-								
-								Peer-to-Peer Learning: Leverage the summit's collaborative environment to learn from peers facing similar challenges, gaining insights into successful strategies and solutions.
+								One of the postures of this enlightening summit is to ensure that all stakeholders and attendees, gain a comprehensive understanding of what corporate sustainability due diligence entails 
+								and its significance in today's dynamic business landscape.	
 							</p>
-
 							<p>
 								It poses to thoroughly explore how sustainability due diligence goes beyond compliance to drive long-term value creation and 
 								ethical decision-making.
 							</p>
-							<p class="p-3"></p>
 							
-							<h6 class="col-12" style="padding-left:0;padding-right:0;">🗓️ Period of the Event:</h6>
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Navigating Corporate Sustainability Due Diligence:</h6>
 							<p>
-							The GRC & Financial Crime Prevention Summit is a biannual event, featuring a mid-year conclave and a year-end extravaganza. The mid-year summit offers a pulse-check on the industry's progress, while the year-end event reflects on the year's advancements and sets the tone for the upcoming year.
+								This Summit will uncover the essence of corporate sustainability due diligence and its pivotal role in modern business operations.
+							<br>It will also shed profound insight into how organizations can integrate sustainability principles across supply chains, operations, and decision-making processes
 							</p>
-							<p class="p-3"></p>
-							<h6 class="col-12" style="padding-left:0;padding-right:0;">🌐 Mode of Attendance:</h6>
-							<p>
-								The summit offers a hybrid experience, providing both physical attendance and online participation options. Attendees can choose the mode that suits their preferences and circumstances, ensuring inclusivity and accessibility for professionals across the globe.
-							
-							</p>
-							<p class="p-3"></p>
-							<h6 class="col-12" style="padding-left:0;padding-right:0;"> 🌍 Global Participation:</h6>
-							<p>
-								With a commitment to fostering a global community, the GRC & Financial Crime Prevention Summit welcomes participants from every corner of the world. This diverse representation enriches the discussions, broadens perspectives, and enhances the overall summit experience.</p>
 
-							
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">The AI Revolution in Governance Risk, and Compliance:</h6>
+							<p>
+								At this exemplary gathering, this Summit poses to uncover the potential of AI-driven technologies and the revolutionary impact on the landscape of Governance, Risk Management, and Compliance.
+							<br>Examination of how AI empowers organizations to streamline processes, detect risks, and respond proactively to regulatory changes.
+							</p>
+
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">AI's Role in Financial Crime Prevention:</h6>
+							<p>
+								This summit will delve into the world of financial crime prevention, where AI's analytical prowess is transforming the way businesses identify and combat illicit activities.
+							<br>It will also expatiate on AI's data-driven insights to enhance fraud detection, anti-money laundering efforts, and overall compliance with anti-corruption regulations.
+							</p>
+
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Creating an Accountable Business Ecosystem:</h6>
+							<p>
+								At this summit, the imperative of accountability in fostering stakeholder trust and promoting sustainable growth will be strongly emphasized.
+							<br>Exploration of how the convergence of corporate sustainability due diligence, AI-enabled GRC, and financial crime prevention contributes to a responsible and accountable business environment will also be done. 
+							</p>
 						
 						</div>
-						<p class="p-3"></p>
+						
 						<div class="mission-info-text mt-4 ">
-							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">🏆 Benefits to Business Leaders and Professionals: </h6>
-						
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Benefits: </h6>
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Expert Insights and Thought Leadership:</h6>
 							<p>
-								<span class="col-12 mb-1" style="padding-left:0;padding-right:0; font-weight:bolder; color:#000">Strategic Insights</span>
-								
-								Gain strategic insights to make informed decisions in the ever-evolving landscape of GRC and financial crime prevention.</p>
-
-							<p>
-								<span class="col-12 mb-1" style="padding-left:0;padding-right:0; font-weight:bolder; color:#000">Professional Growth</span>
-								
-								Elevate your professional skills through knowledge-sharing, networking, and exposure to industry best practices.
+								Engage with thought leaders, industry veterans, and subject matter experts who bring deep insights into corporate sustainability, AI, GRC, and financial crime prevention.
+							<br>Gain access to a diverse range of perspectives that will expand your horizons and inform your strategic decisions.
 							</p>
 
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Strategic Knowledge Exchange:</h6>
 							<p>
-							<span class="col-12 mb-1" style="padding-left:0;padding-right:0; font-weight:bolder; color:#000">Business Opportunities:</span>
-							
-								Explore potential collaborations, partnerships, and business opportunities with a diverse and influential audience.
- 
-							</p>
-							<p>
-							<span class="col-12 mb-1" style="padding-left:0;padding-right:0; font-weight:bolder; color:#000">Comprehensive Understanding:</span>
-							
-								Acquire a comprehensive understanding of emerging risks, regulatory challenges, and technological solutions shaping the industry
+								Elevate your understanding of current trends and best practices at the intersection of sustainability, AI, and risk management.
+								Equip yourself with actionable strategies that you can implement to drive your organization towards a sustainable and ethically responsible future.
 							</p>
 
-							
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Networking and Collaboration:</h6>
 							<p>
-								<span class="col-12 mb-1" style="padding-left:0;padding-right:0; font-weight:bolder; color:#000">Leadership Development:</span>
-							
-								Cultivate leadership skills by learning from successful professionals and industry visionaries, empowering you to lead effectively in your organization.
+								Connect with peers, professionals, and innovators in the fields of sustainability, AI, and compliance.
+							<br>Forge valuable connections that could potentially lead to collaborative projects, partnerships, and the sharing of successful strategies.
 							</p>
+
+							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Real-world Applications and Case Studies:</h6>
+							<p>
+								Dive into real-world examples that illustrate how AI is transforming GRC and financial crime prevention.
+							<br>Learn from practical experiences that highlight the tangible benefits of incorporating AI into your organization's compliance and accountability efforts.
+							</p>
+
 						</div>
-						
-						<div class="mission-info-text">
-							<h6 class="col-12" style="padding-left:0;padding-right:0;"> </h6>
-							<ol style="list-style-type: lower-roman;padding-right:10px;padding-left:0px;">
-								Join us at the GRC & Financial Crime Prevention Summit, where innovation meets collaboration, and together, we fortify the pillars of governance, risk management, compliance, and financial crime prevention. Secure your spot today for a transformative experience that will shape the future of your professional journey and contribute to the collective advancement of the industry. 🌟
+						{{-- <div class="mission-info-text mt-2">
+							<h6 class="col-12" style="padding-left:0;padding-right:0;">Benefits: </h6>
+							<ol style="list-style-type: lower-roman;padding-right:10px;padding-left:10px;">
+								<li style="font-size: 14px;">To promote awareness about Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct in Nigeria and the United Kingdom.</li>
+								<li style="font-size: 14px;">To encourage and promote industry best practices and adherence to prevailing local and international regulations and standards. </li>
+									<li style="font-size: 14px;">To encourage tertiary institutions in Nigeria and UK to include GRC & Financial Crime Prevention courses in their curriculum.</li>
+										<li style="font-size: 14px;">To create healthy relationships amongst financial institutions in the area of promoting good governance systems as well as effective risk management and compliance programs. </li>
 							</ol>
-						</div>
+						</div> --}}
 					</div>
 				</div>
 			</div>
