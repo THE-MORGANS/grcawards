@@ -9,6 +9,5 @@
   <input type="file" name="images[]" multiple>
   <input type="submit">
 </form>
-
 </body>
 </html>
