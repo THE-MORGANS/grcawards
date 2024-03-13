@@ -22,9 +22,9 @@ class Preview extends EffectAction
     /**
      * Preview constructor.
      *
-     * @param mixed|object $duration
-     * @param mixed        $maximumSegments
-     * @param mixed        $minimumSegmentDuration
+     * @param null $duration
+     * @param null $maximumSegments
+     * @param null $minimumSegmentDuration
      */
     public function __construct($duration = null, $maximumSegments = null, $minimumSegmentDuration = null)
     {
@@ -36,7 +36,7 @@ class Preview extends EffectAction
     }
 
     /**
-     * @param mixed|object $duration
+     * @param $duration
      *
      * @return Preview
      */

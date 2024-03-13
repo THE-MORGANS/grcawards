@@ -13,7 +13,6 @@ namespace Cloudinary\Tag;
 use Cloudinary\ArrayUtils;
 use Cloudinary\Asset\AssetQualifiers;
 use Cloudinary\Configuration\Configuration;
-use Cloudinary\Configuration\TagConfigTrait;
 use Cloudinary\Transformation\QualifiersAction;
 use Cloudinary\Utils;
 use UnexpectedValueException;
@@ -25,8 +24,6 @@ use UnexpectedValueException;
  */
 abstract class BaseTag
 {
-    use TagConfigTrait;
-
     const SINGLE_QUOTES = 'single_quotes';
     const DOUBLE_QUOTES = 'double_quotes';
 
@@ -361,23 +358,6 @@ abstract class BaseTag
         $configuration->tag->contentDelimiter = '';
 
         return $configuration;
-    }
-
-    /**
-     * Sets the Tag configuration key with the specified value.
-     *
-     * @param string $configKey   The configuration key.
-     * @param mixed  $configValue THe configuration value.
-     *
-     * @return $this
-     *
-     * @internal
-     */
-    public function setTagConfig($configKey, $configValue)
-    {
-        $this->config->tag->setTagConfig($configKey, $configValue);
-
-        return $this;
     }
 
     /**

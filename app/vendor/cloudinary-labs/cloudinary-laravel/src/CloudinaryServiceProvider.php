@@ -14,7 +14,6 @@ use CloudinaryLabs\CloudinaryLaravel\Commands\FetchFilesCommand;
 use CloudinaryLabs\CloudinaryLaravel\Commands\GenerateArchiveCommand;
 use CloudinaryLabs\CloudinaryLaravel\Commands\RenameFilesCommand;
 use CloudinaryLabs\CloudinaryLaravel\Commands\UploadFileCommand;
-use Illuminate\Support\Str;
 
 
 /**
@@ -106,7 +105,7 @@ class CloudinaryServiceProvider extends ServiceProvider
        if( (int)$this->app->version()[0] <= 6 ) {
           $componentName = str_replace("-", "_", $componentName);
        }
-
+        
        return $componentName;
     }
 

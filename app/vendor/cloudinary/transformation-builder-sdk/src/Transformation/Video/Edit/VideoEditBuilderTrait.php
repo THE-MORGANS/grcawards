@@ -22,9 +22,9 @@ trait VideoEditBuilderTrait
     /**
      * Trims a video (and discards the rest).
      *
-     * @param mixed $startOffset
-     * @param mixed $endOffset
-     * @param mixed $duration
+     * @param null $startOffset
+     * @param null $endOffset
+     * @param null $duration
      *
      * @return Timeline
      *

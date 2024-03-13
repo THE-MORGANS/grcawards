@@ -10,9 +10,7 @@
 
 namespace Cloudinary\Transformation\Qualifier\Dimensions;
 
-use Cloudinary\Transformation\AspectRatio;
 use Cloudinary\Transformation\BaseAction;
-use Cloudinary\Transformation\Expression\Expression;
 
 /**
  * Class Dimensions
@@ -24,9 +22,9 @@ class Dimensions extends BaseAction
     /**
      * Dimensions constructor.
      *
-     * @param int|string|Expression $width
-     * @param int|string|Expression $height
-     * @param mixed|AspectRatio     ...$aspectRatio
+     * @param null  $width
+     * @param null  $height
+     * @param mixed ...$aspectRatio
      */
     public function __construct($width = null, $height = null, ...$aspectRatio)
     {

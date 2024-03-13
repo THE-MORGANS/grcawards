@@ -37,8 +37,8 @@ class Fps extends BaseQualifier
     /**
      * FPS constructor.
      *
-     * @param mixed $min
-     * @param mixed $max
+     * @param      $min
+     * @param null $max
      */
     public function __construct($min = null, $max = null)
     {

@@ -13,17 +13,17 @@ namespace Cloudinary\Transformation;
 use Cloudinary\ClassUtils;
 
 /**
- * Class VideoSourceQualifier
+ * Class VideoLayerQualifier
  */
 class VideoSourceQualifier extends BaseSourceQualifier
 {
     /**
-     * @var string $assetType The asset type of the layer.
+     * @var string $sourceType The type of the layer.
      */
-    protected $assetType = 'video';
+    protected $sourceType = 'video';
 
     /**
-     * VideoSourceQualifier constructor.
+     * ImageLayerQualifier constructor.
      *
      * @param $source
      */

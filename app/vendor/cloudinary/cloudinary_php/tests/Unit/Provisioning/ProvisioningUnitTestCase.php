@@ -11,7 +11,6 @@
 namespace Cloudinary\Test\Unit\Provisioning;
 
 use Cloudinary\Configuration\Provisioning\ProvisioningConfiguration;
-use Cloudinary\Exception\ConfigurationException;
 use Cloudinary\Test\CloudinaryTestCase;
 
 /**
@@ -19,6 +18,7 @@ use Cloudinary\Test\CloudinaryTestCase;
  */
 abstract class ProvisioningUnitTestCase extends CloudinaryTestCase
 {
+
     const ACCOUNT_ID         = 'account123';
     const ACCOUNT_API_KEY    = 'accountKey';
     const ACCOUNT_API_SECRET = 'accountSecret';
@@ -37,21 +37,12 @@ abstract class ProvisioningUnitTestCase extends CloudinaryTestCase
                             . $this::ACCOUNT_ID;
 
         putenv(ProvisioningConfiguration::CLOUDINARY_ACCOUNT_URL_ENV_VAR . '=' . $this->accountUrl);
-
-        ProvisioningConfiguration::instance()->init();
     }
 
     public function tearDown()
     {
         parent::tearDown();
 
-        putenv(
-            ProvisioningConfiguration::CLOUDINARY_ACCOUNT_URL_ENV_VAR .
-            (! empty($this->accountUrlEnvBackup) ? '=' . $this->accountUrlEnvBackup : "")
-        );
-        try {
-            ProvisioningConfiguration::instance()->init();
-        } catch (ConfigurationException $ce) {
-        }
+        putenv(ProvisioningConfiguration::CLOUDINARY_ACCOUNT_URL_ENV_VAR . '=' . $this->accountUrlEnvBackup);
     }
 }

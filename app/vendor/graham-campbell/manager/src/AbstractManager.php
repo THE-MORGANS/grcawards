@@ -5,7 +5,7 @@ declare(strict_types=1);
 /*
  * This file is part of Laravel Manager.
  *
- * (c) Graham Campbell <hello@gjcampbell.co.uk>
+ * (c) Graham Campbell <graham@alt-three.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,7 +21,7 @@ use InvalidArgumentException;
 /**
  * This is the abstract manager class.
  *
- * @author Graham Campbell <hello@gjcampbell.co.uk>
+ * @author Graham Campbell <graham@alt-three.com>
  */
 abstract class AbstractManager implements ManagerInterface
 {

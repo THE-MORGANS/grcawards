@@ -45,6 +45,11 @@ class AutoBackground extends Background
     const PREDOMINANT = 'predominant';
 
     /**
+     * @var string $name The name.
+     */
+    protected static $name = 'background';
+
+    /**
      * @var string $type The type of the background color. Use the constants defined in this class.
      */
     protected $type;

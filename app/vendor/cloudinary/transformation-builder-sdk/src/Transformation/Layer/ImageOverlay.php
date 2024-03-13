@@ -16,7 +16,7 @@ use Cloudinary\ClassUtils;
 /**
  * Class ImageOverlay
  */
-class ImageOverlay extends BasePositionalSourceContainer
+class ImageOverlay extends BaseSourceContainer
 {
     use ImageSourceTrait;
 

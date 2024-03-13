@@ -23,10 +23,10 @@ class Shadow extends StrengthEffectAction
     /**
      * Shadow constructor.
      *
-     * @param int              $strength
-     * @param float|int|string $offsetX
-     * @param float|int|string $offsetY
-     * @param string           $color
+     * @param        $strength
+     * @param null   $offsetX
+     * @param null   $offsetY
+     * @param null   $color
      */
     public function __construct($strength = null, $offsetX = null, $offsetY = null, $color = null)
     {

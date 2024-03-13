@@ -42,7 +42,7 @@ trait ImageSpecificTransformationTrait
         return $this->addAction(
             ClassUtils::verifyInstance(
                 $layer,
-                BasePositionalSourceContainer::class,
+                BaseSourceContainer::class,
                 ImageOverlay::class,
                 $position,
                 $blendMode

@@ -53,18 +53,11 @@ class TransformationUtils
      */
     public static function boolToIntString($value)
     {
-        return self::boolToString($value, '1', '0');
-    }
-    /**
-     * Helper method for converting boolean to any representation as string.
-     *
-     * @param mixed $value Candidate to convert. If not boolean, returned as is
-     *
-     * @return string
-     */
-    public static function boolToString($value, $trueString = 'true', $falseString = 'false')
-    {
-        return is_bool($value) ? ($value ? $trueString : $falseString) : $value;
+        if (! is_bool($value)) {
+            return $value;
+        }
+
+        return $value ? '1' : '0';
     }
 
 

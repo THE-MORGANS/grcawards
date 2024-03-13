@@ -37,7 +37,7 @@ abstract class Overlay
      */
     public static function imageSource($source)
     {
-        return ClassUtils::verifyInstance($source, BasePositionalSourceContainer::class, ImageOverlay::class);
+        return ClassUtils::verifyInstance($source, BaseSourceContainer::class, ImageOverlay::class);
     }
 
     /**
@@ -47,16 +47,6 @@ abstract class Overlay
      */
     public static function videoSource($source)
     {
-        return ClassUtils::verifyInstance($source, BasePositionalSourceContainer::class, VideoOverlay::class);
-    }
-
-    /**
-     * @param $source
-     *
-     * @return AudioOverlay
-     */
-    public static function audioSource($source)
-    {
-        return ClassUtils::verifyInstance($source, BaseSourceContainer::class, AudioOverlay::class);
+        return ClassUtils::verifyInstance($source, BaseSourceContainer::class, VideoOverlay::class);
     }
 }

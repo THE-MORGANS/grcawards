@@ -28,7 +28,7 @@ class CommonTransformation extends BaseComponent implements CommonTransformation
     /**
      * CommonTransformation constructor.
      *
-     * @param mixed $transformation
+     * @param null $transformation
      */
     public function __construct($transformation = null)
     {

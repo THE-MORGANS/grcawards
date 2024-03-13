@@ -96,7 +96,7 @@ abstract class MetadataField extends Metadata
      */
     public function setDefaultValue($defaultValue)
     {
-        $this->defaultValue = $defaultValue;
+        $this->defaultValue = (string)$defaultValue;
     }
 
     /**

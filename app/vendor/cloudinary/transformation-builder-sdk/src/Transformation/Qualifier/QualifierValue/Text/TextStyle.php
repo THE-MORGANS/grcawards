@@ -44,8 +44,8 @@ class TextStyle extends QualifierMultiValue
     /**
      * TextStyle constructor
      *
-     * @param string    $fontFamily
-     * @param float|int $fontSize
+     * @param null $fontFamily
+     * @param null $fontSize
      */
     public function __construct($fontFamily = null, $fontSize = null)
     {

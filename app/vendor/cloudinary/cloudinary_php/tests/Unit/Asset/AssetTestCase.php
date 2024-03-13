@@ -53,8 +53,6 @@ abstract class AssetTestCase extends UnitTestCase
     const FETCH_IMAGE_URL            = 'https://res.cloudinary.com/demo/image/upload/' . self::IMAGE_NAME;
     const FETCH_IMAGE_URL_WITH_QUERY = 'https://res.cloudinary.com/demo/image/upload/' . self::IMAGE_NAME . '?q=a';
 
-    const FETCH_VIDEO_URL = 'https://res.cloudinary.com/demo/video/upload/dog.mp4';
-
     const PROTOCOL_HTTP  = 'http';
     const PROTOCOL_HTTPS = 'https';
 

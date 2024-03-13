@@ -10,9 +10,6 @@
 
 namespace Cloudinary\Transformation;
 
-use Cloudinary\Transformation\CropMode;
-use Cloudinary\Transformation\Expression\Expression;
-
 /**
  * Class Crop
  */
@@ -27,12 +24,12 @@ class Crop extends BaseResizeAction
     /**
      * Crop constructor.
      *
-     * @param string|CropMode       $cropMode
-     * @param int|string|Expression $width
-     * @param int|string|Expression $height
-     * @param mixed                 $gravity
-     * @param float|int|string      $x
-     * @param float|int|string      $y
+     * @param      $cropMode
+     * @param null $width
+     * @param null $height
+     * @param null $gravity
+     * @param null $x
+     * @param null $y
      */
     public function __construct($cropMode, $width = null, $height = null, $gravity = null, $x = null, $y = null)
     {

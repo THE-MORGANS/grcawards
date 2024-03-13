@@ -12,7 +12,6 @@ namespace Cloudinary\Asset;
 
 use Cloudinary\ArrayUtils;
 use Cloudinary\Configuration\UrlConfig;
-use Cloudinary\Exception\ConfigurationException;
 use Cloudinary\StringUtils;
 use Cloudinary\Utils;
 use GuzzleHttp\Psr7\Uri;
@@ -176,7 +175,7 @@ trait AssetFinalizerTrait
 
             $finalAssetType = $suffixSupportedDeliveryTypes[$this->asset->assetType][$this->asset->deliveryType];
         } else {
-            $finalAssetType = ArrayUtils::implodeUrl([$this->asset->assetType, $this->asset->deliveryType]);
+            $finalAssetType = implode('/', [$this->asset->assetType, $this->asset->deliveryType]);
         }
 
         return $finalAssetType;
@@ -232,17 +231,12 @@ trait AssetFinalizerTrait
      *
      * @see https://cloudinary.com/documentation/advanced_url_delivery_options#generating_delivery_url_signatures
      *
-     * @return string
-     * @throws ConfigurationException
+     * @return mixed
      */
     protected function finalizeSimpleSignature()
     {
         if (! $this->urlConfig->signUrl || $this->authToken->isEnabled()) {
             return '';
-        }
-
-        if (empty($this->cloud->apiSecret)) {
-            throw new ConfigurationException('Must supply apiSecret');
         }
 
         $toSign    = $this->asset->publicId();

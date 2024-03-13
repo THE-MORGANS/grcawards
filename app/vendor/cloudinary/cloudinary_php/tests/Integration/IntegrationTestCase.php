@@ -13,7 +13,6 @@ namespace Cloudinary\Test\Integration;
 use Cloudinary\Api\Admin\AdminApi;
 use Cloudinary\Api\ApiResponse;
 use Cloudinary\Api\Exception\ApiError;
-use Cloudinary\Api\HttpStatusCode;
 use Cloudinary\Api\Upload\UploadApi;
 use Cloudinary\ArrayUtils;
 use Cloudinary\Asset\AssetType;
@@ -32,6 +31,7 @@ use GuzzleHttp\Psr7;
 use PHPUnit\Framework\Constraint\IsType;
 use ReflectionClass;
 use RuntimeException;
+use Teapot\StatusCode;
 
 /**
  * Class IntegrationTestCase
@@ -44,10 +44,9 @@ abstract class IntegrationTestCase extends CloudinaryTestCase
     const TEST_DOCX_PATH      = self::TEST_ASSETS_DIR . AssetTestCase::DOCX_NAME;
     const TEST_VIDEO_PATH     = self::TEST_ASSETS_DIR . AssetTestCase::VIDEO_NAME;
     const TEST_LOGGING        = ['logging' => ['test' => ['level' => 'debug']]];
-    const TEST_EVAL_STR       = 'if (resource_info["width"] < 450) { upload_options["quality_analysis"] = true }; ' .
+    const TEST_EVAL_STR
+                              = 'if (resource_info["width"] < 450) { upload_options["quality_analysis"] = true }; ' .
                                 'upload_options["context"] = "width=" + resource_info["width"]';
-
-    const TEST_ON_SUCCESS_STR = 'current_asset.update({tags: ["autocaption"]});';
 
     private static $TEST_ASSETS = [];
 
@@ -354,7 +353,7 @@ abstract class IntegrationTestCase extends CloudinaryTestCase
 
         $res = (new Client())->head($assetUrl);
 
-        self::assertEquals(HttpStatusCode::OK, $res->getStatusCode());
+        self::assertEquals(StatusCode::OK, $res->getStatusCode());
     }
 
     /**

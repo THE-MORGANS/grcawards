@@ -28,11 +28,13 @@ use Cloudinary\Utils;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Promise\Create;
+use GuzzleHttp\Promise;
 use GuzzleHttp\Promise\PromiseInterface;
 use InvalidArgumentException;
 use JsonSerializable;
 use Psr\Http\Message\ResponseInterface;
+use Teapot\StatusCode;
+use Teapot\StatusCode\Vendor\Twitter;
 
 /**
  * Class BaseApiClient
@@ -44,17 +46,22 @@ class BaseApiClient
     use LoggerTrait;
 
     /**
+     * @var string Cloudinary API version
+     */
+    const API_VERSION = '1.1';
+
+    /**
      * @var array Cloudinary API Error Classes mapping between http error codes and Cloudinary exceptions
      */
     const CLOUDINARY_API_ERROR_CLASSES
         = [
-            HttpStatusCode::BAD_REQUEST           => BadRequest::class,
-            HttpStatusCode::UNAUTHORIZED          => AuthorizationRequired::class,
-            HttpStatusCode::FORBIDDEN             => NotAllowed::class,
-            HttpStatusCode::NOT_FOUND             => NotFound::class,
-            HttpStatusCode::CONFLICT              => AlreadyExists::class,
-            HttpStatusCode::ENHANCE_YOUR_CALM     => RateLimited::class, // RFC6585::TOO_MANY_REQUESTS
-            HttpStatusCode::INTERNAL_SERVER_ERROR => GeneralError::class,
+            StatusCode::BAD_REQUEST           => BadRequest::class,
+            StatusCode::UNAUTHORIZED          => AuthorizationRequired::class,
+            StatusCode::FORBIDDEN             => NotAllowed::class,
+            StatusCode::NOT_FOUND             => NotFound::class,
+            StatusCode::CONFLICT              => AlreadyExists::class,
+            Twitter::ENHANCE_YOUR_CALM        => RateLimited::class, // RFC6585::TOO_MANY_REQUESTS
+            StatusCode::INTERNAL_SERVER_ERROR => GeneralError::class,
         ];
 
     /**
@@ -270,15 +277,13 @@ class BaseApiClient
     /**
      * Gets the API version string from the version.
      *
-     * @param string $apiVersion The API version in the form Major.minor (for example: 1.1).
-     *
      * @return string API version string
      *
      * @internal
      */
-    public static function apiVersion($apiVersion = ApiConfig::DEFAULT_API_VERSION)
+    public static function apiVersion()
     {
-        return 'v' . str_replace('.', '_', $apiVersion);
+        return 'v' . str_replace('.', '_', self::API_VERSION);
     }
 
     /**
@@ -312,11 +317,7 @@ class BaseApiClient
      */
     protected function callAsync($method, $endPoint, $options)
     {
-        $endPoint           = self::finalizeEndPoint($endPoint);
-        $options['headers'] = ArrayUtils::mergeNonEmpty(
-            ArrayUtils::get($options, 'headers', []),
-            ArrayUtils::get($options, 'extra_headers', [])
-        );
+        $endPoint = self::finalizeEndPoint($endPoint);
         $this->getLogger()->debug("Making async $method request", ['method' => $method, 'endPoint' => $endPoint]);
 
         return $this
@@ -329,7 +330,7 @@ class BaseApiClient
                         ['statusCode' => $response->getStatusCode()]
                     );
                     try {
-                        return Create::promiseFor($this->handleApiResponse($response));
+                        return Promise\promise_for($this->handleApiResponse($response));
                     } catch (Exception $e) {
                         $this->getLogger()->critical(
                             'Async request failed',
@@ -339,7 +340,7 @@ class BaseApiClient
                             ]
                         );
 
-                        return Create::rejectionFor($e);
+                        return Promise\rejection_for($e);
                     }
                 },
                 function (Exception $error) {
@@ -351,10 +352,10 @@ class BaseApiClient
                         ]
                     );
                     if ($error instanceof ClientException) {
-                        return Create::rejectionFor($this->handleApiResponse($error->getResponse()));
+                        return Promise\rejection_for($this->handleApiResponse($error->getResponse()));
                     }
 
-                    return Create::rejectionFor($error);
+                    return Promise\rejection_for($error);
                 }
             );
     }
@@ -392,7 +393,7 @@ class BaseApiClient
     {
         $statusCode = $response->getStatusCode();
 
-        if ($statusCode !== HttpStatusCode::OK) {
+        if ($statusCode !== StatusCode::OK) {
             if (array_key_exists($statusCode, self::CLOUDINARY_API_ERROR_CLASSES)) {
                 $errorClass   = self::CLOUDINARY_API_ERROR_CLASSES[$statusCode];
                 $responseJson = $this->parseJsonResponse($response);

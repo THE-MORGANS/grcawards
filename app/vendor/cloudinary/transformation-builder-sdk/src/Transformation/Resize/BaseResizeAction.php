@@ -12,7 +12,6 @@ namespace Cloudinary\Transformation;
 
 use Cloudinary\ArrayUtils;
 use Cloudinary\ClassUtils;
-use Cloudinary\Transformation\Expression\Expression;
 use Cloudinary\Transformation\Expression\ExpressionUtils;
 use Cloudinary\Transformation\Qualifier\Dimensions\Dimensions;
 use Cloudinary\Transformation\Qualifier\Dimensions\DimensionsTrait;
@@ -34,9 +33,9 @@ abstract class BaseResizeAction extends BaseAction
     /**
      * BaseResize constructor.
      *
-     * @param string|CropMode       $cropMode The crop mode.
-     * @param int|string|Expression $width    Optional. Width.
-     * @param int|string|Expression $height   Optional. Height.
+     * @param string|CropMode $cropMode The crop mode.
+     * @param null            $width    Optional. Width.
+     * @param null            $height   Optional. Height.
      */
     public function __construct($cropMode, $width = null, $height = null)
     {

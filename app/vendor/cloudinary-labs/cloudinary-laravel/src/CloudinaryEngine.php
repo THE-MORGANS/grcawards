@@ -10,7 +10,6 @@
 namespace CloudinaryLabs\CloudinaryLaravel;
 
 use Cloudinary\Cloudinary;
-use Cloudinary\Asset\Analytics;
 use Cloudinary\Tag\ImageTag;
 use Cloudinary\Tag\VideoTag;
 use Cloudinary\Api\ApiResponse;
@@ -30,7 +29,7 @@ class CloudinaryEngine
      *
      * @var string PACKAGE_VERSION
      */
-    const PACKAGE_VERSION = '2.0.2';
+    const PACKAGE_VERSION = '2.0.1';
 
     public const ASSET_ID = 'asset_id';
     public const PUBLIC_ID = 'public_id';
@@ -74,7 +73,6 @@ class CloudinaryEngine
     public function __construct()
     {
         $this->setUserPlatform();
-        $this->setAnalytics();
         $this->setCloudinaryConfig();
         $this->bootCloudinary();
     }
@@ -96,16 +94,6 @@ class CloudinaryEngine
     public function setUserPlatform()
     {
         BaseApiClient::$userPlatform = 'CloudinaryLaravel/' . self::PACKAGE_VERSION;
-    }
-
-    /**
-    * Set Analytics
-    */
-    public function setAnalytics()
-    {
-        Analytics::sdkCode('W');
-        Analytics::sdkVersion(self::PACKAGE_VERSION);
-        Analytics::techVersion(app()->version());
     }
 
     /**

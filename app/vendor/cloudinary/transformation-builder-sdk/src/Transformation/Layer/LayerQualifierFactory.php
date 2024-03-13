@@ -49,12 +49,11 @@ class LayerQualifierFactory
         // Handle layer params
         if (is_array($layerQualifiers)) {
             $resourceType = ArrayUtils::get($layerQualifiers, 'resource_type');
-            $deliveryType = ArrayUtils::get($layerQualifiers, 'type');
 
             // Fetch layer
-            $fetchUrl = ArrayUtils::get($layerQualifiers, 'fetch', ArrayUtils::get($layerQualifiers, 'url'));
-            if (! empty($fetchUrl) || $deliveryType === 'fetch') {
-                return (new FetchSourceQualifier($fetchUrl))->assetType($resourceType);
+            $fetch = ArrayUtils::get($layerQualifiers, 'fetch');
+            if (! empty($fetch) || $resourceType === 'fetch') {
+                return new FetchSourceQualifier($fetch);
             }
 
             $text     = ArrayUtils::get($layerQualifiers, 'text');
@@ -101,9 +100,9 @@ class LayerQualifierFactory
             if ($resourceType !== 'image') {
                 $components[] = $resourceType;
             }
-
-            if ($deliveryType !== 'upload') {
-                $components[] = $deliveryType;
+            $type = ArrayUtils::get($layerQualifiers, 'type');
+            if ($type !== 'upload') {
+                $components[] = $type;
             }
             $components[] = $publicId;
 
@@ -111,7 +110,7 @@ class LayerQualifierFactory
             $layerQualifiers = ArrayUtils::implodeQualifierValues(...$components);
         } elseif (is_string($layerQualifiers)) {
             // Handle fetch layer from string definition.
-            if (StringUtils::contains($layerQualifiers, 'fetch:')) {
+            if (StringUtils::startsWith($layerQualifiers, 'fetch:')) {
                 return new FetchSourceQualifier($layerQualifiers);
             }
         }

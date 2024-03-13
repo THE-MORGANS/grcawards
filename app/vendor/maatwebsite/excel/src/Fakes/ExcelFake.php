@@ -63,16 +63,14 @@ class ExcelFake implements Exporter, Importer
 
     /**
      * {@inheritdoc}
-     *
-     * @param  string|null  $diskName  Fallback for usage with named properties
      */
-    public function store($export, string $filePath, string $disk = null, string $writerType = null, $diskOptions = [], string $diskName = null)
+    public function store($export, string $filePath, string $disk = null, string $writerType = null, $diskOptions = [])
     {
         if ($export instanceof ShouldQueue) {
-            return $this->queue($export, $filePath, $disk ?: $diskName, $writerType);
+            return $this->queue($export, $filePath, $disk, $writerType);
         }
 
-        $this->stored[$disk ?: $diskName ?: 'default'][$filePath] = $export;
+        $this->stored[$disk ?? 'default'][$filePath] = $export;
 
         return true;
     }
@@ -103,8 +101,9 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  object  $export
-     * @param  string  $writerType
+     * @param object $export
+     * @param string $writerType
+     *
      * @return string
      */
     public function raw($export, string $writerType)
@@ -115,10 +114,11 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  object  $import
-     * @param  string|UploadedFile  $file
-     * @param  string|null  $disk
-     * @param  string|null  $readerType
+     * @param object              $import
+     * @param string|UploadedFile $file
+     * @param string|null         $disk
+     * @param string|null         $readerType
+     *
      * @return Reader|PendingDispatch
      */
     public function import($import, $file, string $disk = null, string $readerType = null)
@@ -135,10 +135,11 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  object  $import
-     * @param  string|UploadedFile  $file
-     * @param  string|null  $disk
-     * @param  string|null  $readerType
+     * @param object              $import
+     * @param string|UploadedFile $file
+     * @param string|null         $disk
+     * @param string|null         $readerType
+     *
      * @return array
      */
     public function toArray($import, $file, string $disk = null, string $readerType = null): array
@@ -151,10 +152,11 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  object  $import
-     * @param  string|UploadedFile  $file
-     * @param  string|null  $disk
-     * @param  string|null  $readerType
+     * @param object              $import
+     * @param string|UploadedFile $file
+     * @param string|null         $disk
+     * @param string|null         $readerType
+     *
      * @return Collection
      */
     public function toCollection($import, $file, string $disk = null, string $readerType = null): Collection
@@ -167,10 +169,11 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  ShouldQueue  $import
-     * @param  string|UploadedFile  $file
-     * @param  string|null  $disk
-     * @param  string  $readerType
+     * @param ShouldQueue         $import
+     * @param string|UploadedFile $file
+     * @param string|null         $disk
+     * @param string              $readerType
+     *
      * @return PendingDispatch
      */
     public function queueImport(ShouldQueue $import, $file, string $disk = null, string $readerType = null)
@@ -182,7 +185,7 @@ class ExcelFake implements Exporter, Importer
         $this->queued[$disk ?? 'default'][$filePath]   = $import;
         $this->imported[$disk ?? 'default'][$filePath] = $import;
 
-        $this->job = new class
+        return new PendingDispatch(new class
         {
             use Queueable;
 
@@ -190,11 +193,7 @@ class ExcelFake implements Exporter, Importer
             {
                 //
             }
-        };
-
-        Queue::push($this->job);
-
-        return new PendingDispatch($this->job);
+        });
     }
 
     /**
@@ -220,8 +219,8 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  string  $fileName
-     * @param  callable|null  $callback
+     * @param string        $fileName
+     * @param callable|null $callback
      */
     public function assertDownloaded(string $fileName, $callback = null)
     {
@@ -238,9 +237,9 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  string  $filePath
-     * @param  string|callable|null  $disk
-     * @param  callable|null  $callback
+     * @param string               $filePath
+     * @param string|callable|null $disk
+     * @param callable|null        $callback
      */
     public function assertStored(string $filePath, $disk = null, $callback = null)
     {
@@ -269,9 +268,9 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  string  $filePath
-     * @param  string|callable|null  $disk
-     * @param  callable|null  $callback
+     * @param string               $filePath
+     * @param string|callable|null $disk
+     * @param callable|null        $callback
      */
     public function assertQueued(string $filePath, $disk = null, $callback = null)
     {
@@ -305,8 +304,8 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  string  $classname
-     * @param  callable|null  $callback
+     * @param string        $classname
+     * @param callable|null $callback
      */
     public function assertExportedInRaw(string $classname, $callback = null)
     {
@@ -323,9 +322,9 @@ class ExcelFake implements Exporter, Importer
     }
 
     /**
-     * @param  string  $filePath
-     * @param  string|callable|null  $disk
-     * @param  callable|null  $callback
+     * @param string               $filePath
+     * @param string|callable|null $disk
+     * @param callable|null        $callback
      */
     public function assertImported(string $filePath, $disk = null, $callback = null)
     {
@@ -355,12 +354,12 @@ class ExcelFake implements Exporter, Importer
 
     /**
      * Asserts that an array has a specified key and returns the key if successful.
-     *
      * @see matchByRegex for more information about file path matching
      *
-     * @param  string  $key
-     * @param  array  $array
-     * @param  string  $message
+     * @param string    $key
+     * @param array     $array
+     * @param string    $message
+     *
      * @return string
      *
      * @throws ExpectationFailedException
@@ -375,7 +374,7 @@ class ExcelFake implements Exporter, Importer
             Assert::assertGreaterThan(0, count($results), $message);
             Assert::assertEquals(1, count($results), "More than one result matches the file name expression '$key'.");
 
-            return array_values($results)[0];
+            return $results[0];
         }
         Assert::assertArrayHasKey($key, $disk, $message);
 

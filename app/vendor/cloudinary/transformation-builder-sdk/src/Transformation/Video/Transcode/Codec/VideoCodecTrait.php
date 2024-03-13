@@ -60,8 +60,8 @@ trait VideoCodecTrait
     /**
      * Video codec h264.
      *
-     * @param string $profile
-     * @param string $level
+     * @param null $profile
+     * @param null $level
      *
      * @return VideoCodec
      */

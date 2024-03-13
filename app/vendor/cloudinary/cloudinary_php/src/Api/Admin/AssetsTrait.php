@@ -18,7 +18,6 @@ use Cloudinary\ArrayUtils;
 use Cloudinary\Asset\AssetType;
 use Cloudinary\Asset\DeliveryType;
 use Cloudinary\Asset\ModerationStatus;
-use Cloudinary\StringUtils;
 
 /**
  * Enables you to manage the assets in your cloud.
@@ -59,9 +58,19 @@ trait AssetsTrait
         $uri       = [ApiEndPoint::ASSETS, $assetType];
         ArrayUtils::appendNonEmpty($uri, ArrayUtils::get($options, DeliveryType::KEY));
 
-        $params = array_merge(
-            self::prepareListAssetsParams($options),
-            ArrayUtils::whitelist($options, ['prefix', 'direction'])
+        $params = ArrayUtils::whitelist(
+            $options,
+            [
+                'next_cursor',
+                'max_results',
+                'prefix',
+                'tags',
+                'context',
+                'moderations',
+                'direction',
+                'start_at',
+                'metadata',
+            ]
         );
 
         return $this->apiClient->get($uri, $params);
@@ -84,7 +93,10 @@ trait AssetsTrait
     {
         $assetType = ArrayUtils::get($options, AssetType::KEY, AssetType::IMAGE);
         $uri       = [ApiEndPoint::ASSETS, $assetType, 'tags', $tag];
-        $params    = self::prepareListAssetsParams($options);
+        $params    = ArrayUtils::whitelist(
+            $options,
+            ['next_cursor', 'max_results', 'tags', 'context', 'moderations', 'direction', 'metadata']
+        );
 
         return $this->apiClient->get($uri, $params);
     }
@@ -109,7 +121,10 @@ trait AssetsTrait
     {
         $assetType       = ArrayUtils::get($options, AssetType::KEY, AssetType::IMAGE);
         $uri             = [ApiEndPoint::ASSETS, $assetType, 'context'];
-        $params          = self::prepareListAssetsParams($options);
+        $params          = ArrayUtils::whitelist(
+            $options,
+            ['next_cursor', 'max_results', 'tags', 'context', 'moderations', 'direction', 'metadata']
+        );
         $params['key']   = $key;
         $params['value'] = $value;
 
@@ -135,7 +150,10 @@ trait AssetsTrait
         $assetType = ArrayUtils::get($options, AssetType::KEY, AssetType::IMAGE);
         $uri       = [ApiEndPoint::ASSETS, $assetType, 'moderations', $kind, $status];
 
-        $params = self::prepareListAssetsParams($options);
+        $params = ArrayUtils::whitelist(
+            $options,
+            ['next_cursor', 'max_results', 'tags', 'context', 'moderations', 'direction', 'metadata']
+        );
 
         return $this->apiClient->get($uri, $params);
     }
@@ -157,7 +175,7 @@ trait AssetsTrait
         $type      = ArrayUtils::get($options, DeliveryType::KEY, DeliveryType::UPLOAD);
         $uri       = [ApiEndPoint::ASSETS, $assetType, $type];
 
-        $params               = self::prepareAssetsParams($options);
+        $params               = ArrayUtils::whitelist($options, ['public_ids', 'tags', 'moderations', 'context']);
         $params['public_ids'] = $publicIds;
 
         return $this->apiClient->get($uri, $params);
@@ -178,7 +196,7 @@ trait AssetsTrait
     {
         $uri = [ApiEndPoint::ASSETS, 'by_asset_ids'];
 
-        $params              = self::prepareAssetsParams($options);
+        $params              = ArrayUtils::whitelist($options, ['public_ids', 'tags', 'moderations', 'context']);
         $params['asset_ids'] = $assetIds;
 
         return $this->apiClient->get($uri, $params);
@@ -200,41 +218,13 @@ trait AssetsTrait
     {
         $uri = [ApiEndPoint::ASSETS, 'by_asset_folder'];
 
-        $params                 =  self::prepareListAssetsParams($options);
+        $params                 = ArrayUtils::whitelist(
+            $options,
+            ['next_cursor', 'max_results', 'tags', 'moderations', 'context']
+        );
         $params['asset_folder'] = $assetFolder;
 
         return $this->apiClient->get($uri, $params);
-    }
-
-
-    /**
-     * Find images based on their visual content.
-     *
-     * @param array $options The optional parameters. See the
-     *                       <a href=https://cloudinary.com/documentation/admin_api#visual_search_for_resources
-     *                       target="_blank"> AdminAPI</a> documentation.
-     *
-     * @return ApiResponse
-     *
-     * @throws ApiError
-     *
-     * @see https://cloudinary.com/documentation/admin_api#visual_search_for_resources
-     */
-    public function visualSearch($options = [])
-    {
-        $uri = [ApiEndPoint::ASSETS, 'visual_search'];
-
-        $params = ArrayUtils::whitelist($options, ['image_url', 'image_asset_id', 'text']);
-
-        // Special handling for file inside Admin API.
-        if (array_key_exists('image_file', $options)) {
-            $options['file_field'] = 'image_file';
-            $options['unsigned'] = true;
-
-            return $this->apiClient->postFile($uri, $options['image_file'], $params, $options);
-        }
-
-        return $this->apiClient->postForm($uri, $params);
     }
 
     /**
@@ -343,7 +333,6 @@ trait AssetsTrait
                 'categorization',
                 'detection',
                 'similarity_search',
-                'visual_search',
                 'auto_tagging',
                 'background_removal',
                 'quality_override',
@@ -517,94 +506,6 @@ trait AssetsTrait
     }
 
     /**
-     * Relates an asset to other assets by public IDs.
-     *
-     * @param string $publicId      The public ID of the asset to update.
-     * @param array $assetsToRelate The array of up to 10 fully_qualified_public_ids given as
-     *                              resource_type/type/public_id.
-     * @param array $options        The optional parameters. See the
-     * <a href=https://cloudinary.com/documentation/admin_api#add_related_assets target="_blank"> Admin API</a> documentation.
-     *
-     * @return ApiResponse
-     */
-    public function addRelatedAssets($publicId, $assetsToRelate, $options = [])
-    {
-        $assetType = ArrayUtils::get($options, AssetType::KEY, AssetType::IMAGE);
-        $type      = ArrayUtils::get($options, DeliveryType::KEY, DeliveryType::UPLOAD);
-
-        $uri       = [ApiEndPoint::ASSETS, ApiEndPoint::RELATED_ASSETS, $assetType, $type, $publicId];
-
-        $params = [
-            'assets_to_relate' => ArrayUtils::build($assetsToRelate),
-        ];
-
-        return $this->apiClient->postJson($uri, $params);
-    }
-
-    /**
-     * Relates an asset to other assets by asset IDs.
-     *
-     * @param string $assetId       The asset ID of the asset to update.
-     * @param array $assetsToRelate The array of up to 10 asset IDs.
-     *
-     * @return ApiResponse
-     */
-    public function addRelatedAssetsByAssetIds($assetId, $assetsToRelate)
-    {
-        $uri = [ApiEndPoint::ASSETS, ApiEndPoint::RELATED_ASSETS, $assetId];
-
-        $params = [
-            'assets_to_relate' => ArrayUtils::build($assetsToRelate),
-        ];
-
-        return $this->apiClient->postJson($uri, $params);
-    }
-
-    /**
-     * Unrelates an asset from other assets by public IDs.
-     *
-     * @param string $publicId        The public ID of the asset to update.
-     * @param array $assetsToUnrelate The array of up to 10 fully_qualified_public_ids given as
-     *                                resource_type/type/public_id.
-     * @param array $options          The optional parameters. See the
-     * <a href=https://cloudinary.com/documentation/admin_api#delete_related_assets target="_blank"> Admin API</a> documentation.
-     *
-     * @return ApiResponse
-     */
-    public function deleteRelatedAssets($publicId, $assetsToUnrelate, $options = [])
-    {
-        $assetType = ArrayUtils::get($options, AssetType::KEY, AssetType::IMAGE);
-        $type      = ArrayUtils::get($options, DeliveryType::KEY, DeliveryType::UPLOAD);
-
-        $uri       = [ApiEndPoint::ASSETS, ApiEndPoint::RELATED_ASSETS, $assetType, $type, $publicId];
-
-        $params = [
-            'assets_to_unrelate' => ArrayUtils::build($assetsToUnrelate),
-        ];
-
-        return $this->apiClient->deleteJson($uri, $params);
-    }
-
-    /**
-     * Unrelates an asset from other assets by asset IDs.
-     *
-     * @param string $assetId          The asset ID of the asset to update.
-     * @param array  $assetsToUnrelate The array of up to 10 asset IDs.
-     *
-     * @return ApiResponse
-     */
-    public function deleteRelatedAssetsByAssetIds($assetId, $assetsToUnrelate)
-    {
-        $uri       = [ApiEndPoint::ASSETS, ApiEndPoint::RELATED_ASSETS, $assetId];
-
-        $params = [
-            'assets_to_unrelate' => ArrayUtils::build($assetsToUnrelate),
-        ];
-
-        return $this->apiClient->deleteJson($uri, $params);
-    }
-
-    /**
      * Prepares optional parameters for delete asset API calls.
      *
      * @param array $options Additional options.
@@ -643,7 +544,6 @@ trait AssetsTrait
                 'faces',
                 'quality_analysis',
                 'image_metadata',
-                'media_metadata',
                 'phash',
                 'pages',
                 'cinemagraph_analysis',
@@ -652,43 +552,7 @@ trait AssetsTrait
                 'derived_next_cursor',
                 'accessibility_analysis',
                 'versions',
-                'related',
-                'related_next_cursor',
             ]
-        );
-    }
-
-    /**
-     * Prepares optional parameters for assets* API calls.
-     *
-     * @param array $options Additional options.
-     *
-     * @return array    Optional parameters
-     *
-     * @internal
-     */
-    protected static function prepareAssetsParams($options)
-    {
-        $params = ArrayUtils::whitelist($options, ['tags', 'context', 'metadata', 'moderations']);
-        $params['fields'] = ApiUtils::serializeSimpleApiParam((ArrayUtils::get($options, 'fields')));
-
-        return $params;
-    }
-
-    /**
-     * Prepares optional parameters for assetsBy* API calls.
-     *
-     * @param array $options Additional options.
-     *
-     * @return array    Optional parameters
-     *
-     * @internal
-     */
-    protected static function prepareListAssetsParams($options)
-    {
-        return array_merge(
-            self::prepareAssetsParams($options),
-            ArrayUtils::whitelist($options, ['next_cursor', 'max_results', 'direction'])
         );
     }
 }

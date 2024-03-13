@@ -12,8 +12,6 @@ namespace Cloudinary\Test\Helpers;
 
 use Cloudinary\Api\ApiClient;
 use Cloudinary\Configuration\Configuration;
-use Cloudinary\Configuration\Provisioning\ProvisioningAccountConfig;
-use Cloudinary\Configuration\Provisioning\ProvisioningConfiguration;
 use Psr\Http\Message\RequestInterface;
 
 use GuzzleHttp\Psr7;
@@ -92,33 +90,12 @@ trait RequestAssertionsTrait
      * @param string           $path
      * @param string           $message
      */
-    protected static function assertRequestUrl(RequestInterface $request, $path, $message = '', $config = null)
+    protected static function assertRequestUrl(RequestInterface $request, $path, $message = '')
     {
-        if ($config == null) {
-            $config = Configuration::instance();
-        }
+        $config = Configuration::instance();
 
         self::assertEquals(
-            '/' . ApiClient::apiVersion($config->api->apiVersion) . '/' . $config->cloud->cloudName . $path,
-            $request->getUri()->getPath(),
-            $message
-        );
-    }
-
-    /**
-     * Assert that a request was made to the correct url.
-     *
-     * @param RequestInterface $request
-     * @param string           $path
-     * @param string           $message
-     */
-    protected static function assertAccountRequestUrl(RequestInterface $request, $path, $message = '')
-    {
-        $config = ProvisioningConfiguration::instance();
-
-        self::assertEquals(
-            '/' . ApiClient::apiVersion() . '/' . 'provisioning/accounts/' . $config->provisioningAccount->accountId
-            . $path,
+            '/' . ApiClient::apiVersion() . '/' . $config->cloud->cloudName . $path,
             $request->getUri()->getPath(),
             $message
         );

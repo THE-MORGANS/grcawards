@@ -22,5 +22,4 @@ trait ImageEffectTrait
     use MiscEffectTrait;
     use AddonEffectTrait;
     use ThemeEffectTrait;
-    use GenerativeEffectTrait;
 }

@@ -23,5 +23,4 @@ abstract class MiscEffect
     const ADVANCED_RED_EYE = 'adv_redeye';
     const VECTORIZE        = 'vectorize';
     const OUTLINE          = 'outline';
-    const DROP_SHADOW      = 'dropshadow';
 }

@@ -32,18 +32,6 @@ trait VideoSourceTrait
     }
 
     /**
-     * Adds another video layer from a remote URL.
-     *
-     * @param string|null $fetchUrl The URL of the asset to fetch.
-     *
-     * @return static|FetchVideoSource
-     */
-    public static function fetchVideo($fetchUrl)
-    {
-        return static::createWithSource(ClassUtils::verifyInstance($fetchUrl, FetchVideoSource::class));
-    }
-
-    /**
      * Adds subtitles to a video.
      *
      * @param string $subtitlesId The public ID of the subtitles file.

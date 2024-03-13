@@ -30,8 +30,8 @@ class PointValue extends BaseComponent
     /**
      * PointValue constructor.
      *
-     * @param int $x
-     * @param int $y
+     * @param null $x
+     * @param null $y
      */
     public function __construct($x = null, $y = null)
     {

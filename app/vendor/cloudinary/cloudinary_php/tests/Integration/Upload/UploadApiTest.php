@@ -381,18 +381,6 @@ final class UploadApiTest extends IntegrationTestCase
     }
 
     /**
-     * Get the image metadata of an uploaded image.
-     *
-     * @throws ApiError
-     */
-    public function testMediaMetadata()
-    {
-        $result = self::uploadTestAssetImage(['media_metadata' => true], self::TEST_IMAGE_PATH);
-
-        self::assertArrayHasKey('image_metadata', $result);
-    }
-
-    /**
      * Upload a resource with a metadata.
      *
      * @throws ApiError
