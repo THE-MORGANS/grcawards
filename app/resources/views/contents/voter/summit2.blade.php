@@ -5,7 +5,7 @@
 <head>
 	@include('partials.voter.head')
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
-</head> 
+</head>
 
 <body id="conference-page"> 
 	<!-- =============== PRELOADER =============== -->
