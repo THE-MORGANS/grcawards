@@ -774,6 +774,7 @@ class ComposerStaticInit4eb97cd58c29ecb8c9452e5450f18140
         'CloudinaryLabs\\CloudinaryLaravel\\MediaAlly' => __DIR__ . '/..' . '/cloudinary-labs/cloudinary-laravel/src/MediaAlly.php',
         'CloudinaryLabs\\CloudinaryLaravel\\Model\\Media' => __DIR__ . '/..' . '/cloudinary-labs/cloudinary-laravel/src/Model/Media.php',
         'Cloudinary\\Api\\Admin\\AdminApi' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api/Admin/AdminApi.php',
+        'Cloudinary\\Api\\Admin\\AnalysisTrait' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api/Admin/AnalysisTrait.php',
         'Cloudinary\\Api\\Admin\\ApiEndPoint' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api/Admin/ApiEndPoint.php',
         'Cloudinary\\Api\\Admin\\AssetsTrait' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api/Admin/AssetsTrait.php',
         'Cloudinary\\Api\\Admin\\FoldersTrait' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Api/Admin/FoldersTrait.php',

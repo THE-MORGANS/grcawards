@@ -203,6 +203,7 @@ return array(
     'CloudinaryLabs\\CloudinaryLaravel\\MediaAlly' => $vendorDir . '/cloudinary-labs/cloudinary-laravel/src/MediaAlly.php',
     'CloudinaryLabs\\CloudinaryLaravel\\Model\\Media' => $vendorDir . '/cloudinary-labs/cloudinary-laravel/src/Model/Media.php',
     'Cloudinary\\Api\\Admin\\AdminApi' => $vendorDir . '/cloudinary/cloudinary_php/src/Api/Admin/AdminApi.php',
+    'Cloudinary\\Api\\Admin\\AnalysisTrait' => $vendorDir . '/cloudinary/cloudinary_php/src/Api/Admin/AnalysisTrait.php',
     'Cloudinary\\Api\\Admin\\ApiEndPoint' => $vendorDir . '/cloudinary/cloudinary_php/src/Api/Admin/ApiEndPoint.php',
     'Cloudinary\\Api\\Admin\\AssetsTrait' => $vendorDir . '/cloudinary/cloudinary_php/src/Api/Admin/AssetsTrait.php',
     'Cloudinary\\Api\\Admin\\FoldersTrait' => $vendorDir . '/cloudinary/cloudinary_php/src/Api/Admin/FoldersTrait.php',
