@@ -32,30 +32,33 @@ class VoterRegisterController extends Controller
 
     public function register(Request $request)
     {
-        return back();
+        // return back();
         $this->validator($request->only('email'))->validate();
         $ip_address = $request->getClientIp();
-        // dd($mac_address, $ip_address);
-        if(Voter::where(['ip_address'=> '1218129812'])->exists()){
-        $request->session()->flash('danger', 'An account has been created with this device.');
-        return redirect()->back();
-        }else{
+      
+        // if(Voter::where(['ip_address'=> '1218129812'])->exists()){
+        // $request->session()->flash('danger', 'An account has been created with this device.');
+        
+        // return redirect()->back();
+        // }else{
             $voter = $this->create(['email'=>$request->email, 'i_agree'=>$request->i_agree, 'ip_address' => $ip_address]);
-            if ($this->registered($request, $voter)) {
+
+            // if ($this->registered($request, $voter)) {
                 sleep(3);
                 $voter = Voter::where(['email' => $request->email])->first();
+                // dd($voter);
                 Auth::guard('voter')->loginUsingId($voter->id);
                 $request->session()->flash('success', 'Account registered successfully');
                 return redirect()->back();
-            }
-        }
+            // }
+        // }
     }
     
     protected function create(array $data)
     {
         // $award_program = AwardProgram::where('status', 1)->latest()->first();
 
-        return back();
+        // return back();
         return Voter::create([
             'email' => $data['email'],
             'token' => $this->getToken(10),

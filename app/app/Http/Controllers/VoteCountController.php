@@ -28,7 +28,7 @@ class VoteCountController extends Controller
                 $sector->hashid = Hashids::connection('sector')->encode($sector->id);
             }
         }
-        // return view('contents.voter.vote')->with(['categories'=>$categories]);
+        return view('contents.voter.vote')->with(['categories'=>$categories]);
         return view('contents.admin.cat_sec')->with(['categories'=>$categories, 'award_program'=>$award_program_id]);
     }
 

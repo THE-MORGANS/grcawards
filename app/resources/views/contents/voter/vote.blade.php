@@ -143,7 +143,7 @@
 		</div>
 	</section>
 
-	<div class="modal fade" id="imageView" tabindex="-1" aria-labelledby="imageView" style="display: none;" aria-hidden="true">
+	{{-- <div class="modal fade" id="imageView" tabindex="-1" aria-labelledby="imageView" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content" style="background:none">
                 <!-- <div class="modal-header border-0" style="background:none">
@@ -189,7 +189,7 @@
                 </div>
             </div>
 		</div>
-    </div>
+    </div> --}}
 	<!-- <section id="register" class="s-marathon-register">
 		<div class="container">
 			<div class="marathon-register-row" style="justify-content: center;">

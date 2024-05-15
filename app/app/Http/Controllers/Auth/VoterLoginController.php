@@ -31,7 +31,9 @@ class VoterLoginController extends Controller
 
     public function login(Request $request)
     {
+    
         $this->validateLogin($request);
+       
 
         if ($this->attemptLogin($request)) {
             return $this->sendLoginResponse($request);
