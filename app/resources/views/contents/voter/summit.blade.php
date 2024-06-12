@@ -153,14 +153,14 @@
 			<div class="slider-our-speaker">
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/C4D03AQFpNfd_khB6Qw/profile-displayphoto-shrink_800_800/0/1603547633866?e=1701907200&v=beta&t=t0vVk6UKMakdV_h3QZPyDUpMDyK1_JwtW3Ub8fiVrGI" alt="img">
+						<img src="https://media.licdn.com/dms/image/D5603AQHnelcJcY4x-g/profile-displayphoto-shrink_400_400/0/1704201511858?e=1723680000&v=beta&t=qrKzKwRlYyR0Bonz8cqg4iJPLm_XkMeAPofmaMSVGQo" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Dr. Emmanuel Moore ABOLO ,PhD-Econs, FGRCP,FIMC, FNIMN,FPSSN </h3>
+							<h3 class="name" style="font-size:18px">Jerry Wong  </h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">The Risk Master; Global Speaker; Systems Thinker</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Sustainability | SCR® | CFA ESG Investing | Musician</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/dr-emmanuel-moore-abolo-phd-econs-fgrcp-fimc-fnimn-fpssn-2a096a6/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/jerry-wong-06a41222b/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -189,14 +189,14 @@
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/D4D03AQG99ImLBVU5uA/profile-displayphoto-shrink_400_400/0/1685298259068?e=1701907200&v=beta&t=kW3w47gwEPE1psZXvZUthTCC-k_VP7mpyqDVh_A59yE" alt="img">
+						<img src="https://media.licdn.com/dms/image/C4D03AQEqLTkhIv_7Rg/profile-displayphoto-shrink_400_400/0/1655476464942?e=1723680000&v=beta&t=3A6oV9KNdpeczqug8YaJj62JwcI1ofys_tu5Ki1Sgzs" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Dr. Ezekiel Oseni</h3>
+							<h3 class="name" style="font-size:18px">Morakinyo Animasaun</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Risk Officer (Bank of Industry, Nigeria) | President and Chairman of Council, Chartered Risk Management Institute (CRMI) of Nigeria | Entrepreneurship Coach | Lecturer | Facilitator</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Experienced professional providing cybersecurity insights and helping organisations assess and improve their Compliance, Risk, Cybersecurity and Digital Fraud capabilities.</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/dr-ezekiel-oseni-499b8882/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/morakinyoanimasaun/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -206,11 +206,11 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/C4D03AQGTc6LH4AUTVg/profile-displayphoto-shrink_400_400/0/1648735369903?e=1701907200&v=beta&t=EGU0DQBydMuAIJ3JvtLh7NW7Eb1dkCb3LXXXr4ndwOk" alt="img">
+						<img src="{{asset('assets/nneka.jpeg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Dr. Chinyere Almona </h3>
+							<h3 class="name" style="font-size:18px">Nneka Nwaka (BL,LLB,CAMS,FCIN,CFE)						</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director-General/Chief Executive at LCCI | Governance Professional with vast global experience in establishing standards | Cognitive Reflex Conditioning™ Practitioner | Board Advisor & Trainer | Author</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">CCO, Moment Holdings Limited</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
 									<a href="https://www.linkedin.com/in/chinyerealmona/" tabindex="-1" target="_blank">
@@ -224,15 +224,16 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/D4D03AQFl5qRxXdFaSA/profile-displayphoto-shrink_400_400/0/1694571288831?e=1701907200&v=beta&t=4CdwIwni78eXdnJLSzPxphZ3eAf7UIxhXHEdSkYm9Ag" alt="img">
+						<img src="https://media.licdn.com/dms/image/D4D03AQGAXGSYqJVlDg/profile-displayphoto-shrink_400_400/0/1687959833869?e=1723680000&v=beta&t=i4Li2mUViOtPoVOK8lWFcnyt7Lp3Oue9T1I83d_edC4" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Florence Abraham</h3>
+							<h3 class="name" style="font-size:18px">Abieyuwa (Stephanie) Usoh
+								2nd degree connection2</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">DIRECTOR. GOPTS.MGMT. Central Bank of Nigeria Ensures Compliance with Prudential Regulations, ML TF Laws/Reg, Foreign EXcnge, in Central Bank of Nigeria. Anti-Money Laundering Specialist & Trainer
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">LLB, BL, ACIArb UK, LEVEL 7 DIP, LLM, MSC, MBA
 							</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/florence-abraham-86235243/" tabindex="-1">
+									<a href="https://www.linkedin.com/in/abieyuwa-usoh-164301145/" tabindex="-1">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -243,14 +244,13 @@
 				</div>
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/D4D03AQFKVqkDOsrRfg/profile-displayphoto-shrink_400_400/0/1686178792710?e=1701907200&v=beta&t=XKjPBsQ19jmtfzEWt8TgpSqXm7zBlutmI885iqQLx9o" alt="img">
+						<img src="https://media.licdn.com/dms/image/D5603AQHpmDDpzTc3fQ/profile-displayphoto-shrink_400_400/0/1711885858940?e=1723680000&v=beta&t=1oBWAaYNCvk9hAvHUuwzoKa2kiiRRYB7pir_itzMZEE" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Debo Aderoju, MBA, ACIB, FCGP, FICA,MCIB</h3>
+							<h3 class="name" style="font-size:18px">Lokesh Joshi	</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Experienced Governance, Risk and Compliance professional/Credit and ERM Manager/Leadership and Strategy/ Business Process Improvement/Inclusive Finance/ Digital Financial Servic</p>
-							<div class="meta">
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Experienced Governance, Risk and Compliance professional/Credit and ERM Manager/Leadership and Strategy/ Business Process Improvement/Inclusive Finance/ Digital Financial ServicGroKalp | Innovation - Hydrogen - CNT | India, Russia & Saudi Arabia
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/debo-aderoju-mba-acib-fcgp-fica-mcib-ab1a7638/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/lokeshjos/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -258,56 +258,17 @@
 						</div>
 
 					</div>
-				</div>
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/C4E03AQGZJExa-aVcJQ/profile-displayphoto-shrink_400_400/0/1621623904233?e=1701907200&v=beta&t=a1ekgSs1DPINvEEld2yLn3ICPYZfl42He92WgVUz2UA" alt="img">
+						<img src="{{asset('https://media.licdn.com/dms/image/D4D03AQFsUREwAdsCEQ/profile-displayphoto-shrink_400_400/0/1684654035324?e=1723680000&v=beta&t=h7z-vILZYlmRwOjQMMycmJ-lozUHywHYYJaG4WrovBg')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Rose Nkechi </h3>
+							<h3 class="name" style="font-size:18px">Femi Mosaku-Johnson						</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director of Financial Crime Compliance |Fintech| Computer & Network Security| Digital Payments| Board member</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Founding President at HERO ADVISORY NIGERIA</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/rose-nkechi-367119144/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="{{asset('assets/Chinelo Ubah_20231005_084651_0000.png')}}" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Chinelo Ubah </h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Head of CFCC Governance, Risk Assessment and Testing</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/chinelo-ubah-0954b610/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-				<div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/D4D03AQHrLRikQZNLsA/profile-displayphoto-shrink_400_400/0/1688984408747?e=1701907200&v=beta&t=ljiUOTvYNQl--PcDTeCS5gnaCNcg14VgANxiEzxJR_A" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Sina Olaosun (CFE, DCP, HCIB, MSc, MBA, BTech)</h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer at SunTrust Bank Ltd</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/sina-olaosun-cfe-dcp-hcib-msc-mba-btech-5476b1185/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/femi-mosaku-johnson-1200b0225/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -319,12 +280,11 @@
 
 
 
-				<div class="slide-our-speaker">
+				{{-- <div class="slide-our-speaker">
 					<div class="our-speaker-item">
 						<img src="https://media.licdn.com/dms/image/C4D03AQE7DHsFYmx6SQ/profile-displayphoto-shrink_400_400/0/1557700193350?e=1701907200&v=beta&t=7kDK8SF7fdkr8LBWF1sZdaadw2CIkcS9EfMPDbHoCJA" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Sunny Ukeachu - FNiiS, FIMC </h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Founder|CEO at Mitiget</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -336,14 +296,13 @@
 						</div>
 
 					</div>
-				</div>
+				</div> --}}
 
-				<div class="slide-our-speaker">
+				{{-- <div class="slide-our-speaker">
 					<div class="our-speaker-item">
 						<img src="https://media.licdn.com/dms/image/D5603AQGWk79gWOv3gQ/profile-displayphoto-shrink_400_400/0/1682971272930?e=1701907200&v=beta&t=8w6ao3q2cX5fdvoaxHPzCSUvXMZhQZTU7FDyvKmn8hM" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Femi Jaiyeola  </h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Chief Conduct & Compliance Officer - Access Bank</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -355,14 +314,13 @@
 						</div>
 
 					</div>
-				</div>
+				</div> --}}
 
-				<div class="slide-our-speaker">
+				{{-- <div class="slide-our-speaker">
 					<div class="our-speaker-item">
 						<img src="https://www.lagoshouseofassembly.gov.ng/wp-content/uploads/2021/02/0e718077-c534-45e1-b9fa-b0b7d203ebc0.jpg" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">HON. FEMI SAHEED </h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Hon. House of Rep</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -374,14 +332,13 @@
 						</div>
 
 					</div>
-				</div>
+				</div> --}}
 
-				<div class="slide-our-speaker">
+				{{-- <div class="slide-our-speaker">
 					<div class="our-speaker-item">
 						<img src="{{asset('assets/images/jide.png')}}" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Jide Ibitayo	</h3>
-							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Speaker</p> --}}
 							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Company Secretary/Group Legal Counsel at Mutual Benefits Assurance Plc</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
@@ -393,7 +350,7 @@
 						</div>
 
 					</div>
-				</div>
+				</div> --}}
 
 			</div>
 			<ul class="mission-meta">
