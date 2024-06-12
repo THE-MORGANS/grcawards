@@ -159,8 +159,8 @@
 						<div class="event-schedule-item">
 							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">15th June. 2023</div>
-								<h4>2023 GRC Summit </h4>
+								<div class="date">15th June. 2024</div>
+								<h4>2024 GRC Summit </h4>
 								<div class="schedule-info-content">
 									<p>Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public.</p>
 									<a href="{{route('show_summit')}}"> Learn More</a>
@@ -177,7 +177,7 @@
 								<i class="mdi mdi-account-multiple-plus mdi-48px" style="color:#D4AF37"></i>
 							</div>
 							<div class="schedule-item-info active">
-								<div class="date">22nd July 2023 - 21st Aug. 2023</div>
+								<div class="date">22nd July 2024 - 21st Aug. 2024</div>
 								<h4>Nomination/Voting Process</h4>
 								<div class="schedule-info-content" style="display: none;">
 									<p>Voting is open to the public. The participants with the highest number of votes in every category in various sectors will shortlisted.</p>
@@ -197,7 +197,7 @@
 								<i class="mdi mdi-bell-ring-outline mdi-48px" style="color:#D4AF37"></i>
 							</div>
 							<div class="schedule-item-info">
-								<div class="date">1st Oct,2023 - 31st Oct. 2023</div>
+								<div class="date">1st Oct,2024 - 31st Oct. 2024</div>
 								<h4>Notification of Shortlisted Nominees</h4>
 								<div class="schedule-info-content" style="display: none;">
 									<p>After nominees have been shortlisted, they are sent a notification informing them that they have been shortlisted and also inviting them to the award ceremony. </p>
@@ -211,7 +211,7 @@
 						<div class="event-schedule-item">
 							<div class="schedule-item-img"><i class="mdi mdi-ballot-outline mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">1st Oct. 2023 - 15th Oct. 2023</div>
+								<div class="date">1st Oct. 2024 - 15th Oct. 2024</div>
 								<h4>Shortlisting and Judging Process</h4>
 								<div class="schedule-info-content">
 									<p>The Votes are counted inorder to shortlist top 3 nominees under every category. Afterwhich, further screening and examination is done by the Judges to select the winners.</p>
