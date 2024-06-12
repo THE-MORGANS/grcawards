@@ -171,14 +171,15 @@
 
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="{{asset('/assets/MicrosoftTeams-image2.png')}}" alt="img">
+						<img src="https://media.licdn.com/dms/image/C4E03AQF-mINZYZU_AA/profile-displayphoto-shrink_800_800/0/1516513073746?e=1723680000&v=beta&t=tNXsWmKzhtI0Fy3eZprCgfv98VMhSQ3-yjSZLy_1spA" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Funmilayo Ekundayo FCIS</h3>
+							<h3 class="name" style="font-size:18px">Anna (Goshunova) Lyzhova
+							</h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;"> CEO / MD , STL Trustees &  President , ICSAN</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;"> Head of Department of Accounting, Analysis and Audit – Kazan</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/funmilayo-ekundayo-67903430/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/anna-lyzhova-1270a774/?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile&originalSubdomain=ru" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -280,15 +281,15 @@
 
 
 
-				{{-- <div class="slide-our-speaker">
+				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/C4D03AQE7DHsFYmx6SQ/profile-displayphoto-shrink_400_400/0/1557700193350?e=1701907200&v=beta&t=7kDK8SF7fdkr8LBWF1sZdaadw2CIkcS9EfMPDbHoCJA" alt="img">
+						<img src="https://media.licdn.com/dms/image/C4D03AQENbWT-QpBgkA/profile-displayphoto-shrink_400_400/0/1645190986697?e=1723680000&v=beta&t=oNTVWNHKZpoUzef4mvjXW-OvAHj5BGPUvSOwgk18YI0" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Sunny Ukeachu - FNiiS, FIMC </h3>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Founder|CEO at Mitiget</p>
+							<h3 class="name" style="font-size:18px">Mosope Keating </h3>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Fellow, Institute of Chartered Accountants of Nigeria (FCA) || ICAN</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/sunny-ukeachu-fniis-fimc-b507a632/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/mosope-keating-11637746/?utm_source=share&utm_medium=member_mweb&utm_campaign=share_via&utm_content=profile&originalSubdomain=ca" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
@@ -296,7 +297,7 @@
 						</div>
 
 					</div>
-				</div> --}}
+				</div>
 
 				{{-- <div class="slide-our-speaker">
 					<div class="our-speaker-item">
