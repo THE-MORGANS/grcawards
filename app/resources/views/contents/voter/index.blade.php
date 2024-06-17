@@ -159,10 +159,10 @@
 						<div class="event-schedule-item">
 							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">15th June. 2024</div>
-								<h4>2024 GRC Summit </h4>
+								<div class="date">23rd July. 2024</div>
+								<h4>GRC Mid-Year GRC Summit 2024 </h4>
 								<div class="schedule-info-content">
-									<p>Topic: Senior Management Certification Regime, & Ring Fencing FIs Against Financial Crime and Conduct Risks and Restoring Confidence in the Market/Public.</p>
+									<p>Topic: Fortifying Corporate Integrity: Strategies for Navigating Conflict, Corruption, and Cybersecurity Challenges Through Robust Governance and Data Security".</p>
 									<a href="{{route('show_summit')}}"> Learn More</a>
 								</div>
 							</div>

@@ -15,7 +15,7 @@
 	@include('partials.voter.topbar')
 	<!-- =============== HEADER END =============== -->
 	<!-- Page title -->
-	<div class="p" style="background: url('{{asset('assets/summit.jpeg')}}'); height:400px" >
+	<div class="p" style="background: url('{{asset('assets/summit2.jpeg')}}'); height:400px" >
 		<div class="container" > 
 			{{-- <div class="breadcrumbs">
 				<ul>
