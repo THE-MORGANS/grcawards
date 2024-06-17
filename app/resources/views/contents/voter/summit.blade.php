@@ -57,7 +57,7 @@
 						</div> --}}
 					</div>
 					<br>
-					{{-- <center><img src="{{asset('/assets/MicrosoftTeams-image.jpg')}}" width="42%"></center>	 --}}
+					<center><img src="{{asset('/assets/summit3.jpeg')}}" width="42%"></center>	
 				<h2 class="title-conference pt-5"><span>About The Summit</span></h2>
 					{{-- <h5  class="btn btn-primary"> <a href="{{route('summit_programme')}}" >  Go to Summit Programme </a></h5>  --}}
 				<div class="row">
@@ -69,8 +69,8 @@
 						</span>
 					</div>
 					
-					<div class="col-12" style="text-align:justify;">
-						<ul class="mission-meta" style="display: block">
+					<div class="col-12" style="text-align:justify; ">
+						<ul class="mission-meta p-3" style="display: block">
 							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i> Venue: Virtual / Online - Microsoft Teams</li> 
 							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: Tuesday, 23rd July, 2024</li>
 							<li><i class="mdi mdi-clock-outline"></i>Time: 12pm - 2pm</li> 
