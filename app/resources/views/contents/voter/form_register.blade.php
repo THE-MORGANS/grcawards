@@ -107,7 +107,7 @@
                         </span>
                         @enderror
                     </div>
-
+{{-- 
                     <div class="p-1">
                         <label for="award"> Did you nominate your firm for any award </label>
                         YES: <input id="award" class="form-control" id="award" type="radio" name="award"  value="Yes" placeholder="award" required>
@@ -117,8 +117,8 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                    </div>
-
+                    </div> --}}
+{{-- 
                     <div class="p-1">
                         <label for="reason"> (If No,) Why? </label>
                         <input id="reason" class="form-control" id="reason" value="{{old('reason')}}" type="text" name="reason"  required>
@@ -127,10 +127,10 @@
                             <strong>{{ $message }}</strong>
                         </span>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     <div class="p-1">
-                        <label for="about_us"> How did you hear about the Summit/Awards</label>
+                        <label for="about_us"> How did you hear about the Summit</label>
                         <input id="about_us" class="form-control" id="about_us" type="text"  value="{{old('about_us')}}" name="about_us" required>
                         @error('about_us')
                         <span class="invalid-feedback" role="alert" style="color:red">
@@ -140,7 +140,7 @@
                     </div>
                    
                     <div class="p-1">
-                        <label for="expectation">What are your expectations for the Summit/Awards </label>
+                        <label for="expectation">What are your expectations for the Summit </label>
                         <input id="expectation" class="form-control" id="expectation" type="text" name="expectation" value="{{old('expectation')}}"required>
                         @error('expectation')
                         <span class="invalid-feedback" role="alert" style="color:red">
@@ -150,7 +150,7 @@
                     </div>
 
                     <div class="p-1">
-                        <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit & Awards?</label>
+                        <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit?</label>
                         Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
                         Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
                         Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
