@@ -151,9 +151,9 @@
 
                     <div class="p-1">
                         <label for="speaker">  Are you interested in being a Speaker/ Contributor/ Partner for next years Summit?</label>
-                        Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
-                        Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
-                        Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
+                      <br>  Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
+                      <br>     Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
+                      <br>     Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
                        
                         @error('speaker')
                         <span class="invalid-feedback" role="alert" style="color:red">
