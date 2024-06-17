@@ -74,7 +74,7 @@
 							<li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i> Venue: Virtual / Online - Microsoft Teams</li> 
 							<li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: Tuesday, 23rd July, 2024</li>
 							<li><i class="mdi mdi-clock-outline"></i>Time: 12pm - 2pm</li> 
-							<li class="p-3"><i class="mdi mdi-account-outline"></i> <a  href="{{route('summit_register')}}" target="_blank" style="font-size:25px"> REGISTER HERE </a> </li>
+							<li class="pt-3"><i class="mdi mdi-account-outline"></i> <a  href="{{route('summit_register')}}" target="_blank" style="font-size:25px"> REGISTER HERE </a> </li>
 							
 						</ul>
 
