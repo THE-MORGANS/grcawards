@@ -160,7 +160,7 @@
 							<div class="schedule-item-img"><i class="mdi mdi-trophy-award mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
 								<div class="date">23rd July. 2024</div>
-								<h4>GRC Mid-Year GRC Summit 2024 </h4>
+								<h4>GRC Mid-Year Summit 2024 </h4>
 								<div class="schedule-info-content">
 									<p>Topic: Fortifying Corporate Integrity: Strategies for Navigating Conflict, Corruption, and Cybersecurity Challenges Through Robust Governance and Data Security".</p>
 									<a href="{{route('show_summit')}}"> Learn More</a>
