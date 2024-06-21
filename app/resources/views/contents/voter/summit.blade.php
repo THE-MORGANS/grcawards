@@ -153,14 +153,14 @@
 			<div class="slider-our-speaker">
 				<div class="slide-our-speaker">
 					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/D5603AQHnelcJcY4x-g/profile-displayphoto-shrink_400_400/0/1704201511858?e=1723680000&v=beta&t=qrKzKwRlYyR0Bonz8cqg4iJPLm_XkMeAPofmaMSVGQo" alt="img">
+						<img src="https://media.licdn.com/dms/image/D5603AQHNfPth2r9gJg/profile-displayphoto-shrink_400_400/0/1692153382835?e=1724284800&v=beta&t=iL5pR5uKMVzE2BySsCWuAIw6-khi7TsB9Rhg7-q_2P0" alt="img">
 						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
 							<h3 class="name" style="font-size:18px">Jerry Wong  </h3>
 							{{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Sustainability | SCR® | CFA ESG Investing | Musician</p>
+							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Experienced Risk Professional | Information Risk | Data Governance | Risk Analytics | Project Assurance | Risk Transformation | Mitigating Risks, Driving Compliance, and Safeguarding Business Operations</p>
 							<div class="meta">
 								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/jerry-wong-06a41222b/" tabindex="-1" target="_blank">
+									<a href="https://www.linkedin.com/in/jerry-wong-82077a5a/" tabindex="-1" target="_blank">
 										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
 									</a>
 								</span>
