@@ -30,7 +30,7 @@ class JudgeController extends Controller
 
     public function ShowRegisteredUsers($award_program){
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
-        $registered = SummitRegistration::latest()->get();
+        $registered = SummitRegistration::where('created_at', '>=', '2024-02-14 21:47:52')->latest()->get();
     
         return view('contents.admin.registered')->with(['registered' => $registered, 'award_program'=> $award_program_id]);
     }
