@@ -25,7 +25,7 @@
 	@include('partials.voter.topbar')
 	<!-- =============== HEADER END =============== -->
 	<!-- Page title -->
-	<div class="page-title" style="background-color:#D4AF37">
+	{{-- <div class="page-title" style="background-color:#D4AF37">
 		<div class="container">
 			<div class="breadcrumbs">
 				<ul>
@@ -35,13 +35,13 @@
 			</div>
 			<h1 class="title">Vote</h1>
 		</div>
-	</div>
+	</div> --}}
 	<!-- page title -->
 
 	<section class="s-news s-single-news" style="background-color: #fff;">
 		<div class="container">
-		<center> <p class="btn btn-primary btn-lg" style="font-size:27px"> Voting is closed, Thanks!</p>
-		</center>
+		{{-- <center> <p class="btn btn-primary btn-lg" style="font-size:27px"> Voting is closed, Thanks!</p>
+		</center> --}}
 			<div class="row">
 				<div class="col-12 blog-cover">
 					<div class="post-item-cover">
@@ -55,47 +55,104 @@
 							</div>
 						</div>
 					</div>
+					<center> 
+					@if(Session::has('msg'))
+					<span class="btn btn-{{Session::get('alert')}}"> {{Session::get('msg')}}</span>
+					@endif
+				    </center>
 					<div style="max-width: 955px; margin-right:auto;margin-left:auto;">
 						<div class="row">
-							@foreach($categories as $category)
-							<div class="col-md-6">
+							@foreach ($categories as $category)
+
+							<div class="col-md-12">
 								<div class="accordion-wrapper" style="margin-top: 30px;">
 									<div class="accordion">
-										<input class="in-check" type="checkbox" name="radio-a" id="{{$category->hashid}}">
-										<label class="accordion-label" for="{{$category->hashid}}">{{$category->name}}</label>
+										<input class="in-check" type="checkbox" name="radio-a">
+										<label class="accordion-label" >{{$category->name}}    <span style="color:#fff"> Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(2))}}  </span></label>
 										<div class="accordion-content">
-											<div class="buy-ticket-left">
+											<div class="buy-ticket-let">
 												<p>{{$category->description}}</p><br>
 												@if($category->is_non_voting_category == false)
-												@if($category->id == 10)
+												{{-- @if($category->id == 10)
 												<p>The following awards are available in this category<br><strong>Please select an award</strong></p>
 												@elseif($category->id == 13)
 												<p>The following are the nominees in this category <br><strong>Please Select a nominee</strong></p>
 												@else
 												<p>The following sectors are available in this category. <br><strong>Please select a sector</strong></p>
-												@endif
+												@endif --}}
 												<div class="ticket-contact-cover">
-													<div class="ticket-contact-item">
-														@foreach($category->sectors as $sector)
+												@foreach ($sectors as $sector)
+												<h5 class="p-1">{{$sector->name}} </h5>
+													<div class="ticket-contact-item" style="width: 100%">
+														@foreach($sector->awards as $award)
+														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
+															@csrf
 														<div class="event-schedule-item">
 															<div class="" style="width: 100%;padding: 10px 14px ;cursor: pointer;position: relative;">
-																<a href="{{route('show_awards', $sector->hashid)}}">
-																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$sector->name}}</h6>
-																</a>
+																<button type="button"   style="border: none; background:none" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$award->id}}">
+																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$award->name}}</h6>
+																  </button>
+																  @if($award->IsVoted($award->id))
+																  <span style="float:right"> <i style="color:green" class="fa fa-check-circle badge" aria-hidden="true"></i></span>
+																  @endif
 															</div>
 														</div>
+													
+														  <!-- Modal -->
+														  <div class="modal fade" id="staticBackdrop{{$award->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+															<div class="modal-dialog">
+															  <div class="modal-content">
+																<div class="modal-header">
+																  <p class="modal-title" style="font-weight: 500; font-size:20px; color:#000" id="staticBackdropLabel" >Select and Vote Preffered Nominee</p>
+																  {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
+																</div>
+																<div class="modal-body">
+																	<input type="hidden"  name="awards" value="{{$award->hashid}}" value="{{$award->hashid}}">
+                                                        
+																	@foreach ($award->hasNominee($award->id) as $nominee)
+																	
+																	<p class="nominee"> 
+																	<label > 
+																		<input type="radio"  style="border-radius:0px"   name="nominees"  value="{{$nominee->hashid}}"> 
+																		
+																		{{$nominee->name}}
+																	
+																	</label>
+															
+																	</p>
+																	@endforeach
+																</div>
+																<div class="modal-footer">
+																  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+																  <div style="text-align:center">
+																	<button id="{{$award->has_nominees == false ? '#SubmitNominee' : '#Submit'}}" type="submit" data-id="{{$award->hashid}}" class="btn"><span>Vote</span></button>
+																</div>
+																</div>
+															  </div>
+															</div>
+														  </div>
+														</form>
 														@endforeach
 													</div>
+												@endforeach
+											
+												<!-- Button trigger modal -->
 												</div>
+												{{-- @if(!$sectors->lastPage()) --}}
+												<span class="p-4" style="float: right"> {{$sectors->links()}} </span>	
+												{{-- @else  --}}
+												{{-- <span class="p-5" style="float: right"> {{$categories->links()}} </span>	
+												@endif --}}
 												@else
 												<p>The following nominee types are available in this category. <br><strong></strong></p>
 												<div class="ticket-contact-cover">
 													<div class="ticket-contact-item">
-													@foreach($category->sectors as $sector)
+														{{$sector->name}}
+													@foreach($sector->awards as $awards)
 														<div class="event-schedule-item">
 															<div class="" style="width: 100%;padding: 10px 14px ;cursor: pointer;position: relative;">
-																<a href="{{route('show_awards', $sector->hashid)}}">
-																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$sector->name}}</h6>
+																<a href="{{route('show_awards', $awards->hashid)}}">
+																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$awards->name}} </h6>
 																</a>
 															</div>
 														</div>
@@ -103,12 +160,16 @@
 													</div>
 												</div>
 												@endif
+
+											{{-- {{$sector->links()}} --}}
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+						
 							@endforeach
+							<span class="p-5" style="float: right"> {{$categories->links()}} </span>
 						</div>
 					</div>
 				</div>
@@ -241,9 +302,13 @@
 	<!--=================== SCRIPT	===================-->
 	@include('partials.voter.scripts')
 	<script src="{{asset('assets/js/vendor.min.js')}}"></script>
+	{{-- <script src="{{asset('assets/js/scripter.js')}}"></script> --}}
     <script src="{{asset('assets/js/app.min.js')}}"></script>
 	@if(session()->get('voter') == null)
 	<script type="text/javascript">
+	$('#exampleModalCenter').modal('toggle')
+
+
 	window.onload = (event) => {
 		$('#imageView').modal('show');
 	};

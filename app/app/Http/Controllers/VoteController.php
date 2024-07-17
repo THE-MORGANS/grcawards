@@ -9,6 +9,7 @@ use App\Models\Vote;
 use App\Models\MediaVote;
 use App\Models\VoteCount;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 
 
@@ -47,25 +48,20 @@ class VoteController extends Controller
     }
 
 
-    public function addVote(Request $request, $award_id, $nominee_id)
+    public function addVote(Request $request)
     {
+    
+        $real_award = Hashids::connection('award')->decode($request->awards)[0];
+        $real_nominee = Hashids::connection('nominee')->decode($request->nominees)[0];
 
-        return back();
-        $real_award = Hashids::connection('award')->decode($award_id)[0];
-        $real_nominee = Hashids::connection('nominee')->decode($nominee_id)[0];
-
+        // dd($real_award,  $real_nominee);
         $ip_address = $request->getClientIp();
         
         $votes = Vote::where(['voter' => auth('voter')->user()->id,  'award_id' => $real_award])->first();
         if(!empty($votes)){
-            return response()->json('warning');
-        //     return response()->json('warning',200);
-        // }elseif (Vote::where([[auth('voter')->user()->id => $ip_address],['award_id','=',$real_award]])->exists()){
-        //     return response()->json('warning');
-        // }elseif (Auth()->guard('voter')->user()->ip_address != $ip_address){
-        //     return response()->json('danger');
-        // if (Vote::where(['ip_address' => $ip_address,'award_id' => $real_award])->exists()){
-        //     return response()->json('warning');
+            Session::flash('alert', 'danger');
+            Session::flash('msg', 'You have already voted for this Award');
+          return back();
         }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
@@ -86,7 +82,10 @@ class VoteController extends Controller
                 'voteCount' => 1
             ]);
            }
-      return response()->json('success');
+
+        Session::flash('alert', 'success');
+        Session::flash('msg', 'Votes added Successfully');
+      return back();
 
     }
     }

@@ -3,6 +3,7 @@
 <script src="{{asset('assets/js/rx-lazy.js')}}"></script>
 <script src="{{asset('assets/js/parallax.min.js')}}"></script>
 <script src="{{asset('assets/js/scripts.js')}}"></script>
+<link rel="stylesheet" href="{{asset('assets/js/modal.js')}}"/>
 <!-- Meta Pixel Code -->
 
     <!-- End Meta Pixel Code -->

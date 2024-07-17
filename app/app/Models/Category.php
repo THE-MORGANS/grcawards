@@ -18,11 +18,16 @@ class Category extends Model
     }
 
     public function sectors(){
-        return $this->hasMany(Sector::class, 'category_id');
+        return $this->hasMany(Sector::class, 'category_id')->with('awards');
     }
 
-    // public function awards(){
-    //     return $this->hasMany(Award::class, 'category_id');
-    // }
+    public function countAwards($award_program_id){
+        return Award::where('award_program_id', $award_program_id)->get();
+    }
+
+    public function UserVotes(){
+     return   Vote::where('voter', auth('voter')->user()->id)->get();
+    }
+
 
 }

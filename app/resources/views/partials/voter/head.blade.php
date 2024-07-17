@@ -11,5 +11,7 @@
 <link rel="stylesheet" href="{{asset('assets/css/bootstrap-grid.css')}}"/>
 <link rel="stylesheet" href="{{asset('assets/css/icons.min.css')}}" />
 <link rel="stylesheet" href="{{asset('assets/css/style.css')}}"/>
+<link rel="stylesheet" href="{{asset('assets/css/modal.css')}}"/>
 <meta name="facebook-domain-verification" content="v748fz4h238iy7i18idwpmlmk0kjct" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 @yield('style')

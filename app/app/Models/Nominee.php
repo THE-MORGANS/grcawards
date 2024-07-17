@@ -20,4 +20,5 @@ class Nominee extends Model
     public function sector(){
         return $this->belongsTo(Sector::class, 'sector_id');
     }
+
 }

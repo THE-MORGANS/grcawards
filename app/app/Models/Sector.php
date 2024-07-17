@@ -27,4 +27,6 @@ class Sector extends Model
     {
         return $this->hasMany(Award::class, 'sector_id');
     }
+
+    
 }

@@ -60,25 +60,30 @@ class LandingPageController extends Controller
         return view('contents.voter.contact');
     }
 
-    public function showVote()
-    {
-
-      
-        if(!Auth::check()){
-            return redirect()->route('register');
-        }
-        
+    public function showVote(Request $req, $categories_id = null)
+    {  
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
-        $categories = Category::where('award_program_id', $current_award_program->id)->get();
-
-        foreach($categories as $category){
-            $category->hashid = Hashids::connection('category')->encode($category->id);
-            $category->sectors;
-            foreach($category->sectors as $sector){
-                $sector->hashid = Hashids::connection('sector')->encode($sector->id);
-            }
+        $categories = Category::where(['award_program_id' => $current_award_program->id])->simplePaginate(1);
+       foreach($categories  as $category){
+        $category->hashid = Hashids::connection('category')->encode($category->id);
+        $sector = Sector::where(['category_id' => 7])->simplePaginate(1);
+        foreach($sector as $sectors){
+            $sectors->hashid = Hashids::connection('sector')->encode($sectors->id);
+        foreach($sectors->awards as $sec){
+            $sec->hashid = Hashids::connection('award')->encode($sec->id);
         }
-        return view('contents.voter.vote')->with(['categories'=>$categories]);
+    }
+}
+
+        // foreach($categories as $category){
+           
+            // foreach($category->sectors as $sector){
+            //     $sector->hashid = Hashids::connection('sector')->encode($sector->id);
+            // }
+        // }
+
+        // dd($category);
+        return view('contents.voter.vote')->with(['categories'=>$categories, 'sectors' => $sector]);
     }
 
     public function showJudges(){

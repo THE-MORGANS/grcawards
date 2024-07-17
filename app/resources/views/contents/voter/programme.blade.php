@@ -37,10 +37,8 @@
     <!-- =========== S-CONFERENCE-COUNTER =========== -->
     <section id="about" class="s-conference-mission pt-0">
         <div class="s-our-mission ">
-            <div class="container">
-            
-                <img src="{{asset('assets/program.jpeg')}}"> 
-      
+            <div class="container" style="overflow: scroll">
+                <img src="{{asset('assets/program.png')}}" style="max-width:800px"> 
             </div>
         </div>
     </section>

@@ -3,8 +3,7 @@ $(document).ready(function($){
         let hrefo = $(this).attr('href')+"/"+ $(this).attr('data-id')+"/update";
         $('#edit-sector-form').attr('action', hrefo);
         $('#edit-sector-form').prepend('<input type="hidden" name="_method" value="PUT">');
-        $('#sector-name').val($(this).attr('data-name'));
-        
+        $('#sector-name').val($(this).attr('data-name'));  
     });
 
     $("a[data-action=delete]").on('click', function(e){
