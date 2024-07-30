@@ -65,7 +65,7 @@
 							@foreach ($categories as $category)
 							@if(count($category->UserVotes()) == count($category->countAwards(3)))
 							<span style="color:#fff; background:green; padding:5px; border-radius:5px">  &nbsp;  &nbsp;   CONGRATULATIONS YOU HAVE COMPLETED ALL VOTING CATEGORIES </span>
-							   <span class="px-4 pt-2 "> Copy this Link and share with your friends and colleagues to vote for your favourite Nominees  <a href="http://localhost/grcawards/vote" id="links"> http://localhost/grcawards/vote </a> <button type="button" onclick="CopyText()" id="CopyText"> Copy Link</button>
+							   <span class="px-4 pt-2 "> Copy this Link and share with your friends and colleagues to vote for your favourite Nominees  <a href="https://www.grcfincrimeawards.com/vote" id="links"> https://www.grcfincrimeawards.com/vote </a> <button type="button" onclick="CopyText()" id="CopyText"> Copy Link</button>
 							 <br>	<span id="alerts" ></span>
 							</span>
 					             @endif
