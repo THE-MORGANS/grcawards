@@ -66,14 +66,16 @@ class LandingPageController extends Controller
         $categories = Category::where(['award_program_id' => $current_award_program->id])->simplePaginate(1);
        foreach($categories  as $category){
         $category->hashid = Hashids::connection('category')->encode($category->id);
-        $sector = Sector::where(['category_id' => 7])->simplePaginate(1);
-        foreach($sector as $sectors){
+        // $sector = Sector::where(['category_id' => $category->id])->get();
+        foreach($category->sectors as $sectors){
             $sectors->hashid = Hashids::connection('sector')->encode($sectors->id);
         foreach($sectors->awards as $sec){
             $sec->hashid = Hashids::connection('award')->encode($sec->id);
         }
     }
-}
+    }
+
+    // dd($categories);
 
         // foreach($categories as $category){
            
@@ -83,7 +85,7 @@ class LandingPageController extends Controller
         // }
 
         // dd($category);
-        return view('contents.voter.vote')->with(['categories'=>$categories, 'sectors' => $sector]);
+        return view('contents.voter.vote')->with(['categories'=>$categories]);
     }
 
     public function showJudges(){

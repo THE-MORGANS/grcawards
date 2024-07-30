@@ -50,8 +50,8 @@
 						</div>
 						<div class="post-content">
 							<div class="text">
-								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 26th July and ends 22nd Sept, 2023.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 10th November, 2023.</p>
+								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 1st August and ends 22nd Sept, 2024.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 10th November, 2024.</p>
 							</div>
 						</div>
 					</div>
@@ -61,17 +61,16 @@
 					@endif
 				    </center>
 					<div style="max-width: 955px; margin-right:auto;margin-left:auto;">
-						<div class="row">
+						<div class="row accordion-wrapper">
 							@foreach ($categories as $category)
-
 							<div class="col-md-12">
-								<div class="accordion-wrapper" style="margin-top: 30px;">
+								<div class="accordion-rapper" style="margin-top: 30px;">
 									<div class="accordion">
 										<input class="in-check" type="checkbox" name="radio-a">
 										<label class="accordion-label" >{{$category->name}}    <span style="color:#fff"> Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(2))}}  </span></label>
-										<div class="accordion-content">
+										<div class="accordion-conent">
 											<div class="buy-ticket-let">
-												<p>{{$category->description}}</p><br>
+												<p style="color:#000; padding:20px">{{$category->description}}</p>
 												@if($category->is_non_voting_category == false)
 												{{-- @if($category->id == 10)
 												<p>The following awards are available in this category<br><strong>Please select an award</strong></p>
@@ -80,9 +79,10 @@
 												@else
 												<p>The following sectors are available in this category. <br><strong>Please select a sector</strong></p>
 												@endif --}}
-												<div class="ticket-contact-cover">
-												@foreach ($sectors as $sector)
-												<h5 class="p-1">{{$sector->name}} </h5>
+												<div class="ticket-contact-cover" style="padding: 0px 20px; ">
+												@foreach ($category->sectors as $sector)
+													<div style="width: 100%; border:1px solid #0000001c; padding:20px; margin:10px">
+												<h5>  {{$sector->name}} </h5>
 													<div class="ticket-contact-item" style="width: 100%">
 														@foreach($sector->awards as $award)
 														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
@@ -97,8 +97,6 @@
 																  @endif
 															</div>
 														</div>
-													
-														  <!-- Modal -->
 														  <div class="modal fade" id="staticBackdrop{{$award->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 															<div class="modal-dialog">
 															  <div class="modal-content">
@@ -110,8 +108,8 @@
 																	<input type="hidden"  name="awards" value="{{$award->hashid}}" value="{{$award->hashid}}">
                                                         
 																	@foreach ($award->hasNominee($award->id) as $nominee)
-																	
-																	<p class="nominee"> 
+																
+																	<p class="nominee" style="color:#000"> 
 																	<label > 
 																		<input type="radio"  style="border-radius:0px"   name="nominees"  value="{{$nominee->hashid}}"> 
 																		
@@ -134,12 +132,13 @@
 														</form>
 														@endforeach
 													</div>
+												</div>
 												@endforeach
 											
 												<!-- Button trigger modal -->
 												</div>
 												{{-- @if(!$sectors->lastPage()) --}}
-												<span class="p-4" style="float: right"> {{$sectors->links()}} </span>	
+												{{-- <span class="p-4" style="float: right"> {{$sectors->links()}} </span>	 --}}
 												{{-- @else  --}}
 												{{-- <span class="p-5" style="float: right"> {{$categories->links()}} </span>	
 												@endif --}}
@@ -169,7 +168,9 @@
 							</div>
 						
 							@endforeach
-							<span class="p-5" style="float: right"> {{$categories->links()}} </span>
+						<div style="float: right"> 
+							<span class="p-5" > {{$categories->links()}} </span>
+						</div>
 						</div>
 					</div>
 				</div>

@@ -65,7 +65,7 @@ class VoteController extends Controller
         }else{
             $new_vote = new Vote;
             $new_vote->ip_address = $ip_address;
-            $new_vote->award_program_id = 2;
+            $new_vote->award_program_id = 5;
             $new_vote->voter =  auth('voter')->user()->id;
             $new_vote->award_id = $real_award;
             $new_vote->nominee_id = $real_nominee;
@@ -78,7 +78,7 @@ class VoteController extends Controller
             VoteCount::create([
                 'nominee_id' => $real_nominee,
                 'award_id' => $real_award,
-                'award_program_id' => 2,
+                'award_program_id' => 5,
                 'voteCount' => 1
             ]);
            }
@@ -108,7 +108,7 @@ class VoteController extends Controller
        }else{
             $new_vote = new MediaVote;
             $new_vote->ip_address = $ip_address;
-            $new_vote->award_program_id = 2;
+            $new_vote->award_program_id = 5;
             $new_vote->voter = Auth('voter')->user()->id;
             $new_vote->award_id = $real_award;
             $new_vote->nominee = $nominee;
