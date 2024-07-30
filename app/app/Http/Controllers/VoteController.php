@@ -83,7 +83,7 @@ class VoteController extends Controller
             VoteCount::create([
                 'nominee_id' => $real_nominee,
                 'award_id' => $real_award,
-                'award_program_id' => 5,
+                'award_program_id' => 3,
                 'voteCount' => 1
             ]);
            }
