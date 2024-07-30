@@ -63,11 +63,27 @@
 					<div style="max-width: 955px; margin-right:auto;margin-left:auto;" class="accordion-wrapper">
 						<div class="row">
 							@foreach ($categories as $category)
+							@if(count($category->UserVotes()) == count($category->countAwards(3)))
+							<span style="color:#fff; background:green; padding:5px; border-radius:5px">  &nbsp;  &nbsp;   CONGRATULATIONS YOU HAVE COMPLETED ALL VOTING CATEGORIES </span>
+							   <span class="px-4 pt-2 "> Copy this Link and share with your friends and colleagues to vote for your favourite Nominees  <a href="http://localhost/grcawards/vote" id="links"> http://localhost/grcawards/vote </a> <button type="button" onclick="CopyText()" id="CopyText"> Copy Link</button>
+							 <br>	<span id="alerts" ></span>
+							</span>
+					             @endif
+
+								 <script>
+									function CopyText(){
+										let links = document.getElementById('links');
+										navigator.clipboard.writeText(links).then(function() {
+										document.getElementById('alerts').innerHTML = "Link Copied"
+									})
+								}
+									
+								 </script>
 							<div class="col-md-12">
 								<div class="accordion-rapper" style="margin-top: 30px;">
 									<div class="accordion">
 										<input class="in-check" type="checkbox" name="radio-a">
-										<label class="accordion-label" >{{$category->name}}    <span style="color:#fff"> Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span></label>
+										<label class="accordion-label" >{{$category->name}}   @if(count($category->UserVotes()) == count($category->countAwards(3))) <span style="color:#fff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span> @else <span style="color:#fff">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span> @endif </label>
 										<div class="accordion-conent">
 											<div class="buy-ticket-let">
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
