@@ -60,8 +60,8 @@
 					<span class="btn btn-{{Session::get('alert')}}"> {{Session::get('msg')}}</span>
 					@endif
 				    </center>
-					<div style="max-width: 955px; margin-right:auto;margin-left:auto;">
-						<div class="row accordion-wrapper">
+					<div style="max-width: 955px; margin-right:auto;margin-left:auto;" class="accordion-wrapper">
+						<div class="row">
 							@foreach ($categories as $category)
 							<div class="col-md-12">
 								<div class="accordion-rapper" style="margin-top: 30px;">
@@ -168,9 +168,15 @@
 							</div>
 						
 							@endforeach
-						<div style="float: right"> 
-							<span class="p-5" > {{$categories->links()}} </span>
 						</div>
+						
+						<div class="row">
+							<div class="col-8">
+			
+							</div>
+							<div class="col-4">
+								<span class="p-5"  > {{$categories->links()}} </span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -201,6 +207,8 @@
 
 				</div>
 			</div>
+			
+		
 		</div>
 		</div>
 	</section>
