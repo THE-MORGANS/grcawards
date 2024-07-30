@@ -50,6 +50,10 @@ class VoteController extends Controller
 
     public function addVote(Request $request)
     {
+        if(!isset($request->awards)){
+            Session::flash('alert', 'danger');
+        Session::flash('msg', 'Please select Nominee');
+        }
     
         $real_award = Hashids::connection('award')->decode($request->awards)[0];
         $real_nominee = Hashids::connection('nominee')->decode($request->nominees)[0];
