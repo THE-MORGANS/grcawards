@@ -53,6 +53,7 @@ class VoteController extends Controller
         if(!isset($request->awards)){
             Session::flash('alert', 'danger');
         Session::flash('msg', 'Please select Nominee');
+        return back();
         }
     
         $real_award = Hashids::connection('award')->decode($request->awards)[0];
