@@ -67,7 +67,7 @@
 								<div class="accordion-rapper" style="margin-top: 30px;">
 									<div class="accordion">
 										<input class="in-check" type="checkbox" name="radio-a">
-										<label class="accordion-label" >{{$category->name}}    <span style="color:#fff"> Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(2))}}  </span></label>
+										<label class="accordion-label" >{{$category->name}}    <span style="color:#fff"> Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span></label>
 										<div class="accordion-conent">
 											<div class="buy-ticket-let">
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
