@@ -50,7 +50,7 @@ class VoteController extends Controller
 
     public function addVote(Request $request)
     {
-        if(!isset($request->awards)){
+        if(!isset($request->nominees)){
             Session::flash('alert', 'danger');
         Session::flash('msg', 'Please select Nominee');
         return back();
