@@ -50,8 +50,8 @@
 						</div>
 						<div class="post-content">
 							<div class="text">
-								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 1st August and ends 22nd Sept, 2024.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 10th November, 2024.</p>
+								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 1st August and ends 31st Sept, 2024.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 8th November, 2024.</p>
 							</div>
 						</div>
 					</div>
