@@ -113,7 +113,7 @@ class VoteController extends Controller
        }else{
             $new_vote = new MediaVote;
             $new_vote->ip_address = $ip_address;
-            $new_vote->award_program_id = 5;
+            $new_vote->award_program_id = 3;
             $new_vote->voter = Auth('voter')->user()->id;
             $new_vote->award_id = $real_award;
             $new_vote->nominee = $nominee;
