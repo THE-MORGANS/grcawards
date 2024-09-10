@@ -89,26 +89,7 @@ Route::prefix('admin')->group(function(){
                 Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
             });
 
-            Route::prefix('judges')->group(function(){
-                Route::get('', [JudgesController::class, 'getJudges'])->name('admin.get_judges');
-                Route::post('create', [JudgesController::class, 'addJudges'])->name('admin.create_judges');
-                Route::post('update', [JudgesController::class, 'UpdateJudges'])->name('admin.update_judges');
-                Route::get('judgingcategory', [JudgesController::class, 'loadJudgingCategoryPage'])->name('admin.load_judging_category_page');
-                Route::get('judgescategory', [JudgesController::class, 'ViewJudgeCategoryPage'])->name('admin.load_judge_category_page');
-                Route::get('judgescategoryresults', [JudgesController::class, 'ViewJudgeCategoryPageResults'])->name('admin.load_judge_category_page_results');
-                Route::get('judgingsector/{category_id}', [JudgesController::class, 'loadJudgingCategorySectorPage'])->name('admin.load_judging_category_sector_page');
-                Route::get('judgesector/{category_id}', [JudgesController::class, 'loadJudgeCategorySectorPage'])->name('admin.load_judge_category_sector_page');
-                Route::get('judgesectorresults/{category_id}', [JudgesController::class, 'loadJudgeCategorySectorPageResults'])->name('admin.load_judge_category_sector_page_results');
-                Route::get('judging/{category_id}/{sector_id}', [JudgesController::class, 'loadJudgingAwards'])->name('admin.load_judging_awards');
-                Route::get('judge/{category_id}/{sector_id}', [JudgesController::class, 'loadJudgeAwards'])->name('admin.load_judge_awards');
-                Route::get('judgeresults/{category_id}/{sector_id}', [JudgesController::class, 'loadJudgeAwardsResults'])->name('admin.load_judge_awards_results');
-                Route::get('criteria/{category_id}', [JudgesController::class, 'CreateNominessVotes'])->name('admin.create_nominess_awards');
-                Route::get('index/{id}', [JudgesController::class, 'Index'])->name('judgeVotes.index');
-                Route::post('nominess/details', [JudgesController::class, 'getNominessDetails'])->name('admin.getNominessDetails');
-                Route::get('nominees/{category_id}', [JudgesController::class, 'ViewNominessVotes'])->name('admin.view_nominess_awards'); 
-                Route::get('nomineesresults/{award_id}', [JudgesController::class, 'ViewNominessVotesResults'])->name('admin.view_nominess_awards_results'); 
-                Route::post('nominess/store', [JudgesController::class, 'StoreNominessVotes'])->name('admin.StoreNominessVotes');
-            });
+           require __DIR__.'/judges.php';
         });
     });
 

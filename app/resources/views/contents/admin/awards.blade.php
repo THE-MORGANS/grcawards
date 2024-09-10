@@ -1,8 +1,6 @@
 @extends('layouts.admin.master')
 
 @section('title', 'Awards')
-
-
 @section('content')
 <div class="container">
     <!-- start page title -->
