@@ -30,9 +30,6 @@ class StoreNominessVotesController extends Controller
             return back()->withInput($request->all());  
         }
        }
-   
-    
-
         if (in_array($award_id,  $data['award_group_one'])) {
 
             $data = $this->BankRiskComplaincesVote($request->judges_votes, $request->nominee_ids, $award_id);
