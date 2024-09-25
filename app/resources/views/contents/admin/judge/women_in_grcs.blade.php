@@ -8,7 +8,6 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
                 <div class="page-title">
                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                     </div>
