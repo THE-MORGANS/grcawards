@@ -164,7 +164,7 @@
                                     <td>
                                         {{-- @php $details = json_decode(file_get_contents("http://ipinfo.io/$item->ip_address/json"));
                                       echo $details->city.", ".$details->country; --}}
-                                    @endphp
+                                    {{-- @endphp --}}
                                     </td>
                                     <td>{{$item->created_at->diffForHumans()}}</td>
                                 </tr>
