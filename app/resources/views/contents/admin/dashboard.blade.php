@@ -3,12 +3,9 @@
 @section('title', 'Admin Dashboard')
 @section('content')
 <div class="container-fluid">
-
-    <!-- start page title -->
     <div class="row">
         <div class="col-12">
             <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
                 <div class="page-title">
                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                     </div>
@@ -19,8 +16,6 @@
             </div>
         </div>
     </div>
-
-
     <div class="row">
         <div class="col-xl-3 col-lg-4">
             <div class="card tilebox-one">
@@ -29,14 +24,12 @@
                     <h6 class="text-uppercase mt-0">Voters</h6>
                     <h2 class="my-2" id="active-users-count">{{count($voters)}}</h2>
                     <p class="mb-0 text-muted">
-                        {{-- <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span>
-                            5.27%</span> --}}
+                        {{--<span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span> 5.27%</span> --}}
                         {{-- <span class="text-nowrap">Since last month</span> --}}
                     </p>
                 </div> <!-- end card-body-->
             </div>
-            <!--end card-->
-        </div> <!-- end col -->
+        </div> 
 
         <div class="col-xl-3 col-lg-4">
             <div class="card tilebox-one">
@@ -175,9 +168,9 @@
                             </tbody>
                         </table>
                         <p> {{$voters_pg->links()}}</p>
-                    </div> <!-- end table-responsive-->
-                </div> <!-- end card-body-->
-            </div> <!-- end card-->
+                    </div> 
+                </div> 
+            </div> 
         </div>
     </div>
 </div>
