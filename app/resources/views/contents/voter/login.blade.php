@@ -30,7 +30,7 @@
 			<div class="marathon-register-row" style="justify-content: center;">
 					<div class="marathon-register">
 						{{-- <h2 class="title"><span>Enter Email</span></h2> --}}
-						<h2 class="title"><span>VOTING IS CLOSED FOR  GRCFin Crime Awards 2024</span></h2>
+						<h2 class="title"><span>VOTING IS CLOSED FOR  GRC Financial Crime Awards 2024</span></h2>
 						<form method="POST" action="{{route('landing.index')}}" name="regForm">
 							@csrf
 							<ul class="form-cover">
