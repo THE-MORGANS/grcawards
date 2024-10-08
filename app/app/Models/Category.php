@@ -29,5 +29,9 @@ class Category extends Model
      return   Vote::where('voter', auth('voter')->user()->id)->get();
     }
 
+    public function AdminVotes(){
+        return JudgesVotes::where('judge_id', auth('admin')->user()->id)->select('award_id')->distinct()->get();
+       }
+
 
 }

@@ -28,19 +28,153 @@
         </div> <!-- end col-->
     </div>
     <!-- end row-->
-    <div class="row"> 
+    <div class="row" style="background: #eee; padding-top:100px"> 
         @foreach ($categories as $category)
-        <div class="col-3">
-            <div class="card" style="width: 20rem;">
+        <div class="col-md-2">  </div> 
+        <div class="col-md-8">
+            <div class="card" >
                 <div class="card-body">
-                  <h5 class="card-title">{{$category->name}}</h5>
+                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(3))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(3))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(3))}}  </span> @endif</span>  </h2>
                   <p class="card-text">{{substr($category->description,0,100).'...'}}</p>
                   @php
                       $category->hashid = Hashids::connection('category')->encode($category->id);
                   @endphp
-                  <a href="{{route('admin.load_judge_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary"> {{count($category->sectors)}} Sectors - View All </a>
+                  {{-- <a href="{{route('admin.load_judge_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary"> {{count($category->sectors)}} Sectors - View All </a> --}}
                 </div>
               </div>
+        </div> 
+        <div class="col-md-2">  </div> 
+
+            @foreach ($category->sectors as $sector)
+            <div class="col-md-2">  </div> 
+            <div class="col-md-8">
+                <div class="card" >
+                    <div class="card-body">
+                      <h3 class="card-title">
+                        {{-- <a href="#sectors" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sectors" onclick="getSectorData({{$sector->id}})">
+                            {{$sector->name}}
+                          </a>
+                           --}}
+                           @php
+                          $sector->hashid = Hashids::connection('sector')->encode($sector->id);
+                          $category->hashid = Hashids::connection('category')->encode($category->id);
+                            @endphp
+                           <a href="{{route('admin.load_judge_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" >
+                            {{$sector->name}}
+                          </a>
+    
+                           <p class="sectorid" hidden>{{$sector->id}}</p>
+                      </h3>
+                    </div>
+
+    <div class="collapse show">
+        <div class="card card-body" style="overflow: scroll">
+          @if ($sector->awards)
+            {{-- @php
+            $sector = Hashids::connection('sector')->decode(request()->segment(7));
+            $sector_name = DB::table('sectors')->find($sector[0])->name;
+            @endphp --}}
+
+          <table class="table table-responsive table-striped">
+
+            <h4>
+                <strong>      SECTOR AWARDS</strong>
+          
+            </h4>
+            <thead>
+              <tr>
+                <th scope="col" style="width: 5%">S/N</th>
+                <th scope="col" style="width: 20%">Award Name</th>
+                <th scope="col" style="width: 25%">Description</th>
+                <th scope="col" style="width: 35%">Criteria</th>
+                <th></th>
+                <th scope="col" style="width: 15%">Vote</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($sector->awards as $award)
+                @php
+                 $award->hashid = Hashids::connection('award')->encode($award->id);
+                 $index = $award->id
+                @endphp
+                <tr>
+                    <th scope="row">{{$loop->iteration}}
+                  
+                    </th>
+                    <td>{{$award->name}} 
+
+                    
+                    </td>
+                    <td>{{substr($award->description,0,100)}} <a href="#"  onClick="readMore({{$index}})" id="btn-{{$index}}">read more </a> 
+                       <span hidden id="detail-{{$index}}"> {{substr($award->description,100,10000)}}  </span> 
+                     @section('scripts')
+                      <script>
+                        function readMore(index)
+                        {
+                         let item = document.getElementById(`detail-${index}`)
+                         if(item.style.display === "none" || item.hidden === true )
+                         {
+                          item.style.display = 'inline'
+                          document.getElementById(`detail-${index}`).hidden = false
+                          document.getElementById(`btn-${index}`).hidden = true
+
+                         }else{
+                          item.style.display === "none" 
+                         }
+                         
+                        }
+                        function readMores(index)
+                        {
+                         let items = document.getElementById(`details-${index}`)
+                         if(items.style.display === "none" || items.hidden === true )
+                         {
+                          items.style.display = 'inline'
+                          document.getElementById(`details-${index}`).hidden = false
+                          document.getElementById(`btns-${index}`).hidden = true
+
+                         }else{
+                          items.style.display === "none" 
+                         }
+                         
+                        }
+                      </script>
+                      @endsection
+                    </td> 
+                    <td>{{substr($award->criteria,0,100)}} <a href="#"  onClick="readMores({{$index}})" id="btns-{{$index}}">read more </a>
+                      <span hidden id="details-{{$index}}"> {{substr($award->criteria,100,10000)}}  </span> 
+                   
+                    </td>
+                    <td>
+                      @if($award->IsJudgeVoted($award->id))
+                      <i style="color:green" aria-hidden="true"> <strong>Voted</strong></i>
+                      @endif
+                    </td>
+                    <td><a href="{{route('admin.view_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">View Nominee Information</a></td>
+                </tr>  
+                  <br>
+                  
+              @endforeach
+            </tbody>
+          </table>
+        @else
+        <div class="d-flex justify-content-center">
+            <div class=" badge bg-primary text-center" role="alert" style="width:25%;">
+                <p>Please Select a Sector above to load awards.</p>
+              </div>
+        </div>
+        @endif
+        </div>
+      </div>
+                  </div>
+            </div> 
+            <div class="col-md-"> 
+                 </div>    
+            @endforeach
+            <div class="col-md-10"> 
+                <div style="text-align: right; padding: 50px" >  {{$categories->links()}} </div>
+            </div>    
+            
+        
         </div>     
         @endforeach
     </div>

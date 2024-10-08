@@ -35,6 +35,7 @@ class LoadJudgesController extends Controller
             $request->session()->flash('danger', 'Invalid Award Program');
             return redirect()->route('admin.get_judges', $award_program);
         }
+        
         return view('contents.admin.judgingCategoriesSectors', $data);
     }
 
@@ -51,6 +52,8 @@ class LoadJudgesController extends Controller
             $request->session()->flash('danger', 'Invalid Award Program');
             return redirect()->route('admin.get_judges', $award_program);
         }
+
+    
         return view('contents.admin.judgingCategoriesSectors', $data);
     }
     public function loadJudgeCategorySectorPage(Request $request, $award_program, $category_id)
@@ -79,6 +82,7 @@ class LoadJudgesController extends Controller
             $request->session()->flash('danger', 'Invalid Award Program');
             return redirect()->route('admin.get_judges', $award_program);
         }
+ 
         return view('contents.admin.judge.judgeCategoriesSectors', $data);
     }
 

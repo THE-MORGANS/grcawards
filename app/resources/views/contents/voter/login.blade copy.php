@@ -40,8 +40,9 @@
 		<div class="container">
 			<div class="marathon-register-row" style="justify-content: center;">
 				<div class="marathon-register">
-					<h2 class="title"><span>Login</span></h2>
-					<form id='loginForm' method="POST" action="{{route('login')}}" name="loginForm">
+
+					<h2 class="title"><span>VOTING IS CLOSED FOR  GRCFinCrimeAwards 2024</span></h2>
+					<form id='loginForm' method="POST" action="{{route('index')}}" name="loginForm">
 						@csrf
 						<ul class="form-cover">
 							<li class="inp-cover inp-email footer-subscribe">
@@ -56,7 +57,7 @@
 						</ul>
 						<div class="btn-form-cover">
 							<button id="#submit" type="submit" class="btn">
-								<span>Login</span>
+								<span>CLOSE WINDOW</span>
 							</button>
 						</div>
 					</form>

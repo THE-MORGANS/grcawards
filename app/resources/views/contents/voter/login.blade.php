@@ -29,12 +29,13 @@
 		<div class="container">
 			<div class="marathon-register-row" style="justify-content: center;">
 					<div class="marathon-register">
-						<h2 class="title"><span>Enter Email</span></h2>
-						<form method="POST" action="{{route('register')}}" name="regForm">
+						{{-- <h2 class="title"><span>Enter Email</span></h2> --}}
+						<h2 class="title"><span>VOTING IS CLOSED FOR  GRCFinCrimeAwards 2024</span></h2>
+						<form method="POST" action="{{route('landing.index')}}" name="regForm">
 							@csrf
 							<ul class="form-cover">
 								<li class="inp-cover inp-email">
-									<input id="email" type="email" name="email" placeholder="E-mail" required>
+									{{-- <input id="email" type="email" name="email" placeholder="E-mail" disabled> --}}
 									@error('email')
                                     <span class="invalid-feedback" role="alert" style="color:red">
                                         <strong>{{ $message }}</strong>
@@ -49,13 +50,14 @@
 							</ul>
 							<div class="checkbox-wrap">
 								<div class="checkbox-cover">
-									<input type="checkbox" name="i_agree" id="i_agree" value="1Xagrzi">
+									<input type="checkbox" name="i_agree" id="i_agree" value="1Xagrzi" checked>
 									<p>I have read the <a href="{{route('show_policy')}}" target="_blank">Privacy Policy</a> and <a href="{{route('show_tc')}}" target="_blank">Terms and Conditions</a>.</p>
 								</div>
 							</div>
 							<div class="btn-form-cover">
 								<button id="#submits" type="submit" class="btn">
-									<span>Proceed to Voting Page</span>
+									{{-- <span>Proceed to Voting Page</span> --}}
+									<span>Close Window</span>
 								</button>
 							</div>
 						</form>
