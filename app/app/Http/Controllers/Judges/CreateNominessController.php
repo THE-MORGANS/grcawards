@@ -17,7 +17,7 @@ class CreateNominessController extends Controller
         $award_program = Hashids::connection('awardProgram')->decode($award_program_id);
         // $award_hashids = Hashids::connection('award')->encode($award_id);
         $award_hashid = Hashids::connection('award')->decode($award_id);
-        $votes = VoteCount::whereAwardId($award_hashid)->take(4)->orderBy('voteCount', 'DESC')->get();
+        $votes = VoteCount::whereAwardId($award_hashid)->take(3)->orderBy('voteCount', 'DESC')->get();
         if (count($votes) > 0) {
             if (in_array($award_hashid[0],  $data['award_group_one'])) {
                 $data =  $this->BankRiskComplainces($votes, $award_hashid);
