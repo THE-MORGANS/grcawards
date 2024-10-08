@@ -31,7 +31,7 @@ trait OtherVotes {
                 'percentage_votes' => ((100/$Totalvotes)*$nominees_votes)
             ]);
          $x++;
-         if($x == 4) break;
+         if($x == 3) break;
         }   
 }
 return $check;
@@ -59,7 +59,7 @@ return $check;
                 'percentage_votes' => ((100/$Totalvotes)*$nominees_votes)
             ]);
          $x++;
-         if($x == 4) break;
+         if($x == 3) break;
         }   
 }
 return $check;
@@ -88,7 +88,7 @@ return $check;
                 'percentage_votes' => ((100/$Totalvotes)*$nominees_votes)
             ]);
          $x++;
-         if($x == 4) break;
+         if($x == 3) break;
         }   
 }
 return $check;
@@ -115,7 +115,7 @@ return $check;
                 'percentage_votes' => ((100/$Totalvotes)*$nominees_votes)
             ]);
          $x++;
-         if($x == 4) break;
+         if($x == 3) break;
         }   
 }
 return $check;
