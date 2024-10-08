@@ -2,46 +2,22 @@
 
 namespace App\Http\Controllers\Judges;
 
-use App\Models\Admin;
-use App\Models\Award;
 use App\Traits\NomineesAwards;
 use App\Models\Judge;
-use App\Models\Sector;
 use App\Models\Category;
 use App\Models\AwardProgram;
-use App\Models\CommBanksAwards;
-use App\Models\Vote;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\JudgesRegister;
 use App\Traits\OtherVotesResults;
-use App\Models\VoteCount;
 use App\Traits\JudgeOtherVotes;
-use App\Models\{
-    ComBankChiefRiskOfficer,
-    ComBankFraudAwareness,
-    ComBankRiskComplaince,
-    GrcAntiFinCrimReporter,
-    GrcEmployer,
-    GrcSolutionProvider,
-    GrcTrainingProvider,
-    JudgesVotes,
-    CrimePreventionAdvisoryService,
-    GovernorsVotes,
-    MediaVotes,
-    NonfiVotes,
-    OtherVote,
-    WomenInGrc
-};
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Traits\NomineeResults;
 use App\Traits\JudgeVotes;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 use App\Traits\AwardsGroups;
 use App\Traits\OtherVotes;
 use App\Http\Controllers\Controller;
+
+
 class JudgesController extends Controller
 {
 
@@ -52,9 +28,9 @@ class JudgesController extends Controller
     use OtherVotes;
     use JudgeOtherVotes, OtherVotesResults;
 
- public function __construct() {
- return $this->middleware('auth:admin');
-}
+    public function __construct() {
+     return $this->middleware('auth:admin');
+    }
 
 
     public function getJudges(Request $request, $award_program)
@@ -70,7 +46,6 @@ class JudgesController extends Controller
                  $judge->hashid = Hashids::connection('judges')->encode($judge->id);
             }
 
-
             //load view
             return view('contents.admin.judges', $data);
         }
@@ -78,10 +53,6 @@ class JudgesController extends Controller
         $request->session()->flash('danger', 'Could not the data you requested!');
         return redirect()->back();
     }
-
-  
-
-   
 
 
     public function Index(Request $request, $award_program)
