@@ -44,4 +44,13 @@ class Award extends Model
 
     }
 
+
+    public function IsJudgeVoted($award_id)
+    {
+        $voter = auth('admin')->user()->id;
+        $vote = JudgesVotes::where(['judge_id' =>  $voter, 'award_id' => $award_id])->first();
+        return $vote;
+
+    }
+
 }

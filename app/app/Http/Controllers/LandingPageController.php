@@ -72,10 +72,8 @@ class LandingPageController extends Controller
         foreach($sectors->awards as $sec){
             $sec->hashid = Hashids::connection('award')->encode($sec->id);
         }
+    } 
     }
-    }
-
-    // dd($categories);
 
         // foreach($categories as $category){
            

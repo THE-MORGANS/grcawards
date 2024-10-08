@@ -13,6 +13,7 @@ class AwardController extends Controller
     
     public function getAwards(Request $request, $award_program)
     {
+
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program)[0];
         if (isset($award_program_id)){
             $categories = Category::where('award_program_id', $award_program_id)->get();
@@ -28,9 +29,8 @@ class AwardController extends Controller
                 $award->hashid = Hashids::connection('award')->encode($award->id);
                 }
             }
-            
             }
-// dd($sectors);
+
         return view('contents.admin.awards')->with(['categories' => $categories,'award_program'=>$award_program]);
         }
             $request->session()->flash('danger', 'Could not find the data requested');

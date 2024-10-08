@@ -28,8 +28,7 @@
         </div> <!-- end col-->
     </div>
     <!-- end row-->
-
-    <div class="row">
+    <div class="row"> 
         @foreach ($categories as $category)
         <div class="col-3">
             <div class="card" style="width: 20rem;">
@@ -42,14 +41,14 @@
                   <a href="{{route('admin.load_judge_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary"> {{count($category->sectors)}} Sectors - View All </a>
                 </div>
               </div>
-        </div>    
+        </div>     
         @endforeach
     </div>
-
-    
-    
 </div>
 @endsection
+
+
+
 
 @section('scripts')
 <!-- demo app -->

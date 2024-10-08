@@ -39,7 +39,7 @@
 	<!-- page title -->
 
 	<section class="s-news s-single-news" style="background-color: #fff;">
-		<div class="container">
+		<div class="container"> 
 		{{-- <center> <p class="btn btn-primary btn-lg" style="font-size:27px"> Voting is closed, Thanks!</p>
 		</center> --}}
 			<div class="row">
@@ -95,7 +95,7 @@
 												@else
 												<p>The following sectors are available in this category. <br><strong>Please select a sector</strong></p>
 												@endif --}}
-												<div class="ticket-contact-cover" style="padding: 0px 20px; ">
+												<div class="ticket-contact-cover" style="padding: 0px 20px; "> 
 												@foreach ($category->sectors as $sector)
 													<div style="width: 100%; border:1px solid #0000001c; padding:20px; margin:10px">
 												<h5>  {{$sector->name}} </h5>

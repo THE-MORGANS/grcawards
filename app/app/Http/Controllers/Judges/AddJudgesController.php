@@ -25,7 +25,8 @@ class AddJudgesController extends Controller
             $request->session()->flash('error', 'Some Fields are missing');
             return back()->withInput($request->all())->withErrors($validated);
         }
-        $names = explode(' ', $request->judge_fullname);
+        $names = explode(' ', $request->fullname);
+        // dd($request->fullname);
         if($names[0]){
             $firstName = $names[0];
         }else{
@@ -39,7 +40,7 @@ class AddJudgesController extends Controller
         }
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
+                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $admin = new Admin();
                 $admin->firstname = $firstName;
                 $admin->lastname = $LastName;
