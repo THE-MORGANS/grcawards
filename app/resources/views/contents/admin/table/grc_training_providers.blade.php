@@ -98,7 +98,9 @@
                                 </div> <!-- end card -->
                             </div>
                             <div class="row">
-                                <div class="col-6"></div>
+                                <div class="col-6">
+                                    <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}"> Return Back</a>
+                                </div>
                                 <div class="col-6 text-end">
                                     <input type="submit" class="btn btn-success" value="Submit Votes for this Awards" name="submitButton">
                                 </div>
