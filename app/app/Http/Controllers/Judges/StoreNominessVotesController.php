@@ -94,41 +94,34 @@ class StoreNominessVotesController extends Controller
             }
             $request->session()->flash('success', 'Vote Updated Successfully');
             return back();
+        }else if (in_array($award_id,  $data['award_group_nine'])) {
+            $data = $this->WomenInGrcJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
         }
-
-
+        else if (in_array($award_id,  $data['award_group_ten'])) {
+            $data = $this->MediasJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }
         
-
-        #=================== NON NOMINEES AWARDS ========================
-
-        // else if (in_array($award_id,  $data['award_group_nine'])) {
-        //     $data = $this->WomenInGrcJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
-        //     if ($data == null) {
-        //         $request->session()->flash('danger', 'You have voted for this category already');
-        //         return back();
-        //     }
-        //     $request->session()->flash('success', 'Vote Updated Successfully');
-        //     return back();
-        // }
-        // else if (in_array($award_id,  $data['award_group_ten'])) {
-        //     $data = $this->MediasJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
-        //     if ($data == null) {
-        //         $request->session()->flash('danger', 'You have voted for this category already');
-        //         return back();
-        //     }
-        //     $request->session()->flash('success', 'Vote Updated Successfully');
-        //     return back();
-        // }
-        
-        // else if (in_array($award_id,  $data['award_group_eleven'])) {
-        //     $data = $this->GovernorsJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
-        //     if ($data == null) {
-        //         $request->session()->flash('danger', 'You have voted for this category already');
-        //         return back();
-        //     }
-        //     $request->session()->flash('success', 'Vote Updated Successfully');
-        //     return back();
-        // }
+        else if (in_array($award_id,  $data['award_group_eleven'])) {
+            $data = $this->GovernorsJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
+            if ($data == null) {
+                $request->session()->flash('danger', 'You have voted for this category already');
+                return back();
+            }
+            $request->session()->flash('success', 'Vote Updated Successfully');
+            return back();
+        }
         // else if (in_array($award_id,  $data['award_group_twelve'])) {
         //     $data = $this->NonfiJudgeVote($request->judges_votes, $request->nominee_ids, $award_id);
         //     if ($data == null) {
@@ -137,8 +130,9 @@ class StoreNominessVotesController extends Controller
         //     }
         //     $request->session()->flash('success', 'Vote Updated Successfully');
         //     return back();
-        // }  else {
-        //     return back();
         // }
+          else {
+            return back();
+        }
     }
 }

@@ -40,8 +40,6 @@ class NomineeVotesResultController extends Controller
             return redirect()->back();
         }
 
-      
-
         if (in_array($award_id,  $data['award_group_one'])) {
             $this->BankRiskComplaincesResults($award_id);
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
@@ -75,7 +73,6 @@ class NomineeVotesResultController extends Controller
         $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
         return view('contents.admin.voteResults.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
     } 
-            #===============NONE NOMINEES VOTES RESULTS ========================
             else if (in_array($award_id,  $data['award_group_nine'])) {
                 $this->WomenInGrcResults($award_id);
                 $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
@@ -90,12 +87,7 @@ class NomineeVotesResultController extends Controller
                 $this->GovernorsVotesResults($award_id);
                 $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
                 return view('contents.admin.voteResults.governors_votes', $data)->with(['award_program' => $award_program]);
-            } 
-            else if (in_array($award_id,  $data['award_group_twelve'])) {
-                $this->NonFiVotesResults($award_id);
-                $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
-                return view('contents.admin.voteResults.nonfi_votes', $data)->with(['award_program' => $award_program]);
-            } 
+            }  
 
     else {
             return back();

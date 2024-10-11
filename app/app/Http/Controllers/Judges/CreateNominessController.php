@@ -49,32 +49,18 @@ class CreateNominessController extends Controller
             } else if (in_array($award_hashid,  $data['award_group_ten'])) {
                     $data = $this->Medias($votes, $award_hashid);
                     return view('contents.admin.judge.medias')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-                } else {
+            } else if (in_array($award_hashid,  $data['award_group_eleven'])) {
+                $data = $this->BankFraudAwareness($votes, $award_hashid);
+                return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+        }else {
                 $request->session()->flash('danger', 'Something went wrong, try again');
                 return back();
             }
-        }
-        // else{
-
-            #============ for other votes =======================
-
-        //     $otherVotes = OtherVote::where('award_id', $award_hashid)->pluck('nominee')->toArray();
-         
-        //     if (count($otherVotes) > 0 ) {
-        //         if (in_array($award_hashid[0],  $data['award_group_nine'])) {
-                  
-        //             $data =  $this->WomenInGrc($otherVotes, $award_hashid[0]);
-        //             // dd($data);
-        //             return view('contents.admin.judge.women_in_grcs')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-        //         } else if (in_array($award_hashid[0],  $data['award_group_ten'])) {
-        //             $data = $this->Medias($otherVotes, $award_hashid[0]);
-        //             return view('contents.admin.judge.medias')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-        //         } 
-        //         else if (in_array($award_hashid[0],  $data['award_group_eleven'])) {
-        //             $data = $this->GovernorsVotes($otherVotes, $award_hashid[0]);
+        } else if (in_array($award_hashid[0],  $data['award_group_eleven'])) {
+                    $data = $this->GovernorsVotes($votes, $award_hashid[0]);
                     
-        //             return view('contents.admin.judge.governors_vote')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-        //         } 
+                    return view('contents.admin.judge.governors_vote')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
+                } 
         //         else if (in_array($award_hashid[0],  $data['award_group_twelve'])) {
         //             $data = $this->NonFiVote($otherVotes, $award_hashid[0]);
         //             return view('contents.admin.judge.nonfi_votes')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);

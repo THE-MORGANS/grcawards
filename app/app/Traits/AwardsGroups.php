@@ -18,6 +18,7 @@ trait AwardsGroups{
         $data['award_group_eight'] = [96,95]; //Financial Crime Prevention Advisory Service
         $data['award_group_nine'] = [138, 139]; // women is GRC
         $data['award_group_ten'] = [144]; //Media Votes
+        $data['award_group_eleven'] = [145]; //Special Recog
         return $data;
     }
 

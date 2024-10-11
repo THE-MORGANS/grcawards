@@ -53,9 +53,6 @@ class NominessVotesController extends Controller
             $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
             return view('contents.admin.table.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
         }
-
-        ///None Nominees awarrds -----------------------------------
-        
         else if (in_array($award_id,  $data['award_group_nine'])) {
             $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
             return view('contents.admin.table.women_in_grc', $data)->with(['award_program' => $award_program]);
@@ -67,11 +64,11 @@ class NominessVotesController extends Controller
         else if (in_array($award_id,  $data['award_group_eleven'])) {
             $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
             return view('contents.admin.table.governors_votes', $data)->with(['award_program' => $award_program]);
-        }
-        else if (in_array($award_id,  $data['award_group_twelve'])) {
-            $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
-            return view('contents.admin.table.nonfi_votes', $data)->with(['award_program' => $award_program]);
-        }else {
+        // }
+        // else if (in_array($award_id,  $data['award_group_twelve'])) {
+        //     $data['awards'] = NonfiVotes::whereAwardId($award_id)->get();
+        //     return view('contents.admin.table.nonfi_votes', $data)->with(['award_program' => $award_program]);
+         }else {
             $request->session()->flash('danger', 'No nominees for this awards at the moment');
             return back();
         }

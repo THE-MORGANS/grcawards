@@ -86,8 +86,6 @@ class LoadJudgesController extends Controller
         return view('contents.admin.judge.judgeCategoriesSectors', $data);
     }
 
-      #============== calculating voting results and choose winner =============
-
       public function ViewJudgeCategoryPageResults(Request $request, $award_program)
       {
   
@@ -121,7 +119,6 @@ class LoadJudgesController extends Controller
 
     public function loadJudgeAwardsResults(Request $request, $award_program, $category_id, $sector_id)
     {
-        //=============todo===================//
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         $category = Hashids::connection('category')->decode($category_id);
         $sector = Hashids::connection('sector')->decode($sector_id);
