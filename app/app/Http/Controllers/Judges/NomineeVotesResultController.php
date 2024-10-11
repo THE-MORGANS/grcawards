@@ -17,13 +17,13 @@ use App\Models\MediaVotes;
 use App\Models\NonfiVotes;
 use App\Models\WomenInGrc;
 use Illuminate\Http\Request;
-use App\Traits\{AwardsGroups,JudgeOtherVotes,JudgeVotes,NomineeResults,NomineesAwards,OtherVotes};
+use App\Traits\{AwardsGroups,JudgeVotes,NomineeResults,NomineesAwards};
 use Vinkla\Hashids\Facades\Hashids;
 
 class NomineeVotesResultController extends Controller
 {
     //
-    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups,OtherVotes,JudgeOtherVotes;
+    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups;
     
     public function ViewNominessVotesResults(Request $request,$award_program_id,$award_id,)
     {

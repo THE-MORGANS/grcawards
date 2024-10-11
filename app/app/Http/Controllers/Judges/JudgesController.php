@@ -6,15 +6,15 @@ use App\Traits\NomineesAwards;
 use App\Models\Judge;
 use App\Models\Category;
 use App\Models\AwardProgram;
-use App\Traits\OtherVotesResults;
-use App\Traits\JudgeOtherVotes;
+// use App\Traits\OtherVotesResults;
+// use App\Traits\JudgeOtherVotes;
 
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Traits\NomineeResults;
 use App\Traits\JudgeVotes;
 use App\Traits\AwardsGroups;
-use App\Traits\OtherVotes;
+// use App\Traits\OtherVotes;
 use App\Http\Controllers\Controller;
 
 
@@ -25,8 +25,9 @@ class JudgesController extends Controller
     use JudgeVotes;
     use NomineeResults;
     use AwardsGroups;
-    use OtherVotes;
-    use JudgeOtherVotes, OtherVotesResults;
+    // use OtherVotes;
+    // use JudgeOtherVotes;
+    // OtherVotesResults;
 
     public function __construct() {
      return $this->middleware('auth:admin');

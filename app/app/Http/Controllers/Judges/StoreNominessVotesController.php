@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Judges;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
-use App\Traits\{AwardsGroups,JudgeOtherVotes,JudgeVotes,NomineeResults,NomineesAwards,OtherVotes};
+use App\Traits\{AwardsGroups,JudgeVotes,NomineeResults,NomineesAwards};
 class StoreNominessVotesController extends Controller
 {
-    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups,OtherVotes,JudgeOtherVotes;
+    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups;
     
     public function StoreNominessVotes(Request $request, $award_id, $award_program_id=2)
     {
