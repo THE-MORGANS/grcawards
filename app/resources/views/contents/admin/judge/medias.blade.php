@@ -68,7 +68,7 @@
                                     @if($nominessDetails)
                                     <tr>
                                         <td>
-                                          {{$nominessDetails->nominee_name}}
+                                            {{$nominessDetails->nominee->name}}
                                         </td>
                                         <td>
                                        {{$nominessDetails->number_of_votes}}
