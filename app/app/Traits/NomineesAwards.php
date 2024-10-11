@@ -31,6 +31,7 @@ trait NomineesAwards {
 
     #Award Two
     public function BankFraudAwareness($votes, $award_hashid){
+  
         $check = ComBankFraudAwareness::whereAwardId($award_hashid)->get();
         if(count($check) > 0){
            foreach($check as $cc => $val){

@@ -13,5 +13,8 @@ class GovernorsVotes extends Model
 
     public function awards(){
         return $this->belongsTo(Award::class, 'award_id', 'id');
+    } 
+    public function nominee(){
+        return $this->belongsTo(Nominee::class, 'nominee_id', 'id');
     }
 }
