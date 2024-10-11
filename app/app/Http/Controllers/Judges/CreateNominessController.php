@@ -50,26 +50,22 @@ class CreateNominessController extends Controller
                     $data = $this->Medias($votes, $award_hashid);
                     return view('contents.admin.judge.medias')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid,  $data['award_group_eleven'])) {
-                $data = $this->BankFraudAwareness($votes, $award_hashid);
+                $data = $this->GovernorsVotes($votes, $award_hashid);
                 return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
         }else {
                 $request->session()->flash('danger', 'Something went wrong, try again');
                 return back();
             }
-        } else if (in_array($award_hashid[0],  $data['award_group_eleven'])) {
-                    $data = $this->GovernorsVotes($votes, $award_hashid[0]);
-                    
-                    return view('contents.admin.judge.governors_vote')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-                } 
         //         else if (in_array($award_hashid[0],  $data['award_group_twelve'])) {
         //             $data = $this->NonFiVote($otherVotes, $award_hashid[0]);
         //             return view('contents.admin.judge.nonfi_votes')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
         //         } 
 
         // }
-    // }
+    }
         $request->session()->flash('danger', 'No Nominee votes for this award yet');
         return back();
-    }
+        }
+    
 
 }
