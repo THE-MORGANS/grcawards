@@ -46,7 +46,7 @@ class CreateNominessController extends Controller
             } else if(in_array($award_hashid,  $data['award_group_nine'])){
                     $data =  $this->WomenInGrc($votes, $award_hashid);
                 return view('contents.admin.judge.women_in_grcs')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
-            } else if (in_array($award_hashid[0],  $data['award_group_ten'])) {
+            } else if (in_array($award_hashid,  $data['award_group_ten'])) {
                     $data = $this->Medias($votes, $award_hashid);
                     return view('contents.admin.judge.medias')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
                 } else {
