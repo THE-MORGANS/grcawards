@@ -222,7 +222,7 @@ trait NomineeResults{
     }
 
 
-    public function WomenInGrc($award_id){
+    public function WomenInGrcResults($award_id){
         $awards = WomenInGrc::where('award_id', $award_id)->get();
         $total_votes = WomenInGrc::where('award_id', $award_id)->sum('number_of_votes');
         $check = WomenInGrc::where(['status' =>'WINNER', 'award_id' => $award_id])->first();
