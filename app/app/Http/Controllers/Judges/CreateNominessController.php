@@ -6,10 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Models\VoteCount;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
-use App\Traits\{AwardsGroups,JudgeOtherVotes,JudgeVotes,NomineeResults,NomineesAwards,OtherVotes,OtherVotesResults};
+use App\Traits\{AwardsGroups,JudgeOtherVotes,JudgeVotes,NomineeResults,NomineesAwards,OtherVotesResults};
 class CreateNominessController extends Controller
 {
-    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups,OtherVotes,JudgeOtherVotes,OtherVotesResults;
+    use NomineesAwards, JudgeVotes, NomineeResults,AwardsGroups,JudgeOtherVotes,OtherVotesResults;
     
     public function CreateNominessVotes(Request $request, $award_program_id, $award_id)
     {
