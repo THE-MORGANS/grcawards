@@ -16,7 +16,7 @@ trait AwardsGroups{
         $data['award_group_four'] = [125, 104, 106,108,110,111,128,130,131, 132,134,138]; //grc_employers
         $data['award_group_six'] = [140,141,142,143]; //grc_training_providers
         $data['award_group_eight'] = [96,95]; //Financial Crime Prevention Advisory Service
-        $data['award_group_nine'] = [ 138,139]; // women is GRC
+        $data['award_group_nine'] = [138, 139]; // women is GRC
         $data['award_group_ten'] = [144]; //Media Votes
         return $data;
     }
