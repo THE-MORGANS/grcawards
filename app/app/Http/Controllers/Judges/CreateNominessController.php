@@ -30,8 +30,6 @@ class CreateNominessController extends Controller
                 return view('contents.admin.judge.com_bank_chief_risk_officers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid,  $data['award_group_four'])) {
                 $data = $this->GrcEmployers($votes, $award_hashid);
-
-                dd($data->with('nominee'));
                 return view('contents.admin.judge.grc_employers')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid,  $data['award_group_five'])) {
                 $data = $this->GrcSolutionProviders($votes, $award_hashid);

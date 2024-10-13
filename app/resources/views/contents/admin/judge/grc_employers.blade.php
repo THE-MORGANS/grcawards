@@ -44,6 +44,7 @@
                                     <select class="form-select nominee_awards @error('nominees') is-invalid @enderror" value="" name="nominess" id="nominee_awards" onchange="form1.submit()">
                                         <option id="init" value="">Please select...</option>
                                         @foreach($awards as $award)
+                                        {{dd($awards)}}
                                         <option value="{{$award->id}}" @if(!empty($nominessDetails) && $nominessDetails->id == $award->id) selected @endif >{{$award->nominee->name}}</option>
                                         @endforeach
                                     </select>
