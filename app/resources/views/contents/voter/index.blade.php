@@ -94,7 +94,7 @@
 				<div class="conference-counter-wrap">
 					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
 					<div class="conference-counter-cover">
-						<h4>Voting will be open from 1st August and ends 31st Sept, 2024 </h4>
+						<h4>VOTING CLOSED FOR GRC FINANCIAL CRIME PREVENTION AWARDS 2024 </h4>
 						{{-- <h3>Voting is Open</h3> --}}
 						 {{-- <h4>To view the shortlisted finalists, <a href="{{route('show_shortlisted_nomineees')}}" class="" tabindex="-1" style="color:rgba(39, 39, 39, .9)"><span>click here</span></a></h4>  --}}
 						{{-- <div id="clockdiv" class="clock-timer clock-timer-conference">
