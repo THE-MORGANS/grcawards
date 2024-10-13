@@ -40,7 +40,7 @@
                         <div class="row" id="create-form-row">
                             <div class="col-12">
                                 <div class="mb-3">
-                                    {{dd($awards)}}
+                                    {{dd($awards[0]->nominee)}}
                                     <label class="control-label form-label">Select the Nominee</label>
                                     <select class="form-select nominee_awards @error('nominees') is-invalid @enderror" value="" name="nominess" id="nominee_awards" onchange="form1.submit()">
                                         <option id="init" value="">Please select...</option>
