@@ -46,7 +46,7 @@
                                         <option id="init" value="">Please select...</option>
                                         @foreach($awards as $award)
                                        
-                                        <option value="{{$award->id}}" @if(!empty($nominessDetails) && $nominessDetails->id == $award->id) selected @endif >{{$award->nominee->name}}</option>
+                                        <option value="{{$award->id}}" @if(!empty($nominessDetails) && $nominessDetails->id == $award->id) selected @endif >{{$award?->nominee?->name}}</option>
                                         @endforeach
                                     </select>
                                     <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}"> 
