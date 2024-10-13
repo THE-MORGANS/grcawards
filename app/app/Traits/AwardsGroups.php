@@ -12,7 +12,7 @@ trait AwardsGroups{
         $data['award_group_twelve']  = [102]; //NonFI
 // --------------------in use -----------------
         $data['award_group_two'] = [147]; //ESG Initiative
-        $data['award_group_three'] = [105,107,109,126,133,135,129,137]; //com_bank_chief_risk_officers
+        $data['award_group_three'] = [105,107,109,126,133,135,129,137, 146]; //com_bank_chief_risk_officers
         $data['award_group_four'] = [125, 104, 106,108,110,111,128,130,131, 132,134, 136]; //grc_employers
         $data['award_group_six'] = [140,141,142,143]; //grc_training_providers
         $data['award_group_eight'] = [96,95]; //Financial Crime Prevention Advisory Service
