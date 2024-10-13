@@ -23,7 +23,6 @@ class CreateNominessController extends Controller
                 $data =  $this->BankRiskComplainces($votes, $award_hashid);
                 return view('contents.admin.judge.ComBankRiskComplainces')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid,  $data['award_group_two'])) {
-                dd($votes);
                 $data = $this->BankFraudAwareness($votes, $award_hashid);
                 return view('contents.admin.judge.com_bank_fraud_awarenesses')->with(['awards' => $data, 'nominessDetails' => '', 'award_program' => $award_program]);
             } else if (in_array($award_hashid,  $data['award_group_three'])) {
