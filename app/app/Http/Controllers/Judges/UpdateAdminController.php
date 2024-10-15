@@ -8,6 +8,7 @@ use App\Models\Admin;
 use App\Models\AwardProgram;
 use App\Models\Judge;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Vinkla\Hashids\Facades\Hashids;
@@ -49,7 +50,7 @@ class UpdateAdminController extends Controller
                     $admin->lastname = $LastName;
                     $admin->email = $request->judge_email;
                     $admin->role_id = 3;
-                    $admin->password = bcrypt($password);
+                    $admin->password = Hash::make($password);
                     $admin->save();
                     sleep(2);
                     $admin = Admin::latest()->first();
@@ -60,7 +61,7 @@ class UpdateAdminController extends Controller
                 $judge->position = $request->position; 
                 $judge->profile = $request->profile; 
                 $judge->email = $request->judge_email;
-                $judge->password = bcrypt($password);
+                $judge->password = Hash::make($password);
                 $judge->save();
                 $data = [
                     'name' => $request->judge_fullname,
@@ -68,7 +69,7 @@ class UpdateAdminController extends Controller
                     'password' => $password
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
-                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($password) ]);
+                $admins->update(['email' => $request->judge_email, 'password' => Hash::make($password)]);
                  Mail::to([$request->judge_email, 'noreply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
 
                     $request->session()->flash('success', 'Judge Added Successfully');
