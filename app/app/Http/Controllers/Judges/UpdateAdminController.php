@@ -40,7 +40,7 @@ class UpdateAdminController extends Controller
 
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
+                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $judge = Judge::where('id', $request->judge_id)->first();
             try{
                 if($judge->admin_id == null){
