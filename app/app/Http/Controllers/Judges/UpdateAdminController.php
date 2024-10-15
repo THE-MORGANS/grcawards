@@ -42,7 +42,7 @@ class UpdateAdminController extends Controller
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
                  $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $judge = Judge::where('id', $request->judge_id)->first();
-            try{
+            // try{
                 if($judge->admin_id == null){
                     $admin = new Admin;
                     $admin->firstname = $firstName;
@@ -74,10 +74,10 @@ class UpdateAdminController extends Controller
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
 
-            }catch(\Exception $e) {
-                $request->session()->flash('danger', $e->getMessage()); 
-                return redirect()->route('admin.get_judges', $award_program);
-            }
+            // }catch(\Exception $e) {
+            //     $request->session()->flash('danger', $e->getMessage()); 
+            //     return redirect()->route('admin.get_judges', $award_program);
+            // }
             return back();
     }
 
