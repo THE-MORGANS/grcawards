@@ -100,7 +100,7 @@
 
                     <div class="p-1">
                         <label for="State"> Designated role </label>
-                        <input id="role" class="form-control" value="{{old('role')}}" id="role" type="text" name="role" placeholder="" required>
+                        <input id="role" class="form-control" value="{{old('role')}}" id="role" type="text" name="role" placeholder="what is your role in your company" required>
                         @error('role')
                         <span class="invalid-feedback" role="alert" style="color:red">
                             <strong>{{ $message }}</strong>
@@ -154,6 +154,7 @@
                       <br>  Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  required>
                       <br>     Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  required>
                       <br>     Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  required>
+                      <br>     Partner: <input  class="form-control" id="speaker" type="radio" name="Attendee" value="Attendee"  required>
                        
                         @error('speaker')
                         <span class="invalid-feedback" role="alert" style="color:red">

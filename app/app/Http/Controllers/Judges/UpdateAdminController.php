@@ -65,10 +65,10 @@ class UpdateAdminController extends Controller
                 $data = [
                     'name' => $request->judge_fullname,
                     'email' => $request->judge_email,
-                    'password' => $request->judge_password
+                    'password' => $password
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
-                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
+                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($password) ]);
                  Mail::to([$request->judge_email, 'noreply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
 
                     $request->session()->flash('success', 'Judge Added Successfully');
