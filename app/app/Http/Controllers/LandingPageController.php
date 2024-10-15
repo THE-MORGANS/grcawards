@@ -24,7 +24,7 @@ class LandingPageController extends Controller
     public function showLandingIndex()
     {
 
-        $judges = Judge::where('award_program_id', 2)->get();
+        $judges = Judge::where('award_program_id', 3)->get();
         return view('contents.voter.index')->with(['judges'=>$judges]);
     }
 
@@ -87,7 +87,7 @@ class LandingPageController extends Controller
     }
 
     public function showJudges(){
-        $judges = Judge::where('award_program_id',2)->get();
+        $judges = Judge::where('award_program_id',3)->get();
         foreach($judges as $judge){
             $judge->hashid = Hashids::connection('email')->encode($judge->id);
         }

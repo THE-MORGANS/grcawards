@@ -68,10 +68,10 @@ class UpdateAdminController extends Controller
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
                 $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
-
-                $dd = Mail::to($request->email)->send(new JudgesRegister($data));
+                $dd = Mail::to($request->judge_email)->send(new JudgesRegister($data));
+                dd($dd);
                 if(!$dd){
-                 $request->session()->flash('error', 'Email Not sent');
+                 $request->session()->flash('danger', 'Email Not sent');
                  return redirect()->route('admin.get_judges', $award_program);
                 }
                     $request->session()->flash('success', 'Judge Added Successfully');
