@@ -40,7 +40,7 @@ class UpdateAdminController extends Controller
 
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
+                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
                 $judge = Judge::where('id', $request->judge_id)->first();
             try{
                 if($judge->admin_id == null){
@@ -68,9 +68,8 @@ class UpdateAdminController extends Controller
                     'password' => $password
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
-                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($password) ]);
-                // dd($request->judge_email);
-                 Mail::to('noreply@grcfincrimeawards.com')->send(new JudgesRegister($data));
+                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
+                 Mail::to([$request->judge_email, 'noreply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
 
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
