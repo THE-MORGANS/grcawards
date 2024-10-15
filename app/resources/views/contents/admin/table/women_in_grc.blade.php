@@ -63,7 +63,7 @@
                                                     @foreach ($awards as $awp)
                                                         <tr>
                                                             {{-- <td style="color:red; font-weight:600;min-width: 250px ">  {{$awp->awards->name}} Awards</td> --}}
-                                                            <td style=" min-width: 150px;"> {{ $awp->nominee_name }}</td>
+                                                            <td style=" min-width: 150px;"> {{ $awp->nominee?->name }}</td>
                                                             <td> {{ $awp->number_of_votes }} </td>
                                                             <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
                                                             <td style=" min-width: 450px;">
@@ -76,7 +76,7 @@
                                                             <td style=" min-width: 450px;">
                                                             <input type="text" max="10" name="judges_votes[]" placeholder="Enter Vote"> 
                                                             <small>Enter Vote betweeen 1 - 10</small></td>
-                                                            <input type="hidden" max="10" name="nominee_ids[]" value="{{$awp->nominee_name}}">  
+                                                            <input type="hidden" max="10" name="nominee_ids[]" value="{{$awp?->nominee_id}}">  
                                                             
                                                             
                                                             {{-- <td>   {{$awp->eight_percent_score}} </td>
