@@ -40,7 +40,7 @@ class AddJudgesController extends Controller
         }
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-            // try{
+            try{
                  $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $admin = new Admin();
                 $admin->firstname = $firstName;
@@ -68,14 +68,14 @@ class AddJudgesController extends Controller
                     'password' => $request->password
                 ];
 
-            //   Mail::to($request->email)->send(new JudgesRegister($data));
+              Mail::to($request->email)->send(new JudgesRegister($data));
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
-            // }catch(\Exception $e)
-            // {
+            }catch(\Exception $e)
+            {
                 $request->session()->flash('danger', $e->getMessage());
                 return redirect()->route('admin.get_judges', $award_program);
-            // }
+            }
     }
 }
 

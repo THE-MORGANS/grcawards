@@ -8,7 +8,6 @@ use App\Models\Admin;
 use App\Models\AwardProgram;
 use App\Models\Judge;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Vinkla\Hashids\Facades\Hashids;
@@ -43,14 +42,14 @@ class UpdateAdminController extends Controller
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
                  $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $judge = Judge::where('id', $request->judge_id)->first();
-            // try{
+            try{
                 if($judge->admin_id == null){
                     $admin = new Admin;
                     $admin->firstname = $firstName;
                     $admin->lastname = $LastName;
                     $admin->email = $request->judge_email;
                     $admin->role_id = 3;
-                    $admin->password = Hash::make($password);
+                    $admin->password = bcrypt($password);
                     $admin->save();
                     sleep(2);
                     $admin = Admin::latest()->first();
@@ -61,7 +60,7 @@ class UpdateAdminController extends Controller
                 $judge->position = $request->position; 
                 $judge->profile = $request->profile; 
                 $judge->email = $request->judge_email;
-                $judge->password = Hash::make($password);
+                $judge->password = bcrypt($password);
                 $judge->save();
                 $data = [
                     'name' => $request->judge_fullname,
@@ -69,16 +68,16 @@ class UpdateAdminController extends Controller
                     'password' => $password
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
-                $admins->update(['email' => $request->judge_email, 'password' => Hash::make($password)]);
-                //  Mail::to([$request->judge_email, 'noreply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
+                $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($password) ]);
+                 Mail::to($request->judge_email, 'noreply@grcfincrimeawards.com')->send(new JudgesRegister($data));
 
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
 
-            // }catch(\Exception $e) {
-            //     $request->session()->flash('danger', $e->getMessage()); 
-            //     return redirect()->route('admin.get_judges', $award_program);
-            // }
+            }catch(\Exception $e) {
+                $request->session()->flash('danger', $e->getMessage()); 
+                return redirect()->route('admin.get_judges', $award_program);
+            }
             return back();
     }
 
