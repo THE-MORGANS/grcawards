@@ -154,7 +154,7 @@
                       <br>  Speaker: <input class="form-control" id="speaker" type="radio" name="speaker"  value="speaker"  >
                       <br>     Contributor: <input  class="form-control" id="speaker" type="radio" name="speaker" value="contributor"  >
                       <br>     Partner: <input  class="form-control" id="speaker" type="radio" name="speaker" value="partner"  >
-                      <br>     Partner: <input  class="form-control" id="speaker" type="radio" name="none" value="none"  >
+                      <br>     None: <input  class="form-control" id="speaker" type="radio" name="none" value="none"  >
                        
                         @error('speaker')
                         <span class="invalid-feedback" role="alert" style="color:red">
