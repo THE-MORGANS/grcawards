@@ -68,7 +68,7 @@ class AddJudgesController extends Controller
                     'password' => $request->password
                 ];
 
-              Mail::to($request->email)->send(new JudgesRegister($data));
+            //   Mail::to($request->email)->send(new JudgesRegister($data));
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
             // }catch(\Exception $e)
