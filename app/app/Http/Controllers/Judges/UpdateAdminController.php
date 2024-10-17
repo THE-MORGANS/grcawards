@@ -71,8 +71,8 @@ class UpdateAdminController extends Controller
                 $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
                  Mail::to([$request->judge_email, 'no-reply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
 
-                    $request->session()->flash('success', 'Judge Added Successfully');
-                    return redirect()->route('admin.get_judges', $award_program);
+                $request->session()->flash('success', 'Judge Added Successfully');
+                return redirect()->route('admin.get_judges', $award_program);
 
             }catch(\Exception $e) {
                 $request->session()->flash('danger', $e->getMessage()); 
