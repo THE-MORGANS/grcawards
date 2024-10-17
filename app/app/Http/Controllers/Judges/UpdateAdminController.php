@@ -40,7 +40,7 @@ class UpdateAdminController extends Controller
 
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
-                 $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
+                //  $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20), true)), 0,10);
                 $judge = Judge::where('id', $request->judge_id)->first();
             try{
                 if($judge->admin_id == null){
@@ -49,7 +49,7 @@ class UpdateAdminController extends Controller
                     $admin->lastname = $LastName;
                     $admin->email = $request->judge_email;
                     $admin->role_id = 3;
-                    $admin->password = bcrypt($password);
+                    $admin->password = bcrypt($request->judge_password);
                     $admin->save();
                     sleep(2);
                     $admin = Admin::latest()->first();
@@ -60,16 +60,16 @@ class UpdateAdminController extends Controller
                 $judge->position = $request->position; 
                 $judge->profile = $request->profile; 
                 $judge->email = $request->judge_email;
-                $judge->password = bcrypt($password);
+                $judge->password = bcrypt($request->judge_password);
                 $judge->save();
                 $data = [
                     'name' => $request->judge_fullname,
                     'email' => $request->judge_email,
-                    'password' => $password
+                    'password' => $request->judge_password
                 ];
                 $admins = Admin::where('id', $judge->admin_id)->first();
                 $admins->update(['email' => $request->judge_email, 'password' =>bcrypt($request->judge_password) ]);
-                 Mail::to([$request->judge_email, 'noreply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
+                 Mail::to([$request->judge_email, 'no-reply@grcfincrimeawards.com'])->send(new JudgesRegister($data));
 
                     $request->session()->flash('success', 'Judge Added Successfully');
                     return redirect()->route('admin.get_judges', $award_program);
