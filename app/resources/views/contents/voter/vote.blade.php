@@ -46,7 +46,7 @@
 				<div class="col-12 blog-cover">
 					<div class="post-item-cover">
 						<div class="widget widget-archive post-header">
-							<h4 class="title">Vote</h4>
+							<h2 class="title"><span>VOTING IS CLOSED FOR  GRC Financial Crime Awards 2024</span></h2>
 						</div>
 						<div class="post-content">
 							<div class="text">
