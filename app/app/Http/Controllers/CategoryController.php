@@ -19,6 +19,7 @@ class CategoryController extends Controller
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0])){
         $categories = Category::where('award_program_id', $award_program_id[0])->get();
+        dd($categories);
         foreach ($categories as $category) {
             $category->hashid = Hashids::connection('category')->encode($category->id);
         }
