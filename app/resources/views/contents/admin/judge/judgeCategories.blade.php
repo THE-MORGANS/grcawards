@@ -34,7 +34,7 @@
         <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(3))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(3))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(3))}}  </span> @endif</span>  </h2>
+                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(4))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(4))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(4))}}  </span> @endif</span>  </h2>
                   <p class="card-text">{{substr($category->description,0,100).'...'}}</p>
                   @php
                       $category->hashid = Hashids::connection('category')->encode($category->id);
