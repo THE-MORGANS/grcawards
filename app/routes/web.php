@@ -89,7 +89,7 @@ Route::prefix('admin')->group(function(){
                 Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
             });
             Route::prefix('emails')->group(function(){
-                Route::get('/', [ReminderController::class, 'emailPage'])->name('admin.emaiPage');
+                Route::get('/index', [ReminderController::class, 'emailPage'])->name('admin.emailPage');
                 Route::post('/send', [ReminderController::class, 'sendEmail'])->name('admin.sendUserEmail');
             });
 
