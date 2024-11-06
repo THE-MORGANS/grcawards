@@ -141,7 +141,7 @@
                 <div class="collapse" id="summits">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{route('admin.email_page', request()->segment(3))}}">Send Mail</a>
+                            <a href="{{route('admin.emaiPage', request()->segment(3))}}">Send Mail</a>
                         </li>
                     </ul>
                 </div>
