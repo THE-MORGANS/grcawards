@@ -88,7 +88,7 @@ Route::prefix('admin')->group(function(){
             Route::prefix('summit')->group(function(){
                 Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
             });
-            Route::prefix('email')->group(function(){
+            Route::prefix('emails')->group(function(){
                 Route::get('/', [ReminderController::class, 'emailPage'])->name('admin.email_page');
                 Route::post('/send', [ReminderController::class, 'sendEmail'])->name('admin.sendUserEmail');
             });
