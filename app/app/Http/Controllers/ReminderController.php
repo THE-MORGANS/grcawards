@@ -66,11 +66,10 @@ class ReminderController extends Controller
         }
         }
 
-        Session::flash('alert', 'error');
-        Session::flash('message', 'Email sent successfully');
+        Session::flash('success', 'Email sent successfully');
         return back();
     }catch(\Exception $e){
-        return $e->getMessage();
+        Session::flash('danger', $e->getMessage());
     }
 
     }
