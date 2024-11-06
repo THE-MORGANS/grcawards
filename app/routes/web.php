@@ -15,6 +15,7 @@ use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Auth\VoterLoginController;
 use App\Http\Controllers\Auth\VoterRegisterController;
 use App\Http\Controllers\JudgeController;
+use App\Http\Controllers\ReminderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,9 +83,14 @@ Route::prefix('admin')->group(function(){
             Route::prefix('admins')->group(function(){
                 Route::get('', [AdminController::class, 'getAdmins'])->name('admin.get_admins');
             });
+            
 
             Route::prefix('summit')->group(function(){
                 Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
+            });
+            Route::prefix('email')->group(function(){
+                Route::get('/', [ReminderController::class, 'emailPage'])->name('admin.email_page');
+                Route::post('/send', [ReminderController::class, 'sendEmail'])->name('admin.sendUserEmail');
             });
 
            require __DIR__.'/judges.php';

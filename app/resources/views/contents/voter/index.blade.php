@@ -128,8 +128,10 @@
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
 						<video style="width:100%;" controls>
-							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/v1665482681/grcfincrimeawards/videos/grc_awards_summit_2022_fapb6v.mp4" type="video/mp4">
+							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
 						</video>
+
+						
 						
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->

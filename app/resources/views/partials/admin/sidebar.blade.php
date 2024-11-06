@@ -132,6 +132,20 @@
                     </ul>
                 </div>
             </li>
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#summits" aria-expanded="false" aria-controls="people" class="side-nav-link">
+                    <i class="uil uil-users-alt"></i>
+                    <span> Send Email</span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="summits">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.email_page', request()->segment(3))}}">Send Mail</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
             @endif
 
