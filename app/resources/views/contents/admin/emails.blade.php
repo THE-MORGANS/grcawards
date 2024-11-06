@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-4">Send Email</h4>
-                    <form class="needs-validation" method="POST" action="{{route('admin.sendUserEmail', 3)}}" name="add-judge-form" id="add-judge-form">
+                    <form class="needs-validation" method="POST" action="{{route('admin.sendUserEmail', 3)}}" name="add-judge-form" id="add-judge-form" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-12">

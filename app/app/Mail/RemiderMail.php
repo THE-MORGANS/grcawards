@@ -30,7 +30,7 @@ class RemiderMail extends Mailable
     public function build()
     {
         return $this->from('event@grcfincrimeawards.com', 'GRC Awards 2024')->subject($this->data['subject'])->view('contents.mails.reminderMail')->with('data', $this->data)
-        ->attachFromStorage('https://grcfincrimeawards.com/assets/2024GRCINVITATION.pdf', 'GRC Summit and Awards Invitation.pdf', 
-        ['mimes' => 'application/pdf']);
+        ->attach($this->data['attachment'], [ 'as'  => 'GRC Summit and Awards Invitation.pdf',
+        'mime' => 'application/pdf']);
     }
 }

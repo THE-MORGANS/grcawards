@@ -30,10 +30,15 @@ class ReminderController extends Controller
             Session::flash('message', 'Some fields are missing');
             return back();
         }
+        if($request->attachment)
+        {
+            $file = $request->attachment;
+            $file->move('files', 'grcawards.pdf');
+        }
         $data = [
             'subject' => $request->subject,
             'content' => $request->content,
-            'attachment' => $request->attachment
+            'attachment' => asset('files/grcawards.pdf')
         ];
 
         try{
@@ -58,11 +63,11 @@ class ReminderController extends Controller
             $data['name'] = $summit->first_name.' '.$summit->last_name;
             // Mail::to($summit->email)->send(new RemiderMail($data));
         }
+        }
 
         Session::flash('alert', 'error');
         Session::flash('message', 'Email sent successfully');
         return back();
-        }
     }catch(\Exception $e){
         return $e->getMessage();
     }
