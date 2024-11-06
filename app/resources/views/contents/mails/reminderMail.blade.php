@@ -24,7 +24,7 @@
                     <tbody>
                         <tr>
                             <td class="px-3 px-sm-5 pt-3 pt-sm-5 pb-1" style="padding-bottom: 16px !important;padding-top: 44px !important;padding-right: 44px !important;padding-left: 44px !important;">
-                                <h2 class="email-heading" style="font-size: 18px;color: #303e67;font-weight: 600;margin: 0;line-height: 1.4;">Hello  @if(isset($data['first_name']))  {{ucfirst($data['first_name'])}} {{ucfirst($data['last_name'])}} @else There @endif,</h2>
+                                <h2 class="email-heading" style="font-size: 18px;color: #303e67;font-weight: 600;margin: 0;line-height: 1.4;">Hello  @if(isset($data['name']))  {{ucfirst($data['name'])}} @else There @endif,</h2>
                             </td>
                         </tr>
                         <tr>
