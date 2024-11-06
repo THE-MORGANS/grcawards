@@ -51,18 +51,18 @@ class ReminderController extends Controller
 
             }
             Mail::to($request->emails)->send(new RemiderMail($data));
-        }
-
+        }else{
         $summitemail = SummitRegistration::get();
         foreach($summitemail as $summit)
         {
             $data['name'] = $summit->first_name.' '.$summit->last_name;
-            // Mail::to($email)->send(new RemiderMail($data));
+            // Mail::to($summit->email)->send(new RemiderMail($data));
         }
 
         Session::flash('alert', 'error');
         Session::flash('message', 'Email sent successfully');
         return back();
+        }
     }catch(\Exception $e){
         return $e->getMessage();
     }
