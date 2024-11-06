@@ -60,7 +60,7 @@ class ReminderController extends Controller
             return back();
             }
         }else{
-        $summitemail = SummitRegistration::latest()->get();
+        $summitemail = SummitRegistration::get();
         foreach($summitemail as $summit)
         {
             $data['name'] = $summit->first_name.' '.$summit->last_name;
