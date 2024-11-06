@@ -29,7 +29,7 @@
                         </tr>
                         <tr>
                             <td class="px-3 px-sm-1 pb-2" style="padding-bottom: 12px !important;padding-right: 44px !important;padding-left: 44px !important;">
-                                <p style="margin-top: 0;margin-bottom: 16px;">{{$data['content']}}</p>
+                                <p style="margin-top: 0;margin-bottom: 16px;">{!! $data['content'] !!}</p>
                                 <br>
                             </td>
                         </tr>
