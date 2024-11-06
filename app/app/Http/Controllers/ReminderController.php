@@ -54,8 +54,9 @@ class ReminderController extends Controller
                     Mail::to($email)->send(new RemiderMail($data));
                 }
 
-            }
+            }else{
             Mail::to($request->emails)->send(new RemiderMail($data));
+            }
         }else{
         $summitemail = SummitRegistration::get();
         foreach($summitemail as $summit)
