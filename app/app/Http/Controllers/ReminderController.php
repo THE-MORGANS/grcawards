@@ -45,7 +45,7 @@ class ReminderController extends Controller
 
         if($request->emails)
         {
-            $emails = explode(',',$request->email);
+            $emails = explode(',',$request->emails);
             if($emails > 0)
             {
                 foreach($emails as $email)
