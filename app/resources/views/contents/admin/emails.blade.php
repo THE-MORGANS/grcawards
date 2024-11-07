@@ -68,8 +68,8 @@
 
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="control-label form-label">Judge Password</label>
-                                    <input type="file" class="form-control @error('attachment') is-invalid @enderror" name="attachment" id="" required autocomplete="off" />
+                                    <label class="control-label form-label">Upload File</label>
+                                    <input type="file" class="form-control @error('attachment') is-invalid @enderror" name="attachment" id=""  autocomplete="off" />
                                     @error('attachment')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
