@@ -75,6 +75,7 @@ class ReminderController extends Controller
         return back();
     }catch(\Exception $e){
         Session::flash('danger', $e->getMessage());
+        return back();
     }
 
     }
