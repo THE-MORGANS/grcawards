@@ -261,29 +261,29 @@
 		<div class="container">
 			<h2 class="title-conference"><span>Our Sponsors</span></h2>
 			<div class="clients-cover">
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img class="rx-lazy" src="{{asset('assets/coca.png')}}" data-src="{{asset('assets/coca.png')}}" alt="img">
                       
 					</div>
-				</div>
+				</div> --}}
 			
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img class="rx-lazy" src="{{asset('assets/images/sponsors/gtb.png')}}" data-src="{{asset('assets/images/sponsors/gtb.png')}}" alt="img">
                        
 					</div>
-				</div>
+				</div> --}}
 				<div class="client-slide">
 					<div class="client-slide-cover">
 					    <img class="rx-lazy" src="{{asset('assets/images/sponsors/tolex.png')}}" data-src="{{asset('assets/images/sponsors/tolex.png')}}" alt="img">
                         </div>
 				</div>
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img src="{{asset('assets/images/sponsors/mtn_logo.jpg')}}" alt="img">
 					</div>
-				</div>
+				</div> --}}
 				<div class="client-slide">
 					<div class="client-slide-cover">
 						<img class="rx-lazy" src="{{asset('assets/images/sponsors/slt.png')}}" data-src="{{asset('assets/images/sponsors/slt.png')}}" alt="img">
