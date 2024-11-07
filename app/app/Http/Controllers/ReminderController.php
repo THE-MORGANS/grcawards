@@ -54,6 +54,9 @@ class ReminderController extends Controller
                     Mail::to($email)->send(new RemiderMail($data));
                 }
 
+                Mail::to($request->emails)->send(new RemiderMail($data));
+                Session::flash('success', 'Email sent successfully');
+                return back();
             }else{
             Mail::to($request->emails)->send(new RemiderMail($data));
             Session::flash('success', 'Email sent successfully');
