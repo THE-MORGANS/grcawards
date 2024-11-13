@@ -320,7 +320,6 @@
 	<!--==================== FOOTER ====================-->
 	@include('partials.voter.footer')
 	<!--================== FOOTER END ==================-->
-
 	<!--=================== TO TOP ===================-->
 	<a class="to-top" href="#home">
 		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
