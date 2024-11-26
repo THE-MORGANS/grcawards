@@ -175,23 +175,20 @@
 
          @endif
 
-            {{-- <li class="side-nav-item">
+            <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
                     <i class="mdi mdi-database-cog-outline"></i>
-                    <span> Data </span>
+                    <span> Upload Images </span>
                     <span class="menu-arrow"></span>
                 </a>
                 <div class="collapse" id="data">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="#">Analytics</a>
-                        </li>
-                        <li>
-                            <a href="#">Exports</a>
+                            <a href="{{route('admin.UploadFile')}}">Upload</a>
                         </li>
                     </ul>
                 </div>
-            </li> --}}
+            </li>
 
             
             {{-- <li class="side-nav-item">

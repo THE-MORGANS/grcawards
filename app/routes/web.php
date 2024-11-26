@@ -37,7 +37,8 @@ use App\Http\Controllers\ReminderController;
 Route::prefix('admin')->group(function(){
     Route::get('login', [AdminLoginController::class, 'showAdminLoginForm'])->name('admin.login');
     Route::post('login', [AdminLoginController::class, 'login'])->name('admin.loginn');
-
+    Route::get('/images/upload', [AdminController::class, 'UploadFile'])->name('admin.UploadFile');
+    Route::post('/images/uploads', [AdminController::class, 'UploadFiles'])->name('admin.UploadFiles');
     Route::get('', [AwardProgramsController::class, 'getAllAwardPrograms'])->name('award.programs');
     Route::middleware('auth:admin')->prefix('award-programs')->group(function(){
         Route::post('create', [AwardProgramsController::class, 'AddAwardProgram'])->name('award.program.create');
@@ -135,8 +136,7 @@ Route::get('winners/2024', [LandingPageController::class, 'showWinners2024'])->n
 
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
-Route::get('/images/upload', [LandingPageController::class, 'UploadFile'])->name('UploadFile');
-Route::post('/images/uploads', [LandingPageController::class, 'UploadFiles'])->name('UploadFiles');
+
 
 Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');

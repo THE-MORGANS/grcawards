@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AwardProgram;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -12,5 +14,27 @@ class AdminController extends Controller
     {
         echo "This is the Admin Page";
     }
+
+    public function UploadFile(){
+
+        return view('contents.admin.imageUpload');
+}
+    public function UploadFiles(Request $request){
+
+        foreach($request->file('images') as $images){
+            $image_url = cloudinary()->upload($images->getRealPath(), [
+                'folder' => 'grcfincrimeawards/gallery/'
+            ])->getSecurePath();
+
+            $progam = AwardProgram::where('status', 1)->first();
+      Gallery::create([
+            'award_program_id' => $progam->id,
+            'path' => $image_url,
+            'type' => 'image'
+
+         ]);
+}
+return back();
+}
 
 }
