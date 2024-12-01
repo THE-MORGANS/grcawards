@@ -36,7 +36,7 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">Winners for Governance Risk Compliance and Financial Crime Prevention Awards 2023</h4>
+                            <h4 class="title">Winners for Governance Risk Compliance and Financial Crime Prevention Awards 2024</h4>
                         </div>
                     </div>
                     <div class="accordion-wrapper" style="margin-top: 30px;">
