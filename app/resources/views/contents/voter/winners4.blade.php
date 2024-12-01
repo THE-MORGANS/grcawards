@@ -85,7 +85,7 @@
                                                                 <p>GT Bank</p>
                                                             </div>
                                                             <div class="col-6 col-md-6 mt-2">
-                                                                <img src="{{asset('/assets/olumide.png')}}" height="50">
+                                                                <img src="{{asset('/assets/osa.jpeg')}}" height="50">
                                                                 <p>OSA AIWERIOGHENE
                                                                     <span style="font-size:9px"><br> (CHIEF COMPLIANCE OFFICER) </span></p>
                                                             </div>
