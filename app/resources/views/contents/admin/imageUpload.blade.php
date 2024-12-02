@@ -30,18 +30,34 @@
     <!-- end row-->
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12 ">
+            <div class="row">
+                <div class="col-8">
             <div class="card">
                 <div class="card-body">
+                    <label> Upload Awards Images</label>
         <form action="{{route('admin.UploadFiles')}}" method="post" enctype="multipart/form-data">
             @csrf
+            <div class="mb-3">
             <input class="form-control" type="file" name="images[]" multiple> 
-            <br>
-            <span class="float-right p-2"> <button type="submit"  class="btn btn-lg btn-primary" > Upload Images </button></span>
-           
+        </div>
+        <div class="mb-3">
+            <label> Select Award year</label>
+            <select class="form-control" name="award_program">
+                @foreach($awardProgram as $awards)
+                <option value="{{$awards->id}}">  {{$awards->name}}</option>
+                @endforeach
+            </select>
+        </div>
+           <div class="mb-3 float-end">
+             <button type="submit"  class="btn btn-lg btn-primary" > Upload Images </button>
+            </div>
+        </form>
           </form>
                 </div>
             </div>
+        </div>
+    </div>
         </div>
     </div>
 

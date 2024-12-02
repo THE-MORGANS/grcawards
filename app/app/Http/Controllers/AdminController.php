@@ -17,7 +17,8 @@ class AdminController extends Controller
 
     public function UploadFile(){
 
-        return view('contents.admin.imageUpload');
+        return view('contents.admin.imageUpload')
+        ->with('awardProgram', AwardProgram::get());
 }
     public function UploadFiles(Request $request){
 
@@ -28,7 +29,7 @@ class AdminController extends Controller
 
             $progam = AwardProgram::where('status', 1)->first();
       Gallery::create([
-            'award_program_id' => $progam->id,
+            'award_program_id' => $request->award_program,
             'path' => $image_url,
             'type' => 'image'
 
