@@ -24,6 +24,13 @@
                     <i aria-hidden="true" class="mdi mdi-email-outline"></i>
                     <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a>
                 </p>
+                <div class="footer-email">
+                    <a href="">Republic of Ireland</a>
+                </div>
+                <p>21 Gillabbey Terrace, Gillabbey Street, Cork, T12 KPN4, Republic of Ireland<br>
+                    <i aria-hidden="true" class="mdi mdi-phone"></i>
+                    <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a>
+                </p>
 
                 <p class="footer-copyright" style="color:#8b8b8b;">
                     <a target="_blank" href="https://morgansconsortium.com" style="color: #D4AF37;">The Morgans Consortium</a> © {{date('Y')}}. All Rights Reserved.
