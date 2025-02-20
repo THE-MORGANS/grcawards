@@ -127,7 +127,7 @@
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<video style="width:100%;" controls>
+						<video style="width:100%;" controls autoplay muted>
 							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
 						</video>
 
@@ -143,6 +143,38 @@
 							<p>The GRC & Financial Crime Prevention Annual Awards was created to recognise outstanding contributions by individuals and companies to the development, understanding, or implementation of GRC systems in Nigeria and the...</p>
 						</div>
 						<a href="{{route('about_the_award')}}" class="btn" tabindex="-1"><span>Read More</span></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="s-our-mission s-about-speaker">
+			<div class="container">
+				<h2 class="title-conference"><span>Exiting Annoucements</span></h2>
+				<div class="row">
+					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
+						<!-- <span> -->
+						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
+						<video style="width:100%;" controls>
+							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
+						</video>
+
+						
+						
+						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
+						<!-- </span> -->
+					</div>
+					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
+					<h4>🌍 Announcing the Inaugural UK & Ireland GRC & Financial Crime Prevention Awards & Summit 2025! 🎉.</h4>
+						<div class="mission-info-text">
+							<p>We are excited to introduce the first-ever UK & Ireland GRC & Financial Crime Prevention Awards & Summit 2025, 
+								a groundbreaking event dedicated to recognizing excellence and innovation in Governance, Risk, Compliance (GRC), 
+								and Financial Crime Prevention.</p>
+							<p>This inaugural event will bring together leading professionals, regulators, policymakers, and organizations across Europe and the UK to 
+								address emerging risks, evolving regulations, and the latest advancements in financial crime prevention.</p>
+						</div>
+						<a href="{{route('about_the_award')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 				</div>
 			</div>
