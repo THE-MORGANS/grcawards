@@ -118,7 +118,7 @@ Route::get('login', [VoterLoginController::class, 'showLoginForm'])->name('show_
 Route::post('login', [VoterLoginController::class, 'login'])->name('login');
 Route::get('/', [LandingPageController::class, 'showLandingIndex'])->name('landing.index');
 Route::get('the-award/about-the-award', [LandingPageController::class, 'showAboutTheAward'])->name('about_the_award');
-Route::get('the-award/about-uk-awards', [LandingPageController::class, 'showAboutUKAwards'])->name('about_uk_awards');
+Route::get('the-award/uk-awards', [LandingPageController::class, 'showAboutUKAwards'])->name('about_uk_awards');
 Route::get('the-award/sectors-and-categories', [LandingPageController::class, 'showSectorsAndCategories'])->name('show_sect_cat');
 Route::get('the-award/the-organizers', [LandingPageController::class, 'showTheOrganizers'])->name('show_organizers');
 Route::get('the-award/contact-us', [LandingPageController::class, 'showContactUs'])->name('show_contact');
