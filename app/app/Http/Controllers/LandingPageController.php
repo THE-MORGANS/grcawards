@@ -240,4 +240,10 @@ class LandingPageController extends Controller
           
     }
 
+
+    public function showAboutUKAwards()
+    {
+        return view('contents.voter.grc_uk');
+    }
+
 }

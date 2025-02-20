@@ -148,7 +148,6 @@
 			</div>
 		</div>
 
-
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
 				<h2 class="title-conference"><span>Exiting Annoucements</span></h2>
@@ -156,7 +155,7 @@
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<video style="width:100%;" controls>
+						<video style="width:100%;" controls autoplay muted>
 							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
 						</video>
 
@@ -174,7 +173,7 @@
 							<p>This inaugural event will bring together leading professionals, regulators, policymakers, and organizations across Europe and the UK to 
 								address emerging risks, evolving regulations, and the latest advancements in financial crime prevention.</p>
 						</div>
-						<a href="{{route('about_the_award')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
+						<a href="{{route('about_uk_awards')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 				</div>
 			</div>
