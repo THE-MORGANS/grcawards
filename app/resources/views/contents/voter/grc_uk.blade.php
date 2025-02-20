@@ -26,10 +26,10 @@
 			<div class="breadcrumbs">
 				<ul>
 					<li><a href="{{route('landing.index')}}">Home</a></li>
-					<li>GRC Awards in UK</li>
+					<li>GRC & Financial Crime Prevention Awards & Summit in UK & Ireland</li>
 				</ul>
 			</div>
-			<h1 class="title">GRC Awards in UK</h1>
+			<h1 class="title">GRC & Financial Crime Prevention Awards & Summit in UK & Ireland</h1>
 		</div>
 	</div>
 	<!-- page title -->
