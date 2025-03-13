@@ -48,9 +48,9 @@
                             <img class="rx-lazy" src="{{asset('assets/images/sponsors/gtb.png')}}" data-src="{{asset('assets/images/sponsors/gtb.png')}}" alt="img">
                         </a> --}}
 
-                        <a href="#" class="instagram-item">
+                        {{-- <a href="#" class="instagram-item">
                             <img class="rx-lazy" src="{{asset('assets/images/sponsors/slt.png')}}" data-src="{{asset('assets/images/sponsors/slt.png')}}" alt="img">
-                        </a>
+                        </a> --}}
                         <a href="#" class="instagram-item">
                             <img class="rx-lazy" src="{{asset('assets/images/sponsors/tolex.png')}}" data-src="{{asset('assets/images/sponsors/tolex.png')}}" alt="img">
                         </a>

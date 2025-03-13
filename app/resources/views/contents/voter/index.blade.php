@@ -12,12 +12,7 @@
 <body id="conference-page">
 	<!-- =============== PRELOADER =============== -->
 	@include('partials.voter.preloader')
-	<!-- ============== PRELOADER END ============== -->
-	<!-- ================= HEADER ================= -->
 	@include('partials.voter.topbar')
-	<!-- =============== HEADER END =============== -->
-
-	<!-- =========== S-CONFERENCE-SLIDER =========== -->
 	<section class="s-conference-slider">
 	<div class="conference-slider">
 			{{-- <div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671453397/grcfincrimeawards/gallery/l3430eacq0c3496agrgi.jpg);"> --}}
@@ -130,9 +125,6 @@
 						<video style="width:100%;" controls autoplay muted>
 							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
 						</video>
-
-						
-						
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
@@ -158,9 +150,6 @@
 						<video style="width:100%;" controls autoplay muted>
 							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
 						</video>
-
-						
-						
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
@@ -315,12 +304,12 @@
 						<img src="{{asset('assets/images/sponsors/mtn_logo.jpg')}}" alt="img">
 					</div>
 				</div> --}}
-				<div class="client-slide">
+				{{-- <div class="client-slide">
 					<div class="client-slide-cover">
 						<img class="rx-lazy" src="{{asset('assets/images/sponsors/slt.png')}}" data-src="{{asset('assets/images/sponsors/slt.png')}}" alt="img">
                         
 					</div>
-				</div>
+				</div> --}}
 				
 				<div class="client-slide">
 					<div class="client-slide-cover">
@@ -346,18 +335,10 @@
 			</div>
 		</div>
 	</section>
-	<!--================= S-CLIENTS END =================-->
-
-	<!--==================== FOOTER ====================-->
 	@include('partials.voter.footer')
-	<!--================== FOOTER END ==================-->
-	<!--=================== TO TOP ===================-->
 	<a class="to-top" href="#home">
 		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
 	</a>
-	<!--================= TO TOP END =================-->
-
-	<!--=================== SCRIPT	===================-->
 	<script src="{{asset('assets/js/jquery-2.2.4.min.js')}}"></script>
 	<script src="{{asset('assets/js/slick.min.js')}}"></script>
 	<script src="{{asset('assets/js/rx-lazy.js')}}"></script>
