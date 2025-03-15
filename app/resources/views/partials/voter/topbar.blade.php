@@ -72,6 +72,10 @@
                                 <a href="{{route('show_sponsors')}}">sponsors </a>
 
                             </li>
+                            <li class="{{request()->is('code-of-conduct') ? 'active-page' : '' }}">
+                                <a href="{{route('CodeOfConduct')}}">Code of Conduct </a>
+
+                            </li>
                             <li class="dropdown {{request()->is('media/*') ? 'active-page' : '' }}">
                                 <a href="#">media <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>

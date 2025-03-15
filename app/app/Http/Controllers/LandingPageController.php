@@ -246,4 +246,9 @@ class LandingPageController extends Controller
         return view('contents.voter.grc_uk');
     }
 
+    public function CodeOfConduct()
+    {
+        return view('contents.voter.code_of_conduct');
+    }
+
 }

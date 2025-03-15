@@ -147,6 +147,7 @@ Route::get('summit/2022', [LandingPageController::class, 'showSummit2022'])->nam
 Route::get('programme', [LandingPageController::class, 'Programme'])->name('summit_programme');
 Route::get('summit/register', [LandingPageController::class, 'SummitRegister'])->name('summit_register');
 Route::post('summit/register/submit', [LandingPageController::class, 'SubmitRegisterForm'])->name('grcformRegister');
+Route::get('code-of-conduct', [LandingPageController::class, 'CodeOfConduct'])->name('CodeOfConduct');
 // Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
 Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
