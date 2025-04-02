@@ -1,0 +1,233 @@
+@extends('layouts.admin.master')
+
+@section('title', 'Awards')
+
+
+@section('content')
+<div class="container">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
+
+                <div class="page-title">
+                    <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
+                    </div>
+                    <h4 style="display: block;">Award Year 2024</h4>
+                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <h4 class="header-title mb-4">Add Awards Nominee Judging Criteria for {{$awards[0]->awards->name}} Awards</h4>
+                        </div>
+                        {{-- <div class="col-12 text-end">
+                            <button type="button" id="add-field" class="btn btn-success btn-sm">
+                                <i class="mdi mdi-plus mdi-24px"></i>
+                            </button>
+                        </div> --}}
+                    </div>
+                    <form class="needs-validation" method="POST" action="{{route('admin.getNominessDetails',[request()->segment(3)])}}"  id="form1">
+                        @csrf
+                        <div class="row" id="create-form-row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Select the Nominee</label>
+                                    <select class="form-select nominee_awards @error('nominees') is-invalid @enderror" value="" name="nominess" id="nominee_awards" onchange="form1.submit()">
+                                        <option id="init" value="">Please select...</option>
+                                        @foreach($awards as $award)
+                                        <option value="{{$award->id}}" @if(!empty($nominessDetails) && $nominessDetails->id == $award->id)  selected @endif >{{$award->nominee->name}}</option>
+                                        @endforeach
+                                    </select>
+                                    <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}"> 
+                                    @error('category_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong> select an Award</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-12 p-2 ">
+                               
+                                <table class="table table-responsive  table-bordered mt-2 mb-4">
+                                    <tr >
+                                        <th style="background:green; color:#fff">Nominee Name</th>
+                                        <th style="background:green; color:#fff"> Number of Votes</th>
+                                        <th style="background:green; color:#fff"> Vote Percentage </th>
+                                    </tr>
+                                   
+                                    @if($nominessDetails)
+                                    <tr>
+                                        <td>
+                                          {{$nominessDetails->nominee->name}}
+                                        </td>
+                                        <td>
+                                       {{$nominessDetails->number_of_votes}}
+                                        </td>
+                                        <td>
+                                        {{number_format($nominessDetails->percentage_votes,2)}}%
+                                        </td>
+                                    </tr>
+                                    @else
+                                    <tr>
+                                        <td>Select Nominee to display information</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    @endif
+
+                                   </table>
+                                
+                            </div>
+                            <div class="col-12 pt-4">
+                                <div class="mb-3">
+                                    <label class="control-label form-label"> Name</label>
+                                    <input class="form-control @error('names') is-invalid @enderror"  @if(isset($nominessDetails->names)) value="{{$nominessDetails->names}}" @endif placeholder="Enter Name" type="text" name="names" />
+                                   
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Title</label>
+                                    <input class="form-control @error('title') is-invalid @enderror"  @if(isset($nominessDetails->title)) value="{{$nominessDetails->title}}" @endif placeholder="Title" type="text" name="title"  />
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Profile on linkedIn</label>
+                                    <input class="form-control @error('profile_on_linkedIn') is-invalid @enderror" @if(isset($nominessDetails->profile_on_linkedIn)) value="{{$nominessDetails->profile_on_linkedIn}}" @endif placeholder="profile on linkedIn" type="text" name="profile_on_linkedIn"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Recognised professional association membership</label>
+                                    <input class="form-control @error('recognised_professional_association_membership') is-invalid @enderror" @if(isset($nominessDetails->recognised_professional_association_membership)) value="{{$nominessDetails->recognised_professional_association_membership}}" @endif placeholder="recognised professional association membership" type="text" name="recognised_professional_association_membership"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Number of independent non executive directors</label>
+                                    <input class="form-control @error('number_of_independent_non_executive_directors') is-invalid @enderror" @if(isset($nominessDetails->number_of_independent_non_executive_directors)) value="{{$nominessDetails->number_of_independent_non_executive_directors}}" @endif placeholder="Number of independent non executive directors" type="text" name="number_of_independent_non_executive_directors"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Board committee in place covering risk management</label>
+                                    <input class="form-control @error('board_committee_in_place_covering_risk_management') is-invalid @enderror" @if(isset($nominessDetails->board_committee_in_place_covering_risk_management)) value="{{$nominessDetails->board_committee_in_place_covering_risk_management}}" @endif placeholder="Board committee in place covering risk management" type="text" name="board_committee_in_place_covering_risk_management"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Evidence of policy on fin crime prevention</label>
+                                    <input class="form-control @error('evidence_of_policy_on_fin_crime_prevention') is-invalid @enderror" @if(isset($nominessDetails->evidence_of_policy_on_fin_crime_prevention)) value="{{$nominessDetails->evidence_of_policy_on_fin_crime_prevention}}" @endif placeholder="Evidence of policy on fin crime prevention" type="text" name="evidence_of_policy_on_fin_crime_prevention"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">AML Policy/Framework in Place</label>
+                                    <input class="form-control @error('aml_policy') is-invalid @enderror" @if(isset($nominessDetails->aml_policy)) value="{{$nominessDetails->aml_policy}}" @endif placeholder="aml policy" type="text" name="aml_policy"  />
+                                   
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Documentations</label>
+                                    <input class="form-control @error('documentation') is-invalid @enderror" @if(isset($nominessDetails->documentation)) value="{{$nominessDetails->documentation}}" @endif placeholder="Documentation" type="text" name="documentation"  />
+                                   
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="control-label form-label">Adverse Media</label> 
+                                    <input class="form-control @error('award_name') is-invalid @enderror" @if(isset($nominessDetails->adverse_media)) value="{{$nominessDetails->adverse_media}}" @endif  placeholder="adverse media" type="text" name="adverse_media"  />
+                                    @error('adverse_media')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+                            
+                          
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}"> Return Back</a>
+                            </div>
+                            <div class="col-6 text-end">
+                                <input type="submit" class="btn btn-success" value="Update Nominee information" name="submitButton">
+                            </div>
+                        </div>
+                    </form>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div> <!-- end col -->
+
+      
+        @endsection
+
+        @section('scripts')
+
+    <script>
+     
+        // var nominees = $("select[id=nominee_awards]").val();
+        // var nominees = $('.nominee_awards').val();
+        // alert($('.nominee_awards').val())
+        // $('#nominee_awards').on('change', function(){
+        //         jQuery.ajax({
+        //         url: "{{url('judges/nominess',"")}}"+nominees,
+        //         url: "{{route('admin.getNominessDetails','')}}"+222,
+        //         type:'get',
+        //         cache: false,
+        //         success: function(data){
+        //             console.log(data)
+        //            $("select[id=sector_name]").html(html);
+        //            $("select[id=sector_name]").removeAttr('disabled');
+        //         },
+        //     });
+        // })
+
+    </script>
+
+
+        {{-- <script src="{{asset('assets/js/pages/award.js')}}"></script> --}}
+
+        @if(Session::has('success'))
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "preventDuplicates": true,
+                "preventOpenDuplicates": true
+            }
+            toastr.success("{{ session('success') }}");
+        </script>
+        @endif
+
+        @if(Session::has('danger'))
+        <script>
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true,
+                "preventDuplicates": true,
+                "preventOpenDuplicates": true
+            }
+            toastr.error("{{ session('danger') }}");
+        </script>
+        @endif
+        @endsection
