@@ -23,7 +23,8 @@
 					<li>Summit</li>
 				</ul>
 			</div> --}}
-            <h5 class="title">2024 GRC and Financial Crime Prevention Summit</h5>
+            <h5 class="title">GRC & FinCrime Prevention Mid-Year Summit 2025
+            </h5>
         </div>
     </div>
     <!-- page title -->
@@ -74,10 +75,10 @@
 
                     <div class="col-12" style="text-align:justify; ">
                         <ul class="mission-meta p-3" style="display: block">
-                            <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Oriental Hotel, 3 Lekki Road, Victoria Island, Lagos</li>
-                            <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: Friday, 8th November, 2024
+                            <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Microsoft Teams (Online Meeting) </li>
+                            <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 6th,June 2025
                             </li>
-                            <li><i class="mdi mdi-clock-outline"></i>Time: 9am</li>
+                            <li><i class="mdi mdi-clock-outline"></i>Time: 12pm</li>
                             <li class="pt-3"><i class="mdi mdi-account-outline"></i> <a
                                     href="{{ route('summit_register') }}" target="_blank" style="font-size:25px">
                                     REGISTER HERE </a> </li>
@@ -98,99 +99,122 @@
 
                         <h4 class="col-12"
                             style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">
-                            Theme: "Digital Frontiers in Governance, Risk & Compliance: Addressing Financial Crime and
-                            Economic Challenges Across Global Sectors 2025 and Beyond"
+                            Theme: "Future-Proofing GRC & Financial Crime Prevention:
+                            The Convergence of AI, ESG, and Digital Compliance in a Rapidly Evolving Landscape
+                            "
                         </h4>
 
                         <div class="mission-info-text">
 
                             <p></p><br>
-                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 This conference</h6>
+                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 About the Summit
+                            </h6>
                             <p>
-                                This event promises to be one of the most impactful summits on governance, risk
-                                management, and compliance (GRC), specifically addressing the evolving threats posed by
-                                financial crime in an increasingly digital and interconnected global economy.
+                                The GRC & Financial Crime Prevention Mid-Year Summit 2025 is a strategic gathering of
+                                industry leaders, innovators, regulators, and professionals committed to safeguarding
+                                institutions and communities from the growing complexities of governance, risk,
+                                compliance (GRC), and financial crime.
+                                Held at a pivotal point in the year, this summit provides an essential pulse-check on
+                                how organisations are adapting to the convergence of AI, ESG, and digital compliance to
+                                stay ahead of emerging threats, regulatory shifts, and technological disruption.
 
-                                This year's theme is set to explore the increasing intersection between digital
-                                innovation and financial crime , fraud prevention, focusing on how emerging technologies
-                                and regulatory frameworks can tackle financial crime and fraud in a rapidly evolving
-                                global economy.
 
-                                As we move toward 2025, financial institutions, regulators, and global businesses face
-                                mounting challenges from cyber threats, fraud, and cross-border economic crimes. The
-                                summit aims to provide a platform for thought leaders and experts to share insights on
-                                how digital transformation can be leveraged to enhance governance, risk management, and
-                                compliance, while addressing the global economic impact of financial crime.
                             </p>
 
 
                             <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Key Focus Areas: </h5>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Why This Theme?
+                            </h5>
                             <br>
-							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Adapting Governance Strategies for a Digital World: </h6>
-                            <p class="mb-3"> Emphasis on how organizations can build resilient governance frameworks to handle emerging digital risks.</p>
-							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Financial Crime & Fraud Prevention Through Innovation: </h6>
-                            <p class="mb-3"> Exploring the role of artificial intelligence, blockchain, and big data in detecting and mitigating fraud, money laundering, and cybercrime.</p>
-							<h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Global Economic Implications: </h6>
-                            <p class="mb-3"> A focus on the economic challenges financial crime and fraud presents, particularly for emerging markets, and the necessary cross-sector collaboration for a stronger global economy.</p>
+                            <p class="mb-3"> With rapidly evolving regulatory landscapes, heightened ESG expectations,
+                                and the accelerated adoption of AI technologies, today’s GRC and FinCrime professionals
+                                must navigate a new frontier. This year’s theme focuses on future-proofing our
+                                frameworks by exploring:
+                            </p>
+                            <ul style="list-style: disc">
+                                <li> AI-driven compliance tools and ethical considerations</li>
+
+                                <li> ESG risk as a new compliance frontier</li>
+
+                                <li> The digitalisation of due diligence, reporting, and audit</li>
+
+                                <li> Cross-border data integrity and cyber risk</li>
+
+                                <li> Human-centred governance in an automated world</li>
+                            </ul>
 
 
                             <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Why Attend: </h5>
-                           
-                            <p class="mb-3"> Attendees will have the unique opportunity to gain actionable insights from global experts, explore cutting-edge technologies, and understand the future trends in governance, risk, and compliance. This summit is an essential gathering for professionals who aim to stay ahead of regulatory challenges, strengthen their risk frameworks, and combat financial crime in an increasingly digital world.</p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 What to Expect </h5>
+                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Keynotes & Leadership Panels
+                            </h6>
+                            <p class=" mb-2"> Hear from global experts and C-level executives shaping the future of
+                                GRC, ESG, and financial crime prevention.
+                            </p>
+                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Interactive Workshops & Tech
+                                Demos
 
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Why You Must Attend: </h6>
-                            <p class=" mb-2"> As the world continues to embrace rapid technological advancements, businesses, regulators, and financial institutions face unprecedented risks and opportunities. The 2024 summit provides a critical platform for stakeholders across various industries to come together and discuss innovative strategies for preventing financial crime, improving governance, and adapting to global economic challenges.
-								By attending, you'll have the chance to: </p>
-								<ul>
-									<li>
-										<p> <span style="font-weight: bold"> Gain Insights from Global Experts:</span> Learn directly from industry leaders, regulators, and technologists about how they are tackling today's most pressing financial crime issues.</p>
-									</li>
-									<li>
-										<p> <span style="font-weight: bold"> Expand Your Network:</span> Connect with decision-makers, experts, and peers in GRC, financial crime prevention, and risk management from Nigeria and around the world</p>
-									</li>
-									<li>
-										<p> <span style="font-weight: bold"> Stay Ahead of Compliance Trends:</span>Discover how the latest in AI, machine learning, and big data is shaping the future of compliance and how your organization can stay ahead of regulatory challenges.</p>
-									</li>
-								</ul>
+                            </h6>
+                            <p class=" mb-2"> Gain hands-on insights into AI tools, digital platforms, and ESG
+                                compliance technologies.
+                            </p>
 
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Benefits of Attending: </h6>
-							<ul>
-								<li>
-									<p> <span style="font-weight: bold"> Practical Knowledge:</span> Attendees will walk away with actionable insights into effective governance frameworks, risk management practices, and compliance solutions, especially suited to Nigerian and African business environments.</p>
-								</li>
-								<li>
-									<p> <span style="font-weight: bold"> Real-World Case Studies:</span> Learn from real-life examples and case studies from top financial institutions, demonstrating how they've successfully navigated digital transformation while combating financial crime.</p>
-								</li>
-								<li>
-									<p> <span style="font-weight: bold"> New Technologies:</span>Explore cutting-edge technologies designed to detect, prevent, and manage financial crime in both local and international markets.</p>
-								</li>
-								<li>
-									<p> <span style="font-weight: bold">Global Perspectives:</span>Benefit from a global perspective on regulatory trends, compliance issues, and risk mitigation strategies that are critical for staying competitive in the financial sector.</p>
-								</li>
-							</ul>
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Expectations::
+                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Case Studies & Industry
+                                Spotlights
+                            </h6>
+                            <p class=" mb-2">Learn from real-world implementations across banking, fintech, healthcare,
+                                energy, and public sector landscapes.
+                            </p>
+
+                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Women in GRC & FinCrime
+                                Prevention Forum
+
+                            </h6>
+                            <p class=" mb-2">A dedicated session spotlighting leadership, innovation, and inclusion.
+
+                            </p>
+
+                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Global Regulatory Updates
                             </h6>
                             <p class=" mb-2">
-								Attendees can expect a highly interactive and engaging event, with keynote presentations, panel discussions, and networking sessions that foster collaboration. Experts will share their knowledge on key topics such as digital currency regulations, AI-powered financial crime detection tools, and cross-border regulatory cooperation. This is a must-attend event for professionals looking to strengthen their organizations’ governance and risk frameworks while addressing emerging financial crime threats in a post-2025 world.
- 
-								Mark your calendar for the 2024 GRC and Financial Crime Prevention Summit, and be prepared to deepen your expertise, expand your network, and enhance your organization's compliance strategies in an ever-changing digital landscape!</p>
-
-
-
-                            <p class="p-3">
-
+                                Stay ahead of legislative trends with insights from regulators and policy experts.
                             </p>
+                            <h5 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">💡 Who Should Attend?
+                            </h5>
+                            <br>
+                            <ul style="list-style: disc">
+                                <li> GRC, Risk, and Compliance Professionals </li>
 
+                                <li> Financial Crime & AML Specialists</li>
+
+                                <li> Chief Risk & Compliance Officers (CROs, CCOs)</li>
+
+                                <li> ESG & Sustainability Leads</li>
+
+                                <li> Legal, Audit, and Ethics Executives</li>
+
+                                <li> Data & AI Strategy Leaders</li>
+
+                                <li> Regulators, Policymakers, and Law Enforcement</li>
+
+                                <li> Technology and Innovation Officers</li>
+
+                                <li> Academia, Researchers, and Students in GRC-related fields</li>
+                                </li>
+                            </ul>
 
                         </div>
-
 
                         <div class="mission-info-text">
                             <h6 class="col-12" style="padding-left:0;padding-right:0;"> </h6>
                             <ol style="list-style-type: lower-roman;padding-right:10px;padding-left:0px;">
-                                Mark your calendar for the 2024 GRC and Financial Crime Prevention Summit, and be prepared to deepen your expertise, expand your network, and enhance your organization's compliance strategies in an ever-changing digital landscape!
+                                Mid-Year Excellence Recognition
+                                This year’s summit will also feature a special Mid-Year Excellence Recognition —
+                                highlighting standout individuals and teams advancing GRC and FinCrime innovation.
+                                Call for Speakers & Sponsors
+                                Interested in joining the conversation as a speaker, partner, or exhibitor?
+                                Reach out to us via [Insert Contact Form or Email] or visit our Sponsorship
+                                Opportunities page.
                                 🌟
                             </ol>
                         </div>
@@ -212,7 +236,8 @@
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Edidiong Akan </h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer at Stanbic IBTC Pension</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer at
+                                Stanbic IBTC Pension</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
                                     <a href="https://www.linkedin.com/in/edidiong-akan-6a152922/" tabindex="-1"
@@ -232,10 +257,13 @@
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Florence Abraham (MSc., FCA, HCIB, CAMS, FCIN, FISL)
+                            <h3 class="name" style="font-size:18px">Florence Abraham (MSc., FCA, HCIB, CAMS, FCIN,
+                                FISL)
                             </h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;"> Former DIRECTOR. Central Bank of Nigeria. Prudential Regulations, ML TF Reg, Foreign EXcnge, in Central Bank of Nigeria. Anti-Money Laundering Specialist & Trainer</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;"> Former DIRECTOR. Central
+                                Bank of Nigeria. Prudential Regulations, ML TF Reg, Foreign EXcnge, in Central Bank of
+                                Nigeria. Anti-Money Laundering Specialist & Trainer</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
                                     <a href="https://www.linkedin.com/in/florence-abraham-msc-fca-hcib-cams-fcin-fisl-86235243/"
@@ -257,7 +285,9 @@
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Temitope Yusuff</h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director | Business and Finance Leader | Governance, Risk and Control Expert | Transforming Businesses to achieve Sustainable Growth</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director | Business and
+                                Finance Leader | Governance, Risk and Control Expert | Transforming Businesses to
+                                achieve Sustainable Growth</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
                                     <a href="https://www.linkedin.com/in/temitope-yusuff-86b41b57/" tabindex="-1"
@@ -272,13 +302,15 @@
                 </div>
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFf9sAQkGLYSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683622890981?e=1733961600&v=beta&t=A9J0JywVMY-wgUWudmlrxu297mDU9aPwIwba5KZkt2s" alt="img">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFf9sAQkGLYSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683622890981?e=1733961600&v=beta&t=A9J0JywVMY-wgUWudmlrxu297mDU9aPwIwba5KZkt2s"
+                            alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Hossana Gani (Dip.CorpGov), ACIS, DipESG
                             </h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">MBA Candidate LIGS-USA || Corporate Governance || Legal Risk & Compliance
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">MBA Candidate LIGS-USA ||
+                                Corporate Governance || Legal Risk & Compliance
                             </p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
@@ -301,7 +333,8 @@
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Adedamola Oloko, ACIIN</h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Innovative Partnerships & Investments @ AXA | InsurTech Business Series Podcast | InsurTech in Africa
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Innovative Partnerships &
+                                Investments @ AXA | InsurTech Business Series Podcast | InsurTech in Africa
                             </p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
@@ -323,9 +356,12 @@
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CEO & Founder @ MIM Finance | Legal & Compliance, Strategic Leadership, Fintech, BPO and the author of The Coin Quest (a children’s book on financial literacy).
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CEO & Founder @ MIM Finance
+                                | Legal & Compliance, Strategic Leadership, Fintech, BPO and the author of The Coin
+                                Quest (a children’s book on financial literacy).
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/george-lawrence-badejo-adegbenga-261a61b/" tabindex="-1" target="_blank">
+                                    <a href="https://www.linkedin.com/in/george-lawrence-badejo-adegbenga-261a61b/"
+                                        tabindex="-1" target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
                                     </a>
@@ -344,11 +380,11 @@
                             <h3 class="name" style="font-size:18px">Temitayo Sogbola
                             </h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Governance, Risk Management & Assurance Expert Driving Sustainable Business Growth</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Governance, Risk Management
+                                & Assurance Expert Driving Sustainable Business Growth</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/tsogbola/"
-                                        tabindex="-1" target="_blank">
+                                    <a href="https://www.linkedin.com/in/tsogbola/" tabindex="-1" target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
                                     </a>
@@ -363,17 +399,18 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="{{asset('assets/images/pittson.jpeg')}}"
-                            alt="img">
+                        <img src="{{ asset('assets/images/pittson.jpeg') }}" alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Pattison Boleigha
                             </h3>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">FCIN, CAMS, CRMA, CGEIT, FCA, HCIB, ACIT, Compliance, Governance, Security, Risk Manager| Anti-Money Laundering Specialist to Auditor| Compliance Officer</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">FCIN, CAMS, CRMA, CGEIT,
+                                FCA, HCIB, ACIT, Compliance, Governance, Security, Risk Manager| Anti-Money Laundering
+                                Specialist to Auditor| Compliance Officer</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/pattison-boleigha-4829bb9/"
-                                        tabindex="-1" target="_blank">
+                                    <a href="https://www.linkedin.com/in/pattison-boleigha-4829bb9/" tabindex="-1"
+                                        target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
                                     </a>
@@ -385,68 +422,61 @@
                 </div>
 
                 <div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="https://media.licdn.com/dms/image/v2/C4E03AQEzCTh2SbUgeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516347514780?e=1733961600&v=beta&t=Pxhr8dmvE_v7aSUEky1Q50RM0TzlXC8mhrudOkxOEYw" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Yele Okeremi, DBA </h3>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Ceo, Precise Financial Systems</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/yele-okeremi-dba-a55b9aa/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
+                    <div class="our-speaker-item">
+                        <img src="https://media.licdn.com/dms/image/v2/C4E03AQEzCTh2SbUgeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516347514780?e=1733961600&v=beta&t=Pxhr8dmvE_v7aSUEky1Q50RM0TzlXC8mhrudOkxOEYw"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Yele Okeremi, DBA </h3>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Ceo, Precise Financial
+                                Systems</p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/yele-okeremi-dba-a55b9aa/" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
 
-					</div>
-				</div>
+                    </div>
+                </div>
 
                 <div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="{{asset('assets/images/balogun.jpeg')}}" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Esosa Balogun BSc, FCA, CCSA, CRMA, CIA, MBA </h3>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">General Manager, Risk Management at MTN Nigeria Communications Plc</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/esosa-balogun/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
+                    <div class="our-speaker-item">
+                        <img src="{{ asset('assets/images/balogun.jpeg') }}" alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Esosa Balogun BSc, FCA, CCSA, CRMA, CIA, MBA
+                            </h3>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">General Manager, Risk
+                                Management at MTN Nigeria Communications Plc</p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/esosa-balogun/" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
 
-					</div>
-				</div>
-
-                {{-- <div class="slide-our-speaker">
-					<div class="our-speaker-item">
-						<img src="{{asset('assets/images/jide.png')}}" alt="img">
-						<div class="speaker-item-info" style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-							<h3 class="name" style="font-size:18px">Jide Ibitayo	</h3>
-							<p class="prof mt-2" style="font-size:16px;line-height:1rem;">Company Secretary/Group Legal Counsel at Mutual Benefits Assurance Plc</p>
-							<div class="meta">
-								<span class="post-tag" style="margin-right:7px;">
-									<a href="https://www.linkedin.com/in/jide-ibitayo-381ba480/" tabindex="-1" target="_blank">
-										<i class="mdi mdi-linkedin mdi-24px" style="color:#fff" aria-hidden="true"></i>
-									</a>
-								</span>
-							</div>
-						</div>
-
-					</div>
-				</div> --}}
+                    </div>
+                </div>
 
             </div>
             <ul class="pt-5">
                 <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
-                    style="font-size:20px"> REGISTER HERE </a> </li>
-                <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Oriental Hotel, 3 Lekki Road, Victoria Island, Lagos</li>
+                        style="font-size:20px"> REGISTER HERE </a> </li>
+                <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Oriental Hotel,
+                    3 Lekki Road, Victoria Island, Lagos</li>
                 <li><i aria-hidden="true" class="uil uil-calendar-alt"></i> Date: Friday, 8th November, 2024
-                </li> 
+                </li>
                 <li><i class="mdi mdi-clock-outline"></i>Time: 9am</li>
-             
+
             </ul>
 
             <ul class="mission-meta">
