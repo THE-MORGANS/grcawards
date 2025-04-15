@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 <head>
-	@include('partials.voter.head')
+	@include('uk.partials.voter.head')
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.min.css')}}" />
 	<style>
 	</style>
@@ -11,8 +11,8 @@
 
 <body id="conference-page">
 	<!-- =============== PRELOADER =============== -->
-	@include('partials.voter.preloader')
-	@include('partials.voter.topbar')
+	@include('uk.partials.voter.preloader')
+	@include('uk.partials.voter.topbar')
 	<section class="s-conference-slider">
 	<div class="conference-slider">
 			{{-- <div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671453397/grcfincrimeawards/gallery/l3430eacq0c3496agrgi.jpg);"> --}}
@@ -22,59 +22,23 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">12 December 2025 | London, United Kingdom</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<h2 class="title"><span>Prevention Awards & Summit Europe</span></h2>
+						<p>Driving Integrity, Compliance, and Excellence Across Borders.</p>
+						
 					</div>
 				</div>
 			</div>
-			{{-- <div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671454134/grcfincrimeawards/gallery/kovtdfmqtiqzklvq1h0r.jpg);"> --}}
 				<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453416/grcfincrimeawards/gallery/rb6xu9gaqe38igyleywp.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">12 December 2025 | London, United Kingdom</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
-					</div>
-				</div>
-			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453427/grcfincrimeawards/gallery/afgdyjbjgtlrhqnd48zn.jpg);">
-				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
-				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
-				<div class="container" style="justify-content: flex-start;">
-					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
-					</div>
-				</div>
-			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1664454804/grcfincrimeawards/gallery/rjhnk2j9a5oq5j5kzqpw.jpg);">
-				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
-				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
-				<div class="container" style="justify-content: flex-start;">
-					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
-					</div>
-				</div>
-			</div>
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671449112/grcfincrimeawards/gallery/nkjnn2vv0na9qmk5qfad.jpg);">
-				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
-				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
-				<div class="container" style="justify-content: flex-start;">
-					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<h2 class="title"><span>Prevention Awards & Summit Europe</span></h2>
+						<p>Driving Integrity, Compliance, and Excellence Across Borders.</p>
 					</div>
 				</div>
 			</div>
@@ -85,35 +49,7 @@
 	<!-- =========== S-CONFERENCE-COUNTER =========== -->
 	<section id="about" class="s-conference-mission pt-0">
 		<div class="s-conference-counter">
-			<div class="container">
-				<div class="conference-counter-wrap">
-					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
-					<div class="conference-counter-cover">
-						<h4>VOTING CLOSED FOR GRC FINANCIAL CRIME PREVENTION AWARDS 2024 </h4>
-						{{-- <h3>Voting is Open</h3> --}}
-						 {{-- <h4>To view the shortlisted finalists, <a href="{{route('show_shortlisted_nomineees')}}" class="" tabindex="-1" style="color:rgba(39, 39, 39, .9)"><span>click here</span></a></h4>  --}}
-						{{-- <div id="clockdiv" class="clock-timer clock-timer-conference">
-					<div class="clock-item days-item">
-						<span class="days">--</span>
-							<div class="smalltext">Days</div>
-							</div>
-						<div class="clock-item hours-item">
-							<span class="hours">--</span>
-							<div class="smalltext">Hours</div>
-							</div>
-							<div class="clock-item minutes-item">
-								<span class="minutes">--</span>
-								<div class="smalltext">Minutes</div>
-						</div>
-							<div class="clock-item seconds-item">
-							<span class="seconds">--</span>
-							<div class="smalltext">Seconds</div>
-						</div>
-						</div> --}}
-					</div> 
-					<img class="conference-counter-effect-2" src="assets/images/counter-icon-2.svg" alt="img">
-				</div>
-			</div>
+			
 		</div>
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
@@ -335,7 +271,7 @@
 			</div>
 		</div>
 	</section>
-	@include('partials.voter.footer')
+	@include('uk.partials.voter.footer')
 	<a class="to-top" href="#home">
 		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
 	</a>

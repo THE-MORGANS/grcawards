@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="footer-cont col-12 col-sm-6 col-lg-4">
-                <a href="index.html" class="logo"><img style="height: 100px;width: 100px;" src="{{asset('/assets/logo.png')}}" alt="logo"></a>
+                <a href="index.html" class="logo"><img style="height: 100px;width: 100px;" src="{{asset('/assets/images/grclogo.png')}}" alt="logo"></a>
                 <div class="footer-email">
                     <a href="">Africa</a>
                 </div>

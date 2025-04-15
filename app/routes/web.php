@@ -32,7 +32,10 @@ use App\Http\Controllers\ReminderController;
 //     return view('contents.admin.dashboard');
 // });
 
-//Admin Routes
+//Admin Route
+
+
+
 
 Route::prefix('admin')->group(function(){
     Route::get('login', [AdminLoginController::class, 'showAdminLoginForm'])->name('admin.login');
@@ -109,6 +112,7 @@ Route::prefix('admin')->group(function(){
 });
 // Route::get('/', [LandingController::class, 'showLandingPageIndex'])->name('show_landing_index');
 
+require __DIR__.'/Ukroutes.php';
 
 Route::get('register', [VoterRegisterController::class, 'showRegisterForm'])->name('show_register_form');
 Route::post('register', [VoterRegisterController::class, 'register'])->name('register');
@@ -152,3 +156,4 @@ Route::get('code-of-conduct', [LandingPageController::class, 'CodeOfConduct'])->
 Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
 Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
+

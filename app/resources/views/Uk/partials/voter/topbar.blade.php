@@ -1,4 +1,4 @@
-@if(Route::currentRouteName() == 'landing.index')
+@if(Route::currentRouteName() == 'show.ukLanding')
 <header class="conference-header-fixed header-fixed">
     @else
     <header class="conference-header-fixed" style="background-color: #272727;">
@@ -11,8 +11,8 @@
         <div class="container">
             <div class="row conference-header-row">
                 <div class="col-sm-2 col-lg-2 col-xl-2">
-                    <a href="{{route('landing.index')}}" class="logo">
-                        <img src="{{asset('/assets/logo.png')}}" loading="lazy" alt="GRC & FinCrime Awards and Summit" style="height: 80px;width: 80px;position:absolute;margin-top: -20px;" />
+                    <a href="{{route('uk.landing.index')}}" class="logo">
+                        <img src="{{asset('/assets/images/grclogo.png')}}" loading="lazy" alt="GRC & FinCrime Awards and Summit" style="height: 80px;width: 80px;position:absolute;margin-top: -20px;" />
                     </a>
                 </div>
                 <div class="col-sm-10 col-lg-10 col-xl-10">

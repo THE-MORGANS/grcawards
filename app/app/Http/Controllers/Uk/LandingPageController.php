@@ -26,12 +26,11 @@ class LandingPageController extends Controller
     {
 
         $judges = Judge::where('award_program_id', 4)->inRandomOrder()->get();
-        return view('contents.voter.index')->with(['judges'=>$judges]);
+        return view('Uk.contents.voter.index')->with(['judges'=>$judges]);
     }
 
     public function showAboutTheAward()
     {
-        
         return view('contents.voter.about_the_award');
     }
 
