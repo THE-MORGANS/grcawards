@@ -374,11 +374,10 @@
             <ul class="pt-5">
                 <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
                         style="font-size:20px"> REGISTER HERE </a> </li>
-                <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Oriental Hotel,
-                    3 Lekki Road, Victoria Island, Lagos</li>
-                <li><i aria-hidden="true" class="uil uil-calendar-alt"></i> Date: Friday, 8th November, 2024
-                </li>
-                <li><i class="mdi mdi-clock-outline"></i>Time: 9am</li>
+                        <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Microsoft Teams (Online Meeting) </li>
+                        <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 6th,June 2025
+                        </li>
+                <li><i class="mdi mdi-clock-outline"></i>Time: 12:00noon - 2:00pm</li>
 
             </ul>
 
