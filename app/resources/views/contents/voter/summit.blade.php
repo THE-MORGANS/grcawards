@@ -228,19 +228,22 @@
         <div class="container">
             <h2 class="title-conference"><span>Our Speakers</span></h2>
             <div class="slider-our-speaker">
+
+
+
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQExN6IkZUrLlA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1709110417145?e=1733961600&v=beta&t=Syr1ra4F9ICNDcHDIHqPDKSoIPEvtk4boCTRqINn5g0"
+                        <img src="{{asset('/assets/thomas.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Edidiong Akan </h3>
+                            <h3 class="name" style="font-size:18px">Thomas Wan CK 尹志堅 IBFA, CFTP Snr, FICA, CCRO, MSCS
+                            </h3>
                             {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chief Compliance Officer at
-                                Stanbic IBTC Pension</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">EduCert Committee at Blockchain Association of Singapore; Consultant, SME at Singapore College of Insurance; Consultant / Course Director at International Compliance Association; Continuous Lifelong Learning</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/edidiong-akan-6a152922/" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/thomas-wan-ck-%E5%B0%B9%E5%BF%97%E5%A0%85-ibfa-cftp-snr-fica-ccro-mscs/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -253,21 +256,18 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQELwSXIPMt_-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699016833958?e=1733961600&v=beta&t=c9RF8qRJ8hUcUZRLfpb-TcWd_3jlz8Y1Fi9r9KJftkU"
+                        <img src="{{asset('/assets/pittason.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Florence Abraham (MSc., FCA, HCIB, CAMS, FCIN,
-                                FISL)
+                            <h3 class="name" style="font-size:18px">Pattison Boleigha
                             </h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;"> Former DIRECTOR. Central
-                                Bank of Nigeria. Prudential Regulations, ML TF Reg, Foreign EXcnge, in Central Bank of
-                                Nigeria. Anti-Money Laundering Specialist & Trainer</p>
+                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p> --}}
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">FCIN, CAMS, CRMA, CGEIT, FCA, HCIB, ACIT, Compliance, Governance, Security, Risk Manager| Anti-Money Laundering Specialist to Auditor| Compliance Officer</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/florence-abraham-msc-fca-hcib-cams-fcin-fisl-86235243/"
-                                        tabindex="-1" target="_blank">
+                                    <a href="https://www.linkedin.com/in/pattison-boleigha-4829bb9/" tabindex="-1"
+                                        target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
                                     </a>
@@ -279,15 +279,60 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/C4D03AQFqaBPFIAXNuA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1616064621997?e=1733961600&v=beta&t=Nv0GzbRbuovOixIcB-9kPOg-o1NaXkt9fZrr0i-hZ6A"
+                        <img src="{{asset('/assets/loretta.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Temitope Yusuff</h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director | Business and
-                                Finance Leader | Governance, Risk and Control Expert | Transforming Businesses to
-                                achieve Sustainable Growth</p>
+                            <h3 class="name" style="font-size:18px">Loretta Joseph
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Managing Director | Policy Group, Consultant, Senior Policy Advisor</p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/loretta-joseph-853a5b142/" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/nicola.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Dr. Nicola Harding
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CEO, We Fight Fraud</p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/dr-nic/" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/temi.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Temitope Yusuff
+ 
+                            </h3>
+                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p> --}}
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director | Business and Finance Leader | Governance, Risk and Control Expert | Transforming Businesses to achieve Sustainable Growth</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
                                     <a href="https://www.linkedin.com/in/temitope-yusuff-86b41b57/" tabindex="-1"
@@ -300,21 +345,20 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFf9sAQkGLYSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1683622890981?e=1733961600&v=beta&t=A9J0JywVMY-wgUWudmlrxu297mDU9aPwIwba5KZkt2s"
+                        <img src="{{asset('/assets/periham.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Hossana Gani (Dip.CorpGov), ACIS, DipESG
+                            <h3 class="name" style="font-size:18px">Perihan Abdelghaly
                             </h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">MBA Candidate LIGS-USA ||
-                                Corporate Governance || Legal Risk & Compliance
-                            </p>
+                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p> --}}
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Sustainable Finance | Strategic Lead | Emerging Markets | Education Expert | Corporate Trainer | Advisory Board Member of Women in Governance, Risk, Compliance, and Financial Crime Prevention (WGRCFP)</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/ganihossana/" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/perihan-abdelghaly-phd-a1b34b38/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -322,150 +366,9 @@
                                 </span>
                             </div>
                         </div>
-
-                    </div>
-                </div>
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQEfVTR3zDVMCQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1694820167884?e=1733961600&v=beta&t=Sk5n8v2QQ9LoG7EnAzUBltlM8dOrdaoL9WC20gG4nmg"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Adedamola Oloko, ACIIN</h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Innovative Partnerships &
-                                Investments @ AXA | InsurTech Business Series Podcast | InsurTech in Africa
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/adedamolaoloko/" tabindex="-1">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/C4E03AQF-hJl85yf7ag/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1664021663179?e=1733961600&v=beta&t=Y7oaPfuP63hJ6j6LxOpwmwz3Xn4Ej-DWjT3itfocZ78"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">George, Lawrence Badejo-Adegbenga</h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CEO & Founder @ MIM Finance
-                                | Legal & Compliance, Strategic Leadership, Fintech, BPO and the author of The Coin
-                                Quest (a children’s book on financial literacy).
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/george-lawrence-badejo-adegbenga-261a61b/"
-                                        tabindex="-1" target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/C5603AQHPGjz_kd0P1w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1615501693003?e=1733961600&v=beta&t=84PPivErM10-hRLet8g0U1DQOuqas54PdGuunHRDlRA"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Temitayo Sogbola
-                            </h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p> --}}
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Governance, Risk Management
-                                & Assurance Expert Driving Sustainable Business Growth</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/tsogbola/" tabindex="-1" target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
-
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{ asset('assets/images/pittson.jpeg') }}" alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Pattison Boleigha
-                            </h3>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">FCIN, CAMS, CRMA, CGEIT,
-                                FCA, HCIB, ACIT, Compliance, Governance, Security, Risk Manager| Anti-Money Laundering
-                                Specialist to Auditor| Compliance Officer</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/pattison-boleigha-4829bb9/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="https://media.licdn.com/dms/image/v2/C4E03AQEzCTh2SbUgeQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516347514780?e=1733961600&v=beta&t=Pxhr8dmvE_v7aSUEky1Q50RM0TzlXC8mhrudOkxOEYw"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Yele Okeremi, DBA </h3>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Ceo, Precise Financial
-                                Systems</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/yele-okeremi-dba-a55b9aa/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{ asset('assets/images/balogun.jpeg') }}" alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Esosa Balogun BSc, FCA, CCSA, CRMA, CIA, MBA
-                            </h3>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">General Manager, Risk
-                                Management at MTN Nigeria Communications Plc</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/esosa-balogun/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
 
             </div>
             <ul class="pt-5">
