@@ -15,7 +15,7 @@
 	@include('partials.voter.topbar')
 	<!-- =============== HEADER END =============== -->
 	<!-- Page title -->
-	<div class="p" style="background: url('{{asset('assets/summit2.jpeg')}}'); height:400px" >
+	<div class="p" style="background: url('{{asset('assets/summit5.jpeg')}}'); height:650px" >
 		<div class="container" > 
 			{{-- <div class="breadcrumbs">
 				<ul>
@@ -34,8 +34,8 @@
 			<div class="container">
 			
 			<div class="conference-counter-wrap ">
-			<div  style="background:#fff; color:#000; height:100%; padding:100px 20px;  text-align:left" class="mb-10">
-							<h6 class=""> GRC & FinCrime Prevention Year Summit and Awards 2024
+			<div  style="background:#fff; color:#000; height:100%; padding:40px 20px;  text-align:left" class="mb-10">
+							<h6 class=""> GRC & FinCrime Prevention Year Summit and Awards 2025
                                 </h6>
 						{{-- <p> Thu, 15 Jun, 12:00 - 14:00 GMT+1</p> --}}
                         <hr>
