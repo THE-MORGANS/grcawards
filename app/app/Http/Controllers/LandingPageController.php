@@ -13,6 +13,7 @@ use App\Models\Judge;
 use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Models\Award;
+use App\Models\BoardMembers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
 use App\Models\SummitRegistration;
@@ -253,6 +254,12 @@ class LandingPageController extends Controller
     public function CodeOfConduct()
     {
         return view('contents.voter.code_of_conduct');
+    }
+
+    public function BoardMembers()
+    {
+        return view('contents.voter.board_members')
+        ->with('boards', BoardMembers::get());
     }
 
 }

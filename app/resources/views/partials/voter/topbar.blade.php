@@ -62,6 +62,7 @@
                                 <a href="{{route('show_vote')}}">vote</a>
                                 {{-- <a href="#">vote</a> --}}
                             </li>
+                            <li class="{{request()->is('advisory/board-members') ? 'active-page' : '' }}"><a href="{{route('board_members')}}">Board Members</a></li>
                             <li class="dropdown {{request()->is('judges/*') ? 'active-page' : ''}}">
                                 <a href="#">Judges <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>
@@ -73,10 +74,7 @@
                                 <a href="{{route('show_sponsors')}}">sponsors </a>
 
                             </li>
-                            <li class="{{request()->is('code-of-conduct') ? 'active-page' : '' }}">
-                                <a href="{{route('CodeOfConduct')}}">Code of Conduct </a>
-
-                            </li>
+                            
                             <li class="dropdown {{request()->is('media/*') ? 'active-page' : '' }}">
                                 <a href="#">media <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>
@@ -88,6 +86,7 @@
                             <li class="dropdown {{request()->is('others/*') ? 'active-page' : ''}}">
                                 <a href="#">others <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>
+                                    <li class="{{request()->is('code-of-conduct') ? 'active-page' : '' }}"> <a href="{{route('CodeOfConduct')}}">Code of Conduct </a> </li>
                                     <li class="{{request()->is('others/faqs') ? 'active-page' : '' }}"><a href="{{route('show_faqs')}}">FAQs</a></li>
                                     <li class="{{request()->is('others/terms-and-conditions') ? 'active-page' : '' }}"><a href="{{route('show_tc')}}">Terms & Conditions</a></li>
                                     <li class="{{request()->is('others/privacy-policy') ? 'active-page' : '' }}"><a href="{{route('show_policy')}}">Privacy Policy</a></li>
