@@ -22,7 +22,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">7th Nov 2025</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -35,7 +35,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">7th Nov 2025</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -47,7 +47,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">7th Nov 2025</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -59,7 +59,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">7th Nov 2025</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -71,7 +71,7 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">8th Nov 2024</div>
+						<div class="date">7th Nov 2025</div>
 						<div class="conference-slider-title">GRC & FinCrime</div>
 						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
 						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
@@ -89,27 +89,10 @@
 				<div class="conference-counter-wrap">
 					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
 					<div class="conference-counter-cover">
-						<h4>VOTING CLOSED FOR GRC FINANCIAL CRIME PREVENTION AWARDS 2024 </h4>
+						<h4>VOTING WILL START FROM 1ST JUNE 2025 TO 30TH AUGUST 2025 </h4>
 						{{-- <h3>Voting is Open</h3> --}}
 						 {{-- <h4>To view the shortlisted finalists, <a href="{{route('show_shortlisted_nomineees')}}" class="" tabindex="-1" style="color:rgba(39, 39, 39, .9)"><span>click here</span></a></h4>  --}}
-						{{-- <div id="clockdiv" class="clock-timer clock-timer-conference">
-					<div class="clock-item days-item">
-						<span class="days">--</span>
-							<div class="smalltext">Days</div>
-							</div>
-						<div class="clock-item hours-item">
-							<span class="hours">--</span>
-							<div class="smalltext">Hours</div>
-							</div>
-							<div class="clock-item minutes-item">
-								<span class="minutes">--</span>
-								<div class="smalltext">Minutes</div>
-						</div>
-							<div class="clock-item seconds-item">
-							<span class="seconds">--</span>
-							<div class="smalltext">Seconds</div>
-						</div>
-						</div> --}}
+					
 					</div> 
 					<img class="conference-counter-effect-2" src="assets/images/counter-icon-2.svg" alt="img">
 				</div>
