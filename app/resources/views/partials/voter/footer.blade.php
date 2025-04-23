@@ -18,7 +18,7 @@
                 <div class="footer-email">
                     <a href="">United kingdom</a>
                 </div>
-                <p>House 24, Holborn Viaduct, London EC1A 2BN, United Kingdom. <br>
+                <p>85 Great Portland Street, First Floor, London W1W 7LT, United Kingdom<br>
                     <i aria-hidden="true" class="mdi mdi-phone"></i>
                     <a href="tel:+447466588324">+44-7466588324</a><br>
                     <i aria-hidden="true" class="mdi mdi-email-outline"></i>
@@ -29,6 +29,7 @@
                 </div>
                 <p>21 Gillabbey Terrace, Gillabbey Street, Cork, T12 KPN4, Republic of Ireland<br>
                     <i aria-hidden="true" class="mdi mdi-phone"></i>
+                    <a href="tel:+353877123968">+353-877123968</a><br>
                     <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a>
                 </p>
 
