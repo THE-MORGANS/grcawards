@@ -127,7 +127,7 @@ Route::get('the-award/sectors-and-categories', [LandingPageController::class, 's
 Route::get('the-award/the-organizers', [LandingPageController::class, 'showTheOrganizers'])->name('show_organizers');
 Route::get('the-award/contact-us', [LandingPageController::class, 'showContactUs'])->name('show_contact');
 Route::get('judges/meet-our-judges', [LandingPageController::class, 'showJudges'])->name('meet_judges');
-Route::get('advisory/board-members', [LandingPageController::class, 'BoardMembers'])->name('board_members');
+Route::get('advisory/governing-council ', [LandingPageController::class, 'BoardMembers'])->name('board_members');
 Route::get('judges/judging-process', [LandingPageController::class, 'showJudgingProcess'])->name('judging_process');
 Route::get('sponsors', [LandingPageController::class, 'showSponsors'])->name('show_sponsors');
 Route::get('others/faqs', [LandingPageController::class, 'showFaqs'])->name('show_faqs');

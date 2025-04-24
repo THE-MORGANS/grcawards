@@ -143,25 +143,49 @@
     </div>
     @endforeach
     <div class="container">
-        <div class="row">
-         
-                <h2> GRC & Financial Crime Prevention Awards Judges Code of Conduct 2025</h2>
-                <p> This code has been produced as a guide for judges of the GRC & Financial Crime Prevention Awards and to provide a formal statement of how seriously we view our work. We believe that the integrity of our judging community is exemplary but as a professional body, we should have a documented code.
-This code is in place to protect the integrity of the GRC & Financial Crime Prevention Awards judging process, providing confirmation that all judges are working to a fair, transparent, and robust judging process. All APM Awards judges will be required to read and agree to the following code of conduct when applying for the role.
-Any case of breach of this code of conduct will be considered by the Awards Steering Group (ASG). Sanctions may include complete removal from the judging role, discounting of individual results for a category, or any penalty incurred through breach of the GRC & Financial Crime Prevention Awards Code of Professional Conduct. Matters reported under this code may also result in action against an entrant. In case of any dispute, the final arbiters will be APM.
-The initial premise is that Awards judges will be bound by the terms of the GRC & Financial Crime Prevention Awards Code of Professional Conduct. This is the baseline and beyond this, the following special conditions will apply:
-Confidentiality: Judges undertake to maintain the confidentiality of their role with respect to the identity of applicants, the marks awarded and the identity of other judges.
-Conflict of interest: All judges must notify APM immediately when he or she becomes aware of any potential, real, or perceived conflict(s) of interest. This may include any previous professional or personal relationship between the judge and an applicant, or the organisation of an applicant. A judge must also declare any potential, real or perceived conflict(s) of interest that they are aware may apply to another judge.
-Communication: In order to provide transparency, traceability and clarity of communication, all emails should be sent directly to GRC & Financial Crime Prevention Awards via events@grcfincrimeawards.com who will then undertake to ensure appropriate circulation of messages. This is important in association with ‘confidentiality’ point above. Information could wrongly be passed to others and breach confidentiality.
-Judges are to refrain from communicating in any way with entrants or finalists prior to the Awards ceremony. If a judge is contacted by an entrant or finalist directly, or through social media, please alert the GRC & Financial Crime Prevention Awards events team via events@grcfincrimeawards.com immediately.
-Promptness: The dates for submission of scoring and feedback will be made available to all judges in advance and judges will be required to comply with these dates. In case of difficulty, judges must notify GRC & Financial Crime Prevention Awards immediately when a delay presents itself as a possibility.
-Obligations: Judges undertake to provide not only scores, but also feedback for applicants, which should be constructive and of value for the candidate’s future improvement.
-Judges must complete scoring and feedback on the judging platform by the judging closing date.  If any judge is unable to complete judging, they must alert events@grcfincrimeawards.com as soon as they are aware. 
-Judges must attend the judges training or alert the events@grcfincrimeawards.com if unable to attend, so alternative training can be given.
-All judges must address any concerns on outcomes and process (such as criteria and judging process) by giving feedback to GRC & Financial Crime Prevention Awards. A judges’ feedback survey will be made available to facilitate this after the judging has finished and we strongly encourage participation in this, so that we may continuously improve.
-            </p>
+        <div class="row col-md-10">
+                <div class="widget widget-archive post-header">
+                    <h4 class="title">GRC & Financial Crime Prevention Awards Judges Code of Conduct 2025</h4>
+                </div>
+                <div class="post-content">
+                    <div class="text" style="text-align: justify;">
+                   
+                        <div class="mb-2"> 
+                    <p> 
+                    This code has been produced as a guide for judges of the GRC & Financial Crime Prevention Awards and to provide a formal statement of how seriously we view our work. </p>
+                    <p> We believe that the integrity of our judging community is exemplary but as a professional body, we should have a documented code. </p>
+                    <p>This code is in place to protect the integrity of the GRC & Financial Crime Prevention Awards judging process, providing confirmation that all judges are working to a fair, transparent, and robust judging process. </p>
+                </div>
+                <div class="mb-2"> 
+                    <p>All GRC & FinCrime Prevention Awards judges will be required to read and agree to the following code of conduct when applying for the role.</p>
+                    <p>Any case of breach of this code of conduct will be considered by the Awards Steering Group (ASG).</p>
+                    <p>Sanctions may include complete removal from the judging role, discounting of individual results for a category, or any penalty incurred through breach of the GRC & Financial Crime Prevention Awards Code of Professional Conduct. </p> 
+                </div>
+                <div class="mb-2"> 
+                    <p>Matters reported under this code may also result in action against an entrant. In case of any dispute, the final arbiters will be GRC & FinCrime Prevention. </p>
+                    <p>The initial premise is that Awards judges will be bound by the terms of the GRC & Financial Crime Prevention Awards Code of Professional Conduct.</p> 
+                    <p> This is the baseline and beyond this, the following special conditions will apply: Confidentiality: Judges undertake to maintain the confidentiality of their role with respect to the identity of applicants, the marks awarded and the identity of other judges. </p>
+                </div>
+                    <div class="mb-2"> 
+                    <p> Conflict of interest: All judges must notify GRC & FinCrime Prevention Ethic and Compliance Committee immediately when he or she becomes aware of any potential, real, or perceived conflict(s) of interest.</p>
+                      <p>This may include any previous professional or personal relationship between the judge and an applicant, or the organisation of an applicant. A judge must also declare any potential, real or perceived conflict(s) of interest that they are aware may apply to another judge. </p>
+                      <p>Communication: In order to provide transparency, traceability and clarity of communication, all emails should be sent directly to GRC & Financial Crime Prevention Awards via events@grcfincrimeawards.com who will then undertake to ensure appropriate circulation of messages. </p>
+                    </div>
+                      <div class="mb-2"> 
+                      <p>This is important in association with ‘confidentiality’ point above. Information could wrongly be passed to others and breach confidentiality. Judges are to refrain from communicating in any way with entrants or finalists prior to the Awards ceremony. </p>
+                      <p> If a judge is contacted by an entrant or finalist directly, or through social media, please alert the GRC & Financial Crime Prevention Awards events team via events@grcfincrimeawards.com immediately. Promptness: The dates for submission of scoring and feedback will be made available to all judges in advance and judges will be required to comply with these dates.</p> 
+                    </div> 
+                      <div class="mb-2"> 
+                      <p> In case of difficulty, judges must notify GRC & Financial Crime Prevention Awards immediately when a delay presents itself as a possibility. Obligations: Judges undertake to provide not only scores, but also feedback for applicants, which should be constructive and of value for the candidate’s future improvement.</p>
+                        <p> Judges must complete scoring and feedback on the judging platform by the judging closing date. </p> 
+                      <p>  If any judge is unable to complete judging, they must alert events@grcfincrimeawards.com as soon as they are aware. Judges must attend the judges training or alert the events@grcfincrimeawards.com if unable to attend, so alternative training can be given.</p>
+                      <p>All judges must address any concerns on outcomes and process (such as criteria and judging process) by giving feedback to GRC & Financial Crime Prevention Awards. A judges’ feedback survey will be made available to facilitate this after the judging has finished and we strongly encourage participation in this, so that we may continuously</p> 
+                      </div> 
+                    
         </div>
     </div>
+</div>
+</div>
 
     
 

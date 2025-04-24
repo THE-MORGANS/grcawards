@@ -20,10 +20,10 @@
             <div class="breadcrumbs">
                 <ul>
                     <li><a href="{{route('landing.index')}}">Home</a></li>
-                    <li>Advisory Board Members</li>
+                    <li>Advisory Governing Council </li>
                 </ul>
             </div>
-            <h3 class="title">Advisory Meet Board Members </h3>
+            <h3 class="title">Advisory Governing Council </h3>
         </div>
     </div>
     <!-- page title -->
@@ -34,7 +34,7 @@
                 <div class="col-12 col-lg-8 blog-cover">
                     <div class="post-item-cover">
                         <div class="widget widget-archive post-header">
-                            <h4 class="title">GRC and FinCrime Prevention Advisory Board Members</h4>
+                            <h4 class="title">GRC and FinCrime Prevention Advisory Governing Council </h4>
                         </div>
                     </div>
                     <div class="row">

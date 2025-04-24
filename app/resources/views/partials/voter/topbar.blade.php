@@ -62,7 +62,7 @@
                                 <a href="{{route('show_vote')}}">vote</a>
                                 {{-- <a href="#">vote</a> --}}
                             </li>
-                            <li class="{{request()->is('advisory/board-members') ? 'active-page' : '' }}"><a href="{{route('board_members')}}">Board Members</a></li>
+                            <li class="{{request()->is('advisory/board-members') ? 'active-page' : '' }}"><a href="{{route('board_members')}}">Advisory Council </a></li>
                             <li class="dropdown {{request()->is('judges/*') ? 'active-page' : ''}}">
                                 <a href="#">Judges <i class="mdi mdi-chevron-down" aria-hidden="true"></i></a>
                                 <ul>
