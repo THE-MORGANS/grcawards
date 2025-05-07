@@ -377,7 +377,7 @@
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
                             <h3 class="name" style="font-size:18px">Dr. Ezekiel Oseni
                             </h3>
-                            {{-- <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p> --}}
+                            <p class="prof" style="font-size:16px;line-height:1rem;">(Keynote Speaker)</p>
                             <p class="prof mt-2" style="font-size:16px;line-height:1rem;">President & Chairman of Council Chartered Risk Management Institute of Nigeria || Ph.D., Business & Applied Economics || Professor of Accounting and Finance at Babcock University Business</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
