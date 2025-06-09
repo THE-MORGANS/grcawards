@@ -37,98 +37,173 @@
 	<section class="s-news s-single-news" style="background-color: #fff;">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-lg-8 blog-cover">
-					<div class="post-item-cover">
+			<div class="col-12 col-lg-8 blog-cover">
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">GRC & Financial Crime Prevention Awards and Summit</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p><strong>Celebrating Global Excellence in Governance, Risk, Compliance, Fraud & Cybercrime Prevention</strong></p>
+                <p>The GRC & Financial Crime Prevention Awards are a prestigious annual initiative established to honour outstanding individuals, institutions, and corporate entities that have demonstrated exceptional leadership, innovation, and commitment to advancing the fields of governance, risk management, compliance (GRC), fraud prevention, cybersecurity, and financial crime prevention.</p>
+                <p>Founded by Dr. Foluso Amusa, PhD, the initiative held its first edition in Lagos, Nigeria, in 2020, marking the beginning of a purposeful journey to raise global standards in regulatory integrity and risk governance. Since then, the Awards have expanded to Europe and beyond, with participants and honourees spanning diverse jurisdictions and sectors.</p>
+                <p>In 2025, a formal Advisory Council Board was appointed, composed of distinguished industry leaders and experts from across the globe. Their roles include providing strategic guidance, upholding transparency and integrity in the judging process, and ensuring global relevance. The Awards also feature an independent panel of judges from various countries, bringing regional perspectives and robust sector-specific expertise to the evaluation of nominees.</p>
+                <p>This initiative, championed by the Summit organisers, underscores the urgent need for strong institutional frameworks and effective safeguards across sectors to combat financial crime, enhance digital resilience, promote ethical leadership, and embed regulatory compliance at both national and global levels. These awards are not only celebratory but also strategic — aimed at shaping industry behaviour, recognising impact, and driving positive systemic change.</p>
+            </div>
+        </div>
+    </div>
 
-						<div class="widget widget-archive post-header">
-							<h4 class="title">GRC & Financial Crime Prevention Awards</h4>
-						</div>
-						<div class="post-content">
-							<div class="text" style="text-align: justify;">
-								<p class="mb-2">
-									The organizers of these awards champion effective governance, risk management, and compliance GRC practices in organizations. They also advocate for robust anti-money laundering and counter-terrorism measures. In light of this mission, they have launched the GRC & Financial Crime Prevention Awards initiative. This initiative aims to honor outstanding professionals and organizations across various industries in Nigeria and the United Kingdom who have demonstrated exceptional expertise, courage, excellence and achievements in these areas.
-								</p>
-								<p>
-									The GRC & Financial Crime Prevention Annual Awards were established to celebrate remarkable contributions made by professionals and companies towards advancing, comprehending, or implementing robust Governance Risk Compliance and Anti-Financial Crime frameworks. These awards recognize and promote the values upheld by those who actively embed compliance, risk management, ethics, and governance within their organizations. The awards ceremony will be held annually, culminating at the end of each year.
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="post-item-cover">
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Regional and International Recognition</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p>With a strong foundation across emerging markets and global business centres, the GRC & Financial Crime Prevention Awards recognise achievements across a diverse array of industries, sectors, and regulatory environments. The awards are intentionally designed to be inclusive, highlighting excellence across banking, technology, public service, healthcare, extractives, legal, insurance, fintech, cybersecurity, and more — reinforcing the idea that GRC, cybersecurity, and financial crime prevention are foundational to institutional integrity across all domains.</p>
+                <p>The initiative is underpinned by a global vision — to encourage organisations in both developed and developing regions to uphold international best practices in risk governance, regulatory compliance, anti-money laundering (AML), counter-terrorism financing (CTF), ESG integration, and corporate accountability.</p>
+            </div>
+        </div>
+    </div>
 
-						<div class="widget widget-archive post-header">
-							<h4 class="title">The Objective</h4>
-						</div>
-						<div class="post-content">
-							<div class="text" style="text-align: justify;">
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									To help business comply with GRC & Financial Crime Prevention regulations by providing them the motivation and recognition on a national and international level with prestigious GRC & Financial Crime Prevention industry awards.
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									To also help businesses showcase the need and benefits of being GRC compliant because this could change the world for the better
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									These awards aim to showcase best practices in GRC and financial crime prevention, encouraging other organizations in the industry to adopt similar strategies to improve their own processes.
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									The awards encourages organizations to innovate and stay ahead of emerging risks and compliance challenges by highlighting innovative approaches and solutions in governance, risk management, compliance, and FinCrime prevention.
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									The awards provide a platform for benchmarking organizations against industry peers, facilitating knowledge sharing and setting benchmarks for excellence in GRC and FinCrime prevention.
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									Recognizing organizations and individuals for their achievements in GRC and FinCrime prevention can help foster a culture of compliance, ethics, and integrity within the sectors covered, driving overall industry improvement.
-								</p>
-								<p><i class="mdi mdi-chevron-right mdi-18px"></i>
-									Winning such awards can enhance an organization's reputation, credibility, and trust among stakeholders, including investors, customers, and regulators, by demonstrating a commitment to robust governance, risk management, compliance, and financial crime prevention measures.
-								</p>
-							</div>
-						</div>
-					</div>
-						<div class="widget widget-archive">
-							<h4 class="title">Benefits</h4>
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Awards and Summit Format</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p><strong>Mid-Year GRC & Financial Crime Prevention Summit (Virtual)</strong> – A digital gathering that convenes global experts, professionals, and stakeholders to share insights, explore trends, and discuss evolving regulatory and operational challenges in GRC and financial crime prevention.</p>
+                <p><strong>End-of-Year Awards Gala & Summit (In-Person)</strong> – A high-profile physical event held annually to celebrate winners, showcase global excellence, and convene strategic decision-makers from various sectors for thought leadership and recognition.</p>
+                <p>This hybrid model ensures accessibility, global participation, and multi-sector engagement across time zones and geographies.</p>
+            </div>
+        </div>
+    </div>
 
-							<ul style="font-size:16px; text-align: justify">
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0; mdi mdi-chevron-right"><i class="mdi mdi-chevron-right mdi-18px"></i> Recognition and Prestige:</h6>
-									<p>
-										The summit offers a hybrid experience, providing both physical attendance and online participation options. Attendees can choose the mode that suits their preferences and circumstances, ensuring inclusivity and accessibility for professionals across the globe.
-									</p>
-								</li>
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0;"><i class="mdi mdi-chevron-right mdi-18px"></i>Benchmarking and Best Practices:</h6>
-									<p>
-										Participating in these awards allows organizations to benchmark their risk management, governance, and compliance efforts against industry peers, as well as learn from and adopt best practices highlighted by other award recipients.
-									</p>
-								</li>
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0;"><i class="mdi mdi-chevron-right mdi-18px"></i>Employee Motivation and Retention:</h6>
-									<p>
-										Recognition through awards can increase employee morale, motivation, and pride in their organization, leading to improved retention and recruitment prospects.
-									</p>
-								</li>
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0;"><i class="mdi mdi-chevron-right mdi-18px"></i>Enhanced Compliance Culture:</h6>
-									<p>
-										Winning or being shortlisted for awards can reinforce a culture of compliance and good governance within an organization, demonstrating a commitment to ethical business practices and industry standards.	
-									</p>
-								</li>
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0;"><i class="mdi mdi-chevron-right mdi-18px"></i>Publicity and Marketing Opportunities:</h6>
-									<p>
-										GRC and FinCrime awards provide organizations with valuable marketing opportunities, offering a platform to showcase their commitment to regulatory compliance, risk management, and financial crime prevention to a wider audience.
-									</p>
-								</li>
-								<li>
-									<h6 class="col-12" style="padding-left:0;padding-right:0;"><i class="mdi mdi-chevron-right mdi-18px"></i>Stakeholder Trust and Confidence:</h6>
-									<p>
-										Awards serve as a demonstration of an organization's dedication to excellence in GRC and FinCrime Prevention, helping to build trust and confidence among stakeholders, including customers, partners, and regulatory bodies.
-									</p>
-								</li>
-							</ul>
-						</div>
-			
-				</div>
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Objectives of the Awards</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <ul>
+                    <li>Promote Regulatory Adherence – Support organisations in aligning with local and international GRC and financial crime prevention standards through credible recognition and industry benchmarking.</li>
+                    <li>Incentivise Ethical Innovation – Highlight cutting-edge approaches that address emerging risks such as digital fraud, cybercrime, and cross-border compliance challenges.</li>
+                    <li>Foster a Culture of Integrity and Compliance – Recognise institutions that institutionalise ethical conduct, digital resilience, transparency, and effective governance.</li>
+                    <li>Encourage Knowledge Sharing and Benchmarking – Facilitate peer-to-peer learning and strategic alignment through industry-led case studies and recognised best practices.</li>
+                    <li>Enhance Global Reputation and Public Trust – Provide an international platform to demonstrate commitment to compliance, fraud prevention, cybersecurity, and corporate ethics.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="widget widget-archive post-header">
+        <h4 class="title">Key Benefits of Participation</h4>
+    </div>
+    <div class="post-content">
+        <div class="text" style="text-align: justify;">
+            <ul>
+                <li><strong>🔹 Global Recognition and Prestige:</strong> Awardees gain international visibility and are recognised as leaders in risk management, cybercrime prevention, governance, and ethical innovation.</li>
+                <li><strong>🔹 Benchmarking and Best Practices:</strong> Participants gain insight into global standards and strategies to improve internal systems and align with emerging compliance expectations.</li>
+                <li><strong>🔹 Employee Engagement and Retention:</strong> Recognition boosts morale, reinforces a culture of excellence, and strengthens recruitment and retention efforts.</li>
+                <li><strong>🔹 Enhanced Compliance Culture:</strong> Participation reinforces governance, ethical conduct, and proactive regulatory alignment.</li>
+                <li><strong>🔹 Publicity and Marketing Opportunities:</strong> Award exposure delivers cross-industry visibility, media attention, and communication reach across continents.</li>
+                <li><strong>🔹 Stakeholder Confidence and Investment Readiness:</strong> Recognition builds trust among regulators, investors, and customers by highlighting credible governance and fraud prevention efforts.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Call for Partnerships & Collaboration</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p>The GRC & Financial Crime Prevention Awards and Summit welcome partnerships and collaborations with:</p>
+                <ul>
+                    <li>Global and regional firms</li>
+                    <li>Regulatory and industry bodies</li>
+                    <li>Academic institutions</li>
+                    <li>Cybersecurity and RegTech companies</li>
+                    <li>Compliance and governance consultants</li>
+                </ul>
+                <p>Together, we can foster knowledge exchange, capacity building, innovation, and sustainable impact across the global GRC and financial crime prevention landscape.</p>
+                <p><strong>Event and Partnership Team:</strong><br>
+                    GRC & Financial Crime Prevention Awards and Summit<br>
+                    <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">About the Award | GRC & FinCrime Prevention Awards & Summit</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p><strong>Dedicated to celebrating businesses thriving in Governance, Risk Management & Compliance and Financial Crime Prevention</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">About the Summit</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p>The GRC & Financial Crime Prevention Summit is a high-impact, multi-format global event convened to address the evolving challenges and innovations in Governance, Risk Management, Compliance (GRC), Fraud Prevention, Cybersecurity, and Financial Crime Prevention. The Summit brings together a diverse cross-section of senior leaders, regulators, practitioners, policymakers, academics, and technology innovators from across industries and jurisdictions.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Two Powerful Annual Editions</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <p><strong>Mid-Year Summit (Virtual):</strong> Held each June, this global online gathering is designed to provide inclusive, real-time dialogue on fast-evolving regulatory trends, digital compliance, risk intelligence, and emerging threats. The virtual format ensures participation from every region, fostering accessibility and wide-ranging insight exchange.</p>
+                <p><strong>End-of-Year Awards & Summit (In-Person):</strong> Hosted in December, the flagship physical event takes place in a leading global city, celebrating award honourees, showcasing thought leadership, and convening strategic partners across private and public sectors. It features keynote addresses, panel discussions, fireside chats, and the prestigious GRC & Financial Crime Prevention Awards Gala.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item-cover">
+        <div class="widget widget-archive post-header">
+            <h4 class="title">Summit Themes & Objectives</h4>
+        </div>
+        <div class="post-content">
+            <div class="text" style="text-align: justify;">
+                <ul>
+                    <li>The convergence of AI, ESG, and Digital Compliance</li>
+                    <li>Strengthening AML/CTF frameworks and cross-border collaboration</li>
+                    <li>Responding to cyber threats, regulatory shifts, and fraud risks</li>
+                    <li>Promoting a culture of compliance, ethics, and data accountability</li>
+                    <li>Exploring the role of RegTech, FinTech, SupTech, and blockchain in GRC transformation</li>
+                </ul>
+                <p><strong>What the Summit Offers</strong></p>
+                <ul>
+                    <li>Global thought leadership and expert panels</li>
+                    <li>Live keynote sessions from regulators, CEOs, and compliance leaders</li>
+                    <li>Interactive roundtables and breakout sessions</li>
+                    <li>Cross-sector case studies and innovation showcases</li>
+                    <li>Networking opportunities with decision-makers and peers</li>
+                    <li>Insight into global best practices and regulatory trends</li>
+                </ul>
+                <p><strong>Who Should Attend?</strong></p>
+                <ul>
+                    <li>Chief Compliance Officers & Risk Directors</li>
+                    <li>Financial Crime & AML Experts</li>
+                    <li>ESG & Ethics Leaders</li>
+                    <li>Technology and Cybersecurity Executives</li>
+                    <li>Legal & Regulatory Professionals</li>
+                    <li>Auditors, Investigators, and Governance Specialists</li>
+                    <li>Academia, Policymakers, and Industry Bodies</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 				<!--================= SIDEBAR =================-->
 				@include('partials.voter.sidebar')
 				<!--=============== SIDEBAR END ===============-->
