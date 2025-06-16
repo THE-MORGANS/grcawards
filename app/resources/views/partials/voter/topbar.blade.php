@@ -25,8 +25,9 @@
                                 <a href="#">The Award 
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
                                 </a>
-                                <ul>
+                                <ul> 
                                     <li class="{{request()->is('the-award/about-the-award') ? 'active-page' : '' }}"><a href="{{route('about_the_award')}}">about the award</a></li>
+                                     <li class="{{request()->is('vision-mission-statement') ? 'active-page' : '' }}"><a href="{{route('visionMission')}}">Vision and Mission Statement</a></li>
                                     <li class="{{request()->is('the-award/sectors-and-categories') ? 'active-page' : '' }}"><a href="{{route('show_sect_cat')}}">Categories</a></li>
                                     <li class="{{request()->is('the-award/contact-us') ? 'active-page' : '' }}"><a href="{{route('show_contact')}}">Contact us</a></li>
                                 </ul>

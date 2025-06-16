@@ -262,4 +262,8 @@ class LandingPageController extends Controller
         ->with('boards', BoardMembers::get());
     }
 
+    public function VisionMission()
+    {
+        return view('contents.voter.vision');
+    }
 }

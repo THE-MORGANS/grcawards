@@ -131,6 +131,7 @@ Route::get('advisory/governing-council ', [LandingPageController::class, 'BoardM
 Route::get('judges/judging-process', [LandingPageController::class, 'showJudgingProcess'])->name('judging_process');
 Route::get('sponsors', [LandingPageController::class, 'showSponsors'])->name('show_sponsors');
 Route::get('others/faqs', [LandingPageController::class, 'showFaqs'])->name('show_faqs');
+Route::get('vision-mission-statement', [LandingPageController::class, 'VisionMission'])->name('visionMission');
 Route::get('others/privacy-policy', [LandingPageController::class, 'showPolicy'])->name('show_policy');
 Route::get('others/terms-and-conditions', [LandingPageController::class, 'showTc'])->name('show_tc');
 Route::get('media/press-announcements', [LandingPageController::class, 'showPress'])->name('show_press');
