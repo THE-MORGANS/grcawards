@@ -31,10 +31,10 @@ class AwardProgramsController extends Controller
         $awp_id = Hashids::connection('awardProgram')->decode($award_program);
         $data['votes'] = Vote::get();
         $data['voters'] = Voter::get();
-        $data['category'] = Category::where('award_program_id', 4)->get();
-        $data['sector'] = Sector::where('award_program_id', 4)->get();
-        $data['awards'] = Award::where('award_program_id', 4)->get();
-        $data['nominees'] = Nominee::where('award_program_id', 4)->get();
+        $data['category'] = Category::where('award_program_id', 5)->get();
+        $data['sector'] = Sector::where('award_program_id', 5)->get();
+        $data['awards'] = Award::where('award_program_id', 5)->get();
+        $data['nominees'] = Nominee::where('award_program_id', 5)->get();
         $data['voters_pg'] = Voter::latest()->simplePaginate(10);
         $data['recent_votes'] = Vote::latest()->simplePaginate(10);
         if (AwardProgram::where('id', $awp_id)->exists()) {
