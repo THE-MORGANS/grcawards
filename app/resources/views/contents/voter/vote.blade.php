@@ -100,7 +100,7 @@
 													<div style="width: 100%; border:1px solid #0000001c; padding:20px; margin:10px">
 												 <h5 style=""> <small style="font-size: 13px; color:#D4AF37">CATEGORY:</small>  {{$sector->name}} </h5>
 													<div class="ticket-contact-item" style="width: 100%">
-														<p style="color:#281999"> Click the award below to vote </p>
+														<p style="color:#281999"> Click the awards below to vote </p>
 														@foreach($sector->awards as $award)
 														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
 															@csrf
