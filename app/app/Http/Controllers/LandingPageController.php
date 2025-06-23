@@ -77,6 +77,7 @@ class LandingPageController extends Controller
     } 
     }
 
+
         // foreach($categories as $category){
            
             // foreach($category->sectors as $sector){

@@ -46,12 +46,12 @@
 				<div class="col-12 blog-cover">
 					<div class="post-item-cover">
 						<div class="widget widget-archive post-header">
-							<h2 class="title"><span>VOTING IS CLOSED FOR  GRC Financial Crime Awards 2024</span></h2>
+							{{-- <h2 class="title"><span>VOTING IS CLOSED FOR  GRC Financial Crime Awards 2024</span></h2> --}}
 						</div>
 						<div class="post-content">
 							<div class="text">
-								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 1st August and ends 31st Sept, 2024.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 8th November, 2024.</p>
+								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2025.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 7th November, 2025.</p>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 					<div style="max-width: 955px; margin-right:auto;margin-left:auto;" class="accordion-wrapper">
 						<div class="row">
 							@foreach ($categories as $category)
-							@if(count($category->UserVotes()) == count($category->countAwards(3)))
+							@if(count($category->UserVotes()) == count($category->countAwards(5)))
 							<span style="color:#fff; background:green; padding:5px; border-radius:5px">  &nbsp;  &nbsp;   CONGRATULATIONS YOU HAVE COMPLETED ALL VOTING CATEGORIES </span>
 							   <span class="px-4 pt-2 "> Copy this Link and share with your friends and colleagues to vote for your favourite Nominees  <a href="https://www.grcfincrimeawards.com/vote" id="links"> https://www.grcfincrimeawards.com/vote </a> <button type="button" onclick="CopyText()" id="CopyText"> Copy Link</button>
 							 <br>	<span id="alerts" ></span>
@@ -83,7 +83,7 @@
 								<div class="accordion-rapper" style="margin-top: 30px;">
 									<div class="accordion">
 										<input class="in-check" type="checkbox" name="radio-a">
-										<label class="accordion-label" >{{$category->name}}   @if(count($category->UserVotes()) == count($category->countAwards(3))) <span style="color:#fff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span> @else <span style="color:#fff">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(3))}}  </span> @endif </label>
+										<label class="accordion-label" >{{$category->name}}   @if(count($category->UserVotes()) == count($category->countAwards(5))) <span style="color:#fff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @else <span style="color:#fff">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @endif </label>
 										<div class="accordion-conent">
 											<div class="buy-ticket-let">
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
