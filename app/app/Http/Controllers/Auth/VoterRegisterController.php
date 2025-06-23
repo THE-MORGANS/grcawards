@@ -64,7 +64,7 @@ class VoterRegisterController extends Controller
             'token' => $this->getToken(10),
             'ip_address' => $data['ip_address'],
             'agreement' => $data['i_agree'] == '1Xagrzi' ? 1 : 0,
-            'award_program_id' => 4
+            'award_program_id' => 5
         ]);
     }
 
