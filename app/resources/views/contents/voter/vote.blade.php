@@ -84,7 +84,7 @@
 									<div class="accordion">
 										<input class="in-check" type="checkbox" name="radio-a">
 										<label class="accordion-label" >{{$category->name}}   @if(count($category->UserVotes()) == count($category->countAwards(5))) <span style="color:#fff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @else <span style="color:#fff">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @endif </label>
-										<div class="accordion-conent">
+										<div class="accordion-conent" style="background: #eef">
 											<div class="buy-ticket-let">
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
 												@if($category->is_non_voting_category == false)
@@ -98,20 +98,26 @@
 												<div class="ticket-contact-cover" style="padding: 0px 20px; "> 
 												@foreach ($category->sectors as $sector)
 													<div style="width: 100%; border:1px solid #0000001c; padding:20px; margin:10px">
-												<h5>  {{$sector->name}} </h5>
+												 <h5 style=""> <small style="font-size: 13px; color:#D4AF37">CATEGORY:</small>  {{$sector->name}} </h5>
 													<div class="ticket-contact-item" style="width: 100%">
+														<p style="color:#281999"> Click the award below to vote </p>
 														@foreach($sector->awards as $award)
 														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
 															@csrf
 														<div class="event-schedule-item">
-															<div class="" style="width: 100%;padding: 10px 14px ;cursor: pointer;position: relative;">
-																<button type="button"   style="border: none; background:none" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$award->id}}">
+															
+															<div class="" style="width: 100%;padding: 10px 14px ;cursor: pointer;position: relative; border:1px solid #eee">
+																<label for="awardList">
+																<span type="button"  id="awardList"   style="border: ;" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$award->id}}">
 																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$award->name}}</h6>
-																  </button>
 																  @if($award->IsVoted($award->id))
-																  <span style="float:right"> <i style="color:green" class="fa fa-check-circle badge" aria-hidden="true"></i></span>
+																  <span style="float:right"> <i style="color:green" class="fa fa-check-circle badge" aria-hidden="true">voted</i></span>
 																  @endif
+																</span>
+																</label>
+																  
 															</div>
+															
 														</div>
 														  <div class="modal fade" id="staticBackdrop{{$award->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 															<div class="modal-dialog">
