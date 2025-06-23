@@ -104,20 +104,22 @@
 														@foreach($sector->awards as $award)
 														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
 															@csrf
-														<div class="event-schedule-item">
-															
-															<div class="" style="width: 100%;padding: 10px 14px ;cursor: pointer;position: relative; border:1px solid #eee">
-																<label for="awardList">
-																<span type="button"  id="awardList"   style="border: ;" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{$award->id}}">
-																	<h6 style="-webkit-transition: .35s ease;transition: .35s ease;font-weight: 400;position: relative;padding-right: 20px;">{{$award->name}}</h6>
-																  @if($award->IsVoted($award->id))
-																  <span style="float:right"> <i style="color:green" class="fa fa-check-circle badge" aria-hidden="true">voted</i></span>
-																  @endif
-																</span>
-																</label>
-																  
+																<div class="event-schedule-item">
+														<label style="width: 100%; display: block; cursor: pointer;" data-bs-toggle="modal" data-bs-target="#staticBackdrop{{ $award->id }}">
+															<input type="radio" name="award_id" value="{{ $award->id }}" style="display: none;" >
+
+															<div style="width: 100%; padding: 10px 14px; position: relative;">
+																<h6 style="transition: .35s ease; font-weight: 400; position: relative; padding-right: 20px;">
+																	{{ $award->name }}
+																</h6>
+																@if($award->IsVoted($award->id))
+																	<span style="float:right">
+																		<i style="color:green" class="fa fa-check-circle badge" aria-hidden="true">voted</i>
+																	</span>
+																@endif
 															</div>
-															
+														</label>
+
 														</div>
 														  <div class="modal fade" id="staticBackdrop{{$award->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 															<div class="modal-dialog">
@@ -132,11 +134,9 @@
 																	@foreach ($award->hasNominee($award->id) as $nominee)
 																
 																	<p class="nominee" style="color:#000"> 
-																	<label > 
-																		<input type="radio"  style="border-radius:0px"   name="nominees"  value="{{$nominee->hashid}}"> 
-																		
+																	<label>
+																		<input type="radio"  id="nominee-{{ $nominee->id }}"  style="border-radius:0px"   name="nominees"  value="{{$nominee->hashid}}"> 
 																		{{$nominee->name}}
-																	
 																	</label>
 															
 																	</p>
