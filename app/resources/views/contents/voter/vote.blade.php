@@ -82,11 +82,14 @@
 							<div class="col-md-12">
 								<div class="accordion-rapper" style="margin-top: 30px;">
 									<div class="accordion">
+										
 										<input class="in-check" type="checkbox" name="radio-a">
 										<label class="accordion-label" >{{$category->name}}   @if(count($category->UserVotes()) == count($category->countAwards(5))) <span style="color:#fff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @else <span style="color:#fff">  Completed: {{count($category->UserVotes())}}/{{count($category->countAwards(5))}}  </span> @endif </label>
 										<div class="accordion-conent" style="background: #eef">
 											<div class="buy-ticket-let">
+												
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
+										<div style="background: #000; padding: 10px;">  {{ $categories->links() }}</div>
 												@if($category->is_non_voting_category == false)
 												{{-- @if($category->id == 10)
 												<p>The following awards are available in this category<br><strong>Please select an award</strong></p>
@@ -101,6 +104,7 @@
 												 <h5 style=""> <small style="font-size: 13px; color:#D4AF37">CATEGORY:</small>  {{$sector->name}} </h5>
 													<div class="ticket-contact-item" style="width: 100%">
 														<p style="color:#281999"> Click the awards below to vote </p>
+														
 														@foreach($sector->awards as $award)
 														<form action="{{route('add.vote')}}" id="{{$award->hashid}}" method="post">
 															@csrf
@@ -196,8 +200,8 @@
 							<div class="col-8">
 			
 							</div>
-							<div class="col-4">
-								<span class="p-5"  > {{$categories->links()}} </span>
+						<div style="background: #000; padding: 10px; margin:10px">
+								<span class="" > {{ $categories->links()}} </span>
 							</div>
 						</div>
 					</div>
