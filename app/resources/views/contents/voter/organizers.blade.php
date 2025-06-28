@@ -52,9 +52,9 @@
 
 									<p><strong>Results-Oriented:</strong> Delivering outstanding consultancy results by cultivating a culture of professional execution and excellent performance that is rewarding our clients immensely with outcomes.</p>
 
-									<p><strong>Integrity:</strong> At TMC, we are transparent, honest, and devoted to rendering optimum services for our clients resident in Nigeria and beyond. We achieve success through the application of various technologically updated apparatuses in delivering accurate and reliable financial advisory services. We have zero-tolerance for unprofessionalism, unnecessary mistakes or nonchalant job behaviour that hampers our responsibilities towards our clients.</p>
+									<p><strong>Integrity:</strong> At TMC, we are transparent, honest, and devoted to rendering optimum services for our clients resident in the global economy and beyond. We achieve success through the application of various technologically updated apparatuses in delivering accurate and reliable financial advisory services. We have zero-tolerance for unprofessionalism, unnecessary mistakes or nonchalant job behaviour that hampers our responsibilities towards our clients.</p>
 
-									<p><strong>Build Relationships/Deliver Results:</strong> Connect with clients who are not merely clients but partners that built the foundation of our successes in recent years. At TMC Consulting, we build relationships with our clients because we cannot do our jobs without our loyal clients. Our clients remain our most fabulous advertisers of professional consultancy services which have become a business fact known in Nigeria and other operating nations across the globe.</p>
+									<p><strong>Build Relationships/Deliver Results:</strong> Connect with clients who are not merely clients but partners that built the foundation of our successes in recent years. At TMC Consulting, we build relationships with our clients because we cannot do our jobs without our loyal clients. Our clients remain our most fabulous advertisers of professional consultancy services which have become a business fact known in  operating nations across the globe.</p>
 							</div>
 						</div>
 					</div>

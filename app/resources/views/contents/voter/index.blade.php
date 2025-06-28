@@ -114,8 +114,8 @@
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
 					<h4>Celebrating Excellence and Achievements Attained in the GRC and Financial Crime Prevention Space.</h4>
 						<div class="mission-info-text">
-							<p>The Organizers of this awards are advocates for effective Governance, Risk & Compliance system in organisations and a promoter of Anti-Money Laundering and Counter-Terrorism Measures hence the reason for coming up with an initative (GRC & Financial Crime Prevention Awards) to recognize individuals and organisations across the various industries in Nigeria and the United Kingdom who have been outstanding and have demonstrated expertise in this field.</p>
-							<p>The GRC & Financial Crime Prevention Annual Awards was created to recognise outstanding contributions by individuals and companies to the development, understanding, or implementation of GRC systems in Nigeria and the...</p>
+							<p>The Organizers of this awards are advocates for effective Governance, Risk & Compliance system in organisations and a promoter of Anti-Money Laundering and Counter-Terrorism Measures hence the reason for coming up with an initative (GRC & Financial Crime Prevention Awards) to recognize individuals and organisations across the various industries in Africa and the Europe who have been outstanding and have demonstrated expertise in this field.</p>
+							<p>The GRC & Financial Crime Prevention Annual Awards was created to recognise outstanding contributions by individuals and companies to the development, understanding, or implementation of GRC systems in in the global economy</p>
 						</div>
 						<a href="{{route('about_the_award')}}" class="btn" tabindex="-1"><span>Read More</span></a>
 					</div>
