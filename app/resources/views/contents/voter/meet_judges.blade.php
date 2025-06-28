@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         @foreach($judges as $judge)
-                        <div class="col-md-6"> 
+                        <div class="col-md-3"> 
                             <div class="slide-our-speaker">
                                 <div class="our-speaker-item">
                                     <a href="" data-bs-toggle="modal" data-bs-target="#j{{$judge->hashid}}">
