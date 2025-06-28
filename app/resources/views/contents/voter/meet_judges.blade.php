@@ -43,8 +43,8 @@
                             <div class="slide-our-speaker">
                                 <div class="our-speaker-item">
                                     <a href="" data-bs-toggle="modal" data-bs-target="#j{{$judge->hashid}}">
-                                    <img src="{{$judge->path_to_image}}" alt="img" style="height: 360px;">
-                                    <div class="speaker-item-info" style="padding-bottom:10px;">
+                                    <img src="{{$judge->path_to_image}}" alt="img" style="height:;">
+                                    <div class="speaker-item-info" style="padding-bottom:4px;">
                                             <p style="font-size:14px">{{$judge->name}}</p>
                                             <p class="prof" style="font-size:12px; color:white">{{$judge->position}}</p>
                                             <div class="meta">
