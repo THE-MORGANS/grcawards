@@ -43,10 +43,10 @@
                             <div class="slide-our-speaker">
                                 <div class="our-speaker-item">
                                     <a href="" data-bs-toggle="modal" data-bs-target="#j{{$judge->hashid}}">
-                                    <img src="{{$judge->path_to_image}}" alt="img" style="height:;">
-                                    <div class="speaker-item-info" style="padding-bottom:4px;">
-                                            <p style="font-size:14px">{{$judge->name}}</p>
-                                            <p class="prof" style="font-size:12px; color:white">{{$judge->position}}</p>
+                                    <img src="{{$judge->path_to_image}}" alt="img" style="height: 360px;">
+                                    <div class="speaker-item-info" style="padding-bottom:10px;">
+                                            <p class="name" style="font-size:15px">{{$judge->name}}</p>
+                                            <p class="prof" style="font-size:16px; color:white">{{$judge->position}}</p>
                                             <div class="meta">
                                                 @if($judge->ln_link != '')
                                                 <span class="post-tag" style="margin-right:7px;">
