@@ -46,7 +46,7 @@
                                     <img src="{{$judge->path_to_image}}" alt="img" style="height: 360px;">
                                     <div class="speaker-item-info" style="padding-bottom:10px;">
                                             <h5 class="name" style="font-size:18px">{{$judge->name}}</h5>
-                                            <p class="prof" style="font-size:16px; color:white">{{$judge->position}}</p>
+                                            {{-- <p class="prof" style="font-size:16px; color:white">{{$judge->position}}</p> --}}
                                             <div class="meta">
                                                 @if($judge->ln_link != '')
                                                 <span class="post-tag" style="margin-right:7px;">
