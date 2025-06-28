@@ -144,7 +144,6 @@ Route::get('winners/2024', [LandingPageController::class, 'showWinners2024'])->n
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
 
-
 Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
@@ -159,4 +158,3 @@ Route::get('code-of-conduct', [LandingPageController::class, 'CodeOfConduct'])->
 Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
 Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
-
