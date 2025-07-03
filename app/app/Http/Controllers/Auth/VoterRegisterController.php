@@ -42,8 +42,11 @@ class VoterRegisterController extends Controller
         // return redirect()->back();
         // }else{
            $voter = Voter::where(['email' => $request->email])->first();
-           if(!$voter)$voter = $this->create(['email'=>$request->email, 'i_agree'=>$request->i_agree, 'ip_address' => $ip_address]);
-
+          
+           if(!$voter)
+           {
+            $voter = $this->create(['email'=>$request->email, 'i_agree'=>$request->i_agree, 'ip_address' => $ip_address]);
+           }
             // if ($this->registered($request, $voter)) {
                 sleep(1);
                 $voter = Voter::where(['email' => $request->email])->first();
@@ -79,7 +82,7 @@ class VoterRegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'email' => ['bail', 'required', 'string', 'email', 'max:255', 'unique:voters'],
+            'email' => [ 'required', 'string', 'email', 'max:255'],
         ]);
     }
 
