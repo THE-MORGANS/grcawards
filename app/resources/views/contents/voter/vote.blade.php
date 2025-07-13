@@ -142,6 +142,7 @@
 																		<input type="radio"  id="nominee-{{ $nominee->id }}"  style="border-radius:0px"   name="nominees"  value="{{$nominee->hashid}}"> 
 																		{{$nominee->name}}
 																	</label>
+																		<label> <a target="_blank" href="{{ $nominee->link }}" style="font-size:10px"> (Learn More about Nominee) </a></label>
 															
 																	</p>
 																	@endforeach
