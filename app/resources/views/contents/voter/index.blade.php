@@ -125,7 +125,7 @@
 
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
-				<h2 class="title-conference"><span>Exiting Annoucements</span></h2>
+				<h2 class="title-conference"><span>Exciting Announcements</span></h2>
 				<div class="row">
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
