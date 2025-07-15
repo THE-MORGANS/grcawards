@@ -46,6 +46,7 @@ class LandingPageController extends Controller
             $category->sectors;
             foreach($category->sectors as $sector){
                 $sector->awards;
+                $sector->nominees;
             }
         }
         return view('contents.voter.sectors_categories')->with(['categories'=>$categories]);

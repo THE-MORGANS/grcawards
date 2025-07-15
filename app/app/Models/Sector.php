@@ -28,5 +28,10 @@ class Sector extends Model
         return $this->hasMany(Award::class, 'sector_id');
     }
 
+    public function nominees()
+    {
+        return $this->hasMany(Nominee::class, 'sector_id', 'id');
+    }
+
     
 }
