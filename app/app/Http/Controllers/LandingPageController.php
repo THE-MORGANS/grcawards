@@ -99,7 +99,7 @@ class LandingPageController extends Controller
         $awards = Award::where('id', $award_id)->first();
         if($awards)
         {
-            $awards->nominees = array_merge(json_decode($awards->nominees, true)??[], $req->nominee_name);
+            // $awards->nominees = array_merge(json_decode($awards->nominees, true)??[], $req->nominee_name);
             // $awards->save();
             CustomAwardNominee::create([ 
                 'award_id' => $awards->id, 
