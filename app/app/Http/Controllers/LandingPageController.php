@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Vinkla\Hashids\Facades\Hashids;
 use App\Models\Award;
 use App\Models\BoardMembers;
+use App\Models\CustomAwardNominee;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
 use App\Models\SummitRegistration;
@@ -100,6 +101,11 @@ class LandingPageController extends Controller
         {
             $awards->nominees = array_merge(json_decode($awards->nominees, true)??[], $req->nominee_name);
             $awards->save();
+            CustomAwardNominee::create([ 
+                'award_id' => $awards->id, 
+                'nominee' => $req->nominee_name,
+                'reason' => $req->reason
+            ]);
                Session::flash('msg','Request send Successfully,  We review your request and update accordingly');
                return back();
         }
