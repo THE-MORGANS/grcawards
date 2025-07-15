@@ -91,13 +91,6 @@
 												<p style="color:#000; padding:20px">{{$category->description}}</p>
 										<div style="background: #000; padding: 10px;">  {{ $categories->links() }}</div>
 												@if($category->is_non_voting_category == false)
-												{{-- @if($category->id == 10)
-												<p>The following awards are available in this category<br><strong>Please select an award</strong></p>
-												@elseif($category->id == 13)
-												<p>The following are the nominees in this category <br><strong>Please Select a nominee</strong></p>
-												@else
-												<p>The following sectors are available in this category. <br><strong>Please select a sector</strong></p>
-												@endif --}}
 												<div class="ticket-contact-cover" style="padding: 0px 20px; "> 
 												@foreach ($category->sectors as $sector)
 													<div style="width: 100%; border:1px solid #0000001c; padding:20px; margin:10px">
@@ -152,6 +145,37 @@
 																  <div style="text-align:center">
 																	<button id="{{$award->has_nominees == false ? '#SubmitNominee' : '#Submit'}}" type="submit" data-id="{{$award->hashid}}" class="btn"><span>Vote</span></button>
 																</div>
+																</div>
+																<div>
+																	<p style="color:#000">A Nominee missing from this list?</p>
+																	<button  type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#nominees_add{{ $award->id }}" href=""> Recommend Nominee</a>
+																</div>
+															  </div>
+															</div>
+														  </div>
+														</form>
+														<form action="{{route('add.nominee_new')}}" id="{{$award->hashid}}" method="post">
+															@csrf
+														 <div class="modal fade" id="nominees_add{{$award->id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+															<div class="modal-dialog">
+															  <div class="modal-content">
+																<div class="modal-header">
+																  <p class="modal-title" style="font-weight: 500; font-size:20px; color:#000" id="staticBackdropLabel" >Nominate your preferred Nominee</p>
+																  {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> --}}
+																</div>
+																<div class="modal-body">
+																	<label for="nominee_name" style="color:#000"> Enter name of Nominee</label>
+																	<input type="text" name="nominee_name[]" placeholder="enter nominee name" required> 
+																	<label for="reason" style="color:#000"> Enter reason why you want us to include this nominee on the list</label>
+																	<textarea placeholder="enter reasons " required> </textarea>
+																	<input type="hidden"  name="awards_id" value="{{$award->hashid}}">
+																</div>
+																<div class="modal-footer">
+																
+																  <div style="text-align:center">
+																	<button class="btn btn-info"> Submit for Verification</button>
+																</div>
+																	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
 																</div>
 															  </div>
 															</div>

@@ -79,6 +79,8 @@ class LandingPageController extends Controller
     }
 
 
+
+
         // foreach($categories as $category){
            
             // foreach($category->sectors as $sector){
@@ -88,6 +90,21 @@ class LandingPageController extends Controller
 
         // dd($category);
         return view('contents.voter.vote')->with(['categories'=>$categories]);
+    }
+
+    public function AddNewNominee(Request $req)
+    {
+        $award_id = Hashids::connection('award')->decode($req->awards_id)[0];
+        $awards = Award::where('id', $award_id)->first();
+        if($awards)
+        {
+            $awards->nominees = array_merge(json_decode($awards->nominees, true)??[], $req->nominee_name);
+            $awards->save();
+               Session::flash('msg','Request send Successfully,  We review your request and update accordingly');
+               return back();
+        }
+
+
     }
 
     public function showJudges(){
