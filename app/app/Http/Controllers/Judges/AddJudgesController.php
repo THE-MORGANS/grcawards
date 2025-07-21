@@ -26,18 +26,12 @@ class AddJudgesController extends Controller
             return back()->withInput($request->all())->withErrors($validated);
         }
         $names = explode(' ', $request->fullname);
+        
         // dd($request->fullname);
-        if($names[0]){
-            $firstName = $names[0];
-        }else{
-            $firstName = "Admin";
-        }
-
-        if($names[1]){
-            $LastName = $names[1];
-        }else{
-            $LastName = "Admin";
-        }
+    
+            $firstName = $names[0]??"Admin";
+            $LastName = $names[1]??"Admin";
+            
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
             try{

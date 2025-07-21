@@ -13,7 +13,7 @@
                 <div class="page-title">
                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                     </div>
-                    <h4 style="display: block;">Award Year 2024</h4>
+                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
                     <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
                     </h4>
                 </div>
@@ -114,7 +114,7 @@
                                     <th>S/N</th>
                                     <th class="all">Name</th>
                                     <th class="all">Email</th>
-
+                                      <th class="all">Award Program</th>
                                     <th class="all">Awards Voted</th>
                                     <th class="all">Postion</th>
                                     <th class="all">Profile</th>
@@ -134,6 +134,7 @@
                                     <td>
                                         {{$judge->email}}
                                     </td>
+                                    <td>{{$judge->awardProgram->year}}</td>
                                     <td>
                                        {{count($judge->judges_votes($judge->admin_id))}}
                                     </td>

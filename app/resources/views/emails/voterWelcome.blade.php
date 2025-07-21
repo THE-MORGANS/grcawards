@@ -10,10 +10,10 @@
             <div style="font-family:Helvetica, Arial, sans-serif;line-height:18px;padding-left:20px;padding-right:20px;padding-bottom:30px;padding-top:10px;">
                 <h2
                     style="font-size:18px;margin-top:30px;margin-bottom:0;font-family:'Montserrat', Helvetica, Arial, sans-serif;font-weight:700;line-height:18px;color:#151515;">
-                    Welcome to GRCFinCrime Awards 2021</h2>
+                    Welcome to GRCFinCrime Awards {{$currentYear?->year}}</h2>
                 <br/>
                 <h4 style="font-size: 14px;">Hi there!</h4>
-                <p>Thank you for taking out time to cast your vote on the <span><strong>GRCFinCrime Awards 2021</strong></span> voting platform. <br />
+                <p>Thank you for taking out time to cast your vote on the <span><strong>GRCFinCrime Awards {{$currentYear?->year}}</strong></span> voting platform. <br />
                     <br />
                     <br />
                     Please Use the token below as your OTP to access the voting platform.

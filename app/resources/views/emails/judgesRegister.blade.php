@@ -22,7 +22,7 @@
                     
             <tr>
                 <td style="padding:0 30px">
-                    <p>We are honoured to have you as one of our judges on GRC Financial Crime Awards 2023 
+                    <p>We are honoured to have you as one of our judges on GRC Financial Crime Awards {{$currentYear?->year}} 
                         <br> Please see below login details to have access to our judges voting portal.
                     </p>
     <table width="100%">

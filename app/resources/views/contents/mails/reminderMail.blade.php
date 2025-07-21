@@ -46,7 +46,7 @@
                         <tr>
                             <td class="text-center pt-4" style="text-align: center !important;padding-top: 24px !important;">
                                 <p class="fs-12px pt-4" style="margin-top: 0;font-size: 12px; padding:0;">
-                                    You are receiving this email beacause you registered for GRC Financial Crime Prevention Awards 2024
+                                    You are receiving this email beacause you registered for GRC Financial Crime Prevention Awards {{$currentYear?->year}}
                                     <a style="color:#854fff;word-break:break-all">https://www.grcfincrimeawards.com/</a> <br>
                                     . Please ignore this email, if you're not the intended recipient.
                                 </p>

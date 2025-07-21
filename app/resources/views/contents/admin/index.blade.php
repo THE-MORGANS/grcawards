@@ -50,7 +50,7 @@
                                 <div class="page-title">
                                     <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
                                     </div>
-                                    <h4 style="display: block;">Award Year 2024</h4>
+                                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
                                     <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
                                     </h4>
                                 </div>

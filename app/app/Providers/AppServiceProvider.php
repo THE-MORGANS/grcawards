@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Session;
 use App\Http\Traits\TokenTrait;
+use App\Models\AwardProgram;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -37,6 +38,7 @@ class AppServiceProvider extends ServiceProvider
         $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
         view()->share('award_program_years', $award_program_years);
         view()->share('pictures', $pictures);
+        view()->share('currentYear', AwardProgram::where('status', 1)->first());
 
     }
 }
