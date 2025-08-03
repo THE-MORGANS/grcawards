@@ -69,10 +69,12 @@
                                                                <h6>{{$award->name}} </h6> 
                                                         </li>
                                                             <li>  <span style="font-weight: 500px"> CRITERIA</span> {{$award->criteria}} </li>
-                                                        @endforeach
+                                                            @endforeach
                                                              <h5> Nominees </h5>
                                                           @foreach ($sector->nominees as $nominee)
                                                           <li>
+                                                              {{$nominee->name}}
+                                                          </li>
                                                           @endforeach
                                                         @endif
                                                     </ul>
