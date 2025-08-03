@@ -66,20 +66,16 @@
                                                         @foreach($sector->awards as $award)
                                                         <li>
                                                             <i class="mdi mdi-chevron-right"></i>
-                                                            {{$award->name}}
+                                                               <h6>{{$award->name}} </h6> 
                                                         </li>
-                                                      
-                                                        
+                                                            <li>  <span style="font-weight: 500px"> CRITERIA</span> {{$award->criteria}} </li>
                                                         @endforeach
-                                                          <h5> Nominees </h5>
+                                                             <h5> Nominees </h5>
                                                           @foreach ($sector->nominees as $nominee)
                                                           <li>
-                                                          {{$nominee->name}}
-                                                          </li>
                                                           @endforeach
                                                         @endif
                                                     </ul>
-
                                                 </div>
                                             </div>
                                         </div>
