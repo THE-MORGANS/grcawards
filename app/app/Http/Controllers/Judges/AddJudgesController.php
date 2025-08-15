@@ -20,7 +20,8 @@ class AddJudgesController extends Controller
             'fullname' => 'required',
             'email' => 'required|unique:admins,email',
             'password' => 'required|min:5',
-        ]);
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048'
+        ]); 
         if($validated->fails()){
             $request->session()->flash('error', 'Some Fields are missing');
             return back()->withInput($request->all())->withErrors($validated);
@@ -35,6 +36,22 @@ class AddJudgesController extends Controller
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
             try{
+
+                // Handle image upload
+                $imagePath = null;
+                if ($request->hasFile('image')) {
+                    $image = $request->file('image');
+                    $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
+                    $destinationPath = public_path('assets/images/judges');
+                    
+                    if (!file_exists($destinationPath)) {
+                        mkdir($destinationPath, 0755, true);
+                    }
+
+                    $image->move($destinationPath, $imageName);
+                    $imagePath = 'assets/images/judges/' . $imageName; // relative to public/
+                }
+
                 //  $password = substr(str_replace('','/, =, +, &, %, #, @, !', base64_encode(random_bytes(20))), 0,10);
                 $admin = new Admin();
                 $admin->firstname = $firstName;
@@ -53,6 +70,7 @@ class AddJudgesController extends Controller
                 $judge->position = $request->position; 
                 $judge->profile = $request->profile; 
                 $judge->email = $request->email;
+                $judge->path_to_image = $imagePath;
                 $judge->password = bcrypt($request->password);
                 $judge->save();
 

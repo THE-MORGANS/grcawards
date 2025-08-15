@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title mb-4">Add Judge</h4>
-                    <form class="needs-validation" method="POST" action="{{route('admin.create_judges', $award_program)}}" name="add-judge-form" id="add-judge-form">
+                    <form class="needs-validation" method="POST" action="{{route('admin.create_judges', $award_program)}}" enctype="multipart/form-data" name="add-judge-form" id="add-judge-form">
                         @csrf
                         <div class="row">
                             <div class="col-12">
@@ -80,6 +80,21 @@
 
                             <div class="col-12">
                                 <div class="mb-3">
+                                    <label class="control-label form-label">Profile Image</label>
+                                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" accept="image/*" id="judgeImageInput">
+                                    @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
+                                    <!-- Image Preview -->
+                                    <img id="imagePreview" src="#" alt="Selected Image" style="display: none; max-width: 100%; height: auto; margin-top: 10px;" />
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="mb-3">
                                     <label class="control-label form-label">Judge Password</label>
                                     <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" id="judge_password" required autocomplete="off" />
                                     @error('password')
@@ -98,6 +113,16 @@
                             </div>
                         </div>
                     </form>
+                    <script>
+                        document.getElementById('judgeImageInput').addEventListener('change', function (event) {
+                            const [file] = event.target.files;
+                            if (file) {
+                                const preview = document.getElementById('imagePreview');
+                                preview.src = URL.createObjectURL(file);
+                                preview.style.display = 'block';
+                            }
+                        });
+                    </script>
                 </div> <!-- end card-body-->
             </div> <!-- end card-->
         </div> <!-- end col -->
@@ -118,6 +143,7 @@
                                     <th class="all">Awards Voted</th>
                                     <th class="all">Postion</th>
                                     <th class="all">Profile</th>
+                                    <th class="all">Profile Image</th>
                                     <th style="width: 85px;">Action</th>
                                 </tr>
                             </thead>
@@ -148,12 +174,20 @@
                                         @endphp
                                         {{$profile}}
                                     </td>
+                                    <td>
+                                        {{-- {{$judge->path_to_image}} --}}
+                                        @if($judge->path_to_image)
+                                            <img src="{{ asset($judge->path_to_image) }}" width="50" height="50" style="object-fit: cover; border-radius: 50%;">
+                                        @else
+                                            <span class="text-muted">No Image</span>
+                                        @endif
+                                    </td>
                                     <td class="table-action">
                                         <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="edit" data-id="{{$judge->hashid}}" data-name="{{$judge->name}}" data-desc="{{$judge->profile}}" data-bs-toggle="modal" data-bs-target="#edit-judge-modal{{$judge->id}}"> <i class="mdi mdi-square-edit-outline"></i></a>
                                         {{-- <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="delete" data-id="{{$judge->hashid}}" data-bs-toggle="modal" data-bs-target="#delete-alert-modal"> <i class="mdi mdi-delete"></i></a> --}}
                                     </td>
                                 </tr>
-                                <form class="needs-validation" method="POST" action="{{route('admin.update_judges', $award_program)}}">
+                                <form class="needs-validation" method="POST" action="{{route('admin.update_judges', $award_program)}}" enctype="multipart/form-data">
                                     @csrf
                                 <div class="modal fade" id="edit-judge-modal{{$judge->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
@@ -211,6 +245,24 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
+                                                        <div class="col-12">
+                                                            <div class="mb-3">
+                                                                <label class="control-label form-label">Profile Image</label>
+                                                                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" accept="image/*">
+                                                                @error('image')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+
+                                                                @if($judge->path_to_image)
+                                                                <div class="mt-2">
+                                                                    <img src="{{ asset($judge->path_to_image) }}" alt="Current Image" class="img-thumbnail" width="100">
+                                                                </div>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+
                                                         <div class="col-12">
                                                             <div class="mb-3">
                                                                 <label class="control-label form-label">Judge Password</label>

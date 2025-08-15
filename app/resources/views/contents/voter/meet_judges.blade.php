@@ -7,7 +7,7 @@
     <link href="{{asset('assets/css/model-new.css')}}" rel="stylesheet" />
 </head>
 
-<body id="conference-page">
+<body id="conference-page"> 
     <!-- =============== PRELOADER =============== -->
     @include('partials.voter.preloader')
     <!-- ============== PRELOADER END ============== -->
@@ -43,7 +43,8 @@
                             <div class="slide-our-speaker">
                                 <div class="our-speaker-item">
                                     <a href="" data-bs-toggle="modal" data-bs-target="#j{{$judge->hashid}}">
-                                    <img src="{{$judge->path_to_image}}" alt="img" style="height: 360px;">
+                                    
+                                    <img src="{{ asset($judge->path_to_image) }}" alt="Photo of {{$judge->name}}" style="height: 360px; width: 100%; object-fit: cover;">
                                     <div class="speaker-item-info" style="padding:5px;">
                                             <p class="name" style="font-size:15px">{{$judge->name}}</p>
                                             <p class="prof" style="font-size:16px; color:white">{{$judge->position}}</p>

@@ -33,7 +33,7 @@ class Application extends Container implements ApplicationContract, CachesConfig
      *
      * @var string
      */
-    const VERSION = '8.64.0';
+    const VERSION = '8.83.29';
 
     /**
      * The base path for the Laravel installation.
@@ -248,7 +248,7 @@ class Application extends Container implements ApplicationContract, CachesConfig
      */
     public function afterLoadingEnvironment(Closure $callback)
     {
-        return $this->afterBootstrapping(
+        $this->afterBootstrapping(
             LoadEnvironmentVariables::class, $callback
         );
     }
@@ -602,7 +602,9 @@ class Application extends Container implements ApplicationContract, CachesConfig
      */
     public function detectEnvironment(Closure $callback)
     {
-        $args = $_SERVER['argv'] ?? null;
+        $args = $this->runningInConsole() && $_SERVER['argv']
+            ? $_SERVER['argv']
+            : null;
 
         return $this['env'] = (new EnvironmentDetector)->detect($callback, $args);
     }
@@ -628,7 +630,17 @@ class Application extends Container implements ApplicationContract, CachesConfig
      */
     public function runningUnitTests()
     {
-        return $this['env'] === 'testing';
+        return $this->bound('env') && $this['env'] === 'testing';
+    }
+
+    /**
+     * Determine if the application is running with debug mode enabled.
+     *
+     * @return bool
+     */
+    public function hasDebugModeEnabled()
+    {
+        return (bool) $this['config']->get('app.debug');
     }
 
     /**
@@ -939,7 +951,7 @@ class Application extends Container implements ApplicationContract, CachesConfig
         $this->bootedCallbacks[] = $callback;
 
         if ($this->isBooted()) {
-            $this->fireAppCallbacks([$callback]);
+            $callback($this);
         }
     }
 
@@ -949,10 +961,14 @@ class Application extends Container implements ApplicationContract, CachesConfig
      * @param  callable[]  $callbacks
      * @return void
      */
-    protected function fireAppCallbacks(array $callbacks)
+    protected function fireAppCallbacks(array &$callbacks)
     {
-        foreach ($callbacks as $callback) {
-            $callback($this);
+        $index = 0;
+
+        while ($index < count($callbacks)) {
+            $callbacks[$index]($this);
+
+            $index++;
         }
     }
 
@@ -1138,8 +1154,12 @@ class Application extends Container implements ApplicationContract, CachesConfig
      */
     public function terminate()
     {
-        foreach ($this->terminatingCallbacks as $terminating) {
-            $this->call($terminating);
+        $index = 0;
+
+        while ($index < count($this->terminatingCallbacks)) {
+            $this->call($this->terminatingCallbacks[$index]);
+
+            $index++;
         }
     }
 
