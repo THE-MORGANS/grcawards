@@ -5,21 +5,21 @@ trait AwardsGroups{
  
     public function getAwardId()
     {
-        $data['award_group_one'] = [40,43]; //ComBankRiskComplainces
-        $data['award_group_five'] = [97]; //rc_solution_providers
-        $data['award_group_seven'] = [12]; //grc_anti_fin_crim_reporters
-        $data['award_group_eleven'] = [101]; // Governors award 
-        $data['award_group_twelve']  = [102]; //NonFI
-// --------------------in use -----------------
-        $data['award_group_two'] = [147]; //ESG Initiative
-        $data['award_group_three'] = [105,107,109,126,133,135,129,137,111,110, 146, 131]; //com_bank_chief_risk_officers
-        $data['award_group_four'] = [125, 104, 106,108,128,130, 132,134, 136]; //grc_employers
-        $data['award_group_six'] = [140,141,142,143]; //grc_training_providers
-        $data['award_group_eight'] = [96,95]; //Financial Crime Prevention Advisory Service
-        $data['award_group_nine'] = [138, 139]; // women is GRC
-        $data['award_group_ten'] = [144]; //Media Votes
-        $data['award_group_eleven'] = [145]; //Special Recog
+        $data['award_group_one'] = []; //ComBankRiskComplainces
+        $data['award_group_five'] = []; //rc_solution_providers - profile_of_the_software_provider, areas_of_grc_the_software_covers
+        $data['award_group_seven'] = []; //grc_anti_fin_crim_reporters
+        $data['award_group_eleven'] = [119,127,130,131,132,133,134,135,136,137]; // Governors award 
+        $data['award_group_twelve']  = []; //NonFI
+        $data['award_group_two'] = [121]; //ESG Initiative
+        $data['award_group_three'] = [105,109,111,113,115]; //com_bank_chief_risk_officers - recognised_professional_association_membership, number_of_independent_non_executive_directors, board_committee_in_place_covering_risk_management
+        $data['award_group_four'] = [104,106,107,108,110,112,114,116,117,118,120]; //grc_employers - worklife_balance, pay_and_benefits, No_of_employees_who_rated
+        $data['award_group_six'] = [123,124,125,126]; //grc_training_providers - profile_of_the_training_provider_and_areas_of_grc_covered, evidence_of_innovative_ways_of_teaching
+        $data['award_group_eight'] = []; //Financial Crime Prevention Advisory Service - profile_of_the_advisory_service_provider, evidence_of_innovative_ways_of_promoting
+        $data['award_group_nine'] = [128,129]; // women is GRC
+        $data['award_group_ten'] = [122]; //Media Votes
+        $data['award_group_eleven'] = []; //Special Recog
         return $data;
     }
 
+    
 }
