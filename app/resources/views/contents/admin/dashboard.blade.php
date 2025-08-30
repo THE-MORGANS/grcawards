@@ -1,5 +1,7 @@
 @extends('layouts.admin.master')
-
+@php 
+use Illuminate\Support\Facades\Http;
+@endphp 
 @section('title', 'Admin Dashboard')
 @section('content')
 <div class="container-fluid">
@@ -155,7 +157,7 @@
                                 <tr>
                                     <td>{{$item->email}}</td>
                                     <td>
-                                        @php $details = json_decode(file_get_contents("http://ipinfo.io/$item->ip_address/json"));
+                                        @php $details = json_decode(Http::get("http://ipinfo.io/$item->ip_address/json"));
                                       echo $details->city.", ".$details->country; 
                                      @endphp
                                     </td>
