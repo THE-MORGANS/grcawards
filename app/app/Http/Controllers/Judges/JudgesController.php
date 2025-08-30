@@ -71,14 +71,14 @@ class JudgesController extends Controller
     }
 
    
+
+    // -----------------------loader -------------------
     public function ViewJudgeCategoryPage(Request $request, $award_program)
     {
-      
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
         $categories = Category::where(['award_program_id' => $current_award_program->id])->simplePaginate(1);
        foreach($categories  as $category){
         $category->hashid = Hashids::connection('category')->encode($category->id);
-        // $sector = Sector::where(['category_id' => $category->id])->get();
         foreach($category->sectors as $sectors){
             $sectors->hashid = Hashids::connection('sector')->encode($sectors->id);
         foreach($sectors->awards as $sec){
@@ -89,9 +89,6 @@ class JudgesController extends Controller
     return view('contents.admin.judge.judgeCategories')
     ->with('categories', $categories);
 
-
-
-    // -----------------old files --------------------------
         $award_program_id = Hashids::connection('awardProgram')->decode($award_program);
         if (isset($award_program_id[0]) && AwardProgram::where('id', $award_program_id[0])->exists()) {
             $data['categories'] = AwardProgram::find($award_program_id[0])->categories;

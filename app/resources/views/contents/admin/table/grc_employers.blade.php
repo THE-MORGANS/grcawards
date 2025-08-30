@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4 class="header-title mb-4">Add Judges Votes for <span style="color:red">
-                                        {{ $awards[0]->awards->name }} Awards </span> </h4>
+                                        {{ $awards[0]->awards->name}} Awards </span> </h4>
                             </div>
                             {{-- <div class="col-12 text-end"> 
                             <button type="button" id="add-field" class="btn btn-success btn-sm">
@@ -167,3 +167,5 @@
                 </script>
             @endif
         @endsection
+
+        

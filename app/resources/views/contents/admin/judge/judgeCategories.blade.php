@@ -27,14 +27,19 @@
             </div> <!-- end card-->
         </div> <!-- end col-->
     </div>
+
     <!-- end row-->
-    <div class="row" style="background: #eee; padding-top:100px"> 
+    <div class="row" style="background: #eee; padding-top:20px"> 
         @foreach ($categories as $category)
+         
+            <div class="col-md-12"> 
+                <div style="text-align: right; padding: 15px" >  {{$categories->links()}} </div>
+            </div> 
         <div class="col-md-0">  </div> 
         <div class="col-md-12">
             <div class="card" >
                 <div class="card-body">
-                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(4))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(4))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(4))}}  </span> @endif</span>  </h2>
+                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(5))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(5))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(5))}}  </span> @endif</span>  </h2>
                   <p class="card-text">{{substr($category->description,0,100).'...'}}</p>
                   @php
                       $category->hashid = Hashids::connection('category')->encode($category->id);
@@ -59,9 +64,9 @@
                           $sector->hashid = Hashids::connection('sector')->encode($sector->id);
                           $category->hashid = Hashids::connection('category')->encode($category->id);
                             @endphp
-                           <a href="{{route('admin.load_judge_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" >
-                            {{$sector->name}}
-                          </a>
+                           {{-- <a href="{{route('admin.load_judge_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" > --}}
+                            <span class="badge badge-outline-primary"> {{$sector->name}}</span>
+                          {{-- </a> --}}
     
                            <p class="sectorid" hidden>{{$sector->id}}</p>
                       </h3>
@@ -138,6 +143,30 @@
                          
                         }
                       </script>
+                       @if (Session::has('success'))
+                <script>
+                    toastr.options = {
+                        "closeButton": true,
+                        "progressBar": true,
+                        "preventDuplicates": true,
+                        "preventOpenDuplicates": true
+                    }
+                    toastr.success("{{ session('success') }}");
+                </script>
+            @endif
+
+            @if (Session::has('danger'))
+                <script>
+                    toastr.options = {
+                        "closeButton": true,
+                        "progressBar": true,
+                        "preventDuplicates": true,
+                        "preventOpenDuplicates": true
+                    }
+                 
+                    toastr.error("{{ session('danger') }}");
+                </script>
+            @endif
                       @endsection
                     </td> 
                     <td>{{substr($award->criteria,0,100)}} <button style="border:none; color:blue;"   onClick="readMores({{$index}})" id="btns-{{$index}}">read more </button>
@@ -179,13 +208,6 @@
         @endforeach
     </div>
 </div>
+
 @endsection
 
-
-
-
-@section('scripts')
-<!-- demo app -->
-<script src="assets/js/pages/demo.dashboard-analytics.js"></script>
-<!-- end demo js-->
-@endsection
