@@ -32,50 +32,94 @@ class NominessVotesController extends Controller
         $data = $this->getAwardId();
         if (in_array($award_id,  $data['award_group_one'])) {
             $data['awards'] = ComBankRiskComplaince::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.ComBankRiskComplainces', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_two'])) {
             $data['awards'] = ComBankFraudAwareness::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.com_bank_fraud_awarenesses', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_three'])) {
             $data['awards'] = ComBankChiefRiskOfficer::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.com_bank_chief_risk_officers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id, $data['award_group_four'])) {
             $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
-              $this->checkData($data,$request, $award_id);
+                    if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.grc_employers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_five'])) {
             $data['awards'] = GrcSolutionProvider::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.grc_solution_providers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_six'])) {
             $data['awards'] = GrcTrainingProvider::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.grc_training_providers', $data)->with(['award_program' => $award_program]);
         } else if (in_array($award_id,  $data['award_group_seven'])) {
             $data['awards'] = GrcAntiFinCrimReporter::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.grc_anti_fin_crim_reporters', $data)->with(['award_program' => $award_program]);
         }else if (in_array($award_id,  $data['award_group_eight'])) {
             $data['awards'] = CrimePreventionAdvisoryService::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.crime_prevention_advisory_service', $data)->with(['award_program' => $award_program]);
         }
         else if (in_array($award_id,  $data['award_group_nine'])) {
             $data['awards'] = WomenInGrc::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.women_in_grc', $data)->with(['award_program' => $award_program]);
         }
         else if (in_array($award_id,  $data['award_group_ten'])) {
             $data['awards'] = MediaVotes::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.media_votes', $data)->with(['award_program' => $award_program]);
         }
         else if (in_array($award_id,  $data['award_group_eleven'])) {
             $data['awards'] = GovernorsVotes::whereAwardId($award_id)->get();
-             $this->checkData($data,$request, $award_id);
+                   if($data['awards']->isEmpty())
+                {
+                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
+               return redirect()->back();
+              }
             return view('contents.admin.table.governors_votes', $data)->with(['award_program' => $award_program]);
         // }
         // else if (in_array($award_id,  $data['award_group_twelve'])) {
@@ -87,14 +131,5 @@ class NominessVotesController extends Controller
         }
     }
 
-       public function checkData($data,$request, $award_id)
-    {
-        $data['awards'] = GrcEmployer::whereAwardId($award_id)->get();
-              if($data['awards']->isEmpty())
-                {
-                $request->session()->flash('danger', 'Nominees information is not setup yet on this award');
-               return redirect()->back();
-              }
-    }
 
 }
