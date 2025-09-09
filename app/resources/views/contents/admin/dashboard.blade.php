@@ -147,8 +147,8 @@ use Illuminate\Support\Facades\Http;
                             <thead class="table-light">
                                 <tr>
                                     <th> Email</th>
-                                    <th>Location</th>
-                                    <th>Date Voted</th>
+                                    {{-- <th>Location</th> --}}
+                                    {{-- <th>Date Voted</th> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -156,12 +156,12 @@ use Illuminate\Support\Facades\Http;
                                 @forelse ($voters_pg as $item)
                                 <tr>
                                     <td>{{$item->email}}</td>
-                                    <td>
+                                    {{-- <td>
                                         @php $details = json_decode(Http::get("http://ipinfo.io/$item->ip_address/json"));
                                       echo $details->city.", ".$details->country; 
                                      @endphp
-                                    </td>
-                                    <td>{{$item->created_at->diffForHumans()}}</td>
+                                    </td> --}}
+                                    {{-- <td>{{$item->created_at->diffForHumans()}}</td> --}}
                                 </tr>
                                 @empty
                                     
