@@ -91,21 +91,21 @@
                             </div>
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="control-label form-label">No of employees who rated</label>
+                                    <label class="control-label form-label">Evidence of Cybersecurity Strategy and Resilience</label>
                                     <input class="form-control @error('No_of_employees_who_rated') is-invalid @enderror"  @if(isset($nominessDetails->No_of_employees_who_rated)) value="{{$nominessDetails->No_of_employees_who_rated}}" @endif placeholder="No of employees who rated" type="text" name="No_of_employees_who_rated"  />
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="control-label form-label">Worklife Balance</label>
+                                    <label class="control-label form-label">Evidence of Data Governance and Regulatory Compliance</label>
                                     <input class="form-control @error('worklife_balance') is-invalid @enderror"  @if(isset($nominessDetails->worklife_balance)) value="{{$nominessDetails->worklife_balance}}" @endif placeholder="worklife balance" type="text" name="worklife_balance"  />
                                    
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="mb-3">
-                                    <label class="control-label form-label">Pay and benefits</label>
+                                    <label class="control-label form-label">Evidence of  Innovation and Technology Adoption</label>
                                     <input class="form-control @error('pay_and_benefits') is-invalid @enderror" @if(isset($nominessDetails->pay_and_benefits)) value="{{$nominessDetails->pay_and_benefits}}" @endif placeholder="pay and benefits" type="text" name="pay_and_benefits"  />
                                    
                                 </div>
