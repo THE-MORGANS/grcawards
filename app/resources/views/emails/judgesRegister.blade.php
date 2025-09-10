@@ -22,8 +22,13 @@
                     
             <tr>
                 <td style="padding:0 30px">
-                    <p>We are honoured to have you as one of our judges on GRC Financial Crime Awards {{$currentYear?->year}} 
-                        <br> Please see below login details to have access to our judges voting portal.
+                    <p>Thank you once again for your commitment to serving as a judge for the GRC & Financial Crime Prevention Awards. <br>
+                 Please find below your confidential login credentials to access the Judges Voting Platform and begin the evaluation process:
+
+                        <br> Please find below your confidential login credentials to access the Judges Voting Platform and begin the evaluation process:
+
+                        <br>
+                        Africa Edition: <a href="https://grcfincrimeawards.com/admin/login">Login Here</a>
                     </p>
     <table width="100%">
     <tbody><tr>
@@ -43,6 +48,22 @@
     </tr>
     </tbody>
 </table>
-<a href="https://grcfincrimeawards.com/admin/login"> Click Here to Login </a>
+<p>
+    👉 These details are strictly confidential and for your use only.
+</p>
+<p>
+    You may now log in and begin the judging process. If you experience any issues accessing the platform or have questions during the voting period, <br>
+     please reach out to us via events@grcfincrimeawards.com
+ or through the Judges’ WhatsApp group for immediate support.
+</p>
+<p>We deeply appreciate your valuable contribution to ensuring a fair and credible judging process. <br>
+
+Kind regards,
+</p>
+
+<p>
+    Judges Coordination Team <br>
+{{date('Y')}} GRC & Financial Crime Prevention Awards
+</p>
     </center>
 </div>
