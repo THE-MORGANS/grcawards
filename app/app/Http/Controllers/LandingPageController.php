@@ -65,6 +65,7 @@ class LandingPageController extends Controller
 
     public function showVote(Request $req, $categories_id = null)
     {  
+        return back();
        
         $current_award_program = AwardProgram::where('status', 1)->latest()->first();
         $categories = Category::where(['award_program_id' => $current_award_program->id])->simplePaginate(1);
