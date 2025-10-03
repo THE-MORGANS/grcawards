@@ -26,7 +26,7 @@
 						<div class="conference-slider-title">7th Nov 2025</div>
 						<h2 class="title"><span>At Lagos Marriott Hotel Ikeja</span></h2>
 						<h4 style="color:#fff"> Summit: 10am - 12pm</h4>
-						<h4 style="color:#fff">  Awards and Celemony: 4pm - 7pm</h4>
+						<h4 style="color:#fff">  Awards and Ceremony: 6pm - 9pm</h4>
 					</div>
 				</div>
 			</div>
@@ -154,7 +154,7 @@
 						Date: <h3>7th Nov 2025</h3>
 						Venue: <h3>Lagos Marriott Hotel Ikeja</h3>
 						Time: <h3> Summit: 10am - 12pm</h3>
-						<h3> Awards and Celemony: 4pm - 7pm</h3>
+						<h3> Awards and Ceremony: 6pm - 9pm</h3>
 					</div>
 					</div>
 				</div>
