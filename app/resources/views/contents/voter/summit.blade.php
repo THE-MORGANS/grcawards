@@ -76,9 +76,9 @@
                     <div class="col-12" style="text-align:justify; ">
                         <ul class="mission-meta p-3" style="display: block">
                             <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Microsoft Teams (Online Meeting) </li>
-                            <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 6th,June 2025
+                            <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th, Nov 2025
                             </li>
-                            <li><i class="mdi mdi-clock-outline"></i>Time: 12pm</li>
+                            <li><i class="mdi mdi-clock-outline"></i>Time: 10am</li>
                             <li class="pt-3"><i class="mdi mdi-account-outline"></i> <a
                                     href="{{ route('summit_register') }}" target="_blank" style="font-size:25px">
                                     REGISTER HERE </a> </li>
@@ -99,9 +99,7 @@
 
                         <h4 class="col-12"
                             style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">
-                            Theme: "Future-Proofing GRC & Financial Crime Prevention:
-                            The Convergence of AI, ESG, and Digital Compliance in a Rapidly Evolving Landscape
-                            "
+                            Theme: “Sovereign Systems & Street-Level Compliance: Localising GRC and Financial Crime Prevention for Africa’s Next Frontier.”
                         </h4>
 
                         <div class="mission-info-text">
@@ -110,7 +108,7 @@
                             <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 About the Summit
                             </h6>
                             <p>
-                                The GRC & Financial Crime Prevention Mid-Year Summit 2025 is a strategic gathering of
+                                The GRC & Financial Crime Prevention  Summit 2025 is a strategic gathering of
                                 industry leaders, innovators, regulators, and professionals committed to safeguarding
                                 institutions and communities from the growing complexities of governance, risk,
                                 compliance (GRC), and financial crime.
@@ -122,7 +120,7 @@
                             </p>
 
 
-                            <p class="p-3"></p>
+                            {{-- <p class="p-3"></p>
                             <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Why This Theme?
                             </h5>
                             <br>
@@ -141,7 +139,7 @@
                                 <li> Cross-border data integrity and cyber risk</li>
 
                                 <li> Human-centred governance in an automated world</li>
-                            </ul>
+                            </ul> --}}
 
 
                             <p class="p-3"></p>
@@ -218,6 +216,39 @@
                                 🌟
                             </ol>
                         </div>
+                        <br>
+                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 Why Localisation Matters
+                            </h6>
+                            <p>
+                            For too long, governance, risk, compliance, and financial crime prevention (GRC & FinCrime) frameworks in Africa have been imported from external models. While global standards such as FATF, Basel, and OECD guidelines are essential, they often fail to fully reflect Africa’s diverse legal systems, institutional realities, and socio-economic conditions.
+ 
+                            Localising GRC and Financial Crime Prevention means:
+                            
+                            Designing homegrown regulatory systems that meet international expectations while addressing unique local risks.
+                            
+                            Embedding cultural and community realities into compliance practices, ensuring solutions are practical and enforceable.
+                            
+                            Empowering African-led innovation in RegTech, compliance systems, and monitoring tools that reflect local languages, infrastructures, and priorities.
+                            
+                            Strengthening grassroots enforcement so policies move beyond paper into everyday business, banking, and community interactions.
+                            </p>
+
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡Key Dimensions of Localisation
+                            </h5>
+                            <br>
+                            <ul style="list-style: disc">
+                                <li> 1. Policy and Sovereignty – Crafting regulations that serve African markets first, while engaging responsibly with global partners.</li>
+
+                                <li> 2. Street-Level Compliance – Building compliance literacy among SMEs, fintechs, cooperatives, and informal sectors.</li>
+
+                                <li> 3. Technology and RegTech – Supporting African innovators to create scalable, affordable compliance tools.</li>
+
+                                <li> 4. Capacity and Training – Developing skilled professionals across the continent to close gaps in enforcement and oversight.</li>
+
+                                <li> 5. Sustainable GRC – Aligning compliance efforts with Africa’s development goals, ESG imperatives, and digital transformation.</li>
+                            </ul>
                     </div>
                 </div>
             </div>
