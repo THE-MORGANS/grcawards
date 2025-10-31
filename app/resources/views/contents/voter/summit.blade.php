@@ -684,7 +684,7 @@
                 <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
                         style="font-size:20px"> REGISTER HERE </a> </li>
                 <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Marriott Hotel Ikeja
-                 &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span></li>
+                 &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span> </li>
                 <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025</li>
                 <li><i class="mdi mdi-clock-outline"></i>Time: 10am - 12noon</li>
 
