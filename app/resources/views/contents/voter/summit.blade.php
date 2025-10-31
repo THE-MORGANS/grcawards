@@ -5,6 +5,8 @@
 <head>
     @include('partials.voter.head')
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.min.css') }}" />
+    <link href="{{asset('assets/css/model-new.css')}}" rel="stylesheet" />
+
 </head>
 
 <body id="conference-page">
@@ -75,7 +77,9 @@
 
                     <div class="col-12" style="text-align:justify; ">
                         <ul class="mission-meta p-3" style="display: block">
-                            <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Lagos Marriott Hotel Ikeja</li>
+                            <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Lagos Marriott Hotel Ikeja 
+                                &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span>
+                            </li>
                             <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025
                             </li>
                             <li><i class="mdi mdi-clock-outline"></i>Time: 10am - 12noon</li>
@@ -177,6 +181,9 @@
                             <p class=" mb-2">
                                 Stay ahead of legislative trends with insights from regulators and policy experts.
                             </p>
+                            <div style="margin-bottom:15px;">
+                                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#order-of-programme-modal">Order of Programme</a>
+                            </div>
                             <h5 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">💡 Who Should Attend?
                             </h5>
                             <br>
@@ -625,6 +632,31 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/olusesan_mayokun.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">BLDR Olusesan Mayokun Daini
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                               Fmr. Executive Chairman, Igbogbo Baiyeku LCDA
+                            </p>
+                            <!-- <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
                         <img src="{{asset('/assets/images/speakers/summit_2025/moyosore_ogunlewe.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
@@ -647,14 +679,13 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <ul class="pt-5">
                 <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
                         style="font-size:20px"> REGISTER HERE </a> </li>
-                        <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Marriott Hotel Ikeja</li>
-                        <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025
-                        </li>
+                <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Marriott Hotel Ikeja
+                 &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span></li>
+                <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025</li>
                 <li><i class="mdi mdi-clock-outline"></i>Time: 10am - 12noon</li>
 
             </ul>
@@ -677,6 +708,50 @@
     @include('partials.voter.footer')
     <!--================== FOOTER END ==================-->
 
+    <!-- ================ MODALS ================ -->
+
+    <div class="modal fade" id="direction-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header py-3 px-4 border-bottom-0">
+                    <h5 class="modal-title" id="modal-title">Directions</h5>
+                    <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close-circle mdi-24px" style="color: red;"></i></a>
+                </div>
+
+                <div class="modal-body px-4 pb-4 pt-0">
+                    <section class="s-our-mission s-about-speaker" style="padding:0px">
+                        <div class="row" style="flex-direction: column;">
+                            <div class="col-lg-12 our-mission-info">
+                                <img src="{{asset('/assets/summit_directions.jpeg')}}" alt="direction image" style="width: 100%;height:auto;">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="order-of-programme-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header py-3 px-4 border-bottom-0">
+                    <h5 class="modal-title" id="modal-title">Order of Programme</h5>
+                    <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close-circle mdi-24px" style="color: red;"></i></a>
+                </div>
+
+                <div class="modal-body px-4 pb-4 pt-0">
+                    <section class="s-our-mission s-about-speaker" style="padding:0px">
+                        <div class="row" style="flex-direction: column;">
+                            <div class="col-lg-12 our-mission-info">
+                                <img src="{{asset('/assets/summit_order_of_programme.jpg')}}" alt="direction image" style="width: 100%;height:auto;">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ================ MODALS END ================ -->
     <!--=================== TO TOP ===================-->
     <a class="to-top" href="#home">
         <i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
@@ -685,7 +760,8 @@
 
     <!--=================== SCRIPT	===================-->
     @include('partials.voter.scripts')
-
+    <script src="{{asset('assets/js/vendor.min.js')}}"></script>
+    <script src="{{asset('assets/js/app.min.js')}}"></script>
 
     <script>
         // Set the date we're counting down to
