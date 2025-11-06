@@ -266,6 +266,32 @@
         <div class="container">
             <h2 class="title-conference"><span>Our Speakers</span></h2>
             <div class="slider-our-speaker">
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/esosa_balogun.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Esosa Balogun - BSC, FCA, CCSA, CRMA, CIA, MBA 
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                            General Manager, Risk Management, MTN Nigeria
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/esosa-balogun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
                         <img src="{{asset('/assets/images/speakers/summit_2025/rianne_potgieter.jpeg')}}"
@@ -291,6 +317,156 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/emeka_offor.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Dr. Emeka Offor
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                                Erstwhile Executive Secretary/CEO, Nigerian Investment Promotion Commission (NIPC)
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/emekaoffor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/jameelah_sharrieff.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Dr. Jameelah Sharrieff-Ayedun
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                                MD/CEO Credit Registry
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/jameelah-sharrieff-ayedun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/alex_noton.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Alex Noton
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                            Co-founder & CEO, pAIscreen
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/alex-noton-7620b24?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/moyosore_ogunlewe.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Hon. Barr. Moyosore Ogunlewe
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                                Executive Chairman, Kosofe Local Government Area, Lagos State
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/moyosore-ogunlewe-1b020750?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/olusesan_mayokun.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">BLDR Olusesan Mayokun Daini
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                               Fmr. Executive Chairman, Igbogbo Baiyeku LCDA
+                            </p>
+                            <!-- <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
+                        <img src="{{asset('/assets/images/speakers/summit_2025/tosinleye_odeyemi.jpeg')}}"
+                            alt="img">
+                        <div class="speaker-item-info"
+                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
+                            <h3 class="name" style="font-size:18px">Tosin-Leye Odeyemi FCA, HCIB
+                            </h3>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
+                             Head, Sustainability Risk & Capital Management, Stanbic IBTC Holdings Plc
+                            </p>
+                            <div class="meta">
+                                <span class="post-tag" style="margin-right:7px;">
+                                    <a href="https://www.linkedin.com/in/tosin-leye-odeyemi-fca-hcib-a0b4401?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
+                                        target="_blank">
+                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
+                                            aria-hidden="true"></i>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-our-speaker">
+                    <div class="our-speaker-item">
                         <img src="{{asset('/assets/images/speakers/summit_2025/beauty_mtonga.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
@@ -302,75 +478,6 @@
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
                                     <a href="https://www.linkedin.com/in/beauty-mtonga-b773638a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/adenike_odukomaiya.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Adenike Odukomaiya
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Head, Internal Audit - Stanbic IBTC</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/dr-adenike-odukomaiya-45228a40?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/fatumata_soukouna.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Fatumata Soukouna Coker
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chairman of the Board, THE CIO & C-SUITE Club Africa</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/dr-nic/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/bright_chinweotuto.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Bright Chinweotuto Anyanwu
- 
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Senior Compliance Manager & MLRO, West and Central Africa, Yellow Card</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/anyanwubrightc/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -427,58 +534,6 @@
                     </div>
                 </div>
 
-
-                
-
-
-                 <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/abiola_jewoola.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Abiola Jewoola
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Technologist Enthusiast</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/abiola-jewoola-b10b6b11/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/tosinleye_odeyemi.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Tosin-Leye Odeyemi FCA, HCIB
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                             Head, Sustainability Risk & Capital Management, Stanbic IBTC Holdings Plc
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/tosin-leye-odeyemi-fca-hcib-a0b4401?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
                         <img src="{{asset('/assets/images/speakers/summit_2025/eneni_oduwole.jpeg')}}"
@@ -504,21 +559,19 @@
                     </div>
                 </div>
 
-                 <div class="slide-our-speaker">
+                <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/esosa_balogun.jpeg')}}"
+                        <img src="{{asset('/assets/images/speakers/summit_2025/abiola_jewoola.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Esosa Balogun - BSC, FCA, CCSA, CRMA, CIA, MBA 
+                            <h3 class="name" style="font-size:18px">Abiola Jewoola
                             </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                            General Manager, Risk Management, MTN Nigeria
-                            </p>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Technologist Enthusiast</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/esosa-balogun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/abiola-jewoola-b10b6b11/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -529,21 +582,19 @@
                     </div>
                 </div>
 
-                 <div class="slide-our-speaker">
+                <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/alex_noton.jpeg')}}"
+                        <img src="{{asset('/assets/images/speakers/summit_2025/adenike_odukomaiya.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Alex Noton
+                            <h3 class="name" style="font-size:18px">Dr. Adenike Odukomaiya
                             </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                            Co-founder & CEO, pAIscreen
-                            </p>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Head, Internal Audit - Stanbic IBTC</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/alex-noton-7620b24?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/dr-adenike-odukomaiya-45228a40?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -554,47 +605,20 @@
                     </div>
                 </div>
 
-
-                 <div class="slide-our-speaker">
+                <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/emeka_offor.jpeg')}}"
+                        <img src="{{asset('/assets/images/speakers/summit_2025/bright_chinweotuto.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Emeka Offor
+                            <h3 class="name" style="font-size:18px">Bright Chinweotuto Anyanwu
+ 
                             </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                Erstwhile Executive Secretary/CEO, Nigerian Investment Promotion Commission (NIPC)
-                            </p>
+                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Senior Compliance Manager & MLRO, West and Central Africa, Yellow Card</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/emekaoffor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                   <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/jameelah_sharrieff.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Jameelah Sharrieff-Ayedun
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                MD/CEO Credit Registry
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/jameelah-sharrieff-ayedun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/anyanwubrightc/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -632,44 +656,17 @@
 
                 <div class="slide-our-speaker">
                     <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/olusesan_mayokun.jpeg')}}"
+                        <img src="{{asset('/assets/images/speakers/summit_2025/fatumata_soukouna.jpeg')}}"
                             alt="img">
                         <div class="speaker-item-info"
                             style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">BLDR Olusesan Mayokun Daini
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                               Fmr. Executive Chairman, Igbogbo Baiyeku LCDA
-                            </p>
-                            <!-- <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/moyosore_ogunlewe.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Hon. Barr. Moyosore Ogunlewe
+                            <h3 class="name" style="font-size:18px">Fatumata Soukouna Coker
                             </h3>
                             <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                Executive Chairman, Kosofe Local Government Area, Lagos State
-                            </p>
+                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chairman of the Board, THE CIO & C-SUITE Club Africa</p>
                             <div class="meta">
                                 <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/moyosore-ogunlewe-1b020750?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
+                                    <a href="https://www.linkedin.com/in/dr-nic/" tabindex="-1"
                                         target="_blank">
                                         <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
                                             aria-hidden="true"></i>
@@ -679,6 +676,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             <ul class="pt-5">
                 <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
