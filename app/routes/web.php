@@ -140,6 +140,7 @@ Route::get('winners/2021', [LandingPageController::class, 'showWinners'])->name(
 Route::get('winners/2022', [LandingPageController::class, 'showWinners2022'])->name('show_winners2022');
 Route::get('winners/2023', [LandingPageController::class, 'showWinners2023'])->name('show_winners2023');
 Route::get('winners/2024', [LandingPageController::class, 'showWinners2024'])->name('show_winners2024');
+Route::get('winners/2025', [LandingPageController::class, 'showWinners2025'])->name('show_winners2025');
 
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');

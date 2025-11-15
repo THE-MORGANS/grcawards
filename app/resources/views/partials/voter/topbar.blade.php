@@ -51,6 +51,7 @@
                                 </a>
                                 <ul>
                                     {{-- @foreach($award_program_years as $award_program_year) --}}
+                                    <li class=""><a href="{{route('show_winners2025')}}">2025 Winners</a></li>
                                     <li class=""><a href="{{route('show_winners2024', '2024')}}">2024 Winners</a></li>
                                     <li class=""><a href="{{route('show_winners2023', '2023')}}">2023 Winners</a></li>
                                         <li class=""><a href="{{route('show_winners2022', '2022')}}">2022 Winners</a></li>

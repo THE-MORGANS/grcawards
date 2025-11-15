@@ -169,6 +169,9 @@ class LandingPageController extends Controller
     public function showWinners2024(){
         return view('contents.voter.winners4');
     }
+    public function showWinners2025(){
+        return view('contents.voter.winners5');
+    }
     public function showPicturesCategories(){
         $awardPrograms = [];
         $award_programs = AwardProgram::all();
