@@ -77,8 +77,8 @@
                                                     <div class="col-6 widget-archive">
                                                         <div class=" row">
                                                             <div class="col-12 col-md-6 mt-2">
-                                                                <img src="{{ asset('assets/images/winners_2025/gt_h.jpeg') }}" height="50">
-                                                                <p>Guaranty Trust Holding Company</p>
+                                                                <img src="{{ asset('assets/images/winners_2025/absa_group.jpeg') }}" height="50">
+                                                                <p>Absa Group Limited</p>
                                                             </div>
                                                         </div>
                                                     </div>
