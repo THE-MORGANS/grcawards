@@ -62,7 +62,7 @@
   transform: rotate(90deg);
 }
 .in-check:checked ~ .accordion-content {
-  max-height: 400vh;
+  max-height: 100%;
   padding: 16px;
 }
 
