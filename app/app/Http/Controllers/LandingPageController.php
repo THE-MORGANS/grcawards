@@ -176,7 +176,7 @@ class LandingPageController extends Controller
         $awardPrograms = [];
         $award_programs = AwardProgram::all();
         foreach($award_programs as $award_program){
-            if($award_program == 5) continue;
+            if($award_program->id == 5) continue;
             $gallery = Gallery::where(['award_program_id'=> $award_program->id,'type'=> 'image' ])->inRandomOrder()->limit(1)->first();
             $award_program->hashid = Hashids::connection('awardProgram')->encode($award_program->id);
             if ($gallery->count() > 0){
