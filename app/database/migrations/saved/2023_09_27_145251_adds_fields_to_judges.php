@@ -14,8 +14,9 @@ class AddsFieldsToJudges extends Migration
     public function up()
     {
         Schema::table('judges', function (Blueprint $table) {
-            //
-            $table->integer('admin_id')->unsigned()->nullable();
+            if (!Schema::hasColumn('judges', 'admin_id')) {
+                $table->integer('admin_id')->unsigned()->nullable();
+            }
         });
     }
 

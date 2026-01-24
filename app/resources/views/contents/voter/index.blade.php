@@ -22,11 +22,11 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">GRC Prevention Awards & Summit  </div>
-						<div class="conference-slider-title">7th Nov 2025</div>
-						<h2 class="title"><span>At Lagos Marriott Hotel Ikeja</span></h2>
-						<h4 style="color:#fff"> Summit: 10am - 12pm</h4>
-						<h4 style="color:#fff">  Awards and Ceremony: 6pm - 9pm</h4>
+						<div class="date">Lusaka Summit 2026</div>
+						<div class="conference-slider-title">15th - 17th April 2026</div>
+						<h2 class="title"><span>Lusaka, Zambia</span></h2>
+						<h4 style="color:#fff">GRC & Financial Crime Prevention Conference - Africa</h4>
+						<h4 style="color:#fff">Trust, Resilience and Sustainable Growth</h4>
 					</div>
 				</div>
 			</div>
@@ -37,10 +37,10 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">7th Nov 2025</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<div class="date">15th - 17th April 2026</div>
+						<div class="conference-slider-title">Lusaka Summit</div>
+						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
+						<p>A high-level, three-day stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, and global organisations.</p>
 					</div>
 				</div>
 			</div>
@@ -62,10 +62,10 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">7th Nov 2025</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<div class="date">15th - 17th April 2026</div>
+						<div class="conference-slider-title">Lusaka Summit</div>
+						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
+						<p>A curated, senior-level convening designed for decision-makers, policy shapers, and institutional leaders.</p>
 					</div>
 				</div>
 			</div>
@@ -74,10 +74,10 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">7th Nov 2025</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<div class="date">15th - 17th April 2026</div>
+						<div class="conference-slider-title">Lusaka Summit</div>
+						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
+						<p>Strengthening trust, resilience, and sustainable growth through effective governance and risk management.</p>
 					</div>
 				</div>
 			</div>
@@ -86,10 +86,10 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">7th Nov 2025</div>
-						<div class="conference-slider-title">GRC & FinCrime</div>
-						<h2 class="title"><span>Prevention Awards & Summit</span></h2>
-						<p>We pride ourselves in celebrating Governance, Risk Management, Compliance and Financial Crime Prevention wins of businesses across the globe.</p>
+						<div class="date">15th - 17th April 2026</div>
+						<div class="conference-slider-title">Lusaka Summit</div>
+						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
+						<p>Join senior leaders from across Africa for this landmark conference in Lusaka, Zambia.</p>
 					</div>
 				</div>
 			</div>
@@ -104,10 +104,8 @@
 				<div class="conference-counter-wrap">
 					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
 					<div class="conference-counter-cover">
-						{{-- <h4>VOTING WILL START FROM 1ST JUNE 2025 TO 2ND SEPTEMBER 2025 - 11:59PM </h4> --}}
-						<h3>VOTING IS CLOSED, Shortlisting and Judging Process ongoing</h3>
-						 {{-- <h4>To view the shortlisted finalists, <a href="{{route('show_shortlisted_nomineees')}}" class="" tabindex="-1" style="color:rgba(39, 39, 39, .9)"><span>click here</span></a></h4>  --}}
-					
+						<h3>Join us at the GRC & Financial Crime Prevention Conference - Africa</h3>
+						<h4>15th - 17th April 2026 | Lusaka, Zambia</h4>
 					</div> 
 					<img class="conference-counter-effect-2" src="assets/images/counter-icon-2.svg" alt="img">
 				</div>
@@ -115,24 +113,23 @@
 		</div>
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
-				<h2 class="title-conference"><span>About the Awards</span></h2>
+				<h2 class="title-conference"><span>About the Conference</span></h2>
 				<div class="row">
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<video style="width:100%;" controls autoplay muted>
-							<source src="https://res.cloudinary.com/the-morgans-consortium/video/upload/AWARDS_2024_owex9v.mp4" type="video/mp4">
-						</video>
+						<img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" style="width:100%; max-width:500px;">
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
-					<h4>Celebrating Excellence and Achievements Attained in the GRC and Financial Crime Prevention Space.</h4>
+					<h4>GRC & Financial Crime Prevention Conference - Africa</h4>
 						<div class="mission-info-text">
-							<p>The Organizers of this awards are advocates for effective Governance, Risk & Compliance system in organisations and a promoter of Anti-Money Laundering and Counter-Terrorism Measures hence the reason for coming up with an initative (GRC & Financial Crime Prevention Awards) to recognize individuals and organisations across the various industries in Africa and the Europe who have been outstanding and have demonstrated expertise in this field.</p>
-							<p>The GRC & Financial Crime Prevention Annual Awards was created to recognise outstanding contributions by individuals and companies to the development, understanding, or implementation of GRC systems in in the global economy</p>
+							<p>The Governance, Risk, Compliance & Financial Crime Prevention Conference – Africa is a high-level, three-day stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, corporates, development partners, and global organisations.</p>
+							<p>Hosted in Lusaka, Zambia, the conference provides a strategic platform to address how institutions across Africa can strengthen trust, resilience, and sustainable growth through effective governance, risk management, regulatory compliance, and integrated financial crime prevention.</p>
+							<p><strong>This is not a mass-attendance event.</strong> It is a curated, senior-level convening designed for decision-makers, policy shapers, and institutional leaders.</p>
 						</div>
-						<a href="{{route('about_the_award')}}" class="btn" tabindex="-1"><span>Read More</span></a>
+						<a href="{{route('show_summit_lusaka_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 				</div>
 			</div>
@@ -140,21 +137,21 @@
 
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
-				<h2 class="title-conference"><span>Event Venue</span></h2>
+				<h2 class="title-conference"><span>Lusaka Summit 2026</span></h2>
 				<div class="row">
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<img src="{{asset('assets/mart.webp')}}" width="500px"> 
+						<img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" width="500px"> 
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
-					<h3>GRC Prevention Awards & Summit  </h3>
-						Date: <h3>7th Nov 2025</h3>
-						Venue: <h3>Lagos Marriott Hotel Ikeja</h3>
-						Time: <h3> Summit: 10am - 12pm</h3>
-						<h3> Awards and Ceremony: 6pm - 9pm</h3>
+					<h3>GRC & Financial Crime Prevention Conference - Africa</h3>
+						Date: <h3>15th - 17th April 2026</h3>
+						Venue: <h3>Lusaka, Zambia</h3>
+						Theme: <h3>Trust, Resilience and Sustainable Growth</h3>
+						<a href="{{route('show_summit_lusaka_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 					</div>
 				</div>

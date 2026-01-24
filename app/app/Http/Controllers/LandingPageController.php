@@ -199,6 +199,12 @@ class LandingPageController extends Controller
         return view('contents.voter.pictures')->with(['award_program' => $award_program]);
     }
 
+    public function showSummitWGRC2026(){
+        return view('contents.voter.summit_wgrc_2026');
+    }
+    public function showSummitLusaka2026(){
+        return view('contents.voter.summit_lusaka_2026');
+    }
     public function showSummit(){
         return view('contents.voter.summit');
     } 

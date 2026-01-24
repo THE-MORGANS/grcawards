@@ -147,6 +147,8 @@ Route::get('media/pictures/{award_program}', [LandingPageController::class, 'sho
 
 Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
+Route::get('summit/wigrc-2026', [LandingPageController::class, 'showSummitWGRC2026'])->name('show_summit_wgrc_2026');
+Route::get('summit/lusaka-2026', [LandingPageController::class, 'showSummitLusaka2026'])->name('show_summit_lusaka_2026');
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
 Route::get('summit/2024', [LandingPageController::class, 'showSummit2024'])->name('show_summit_2024');
 Route::get('summit/2023', [LandingPageController::class, 'showSummit2023'])->name('show_summit_2023');

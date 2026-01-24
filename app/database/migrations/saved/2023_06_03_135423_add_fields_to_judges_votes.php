@@ -14,10 +14,12 @@ class AddFieldsToJudgesVotes extends Migration
     public function up()
     {
         Schema::table('judges_votes', function (Blueprint $table) {
-            //
-
-            $table->integer('award_id')->nullable();
-            $table->integer('nominee_id')->nullable();
+            if (!Schema::hasColumn('judges_votes', 'award_id')) {
+                $table->integer('award_id')->nullable();
+            }
+            if (!Schema::hasColumn('judges_votes', 'nominee_id')) {
+                $table->integer('nominee_id')->nullable();
+            }
         });
     }
 

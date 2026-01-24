@@ -26,7 +26,7 @@ class AddFieldToWomenInGrc extends Migration
      */
     public function down()
     {
-        Schema::table('women_in_grc', function (Blueprint $table) {
+        Schema::table('women_in_grcs', function (Blueprint $table) {
             //
         });
     }

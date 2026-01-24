@@ -1,0 +1,18 @@
+CHANGED FILES - Summit 2026 Updates
+=====================================
+
+1. web.php - app\routes\web.php
+
+2. LandingPageController.php - app\app\Http\Controllers\LandingPageController.php
+
+3. topbar.blade.php - app\resources\views\partials\voter\topbar.blade.php
+
+4. summit_wgrc_2026.blade.php - app\resources\views\contents\voter\summit_wgrc_2026.blade.php
+
+5. summit_lusaka_2026.blade.php (NEW) - app\resources\views\contents\voter\summit_lusaka_2026.blade.php
+
+6. index.blade.php - app\resources\views\contents\voter\index.blade.php
+
+7. lusaka_summit_banner_2026.jpeg (NEW) - app\public\assets\lusaka_summit_banner_2026.jpeg
+
+8. wgrcfp_summit_banner_2026.jpeg (NEW) - app\public\assets\wgrcfp_summit_banner_2026.jpeg

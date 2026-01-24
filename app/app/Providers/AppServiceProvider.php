@@ -32,13 +32,26 @@ class AppServiceProvider extends ServiceProvider
         if(config('app.env') === 'production') {
             URL::forceScheme('https');
         }
-        Session::put('user', 'user'.$this->getToken(16));
-        Schema::defaultStringLength(191);
-        $award_program_years = \App\Models\AwardProgram::all(['year']);
-        $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
-        view()->share('award_program_years', $award_program_years);
-        view()->share('pictures', $pictures);
-        view()->share('currentYear', AwardProgram::where('status', 1)->first());
 
+        Schema::defaultStringLength(191);
+
+        // Prevent database queries during console commands (like migrations)
+        // and only run them if the tables exist to avoid circular dependencies.
+        if (!app()->runningInConsole()) {
+            Session::put('user', 'user'.$this->getToken(16));
+
+            if (Schema::hasTable('award_programs')) {
+                $award_program_years = \App\Models\AwardProgram::all(['year']);
+                $currentYear = \App\Models\AwardProgram::where('status', 1)->first();
+                
+                view()->share('award_program_years', $award_program_years);
+                view()->share('currentYear', $currentYear);
+            }
+
+            if (Schema::hasTable('gallery')) {
+                $pictures = \App\Models\Gallery::where('award_program_id', 1)->take(20)->get(); //pictures for gallery sidebar
+                view()->share('pictures', $pictures);
+            }
+        }
     }
 }
