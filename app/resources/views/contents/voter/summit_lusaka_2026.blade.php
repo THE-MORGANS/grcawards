@@ -107,104 +107,200 @@
                         </h4>
 
                         <div class="mission-info-text">
-
-                            <p></p><br>
-                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 Executive Overview
-                            </h6>
+                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 About the Conference</h6>
                             <p>
-                                The Governance, Risk, Compliance & Financial Crime Prevention Conference Africa is a high-level, three-day stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, corporates, development partners, and global organisations.
+                                The Africa Governance, Risk, Compliance & Financial Crime Prevention Conference is a three-day, high-level stakeholders convening bringing together senior leaders from government, regulatory authorities, central banks, financial institutions, corporates, development partners, and global organisations.
                             </p>
                             <p>
-                                Hosted in Lusaka, Zambia, the conference provides a strategic platform to address how institutions across Africa can strengthen trust, resilience, and sustainable growth through effective governance, risk management, regulatory compliance, and integrated financial crime prevention.
+                                Hosted in Lusaka, Zambia, the conference is designed as a secure, invitation-led and professionally curated platform for strategic dialogue, collaboration, and leadership on the most critical governance, risk, compliance, technology, cyber, and financial crime challenges facing Africa today.
                             </p>
                             <p>
-                                This is not a mass-attendance event. It is a curated, senior-level convening designed for decision-makers, policy shapers, and institutional leaders.
+                                <strong>This is not a general conference.</strong> It is a transformational, decision-maker-level forum for those shaping Africa's governance and integrity agenda.
                             </p>
 
                             <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 About THE MORGANS </h5>
-                            <p>THE MORGANS CONSORTIUM is a globally connected platform advancing leadership, dialogue, and practical solutions in Governance, Risk, Compliance and Financial Crime Prevention across Africa, Europe, and other regions.</p>
-                            <p>Through flagship conferences, summits, publications, and professional networks, THE MORGANS brings together senior stakeholders to:</p>
-                            <ul style="list-style: disc">
-                                <li>Shape policy and regulatory dialogue</li>
-                                <li>Strengthen institutional resilience</li>
-                                <li>Promote ethical leadership and accountability</li>
-                                <li>Bridge public and private sector perspectives</li>
-                            </ul>
-                            <p class="pt-3">Our events are designed to deliver substance, credibility, and long-term value, not just visibility.</p>
-
-                            <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Conference Format & Highlights </h5>
-                            <ul style="list-style: disc">
-                                <li>Ministerial and regulatory keynote addresses</li>
-                                <li>High-level plenary sessions</li>
-                                <li>Expert panel discussions</li>
-                                <li>Executive and regulatory roundtables</li>
-                                <li>Networking receptions and stakeholder engagements</li>
-                                <li>Exhibition and solution showcase</li>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">📜 Conference Theme & Philosophy</h5>
+                            <p><strong>Trust, Resilience and Sustainable Growth</strong><br>
+                            Advancing Governance, Risk, Compliance and Financial Crime Prevention in Africa</p>
+                            <p>A global approach to building resilient institutions, strengthening governance, and advancing next-generation risk management in an increasingly digital and interconnected economy. The theme reflects the understanding that:</p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                                <li>Financial crime prevention is an outcome of strong governance</li>
+                                <li>Compliance is effective only when embedded within enterprise risk management</li>
+                                <li>Sustainable growth requires institutional trust, resilience, and accountability</li>
                             </ul>
 
                             <p class="p-3"></p>
-                            <h5 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">💡 Who Will Attend?
-                            </h5>
-                            <br>
-                            <ul style="list-style: disc">
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">🌍 Why This Conference Matters</h5>
+                            <p>Across Africa, institutions are operating in an environment of:</p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                                <li>Rising regulatory and supervisory expectations</li>
+                                <li>Accelerating technology and cyber risk</li>
+                                <li>Increasing financial crime, integrity, and reputational threats</li>
+                                <li>Pressure to deliver sustainable economic growth and public trust</li>
+                            </ul>
+                            <p>This conference provides a strategic response to these realities by convening those who set policy, regulate markets, govern institutions, and manage systemic risk.</p>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">👥 Who Should Attend?</h5>
+                            <p>This conference is designed for senior-level participation, including:</p>
+                            <ul style="list-style: disc; padding-left: 20px;">
                                 <li>Government Ministries and Agencies</li>
                                 <li>Central Banks and Financial Regulators</li>
-                                <li>Anti-Corruption, Financial Intelligence, and Law Enforcement Agencies</li>
-                                <li>Board Members and Non-Executive Directors</li>
+                                <li>Anti-Corruption, Financial Intelligence & Law Enforcement Agencies</li>
+                                <li>Board Chairs, Non-Executive Directors, Trustees</li>
                                 <li>CEOs, CROs, CCOs, CIOs, CISOs</li>
-                                <li>Heads of Risk, Compliance, Internal Audit, and Governance</li>
+                                <li>Heads of Risk, Compliance, Internal Audit & Governance</li>
                                 <li>Financial Institutions and Corporates</li>
                                 <li>Development Partners and Multilateral Organisations</li>
-                                <li>Technology, Cybersecurity, and RegTech Providers</li>
+                                <li>Technology, Cybersecurity & RegTech Providers</li>
                             </ul>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">📅 Programme Overview (3 Days)</h5>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p><strong>Day 1 – Governance, Leadership & Institutional Trust</strong></p>
+                                    <ul style="font-size: 14px;">
+                                        <li>Ministerial and regulatory keynotes</li>
+                                        <li>Governance reform & accountability</li>
+                                        <li>Board oversight & ethical leadership</li>
+                                        <li>Public sector trust</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <p><strong>Day 2 – Enterprise Risk & Organisational Resilience</strong></p>
+                                    <ul style="font-size: 14px;">
+                                        <li>Enterprise & operational risk mgmt</li>
+                                        <li>Regulatory compliance expectations</li>
+                                        <li>Risk culture, controls & assurance</li>
+                                        <li>Resilience in complex environments</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <p><strong>Day 3 – Tech, Cyber & FinCrime Prevention</strong></p>
+                                    <ul style="font-size: 14px;">
+                                        <li>Cyber risk and digital trust</li>
+                                        <li>Data governance & emerging tech</li>
+                                        <li>FinCrime prevention as a system outcome</li>
+                                        <li>Intelligence, enforcement & collaboration</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">🎙️ Speakers & Contributors</h5>
+                            <p>The conference will feature:</p>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                                <li>Senior government and regulatory leaders</li>
+                                <li>Central bank governors and supervisors</li>
+                                <li>Board members and executive leaders</li>
+                                <li>Global GRC, risk and compliance experts</li>
+                                <li>Technology, cyber and financial crime specialists</li>
+                            </ul>
+                            <p>Confirmed and invited speakers will be announced progressively.</p>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💎 Value & Benefits of Attending</h5>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                                <li>Engage directly with policy-makers and regulators</li>
+                                <li>Gain insight into emerging governance and risk expectations</li>
+                                <li>Learn practical approaches to enterprise, cyber and integrity risk</li>
+                                <li>Build relationships across public and private sectors</li>
+                                <li>Contribute to shaping Africa's governance and resilience agenda</li>
+                                <li>Participate in a secure, high-trust, senior-level environment</li>
+                            </ul>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">🎟️ Registration & Delegate Fees</h5>
+                            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #D4AF37;">
+                                <p><strong>Full Conference Pass (3 Days): USD 1,300</strong></p>
+                                <p style="font-size: 14px;"><em>Please note: The fee excludes accommodation and travel costs. Delegate places are strictly limited.</em></p>
+                                <p><strong>Delegate fee includes:</strong></p>
+                                <ul style="font-size: 14px;">
+                                    <li>Access to all sessions (3 days)</li>
+                                    <li>Conference materials and documentation</li>
+                                    <li>Daily refreshments and lunches</li>
+                                    <li>Networking and stakeholder engagements</li>
+                                    <li>Certificate of participation</li>
+                                </ul>
+                            </div>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">✅ Booking, Payment & Confirmation</h5>
+                            <ul style="list-style: disc; padding-left: 20px;">
+                                <li>All bookings must be completed online via <a href="https://www.grcfincrimeawards.com/">www.grcfincrimeawards.com</a></li>
+                                <li>Online payment only (secure payment gateway)</li>
+                                <li>Registration is confirmed only upon receipt of payment</li>
+                                <li>No on-site or offline payments will be accepted</li>
+                            </ul>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">🏨 Conference Venue</h5>
+                            <p><strong>Southern Sun Ridgeway Hotel, Lusaka, Zambia</strong></p>
+                            <p>A secure, professional venue suitable for high-level meetings, plenary sessions, closed-door roundtables, and executive networking.</p>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 About THE MORGANS</h5>
+                            <p>THE MORGANS CONSORTIUM is a globally connected platform advancing leadership, dialogue, and practical solutions in Governance, Risk, Compliance and Financial Crime Prevention across Africa, Europe, and beyond.</p>
+
+                            <div style="margin-top: 40px; text-align: center;">
+                                <a href="https://www.grcfincrimeawards.com/" class="btn btn-primary" style="background-color: #D4AF37; border-color: #D4AF37; padding: 15px 30px; font-weight: bold;">REGISTER SECURELY ONLINE</a>
+                            </div>
+
+                            <p class="p-3"></p>
+                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">❓ Frequently Asked Questions (FAQs)</h5>
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item" style="border: none; border-bottom: 1px solid #eee;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" style="border:none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" style="background: none; box-shadow: none; font-weight: bold; padding: 15px 0;">
+                                            Who should attend this conference?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body" style="padding: 0 0 15px 0;">
+                                            This conference is designed for senior stakeholders, including government officials, regulators, board members, executives, heads of risk and compliance, financial institutions, development partners, and technology leaders.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item" style="border: none; border-bottom: 1px solid #eee;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" style="border:none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" style="background: none; box-shadow: none; font-weight: bold; padding: 15px 0;">
+                                            Is this an open public event?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body" style="padding: 0 0 15px 0;">
+                                            No. This is a curated, high-profile stakeholders conference. Attendance is limited to ensure quality engagement, security, and senior-level dialogue.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item" style="border: none; border-bottom: 1px solid #eee;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" style="border:none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" style="background: none; box-shadow: none; font-weight: bold; padding: 15px 0;">
+                                            Does the USD 1,300 fee include accommodation?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body" style="padding: 0 0 15px 0;">
+                                            No. The conference fee does not include accommodation or travel. Delegates are responsible for arranging their own accommodation and flights.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item" style="border: none; border-bottom: 1px solid #eee;">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" style="border:none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" style="background: none; box-shadow: none; font-weight: bold; padding: 15px 0;">
+                                            Are group or institutional registrations available?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body" style="padding: 0 0 15px 0;">
+                                            Yes. Group and institutional bookings may be considered on request, subject to availability. Please contact the organising team at <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a> for details.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Why Sponsor This Conference </h5>
-                            <p>Sponsoring this conference offers organisations a unique opportunity to:</p>
-                            <ul style="list-style: disc">
-                                <li>Engage directly with government leaders, regulators, and policy-makers</li>
-                                <li>Position your organisation as a trusted partner in governance and integrity</li>
-                                <li>Influence high-level conversations shaping Africa's regulatory and risk landscape</li>
-                                <li>Showcase thought leadership in front of senior decision-makers</li>
-                                <li>Build long-term relationships across public and private sectors</li>
-                                <li>Align your brand with trust, resilience, and sustainable growth</li>
-                            </ul>
-                            <p class="pt-3"><strong>This conference attracts decision-makers, not observers.</strong></p>
 
-                            <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Sponsorship Opportunities </h5>
-                            <p>To encourage local ownership while maintaining international standards, sponsorship is offered under <strong>Local (Zambian)</strong> and <strong>International / Regional</strong> tiers.</p>
-                            
-                            <h6 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">Strategic Partner (Title Sponsor)</h6>
-                            <p class="mb-2"><strong>Investment:</strong> USD 50,000 (International) | USD 30,000 (Local)</p>
-                            <p class="mb-2">Exclusive Strategic Partner designation, co-branding, opening remarks, keynote opportunity, premium exhibition, 10 delegate passes, VIP roundtable access.</p>
-
-                            <h6 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">Platinum Sponsor</h6>
-                            <p class="mb-2"><strong>Investment:</strong> USD 30,000 (International) | USD 18,000 (Local)</p>
-                            <p class="mb-2">High-visibility branding, keynote/panel speaking slot, premium exhibition, 6 delegate passes, VIP networking access.</p>
-
-                            <h6 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">Gold Sponsor</h6>
-                            <p class="mb-2"><strong>Investment:</strong> USD 20,000 (International) | USD 12,000 (Local)</p>
-                            <p class="mb-2">Panel speaking opportunity, exhibition space, 4 delegate passes, logo on programme and website.</p>
-
-                            <h6 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">Silver Sponsor</h6>
-                            <p class="mb-2"><strong>Investment:</strong> USD 12,000 (International) | USD 7,000 (Local)</p>
-                            <p class="mb-2">Panel participation, exhibition tabletop, 3 delegate passes, logo on conference materials.</p>
-
-                            <h6 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">Bronze Sponsor</h6>
-                            <p class="mb-2"><strong>Investment:</strong> USD 7,500 (International) | USD 4,500 (Local)</p>
-                            <p class="mb-2">Exhibition tabletop, 2 delegate passes, logo on sponsor recognition slides.</p>
-
-                            <p class="pt-3">Custom partnerships available for banks, technology providers, professional services firms, and development organisations.</p>
-
-                            <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Contact & Engagement </h5>
-                            <p>To discuss sponsorship, partnership, or customised packages:</p>
-                            <p class="pt-2"><strong>THE MORGANS CONSORTIUM</strong><br>
-                            Email: <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a><br>
-                            Website: <a href="https://www.grcfincrimeawards.com/" target="_blank">www.grcfincrimeawards.com</a></p>
                     </div>
                 </div>
             </div>
