@@ -205,6 +205,12 @@ class LandingPageController extends Controller
     public function showSummitLusaka2026(){
         return view('contents.voter.summit_lusaka_2026');
     }
+    public function showSummitLusaka2026Register(){
+        return view('contents.voter.summit_lusaka_2026_register');
+    }
+    public function showSummitLusaka2026Payment(){
+        return view('contents.voter.summit_lusaka_2026_payment');
+    }
     public function showSummit(){
         return view('contents.voter.summit');
     } 

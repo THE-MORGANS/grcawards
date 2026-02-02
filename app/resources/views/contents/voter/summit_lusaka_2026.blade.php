@@ -486,7 +486,7 @@
                                     <small class="text-muted">3-Day Conference</small>
                                 </div>
                             </div>
-                            <a onclick="return false;" href="https://www.grcfincrimeawards.com/" class="btn-gold-block">Register Now</a>
+                            <a href="{{route('landing.summit_lusaka_2026_register')}}" class="btn-gold-block">Register Now</a>
                         </div>
 
                         <!-- Fees -->
