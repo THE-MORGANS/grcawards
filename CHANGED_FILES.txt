@@ -11,3 +11,11 @@ app\resources\views\contents\voter\summit_lusaka_2026_register.blade.php
 app\resources\views\contents\voter\summit_lusaka_2026.blade.php
 
 app\routes\web.php
+
+app\public\assets\images\mastercard.png
+
+app\public\assets\images\visa.png
+
+app\public\assets\images\paypal.png
+
+

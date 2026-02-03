@@ -30,7 +30,7 @@ function addDelegate() {
     delegateCard.setAttribute('data-delegate-index', delegateCount);
     delegateCard.innerHTML = `
         <div class="delegate-header">
-            <h4 class="delegate-number">Delegate Name <span class="text-muted">•</span> ${delegateCount}</h4>
+            <h5 class="delegate-number">Delegate ${delegateCount}</h5>
             <button class="remove-delegate-btn" onclick="removeDelegate(this)">
                 <i class="mdi mdi-trash-can-outline"></i> Remove
             </button>

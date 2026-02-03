@@ -113,12 +113,12 @@
                     <!-- First Delegate -->
                     <div class="delegate-card" data-delegate-index="1">
                         <div class="delegate-header">
-                            <h4 class="delegate-number">Delegate Name <span class="text-muted">•</span></h4>
+                            <h5 class="delegate-number">Delegate  1</h5>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Delegate Name <span class="required">*</span></label>
-                                <input type="text" class="form-control" placeholder="Enter your delegate name" required>
+                                <input type="text" class="form-control form-control-sm" placeholder="Enter your delegate name" required>
                             </div>
                             <div class="form-group">
                                 <label>Email Address <span class="required">*</span></label>
@@ -195,15 +195,19 @@
                 <div class="footer-payment">
                     <h4 class="footer-title">Secure & Trusted Registration</h4>
                     <div class="payment-methods">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%231434CB' width='48' height='32' rx='4'/%3E%3Cpath fill='%23fff' d='M20 11h8v10h-8z'/%3E%3Ccircle fill='%23EB001B' cx='20' cy='16' r='5'/%3E%3Ccircle fill='%23F79E1B' cx='28' cy='16' r='5'/%3E%3C/svg%3E" alt="Visa" class="payment-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23EB001B' width='48' height='32' rx='4'/%3E%3Ccircle fill='%23FF5F00' cx='18' cy='16' r='7'/%3E%3Ccircle fill='%23EB001B' cx='30' cy='16' r='7'/%3E%3C/svg%3E" alt="Mastercard" class="payment-logo">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23003087' width='48' height='32' rx='4'/%3E%3Cpath fill='%23009CDE' d='M19 12h-5v8h5z'/%3E%3Cpath fill='%23012169' d='M34 12h-5v8h5z'/%3E%3C/svg%3E" alt="PayPal" class="payment-logo">
+                        <img src="/assets/mastercard.png" width="40" alt="">
+                        <img src="/assets/visa.png" width="40" alt="">
+                        <img src="/assets/paypal.png" width="40" alt="">
+                        
+                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%231434CB' width='48' height='32' rx='4'/%3E%3Cpath fill='%23fff' d='M20 11h8v10h-8z'/%3E%3Ccircle fill='%23EB001B' cx='20' cy='16' r='5'/%3E%3Ccircle fill='%23F79E1B' cx='28' cy='16' r='5'/%3E%3C/svg%3E" alt="Visa" class="payment-logo"> -->
+                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23EB001B' width='48' height='32' rx='4'/%3E%3Ccircle fill='%23FF5F00' cx='18' cy='16' r='7'/%3E%3Ccircle fill='%23EB001B' cx='30' cy='16' r='7'/%3E%3C/svg%3E" alt="Mastercard" class="payment-logo"> -->
+                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23003087' width='48' height='32' rx='4'/%3E%3Cpath fill='%23009CDE' d='M19 12h-5v8h5z'/%3E%3Cpath fill='%23012169' d='M34 12h-5v8h5z'/%3E%3C/svg%3E" alt="PayPal" class="payment-logo"> -->
                     </div>
                     <p class="footer-help">
                         Need assistance with your registration?<br>
                         <i class="mdi mdi-email-outline"></i> <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a>
                         <span class="mx-2">•</span>
-                        <i class="mdi mdi-phone"></i> <a href="tel:+260XXXXXXX">+260 XXX XXXXX</a>
+                        <i class="mdi mdi-phone"></i> <a href="tel:+2349153414314">+2349153414314</a>
                     </p>
                 </div>
             </div>
@@ -267,10 +271,10 @@
                     </div>
 
                     <!-- Payment Icons -->
-                    <div class="payment-icons">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%231434CB' width='48' height='32' rx='4'/%3E%3Cpath fill='%23fff' d='M20 11h8v10h-8z'/%3E%3Ccircle fill='%23EB001B' cx='20' cy='16' r='5'/%3E%3Ccircle fill='%23F79E1B' cx='28' cy='16' r='5'/%3E%3C/svg%3E" alt="Visa">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23EB001B' width='48' height='32' rx='4'/%3E%3Ccircle fill='%23FF5F00' cx='18' cy='16' r='7'/%3E%3Ccircle fill='%23EB001B' cx='30' cy='16' r='7'/%3E%3C/svg%3E" alt="Mastercard">
-                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23003087' width='48' height='32' rx='4'/%3E%3Cpath fill='%23009CDE' d='M19 12h-5v8h5z'/%3E%3Cpath fill='%23012169' d='M34 12h-5v8h5z'/%3E%3C/svg%3E" alt="PayPal">
+                    <div class="payment-icon">
+                        <img src="/assets/mastercard.png" width="40" alt="">
+                        <img src="/assets/visa.png" width="40" alt="">
+                        <img src="/assets/paypal.png" width="40" alt="">
                     </div>
                 </div>
             </div>
