@@ -419,8 +419,8 @@
 
             <div class="payment-methods" style="justify-content: center; margin: 20px 0;">
                 <span style="font-size: 0.8rem; color: var(--text-body); margin-right: 10px;">We Accept:</span>
-                <img src="/assets/mastercard.png" width="40" alt="">
-                <img src="/assets/visa.png" width="40" alt="">
+                <img src="{{asset('assets/images/mastercard.png')}}" width="40" alt="img">
+                <img src="{{asset('assets/images/visa.png')}}" width="40" alt="img">
             </div>
         </div>
 

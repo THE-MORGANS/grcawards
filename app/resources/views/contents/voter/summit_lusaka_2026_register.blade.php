@@ -195,13 +195,9 @@
                 <div class="footer-payment">
                     <h4 class="footer-title">Secure & Trusted Registration</h4>
                     <div class="payment-methods">
-                        <img src="/assets/mastercard.png" width="40" alt="">
-                        <img src="/assets/visa.png" width="40" alt="">
-                        <img src="/assets/paypal.png" width="40" alt="">
-                        
-                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%231434CB' width='48' height='32' rx='4'/%3E%3Cpath fill='%23fff' d='M20 11h8v10h-8z'/%3E%3Ccircle fill='%23EB001B' cx='20' cy='16' r='5'/%3E%3Ccircle fill='%23F79E1B' cx='28' cy='16' r='5'/%3E%3C/svg%3E" alt="Visa" class="payment-logo"> -->
-                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23EB001B' width='48' height='32' rx='4'/%3E%3Ccircle fill='%23FF5F00' cx='18' cy='16' r='7'/%3E%3Ccircle fill='%23EB001B' cx='30' cy='16' r='7'/%3E%3C/svg%3E" alt="Mastercard" class="payment-logo"> -->
-                        <!-- <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 32'%3E%3Crect fill='%23003087' width='48' height='32' rx='4'/%3E%3Cpath fill='%23009CDE' d='M19 12h-5v8h5z'/%3E%3Cpath fill='%23012169' d='M34 12h-5v8h5z'/%3E%3C/svg%3E" alt="PayPal" class="payment-logo"> -->
+                        <img src="{{asset('assets/images/mastercard.png')}}" width="40" alt="img">
+                        <img src="{{asset('assets/images/visa.png')}}" width="40" alt="img">
+                        <img src="{{asset('assets/images/paypal.png')}}" width="40" alt="img">
                     </div>
                     <p class="footer-help">
                         Need assistance with your registration?<br>
@@ -272,9 +268,9 @@
 
                     <!-- Payment Icons -->
                     <div class="payment-icon">
-                        <img src="/assets/mastercard.png" width="40" alt="">
-                        <img src="/assets/visa.png" width="40" alt="">
-                        <img src="/assets/paypal.png" width="40" alt="">
+                        <img src="{{asset('assets/images/mastercard.png')}}" width="40" alt="img">
+                        <img src="{{asset('assets/images/visa.png')}}" width="40" alt="img">
+                        <img src="{{asset('assets/images/paypal.png')}}" width="40" alt="img">
                     </div>
                 </div>
             </div>
