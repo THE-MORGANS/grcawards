@@ -470,8 +470,10 @@
     @include('partials.voter.scripts')
     <script src="{{asset('assets/js/vendor.min.js')}}"></script>
     <script src="{{asset('assets/js/app.min.js')}}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script>
+        const stripe = Stripe('{{ $stripe_key }}');
         let selectedPaymentMethod = 'stripe';
         let registrationData = null;
 

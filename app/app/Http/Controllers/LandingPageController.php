@@ -209,7 +209,9 @@ class LandingPageController extends Controller
         return view('contents.voter.summit_lusaka_2026_register');
     }
     public function showSummitLusaka2026Payment(){
-        return view('contents.voter.summit_lusaka_2026_payment');
+        return view('contents.voter.summit_lusaka_2026_payment', [
+            'stripe_key' => env('STRIPE_KEY')
+        ]);
     }
     public function showSummit(){
         return view('contents.voter.summit');
