@@ -7,6 +7,8 @@ use App\Models\LusakaSummitRegistration;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\LusakaSummitConfirmation;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
 
@@ -125,7 +127,12 @@ class LusakaSummitController extends Controller
                     'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
                 ]);
                 
-                // You could send an email here
+                // Send confirmation email
+                try {
+                    Mail::to($registration->email)->send(new LusakaSummitConfirmation($registration));
+                } catch (\Exception $e) {
+                    Log::error('Confirmation Email Error: ' . $e->getMessage());
+                }
             }
 
             return view('contents.voter.summit_lusaka_2026_success', compact('registration'));
