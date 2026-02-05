@@ -7,6 +7,47 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.min.css') }}" />
     <link href="{{asset('assets/css/model-new.css')}}" rel="stylesheet" />
     <link href="{{asset('assets/css/summit_registration.css')}}" rel="stylesheet" />
+    <style>
+        .slots-counter-badge {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pulse-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .pulse-green {
+            background: #22c55e;
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse-green 2s infinite;
+        }
+
+        .pulse-red {
+            background: #ef4444;
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,6 +70,16 @@
                 <div class="secure-badge">
                     <i class="mdi mdi-shield-check"></i>
                     <span>Secure Registration</span>
+                </div>
+            </div>
+            
+            <!-- Slots Counter -->
+            <div class="slots-counter-badge mt-3" id="slots-remaining-container">
+                <div class="d-flex align-items-center gap-2">
+                    <div id="pulse-indicator" class="pulse-indicator pulse-green"></div>
+                    <span id="slots-text" style="font-size: 0.9rem; font-weight: 700; color: #475569;">
+                        Availability: <span id="slots-remaining-count">...</span> slots left
+                    </span>
                 </div>
             </div>
         </div>
@@ -113,7 +164,7 @@
                     <!-- First Delegate -->
                     <div class="delegate-card" data-delegate-index="1">
                         <div class="delegate-header">
-                            <h5 class="delegate-number">Delegate  1</h5>
+                            <h5 class="delegate-number">Delegate  1 (Main Delegate)</h5>
                         </div>
                         <div class="form-row">
                             <div class="form-group">
@@ -282,5 +333,39 @@
     <script src="{{asset('assets/js/vendor.min.js')}}"></script>
     <script src="{{asset('assets/js/app.min.js')}}"></script>
     <script src="{{asset('assets/js/summit_registration.js')}}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch("{{ route('summit.slots') }}")
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('slots-remaining-count');
+                    const pulse = document.getElementById('pulse-indicator');
+                    const text = document.getElementById('slots-text');
+                    
+                    countElement.textContent = data.remaining;
+                    
+                    if (data.remaining <= 20) {
+                        pulse.className = 'pulse-indicator pulse-red';
+                        text.style.color = '#ef4444';
+                        text.innerHTML = `Hurry! <span id="slots-remaining-count">${data.remaining}</span> slots remaining`;
+                    } else {
+                        pulse.className = 'pulse-indicator pulse-green';
+                        text.style.color = '#475569';
+                    }
+
+                    // If 0 slots, disable the button
+                    if (data.remaining <= 0) {
+                        const btn = document.querySelector('.payment-button');
+                        if (btn) {
+                            btn.disabled = true;
+                            btn.innerHTML = '<i class="mdi mdi-block-helper"></i> Registration Sold Out';
+                            btn.style.background = '#ccc';
+                            btn.style.cursor = 'not-allowed';
+                        }
+                    }
+                })
+                .catch(error => console.error('Error fetching slots:', error));
+        });
+    </script>
 </body>
 </html>

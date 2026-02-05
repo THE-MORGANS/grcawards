@@ -169,6 +169,53 @@
             font-weight: 700;
             flex-shrink: 0;
         }
+
+        @media print {
+            @page {
+                margin: 0;
+                size: auto;
+            }
+            
+            body {
+                background: #fff;
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide everything by default */
+            body > *:not(.success-page),
+            .success-page > *:not(.success-card),
+            .action-buttons,
+            .next-steps {
+                display: none !important;
+            }
+
+            .success-icon {
+                width: 60px !important;
+                height: 60px !important;
+                font-size: 30px !important;
+                margin-bottom: 15px !important;
+            }
+
+            .success-page {
+                margin: 0 !important;
+                padding: 40px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .success-card {
+                box-shadow: none !important;
+                border: 1px solid #eee !important;
+                padding: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+            }
+
+            .success-title {
+                margin-top: 0;
+            }
+        }
     </style>
 </head>
 
