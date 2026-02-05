@@ -385,11 +385,19 @@
             <p class="payment-subtitle">Choose your preferred secure payment provider</p>
 
             <div class="payment-options">
-                <div class="payment-option selected" data-method="paystack" onclick="selectPaymentMethod(this)">
+                <div class="payment-option selected" data-method="stripe" onclick="selectPaymentMethod(this)">
+                    <div class="payment-radio"></div>
+                    <div class="payment-option-content">
+                        <div class="payment-option-name">Stripe</div>
+                        <div class="payment-option-desc">Secure card payment (Worldwide)</div>
+                    </div>
+                </div>
+
+                <div class="payment-option" data-method="paystack" onclick="selectPaymentMethod(this)">
                     <div class="payment-radio"></div>
                     <div class="payment-option-content">
                         <div class="payment-option-name">Paystack</div>
-                        <div class="payment-option-desc">Fast payments</div>
+                        <div class="payment-option-desc">Fast payments (Africa)</div>
                     </div>
                 </div>
 
@@ -397,7 +405,7 @@
                     <div class="payment-radio"></div>
                     <div class="payment-option-content">
                         <div class="payment-option-name">Flutterwave</div>
-                        <div class="payment-option-desc">Card & mobile money</div>
+                        <div class="payment-option-desc">Card & mobile money (Africa)</div>
                     </div>
                 </div>
             </div>
@@ -464,7 +472,7 @@
     <script src="{{asset('assets/js/app.min.js')}}"></script>
 
     <script>
-        let selectedPaymentMethod = 'paystack';
+        let selectedPaymentMethod = 'stripe';
         let registrationData = null;
 
         // Load registration data from sessionStorage
@@ -516,16 +524,60 @@
                 return;
             }
 
-            console.log('Processing payment with:', {
-                paymentMethod: selectedPaymentMethod,
-                registrationData: registrationData
-            });
+            if (selectedPaymentMethod !== 'stripe') {
+                alert(`${selectedPaymentMethod} integration is coming soon. Please use Stripe.`);
+                return;
+            }
 
-            // Here you would integrate with Paystack or Flutterwave
-            alert(`Processing payment via ${selectedPaymentMethod}...\nCheck console for complete data.`);
-            
-            // After successful payment, you would redirect to a success page
-            // window.location.href = '/registration/success';
+            // Show loading state
+            const payButton = document.querySelector('.confirm-button');
+            const originalText = payButton.textContent;
+            payButton.disabled = true;
+            payButton.innerHTML = '<i class="mdi mdi-loading mdi-spin"></i> Processing...';
+
+            // Get CSRF token
+            const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') || 
+                             "{{ csrf_token() }}";
+
+            // Prepare payload
+            const mainPayer = registrationData.delegates.list[0];
+            const payload = {
+                name: mainPayer.name,
+                email: mainPayer.email,
+                phone: mainPayer.phone,
+                organization: mainPayer.organization,
+                attendance_option: registrationData.attendanceOption.name,
+                delegate_count: registrationData.delegates.count,
+                amount: registrationData.pricing.totalAmount,
+                delegates: registrationData.delegates.list,
+                _token: csrfToken
+            };
+
+            fetch("{{ route('summit.payment.initiate') }}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify(payload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    window.location.href = data.checkout_url;
+                } else {
+                    alert('Error: ' + (data.message || 'Payment initiation failed.'));
+                    payButton.disabled = false;
+                    payButton.textContent = originalText;
+                }
+            })
+            .catch(error => {
+                console.error('Payment Error:', error);
+                alert('An error occurred. Please try again.');
+                payButton.disabled = false;
+                payButton.textContent = originalText;
+            });
         }
     </script>
 </body>

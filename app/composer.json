@@ -15,6 +15,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
+        "stripe/stripe-php": "10.0",
         "vinkla/hashids": "^9.1"
     },
     "require-dev": {
