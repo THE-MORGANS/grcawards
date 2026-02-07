@@ -264,25 +264,48 @@
             margin-top: 2px;
         }
 
-        /* FAQ Accordion */
+        /* FAQ Styles Refined */
         .accordion-item {
-            border: 1px solid #eee;
-            border-radius: 10px !important;
-            margin-bottom: 10px;
-            overflow: hidden;
+            border: none;
+            border-bottom: 1px solid #f0f0f0;
+            border-radius: 0 !important;
+            margin-bottom: 0;
+        }
+        .accordion-item:last-child {
+            border-bottom: none;
         }
         .accordion-button {
-            background: #fff;
-            font-weight: 600;
+            background: transparent !important;
+            padding: 20px 0;
+            font-weight: 700;
             color: var(--dark);
             box-shadow: none !important;
+            font-size: 1.05rem;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border:none !important;
+        }
+        .accordion-button::after {
+            content: '\e9b1'; /* mdi-chevron-down */
+            font-family: 'Material Design Icons';
+            background-image: none !important;
+            transform: none !important;
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: 0.3s;
+        }
+        .accordion-button:not(.collapsed)::after {
+            transform: rotate(180deg) !important;
         }
         .accordion-button:not(.collapsed) {
-            background: rgba(212, 175, 55, 0.05);
-            color: var(--dark);
+            color: var(--gold);
         }
-        .accordion-button:focus {
-            border-color: rgba(212, 175, 55, 0.5);
+        .accordion-body {
+            padding: 0 0 20px 0;
+            color: #666;
+            line-height: 1.7;
         }
 
         /* Mobile */
@@ -290,6 +313,114 @@
             .hero-title { font-size: 2.5rem; }
             .page-header-premium { padding: 80px 0 40px; }
             .sidebar-sticky { position: static; margin-top: 40px; }
+        }
+
+        /* Sponsorship Widgets */
+        .sponsorship-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px dashed var(--gold);
+        }
+        .sponsorship-title {
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sponsorship-title i {
+            font-size: 1.2rem;
+        }
+        .bank-details-card {
+            background: #fcfcfc;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #f0f0f0;
+        }
+        .bank-details-card:last-child {
+            margin-bottom: 0;
+        }
+        .bank-name {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .bank-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            padding-bottom: 6px;
+        }
+        .bank-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .bank-label {
+            color: #777;
+            font-weight: 500;
+        }
+        .bank-value {
+            font-weight: 600;
+            color: var(--dark);
+            text-align: right;
+        }
+
+        /* Sponsorship Form Styles */
+        .sponsorship-form .form-group {
+            margin-bottom: 15px;
+        }
+        .sponsorship-form label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+        .sponsorship-form .form-control {
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .sponsorship-form .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .btn-download-prospectus {
+            background: var(--dark);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .btn-download-prospectus:hover {
+            background: #222;
+            transform: translateY(-2px);
+            color: #fff;
         }
     </style>
 </head>
@@ -489,6 +620,34 @@
                             <a href="{{route('landing.summit_lusaka_2026_register')}}" class="btn-gold-block">Register Now</a>
                         </div>
 
+                        <!-- Sponsorship Form -->
+                        <div class="sponsorship-box">
+                            <h4 class="mb-4">For sponsorship</h4>
+                            <p class="small text-muted mb-4">Complete the form below to download our partnership prospectus.</p>
+                            
+                            <form id="sponsorship-download-form" action="{{ route('summit.sponsorship.download') }}" method="POST" class="sponsorship-form">
+                                @csrf
+                                <div class="form-group">
+                                    <label>Full Name</label>
+                                    <input type="text" name="full_name" class="form-control" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="tel" name="phone" class="form-control" placeholder="+260 ..." required>
+                                </div>
+                                <button type="submit" class="btn-download-prospectus" id="download-btn">
+                                    <span class="btn-text"><i class="mdi mdi-download"></i> Download Prospectus</span>
+                                    <span class="btn-loader d-none">
+                                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Processing...
+                                    </span>
+                                </button>
+                            </form>
+                        </div>
+
                         <!-- Fees -->
                         <div class="widget-box widget-dark">
                             <h4 class="text-white mb-3">Delegate Fees</h4>
@@ -554,6 +713,75 @@
     <script src="{{asset('assets/js/app.min.js')}}"></script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('sponsorship-download-form');
+            const btn = document.getElementById('download-btn');
+            const btnText = btn.querySelector('.btn-text');
+            const btnLoader = btn.querySelector('.btn-loader');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Show loading state
+                    btn.disabled = true;
+                    btnText.classList.add('d-none');
+                    btnLoader.classList.remove('d-none');
+
+                    const formData = new FormData(form);
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            // Reset button
+                            btn.disabled = false;
+                            btnText.classList.remove('d-none');
+                            btnLoader.classList.add('d-none');
+
+                            // Trigger download
+                            const link = document.createElement('a');
+                            link.href = data.download_url;
+                            link.download = data.file_name;
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            // Optional: Success message
+                            // if(typeof Swal !== 'undefined') {
+                            //     Swal.fire('Success', 'Your download should start shortly.', 'success');
+                            // } else {
+                            //     alert('Success! Your download should start shortly.');
+                            // }
+                            
+                            form.reset();
+                        } else {
+                            throw new Error(data.message || 'Something went wrong');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        btn.disabled = false;
+                        btnText.classList.remove('d-none');
+                        btnLoader.classList.add('d-none');
+                        
+                        if(typeof Swal !== 'undefined') {
+                            Swal.fire('Error', error.message, 'error');
+                        } else {
+                            alert('Error: ' + error.message);
+                        }
+                    });
+                });
+            }
+        });
+
         // Optional: Count down timer script if needed again later
         var countDownDate = new Date("Apr 15, 2026 09:00:00").getTime();
     </script>

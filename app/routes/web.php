@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\VoterRegisterController;
 use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\ReminderController;
 use App\Http\Controllers\LusakaSummitController;
+use App\Http\Controllers\LusakaSponsorshipController;
 
 /*
 |--------------------------------------------------------------------------
@@ -156,6 +157,7 @@ Route::post('summit/lusaka-2026/payment/initiate', [LusakaSummitController::clas
 Route::get('summit/lusaka-2026/payment/success', [LusakaSummitController::class, 'paymentSuccess'])->name('summit.payment.success');
 Route::get('summit/lusaka-2026/payment/cancel', [LusakaSummitController::class, 'paymentCancel'])->name('summit.payment.cancel');
 Route::get('summit/lusaka-2026/slots', [LusakaSummitController::class, 'getRemainingSlots'])->name('summit.slots');
+Route::post('summit/lusaka-2026/sponsorship/download', [LusakaSponsorshipController::class, 'downloadProspectus'])->name('summit.sponsorship.download');
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
 Route::get('summit/2024', [LandingPageController::class, 'showSummit2024'])->name('show_summit_2024');
 Route::get('summit/2023', [LandingPageController::class, 'showSummit2023'])->name('show_summit_2023');
