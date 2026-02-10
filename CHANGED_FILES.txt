@@ -1,3 +1,13 @@
-
-
+app\app\Exports\LusakaAttendanceExport.php
+app\app\Exports\LusakaRegistrationsExport.php
+app\app\Http\Kernel.php
+app\app\Http\Controllers\LusakaRegistrationController.php
+app\app\Http\Controllers\Auth\LusakaAdminController.php
+app\app\Http\Middleware\LusakaAdminAuth.php
+app\resources\views\auth\lusaka_admin_login.blade.php
+app\resources\views\lusaka_admin\attendance.blade.php
+app\resources\views\lusaka_admin\dashboard.blade.php
+app\resources\views\lusaka_admin\partials\attendance_table.blade.php
+app\resources\views\lusaka_admin\partials\registrations_table.blade.php
+app\routes\web.php
 

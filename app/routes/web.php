@@ -18,6 +18,8 @@ use App\Http\Controllers\JudgeController;
 use App\Http\Controllers\ReminderController;
 use App\Http\Controllers\LusakaSummitController;
 use App\Http\Controllers\LusakaSponsorshipController;
+use App\Http\Controllers\Auth\LusakaAdminController;
+use App\Http\Controllers\LusakaRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +114,22 @@ Route::prefix('admin')->group(function(){
     // Route::get('', [AdminAuthController::class, 'setPassword']);
 
 });
+
+// Lusaka Summit Admin Routes
+Route::prefix('lusaka/admin')->group(function(){
+    Route::get('', [LusakaAdminController::class, 'showLoginForm'])->name('lusaka.admin.login');
+    Route::post('login', [LusakaAdminController::class, 'login'])->name('lusaka.admin.login.post');
+    
+    Route::middleware('lusaka_admin_auth')->group(function(){
+        Route::get('dashboard', [LusakaRegistrationController::class, 'dashboard'])->name('lusaka.admin.dashboard');
+        Route::get('attendance', [LusakaRegistrationController::class, 'attendance'])->name('lusaka.admin.attendance');
+        Route::get('attendance/export', [LusakaRegistrationController::class, 'exportAttendance'])->name('lusaka.admin.attendance.export');
+        Route::post('attendance/toggle', [LusakaRegistrationController::class, 'toggleAttendance'])->name('lusaka.admin.attendance.toggle');
+        Route::get('export', [LusakaRegistrationController::class, 'exportToExcel'])->name('lusaka.admin.export');
+        Route::get('logout', [LusakaAdminController::class, 'logout'])->name('lusaka.admin.logout');
+    });
+});
+
 // Route::get('/', [LandingController::class, 'showLandingPageIndex'])->name('show_landing_index');
 
 // require __DIR__.'/Ukroutes.php';
