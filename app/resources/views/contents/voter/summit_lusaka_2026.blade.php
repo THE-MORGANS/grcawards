@@ -607,7 +607,7 @@
                                 <i class="mdi mdi-map-marker-outline"></i>
                                 <div>
                                     <h6 class="mb-0">Lusaka, Zambia</h6>
-                                    <small class="text-muted">Southern Sun Ridgeway Hotel</small>
+                                    <small class="text-muted">Neelkanth Sarovar Premiere, Lusaka</small>
                                 </div>
                             </div>
                             <div class="meta-row">

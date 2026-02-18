@@ -16,21 +16,22 @@
 	<section class="s-conference-slider">
 	<div class="conference-slider">
 			{{-- <div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/v1671453397/grcfincrimeawards/gallery/l3430eacq0c3496agrgi.jpg);"> --}}
-			<div class="conference-slide" style="background-image: url('{{asset('assets/mar.webp')}}');">
+			<div class="conference-slide" style="background-image: url('{{asset('assets/lusaka-hotel.webp')}}');">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
 						<div class="date">Lusaka Summit 2026</div>
 						<div class="conference-slider-title">15th - 17th April 2026</div>
-						<h2 class="title"><span>Lusaka, Zambia</span></h2>
+						<h4 class="title"><span>Lusaka, Zambia</span></h4>
 						<h4 style="color:#fff">GRC & Financial Crime Prevention Conference - Africa</h4>
 						<h4 style="color:#fff">Trust, Resilience and Sustainable Growth</h4>
 					</div>
 				</div>
 			</div>
 				
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1664454953/grcfincrimeawards/gallery/xstjrdobdokjvyoyfk3f.jpg);">
+			{{--<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1664454953/grcfincrimeawards/gallery/xstjrdobdokjvyoyfk3f.jpg);"> --}}
+				<div class="conference-slide" style="background-image: url('{{asset('assets/lusaka-hotel-2.webp')}}');">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
@@ -123,7 +124,7 @@
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
 					<h3>GRC & Financial Crime Prevention Conference - Africa</h3>
 						Date: <h3>15th - 17th April 2026</h3>
-						Venue: <h3>Lusaka, Zambia</h3>
+						Venue: <h3>Neelkanth Sarovar Premiere, Lusaka, Zambia</h3>
 						Theme: <h3>Trust, Resilience and Sustainable Growth</h3>
 						<a href="{{route('show_summit_lusaka_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
