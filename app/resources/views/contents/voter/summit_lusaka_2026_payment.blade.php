@@ -552,6 +552,7 @@
                 delegate_count: registrationData.delegates.count,
                 amount: registrationData.pricing.totalAmount,
                 delegates: registrationData.delegates.list,
+                referred_by_ssth: registrationData.referredBySsth,
                 _token: csrfToken
             };
 

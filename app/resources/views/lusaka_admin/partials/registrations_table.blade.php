@@ -11,6 +11,7 @@
                 <th>Attendance</th>
                 <th>Delegates</th>
                 <th>Amount</th>
+                <th>SSTH Ref</th>
                 <th>Status</th>
                 <th>Date</th>
             </tr>
@@ -32,6 +33,13 @@
                     </span>
                 </td>
                 <td>{{ $reg->currency }} {{ number_format($reg->amount, 2) }}</td>
+                <td>
+                    @if($reg->referred_by_ssth)
+                        <span class="badge badge-paid" style="background: #dcfce7; color: #166534;">YES</span>
+                    @else
+                        <span class="badge badge-secondary" style="background: #f1f5f9; color: #475569;">NO</span>
+                    @endif
+                </td>
                 <td>
                     <span class="badge badge-{{ $reg->payment_status }}">
                         {{ strtoupper($reg->payment_status) }}

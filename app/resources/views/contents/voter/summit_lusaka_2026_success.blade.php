@@ -259,6 +259,14 @@
                     <span class="detail-label">Amount Paid</span>
                     <span class="detail-value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}</span>
                 </div>
+                @if($registration->referred_by_ssth)
+                <div class="detail-row">
+                    <span class="detail-label">Referred By SSTH</span>
+                    <span class="detail-value" style="color: #22c55e;">
+                        <i class="mdi mdi-check-circle"></i> Yes
+                    </span>
+                </div>
+                @endif
             </div>
 
             <div class="action-buttons">

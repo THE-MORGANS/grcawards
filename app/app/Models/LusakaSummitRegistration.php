@@ -23,9 +23,11 @@ class LusakaSummitRegistration extends Model
         'stripe_session_id',
         'ticket_number',
         'delegates_data',
+        'referred_by_ssth',
     ];
 
     protected $casts = [
         'delegates_data' => 'array',
+        'referred_by_ssth' => 'boolean',
     ];
 }

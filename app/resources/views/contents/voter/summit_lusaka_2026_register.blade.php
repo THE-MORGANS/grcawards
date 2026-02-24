@@ -220,6 +220,21 @@
                     Add Another Delegate
                 </button>
 
+                <!-- Referral Section -->
+                <div class="referral-section mb-4" style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;margin-top: 17px;">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h4 style="font-size: 1rem; font-weight: 700; color: #1e293b; margin-bottom: 4px;">Referred By SSTH?</h4>
+                            <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 0;">Check this if you were referred by the SSTH team.</p>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="referredBySsth" 
+                                style="width: 45px; height: 22px; cursor: pointer;"
+                                {{ request()->query('reference') === 'ssth' ? 'checked disabled' : '' }}>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Total and Payment -->
                 <div class="total-section">
                     <div class="total-row">

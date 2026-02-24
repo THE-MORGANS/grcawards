@@ -203,6 +203,7 @@ function proceedToPayment() {
             pricePerDelegate: selectedPrice,
             currency: 'USD'
         },
+        referredBySsth: document.getElementById('referredBySsth').checked,
         delegates: {
             count: delegateCount,
             list: delegates

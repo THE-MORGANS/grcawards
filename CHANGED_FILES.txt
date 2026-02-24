@@ -11,3 +11,17 @@ app\resources\views\lusaka_admin\partials\attendance_table.blade.php
 app\resources\views\lusaka_admin\partials\registrations_table.blade.php
 app\routes\web.php
 
+
+
+............................
+.............2026-02-24.....
+app\app\Exports\LusakaRegistrationsExport.php
+app\app\Http\Controllers\LusakaSummitController.php
+app\app\Models\LusakaSummitRegistration.php
+app\database\migrations\2026_02_24_092349_add_referred_by_ssth_to_lusaka_summit_registrations_table.php
+app\public\assets\js\summit_registration.js
+app\resources\views\contents\voter\summit_lusaka_2026_payment.blade.php
+app\resources\views\contents\voter\summit_lusaka_2026_register.blade.php
+app\resources\views\contents\voter\summit_lusaka_2026_success.blade.php
+app\resources\views\lusaka_admin\partials\registrations_table.blade.php
+..............................
