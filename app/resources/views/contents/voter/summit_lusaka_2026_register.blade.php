@@ -230,7 +230,7 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="referredBySsth" 
                                 style="width: 45px; height: 22px; cursor: pointer;"
-                                {{ request()->query('reference') === 'ssth' ? 'checked disabled' : '' }}>
+                                {{ request()->query('ref') === 'ssth' ? 'checked disabled' : '' }}>
                         </div>
                     </div>
                 </div>
