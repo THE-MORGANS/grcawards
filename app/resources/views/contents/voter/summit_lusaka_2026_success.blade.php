@@ -278,7 +278,7 @@
                 </a>
             </div>
 
-            <div class="next-steps">
+            <!-- <div class="next-steps">
                 <h4>What's Next?</h4>
                 <div class="step-item">
                     <div class="step-dot">1</div>
@@ -301,7 +301,7 @@
                         <p style="margin: 5px 0 0; font-size: 0.85rem; color: var(--text-body);">Stay tuned for agenda updates and speaker announcements.</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 

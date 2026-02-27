@@ -309,12 +309,12 @@
                     </div>
 
                     <!-- Acknowledgment -->
-                    <div class="acknowledgment-box">
+                    <!-- <div class="acknowledgment-box">
                         <p>
                             <i class="mdi mdi-information-outline"></i>
                             Accommodation will be sent after registration is secured
                         </p>
-                    </div>
+                    </div> -->
 
                     <!-- Secure Registration -->
                     <div class="secure-registration-box">
