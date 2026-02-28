@@ -107,7 +107,7 @@
                     </div>
                     <div class="event-detail-item">
                         <i class="mdi mdi-map-marker-outline"></i>
-                        <span>InterContinental Lusaka</span>
+                        <span>Neelkanth Sarovar Premiere, Lusaka</span>
                     </div>
                 </div>
 
@@ -283,7 +283,7 @@
                     <div class="summary-section">
                         <h4 class="summary-section-title">Conference Details</h4>
                         <div class="summary-item"><strong>Africa GRC & Financial Crime Conference</strong></div>
-                        <div class="summary-item">Lusaka</div>
+                        <div class="summary-item">Neelkanth Sarovar Premiere, Lusaka</div>
                     </div>
 
                     <hr class="summary-divider">

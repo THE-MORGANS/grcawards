@@ -56,7 +56,7 @@
                 </tr>
                 <tr>
                     <td class="label">Venue</td>
-                    <td class="value">InterContinental Lusaka, Zambia</td>
+                    <td class="value">Neelkanth Sarovar Premiere, Lusaka</td>
                 </tr>
                 <tr>
                     <td class="label">Dates</td>
@@ -71,7 +71,7 @@
             </center>
 
             <p class="important-note">
-                * Note: Accommodation and travel are not included in the registration fee. Discounted booking codes for the InterContinental Lusaka will be shared with you shortly.
+                * Note: Accommodation and travel are not included in the registration fee.
             </p>
         </div>
         
