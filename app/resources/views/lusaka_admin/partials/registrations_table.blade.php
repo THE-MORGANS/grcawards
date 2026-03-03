@@ -32,7 +32,12 @@
                         {{ $reg->delegate_count }}
                     </span>
                 </td>
-                <td>{{ $reg->currency }} {{ number_format($reg->amount, 2) }}</td>
+                <td>
+                    {{ $reg->currency }} {{ number_format($reg->amount, 2) }}
+                    @if($reg->created_at->between('2026-03-02 00:00:00', '2026-03-15 23:59:59'))
+                        <br><small class="badge badge-paid" style="background: #fee2e2; color: #991b1b; font-size: 10px; padding: 2px 4px;">EARLY BIRD</small>
+                    @endif
+                </td>
                 {{-- 
                 <td>
                     @if($reg->referred_by_ssth)

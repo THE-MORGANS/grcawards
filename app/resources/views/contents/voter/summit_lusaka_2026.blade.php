@@ -437,6 +437,14 @@
                 <a href="{{route('landing.index')}}">Home</a> <span>•</span> Lusaka Summit 2026
             </div>
             <h1 class="hero-title">Lusaka Summit 2026</h1>
+            @if($isEarlyBird ?? false)
+            <div class="early-bird-banner mt-3">
+                <span class="badge bg-danger p-2" style="font-size: 1.1rem; border: 2px solid #fff; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);">
+                    <i class="mdi mdi-fire"></i> FLASH SALE: 50% EARLY BIRD DISCOUNT ACTIVE!
+                </span>
+                <p class="mt-2 text-white-50" style="font-weight: 500;">Offer valid from March 2nd to 15th, 2026</p>
+            </div>
+            @endif
             <p class="hero-subtitle">Trust, Resilience and Sustainable Growth: Advancing Governance, Risk, Compliance and Financial Crime Prevention in Africa.</p>
         </div>
     </header>
@@ -651,8 +659,16 @@
                         <!-- Fees -->
                         <div class="widget-box widget-dark">
                             <h4 class="text-white mb-3">Delegate Fees</h4>
-                            <h3>USD 1,300</h3>
-                            <p class="text-muted mb-4">Full Conference Pass (3 Days)</p>
+                            @if($isEarlyBird ?? false)
+                                <div class="d-flex align-items-center gap-2">
+                                    <h3 class="mb-0">USD 650</h3>
+                                    <span class="text-white-50 text-decoration-line-through small">USD 1,300</span>
+                                </div>
+                                <div class="badge bg-danger mt-2">50% EARLY BIRD PRICE</div>
+                            @else
+                                <h3>USD 1,300</h3>
+                            @endif
+                            <p class="text-muted mb-4 mt-2">Full Conference Pass (3 Days)</p>
                             
                             <hr>
                             

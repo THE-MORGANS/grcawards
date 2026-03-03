@@ -203,14 +203,18 @@ class LandingPageController extends Controller
         return view('contents.voter.summit_wgrc_2026');
     }
     public function showSummitLusaka2026(){
-        return view('contents.voter.summit_lusaka_2026');
+        $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
+        return view('contents.voter.summit_lusaka_2026', compact('isEarlyBird'));
     }
     public function showSummitLusaka2026Register(){
-        return view('contents.voter.summit_lusaka_2026_register');
+        $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
+        return view('contents.voter.summit_lusaka_2026_register', compact('isEarlyBird'));
     }
     public function showSummitLusaka2026Payment(){
+        $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
         return view('contents.voter.summit_lusaka_2026_payment', [
-            'stripe_key' => env('STRIPE_KEY')
+            'stripe_key' => env('STRIPE_KEY'),
+            'isEarlyBird' => $isEarlyBird
         ]);
     }
     public function showSummit(){

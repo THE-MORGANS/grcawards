@@ -370,8 +370,11 @@
             <div class="total-display">
                 <div class="info-row">
                     <div class="info-label">Total Amount</div>
-                    <div class="total-amount-large" id="total-amount">USD 1,300</div>
+                    <div class="total-amount-large" id="total-amount">USD {{ ($isEarlyBird ?? false) ? '650' : '1,300' }}</div>
                 </div>
+                @if($isEarlyBird ?? false)
+                <div class="badge bg-danger mb-2 w-100 p-2" style="font-size: 0.8rem;">50% EARLY BIRD DISCOUNT APPLIED</div>
+                @endif
                 <div style="font-size: 0.75rem; color: var(--text-body); margin-top: 8px;">
                     <i class="mdi mdi-information-outline"></i>
                     Accommodation and travel not included
@@ -435,7 +438,7 @@
         <!-- Total Amount Display -->
         <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; text-align: center; margin-bottom: 20px;">
             <div style="font-size: 0.85rem; color: var(--text-body); margin-bottom: 5px;">Total Amount</div>
-            <div style="font-size: 1.75rem; font-weight: 800; color: var(--dark);" id="final-total">USD 1,300</div>
+            <div style="font-size: 1.75rem; font-weight: 800; color: var(--dark);" id="final-total">USD {{ ($isEarlyBird ?? false) ? '650' : '1,300' }}</div>
             <div style="font-size: 0.75rem; color: var(--text-body); margin-top: 5px;">For <span id="delegate-count-text">1 delegate(s)</span></div>
         </div>
 

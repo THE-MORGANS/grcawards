@@ -42,6 +42,15 @@ class LusakaSummitController extends Controller
             ], 400);
         }
 
+        // Verify amount
+        $expectedAmount = $this->getExpectedPrice($data['attendance_option'], $data['delegate_count']);
+        if (abs($data['amount'] - $expectedAmount) > 0.01) {
+             return response()->json([
+                'status' => 'error',
+                'message' => "Invalid payment amount. Expected: {$expectedAmount}, Received: {$data['amount']}"
+            ], 400);
+        }
+
         try {
             DB::beginTransaction();
 
@@ -159,5 +168,24 @@ class LusakaSummitController extends Controller
             'remaining' => $remaining,
             'total' => self::MAX_SLOTS
         ]);
+    }
+
+    private function getExpectedPrice($option, $count)
+    {
+        $prices = [
+            'Full Conference Pass' => 1300,
+            'Two-Day Conference Pass' => 950,
+            'One-Day Conference Pass' => 550
+        ];
+
+        $basePrice = $prices[$option] ?? 1300;
+        
+        $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
+        
+        if ($isEarlyBird) {
+            $basePrice = $basePrice * 0.5;
+        }
+
+        return $basePrice * $count;
     }
 }

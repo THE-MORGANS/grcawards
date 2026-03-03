@@ -232,6 +232,9 @@
             <h1 class="success-title">Registration Confirmed!</h1>
             <p class="success-message">
                 Thank you, <strong>{{ $registration->name }}</strong>. Your payment for the Lusaka Summit 2026 has been successfully processed and your slots are secured.
+                @if($registration->created_at->between('2026-03-02 00:00:00', '2026-03-15 23:59:59'))
+                    <br><span class="badge bg-danger mt-2" style="font-size: 0.8rem; border: 1px solid #fff;">50% EARLY BIRD DISCOUNT APPLIED</span>
+                @endif
             </p>
 
             <div class="ticket-box">
@@ -257,7 +260,11 @@
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Amount Paid</span>
-                    <span class="detail-value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}</span>
+                    <span class="detail-value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}
+                    @if($registration->created_at->between('2026-03-02 00:00:00', '2026-03-15 23:59:59'))
+                        <br><small class="badge badge-paid" style="background: #fee2e2; color: #991b1b; font-size: 10px; padding: 2px 4px;">EARLY BIRD</small>
+                    @endif
+                    </span>
                 </div>
                 {{-- 
                 @if($registration->referred_by_ssth)

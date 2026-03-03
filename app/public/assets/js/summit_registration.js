@@ -244,6 +244,13 @@ function proceedToPayment() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function () {
+    // Initialize selectedPrice from the selected card in the DOM
+    const selectedAutoCard = document.querySelector('.option-card.selected');
+    if (selectedAutoCard) {
+        selectedPrice = parseInt(selectedAutoCard.getAttribute('data-price'));
+        selectedOption = selectedAutoCard.querySelector('.option-title').textContent;
+    }
+
     updateTotal();
 
     // Attach event listener to payment button

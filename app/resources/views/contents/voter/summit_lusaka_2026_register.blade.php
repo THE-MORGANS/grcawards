@@ -82,6 +82,17 @@
                     </span>
                 </div>
             </div>
+
+            @if($isEarlyBird ?? false)
+            <div class="promo-banner mt-4 p-3 text-center" style="background: linear-gradient(135deg, #caef44ff 0%, #996f1bff 100%); border-radius: 12px; border: 2px dashed #fff; box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);">
+                <h4 style="color: #fff; font-weight: 800; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">
+                    <i class="mdi mdi-fire"></i> Early Bird Sale: 50% OFF ACTIVE!
+                </h4>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 0; font-size: 0.9rem; font-weight: 500;">
+                    Take advantage of our 50% discount. Ends March 15th, 2026.
+                </p>
+            </div>
+            @endif
         </div>
     </div>
 
@@ -117,12 +128,21 @@
                 <h3 class="section-title">Select Your Attendance Option</h3>
                 <div class="attendance-options">
                     <!-- Full Conference Pass -->
-                    <div class="option-card selected" data-price="1300" onclick="selectOption(this)">
+                    <div class="option-card selected" data-price="{{ ($isEarlyBird ?? false) ? 650 : 1300 }}" onclick="selectOption(this)">
                         <div class="option-radio"></div>
-                        <div class="option-badge">Recommended</div>
+                        @if($isEarlyBird ?? false)
+                            <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
+                        @else
+                            <div class="option-badge">Recommended</div>
+                        @endif
                         <h4 class="option-title">Full Conference Pass</h4>
                         <p class="option-duration">3 Days • Full Access</p>
-                        <div class="option-price">USD 1,300</div>
+                        <div class="option-price">
+                            USD {{ ($isEarlyBird ?? false) ? '650' : '1,300' }}
+                            @if($isEarlyBird ?? false)
+                                <span style="text-decoration: line-through; color: rgba(0,0,0,0.3); font-size: 0.9rem; margin-left: 8px;">USD 1,300</span>
+                            @endif
+                        </div>
                         <ul class="option-features">
                             <li>Full access to all sessions</li>
                             <li>All networking events</li>
@@ -132,11 +152,19 @@
                     </div>
 
                     <!-- Two-Day Pass -->
-                    <div class="option-card" data-price="950" onclick="selectOption(this)">
+                    <div class="option-card" data-price="{{ ($isEarlyBird ?? false) ? 475 : 950 }}" onclick="selectOption(this)">
                         <div class="option-radio"></div>
+                        @if($isEarlyBird ?? false)
+                            <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
+                        @endif
                         <h4 class="option-title">Two-Day Conference Pass</h4>
                         <p class="option-duration">Choose 2 Days</p>
-                        <div class="option-price">USD 950</div>
+                        <div class="option-price">
+                            USD {{ ($isEarlyBird ?? false) ? '475' : '950' }}
+                            @if($isEarlyBird ?? false)
+                                <span style="text-decoration: line-through; color: rgba(0,0,0,0.3); font-size: 0.9rem; margin-left: 8px;">USD 950</span>
+                            @endif
+                        </div>
                         <ul class="option-features">
                             <li>Access to selected sessions</li>
                             <li>Networking events on selected days</li>
@@ -145,11 +173,19 @@
                     </div>
 
                     <!-- One-Day Pass -->
-                    <div class="option-card" data-price="550" onclick="selectOption(this)">
+                    <div class="option-card" data-price="{{ ($isEarlyBird ?? false) ? 275 : 550 }}" onclick="selectOption(this)">
                         <div class="option-radio"></div>
+                        @if($isEarlyBird ?? false)
+                            <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
+                        @endif
                         <h4 class="option-title">One-Day Conference Pass</h4>
                         <p class="option-duration">Choose 1 Day</p>
-                        <div class="option-price">USD 550</div>
+                        <div class="option-price">
+                            USD {{ ($isEarlyBird ?? false) ? '275' : '550' }}
+                            @if($isEarlyBird ?? false)
+                                <span style="text-decoration: line-through; color: rgba(0,0,0,0.3); font-size: 0.9rem; margin-left: 8px;">USD 550</span>
+                            @endif
+                        </div>
                         <ul class="option-features">
                             <li>Access to one-day sessions</li>
                             <li>Day's networking events</li>
@@ -246,7 +282,7 @@
                         </div>
                         <div>
                             <div class="total-amount">USD</div>
-                            <div class="total-amount" id="total-amount">1,300</div>
+                            <div class="total-amount" id="total-amount">{{ ($isEarlyBird ?? false) ? '650' : '1,300' }}</div>
                         </div>
                     </div>
                     <button class="payment-button">
@@ -305,7 +341,7 @@
                             <span>Total<br><small style="font-weight: 400; font-size: 0.8rem; color: var(--text-body);">Amount:</small></span>
                             <div style="text-align: right;">
                                 <div class="summary-price">USD</div>
-                                <div class="summary-price" id="sidebar-total-amount">1,300</div>
+                                <div class="summary-price" id="sidebar-total-amount">{{ ($isEarlyBird ?? false) ? '650' : '1,300' }}</div>
                             </div>
                         </div>
                     </div>

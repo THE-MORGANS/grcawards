@@ -6,3 +6,5 @@ app\resources\views\contents\voter\summit_lusaka_2026_payment.blade.php
 app\resources\views\contents\voter\summit_lusaka_2026_success.blade.php
 app\resources\views\lusaka_admin\partials\registrations_table.blade.php
 app\public\assets\js\summit_registration.js
+app\app\Http\Controllers\LandingPageController.php
+app\resources\views\contents\voter\summit_lusaka_2026.blade.php
