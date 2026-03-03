@@ -49,7 +49,7 @@ class LusakaRegistrationsExport implements FromCollection, WithHeadings, WithMap
             'Amount',
             'Currency',
             'Payment Status',
-            'SSTH Referred',
+            // 'SSTH Referred',
             'Stripe Session ID',
             'Registration Date',
         ];
@@ -73,7 +73,7 @@ class LusakaRegistrationsExport implements FromCollection, WithHeadings, WithMap
             $registration->amount,
             $registration->currency,
             strtoupper($registration->payment_status),
-            $registration->referred_by_ssth ? 'YES' : 'NO',
+            // $registration->referred_by_ssth ? 'YES' : 'NO',
             $registration->stripe_session_id ?? 'N/A',
             $registration->created_at->format('Y-m-d H:i:s'),
         ];

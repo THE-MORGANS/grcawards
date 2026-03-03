@@ -221,6 +221,7 @@
                 </button>
 
                 <!-- Referral Section -->
+                {{-- 
                 <div class="referral-section mb-4" style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0;margin-top: 17px;">
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
@@ -234,6 +235,7 @@
                         </div>
                     </div>
                 </div>
+                --}}
 
                 <!-- Total and Payment -->
                 <div class="total-section">

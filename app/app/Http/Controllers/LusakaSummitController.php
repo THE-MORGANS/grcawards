@@ -27,7 +27,7 @@ class LusakaSummitController extends Controller
             'delegate_count' => 'required|integer|min:1',
             'amount' => 'required|numeric',
             'delegates' => 'required|array',
-            'referred_by_ssth' => 'nullable|boolean',
+            // 'referred_by_ssth' => 'nullable|boolean',
         ]);
 
         // Check availability
@@ -58,7 +58,7 @@ class LusakaSummitController extends Controller
                 'amount' => $data['amount'],
                 'delegates_data' => $data['delegates'],
                 'payment_status' => 'pending',
-                'referred_by_ssth' => $data['referred_by_ssth'] ?? false,
+                // 'referred_by_ssth' => $data['referred_by_ssth'] ?? false,
             ]);
 
             // Stripe Integration

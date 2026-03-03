@@ -259,6 +259,7 @@
                     <span class="detail-label">Amount Paid</span>
                     <span class="detail-value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}</span>
                 </div>
+                {{-- 
                 @if($registration->referred_by_ssth)
                 <div class="detail-row">
                     <span class="detail-label">Referred By SSTH</span>
@@ -267,6 +268,7 @@
                     </span>
                 </div>
                 @endif
+                --}}
             </div>
 
             <div class="action-buttons">
