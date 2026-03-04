@@ -98,20 +98,27 @@
 
     <!-- Main Registration Form -->
     <div class="registration-container">
-        <div class="row">
+       
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                 <img src="{{asset('/assets/lusaka_summit_banner_2026_2.jpeg')}}" style="width:100%; ">
+            </div>
+            <div class="col-lg-6">
+                 <img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" style="width:100%; ">
+            </div>
             <!-- Main Form -->
             <div class="col-lg-8">
                 <!-- Conference Info -->
-                <div class="conference-badge">
-                    <i class="mdi mdi-star"></i>
-                    <span>3-Day Conference</span>
-                </div>
+                <!--<div class="conference-badge">-->
+                <!--    <i class="mdi mdi-star"></i>-->
+                <!--    <span>3-Day Conference</span>-->
+                <!--</div>-->
                 <h2 class="page-head">Africa Governance, Risk, Compliance & Financial Crime Prevention Conference</h2>
                 <div class="event-details">
-                    <div class="event-detail-item">
-                        <i class="mdi mdi-map-marker"></i>
-                        <span>Lusaka, Zambia</span>
-                    </div>
+                    <!--<div class="event-detail-item">-->
+                    <!--    <i class="mdi mdi-map-marker"></i>-->
+                    <!--    <span>Lusaka, Zambia</span>-->
+                    <!--</div>-->
                     <div class="event-detail-item">
                         <i class="mdi mdi-calendar"></i>
                         <span>March 15-17, 2026</span>
