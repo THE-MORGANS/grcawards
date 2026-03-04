@@ -30,6 +30,7 @@
 						</li>
 						<!--========== WIDGET-CATEGORIES END ==========-->
 						<!--=========== WIDGET-INSTAGRAM ===========-->
+						@if($pictures && $pictures->count() > 0)
 						<li class="widget widget-instagram">
 							<h4 class="title">Gallery</h4>
 							<ul>
@@ -43,6 +44,7 @@
 								@endforeach
 							</ul>
 						</li>
+						@endif
 						<!--=========== WIDGET-INSTAGRAM END ===========-->
 					
 					</ul>

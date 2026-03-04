@@ -93,7 +93,7 @@
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" style="width:100%; max-width:500px;">
+						<img src="{{asset('/assets/lusaka_summit_banner_2026_2.jpeg')}}" style="width:100%; max-width:500px;">
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
