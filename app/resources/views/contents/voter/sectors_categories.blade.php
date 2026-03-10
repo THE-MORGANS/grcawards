@@ -61,7 +61,7 @@
                             <div id="content-{{$category->hashid}}" class="modern-accordion-content">
                                 <div class="inner-content">
                                     <div class="category-description">
-                                        {{$category->description}}
+                                        {!! $category->description !!}
                                     </div>
 
                                     <div class="sectors-grid">
@@ -84,7 +84,7 @@
                                                         </div>
                                                         @if($award->criteria)
                                                         <span class="criteria-label">Judging Criteria</span>
-                                                        <p class="criteria-text">{{$award->criteria}}</p>
+                                                        <div class="criteria-text">{!! $award->criteria !!}</div>
                                                         @endif
                                                     </div>
                                                     @endforeach
