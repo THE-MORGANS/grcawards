@@ -58,10 +58,11 @@
                     <div class="modern-accordion-group">
                         @foreach($categories as $category)    
                         <div class="modern-accordion-item">
-                            <button class="modern-accordion-header" 
+                            <button type="button" 
+                                    class="modern-accordion-header" 
                                     aria-expanded="{{ $loop->first ? 'true' : 'false' }}" 
                                     aria-controls="content-{{$category->hashid}}"
-                                    onclick="toggleModernAccordion(this)">
+                                    onclick="toggleModernAccordion(event, this)">
                                 <span class="modern-category-title">{{$category->name}}</span>
                                 <div class="modern-accordion-icon">
                                     <i class="mdi mdi-chevron-down" style="font-size: 1.5rem;"></i>
@@ -98,7 +99,7 @@
                                                         @endif
 
                                                         <div class="nomination-trigger">
-                                                            <button class="btn-nominate" onclick="toggleNominationForm('{{$award->hashid}}')">
+                                                            <button type="button" class="btn-nominate" onclick="toggleNominationForm(event, '{{$award->hashid}}')">
                                                                 <i class="mdi mdi-plus-circle-outline"></i> Nominate Someone
                                                             </button>
                                                         </div>
@@ -117,7 +118,7 @@
                                                                 </div> --}}
                                                                 <div class="form-actions">
                                                                     <button type="submit" class="btn-submit-nomination">Add Official Nominee</button>
-                                                                    <button type="button" class="btn-cancel-nomination" onclick="toggleNominationForm('{{$award->hashid}}')">Cancel</button>
+                                                                    <button type="button" class="btn-cancel-nomination" onclick="toggleNominationForm(event, '{{$award->hashid}}')">Cancel</button>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -177,7 +178,8 @@
     @include('partials.voter.scripts')
     
     <script>
-        function toggleModernAccordion(header) {
+        function toggleModernAccordion(event, header) {
+            if (event) event.preventDefault();
             const group = header.closest('.modern-accordion-group');
             const item = header.parentElement;
             const isOpen = item.classList.contains('active');
@@ -200,7 +202,8 @@
             }
         }
 
-        function toggleNominationForm(awardId) {
+        function toggleNominationForm(event, awardId) {
+            if (event) event.preventDefault();
             const formContainer = document.getElementById(`nomination-form-${awardId}`);
             const isVisible = formContainer.style.display !== 'none';
             
