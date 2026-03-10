@@ -68,7 +68,7 @@
                                         @foreach($category->sectors as $sector)
                                         <div class="sector-card">
                                             <div class="sector-name">
-                                                <i class="mdi mdi-layers-outline"></i>
+                                                <!-- <i class="mdi mdi-layers-outline"></i> -->
                                                 {{$sector->id == 12 ? 'General Categories' : $sector->name }}
                                             </div>
 
