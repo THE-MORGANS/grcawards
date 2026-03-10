@@ -2,7 +2,7 @@
 <html lang="zxx">
 @section('title', 'Categories')
 @section('style')
-<link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
+<link rel="stylesheet" href="{{asset('assets/css/categories_redesign.css')}}">
 @endsection
 
 <head>
@@ -16,6 +16,7 @@
     <!-- ================= HEADER ================= -->
     @include('partials.voter.topbar')
     <!-- =============== HEADER END =============== -->
+    
     <!-- Page title -->
     <div class="page-title" style="background-color:#D4AF37">
         <div class="container">
@@ -25,70 +26,101 @@
                     <li>Categories</li>
                 </ul>
             </div>
-            <h1 class="title">Categories</h1>
+            <h1 class="title" style="font-weight: 800;">Sectors & Categories</h1>
         </div>
     </div>
-    <!-- page title -->
 
-    <section class="s-news s-single-news" style="background-color: #fff;">
+    <section class="s-news s-single-news categories-redesign-wrapper" style="background-color: #fbfbfb; padding: 80px 0;">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-8 blog-cover">
-                    <div class="post-item-cover">
-                        <div class="widget widget-archive post-header">
-                            <h4 class="title">Categories</h4>
-                        </div>
-                        <div class="post-content">
-                            <div class="text">
-                                <p>The GRC & FinCrime Prevention Awards will be presented to several sectors that employ/incorporate Governance, Risk management, Compliance and Financial Crime Prevention mechanisms in their business activities.</p>
-                                <p>The GRC & FinCrime Prevention Awards comprises of six categories of awards with various subcategories.</p>
-                            </div>
+                    
+                    <div class="premium-post-header">
+                        <h2 class="title">Award Categories</h2>
+                        <div class="mt-3">
+                            <p class="lead" style="font-size: 1.1rem; color: #64748b; line-height: 1.6;">
+                                The GRC & FinCrime Prevention Awards will be presented to several sectors that employ/incorporate Governance, Risk management, Compliance and Financial Crime Prevention mechanisms in their business activities.
+                            </p>
+                            <p style="color: #64748b;">The GRC & FinCrime Prevention Awards comprises of six categories of awards with various subcategories.</p>
                         </div>
                     </div>
-                    <div class="accordion-wrapper" style="margin-top: 30px;">
+
+                    <div class="modern-accordion-group">
                         @foreach($categories as $category)    
-                        <div class="accordion">
-                            <input class="in-check" type="checkbox" name="radio-a" id="{{$category->hashid}}"/>
-                            <label class="accordion-label" for="{{$category->hashid}}">{{$category->name}}</label>
-                            <div class="accordion-content">
-                            <p>{{$category->description}}</p>
-                                <div class="row">
-                                    @foreach($category->sectors as $sector)
-                                    <div class="col-md-6" style="margin-bottom:30px">
-                                        <div class="buy-ticket-left">
-                                            <div class="ticket-contact-cover" style="padding-top:10px;">
-                                                <div class="ticket-contact-item">
-                                                    <h6>{{$sector->id == 12 ? '': $sector->name.' Awards' }}</h6>
-                                                    <ul style="font-size: 14px;">
-                                                        @if($sector->awards->isEmpty())
-                                                            <li></li>
-                                                        @else
-                                                        @foreach($sector->awards as $award)
-                                                        <li>
-                                                            <i class="mdi mdi-chevron-right"></i>
-                                                               <h6>{{$award->name}} </h6> 
-                                                        </li>
-                                                            <li>  <span style="font-weight: 500px"> CRITERIA</span> {{$award->criteria}} </li>
-                                                            @endforeach
-                                                             <h5> Nominees </h5>
-                                                          @foreach ($sector->nominees as $nominee)
-                                                          <li>
-                                                              {{$nominee->name}}
-                                                          </li>
-                                                          @endforeach
-                                                        @endif
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div class="modern-accordion-item">
+                            <button class="modern-accordion-header" 
+                                    aria-expanded="{{ $loop->first ? 'true' : 'false' }}" 
+                                    aria-controls="content-{{$category->hashid}}"
+                                    onclick="toggleModernAccordion(this)">
+                                <span class="modern-category-title">{{$category->name}}</span>
+                                <div class="modern-accordion-icon">
+                                    <i class="mdi mdi-chevron-down" style="font-size: 1.5rem;"></i>
+                                </div>
+                            </button>
+                            
+                            <div id="content-{{$category->hashid}}" class="modern-accordion-content">
+                                <div class="inner-content">
+                                    <div class="category-description">
+                                        {{$category->description}}
                                     </div>
-                                    @endforeach
+
+                                    <div class="sectors-grid">
+                                        @foreach($category->sectors as $sector)
+                                        <div class="sector-card">
+                                            <div class="sector-name">
+                                                <i class="mdi mdi-layers-outline"></i>
+                                                {{$sector->id == 12 ? 'General Categories' : $sector->name }}
+                                            </div>
+
+                                            <div class="awards-wrapper">
+                                                @if($sector->awards->isEmpty())
+                                                    <p class="small text-muted">Awaiting category details...</p>
+                                                @else
+                                                    @foreach($sector->awards as $award)
+                                                    <div class="award-item">
+                                                        <div class="award-name">
+                                                            <i class="mdi mdi-trophy-variant-outline"></i>
+                                                            {{$award->name}}
+                                                        </div>
+                                                        @if($award->criteria)
+                                                        <span class="criteria-label">Judging Criteria</span>
+                                                        <p class="criteria-text">{{$award->criteria}}</p>
+                                                        @endif
+                                                    </div>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+
+                                            @if($sector->nominees && $sector->nominees->count() > 0)
+                                            <div class="nominees-section">
+                                                <div class="nominees-label">
+                                                    <i class="mdi mdi-account-group-outline"></i>
+                                                    Official Nominees
+                                                </div>
+                                                <ul class="nominees-list">
+                                                    @foreach ($sector->nominees as $nominee)
+                                                    <li class="nominee-tag">
+                                                        {{$nominee->name}}
+                                                    </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            @else
+                                            <div class="no-nominees-placeholder">
+                                                <i class="mdi mdi-magnify no-nominees-icon"></i>
+                                                <span class="no-nominees-text">No Official Nominees Yet</span>
+                                            </div>
+                                            @endif
+                                        </div>
+                                        @endforeach
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         @endforeach
                     </div>
                 </div>
+
                 <!--================= SIDEBAR =================-->
                 @include('partials.voter.sidebar')
                 <!--=============== SIDEBAR END ===============-->
@@ -108,6 +140,23 @@
 
     <!--=================== SCRIPT	===================-->
     @include('partials.voter.scripts')
+    
+    <script>
+        function toggleModernAccordion(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            // Optional: Close others in same group
+            const group = button.closest('.modern-accordion-group');
+            const allItems = group.querySelectorAll('.modern-accordion-header');
+            
+            allItems.forEach(btn => {
+                if (btn !== button) {
+                    btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            button.setAttribute('aria-expanded', !isExpanded);
+        }
+    </script>
 </body>
-
 </html>

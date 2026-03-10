@@ -1,0 +1,2 @@
+app/resources/views/contents/voter/sectors_categories.blade.php
+app/public/assets/css/categories_redesign.css
