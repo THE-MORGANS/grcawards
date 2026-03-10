@@ -38,9 +38,19 @@
                     <div class="premium-post-header">
                         <h2 class="title">Award Categories</h2>
                         <div class="mt-3">
-                            <p class="lead" style="font-size: 1.1rem; color: #64748b; line-height: 1.6;">
-                                The GRC & FinCrime Prevention Awards will be presented to several sectors that employ/incorporate Governance, Risk management, Compliance and Financial Crime Prevention mechanisms in their business activities.
-                            </p>
+                            @if(Session::has('msg'))
+                            <div class="alert alert-success alert-premium">
+                                <i class="mdi mdi-check-circle-outline"></i>
+                                {{Session::get('msg')}}
+                            </div>
+                            @endif
+                            @if(Session::has('error'))
+                            <div class="alert alert-danger alert-premium">
+                                <i class="mdi mdi-alert-circle-outline"></i>
+                                {{Session::get('error')}}
+                            </div>
+                            @endif
+                            <p class="description">Browse through the various sectors and categories available for this year's awards. You can now also nominate and add your preferred candidates directly to the official list.</p>
                             <p style="color: #64748b;">The GRC & FinCrime Prevention Awards comprises of six categories of awards with various subcategories.</p>
                         </div>
                     </div>
@@ -83,9 +93,34 @@
                                                             {{$award->name}}
                                                         </div>
                                                         @if($award->criteria)
-                                                        <span class="criteria-label">Judging Criteria</span>
-                                                        <div class="criteria-text">{!! $award->criteria !!}</div>
+                                                            <span class="criteria-label">Judging Criteria</span>
+                                                            <div class="criteria-text">{!! $award->criteria !!}</div>
                                                         @endif
+
+                                                        <div class="nomination-trigger">
+                                                            <button class="btn-nominate" onclick="toggleNominationForm('{{$award->hashid}}')">
+                                                                <i class="mdi mdi-plus-circle-outline"></i> Nominate Someone
+                                                            </button>
+                                                        </div>
+
+                                                        <div id="nomination-form-{{$award->hashid}}" class="nomination-form-container" style="display: none;">
+                                                            <form action="{{route('add.nominee_new')}}" method="POST" class="nomination-form">
+                                                                @csrf
+                                                                <input type="hidden" name="awards_id" value="{{$award->hashid}}">
+                                                                <div class="form-group-premium">
+                                                                    <label>Nominee Name</label>
+                                                                    <input type="text" name="nominee_name" class="form-control-premium" placeholder="Enter name or organization" required>
+                                                                </div>
+                                                                {{-- <div class="form-group-premium">
+                                                                    <label>Reason for Nomination (Optional)</label>
+                                                                    <textarea name="reason" class="form-control-premium" rows="2" placeholder="Tell us why..."></textarea>
+                                                                </div> --}}
+                                                                <div class="form-actions">
+                                                                    <button type="submit" class="btn-submit-nomination">Add Official Nominee</button>
+                                                                    <button type="button" class="btn-cancel-nomination" onclick="toggleNominationForm('{{$award->hashid}}')">Cancel</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                     @endforeach
                                                 @endif
@@ -142,21 +177,45 @@
     @include('partials.voter.scripts')
     
     <script>
-        function toggleModernAccordion(button) {
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-            
-            // Optional: Close others in same group
-            const group = button.closest('.modern-accordion-group');
-            const allItems = group.querySelectorAll('.modern-accordion-header');
-            
-            allItems.forEach(btn => {
-                if (btn !== button) {
-                    btn.setAttribute('aria-expanded', 'false');
+        function toggleModernAccordion(header) {
+            const group = header.closest('.modern-accordion-group');
+            const item = header.parentElement;
+            const isOpen = item.classList.contains('active');
+
+            // Close other items in the same group
+            group.querySelectorAll('.modern-accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.modern-accordion-header').setAttribute('aria-expanded', 'false');
                 }
             });
+
+            // Toggle current item
+            if (isOpen) {
+                item.classList.remove('active');
+                header.setAttribute('aria-expanded', 'false');
+            } else {
+                item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function toggleNominationForm(awardId) {
+            const formContainer = document.getElementById(`nomination-form-${awardId}`);
+            const isVisible = formContainer.style.display !== 'none';
             
-            button.setAttribute('aria-expanded', !isExpanded);
+            // Close all other forms first
+            document.querySelectorAll('.nomination-form-container').forEach(form => {
+                form.style.display = 'none';
+            });
+
+            if (!isVisible) {
+                formContainer.style.display = 'block';
+            } else {
+                formContainer.style.display = 'none';
+            }
         }
     </script>
 </body>
+
 </html>

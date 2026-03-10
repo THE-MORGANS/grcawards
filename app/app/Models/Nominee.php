@@ -11,7 +11,7 @@ class Nominee extends Model
 
     protected $table = "nominees";
 
-    protected $fillable = ['name', 'sector_id','award_program_id', 'award_id'];
+    protected $fillable = ['name', 'sector_id','award_program_id', 'award_id', 'award_ids'];
 
     public function awardProgram(){
         return $this->belongsTo(AwardProgram::class, 'award_program_id');

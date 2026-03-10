@@ -47,6 +47,9 @@ class LandingPageController extends Controller
             $category->sectors;
             foreach($category->sectors as $sector){
                 $sector->awards;
+                foreach($sector->awards as $award){
+                    $award->hashid = Hashids::connection('award')->encode($award->id);
+                }
                 $sector->nominees;
             }
         }
@@ -96,22 +99,56 @@ class LandingPageController extends Controller
 
     public function AddNewNominee(Request $req)
     {
-        $award_id = Hashids::connection('award')->decode($req->awards_id)[0];
-        $awards = Award::where('id', $award_id)->first();
-        if($awards)
-        {
-            // $awards->nominees = array_merge(json_decode($awards->nominees, true)??[], $req->nominee_name);
-            // $awards->save();
-            CustomAwardNominee::create([ 
-                'award_id' => $awards->id, 
-                'nominee' => $req->nominee_name,
-                'reason' => $req->reason
-            ]);
-               Session::flash('msg','Request send Successfully,  We review your request and update accordingly');
-               return back();
+        $award_id_decoded = Hashids::connection('award')->decode($req->awards_id);
+        
+        if (empty($award_id_decoded)) {
+            Session::flash('error', 'Invalid award selection.');
+            return back();
         }
 
+        $award_id = $award_id_decoded[0];
+        $award = Award::find($award_id);
 
+        if($award)
+        {
+            $sector = $award->sector;
+            
+            // Check for duplicates in the SECTOR (case-insensitive)
+            $existing_nominee = \App\Models\Nominee::where('sector_id', $sector->id)
+                ->where('name', 'LIKE', $req->nominee_name)
+                ->first();
+
+            if ($existing_nominee) {
+                // Check if this award is already in the award_ids array
+                $award_ids = json_decode($existing_nominee->award_ids, true) ?? [];
+                if (in_array($award_id, $award_ids)) {
+                    Session::flash('error', 'This nominee is already listed for this award.');
+                    return back();
+                }
+
+                // Append new award_id to existing nominee
+                $award_ids[] = $award_id;
+                $existing_nominee->award_ids = json_encode($award_ids);
+                $existing_nominee->save();
+
+                Session::flash('msg', 'Nominee added to this award program successfully!');
+                return back();
+            }
+
+            // Create new Official Nominee
+            \App\Models\Nominee::create([
+                'name' => $req->nominee_name,
+                'sector_id' => $sector->id,
+                'award_program_id' => $award->award_program_id,
+                'award_ids' => json_encode([$award_id])
+            ]);
+
+            Session::flash('msg', 'New nominee added to the official list successfully!');
+            return back();
+        }
+
+        Session::flash('error', 'Award not found.');
+        return back();
     }
 
     public function showJudges(){
