@@ -422,6 +422,56 @@
             transform: translateY(-2px);
             color: #fff;
         }
+        /* Speakers Section Styles */
+        .speaker-card {
+            text-align: center;
+            padding: 20px;
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .speaker-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-color: var(--gold);
+        }
+        .speaker-image-wrapper {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 3px solid #f8f9fa;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+        .speaker-card:hover .speaker-image-wrapper {
+            border-color: var(--gold);
+            transform: scale(1.05);
+        }
+        .speaker-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .speaker-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        .speaker-position {
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 
@@ -558,6 +608,39 @@
                             <li>Build relationships across public and private sectors</li>
                             <li>Contribute to shaping Africa's governance agenda</li>
                         </ul>
+                    </div>
+
+                    
+                    <div class="mb-5">
+                        <!-- <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2 class="section-title mb-0">Distinguished Speakers</h2>
+                        </div> -->
+                        <div class="row g-4">
+                            @php
+                                $speakers = [
+                                    ['name' => 'Lesego Bannalotlhe', 'position' => 'Panel Speaker', 'image' => 'lusaka_lesogo.jpg'],
+                                    ['name' => 'Dr Nishal Khusial', 'position' => 'Keynote Speaker', 'image' => 'lusaka_nishal.jpg'],
+                                    ['name' => 'Mizinga Melu', 'position' => 'Panel Speaker', 'image' => 'lusaka_mizinga.JPG'],
+                                    ['name' => 'Beauty Mtonga', 'position' => 'Panel Speaker', 'image' => 'lusaka_beauty.jpg'],
+                                    ['name' => 'Lydia Nasilele Simakando', 'position' => 'Panel Speaker', 'image' => 'lusaka_lydia.png'],
+                                    ['name' => 'Elijah Chulu', 'position' => 'Panel Speaker', 'image' => 'lusaka_elijah.jpg'],
+                                    ['name' => 'Grace Tabea Letseka', 'position' => 'Master of Ceremony', 'image' => 'lusaka_grace.jpg'],
+                                    ['name' => 'Susiku I. Nasinda MPhil', 'position' => 'Moderator', 'image' => 'lusaka_susiku.jpg'],
+                                ];
+                            @endphp
+
+                            @foreach($speakers as $speaker)
+                            <div class="col-md-6 col-lg-4 mb-3">
+                                <div class="speaker-card">
+                                    <div class="speaker-image-wrapper">
+                                        <img src="{{ asset('assets/images/speakers/lusaka_2026/'.($speaker['image'] ?? 'speaker_placeholder.png')) }}" alt="{{ $speaker['name'] }}" class="speaker-image">
+                                    </div>
+                                    <h6 class="speaker-name text-center">{{ $speaker['name'] }}</h6>
+                                    <p class="speaker-position text-center">{{ $speaker['position'] }}</p>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
 
                     <div class="mb-5">
