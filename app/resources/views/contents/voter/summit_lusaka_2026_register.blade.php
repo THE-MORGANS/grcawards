@@ -383,6 +383,20 @@
                         <img src="{{asset('assets/images/visa.png')}}" width="40" alt="img">
                         <img src="{{asset('assets/images/paypal.png')}}" width="40" alt="img">
                     </div>
+
+                    <!-- Visa & Travel Information -->
+                    <div class="visa-info-box mt-4" style="background: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #e2e8f0;">
+                        <h4 style="font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            <i class="mdi mdi-passport" style="color: #D4AF37; font-size: 1.1rem;"></i>
+                            Visa & Travel Information
+                        </h4>
+                        <p style="font-size: 0.8rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;">
+                            Get Lusaka Conference Visa Information and Travel advice through the official portal.
+                        </p>
+                        <a href="https://eservices.zambiaimmigration.gov.zm/#/home" target="_blank" class="btn" style="background: #D4AF37; color: #fff; width: 100%; border-radius: 6px; font-weight: 700; font-size: 0.8rem; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.3s ease;">
+                            Visit Portal <i class="mdi mdi-open-in-new"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

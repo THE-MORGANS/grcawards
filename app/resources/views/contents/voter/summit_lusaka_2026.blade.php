@@ -531,6 +531,8 @@
                             <p class="mb-0"><strong>This is not a general conference.</strong> It is a transformational, decision-maker-level forum for those shaping Africa's governance and integrity agenda.</p>
                         </div>
                     </div>
+                    
+                    <img src="{{asset('/assets/lusaka_summit_banner_2026_3.jpeg')}}" style="width:100%; ">
 
                     <div class="mb-5">
                         <h2 class="section-title">Conference Theme</h2>
