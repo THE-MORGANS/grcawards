@@ -1,0 +1,4 @@
+app/app/Http/Controllers/LandingPageController.php (Lines 14-18, 39-57, 100-152)
+app/app/Models/Nominee.php (Line 14)
+app/resources/views/contents/voter/sectors_categories.blade.php (Lines 41-55, 61-65, 101-124, 130-149, 180-221)
+app/public/assets/css/categories_redesign.css (Lines 106-117, 240-369, 408-438)

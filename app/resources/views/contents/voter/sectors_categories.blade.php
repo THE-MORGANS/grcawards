@@ -33,10 +33,14 @@
     <section class="s-news s-single-news categories-redesign-wrapper" style="background-color: #fbfbfb; padding: 80px 0;">
         <div class="container">
             <div class="row">
+                
                 <div class="col-12 col-lg-8 blog-cover">
+                   
+                 <img src="{{asset('/assets/nomination-banner.jpeg')}}" style="width:100%; ">
+            
                     
                     <div class="premium-post-header">
-                        <h2 class="title">Award Categories</h2>
+                        <!--<h2 class="title">Award Categories</h2>-->
                         <div class="mt-3">
                             @if(Session::has('msg'))
                             <div class="alert alert-success alert-premium">
@@ -46,7 +50,7 @@
                             @endif
                             @if(Session::has('error'))
                             <div class="alert alert-danger alert-premium">
-                                <i class="mdi mdi-alert-circle-outline"></i>
+                                <i class="mdi mdi-alert-circle-outline"></i>a
                                 {{Session::get('error')}}
                             </div>
                             @endif
