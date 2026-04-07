@@ -1,213 +1,209 @@
 @extends('layouts.admin.master')
 
 @section('title', 'Admin Dashboard')
+
+@section('style')
+<link href="{{asset('assets/css/judges_redesign.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
+@endsection
+
 @section('content')
-<div class="container-fluid">
-
-    <!-- start page title -->
-    <div class="row">
+<div class="judges-container">
+    <!-- Header Section -->
+    <div class="row mb-4">
         <div class="col-12">
-            <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
-                <div class="page-title">
-                    <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
+            <div class="d-flex align-items-center justify-content-between p-4 bg-white rounded-4 shadow-sm">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-md bg-soft-primary rounded-3 d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: #eef2ff;">
+                        <i class="lni lni-award text-primary fs-3"></i>
                     </div>
-                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
-                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
-                    </h4>
+                    <div>
+                        <h4 class="mb-0 fw-bold">Judging Management</h4>
+                        <p class="text-muted mb-0">Award Year: <span class="fw-bold text-dark">{{$currentYear?->year ?? 'N/A'}}</span></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- end page title -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                
-            </div> <!-- end card-->
-        </div> <!-- end col-->
-    </div>
 
-    <!-- end row-->
-    <div class="row" style="background: #eee; padding-top:20px"> 
-        @foreach ($categories as $category)
-         
-            <div class="col-md-12"> 
-                <div style="text-align: right; padding: 15px" >  {{$categories->links()}} </div>
-            </div> 
-        <div class="col-md-0">  </div> 
-        <div class="col-md-12">
-            <div class="card" >
-                <div class="card-body">
-                  <h2 class="card-title">{{$category->name}}   <span style="float:right"> @if(count($category->AdminVotes()) == count($category->countAwards(5))) <span style="color:#ffffff; background:green; padding:5px; border-radius:5px">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(5))}}  </span> @else <span style="color:#8d0509">  Completed: {{count($category->AdminVotes())}}/{{count($category->countAwards(5))}}  </span> @endif</span>  </h2>
-                  <p class="card-text">{{substr($category->description,0,100).'...'}}</p>
-                  @php
-                      $category->hashid = Hashids::connection('category')->encode($category->id);
-                  @endphp
-                  {{-- <a href="{{route('admin.load_judge_category_sector_page', [request()->segment(3), $category->hashid])}}" class="btn btn-primary"> {{count($category->sectors)}} Sectors - View All </a> --}}
+    @foreach ($categories as $category)
+    <div class="category-wrapper">
+        <!-- Category Card -->
+        <div class="category-card">
+            <div class="category-header">
+                <div>
+                    <h2 class="category-title">{{$category->name}}</h2>
                 </div>
-              </div>
-        </div> 
-        <div class="col-md-0">  </div> 
+                <div>
+                    @php
+                        $votedCount = count($category->AdminVotes());
+                        $totalAwards = count($category->countAwards(5));
+                        $isCompleted = ($votedCount == $totalAwards && $totalAwards > 0);
+                    @endphp
+                    <div class="completion-badge {{ $isCompleted ? 'voted' : '' }}">
+                        <i class="lni {{ $isCompleted ? 'lni-checkmark-circle' : 'lni-timer' }} me-2"></i>
+                        {{ $isCompleted ? 'Judging Completed' : 'In Progress' }}: {{ $votedCount }}/{{ $totalAwards }}
+                    </div>
+                </div>
+            </div>
+            <div class="category-body">
+                <p class="category-description">{{ $category->description }}</p>
+            </div>
+        </div>
+
+        <!-- Sectors under Category -->
+        <div class="ps-md-5">
+            <div class="judge-pagination mb-3">
+                {{$categories->links()}}
+            </div>
 
             @foreach ($category->sectors as $sector)
-            <div class="col-md-0">  </div> 
-            <div class="col-md-12">
-                <div class="card" >
-                    <div class="card-body">
-                      <h3 class="card-title">
-                        {{-- <a href="#sectors" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sectors" onclick="getSectorData({{$sector->id}})">
-                            {{$sector->name}}
-                          </a>
-                           --}}
-                           @php
-                          $sector->hashid = Hashids::connection('sector')->encode($sector->id);
-                          $category->hashid = Hashids::connection('category')->encode($category->id);
-                            @endphp
-                           {{-- <a href="{{route('admin.load_judge_awards', [request()->segment(3), $category->hashid, $sector->hashid])}}" > --}}
-                            <span class="badge badge-outline-primary"> {{$sector->name}}</span>
-                          {{-- </a> --}}
-    
-                           <p class="sectorid" hidden>{{$sector->id}}</p>
-                      </h3>
+            <div class="sector-card">
+                <div class="sector-header">
+                    <h3 class="sector-name">
+                        {{$sector->name}}
+                        <span class="badge bg-soft-primary text-primary fs-6 fw-normal rounded-pill px-3 ms-2" style="background: #eff6ff;">
+                            {{ count($sector->awards) }} Awards
+                        </span>
+                    </h3>
+                </div>
+                
+                <div class="awards-table-container">
+                    <div class="table-responsive">
+                        <table class="awards-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%">#</th>
+                                    <th style="width: 20%">Award Name</th>
+                                    <th style="width: 25%">Description</th>
+                                    <th style="width: 25%">Criteria</th>
+                                    <th style="width: 10%">Status</th>
+                                    <th style="width: 15%; text-align: right;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($sector->awards as $award)
+                                @php
+                                    $award->hashid = Hashids::connection('award')->encode($award->id);
+                                    $index = $award->id;
+                                    $hasVoted = $award->IsJudgeVoted($award->id);
+                                @endphp
+                                <tr>
+                                    <td class="fw-bold text-muted">{{$loop->iteration}}</td>
+                                    <td>
+                                        <div class="award-name">{{$award->name}}</div>
+                                    </td>
+                                    <td>
+                                        <div class="award-desc">
+                                            @if(strlen($award->description) > 100)
+                                                {{ substr($award->description, 0, 100) }}...
+                                                <button class="read-more-btn" onClick="toggleReadMore('desc', {{$index}})" id="btn-desc-{{$index}}">View Details</button>
+                                                <span id="detail-desc-{{$index}}" style="display:none">{{ substr($award->description, 100) }}</span>
+                                            @else
+                                                {{ $award->description }}
+                                            @endif
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="award-criteria">
+                                            <button class="read-more-btn" onClick="openCriteriaModal('{{ addslashes($award->name) }}', {{$index}})">
+                                                <i class="lni lni-eye me-1"></i> View Criteria
+                                            </button>
+                                            <template id="criteria-template-{{$index}}">{!! $award->criteria !!}</template>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        @if($hasVoted)
+                                            <div class="voted-indicator">
+                                                <i class="lni lni-checkmark-circle"></i> Voted
+                                            </div>
+                                        @else
+                                            <span class="text-muted small italic">Pending</span>
+                                        @endif
+                                    </td>
+                                    <td style="text-align: right;">
+                                        <a href="{{route('admin.view_nominess_awards',[request()->segment(3), $award->hashid])}}" class="vote-nominee-btn">
+                                            <i class="lni lni-pencil-alt me-1"></i> Vote
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-
-    <div class="collapse show">
-        <div class="card card-body" style="overflow: scroll">
-          @if ($sector->awards)
-            {{-- @php
-            $sector = Hashids::connection('sector')->decode(request()->segment(7));
-            $sector_name = DB::table('sectors')->find($sector[0])->name;
-            @endphp --}}
-
-          <table class="table table-responsive table-striped">
-
-            <h4>
-                <strong>      SECTOR AWARDS</strong>
-          
-            </h4>
-            <thead>
-              <tr>
-                <th scope="col" style="width: 5%">S/N</th>
-                <th scope="col" style="width: 20%">Award Name</th>
-                <th scope="col" style="width: 25%">Description</th>
-                <th scope="col" style="width: 35%">Criteria</th>
-                <th></th>
-                <th scope="col" style="width: 15%">Vote</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($sector->awards as $award)
-                @php
-                 $award->hashid = Hashids::connection('award')->encode($award->id);
-                 $index = $award->id
-                @endphp
-                <tr>
-                    <th scope="row">{{$loop->iteration}}
-                  
-                    </th>
-                    <td>{{$award->name}} 
-
-                    
-                    </td>
-                    <td>{{substr($award->description,0,100)}} <button style="border:none; color:blue;"  onClick="readMore({{$index}})" id="btn-{{$index}}">read more </button> 
-                       <span hidden id="detail-{{$index}}"> {{substr($award->description,100,10000)}}  </span> 
-                     @section('scripts')
-                      <script>
-                        function readMore(index)
-                        {
-                         let item = document.getElementById(`detail-${index}`)
-                         if(item.style.display === "none" || item.hidden === true )
-                         {
-                          item.style.display = 'inline'
-                          document.getElementById(`detail-${index}`).hidden = false
-                          document.getElementById(`btn-${index}`).hidden = true
-
-                         }else{
-                          item.style.display === "none" 
-                         }
-                         
-                        }
-                        function readMores(index)
-                        {
-                         let items = document.getElementById(`details-${index}`)
-                         if(items.style.display === "none" || items.hidden === true )
-                         {
-                          items.style.display = 'inline'
-                          document.getElementById(`details-${index}`).hidden = false
-                          document.getElementById(`btns-${index}`).hidden = true
-
-                         }else{
-                          items.style.display === "none" 
-                         }
-                         
-                        }
-                      </script>
-                       @if (Session::has('success'))
-                <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "preventDuplicates": true,
-                        "preventOpenDuplicates": true
-                    }
-                    toastr.success("{{ session('success') }}");
-                </script>
-            @endif
-
-            @if (Session::has('danger'))
-                <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "preventDuplicates": true,
-                        "preventOpenDuplicates": true
-                    }
-                 
-                    toastr.error("{{ session('danger') }}");
-                </script>
-            @endif
-                      @endsection
-                    </td> 
-                    <td>{{substr($award->criteria,0,100)}} <button style="border:none; color:blue;"   onClick="readMores({{$index}})" id="btns-{{$index}}">read more </button>
-                      <span hidden id="details-{{$index}}"> {{substr($award->criteria,100,10000)}}  </span> 
-                   
-                    </td>
-                    <td>
-                      @if($award->IsJudgeVoted($award->id))
-                      <i style="color:green" aria-hidden="true"> <strong>Voted</strong></i>
-                      @endif
-                    </td>
-                    <td><a href="{{route('admin.view_nominess_awards',[request()->segment(3), $award->hashid])}}" class="btn btn-sm btn-success">Vote Nominee</a></td>
-                </tr>  
-                  <br>
-                  
-              @endforeach
-            </tbody>
-          </table>
-        @else
-        <div class="d-flex justify-content-center">
-            <div class=" badge bg-primary text-center" role="alert" style="width:25%;">
-                <p>Please Select a Sector above to load awards.</p>
-              </div>
-        </div>
-        @endif
-        </div>
-      </div>
-                  </div>
-            </div> 
-            <div class="col-md-"> 
-                 </div>    
+                </div>
+            </div>
             @endforeach
-            <div class="col-md-12"> 
-                <div style="text-align: right; padding: 50px" >  {{$categories->links()}} </div>
-            </div>    
-            
-        
-        </div>     
-        @endforeach
+
+            <div class="judge-pagination mt-4">
+                {{$categories->links()}}
+            </div>
+        </div>
     </div>
+    @endforeach
 </div>
 
+<!-- Criteria Modal -->
+<div class="modal fade" id="criteriaModal" tabindex="-1" aria-labelledby="criteriaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="criteriaModalLabel">Award Criteria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalAwardName" class="mb-4 fw-bold text-primary"></h4>
+                <div id="modalCriteriaBody" class="criteria-html-content">
+                    <!-- Content injected via JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-close-modal" data-bs-dismiss="modal">Close Window</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
+@section('scripts')
+<script>
+function toggleReadMore(type, index) {
+    const detailSpan = document.getElementById(`detail-${type}-${index}`);
+    const btn = document.getElementById(`btn-${type}-${index}`);
+    
+    if (detailSpan.style.display === "none") {
+        detailSpan.style.display = "inline";
+        btn.innerHTML = "Show Less";
+    } else {
+        detailSpan.style.display = "none";
+        btn.innerHTML = "View Details";
+    }
+}
+
+function openCriteriaModal(awardName, index) {
+    const template = document.getElementById(`criteria-template-${index}`);
+    const modalBody = document.getElementById('modalCriteriaBody');
+    const modalTitle = document.getElementById('modalAwardName');
+    
+    modalTitle.innerText = awardName;
+    modalBody.innerHTML = template.innerHTML;
+    
+    const myModal = new bootstrap.Modal(document.getElementById('criteriaModal'));
+    myModal.show();
+}
+</script>
+
+@if (Session::has('success'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
+@if (Session::has('danger'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.error("{{ session('danger') }}");
+</script>
+@endif
+@endsection

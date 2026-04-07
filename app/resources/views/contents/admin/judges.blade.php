@@ -1,353 +1,263 @@
 @extends('layouts.admin.master')
 
-@section('title', 'Judgesphp congif clear')
+@section('title', 'Judges Management')
 
+@section('style')
+<link href="{{asset('assets/css/judges_list_redesign.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+@endsection
 
 @section('content')
-<div class="container">
-    <!-- start page title -->
-    <div class="row">
-        <div class="col-12">
-            <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
-                <div class="page-title">
-                    <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
-                    </div>
-                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
-                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
-                    </h4>
-                </div>
+<div class="judges-management-wrapper">
+    <!-- Modern Header -->
+    <div class="judges-header">
+        <div class="header-content">
+            <h1>Judges Management</h1>
+            <p class="mb-0 opacity-75">Award Year: <span class="fw-bold">{{$currentYear?->year ?? 'N/A'}}</span></p>
+        </div>
+        <div class="header-stats">
+            <div class="stat-item text-end">
+                <span class="stat-value">{{ count($judges) }}</span>
+                <span class="stat-label">Total Judges</span>
+            </div>
+            <div class="stat-item text-end">
+                @php
+                    $totalVotes = 0;
+                    foreach($judges as $j) {
+                        $totalVotes += count($j->judges_votes($j->admin_id));
+                    }
+                @endphp
+                <span class="stat-value text-success text-opacity-100">{{ $totalVotes }}</span>
+                <span class="stat-label">Votes Cast</span>
             </div>
         </div>
     </div>
-    <!-- end page title -->
 
-    <div class="row">
-        <div class="col-xl-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="header-title mb-4">Add Judge</h4>
-                    <form class="needs-validation" method="POST" action="{{route('admin.create_judges', $award_program)}}" enctype="multipart/form-data" name="add-judge-form" id="add-judge-form">
-                        @csrf
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Judge Full Name</label>
-                                    <input type="text" class="form-control @error('fullname') is-invalid @enderror" placeholder="John Doe" name="fullname" id="judge_fullname" required autocomplete="off" />
-                                    @error('fullname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+    <div class="judges-grid">
+        <!-- Add Judge Sidebar -->
+        <div class="glass-card">
+            <h4 class="card-title-modern">
+                <i class="lni lni-user-plus"></i> Add New Judge
+            </h4>
+            <form class="needs-validation modern-form" method="POST" action="{{route('admin.create_judges', $award_program)}}" enctype="multipart/form-data" name="add-judge-form" id="add-judge-form">
+                @csrf
+                <div class="mb-3">
+                    <label class="form-label-modern">Full Name</label>
+                    <input type="text" class="form-control form-control-modern @error('fullname') is-invalid @enderror" placeholder="e.g. John Doe" name="fullname" id="judge_fullname" required autocomplete="off" />
+                    @error('fullname')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Judge Email</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Judge Mail Address" name="email" id="judge_email" required autocomplete="off" />
-                                    @error('judge_email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+                <div class="mb-3">
+                    <label class="form-label-modern">Email Address</label>
+                    <input type="email" class="form-control form-control-modern @error('email') is-invalid @enderror" placeholder="judge@example.com" name="email" id="judge_email" required autocomplete="off" />
+                    @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Position</label>
-                                    <textarea name="position"  class="form-control @error('position') is-invalid  @enderror"  cols="30" rows="10"></textarea>
-                                    @error('position')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+                <div class="mb-3">
+                    <label class="form-label-modern">Position/Title</label>
+                    <input type="text" name="position" class="form-control form-control-modern @error('position') is-invalid @enderror" placeholder="e.g. CEO, Senior Partner" required />
+                    @error('position')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Profile</label>
-                                    <textarea name="profile" class="form-control @error('profile') is-invalid  @enderror" id="" cols="30" rows="10"></textarea>
-                                    @error('profile')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
+                <div class="mb-3">
+                    <label class="form-label-modern">Profile Bio</label>
+                    <textarea name="profile" class="form-control form-control-modern @error('profile') is-invalid @enderror" placeholder="Brief professional background..." rows="4" required></textarea>
+                    @error('profile')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Profile Image</label>
-                                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" accept="image/*" id="judgeImageInput">
-                                    @error('image')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                <div class="mb-3">
+                    <label class="form-label-modern">Profile Image</label>
+                    <input type="file" class="form-control form-control-modern @error('image') is-invalid @enderror" name="image" accept="image/*" id="judgeImageInput">
+                    @error('image')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                    <div class="text-center">
+                        <img id="imagePreview" src="#" alt="Preview" style="display: none; max-width: 120px; height: 120px; object-fit: cover; margin: 15px auto; border-radius: 12px;" />
+                    </div>
+                </div>
 
-                                    <!-- Image Preview -->
-                                    <img id="imagePreview" src="#" alt="Selected Image" style="display: none; max-width: 100%; height: auto; margin-top: 10px;" />
-                                </div>
-                            </div>
+                <div class="mb-4">
+                    <label class="form-label-modern">Access Password</label>
+                    <input type="password" class="form-control form-control-modern @error('password') is-invalid @enderror" placeholder="••••••••" name="password" id="judge_password" required />
+                    @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
 
-                            <div class="col-12">
-                                <div class="mb-3">
-                                    <label class="control-label form-label">Judge Password</label>
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" id="judge_password" required autocomplete="off" />
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>  
-                        </div>
+                <button type="submit" class="btn btn-register-judge">
+                    <i class="lni lni-save me-2"></i> Register Judge
+                </button>
+            </form>
+        </div>
 
-                        <div class="row">
-                            <div class="col-6"></div>
-                            <div class="col-6 text-end">
-                                <button type="submit" class="btn btn-success" id="btn-save-category">Register Judge</button>
-                            </div>
-                        </div>
-                    </form>
-                    <script>
-                        document.getElementById('judgeImageInput').addEventListener('change', function (event) {
-                            const [file] = event.target.files;
-                            if (file) {
-                                const preview = document.getElementById('imagePreview');
-                                preview.src = URL.createObjectURL(file);
-                                preview.style.display = 'block';
-                            }
-                        });
-                    </script>
-                </div> <!-- end card-body-->
-            </div> <!-- end card-->
-        </div> <!-- end col -->
+        <!-- Judges Table List -->
+        <div class="glass-card" style="overflow: hidden;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h4 class="card-title-modern mb-0">
+                    <i class="lni lni-users"></i> Registered Judges
+                </h4>
+            </div>
 
-        <div class="col-xl-8">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="header-title mb-4">Judges</h4>
-
-                    <div class="table-responsive">
-                        <table class="table table-centered w-100 dt-responsive nowrap" id="categories-datatable">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>S/N</th>
-                                    <th class="all">Name</th>
-                                    <th class="all">Email</th>
-                                      <th class="all">Award Program</th>
-                                    <th class="all">Awards Voted</th>
-                                    <th class="all">Postion</th>
-                                    <th class="all">Profile</th>
-                                    <th class="all">Profile Image</th>
-                                    <th style="width: 85px;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($judges as $judge)
-                                <tr>
-                                    <td>
-                                        {{$loop->iteration}}
-                                    </td>
-                                    
-                                    <td>
-                                        {{$judge->name}}
-                                    </td>
-                                    <td>
-                                        {{$judge->email}}
-                                    </td>
-                                    <td>{{$judge->awardProgram->year}}</td>
-                                    <td>
-                                       {{count($judge->judges_votes($judge->admin_id))}}
-                                    </td>
-                                  
-                                    <td>
-                                        {{$judge->position}}
-                                    </td>
-                                    <td class="">
-                                        @php
-                                            $profile = substr($judge->profile,0,50).'...';
-                                        @endphp
-                                        {{$profile}}
-                                    </td>
-                                    <td>
-                                        {{-- {{$judge->path_to_image}} --}}
+            <div class="table-responsive">
+                <table class="judges-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">#</th>
+                            <th style="width: 30%">Judge Info</th>
+                            <th style="width: 15%">Prog/Year</th>
+                            <th style="width: 15%">Participation</th>
+                            <th style="width: 25%">Professional Background</th>
+                            <th style="width: 10%">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($judges as $judge)
+                        <tr>
+                            <td class="text-muted fw-bold">{{ $loop->iteration }}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="judge-avatar-wrapper me-3">
                                         @if($judge->path_to_image)
-                                            <img src="{{ asset($judge->path_to_image) }}" width="50" height="50" style="object-fit: cover; border-radius: 50%;">
+                                            <img src="{{ asset($judge->path_to_image) }}" class="judge-profile-img">
                                         @else
-                                            <span class="text-muted">No Image</span>
+                                            <div class="bg-soft-primary d-flex align-items-center justify-content-center h-100 text-primary fw-bold" style="background: #eef2ff;">
+                                                {{ substr($judge->name, 0, 1) }}
+                                            </div>
                                         @endif
-                                    </td>
-                                    <td class="table-action">
-                                        <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="edit" data-id="{{$judge->hashid}}" data-name="{{$judge->name}}" data-desc="{{$judge->profile}}" data-bs-toggle="modal" data-bs-target="#edit-judge-modal{{$judge->id}}"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                        {{-- <a href="{{route('admin.get_judges', $award_program)}}" class="action-icon" data-action="delete" data-id="{{$judge->hashid}}" data-bs-toggle="modal" data-bs-target="#delete-alert-modal"> <i class="mdi mdi-delete"></i></a> --}}
-                                    </td>
-                                </tr>
-                                <form class="needs-validation" method="POST" action="{{route('admin.update_judges', $award_program)}}" enctype="multipart/form-data">
-                                    @csrf
-                                <div class="modal fade" id="edit-judge-modal{{$judge->id}}" tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                                <div class="modal-header py-3 px-4 border-bottom-0">
-                                                    <h5 class="modal-title" id="modal-title">Edit Judges</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body px-4 pb-4 pt-0">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <input type="hidden" name="judge_id" value="{{$judge->id}}">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Judge Full Name</label>
-                                                                <input type="text" value="{{$judge->name}}" class="form-control @error('judge_fullname') is-invalid @enderror" placeholder="John Doe" name="judge_fullname" id="judge_fullname" required autocomplete="off" />
-                                                                @error('judge_fullname')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Judge Email</label>
-                                                                <input type="email" name="judge_email" value="{{$judge->email}}" class="form-control @error('judge_email') is-invalid @enderror" placeholder="Judge Mail Address"  id="judge_email" required autocomplete="off" />
-                                                                @error('judge_email')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Position</label>
-                                                                <textarea name="position" value=""  class="form-control @error('position') is-invalid  @enderror"  cols="30" rows="10"> {{$judge->position}}</textarea>
-                                                                @error('position')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-                            
-                                                        <div class="col-12">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Profile</label>
-                                                                <textarea name="profile"  value="" class="form-control @error('profile') is-invalid  @enderror" id="" cols="30" rows="10"> {{$judge->profile}}</textarea>
-                                                                @error('profile')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Profile Image</label>
-                                                                <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" accept="image/*">
-                                                                @error('image')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-
-                                                                @if($judge->path_to_image)
-                                                                <div class="mt-2">
-                                                                    <img src="{{ asset($judge->path_to_image) }}" alt="Current Image" class="img-thumbnail" width="100">
-                                                                </div>
-                                                                @endif
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-12">
-                                                            <div class="mb-3">
-                                                                <label class="control-label form-label">Judge Password</label>
-                                                                <input type="password" class="form-control @error('judge_password') is-invalid @enderror" placeholder="Password" name="judge_password" id="judge_password" required autocomplete="off" />
-                                                                @error('judge_password')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div> 
-                        
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-6"></div>
-                                                        <div class="col-6 text-end">
-                                                            <button type="button" class="btn btn-light me-1" data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-success" id="btn-save-category">Update</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            
-                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="judge-name">{{ $judge->name }}</div>
+                                        <div class="judge-email-cell">{{ $judge->email }}</div>
                                     </div>
                                 </div>
-                            </form>
-                                @endforeach 
-                            </tbody>
-                        </table>
-                       
-                    </div>
-                </div> <!-- end card-body-->
-            </div> <!-- end card-->
-        </div> <!-- end col -->
-        <!-- Update Sector MODAL -->
-       
-        <div id="delete-alert-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-sm modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body p-3 pt-4">
-                        <div class="text-center">
-                            <form class="needs-validation" method="POST" action="" name="delete-category-form" id="delete-category-form">
-                                @csrf
-                                @method('DELETE')
-                                <i class="dripicons-warning h1 text-danger" style="font-size: xxx-large;"></i>
-                                <h4 class="mt-2">Are you sure?</h4>
-                                <p class="mt-3">You won't be able to recover this data once deleted.</p>
-                                <div style="display: flex;justify-content:space-between;flex-direction: row;">
-                                    <button type="button" class="btn btn-light my-2" data-close data-bs-dismiss="modal">No, cancel it!</button>
-                                    <button class="btn btn-danger my-2" data-submit data-bs-dismiss="modal">Yes, delete it!</button>
+                            </td>
+                            <td>
+                                <span class="badge bg-soft-info text-info rounded-pill px-3 py-1" style="background: #ecfeff;">
+                                    {{ $judge->awardProgram->year ?? 'N/A' }}
+                                </span>
+                            </td>
+                            <td>
+                                <div class="votes-badge-pill">
+                                    <i class="lni lni-check-box"></i>
+                                    {{ count($judge->judges_votes($judge->admin_id)) }} Awards
                                 </div>
-                            </form>
+                            </td>
+                            <td>
+                                <div class="small fw-semibold text-dark mb-1">{{ $judge->position }}</div>
+                                <div class="text-muted small text-truncate" style="max-width: 200px;">
+                                    {{ Str::limit($judge->profile, 60) }}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <button class="action-btn btn-edit" data-bs-toggle="modal" data-bs-target="#edit-judge-modal{{$judge->id}}" title="Edit Judge">
+                                        <i class="mdi mdi-square-edit-outline"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Edit Modal -->
+                        <div class="modal fade" id="edit-judge-modal{{$judge->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content modal-content-glass">
+                                    <div class="modal-header modal-header-modern">
+                                        <h5 class="modal-title fw-bold"><i class="lni lni-pencil-alt me-2"></i>Edit Judge: {{ $judge->name }}</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <form method="POST" action="{{route('admin.update_judges', $award_program)}}" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="modal-body modal-body-modern">
+                                            <input type="hidden" name="judge_id" value="{{$judge->id}}">
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label-modern">Full Name</label>
+                                                    <input type="text" value="{{$judge->name}}" class="form-control form-control-modern" name="judge_fullname" required />
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label-modern">Email Address</label>
+                                                    <input type="email" name="judge_email" value="{{$judge->email}}" class="form-control form-control-modern" required />
+                                                </div>
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label-modern">Position</label>
+                                                <input type="text" name="position" value="{{$judge->position}}" class="form-control form-control-modern" required />
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label class="form-label-modern">Profile Bio</label>
+                                                <textarea name="profile" class="form-control form-control-modern" rows="4" required>{{$judge->profile}}</textarea>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label-modern">Update Image</label>
+                                                    <input type="file" class="form-control form-control-modern" name="image" accept="image/*">
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label class="form-label-modern">New Password (Optional)</label>
+                                                    <input type="password" class="form-control form-control-modern" name="judge_password" placeholder="Leave blank to keep current" />
+                                                </div>
+                                            </div>
+
+                                            @if($judge->path_to_image)
+                                            <div class="mt-2 text-center p-2 bg-light rounded-3">
+                                                <p class="small text-muted mb-2">Current Image</p>
+                                                <img src="{{ asset($judge->path_to_image) }}" class="rounded-circle shadow-sm" width="80" height="80" style="object-fit: cover;">
+                                            </div>
+                                            @endif
+                                        </div>
+                                        <div class="modal-footer border-0 p-4">
+                                            <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="submit" class="btn btn-primary rounded-pill px-4" style="background: var(--primary-gradient); border: none;">Save Changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    @endsection
+</div>
+@endsection
 
-    @section('scripts')
-    <script src="{{asset('public/assets/js/pages/sector.js')}}"></script>
-
-    @if(Session::has('success'))
-    <script>
-        toastr.options = {
-            "closeButton": true,
-            "progressBar": true,
-            "preventDuplicates": true,
-            "preventOpenDuplicates": true
+@section('scripts')
+<script>
+    document.getElementById('judgeImageInput').addEventListener('change', function (event) {
+        const [file] = event.target.files;
+        if (file) {
+            const preview = document.getElementById('imagePreview');
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
         }
-        toastr.success("{{ session('success') }}");
-    </script>
-    @endif
+    });
+</script>
 
-    @if(Session::has('danger'))
-    <script>
-        toastr.options = {
-            "closeButton": true,
-            "progressBar": true,
-            "preventDuplicates": true,
-            "preventOpenDuplicates": true
-        }
-        toastr.error("{{ session('danger') }}");
-    </script>
-    @endif
-    @endsection
+@if(Session::has('success'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
+@if(Session::has('danger'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.error("{{ session('danger') }}");
+</script>
+@endif
+@endsection

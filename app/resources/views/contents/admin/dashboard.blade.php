@@ -3,176 +3,155 @@
 use Illuminate\Support\Facades\Http;
 @endphp 
 @section('title', 'Admin Dashboard')
+
+@section('style')
+<link href="{{asset('assets/css/dashboard_redesign.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
+@endsection
+
 @section('content')
-<div class="container-fluid">
+<div class="dashboard-wrapper">
+    <!-- Hero Section -->
     <div class="row">
         <div class="col-12">
-            <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-                <div class="page-title">
-                    <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
-                    </div>
-                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
-                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
-                    </h4>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Award Program Dashboard</h1>
+                    <p class="hero-subtitle">Monitoring Award Year: <span class="fw-bold">{{$currentYear?->year ?? 'N/A'}}</span> | Management Console</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='uil uil-users-alt float-end'></i>
-                    <h6 class="text-uppercase mt-0">Voters</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($voters)}}</h2>
-                    <p class="mb-0 text-muted">
-                        {{--<span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span> 5.27%</span> --}}
-                        {{-- <span class="text-nowrap">Since last month</span> --}}
-                    </p>
-                </div> <!-- end card-body-->
-            </div>
-        </div> 
 
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='mdi mdi-vote-outline float-end'></i>
-                    <h6 class="text-uppercase mt-0">Votes</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($votes)}}</h2>
-                    <p class="mb-0 text-muted">
-                        {{-- <span class="text-success me-2"><span class="mdi mdi-arrow-up-bold"></span>
-                            5.27%</span>
-                        <span class="text-nowrap">Since last month</span> --}}
-                    </p>
-                </div> <!-- end card-body-->
+    <!-- Statistics Grid -->
+    <div class="stat-grid">
+        <!-- Voters -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-voters">
+                    <i class="lni lni-users"></i>
+                </div>
+                <h6 class="card-label">Total Voters</h6>
+                <h2 class="card-value">{{count($voters)}}</h2>
             </div>
-            <!--end card-->
-        </div> <!-- end col -->
+        </div>
 
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='uil uil-users-alt float-end'></i>
-                    <h6 class="text-uppercase mt-0">Categories</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($category)}}</h2>
-                    <div class="row">
-                        {{-- <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-danger-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Inactive</span>
-                        </p>
-                        <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-success-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Active</span>
-                        </p> --}}
-                    </div>
-                </div> <!-- end card-body-->
+        <!-- Votes -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-votes">
+                    <i class="lni lni-thumbs-up"></i>
+                </div>
+                <h6 class="card-label">Total Votes</h6>
+                <h2 class="card-value">{{count($votes)}}</h2>
             </div>
-            <!--end card-->
-        </div> <!-- end col -->
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='uil uil-users-alt float-end'></i>
-                    <h6 class="text-uppercase mt-0">Sectors</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($sector)}}</h2>
-                    <div class="row">
-                        {{-- <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-danger-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Inactive</span>
-                        </p>
-                        <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-success-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Active</span>
-                        </p> --}}
-                    </div>
-                </div> <!-- end card-body-->
-            </div>
-            <!--end card-->
-        </div> <!-- end col -->
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='uil uil-users-alt float-end'></i>
-                    <h6 class="text-uppercase mt-0">Awards</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($awards)}}</h2>
-                    <div class="row">
-                        {{-- <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-danger-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Inactive</span>
-                        </p>
-                        <p class="mb-0 text-muted col-sm-6">
-                            <span class="badge badge-success-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Active</span>
-                        </p> --}}
-                    </div>
-                </div> <!-- end card-body-->
-            </div>
-            <!--end card-->
-        </div> <!-- end col -->
+        </div>
 
-        <div class="col-xl-3 col-lg-4">
-            <div class="card tilebox-one">
-                <div class="card-body">
-                    <i class='uil uil-users-alt float-end'></i>
-                    <h6 class="text-uppercase mt-0">Nominees</h6>
-                    <h2 class="my-2" id="active-users-count">{{count($nominees)}}</h2>
-                    <div class="row">
-                        {{-- <p class="mb-0 text-muted">
-                            <span class="badge badge-success-lighten me-1">
-                                5</span>
-                            <span class="text-nowrap">Shortlisted</span>
-                        </p> --}}
-
-                    </div>
-                </div> <!-- end card-body-->
+        <!-- Categories -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-categories">
+                    <i class="lni lni-grid-alt"></i>
+                </div>
+                <h6 class="card-label">Categories</h6>
+                <h2 class="card-value">{{count($category)}}</h2>
             </div>
-            <!--end card-->
-        </div> <!-- end col -->
+        </div>
+
+        <!-- Sectors -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-sectors">
+                    <i class="lni lni-layers"></i>
+                </div>
+                <h6 class="card-label">Sectors</h6>
+                <h2 class="card-value">{{count($sector)}}</h2>
+            </div>
+        </div>
+
+        <!-- Awards -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-awards">
+                    <i class="lni lni-investment"></i>
+                </div>
+                <h6 class="card-label">Awards</h6>
+                <h2 class="card-value">{{count($awards)}}</h2>
+            </div>
+        </div>
+
+        <!-- Nominees -->
+        <div class="modern-card">
+            <div>
+                <div class="card-icon-container icon-nominees">
+                    <i class="lni lni-user"></i>
+                </div>
+                <h6 class="card-label">Nominees</h6>
+                <h2 class="card-value">{{count($nominees)}}</h2>
+            </div>
+        </div>
     </div>
-    <div class="row">
-        <div class="col-xl-12 col-lg-12">
-            <div class="card">
-                <div class="card-body">
-                    {{-- <a href="#" class="p-0 float-end">Export <i class="mdi mdi-download ms-1"></i></a> --}}
-                    <h4 class="header-title mt-1 mb-3">Recent Votes</h4>
 
-                    <div class="table-responsive">
-                        <table class="table table-sm table-centered mb-0 font-14">
-                            <thead class="table-light">
-                                <tr>
-                                    <th> Email</th>
-                                    {{-- <th>Location</th> --}}
-                                    {{-- <th>Date Voted</th> --}}
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                                @forelse ($voters_pg as $item)
-                                <tr>
-                                    <td>{{$item->email}}</td>
-                                    {{-- <td>
-                                        @php $details = json_decode(Http::get("http://ipinfo.io/$item->ip_address/json"));
-                                      echo $details->city.", ".$details->country; 
-                                     @endphp
-                                    </td> --}}
-                                    {{-- <td>{{$item->created_at->diffForHumans()}}</td> --}}
-                                </tr>
-                                @empty
-                                    
-                                @endforelse
-                           
-                            </tbody>
-                        </table>
-                        <p> {{$voters_pg->links()}}</p>
-                    </div> 
-                </div> 
-            </div> 
+    <!-- Data Table Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="table-container">
+                <div class="table-header">
+                    <h2 class="table-title">Recent Voters Participation</h2>
+                    <div class="badge bg-soft-primary text-primary px-3 py-2 rounded-pill">
+                        Total Records: {{count($voters)}}
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Voter Identifier</th>
+                                <th>Email Address</th>
+                                <th>Registration Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($voters_pg as $item)
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-sm bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                                            <span class="text-primary fw-bold">{{strtoupper(substr($item->email, 0, 1))}}</span>
+                                        </div>
+                                        <div>
+                                            <span class="text-muted small">UID: {{substr($item->id ?? '...', 0, 8)}}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="email-pill">{{$item->email}}</span>
+                                </td>
+                                <td>
+                                    <span class="badge bg-success-lighten text-success">
+                                        <i class="mdi mdi-check-circle-outline me-1"></i> Active
+                                    </span>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="3" class="text-center py-5">
+                                    <div class="text-muted">
+                                        <i class="lni lni-empty-file d-block mb-2" style="font-size: 2rem;"></i>
+                                        No recent voters found
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination-wrapper mt-4">
+                    {{$voters_pg->links()}}
+                </div>
+            </div>
         </div>
     </div>
 </div>
