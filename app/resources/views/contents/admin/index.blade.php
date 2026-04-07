@@ -3,234 +3,207 @@
 
 <head>
     @include('partials.admin.head')
-
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"> -->
-
-    <style>
-        .dropdown-menu-animated.show {
-            top: 70% !important;
-        }
-
-        .dropdown-menu {
-            min-width: 0;
-        }
-    </style>
+    <link href="{{asset('assets/css/admin_index_redesign.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-    <!-- Begin page -->
     <div class="wrapper">
-        <!-- Start Page Content here -->
         <div class="content-page" style="margin-left:0;">
-            <div class="leftside-menu" style="left:0; bottom: auto;">
-
-                <!-- LOGO -->
-                <a href="index.html" class="logo text-center logo-light">
-                    <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="" height="16">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="assets/images/logo_sm.png" alt="" height="16">
-                    </span>
-                </a>
-            </div>
             <div class="content container">
-                <!-- Topbar Start -->
                 @include('partials.admin.topbar')
-                <!-- end Topbar -->
 
-                <!-- Start Content-->
-                <div class="container-fluid">
+                <div class="admin-index-wrapper">
+                    <!-- Hero Section -->
+                    <div class="admin-hero">
+                        <div class="hero-content">
+                            <h1>Award Programs</h1>
+                            <p class="hero-description">Manage and organize your annual award ceremonies, categories, and judging processes from a single high-performance dashboard.</p>
+                        </div>
+                        <div class="hero-actions">
+                            <a href="{{route('award.program.create')}}" data-action="create" class="btn btn-create-program" data-bs-toggle="modal" data-bs-target="#award-modal">
+                                <i class="lni lni-plus me-2"></i> Create New Program
+                            </a>
+                        </div>
+                    </div>
 
-                    <!-- start page title -->
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
-                                <div class="page-title">
-                                    <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
-                                    </div>
-                                    <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
-                                    <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
-                                    </h4>
-                                </div>
+                    <!-- Stats Row -->
+                    <div class="admin-stats-row">
+                        <div class="entry-stat-card">
+                            <div class="stat-icon-wrapper icon-blue">
+                                <i class="lni lni-library"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="value">{{ count($awps) }}</span>
+                                <span class="label">Total Programs</span>
+                            </div>
+                        </div>
+                        <div class="entry-stat-card">
+                            <div class="stat-icon-wrapper icon-green">
+                                <i class="lni lni-checkmark-circle"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="value">{{ count($awps->where('status', 1)) }}</span>
+                                <span class="label">Active Programs</span>
+                            </div>
+                        </div>
+                        <div class="entry-stat-card">
+                            <div class="stat-icon-wrapper icon-purple">
+                                <i class="lni lni-calendar"></i>
+                            </div>
+                            <div class="stat-info">
+                                <span class="value">{{ $awps->max('year') ?? 'N/A' }}</span>
+                                <span class="label">Latest Year</span>
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
-                    <div class="row mb-2">
-                        <div class="col-sm-8">
-                            <a href="{{route('award.program.create')}}" data-action="create" class="btn btn-success mb-2" style="margin-right: .75rem;" data-bs-toggle="modal" data-bs-target="#award-modal">
-                                <i class="mdi mdi-plus-thick me-1"></i>
-                                Create Award Year
-                            </a>
-                            <a href="" class="btn btn-secondary mb-2" style="margin-right: .75rem;">
-                                <i class="mdi mdi-close-thick me-1"></i>
-                                Delete
-                            </a>
+
+                    <!-- Program List -->
+                    <div class="admin-program-card">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h4 class="table-title mb-0">Program Management List</h4>
                         </div>
+
+                        @if($awps->isEmpty())
+                        <div class="text-center py-5">
+                            <img src="{{asset('public/assets/images/no-result.svg')}}" height="200" alt="no-result">
+                            <h3 class="text-muted mt-4">No award programs found</h3>
+                            <p>Get started by creating your first award program year.</p>
+                        </div>
+                        @else
+                        <div class="table-responsive">
+                            <table class="glass-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 30%">Award Program</th>
+                                        <th style="width: 10%">Year</th>
+                                        <th style="width: 20%">Created On</th>
+                                        <th style="width: 20%">Created By</th>
+                                        <th style="width: 10%">Status</th>
+                                        <th style="width: 10%" class="text-end">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($awps as $awp)
+                                    <tr>
+                                        <td>
+                                            <a href="{{route('award.program', $awp->hashid)}}" class="program-name">
+                                                {{$awp->name}}
+                                            </a>
+                                        </td>
+                                        <td><span class="year-pill">{{$awp->year}}</span></td>
+                                        <td class="text-muted small">{{ $awp->created_at ? $awp->created_at->format('M d, Y') : 'N/A' }}</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-xs me-2">
+                                                    <span class="avatar-title bg-soft-primary text-primary rounded-circle small" style="width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; background: #eef2ff; font-size: 10px;">
+                                                        {{ substr($awp->admin->fullname, 0, 1) }}
+                                                    </span>
+                                                </div>
+                                                <span class="small fw-semibold">{{$awp->admin->fullname}}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <span class="status-badge {{$awp->status == 1 ? 'status-active' : 'status-inactive'}}">
+                                                {{$awp->status == 1 ? 'Active' : 'Inactive'}}
+                                            </span>
+                                        </td>
+                                        <td class="text-end">
+                                            <div class="dropdown">
+                                                <button class="action-dot-btn dropdown-toggle arrow-none" data-bs-toggle="dropdown">
+                                                    <i class="mdi mdi-dots-vertical"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated shadow-lg border-0 rounded-3">
+                                                    <a class="dropdown-item py-2" href="{{$awp->status == 1 ? route('award.program.deactivate', $awp->hashid) : route('award.program.activate', $awp->hashid) }}">
+                                                        <i class="lni {{ $awp->status == 1 ? 'lni-cross-circle' : 'lni-checkmark-circle' }} me-2 text-primary"></i>
+                                                        {{$awp->status == 1 ? 'Deactivate' : 'Activate' }}
+                                                    </a>
+                                                    <a class="dropdown-item py-2" data-action="edit" data-id="{{$awp->hashid}}" data-year="{{$awp->year}}" data-name="{{$awp->name}}" data-loc="{{$awp->location}}" href="{{route('award.program.update',$awp->hashid)}}" data-bs-toggle="modal" data-bs-target="#award-modal">
+                                                        <i class="lni lni-pencil me-2 text-primary"></i> Edit
+                                                    </a>
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item py-2 text-danger" href="{{route('award.program.delete',$awp->hashid)}}" onclick="return confirm('Are you sure you want to delete this program?')">
+                                                        <i class="lni lni-trash-can me-2"></i> Delete
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        @endif
                     </div>
-                    @if($awps->isEmpty())
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4">
-                            <div class="text-center">
-                                <img src="{{asset('public/assets/images/no-result.svg')}}" height="300" alt="no-result-found-image">
-                                <!-- <h1 class="text-error mt-4">404</h1> -->
-                                <h3 class="text-uppercase text-primary mt-4">No results found</h3>
-                            </div> <!-- end /.text-center-->
-                        </div> <!-- end col-->
-                    </div>
-                    @else
-                    <div class="col-xl-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="table-responsive-sm">
-                                    <table class="table table-hover table-sm table-centered mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck1">
-                                                    </div>
-                                                </th>
-                                                <th>AWard Name</th>
-                                                <th>Award Year</th>
-                                                <th>Created on</th>
-                                                <th>Created by</th>
-                                                <th>Status</th>
-                                                <th>Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach($awps as $awp)
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <input type="checkbox" class="form-check-input" id="customCheck2">
-                                                    </div>
-                                                </td>
-                                                <td><a href="{{route('award.program', $awp->hashid)}}">{{$awp->name}}</a></td>
-                                                <td>{{$awp->year}}</td>
-                                                <td>{{$awp->created_at}}</td>
-                                                <td>{{$awp->admin->fullname}}</td>
-                                                <td><span class="badge {{$awp->status == 1 ? 'badge-success-lighten' : 'badge-danger-lighten'}}">{{$awp->status == 1 ? 'Active' : 'Inactive'}}</span></td>
-                                                <td class="table-action dropdown">
-                                                    <a href="#" class="action-icon dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-dots-vertical"></i></a>
-                                                    <div class="dropdown-menu dropdown-menu-animated">
-                                                        <a class="dropdown-item" href="{{$awp->status == 1 ? route('award.program.deactivate', $awp->hashid) : route('award.program.activate', $awp->hashid) }}">{{$awp->status == 1 ? 'Deactivate' : 'Activate' }}</a>
-                                                        <a class="dropdown-item" data-action="edit" data-id="{{$awp->hashid}}" data-year="{{$awp->year}}" data-name="{{$awp->name}}" data-loc="{{$awp->location}}" href="{{route('award.program.update',$awp->hashid)}}" data-bs-toggle="modal" data-bs-target="#award-modal">Edit</a>
-                                                        <a class="dropdown-item" href="{{route('award.program.delete',$awp->hashid)}}">Delete</a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div> <!-- end table-responsive-->
-                            </div> <!-- end card body-->
-                        </div> <!-- end card -->
-                    </div>
-                    @endif
                 </div>
-                <!-- container -->
-                <!-- Add New Event MODAL -->
+
+                <!-- Award Modal -->
                 <div class="modal fade" id="award-modal" tabindex="-1" role="dialog" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content modal-glass-content shadow-lg">
                             <form method="POST" action="" class="needs-validation" name="award-form" id="form-award">
                                 @csrf
-                                <div class="modal-header py-3 px-4 border-bottom-0">
-                                    <h5 class="modal-title" id="modal-title"></h5>
+                                <div class="modal-header modal-header-modern">
+                                    <h5 class="modal-title fw-bold" id="modal-title">Create Award Program</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body px-4 pb-4 pt-0">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label class="control-label form-label">Program Name</label>
-                                                <input class="form-control @error('award_name') is-invalid @enderror" placeholder="e.g. GRCFinCrimeAwardsNigeria" type="text" name="award_name" id="award_name" value required autocomplete="off" />
-                                                @error('award_name')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label class="control-label form-label">Program Year</label>
-                                                <select class="form-select @error('award_year') is-invalid @enderror" name="award_year" id="award_year" required>
-                                                    <option id="init" value="#">Please select...</option>
-                                                </select>
-                                                @error('award_year')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong> select a valid event category</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="mb-3">
-                                                <label class="control-label form-label">Program Location</label>
-                                                <input class="form-control @error('award_location') is-invalid @enderror" placeholder="e.g. Nigeria" type="text" name="award_location" id="award_location" required autocomplete="off" />
-                                                @error('award_location')
-                                                <span class="invalid-feedback">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                        </div>
+                                <div class="modal-body modal-body-modern">
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold text-dark">Program Name</label>
+                                        <input class="form-control @error('award_name') is-invalid @enderror" style="border-radius: 12px; padding: 0.75rem;" placeholder="e.g. GRCFinCrimeAwardsNigeria" type="text" name="award_name" id="award_name" required autocomplete="off" />
+                                        @error('award_name')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
-                                    <div class="row">
-                                        <div class="col-6"></div>
-                                        <div class="col-6 text-end">
-                                            <button type="button" class="btn btn-light me-1" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-success" id="btn-save"></button>
-                                        </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold text-dark">Program Year</label>
+                                        <select class="form-select @error('award_year') is-invalid @enderror" style="border-radius: 12px; padding: 0.75rem;" name="award_year" id="award_year" required>
+                                            <option id="init" value="#">Please select...</option>
+                                        </select>
+                                        @error('award_year')
+                                            <div class="invalid-feedback">Select a valid event year</div>
+                                        @enderror
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-semibold text-dark">Local Venue/Location</label>
+                                        <input class="form-control @error('award_location') is-invalid @enderror" style="border-radius: 12px; padding: 0.75rem;" placeholder="e.g. Lagos, Nigeria" type="text" name="award_location" id="award_location" required autocomplete="off" />
+                                        @error('award_location')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
+                                <div class="modal-footer border-0 p-4 pt-0">
+                                    <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary rounded-pill px-4" id="btn-save" style="background: var(--primary-gradient); border: none;">Save Details</button>
+                                </div>
                             </form>
-                        </div> <!-- end modal-content-->
-                    </div> <!-- end modal dialog-->
+                        </div>
+                    </div>
                 </div>
-                <!-- end modal-->                
+
+                @include('partials.admin.footer')
             </div>
-            <!-- content -->
-
-            <!-- Footer Start -->
-            @include('partials.admin.footer')
-            <!-- end Footer -->
-
         </div>
-        <!-- End Page content -->
     </div>
-    <!-- END wrapper -->
 
-    <!-- scripts -->
     @include('partials.admin.scripts')
     <script src="{{asset('public/assets/js/pages/index-page.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     @if(Session::has('success'))
     <script>
-        toastr.options = {
-            "closeButton": true,
-            "progressBar": true
-        }
+        toastr.options = { "closeButton": true, "progressBar": true };
         toastr.success("{{ session('success') }}");
     </script>
     @endif
 
     @if(Session::has('danger'))
     <script>
-        toastr.options = {
-            "closeButton": true,
-            "progressBar": true
-        }
+        toastr.options = { "closeButton": true, "progressBar": true };
         toastr.error("{{ session('danger') }}");
     </script>
     @endif
-
 </body>
 
-</html>
+</html>

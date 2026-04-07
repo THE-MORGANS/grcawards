@@ -11,6 +11,8 @@ UPDATE FOR 'ADMIN PAGES'- 20260407
 - app/public/assets/css/judges_list_redesign.css
 - app/public/assets/css/judges_redesign.css
 - app/public/assets/css/nominees_redesign.css
+- app/resources/views/contents/admin/index.blade.php
+- app/public/assets/css/admin_index_redesign.css
 - app/resources/views/contents/admin/dashboard.blade.php
 - app/resources/views/contents/admin/judges.blade.php
 - app/resources/views/contents/admin/judge/judgeCategories.blade.php
