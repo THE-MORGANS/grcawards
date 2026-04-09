@@ -6,7 +6,7 @@ app/resources/views/contents/voter/sectors_categories.blade.php (Lines 41-55, 61
 app/public/assets/css/categories_redesign.css (Lines 106-117, 240-369, 408-438)
 
 
-UPDATE FOR 'ADMIN PAGES'- 20260407
+UPDATE FOR 'ADMIN PAGES' REDESIGN- 20260407
 - app/public/assets/css/dashboard_redesign.css
 - app/public/assets/css/judges_list_redesign.css
 - app/public/assets/css/judges_redesign.css
