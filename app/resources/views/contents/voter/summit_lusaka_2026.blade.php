@@ -620,14 +620,19 @@
                         <div class="row g-4">
                             @php
                                 $speakers = [
-                                    ['name' => 'Lesego Bannalotlhe', 'position' => 'Panel Speaker', 'image' => 'lusaka_lesogo.jpg'],
-                                    ['name' => 'Dr Nishal Khusial', 'position' => 'Keynote Speaker', 'image' => 'lusaka_nishal.jpg'],
-                                    ['name' => 'Mizinga Melu', 'position' => 'Panel Speaker', 'image' => 'lusaka_mizinga.JPG'],
-                                    ['name' => 'Beauty Mtonga', 'position' => 'Panel Speaker', 'image' => 'lusaka_beauty.jpg'],
-                                    ['name' => 'Lydia Nasilele Simakando', 'position' => 'Panel Speaker', 'image' => 'lusaka_lydia.png'],
-                                    ['name' => 'Elijah Chulu', 'position' => 'Panel Speaker', 'image' => 'lusaka_elijah.jpg'],
-                                    ['name' => 'Grace Tabea Letseka', 'position' => 'Master of Ceremony', 'image' => 'lusaka_grace.jpg'],
-                                    ['name' => 'Susiku I. Nasinda MPhil', 'position' => 'Moderator', 'image' => 'lusaka_susiku.jpg'],
+                                    ['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'lusaka_foluso.jpg'],
+                                    ['name' => 'Mothophatlheng Philip Rakgwale', 'role' => 'Keynote Speaker', 'position' => 'President/Chairman, Council for the South African Institute of Government Auditors', 'image' => 'lusaka_philip.jpg'],
+                                    ['name' => 'Helen Lunda', 'role' => 'Keynote Speaker', 'position' => 'Executive Director, Commercial Banking & Public Sector Access Bank Zambia Limited', 'image' => 'lusaka_helen.jpg'],
+                                    ['name' => 'Mizinga Melu', 'role' => 'Keynote Speaker', 'position' => 'Chief Executive Officer (CEO) Absa Bank Zambia', 'image' => 'lusaka_mizinga.JPG'],
+                                    ['name' => 'Dr. Nishal Khusial', 'role' => 'Keynote Speaker', 'position' => 'Chief Strategy Officer Cyber Alliance EMEA', 'image' => 'lusaka_nishal.jpg'],
+                                    ['name' => 'Mr. Mulilo Kabesha', 'role' => 'Keynote Speaker', 'position' => 'Attorney General Republic of Zambia', 'image' => 'lusaka_mulilo.jpg'],
+                                    ['name' => 'Dr. Denny Kalyalya', 'role' => 'Guest of Honour', 'position' => 'Governor Bank of Zambia', 'image' => 'lusaka_denny.jpg'],
+                                    ['name' => 'Lesego Bannalotlhe', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer FNB Botswana', 'image' => 'lusaka_lesogo.jpg'],
+                                    ['name' => 'Beauty Mtonga', 'role' => 'Panel Speaker', 'position' => 'Executive Risk Human Capital', 'image' => 'lusaka_beauty.jpg'],
+                                    ['name' => 'Elijah Chulu', 'role' => 'Panel Speaker', 'position' => 'Director, Chief Risk & Compliance Officer Zambia National Building Society', 'image' => 'lusaka_elijah.png'],
+                                    ['name' => 'Lydia Nasilele Simakando', 'role' => 'Panel Speaker', 'position' => 'Group Chief Executive Officer & Postmaster General Zambia Postal Services Corporation (ZAMPOST)', 'image' => 'lusaka_lydia.png'],
+                                    ['name' => 'Grace Tabea Letseka', 'role' => 'Master of Ceremony (MC)', 'position' => 'Head of Resilience & Data FNB South Africa', 'image' => 'lusaka_grace.jpg'],
+                                    ['name' => 'Sisiku Nasinda', 'role' => 'Moderator', 'position' => 'Associate Director, Climate Change & Sustainability Services Ernst & Young (EY)', 'image' => 'lusaka_sisiku.jpg'],
                                 ];
                             @endphp
 
@@ -638,6 +643,7 @@
                                         <img src="{{ asset('assets/images/speakers/lusaka_2026/'.($speaker['image'] ?? 'speaker_placeholder.png')) }}" alt="{{ $speaker['name'] }}" class="speaker-image">
                                     </div>
                                     <h6 class="speaker-name text-center">{{ $speaker['name'] }}</h6>
+                                    <p class="speaker-role text-center text-gold fw-bold mb-1" style="font-size: 0.8rem; color: #b59226; text-transform: uppercase;">{{ $speaker['role'] }}</p>
                                     <p class="speaker-position text-center">{{ $speaker['position'] }}</p>
                                 </div>
                             </div>
