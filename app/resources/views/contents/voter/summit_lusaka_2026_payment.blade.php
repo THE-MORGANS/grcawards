@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-@section('title', 'Complete Payment - Lusaka Summit 2026')
+@section('title', 'Complete Payment - Virtual Summit 2026')
 
 <head>
     @include('partials.voter.head')
@@ -328,36 +328,34 @@
 
             <div class="conference-badge">
                 <i class="mdi mdi-star"></i>
-                <span>3-Day Conference</span>
+                <span>Virtual Summit</span>
             </div>
 
             <h4 style="font-size: 1rem; font-weight: 700; color: var(--dark); margin: 15px 0;">
-                Africa Governance, Risk, Compliance & Financial Crime Prevention Conference
+                Africa Governance, Risk, Compliance & Financial Crime Prevention Virtual Summit
             </h4>
 
             <div class="info-row">
                 <div>
-                    <i class="mdi mdi-map-marker" style="color: var(--gold); margin-right: 5px;"></i>
-                    <span class="info-label">Lusaka</span>
+                    <i class="mdi mdi-web" style="color: var(--gold); margin-right: 5px;"></i>
+                    <span class="info-label">Online</span>
                 </div>
                 <div>
                     <i class="mdi mdi-calendar" style="color: var(--gold); margin-right: 5px;"></i>
-                    <span class="info-value">March 15-17, 2026</span>
+                    <span class="info-value">April 17, 2026</span>
                 </div>
             </div>
 
             <div class="info-row">
                 <div class="info-label">Attendance Type</div>
-                <div class="info-value" id="attendance-type">Full Conference Pass (3 Days)</div>
+                <div class="info-value" id="attendance-type">Virtual Summit Pass (1 Day)</div>
             </div>
 
             <div class="info-row">
-                <div class="info-label">Conference Days</div>
+                <div class="info-label">Conference Schedule</div>
                 <div class="info-value">
                     <div class="days-list" id="conference-days">
-                        Day 1: March 15, 2024<br>
-                        Day 2: March 16, 2024<br>
-                        Day 3: March 17, 2024
+                        Full-Day Intensive: April 17, 2026
                     </div>
                 </div>
             </div>

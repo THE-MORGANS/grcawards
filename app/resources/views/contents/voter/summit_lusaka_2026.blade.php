@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-@section('title', 'Lusaka Summit 2026')
+@section('title', 'Africa GRC & FinCrime Virtual Summit 2026')
 
 <head>
     @include('partials.voter.head')
@@ -484,9 +484,9 @@
         <div class="header-bg-overlay"></div>
         <div class="container header-content">
             <div class="premium-breadcrumbs">
-                <a href="{{route('landing.index')}}">Home</a> <span>•</span> Lusaka Summit 2026
+                <a href="{{route('landing.index')}}">Home</a> <span>•</span> Virtual Summit 2026
             </div>
-            <h1 class="hero-title">Lusaka Summit 2026</h1>
+            <h1 class="hero-title">Africa GRC & FinCrime Virtual Summit 2026</h1>
             @if($isEarlyBird ?? false)
             <div class="early-bird-banner mt-3">
                 <span class="badge bg-danger p-2" style="font-size: 1.1rem; border: 2px solid #fff; box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);">
@@ -504,7 +504,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="banner-wrapper">
-                    <img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" alt="Lusaka Summit Banner" class="summit-banner mx-auto">
+                    <img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" alt="Virtual Summit Banner" class="summit-banner mx-auto">
                 </div>
             </div>
         </div>
@@ -524,7 +524,7 @@
                            The Africa Governance, Risk, Compliance & Financial Crime Prevention Conference is a high-level convening bringing together senior leaders from government, regulatory authorities, central banks, and financial institutions.
                        </p>
                        <p>
-                           Hosted in Lusaka, Zambia, this is a secure, professionally curated platform for strategic dialogue on the critical challenges facing Africa today.
+                           As a fully virtual event, this is a secure, professionally curated platform for strategic dialogue on the critical challenges facing Africa today.
                        </p>
                         <div class="card-premium bg-light border-0" style="background: #fdfdfd; border-left: 4px solid var(--gold) !important;">
                             <h6 style="color: var(--gold); text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; margin-bottom: 10px;">Executive Forum</h6>
@@ -532,7 +532,7 @@
                         </div>
                     </div>
                     
-                    <img src="{{asset('/assets/lusaka_summit_banner_2026_3.jpeg')}}" style="width:100%; ">
+                   
 
                     <div class="mb-5">
                         <h2 class="section-title">Conference Theme</h2>
@@ -574,28 +574,12 @@
                     <div class="mb-5">
                         <h2 class="section-title">Programme Overview</h2>
                         <div class="row g-4">
-                            <!-- Day 1 -->
-                            <div class="col-md-4">
+                            <!-- Single Day Summit -->
+                            <div class="col-12">
                                 <div class="programme-card">
-                                    <span class="day-badge">Day 1</span>
-                                    <h6>Governance & Leadership</h6>
-                                    <p class="small text-muted mb-0">Ministerial keynotes, reform, accountability, and ethical leadership.</p>
-                                </div>
-                            </div>
-                            <!-- Day 2 -->
-                            <div class="col-md-4">
-                                <div class="programme-card">
-                                    <span class="day-badge">Day 2</span>
-                                    <h6>Risk & Resilience</h6>
-                                    <p class="small text-muted mb-0">Enterprise risk, compliance expectations, culture, and controls.</p>
-                                </div>
-                            </div>
-                            <!-- Day 3 -->
-                            <div class="col-md-4">
-                                <div class="programme-card">
-                                    <span class="day-badge">Day 3</span>
-                                    <h6>Tech & FinCrime</h6>
-                                    <p class="small text-muted mb-0">Cyber risk, digital trust, data governance, and intelligence.</p>
+                                    <span class="day-badge">April 17, 2026</span>
+                                    <h6>Strategic Governance, Risk & Virtual Innovation</h6>
+                                    <p class="small text-muted mb-0">A comprehensive full-day intensive covering ministerial keynotes, reform, accountability, ethical leadership, enterprise risk, compliance expectations, cyber risk, and digital trust.</p>
                                 </div>
                             </div>
                         </div>
@@ -652,7 +636,7 @@
                     </div>
 
                     <div class="mb-5">
-                         <h2 class="section-title">Common Questions</h2>
+                         <!-- <h2 class="section-title">Common Questions</h2> -->
                          <div class="accordion" id="faqAccordion">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
@@ -666,7 +650,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="accordion-item">
+                            <div class="accordion-item d-none">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                         Is accommodation included?
@@ -679,14 +663,14 @@
                                 </div>
                             </div>
                              <div class="accordion-item">
-                                <h2 class="accordion-header">
+                                <!-- <h2 class="accordion-header">
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
                                         Are group bookings available?
                                     </button>
-                                </h2>
+                                </h2> -->
                                 <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
-                                        Yes. Please contact <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a> for group registration inquiries.
+                                        Please contact <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a> for registration inquiries.
                                     </div>
                                 </div>
                             </div>
@@ -705,18 +689,18 @@
                             <div class="meta-row">
                                 <i class="mdi mdi-map-marker-outline"></i>
                                 <div>
-                                    <h6 class="mb-0">Lusaka, Zambia</h6>
-                                    <small class="text-muted">Neelkanth Sarovar Premiere, Lusaka</small>
+                                    <h6 class="mb-0">Global Virtual Access</h6>
+                                    <small class="text-muted">Online / Virtual Platform</small>
                                 </div>
                             </div>
                             <div class="meta-row">
                                 <i class="uil uil-calendar-alt"></i>
                                 <div>
-                                    <h6 class="mb-0">15 – 17 April 2026</h6>
-                                    <small class="text-muted">3-Day Conference</small>
+                                    <h6 class="mb-0">17 April 2026</h6>
+                                    <small class="text-muted">1-Day Virtual Summit</small>
                                 </div>
                             </div>
-                            <a href="{{route('landing.summit_lusaka_2026_register')}}" class="btn-gold-block">Register Now</a>
+                            {{-- <a href="{{route('landing.summit_lusaka_2026_register')}}" class="btn-gold-block">Register Now</a> --}}
                         </div>
 
                         <!-- Sponsorship Form -->
@@ -748,30 +732,6 @@
                         </div>
 
                         <!-- Fees -->
-                        <div class="widget-box widget-dark">
-                            <h4 class="text-white mb-3">Delegate Fees</h4>
-                            @if($isEarlyBird ?? false)
-                                <div class="d-flex align-items-center gap-2">
-                                    <h3 class="mb-0">USD 650</h3>
-                                    <span class="text-white-50 text-decoration-line-through small">USD 1,300</span>
-                                </div>
-                                <div class="badge bg-danger mt-2">50% EARLY BIRD PRICE</div>
-                            @else
-                                <h3>USD 1,300</h3>
-                            @endif
-                            <p class="text-muted mb-4 mt-2">Full Conference Pass (3 Days)</p>
-                            
-                            <hr>
-                            
-                            <h6 class="text-white mt-4 mb-3">Includes:</h6>
-                            <ul class="list-unstyled text-muted small mb-0">
-                                <li class="mb-2">✓ Access to all sessions</li>
-                                <li class="mb-2">✓ Conference materials</li>
-                                <li class="mb-2">✓ Refreshments & Lunches</li>
-                                <li class="mb-2">✓ Networking events</li>
-                                <li>✓ Participation Certificate</li>
-                            </ul>
-                        </div>
 
                         <!-- Contact -->
                         <div class="widget-box">

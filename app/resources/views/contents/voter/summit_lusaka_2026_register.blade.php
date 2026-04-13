@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-@section('title', 'Conference Registration - Lusaka Summit 2026')
+@section('title', 'Conference Registration - Virtual Summit 2026')
 
 <head>
     @include('partials.voter.head')
@@ -60,12 +60,12 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <div class="d-flex align-items-center gap-2 mb-1">
-                        <a href="{{route('show_summit_lusaka_2026')}}" style="color: var(--text-body); text-decoration: none;">
+                        <a href="{{route('show_summit_2026')}}" style="color: var(--text-body); text-decoration: none;">
                             <i class="mdi mdi-arrow-left"></i>
                         </a>
-                        <h1 class="header-title">Conference Registration</h1>
+                        <h1 class="header-title">Virtual Conference Registration</h1>
                     </div>
-                    <p class="header-subtitle">Complete your registration for the premier governance conference</p>
+                    <p class="header-subtitle">Secure your access to the Africa GRC & FinCrime Virtual Summit 2026</p>
                 </div>
                 <div class="secure-badge">
                     <i class="mdi mdi-shield-check"></i>
@@ -113,19 +113,15 @@
                 <!--    <i class="mdi mdi-star"></i>-->
                 <!--    <span>3-Day Conference</span>-->
                 <!--</div>-->
-                <h2 class="page-head">Africa Governance, Risk, Compliance & Financial Crime Prevention Conference</h2>
+                <h2 class="page-head">Africa Governance, Risk, Compliance & Financial Crime Prevention Virtual Summit</h2>
                 <div class="event-details">
-                    <!--<div class="event-detail-item">-->
-                    <!--    <i class="mdi mdi-map-marker"></i>-->
-                    <!--    <span>Lusaka, Zambia</span>-->
-                    <!--</div>-->
                     <div class="event-detail-item">
                         <i class="mdi mdi-calendar"></i>
-                        <span>March 15-17, 2026</span>
+                        <span>April 17, 2026</span>
                     </div>
                     <div class="event-detail-item">
-                        <i class="mdi mdi-map-marker-outline"></i>
-                        <span>Neelkanth Sarovar Premiere, Lusaka</span>
+                        <i class="mdi mdi-video-outline"></i>
+                        <span>Online / Virtual Platform</span>
                     </div>
                 </div>
 
@@ -134,16 +130,16 @@
                 <!-- Attendance Options -->
                 <h3 class="section-title">Select Your Attendance Option</h3>
                 <div class="attendance-options">
-                    <!-- Full Conference Pass -->
+                    <!-- Virtual Summit Pass -->
                     <div class="option-card selected" data-price="{{ ($isEarlyBird ?? false) ? 650 : 1300 }}" onclick="selectOption(this)">
                         <div class="option-radio"></div>
                         @if($isEarlyBird ?? false)
                             <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
                         @else
-                            <div class="option-badge">Recommended</div>
+                            <div class="option-badge">Standard Access</div>
                         @endif
-                        <h4 class="option-title">Full Conference Pass</h4>
-                        <p class="option-duration">3 Days • Full Access</p>
+                        <h4 class="option-title">Virtual Summit Pass</h4>
+                        <p class="option-duration">Full Day • Digital Access</p>
                         <div class="option-price">
                             USD {{ ($isEarlyBird ?? false) ? '650' : '1,300' }}
                             @if($isEarlyBird ?? false)
@@ -151,52 +147,10 @@
                             @endif
                         </div>
                         <ul class="option-features">
-                            <li>Full access to all sessions</li>
-                            <li>All networking events</li>
-                            <li>Conference materials</li>
-                            <li>Certificate of attendance</li>
-                        </ul>
-                    </div>
-
-                    <!-- Two-Day Pass -->
-                    <div class="option-card" data-price="{{ ($isEarlyBird ?? false) ? 475 : 950 }}" onclick="selectOption(this)">
-                        <div class="option-radio"></div>
-                        @if($isEarlyBird ?? false)
-                            <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
-                        @endif
-                        <h4 class="option-title">Two-Day Conference Pass</h4>
-                        <p class="option-duration">Choose 2 Days</p>
-                        <div class="option-price">
-                            USD {{ ($isEarlyBird ?? false) ? '475' : '950' }}
-                            @if($isEarlyBird ?? false)
-                                <span style="text-decoration: line-through; color: rgba(0,0,0,0.3); font-size: 0.9rem; margin-left: 8px;">USD 950</span>
-                            @endif
-                        </div>
-                        <ul class="option-features">
-                            <li>Access to selected sessions</li>
-                            <li>Networking events on selected days</li>
-                            <li>Conference materials</li>
-                        </ul>
-                    </div>
-
-                    <!-- One-Day Pass -->
-                    <div class="option-card" data-price="{{ ($isEarlyBird ?? false) ? 275 : 550 }}" onclick="selectOption(this)">
-                        <div class="option-radio"></div>
-                        @if($isEarlyBird ?? false)
-                            <div class="option-badge" style="background: #ef4444;">EARLY BIRD - 50% OFF</div>
-                        @endif
-                        <h4 class="option-title">One-Day Conference Pass</h4>
-                        <p class="option-duration">Choose 1 Day</p>
-                        <div class="option-price">
-                            USD {{ ($isEarlyBird ?? false) ? '275' : '550' }}
-                            @if($isEarlyBird ?? false)
-                                <span style="text-decoration: line-through; color: rgba(0,0,0,0.3); font-size: 0.9rem; margin-left: 8px;">USD 550</span>
-                            @endif
-                        </div>
-                        <ul class="option-features">
-                            <li>Access to one-day sessions</li>
-                            <li>Day's networking events</li>
-                            <li>Basic conference materials</li>
+                            <li>Digital access to all sessions</li>
+                            <li>Virtual networking floor</li>
+                            <li>Digital conference materials</li>
+                            <li>Electronic certificate of attendance</li>
                         </ul>
                     </div>
                 </div>
@@ -242,12 +196,12 @@
                                 <select class="form-control" required>
                                     <option value="">Select your country</option>
                                     <option value="zambia">Zambia</option>
-                                    <option value="south-africa">South Africa</option>
+                                    <option value="botswana">Botswana</option>
                                     <option value="kenya">Kenya</option>
                                     <option value="nigeria">Nigeria</option>
                                     <option value="ghana">Ghana</option>
+                                    <option value="south-africa">South Africa</option>
                                     <option value="zimbabwe">Zimbabwe</option>
-                                    <option value="botswana">Botswana</option>
                                     <option value="tanzania">Tanzania</option>
                                     <option value="uganda">Uganda</option>
                                     <option value="other">Other</option>
@@ -327,8 +281,8 @@
                     <!-- Conference Details -->
                     <div class="summary-section">
                         <h4 class="summary-section-title">Conference Details</h4>
-                        <div class="summary-item"><strong>Africa GRC & Financial Crime Conference</strong></div>
-                        <div class="summary-item">Neelkanth Sarovar Premiere, Lusaka</div>
+                        <div class="summary-item"><strong>Africa GRC & Financial Crime Virtual Summit</strong></div>
+                        <div class="summary-item">Online / Virtual Platform</div>
                     </div>
 
                     <hr class="summary-divider">
@@ -384,18 +338,15 @@
                         <img src="{{asset('assets/images/paypal.png')}}" width="40" alt="img">
                     </div>
 
-                    <!-- Visa & Travel Information -->
-                    <div class="visa-info-box mt-4" style="background: #f8f9fa; border-radius: 8px; padding: 15px; border: 1px solid #e2e8f0;">
-                        <h4 style="font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                            <i class="mdi mdi-passport" style="color: #D4AF37; font-size: 1.1rem;"></i>
-                            Visa & Travel Information
+                    <!-- Virtual Access Info -->
+                    <div class="visa-info-box mt-4" style="background: #f0f9ff; border-radius: 8px; padding: 15px; border: 1px solid #bae6fd;">
+                        <h4 style="font-size: 0.9rem; font-weight: 700; color: #0369a1; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                            <i class="mdi mdi-web" style="color: #0ea5e9; font-size: 1.1rem;"></i>
+                            Virtual Access Information
                         </h4>
-                        <p style="font-size: 0.8rem; color: #64748b; line-height: 1.5; margin-bottom: 15px;">
-                            Get Lusaka Conference Visa Information and Travel advice through the official portal.
+                        <p style="font-size: 0.8rem; color: #0c4a6e; line-height: 1.5; margin-bottom: 0;">
+                            Login credentials and access links will be sent to your registered email address 24 hours before the summit begins on April 17th.
                         </p>
-                        <a href="https://eservices.zambiaimmigration.gov.zm/#/home" target="_blank" class="btn" style="background: #D4AF37; color: #fff; width: 100%; border-radius: 6px; font-weight: 700; font-size: 0.8rem; padding: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.3s ease;">
-                            Visit Portal <i class="mdi mdi-open-in-new"></i>
-                        </a>
                     </div>
                 </div>
             </div>

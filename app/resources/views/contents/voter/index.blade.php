@@ -21,9 +21,9 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">Lusaka Summit 2026</div>
-						<div class="conference-slider-title">15th - 17th April 2026</div>
-						<h4 class="title"><span>Lusaka, Zambia</span></h4>
+						<div class="date">Virtual Summit 2026</div>
+						<div class="conference-slider-title">17th April 2026</div>
+						<h4 class="title"><span>Global Access</span></h4>
 						<h4 style="color:#fff">GRC & Financial Crime Prevention Conference - Africa</h4>
 						<h4 style="color:#fff">Trust, Resilience and Sustainable Growth</h4>
 					</div>
@@ -36,21 +36,21 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">15th - 17th April 2026</div>
-						<div class="conference-slider-title">Lusaka Summit</div>
+						<div class="date">17th April 2026</div>
+						<div class="conference-slider-title">Virtual Summit</div>
 						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
-						<p>A high-level, three-day stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, and global organisations.</p>
+						<p>A high-level stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, and global organisations.</p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453427/grcfincrimeawards/gallery/afgdyjbjgtlrhqnd48zn.jpg);">
+			<div class="conference-slide" style="background-image: url(https://res.cloudinary.com/the-morgans-consortium/image/upload/q_50/v1671453427/grcfincrimeawards/gallery/afdyjbjgtlrhqnd48zn.jpg);">
 				<img class="conference-slide-tringle" src="assets/images/effect-tringle-slider.svg" alt="img">
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">15th - 17th April 2026</div>
-						<div class="conference-slider-title">Lusaka Summit</div>
+						<div class="date">17th April 2026</div>
+						<div class="conference-slider-title">Virtual Summit</div>
 						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
 						<p>A curated, senior-level convening designed for decision-makers, policy shapers, and institutional leaders.</p>
 					</div>
@@ -61,8 +61,8 @@
 				<img class="conference-slide-effect" src="assets/images/effect-slider-left.svg" alt="img">
 				<div class="container" style="justify-content: flex-start;">
 					<div class="conference-slide-item">
-						<div class="date">15th - 17th April 2026</div>
-						<div class="conference-slider-title">Lusaka Summit</div>
+						<div class="date">17th April 2026</div>
+						<div class="conference-slider-title">Virtual Summit</div>
 						<h2 class="title"><span>GRC & FinCrime Prevention Conference</span></h2>
 						<p>Strengthening trust, resilience, and sustainable growth through effective governance and risk management.</p>
 					</div>
@@ -80,7 +80,7 @@
 					<img class="conference-counter-effect-1" src="assets/images/counter-icon-1.svg" alt="img">
 					<div class="conference-counter-cover">
 						<h3>Join us at the GRC & Financial Crime Prevention Conference - Africa</h3>
-						<h4>15th - 17th April 2026 | Lusaka, Zambia</h4>
+						<h4>17th April 2026 | Virtual Event</h4>
 					</div> 
 					<img class="conference-counter-effect-2" src="assets/images/counter-icon-2.svg" alt="img">
 				</div>
@@ -93,18 +93,18 @@
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/our-mission-2.svg" alt="" class="mission-img-effect-1 rx-lazy">
-						<img src="{{asset('/assets/lusaka_summit_banner_2026_2.jpeg')}}" style="width:100%; max-width:500px;">
+						<img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" style="width:100%; max-width:500px;">
 						<img src="assets/images/placeholder-all.png" data-src="assets/images/tringle-gray-little.svg" alt="" class="about-img-effect-2 rx-lazy">
 						<!-- </span> -->
 					</div>
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
 					<h4>GRC & Financial Crime Prevention Conference - Africa</h4>
 						<div class="mission-info-text">
-							<p>The Governance, Risk, Compliance & Financial Crime Prevention Conference – Africa is a high-level, three-day stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, corporates, development partners, and global organisations.</p>
-							<p>Hosted in Lusaka, Zambia, the conference provides a strategic platform to address how institutions across Africa can strengthen trust, resilience, and sustainable growth through effective governance, risk management, regulatory compliance, and integrated financial crime prevention.</p>
+							<p>The Governance, Risk, Compliance & Financial Crime Prevention Conference – Africa is a high-level stakeholders conference convening senior leaders from government, regulatory authorities, financial institutions, corporates, development partners, and global organisations.</p>
+							<p>As a fully virtual event, the conference provides a strategic platform to address how institutions across Africa can strengthen trust, resilience, and sustainable growth through effective governance, risk management, regulatory compliance, and integrated financial crime prevention.</p>
 							<p><strong>This is not a mass-attendance event.</strong> It is a curated, senior-level convening designed for decision-makers, policy shapers, and institutional leaders.</p>
 						</div>
-						<a href="{{route('show_summit_lusaka_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
+						<a href="{{route('show_summit_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 				</div>
 			</div>
@@ -112,7 +112,7 @@
 
 		<div class="s-our-mission s-about-speaker">
 			<div class="container">
-				<h2 class="title-conference"><span>Lusaka Summit 2026</span></h2>
+				<h2 class="title-conference"><span>Virtual Summit 2026</span></h2>
 				<div class="row">
 					<div class="col-lg-6 our-mission-img" style="margin-top:auto;margin-bottom:auto">
 						<!-- <span> -->
@@ -123,10 +123,10 @@
 					</div>
 					<div class="col-lg-6 our-mission-info mt-5 mt-sm-0">
 					<h3>GRC & Financial Crime Prevention Conference - Africa</h3>
-						Date: <h3>15th - 17th April 2026</h3>
-						Venue: <h3>Neelkanth Sarovar Premiere, Lusaka, Zambia</h3>
+						Date: <h3>17th April 2026</h3>
+						Venue: <h3>Online / Virtual Platform</h3>
 						Theme: <h3>Trust, Resilience and Sustainable Growth</h3>
-						<a href="{{route('show_summit_lusaka_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
+						<a href="{{route('show_summit_2026')}}" class="btn" tabindex="-1"><span>Learn More</span></a>
 					</div>
 					</div>
 				</div>
@@ -141,50 +141,16 @@
 			<h2 class="title"><span>Programme Overview</span></h2>
 			<img class="schedule-effect-white" src="{{asset('assets/images/tringle-white.svg')}}" alt="img">
 			<img class="schedule-effect-yellow" src="{{asset('assets/images/tringle-yellow-little.svg')}}" alt="img">
-			<div class="row">
-				<div class="col-xl-4" style="margin-bottom: 15px;">
+			<div class="row justify-content-center">
+				<div class="col-xl-8" style="margin-bottom: 15px;">
 					<div class="event-schedule-tabs">
 						<div class="event-schedule-item">
-							<div class="schedule-item-img"><i class="mdi mdi-calendar-today mdi-48px" style="color:#D4AF37"></i></div>
+							<div class="schedule-item-img"><i class="mdi mdi-video mdi-48px" style="color:#D4AF37"></i></div>
 							<div class="schedule-item-info">
-								<div class="date">Day 1 - 15th April 2026</div>
-								<h4>Governance & Trust</h4>
+								<div class="date">17th April 2026 | Virtual Event</div>
+								<h4>GRC & FinCrime Intensive</h4>
 								<div class="schedule-info-content">
-									<p>Governance reform, accountability, board oversight and ethical leadership.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xl-4" style="margin-bottom: 15px;">
-					<div class="event-schedule-tabs">
-						<div class="event-schedule-item">
-							<div class="schedule-item-img">
-								<i class="mdi mdi-shield-check mdi-48px" style="color:#D4AF37"></i>
-							</div>
-							<div class="schedule-item-info">
-								<div class="date">Day 2 - 16th April 2026</div>
-								<h4>Enterprise Risk & Resilience</h4>
-								<div class="schedule-info-content">
-									<p>Operational risk management, regulatory compliance and supervisory expectations.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-                
-                <div class="col-xl-4" style="margin-bottom: 15px;">
-					<div class="event-schedule-tabs">
-						<div class="event-schedule-item">
-							<div class="schedule-item-img">
-								<i class="mdi mdi-laptop mdi-48px" style="color:#D4AF37"></i>
-							</div>
-							<div class="schedule-item-info">
-								<div class="date">Day 3 - 17th April 2026</div>
-								<h4>Technology & Cyber Risk</h4>
-								<div class="schedule-info-content">
-									<p>Digital trust, emerging technologies and financial crime prevention systems.</p>
+									<p>A full-day summit covering Governance reform, Enterprise Risk, Technology, Digital Trust, and Financial Crime Prevention systems.</p>
 								</div>
 							</div>
 						</div>

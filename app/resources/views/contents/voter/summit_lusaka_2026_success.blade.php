@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-@section('title', 'Registration Successful - Lusaka Summit 2026')
+@section('title', 'Registration Successful - Virtual Summit 2026')
 
 <head>
     @include('partials.voter.head')
@@ -231,7 +231,7 @@
 
             <h1 class="success-title">Registration Confirmed!</h1>
             <p class="success-message">
-                Thank you, <strong>{{ $registration->name }}</strong>. Your payment for the Lusaka Summit 2026 has been successfully processed and your slots are secured.
+                Thank you, <strong>{{ $registration->name }}</strong>. Your registration for the Africa GRC & FinCrime Virtual Summit 2026 has been successfully processed and your access is secured.
                 @if($registration->created_at->between('2026-03-02 00:00:00', '2026-03-15 23:59:59'))
                     <br><span class="badge bg-danger mt-2" style="font-size: 0.8rem; border: 1px solid #fff;">50% EARLY BIRD DISCOUNT APPLIED</span>
                 @endif
@@ -299,8 +299,8 @@
                 <div class="step-item">
                     <div class="step-dot">2</div>
                     <div>
-                        <p style="margin: 0; font-weight: 600;">Accommodation Details</p>
-                        <p style="margin: 5px 0 0; font-size: 0.85rem; color: var(--text-body);">Information about discounted hotel bookings will be sent to your email within 24 hours.</p>
+                        <p style="margin: 0; font-weight: 600;">Virtual Access Credentials</p>
+                        <p style="margin: 5px 0 0; font-size: 0.85rem; color: var(--text-body);">Login credentials and your unique access link will be sent to your email 24 hours before the summit starts.</p>
                     </div>
                 </div>
                 <div class="step-item">

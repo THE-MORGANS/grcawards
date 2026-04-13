@@ -168,7 +168,7 @@ Route::get('media/pictures/{award_program}', [LandingPageController::class, 'sho
 Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
 Route::get('summit/wigrc-2026', [LandingPageController::class, 'showSummitWGRC2026'])->name('show_summit_wgrc_2026');
-Route::get('summit/lusaka-2026', [LandingPageController::class, 'showSummitLusaka2026'])->name('show_summit_lusaka_2026');
+Route::get('summit/grc-summit-2026', [LandingPageController::class, 'showSummitLusaka2026'])->name('show_summit_2026');
 Route::get('summit/lusaka-2026/register', [LandingPageController::class, 'showSummitLusaka2026Register'])->name('landing.summit_lusaka_2026_register');
 Route::get('summit/lusaka-2026/payment', [LandingPageController::class, 'showSummitLusaka2026Payment'])->name('landing.summit_lusaka_2026_payment');
 Route::post('summit/lusaka-2026/payment/initiate', [LusakaSummitController::class, 'initiatePayment'])->name('summit.payment.initiate');
