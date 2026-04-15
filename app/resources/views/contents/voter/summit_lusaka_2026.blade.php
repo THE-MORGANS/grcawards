@@ -606,17 +606,20 @@
                                 $speakers = [
                                     ['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'lusaka_foluso.jpg'],
                                     ['name' => 'Mothophatlheng Philip Rakgwale', 'role' => 'Keynote Speaker', 'position' => 'President/Chairman, Council for the South African Institute of Government Auditors', 'image' => 'lusaka_philip.jpg'],
-                                    ['name' => 'Helen Lunda', 'role' => 'Keynote Speaker', 'position' => 'Executive Director, Commercial Banking & Public Sector Access Bank Zambia Limited', 'image' => 'lusaka_helen.jpg'],
                                     ['name' => 'Mizinga Melu', 'role' => 'Keynote Speaker', 'position' => 'Chief Executive Officer (CEO) Absa Bank Zambia', 'image' => 'lusaka_mizinga.JPG'],
                                     ['name' => 'Dr. Nishal Khusial', 'role' => 'Keynote Speaker', 'position' => 'Chief Strategy Officer Cyber Alliance EMEA', 'image' => 'lusaka_nishal.jpg'],
                                     ['name' => 'Mr. Mulilo Kabesha', 'role' => 'Keynote Speaker', 'position' => 'Attorney General Republic of Zambia', 'image' => 'lusaka_mulilo.jpg'],
-                                    ['name' => 'Dr. Denny Kalyalya', 'role' => 'Guest of Honour', 'position' => 'Governor Bank of Zambia', 'image' => 'lusaka_denny.jpg'],
                                     ['name' => 'Lesego Bannalotlhe', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer FNB Botswana', 'image' => 'lusaka_lesogo.jpg'],
                                     ['name' => 'Beauty Mtonga', 'role' => 'Panel Speaker', 'position' => 'Executive Risk Human Capital', 'image' => 'lusaka_beauty.jpg'],
-                                    ['name' => 'Elijah Chulu', 'role' => 'Panel Speaker', 'position' => 'Director, Chief Risk & Compliance Officer Zambia National Building Society', 'image' => 'lusaka_elijah.png'],
                                     ['name' => 'Lydia Nasilele Simakando', 'role' => 'Panel Speaker', 'position' => 'Group Chief Executive Officer & Postmaster General Zambia Postal Services Corporation (ZAMPOST)', 'image' => 'lusaka_lydia.png'],
                                     ['name' => 'Grace Tabea Letseka', 'role' => 'Master of Ceremony (MC)', 'position' => 'Head of Resilience & Data FNB South Africa', 'image' => 'lusaka_grace.jpg'],
                                     ['name' => 'Sisiku Nasinda', 'role' => 'Moderator', 'position' => 'Associate Director, Climate Change & Sustainability Services Ernst & Young (EY)', 'image' => 'lusaka_sisiku.jpg'],
+                                    ['name' => 'Anita Cuchamano', 'role' => 'Panel Speaker', 'position' => 'Cybersecurity- Women in Tech & Digital Transformation Entrepreneur.', 'image' => 'lusaka_cuchamano.jpg'],
+                                    ['name' => 'Dr. Kenneth Ashiabuchi', 'role' => 'Panel Speaker', 'position' => 'Founder and CEO at KenKenedy Partner Consulting Limited', 'image' => 'lusaka_kenneth.jpg'],
+                                    ['name' => 'Mosope Keating', 'role' => 'Panel Speaker', 'position' => 'Investment Strategy, Treasury Control, And Wealth Management at South Atlantic Petroleum Limited', 'image' => 'lusaka_mosope.jpg'],
+                                    ['name' => 'Sarah Lloyd', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer Zambia Bank', 'image' => 'lusaka_sarah.jpg'],
+                                    ['name' => 'Patience Mabilo', 'role' => 'Panel Speaker', 'position' => 'Founding Chair Absa Women in Risk Forum. Founder Future Fit Coaching and Advisory Pty Ltd.', 'image' => 'lusaka_patience.jpg'],
+                                    ['name' => 'Warren Manuel', 'role' => 'Panel Speaker', 'position' => 'AI Architect & Advisor. Author, The Manager vs The Architect.', 'image' => 'lusaka_warren.jpg'],
                                 ];
                             @endphp
 
