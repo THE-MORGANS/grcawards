@@ -613,12 +613,12 @@
                                     ['name' => 'Beauty Mtonga', 'role' => 'Panel Speaker', 'position' => 'Executive Risk Human Capital', 'image' => 'lusaka_beauty.jpg'],
                                     ['name' => 'Lydia Nasilele Simakando', 'role' => 'Panel Speaker', 'position' => 'Group Chief Executive Officer & Postmaster General Zambia Postal Services Corporation (ZAMPOST)', 'image' => 'lusaka_lydia.png'],
                                     ['name' => 'Grace Tabea Letseka', 'role' => 'Master of Ceremony (MC)', 'position' => 'Head of Resilience & Data FNB South Africa', 'image' => 'lusaka_grace.jpg'],
-                                    ['name' => 'Sisiku Nasinda', 'role' => 'Moderator', 'position' => 'Associate Director, Climate Change & Sustainability Services Ernst & Young (EY)', 'image' => 'lusaka_sisiku.jpg'],
+                                    ['name' => 'Susiku Nasinda', 'role' => 'Moderator', 'position' => 'Associate Director, Climate Change & Sustainability Services (EY)', 'image' => 'lusaka_sisiku.jpg'],
                                     ['name' => 'Anita Cuchamano', 'role' => 'Panel Speaker', 'position' => 'Cybersecurity- Women in Tech & Digital Transformation Entrepreneur.', 'image' => 'lusaka_cuchamano.jpg'],
                                     ['name' => 'Dr. Kenneth Ashiabuchi', 'role' => 'Panel Speaker', 'position' => 'Founder and CEO at KenKenedy Partner Consulting Limited', 'image' => 'lusaka_kenneth.jpg'],
                                     ['name' => 'Mosope Keating', 'role' => 'Panel Speaker', 'position' => 'Investment Strategy, Treasury Control, And Wealth Management at South Atlantic Petroleum Limited', 'image' => 'lusaka_mosope.jpg'],
                                     ['name' => 'Sarah Lloyd', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer Zambia Bank', 'image' => 'lusaka_sarah.jpg'],
-                                    ['name' => 'Patience Mabilo', 'role' => 'Panel Speaker', 'position' => 'Founding Chair Absa Women in Risk Forum. Founder Future Fit Coaching and Advisory Pty Ltd.', 'image' => 'lusaka_patience.jpg'],
+                                    ['name' => 'Patience Mabilo', 'role' => 'Panel Speaker', 'position' => 'Founder & MD: Future Fit Coaching & Advisory.', 'image' => 'lusaka_patience.jpg'],
                                     ['name' => 'Warren Manuel', 'role' => 'Keynote Speaker', 'position' => 'AI Architect & Advisor. Author, The Manager vs The Architect.', 'image' => 'lusaka_warren.jpg'],
                                 ];
                             @endphp
