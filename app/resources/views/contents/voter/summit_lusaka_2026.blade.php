@@ -603,7 +603,7 @@
                         </div> -->
                         <div class="row g-4">
                             @php
-                                $speakers = [
+                                 $speakers = [
                                     ['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'lusaka_foluso.jpg'],
                                     ['name' => 'Mothophatlheng Philip Rakgwale', 'role' => 'Keynote Speaker', 'position' => 'President/Chairman, Council for the South African Institute of Government Auditors', 'image' => 'lusaka_philip.jpg'],
                                     ['name' => 'Mizinga Melu', 'role' => 'Keynote Speaker', 'position' => 'Chief Executive Officer (CEO) Absa Bank Zambia', 'image' => 'lusaka_mizinga.JPG'],
@@ -619,7 +619,7 @@
                                     ['name' => 'Mosope Keating', 'role' => 'Panel Speaker', 'position' => 'Investment Strategy, Treasury Control, And Wealth Management at South Atlantic Petroleum Limited', 'image' => 'lusaka_mosope.jpg'],
                                     ['name' => 'Sarah Lloyd', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer Zambia Bank', 'image' => 'lusaka_sarah.jpg'],
                                     ['name' => 'Patience Mabilo', 'role' => 'Panel Speaker', 'position' => 'Founding Chair Absa Women in Risk Forum. Founder Future Fit Coaching and Advisory Pty Ltd.', 'image' => 'lusaka_patience.jpg'],
-                                    ['name' => 'Warren Manuel', 'role' => 'Panel Speaker', 'position' => 'AI Architect & Advisor. Author, The Manager vs The Architect.', 'image' => 'lusaka_warren.jpg'],
+                                    ['name' => 'Warren Manuel', 'role' => 'Keynote Speaker', 'position' => 'AI Architect & Advisor. Author, The Manager vs The Architect.', 'image' => 'lusaka_warren.jpg'],
                                 ];
                             @endphp
 
@@ -703,7 +703,7 @@
                                     <small class="text-muted">1-Day Virtual Summit</small>
                                 </div>
                             </div>
-                            {{-- <a href="{{route('landing.summit_lusaka_2026_register')}}" class="btn-gold-block">Register Now</a> --}}
+                            <a href="https://events.teams.microsoft.com/event/4c86aa14-922d-4517-8d57-aa640de7b666@252fbfd9-7d72-47b6-bc0d-43af771c9b6e" class="btn-gold-block">Register Now</a>
                         </div>
 
                         <!-- Sponsorship Form -->
