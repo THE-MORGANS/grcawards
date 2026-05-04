@@ -106,7 +106,7 @@
                                     </td>
                                     <td>
                                         <div class="award-criteria">
-                                            <button class="read-more-btn" onClick="openCriteriaModal('{{ addslashes($award->name) }}', {{$index}})">
+                                            <button class="read-more-btn" data-name="{{ $award->name }}" data-index="{{ $index }}" onClick="openCriteriaModal(this)">
                                                 <i class="lni lni-eye me-1"></i> View Criteria
                                             </button>
                                             <template id="criteria-template-{{$index}}">{!! $award->criteria !!}</template>
@@ -145,7 +145,7 @@
 
 <!-- Criteria Modal -->
 <div class="modal fade" id="criteriaModal" tabindex="-1" aria-labelledby="criteriaModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="criteriaModalLabel">Award Criteria</h5>
@@ -180,10 +180,15 @@ function toggleReadMore(type, index) {
     }
 }
 
-function openCriteriaModal(awardName, index) {
+function openCriteriaModal(element) {
+    const awardName = element.getAttribute('data-name');
+    const index = element.getAttribute('data-index');
+    
     const template = document.getElementById(`criteria-template-${index}`);
     const modalBody = document.getElementById('modalCriteriaBody');
     const modalTitle = document.getElementById('modalAwardName');
+    console.log(awardName, index);
+    console.log(template);
     
     modalTitle.innerText = awardName;
     modalBody.innerHTML = template.innerHTML;
