@@ -1,9 +1,4 @@
 
-UPDATE FOR 'PUBLIC NOMINATION'
-app/app/Http/Controllers/LandingPageController.php (Lines 14-18, 39-57, 100-152)
-app/app/Models/Nominee.php (Line 14)
-app/resources/views/contents/voter/sectors_categories.blade.php (Lines 41-55, 61-65, 101-124, 130-149, 180-221)
-app/public/assets/css/categories_redesign.css (Lines 106-117, 240-369, 408-438)
 
 
 UPDATE FOR 'ADMIN PAGES' REDESIGN- 20260407
@@ -28,5 +23,18 @@ UPDATE FOR 'ADMIN PAGES' REDESIGN- 20260407
 - app/resources/views/contents/admin/table/media_votes.blade.php
 - app/resources/views/contents/admin/table/nonfi_votes.blade.php
 - app/resources/views/contents/admin/table/women_in_grc.blade.php
+- app/resources/views/contents/admin/voteResults/judgeCategories.blade.php
+- app/resources/views/contents/admin/voteResults/ComBankRiskComplainces.blade.php
+- app/resources/views/contents/admin/voteResults/com_bank_chief_risk_officers.blade.php
+- app/resources/views/contents/admin/voteResults/com_bank_fraud_awarenesses.blade.php
+- app/resources/views/contents/admin/voteResults/crime_prevention_advisory_service.blade.php
+- app/resources/views/contents/admin/voteResults/governors_votes.blade.php
+- app/resources/views/contents/admin/voteResults/grc_anti_fin_crim_reporters.blade.php
+- app/resources/views/contents/admin/voteResults/grc_employers.blade.php
+- app/resources/views/contents/admin/voteResults/grc_solution_providers.blade.php
+- app/resources/views/contents/admin/voteResults/grc_training_providers.blade.php
+- app/resources/views/contents/admin/voteResults/media_votes.blade.php
+- app/resources/views/contents/admin/voteResults/nonfi_votes.blade.php
+- app/resources/views/contents/admin/voteResults/women_in_grc.blade.php
 
 

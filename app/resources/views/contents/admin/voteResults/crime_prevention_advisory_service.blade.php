@@ -1,175 +1,118 @@
 @extends('layouts.admin.master')
 
-@section('title', 'Awards')
+@section('title', 'Award Results')
 
+@section('style')
+<link href="{{asset('assets/css/judges_redesign.css')}}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
+<style>
+    .results-table td { font-size: 0.85rem; padding: 1.25rem 1rem; }
+    .results-table th { white-space: nowrap; background: #f8fafc !important; }
+    .winner-badge {
+        background: #ecfdf5;
+        color: #059669;
+        padding: 0.4rem 1rem;
+        border-radius: 9999px;
+        font-weight: 700;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        border: 1px solid #10b98133;
+    }
+    .overall-score { font-weight: 800; color: #ef4444; font-size: 1.1rem; }
+    .score-cell { font-weight: 600; color: #475569; }
+</style>
+@endsection
 
 @section('content')
-    <div class="container">
-        <!-- start page title -->
-        <div class="row">
-            <div class="col-12">
-                <div class="page-title-box" style="margin-top: 20px; margin-bottom: 20px;">
-
-                    <div class="page-title">
-                        <div style="width: 55px;float: left;height: 55px;background: turquoise;margin-right: 15px;">
-                        </div>
-                        <h4 style="display: block;">Award Year {{$currentYear?->year}}</h4>
-                        <h4 style="display: block;" class=" text-muted fw-normal mt-0 mb-0">
-                        </h4>
+<div class="judges-container">
+    <!-- Header Section -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="d-flex align-items-center justify-content-between p-4 bg-white rounded-4 shadow-sm">
+                <div class="d-flex align-items-center">
+                    <div class="avatar-md bg-soft-primary rounded-3 d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px; background: #eef2ff;">
+                        <i class="lni lni-bar-chart text-primary fs-3"></i>
                     </div>
+                    <div>
+                        <h4 class="mb-0 fw-bold">Calculated Results</h4>
+                        <p class="text-muted mb-0">Award: <span class="fw-bold text-dark">{{ $awards[0]->awards->name }}</span></p>
+                    </div>
+                </div>
+                <div>
+                    <a href="{{ url()->previous() }}" class="btn btn-light rounded-pill px-4 fw-bold text-muted border">
+                        <i class="lni lni-arrow-left me-1"></i> Back to Overview
+                    </a>
                 </div>
             </div>
         </div>
-        <!-- end page title -->
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <h4 class="header-title mb-4">Results for <span style="color:red">
-                                        {{ $awards[0]->awards->name }} Awards </span> </h4>
-                            </div>
-                            {{-- <div class="col-12 text-end"> 
-                            <button type="button" id="add-field" class="btn btn-success btn-sm">
-                                <i class="mdi mdi-plus mdi-24px"></i>
-                            </button>
-                        </div> --}}
-                        </div>
-                        <form class="needs-validation" method="POST"
-                            action="{{ route('admin.StoreNominessVotes', [request()->segment(3)]) }}" id="form1">
-                            @csrf
-                            <div class="col-xl-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="table-responsive">
-                                            <table
-                                                class="table table-responsive  table-striped  table-bordered mb-0">
-                                                <thead>
-                                                    <tr style="background:yellow;">
-                                                        {{-- <th> Award Name</th> --}}
-                                                        <th>Nominee Name</th>
-                                                        <th>Number of vote </th>
-                                                        <th>Percentage votes</th>
-                                                        <th>Profile of the Advisory Service Provider</th>
-                                                        <th>Evidence of Innovative Ways of promoting & demonstrating leadership</th>
-                                                        <th>Clients of Advisory Services  </th>
-                                                        <th>Client's Rating of Advisory Service Provider  </th>
-                                                        <th>Affiliations/Licencing/Regulatory Information </th>
-                                                        <th>Total Judges Votes</th>
-                                                        <th>Total of judges score converted to percentage</th>
-                                                        <th>80% of judges score</th>
-                                                        <th>20% of Votes Cast</th>
-                                                         <th style="background:red; color:#fff">Overall Score</th>
-                                                        <th style="background: green; color:#fff">Results</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach ($awards as $awp)
-                                                        <tr>
-                                                            {{-- <td style="color:red; font-weight:600;min-width: 250px ">  {{$awp->awards->name}} Awards</td> --}}
-                                                            <td style=" min-width: 150px;"> {{ $awp->nominee?->name }}</td>
-                                                            <td> {{ $awp->number_of_votes }} </td>
-                                                            <td>{{ number_format($awp->percentage_votes, 2) }}% </td>
-                                                            <td style=" min-width: 450px;">
-                                                                {{ $awp->profile_of_the_advisory_service_provider }} </td>
-                                                            <td style=" min-width: 450px;">
-                                                                {{ $awp->evidence_of_innovative_ways_of_promoting}} </td>
-                                                            <td style=" min-width: 450px;">
-                                                                {{ $awp->clients_of_advisory_services}} </td>
-                                                            <td style=" min-width: 450px;">
-                                                                {{ $awp->client_rating_of_advisory_service_provide }} </td>
-                                                                <td style=" min-width: 450px;">
-                                                                    {{ $awp->affiliations}} </td>
-                                                                    <td style=" min-width: 250px;">
-                                                                        {{ array_sum(json_decode($awp->judges_votes)) }} </td>
-                                                                    <td style=" min-width: 250px;">
-                                                                        {{ number_format($awp->total_of_judges_score_converted_to_percentage, 2) }}%
-                                                                    </td>
-                                                                    <td style=" min-width: 250px;">
-                                                                        {{ number_format($awp->eighty_percent_of_judges_score, 2) }}%
-                                                                    </td>
-                                                                    <td style=" min-width: 250px;">
-                                                                        {{ number_format($awp->twenty_percent_votes, 2) }}% </td>
-                                                                    <td style=" min-width: 250px; color:red; font-weight:600">
-                                                                        {{ number_format($awp->overall_score, 2) }}%</td>
-                                                                    <td style=" min-width: 250px;">
-                                                                        @if ($awp->status == 'WINNER')
-                                                                            <span style="color:green; font-weight:700">
-                                                                                {{ $awp->status }}</span>
-                                                                        @else
-                                                                            {{ $awp->status }}
-                                                                        @endif
-                                                                    </td></tr>
-                                                    @endforeach
-                                                    <input type="hidden" name="award_id"
-                                                        value="{{ $awards[0]->award_id }}">
-                                                </tbody>
-                                            </table>
-                                        </div> <!-- end table-responsive-->
-                                    </div> <!-- end card body-->
-                                </div> <!-- end card -->
-                            </div>
-                            <div class="row">
-                                <div class="col-6"></div>
-                                {{-- <div class="col-6 text-end">
-                                    <input type="submit" class="btn btn-success" value="Submit Votes for this Awards"
-                                        name="submitButton">
-                                </div> --}}
-                            </div>
-                        </form>
-                    </div> <!-- end card-body-->
-                </div> <!-- end card-->
-            </div> <!-- end col -->
+    </div>
 
+    <div class="category-card border-0 shadow-sm">
+        <div class="category-header py-3 px-4" style="background: var(--sector-gradient);">
+            <h3 class="category-title fs-4">Nominee Rankings</h3>
+        </div>
+        <div class="category-body p-0">
+            <div class="table-responsive">
+                <table class="awards-table results-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Nominee Name</th>
+                            <th>Votes Cast</th>
+                            <th>Votes %</th>
+                            <th>Description</th>
+                            <th>Achievements</th>
+                            <th>Judges Total</th>
+                            <th>Judges %</th>
+                            <th>80% Weight</th>
+                            <th>20% Weight</th>
+                            <th class="text-center" style="background: #fef2f2 !important; color: #991b1b;">Overall Score</th>
+                            <th class="text-end">Final Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($awards as $awp)
+                        <tr class="{{ $awp->status == 'WINNER' ? 'bg-soft-success' : '' }}">
+                            <td class="fw-bold text-dark">{{ $awp->nominee?->name }}</td>
+                            <td class="score-cell">{{ $awp->number_of_votes }}</td>
+                            <td class="score-cell">{{ number_format($awp->percentage_votes, 2) }}%</td>
+                            <td style="min-width: 300px; max-width: 450px;" class="text-muted small">{{ $awp->description }}</td>
+                            <td style="min-width: 300px; max-width: 450px;" class="text-muted small">{{ $awp->achievements }}</td>
+                            <td class="score-cell">{{ array_sum(json_decode($awp->judges_votes)) }}</td>
+                            <td class="score-cell">{{ number_format($awp->total_of_judges_score_converted_to_percentage, 2) }}%</td>
+                            <td class="score-cell">{{ number_format($awp->eighty_percent_of_judges_score, 2) }}%</td>
+                            <td class="score-cell">{{ number_format($awp->twenty_percent_votes, 2) }}%</td>
+                            <td class="text-center">
+                                <span class="overall-score">{{ number_format($awp->overall_score, 2) }}%</span>
+                            </td>
+                            <td class="text-end">
+                                @if ($awp->status == 'WINNER')
+                                    <span class="winner-badge">
+                                        <i class="lni lni-crown me-1"></i> WINNER
+                                    </span>
+                                @else
+                                    <span class="badge bg-light text-muted border fw-normal">{{ $awp->status }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
-        @endsection
+@if (Session::has('success'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
 
-        @section('scripts')
-
-            <script>
-                // var nominees = $("select[id=nominee_awards]").val();
-                // var nominees = $('.nominee_awards').val();
-                // alert($('.nominee_awards').val())
-                // $('#nominee_awards').on('change', function(){
-                //         jQuery.ajax({
-                //         url: "{{ url('judges/nominess', '') }}"+nominees,
-                //         url: "{{ route('admin.getNominessDetails', '') }}"+222,
-                //         type:'get',
-                //         cache: false,
-                //         success: function(data){
-                //             console.log(data)
-                //            $("select[id=sector_name]").html(html);
-                //            $("select[id=sector_name]").removeAttr('disabled');
-                //         },
-                //     });
-                // })
-            </script>
-
-
-            {{-- <script src="{{asset('assets/js/pages/award.js')}}"></script> --}}
-
-            @if (Session::has('success'))
-                <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "preventDuplicates": true,
-                        "preventOpenDuplicates": true
-                    }
-                    toastr.success("{{ session('success') }}");
-                </script>
-            @endif
-
-            @if (Session::has('danger'))
-                <script>
-                    toastr.options = {
-                        "closeButton": true,
-                        "progressBar": true,
-                        "preventDuplicates": true,
-                        "preventOpenDuplicates": true
-                    }
-                    toastr.error("{{ session('danger') }}");
-                </script>
-            @endif
-        @endsection
+@if (Session::has('danger'))
+<script>
+    toastr.options = { "closeButton": true, "progressBar": true, "preventDuplicates": true };
+    toastr.error("{{ session('danger') }}");
+</script>
+@endif
+@endsection
