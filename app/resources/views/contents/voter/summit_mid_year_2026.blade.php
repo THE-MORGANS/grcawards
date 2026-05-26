@@ -675,7 +675,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-10">
                 <div class="banner-wrapper">
-                    <img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" alt="Annual Global Mid-Year Summit Banner" class="summit-banner mx-auto">
+                    <img src="{{asset('/assets/mid_year_2026.jpeg')}}" alt="Annual Global Mid-Year Summit Banner" class="summit-banner mx-auto">
                 </div>
             </div>
         </div>
@@ -821,7 +821,7 @@
                                 </div>
                             </div>
 
-                            <a href="https://www.grcfincrimeawards.com/" target="_blank" class="btn-gold-block">Register to Attend <i class="mdi mdi-arrow-right"></i></a>
+                            <a href="https://events.teams.microsoft.com/event/9afd5c1d-8782-4014-ac44-b4e96693df75@252fbfd9-7d72-47b6-bc0d-43af771c9b6e" target="_blank" class="btn-gold-block">Register to Attend <i class="mdi mdi-arrow-right"></i></a>
                         </div>
 
                         <!-- Sponsorship Prospectus Form -->
@@ -891,24 +891,24 @@
                 @php
                      $speakers = [
                         // Host / Convener
-                        ['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'lusaka_foluso.jpg'],
+                        ['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'foluso_amusa.jpg'],
 
                         // Keynote Speakers
-                        ['name' => 'Kevin Brear', 'role' => 'Keynote Speaker', 'position' => 'Resilience and GRC Professional', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Olatunji Vincent', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'speaker_placeholder.png'],
+                        ['name' => 'Kevin Brear', 'role' => 'Keynote Speaker', 'position' => 'Resilience and GRC Professional', 'image' => 'kevin_brear.jpg'],
+                        ['name' => 'Olatunji Vincent', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'vincent_olatunji.jpg'],
 
                         // Panel Speakers
-                        ['name' => 'Grace Tabea Letseka', 'role' => 'Panel Speaker', 'position' => 'Head of Resilience & Data, FNB South Africa', 'image' => 'lusaka_grace.jpg'],
-                        ['name' => 'Nneka Nwaka', 'role' => 'Panel Speaker', 'position' => 'CCO, Moment Holdings Limited', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Bawo Egbakhumeh', 'role' => 'Panel Speaker', 'position' => 'CEO, Compliance Institute Nigeria', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Dr. Nishal Khusial', 'role' => 'Panel Speaker', 'position' => 'Chief of Strategy - Cyber-Alliance EMEA', 'image' => 'lusaka_nishal.jpg'],
-                        ['name' => 'Sarah Lloyd', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer (CRO) at Absa Bank Zambia', 'image' => 'lusaka_sarah.jpg'],
-                        ['name' => 'Warren Manuel', 'role' => 'Panel Speaker', 'position' => 'AI Architect & Advisor', 'image' => 'lusaka_warren.jpg'],
-                        ['name' => 'Prof. Ehi Esoimeme', 'role' => 'Panel Speaker', 'position' => 'Professor of Business Law and Ethics @ James Hope University, Daaru Salaam University, Rudolph Kwanue University, Kennedy University, Hamar University and African Union University', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Salaheddine Elgbouri', 'role' => 'Panel Speaker', 'position' => 'Africa AML Compliance Director at Western Union', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Leonardo Limiti', 'role' => 'Panel Speaker', 'position' => 'Compliance Director at Mooney', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Ben McConnachie', 'role' => 'Panel Speaker', 'position' => 'Financial Crime, AML & Fraud Risk Specialist', 'image' => 'speaker_placeholder.png'],
-                        ['name' => 'Sally Farid', 'role' => 'Panel Speaker', 'position' => 'Senior Director, IT Audit at The American University in Cairo', 'image' => 'speaker_placeholder.png'],
+                        ['name' => 'Grace Tabea Letseka', 'role' => 'Panel Speaker', 'position' => 'Head of Resilience & Data, FNB South Africa', 'image' => 'grace_tabea.png'],
+                        ['name' => 'Nneka Nwaka', 'role' => 'Panel Speaker', 'position' => 'CCO, Moment Holdings Limited', 'image' => 'nneka_nwaka.jpg'],
+                        ['name' => 'Bawo Egbakhumeh', 'role' => 'Panel Speaker', 'position' => 'CEO, Compliance Institute Nigeria', 'image' => 'bawo_egbakhumeh.jpg'],
+                        ['name' => 'Dr. Nishal Khusial', 'role' => 'Panel Speaker', 'position' => 'Chief of Strategy - Cyber-Alliance EMEA', 'image' => 'nishal_khusial.jpg'],
+                        ['name' => 'Sarah Lloyd', 'role' => 'Panel Speaker', 'position' => 'Chief Risk Officer (CRO) at Absa Bank Zambia', 'image' => 'sarah_lloyd.jpg'],
+                        ['name' => 'Warren Manuel', 'role' => 'Panel Speaker', 'position' => 'AI Architect & Advisor', 'image' => 'warren_manuel.jpg'],
+                        ['name' => 'Prof. Ehi Esoimeme', 'role' => 'Panel Speaker', 'position' => 'Professor of Business Law and Ethics @ James Hope University, Daaru Salaam University, Rudolph Kwanue University, Kennedy University, Hamar University and African Union University', 'image' => 'ehi_esoimeme.jpg'],
+                        ['name' => 'Salaheddine Elgbouri', 'role' => 'Panel Speaker', 'position' => 'Africa AML Compliance Director at Western Union', 'image' => 'salaheddine_elgbouri.jpg'],
+                        ['name' => 'Leonardo Limiti', 'role' => 'Panel Speaker', 'position' => 'Compliance Director at Mooney', 'image' => 'leonardo_limiti.jpg'],
+                        ['name' => 'Ben McConnachie', 'role' => 'Panel Speaker', 'position' => 'Financial Crime, AML & Fraud Risk Specialist', 'image' => 'ben_mcconnachie.jpg'],
+                        ['name' => 'Sally Farid', 'role' => 'Panel Speaker', 'position' => 'Senior Director, IT Audit at The American University in Cairo', 'image' => 'sally_farid.jpg'],
                     ];
                 @endphp
 
@@ -916,7 +916,7 @@
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                     <div class="speaker-card">
                         <div class="speaker-image-wrapper">
-                            <img src="{{ asset('assets/images/speakers/lusaka_2026/'.($speaker['image'] ?? 'speaker_placeholder.png')) }}" alt="{{ $speaker['name'] }}" class="speaker-image">
+                            <img src="{{ asset('assets/images/speakers/midYear_2026/'.($speaker['image'] ?? 'speaker_placeholder.png')) }}" alt="{{ $speaker['name'] }}" class="speaker-image">
                         </div>
                         <h6 class="speaker-name">{{ $speaker['name'] }}</h6>
                         <span class="speaker-role">{{ $speaker['role'] }}</span>

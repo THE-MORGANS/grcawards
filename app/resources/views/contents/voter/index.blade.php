@@ -638,7 +638,7 @@
 						“Beyond Compliance Theatre: Exposing Invisible Risk & Finding Signal in the Noise”
 					</p>
 					<div class="hero-ctas">
-						<a href="https://www.grcfincrimeawards.com/" target="_blank" class="btn-premium-gold">
+						<a href="https://events.teams.microsoft.com/event/9afd5c1d-8782-4014-ac44-b4e96693df75@252fbfd9-7d72-47b6-bc0d-43af771c9b6e" target="_blank" class="btn-premium-gold">
 							<i class="mdi mdi-ticket-confirmation"></i> Register Now
 						</a>
 						<a href="{{route('show_summit_mid_year_2026')}}" class="btn-premium-outline">
@@ -697,7 +697,7 @@
 			<div class="row align-items-center">
 				<div class="col-lg-6 mb-5 mb-lg-0">
 					<div class="about-banner-container">
-						<img src="{{asset('/assets/lusaka_summit_banner_2026.jpeg')}}" alt="Annual Global Mid-Year Summit" class="about-banner">
+						<img src="{{asset('/assets/mid_year_2026.jpeg')}}" alt="Annual Global Mid-Year Summit" class="about-banner">
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -855,44 +855,6 @@
 						</a>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- =============== SPEAKERS SECTION =============== -->
-	<section class="section-speakers">
-		<div class="container text-center">
-			<h2 class="title-premium d-inline-block">Featured Speakers</h2>
-			<p class="text-muted mb-5">Distinguished keynote speakers and thought leaders from public and private sectors.</p>
-			
-			<div class="row g-4 justify-content-center">
-				@php
-					$featuredSpeakers = [
-						['name' => 'Dr. Foluso Amusa', 'role' => 'Host / Convener', 'position' => 'Chair, GRC and FinCrime Prevention Summit and Awards', 'image' => 'lusaka_foluso.jpg'],
-						['name' => 'Kevin Brear', 'role' => 'Keynote Speaker', 'position' => 'Resilience and GRC Professional', 'image' => 'speaker_placeholder.png'],
-						['name' => 'Olatunji Vincent', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'speaker_placeholder.png'],
-						['name' => 'Grace Tabea Letseka', 'role' => 'Panel Speaker', 'position' => 'Head of Resilience & Data, FNB South Africa', 'image' => 'lusaka_grace.jpg'],
-					];
-				@endphp
-
-				@foreach($featuredSpeakers as $speaker)
-					<div class="col-md-6 col-lg-3">
-						<div class="speaker-card-premium">
-							<div class="speaker-avatar-wrap">
-								<img src="{{ asset('assets/images/speakers/lusaka_2026/'.($speaker['image'] ?? 'speaker_placeholder.png')) }}" alt="{{ $speaker['name'] }}" class="speaker-avatar">
-							</div>
-							<h5 class="speaker-name-prem">{{ $speaker['name'] }}</h5>
-							<span class="speaker-tag">{{ $speaker['role'] }}</span>
-							<p class="speaker-desc">{{ $speaker['position'] }}</p>
-						</div>
-					</div>
-				@endforeach
-			</div>
-
-			<div class="mt-5">
-				<a href="{{route('show_summit_mid_year_2026')}}" class="btn-premium-outline" style="color: var(--primary) !important; border-color: var(--border-heavy);">
-					<span>View All Speakers</span> <i class="mdi mdi-arrow-right"></i>
-				</a>
 			</div>
 		</div>
 	</section>
