@@ -146,7 +146,7 @@ class LusakaSummitController extends Controller
                 }
             }
 
-            return view('contents.voter.summit_lusaka_2026_success', compact('registration'));
+            return view('contents.voter.lusaka_summit.summit_lusaka_2026_success', compact('registration'));
 
         } catch (\Exception $e) {
             Log::error('Stripe Payment Success Handling Error: ' . $e->getMessage());

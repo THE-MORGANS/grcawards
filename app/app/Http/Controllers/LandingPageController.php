@@ -239,21 +239,29 @@ class LandingPageController extends Controller
     public function showSummitWGRC2026(){
         return view('contents.voter.summit_wgrc_2026');
     }
+
+     public function showSummitMidYear2026(){
+        return view('contents.voter.summit_mid_year_2026');
+    }
+
+    // lusaka 2026 START ########################
     public function showSummitLusaka2026(){
         $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
-        return view('contents.voter.summit_lusaka_2026', compact('isEarlyBird'));
+        return view('contents.voter.lusaka_summit.summit_lusaka_2026', compact('isEarlyBird'));
     }
     public function showSummitLusaka2026Register(){
         $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
-        return view('contents.voter.summit_lusaka_2026_register', compact('isEarlyBird'));
+        return view('contents.voter.lusaka_summit.summit_lusaka_2026_register', compact('isEarlyBird'));
     }
     public function showSummitLusaka2026Payment(){
         $isEarlyBird = now()->between('2026-03-02 00:00:00', '2026-03-15 23:59:59');
-        return view('contents.voter.summit_lusaka_2026_payment', [
+        return view('contents.voter.lusaka_summit.summit_lusaka_2026_payment', [
             'stripe_key' => env('STRIPE_KEY'),
             'isEarlyBird' => $isEarlyBird
         ]);
     }
+    // lusaka 2026 END ########################
+
     public function showSummit(){
         return view('contents.voter.summit');
     } 

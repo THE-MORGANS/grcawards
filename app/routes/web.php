@@ -169,6 +169,7 @@ Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name
 Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
 Route::get('summit/wigrc-2026', [LandingPageController::class, 'showSummitWGRC2026'])->name('show_summit_wgrc_2026');
 Route::get('summit/grc-summit-2026', [LandingPageController::class, 'showSummitLusaka2026'])->name('show_summit_2026');
+
 Route::get('summit/lusaka-2026/register', [LandingPageController::class, 'showSummitLusaka2026Register'])->name('landing.summit_lusaka_2026_register');
 Route::get('summit/lusaka-2026/payment', [LandingPageController::class, 'showSummitLusaka2026Payment'])->name('landing.summit_lusaka_2026_payment');
 Route::post('summit/lusaka-2026/payment/initiate', [LusakaSummitController::class, 'initiatePayment'])->name('summit.payment.initiate');
@@ -176,6 +177,9 @@ Route::get('summit/lusaka-2026/payment/success', [LusakaSummitController::class,
 Route::get('summit/lusaka-2026/payment/cancel', [LusakaSummitController::class, 'paymentCancel'])->name('summit.payment.cancel');
 Route::get('summit/lusaka-2026/slots', [LusakaSummitController::class, 'getRemainingSlots'])->name('summit.slots');
 Route::post('summit/lusaka-2026/sponsorship/download', [LusakaSponsorshipController::class, 'downloadProspectus'])->name('summit.sponsorship.download');
+
+Route::get('summit/mid-year-2026', [LandingPageController::class, 'showSummitMidYear2026'])->name('show_summit_mid_year_2026');
+
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
 Route::get('summit/2024', [LandingPageController::class, 'showSummit2024'])->name('show_summit_2024');
 Route::get('summit/2023', [LandingPageController::class, 'showSummit2023'])->name('show_summit_2023');

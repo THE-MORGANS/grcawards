@@ -38,6 +38,7 @@
                                     <i class="mdi mdi-chevron-down" aria-hidden="true"></i>
                                 </a>
                                 <ul>
+                                    <li class="{{request()->is('/summit/mid-year-2026') ? 'active-page' : '' }}"><a href="{{route('show_summit_mid_year_2026')}}">Mid Year Summit 2026</a></li>
                                     <li class="{{request()->is('/summit/grc-summit-2026') ? 'active-page' : '' }}"><a href="{{route('show_summit_2026')}}">GRC Summit 2026</a></li>
                                     <li class="{{request()->is('/summit/wgrc-2026') ? 'active-page' : '' }}"><a href="{{route('show_summit_wgrc_2026')}}">WGRCFP Summit 2026</a></li>
                                     <li class="{{request()->is('/summit') ? 'active-page' : '' }}"><a href="{{route('show_summit')}}">Summit 2025</a></li>
