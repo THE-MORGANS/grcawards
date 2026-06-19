@@ -896,6 +896,10 @@
                         // Keynote Speakers
                         ['name' => 'Kevin Brear', 'role' => 'Keynote Speaker', 'position' => 'Resilience and GRC Professional', 'image' => 'kevin_brear.jpg'],
                         ['name' => 'Olatunji Vincent', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'vincent_olatunji.jpg'],
+                        ['name' => 'Dr Mosaku Johnson', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'mosaku.jpg'],
+                        ['name' => 'Dr. Diksha Pandey', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'diksha.jpg'],
+                        ['name' => 'Oonagh Vandenberg', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'oonagh.png'],
+                        ['name' => 'Marilia Aires', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'marilia.jpg'],
 
                         // Panel Speakers
                         ['name' => 'Grace Tabea Letseka', 'role' => 'Panel Speaker', 'position' => 'Head of Resilience & Data, FNB South Africa', 'image' => 'grace_tabea.png'],

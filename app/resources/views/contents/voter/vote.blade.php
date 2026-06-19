@@ -56,8 +56,8 @@
 						</div>
 						<div class="post-content">
 							<div class="text">
-								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2025.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 7th November, 2025.</p>
+								<p><strong>VOTING ELIGIBILITY: </strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2026.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+								<p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold in November, 2026.</p>
 							</div>
 						</div>
 					</div>
@@ -365,8 +365,8 @@
 					<div class="voting-header-card animate-fade-in">
 						<h2 class="title"><span>GRC Financial Crime Awards 2026</span></h2>
 						<div class="voting-rules-box">
-							<p><strong>VOTING ELIGIBILITY:</strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2025.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-							<p>Three (3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, in order to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 7th November, 2025.</p>
+							<p><strong>VOTING ELIGIBILITY:</strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2026.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
+							<p>Three (3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, in order to select the winners. The winners will be unveiled at the Award Ceremony which will hold in November, 2026.</p>
 						</div>
 					</div>
 
