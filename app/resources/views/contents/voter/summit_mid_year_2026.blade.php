@@ -673,9 +673,9 @@
     <!-- Banner image container -->
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-10">
+            <div class="col-lg-8 mx-auto">
                 <div class="banner-wrapper">
-                    <img src="{{asset('/assets/mid_year_2026.jpeg')}}" alt="Annual Global Mid-Year Summit Banner" class="summit-banner mx-auto">
+                    <img src="{{asset('/assets/mid_year_2026_20260625.jpeg')}}" alt="Annual Global Mid-Year Summit Banner" class="summit-banner mx-auto">
                 </div>
             </div>
         </div>
@@ -757,8 +757,13 @@
                                     <span class="day-badge">Friday, 26th June 2026</span>
                                     <h4 style="color: var(--text-title); font-weight: 800; margin-bottom: 12px; font-size: 1.25rem;">THE MORGANS Annual Global Mid-Year Summit</h4>
                                     <p class="mb-0" style="line-height: 1.7; font-size: 0.95rem;">A high-level intensive 2-hour virtual summit running from 12:00 PM – 2:00 PM (UK Time) hosted securely on Microsoft Teams, exploring the real risks emerging beneath the surface of modern organisations.</p>
+                                <button type="button" class="btn-gold-block mt-4" style="width: fit-content; padding-left: 32px; padding-right: 32px;" data-bs-toggle="modal" data-bs-target="#order-of-programme-modal">
+                                        <i class="mdi mdi-format-list-text"></i> View Order of Programme
+                                    </button>
                                 </div>
+      
                             </div>
+                             
                         </div>
                     </div>
                     
@@ -896,10 +901,11 @@
                         // Keynote Speakers
                         ['name' => 'Kevin Brear', 'role' => 'Keynote Speaker', 'position' => 'Resilience and GRC Professional', 'image' => 'kevin_brear.jpg'],
                         ['name' => 'Olatunji Vincent', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'vincent_olatunji.jpg'],
-                        ['name' => 'Dr Mosaku Johnson', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'mosaku.jpg'],
-                        ['name' => 'Dr. Diksha Pandey', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'diksha.jpg'],
-                        ['name' => 'Oonagh Vandenberg', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'oonagh.png'],
-                        ['name' => 'Marilia Aires', 'role' => 'Keynote Speaker', 'position' => 'National Commissioner of the Nigeria Data Protection Commission', 'image' => 'marilia.jpg'],
+                        ['name' => 'Dr Mosaku Johnson', 'role' => 'Keynote Speaker', 'position' => 'Founding President, Hero Advisory NIG.', 'image' => 'mosaku.jpg'],
+                        ['name' => 'Dr. Diksha Pandey', 'role' => 'Keynote Speaker', 'position' => 'GRC Global Leader and Asst Professor, Christ University, India.', 'image' => 'diksha.jpg'],
+                        ['name' => 'Oonagh Vandenberg', 'role' => 'Keynote Speaker', 'position' => 'Founder/CEO Virtual Risk Solutions', 'image' => 'oonagh.png'],
+                        ['name' => 'Marilia Aires', 'role' => 'Keynote Speaker', 'position' => 'Advisory Member, Fundacion Hay Derecho', 'image' => 'marilia.jpg'],
+
 
                         // Panel Speakers
                         ['name' => 'Grace Tabea Letseka', 'role' => 'Panel Speaker', 'position' => 'Head of Resilience & Data, FNB South Africa', 'image' => 'grace_tabea.png'],
@@ -977,14 +983,14 @@
 
     <!-- Order of Programme Modal -->
     <div class="modal fade" id="order-of-programme-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-dialog-scrollable modal-l">
             <div class="modal-content border-0" style="background: #FFFFFF; border: 1px solid var(--border-sleek) !important; border-radius: 16px; overflow: hidden;">
-                <div class="modal-header border-0 py-4 px-4" style="border-bottom: 1px solid var(--border-sleek) !important;">
-                    <h5 class="modal-title" style="color: var(--text-title); font-weight: 800; font-size: 1.2rem;">Order of Programme</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header" style="border-bottom: 1px solid var(--border-sleek) !important; display:flex; justify-content: end;">
+                    <!--<h5 class="modal-title" style="color: var(--text-title); font-weight: 800; font-size: 1.2rem;">Order of Programme</h5>-->
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal" aria-label="Close">close</button>
                 </div>
                 <div class="modal-body p-0">
-                   <img src="{{asset('/assets/summit_order_of_programme.jpg')}}" alt="Order of Programme" class="img-fluid w-100" style="opacity: 0.95;">
+                   <img src="{{asset('/assets/mid_year_2026_agenda.jpeg')}}" style="width: 100%" alt="Order of Programme" class="img-fluid w-100" style="opacity: 0.95;">
                 </div>
             </div>
         </div>
