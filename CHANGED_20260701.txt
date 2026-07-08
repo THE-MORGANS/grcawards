@@ -1,0 +1,3 @@
+composer require mews/captcha
+- app\resources\views\contents\voter\login.blade.php
+- app\app\Http\Controllers\Auth\VoterRegisterController.php

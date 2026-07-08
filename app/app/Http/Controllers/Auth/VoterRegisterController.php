@@ -33,7 +33,8 @@ class VoterRegisterController extends Controller
     public function register(Request $request)
     {
         // return back();
-        $this->validator($request->only('email'))->validate();
+        // $this->validator($request->only('email'))->validate();
+        $this->validator($request->only('email', 'captcha'))->validate();
         $ip_address = $request->getClientIp();
       
         // if(Voter::where(['ip_address'=> '1218129812'])->exists()){
@@ -81,8 +82,17 @@ class VoterRegisterController extends Controller
 
     protected function validator(array $data)
     {
+       
+        // return Validator::make($data, [
+        //     'email' => ['required', 'string', 'email', 'max:255'],
+        // ]);
+       
         return Validator::make($data, [
             'email' => [ 'required', 'string', 'email', 'max:255'],
+            'captcha' => ['required', 'captcha'],
+        ], [
+            'captcha.captcha' => 'Invalid captcha code. Please try again.',
+            'captcha.required' => 'Please enter the captcha code.'
         ]);
     }
 
