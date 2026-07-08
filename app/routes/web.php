@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AwardController;
-use App\Http\Controllers\VoterController; 
+use App\Http\Controllers\VoterController;
 use App\Http\Controllers\SectorController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\VoteCountController;
@@ -20,6 +20,7 @@ use App\Http\Controllers\LusakaSummitController;
 use App\Http\Controllers\LusakaSponsorshipController;
 use App\Http\Controllers\Auth\LusakaAdminController;
 use App\Http\Controllers\LusakaRegistrationController;
+use App\Http\Controllers\AwardsSummitPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,23 +42,23 @@ use App\Http\Controllers\LusakaRegistrationController;
 
 
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->group(function () {
     Route::get('login', [AdminLoginController::class, 'showAdminLoginForm'])->name('admin.login');
     Route::post('login', [AdminLoginController::class, 'login'])->name('admin.loginn');
     Route::get('/images/upload', [AdminController::class, 'UploadFile'])->name('admin.UploadFile');
     Route::post('/images/uploads', [AdminController::class, 'UploadFiles'])->name('admin.UploadFiles');
     Route::get('', [AwardProgramsController::class, 'getAllAwardPrograms'])->name('award.programs');
-    Route::middleware('auth:admin')->prefix('award-programs')->group(function(){
+    Route::middleware('auth:admin')->prefix('award-programs')->group(function () {
         Route::post('create', [AwardProgramsController::class, 'AddAwardProgram'])->name('award.program.create');
-        Route::prefix('{award_program}')->group(function(){
+        Route::prefix('{award_program}')->group(function () {
             Route::get('dashboard', [AwardProgramsController::class, 'getAwardProgramDashboard'])->name('award.program');
             Route::get('edit', [AwardProgramsController::class, 'editAwardProgram'])->name('award.program.edit');
             Route::get('delete', [AwardProgramsController::class, 'deleteAwardProgram'])->name('award.program.delete');
             Route::put('update', [AwardProgramsController::class, 'updateAwardProgram'])->name('award.program.update');
             Route::get('activate', [AwardProgramsController::class, 'activateAwardProgram'])->name('award.program.activate');
             Route::get('deactivate', [AwardProgramsController::class, 'deactivateAwardProgram'])->name('award.program.deactivate');
-        
-            Route::prefix('categories')->group(function(){
+
+            Route::prefix('categories')->group(function () {
                 Route::get('', [CategoryController::class, 'getCategories'])->name('admin.show_categories');
                 Route::post('create', [CategoryController::class, 'addCategory'])->name('admin.create_category');
                 Route::put('{category}/update', [CategoryController::class, 'updateCategory'])->name('admin.update_category');
@@ -65,48 +66,48 @@ Route::prefix('admin')->group(function(){
                 Route::get('{category}/sectors', [CategoryController::class, 'getSpecificSectors'])->name('admin.get_sectors');
             });
 
-            Route::prefix('sectors')->group(function(){
+            Route::prefix('sectors')->group(function () {
                 Route::get('', [SectorController::class, 'getSectors'])->name('admin.show_sectors');
                 Route::post('create', [SectorController::class, 'addSector'])->name('admin.create_sector');
                 Route::put('{sector}/update', [SectorController::class, 'updateSector'])->name('admin.update_sector');
                 Route::delete('{sector}/delete', [SectorController::class, 'deleteSector'])->name('admin.delete_sector');
             });
 
-            Route::prefix('awards')->group(function(){
+            Route::prefix('awards')->group(function () {
                 Route::get('', [AwardController::class, 'getAwards'])->name('admin.show_awards');
                 Route::post('create', [AwardController::class, 'addAward'])->name('admin.create_award');
                 Route::put('{award}/update', [AwardController::class, 'updateAward'])->name('admin.update_award');
                 Route::delete('{award}/delete', [AwardController::class, 'deleteAward'])->name('admin.delete_award');
             });
-            
-            Route::prefix('votes')->group(function(){
+
+            Route::prefix('votes')->group(function () {
                 Route::get('', [VoteCountController::class, 'getCatSec'])->name('admin.get_cat_sec');
                 Route::get('categories/{category}', [VoteCountController::class, 'getSectorsAwards'])->name('admin.get_sectors_awards');
             });
 
-            Route::prefix('voters')->group(function(){
+            Route::prefix('voters')->group(function () {
                 Route::get('', [VoterController::class, 'getVoters'])->name('admin.get_voters');
             });
 
-            Route::prefix('admins')->group(function(){
+            Route::prefix('admins')->group(function () {
                 Route::get('', [AdminController::class, 'getAdmins'])->name('admin.get_admins');
             });
-            
 
-            Route::prefix('summit')->group(function(){
+
+            Route::prefix('summit')->group(function () {
                 Route::get('/', [JudgeController::class, 'ShowRegisteredUsers'])->name('admin.ShowRegisteredUsers');
             });
-            Route::prefix('emails')->group(function(){
+            Route::prefix('emails')->group(function () {
                 Route::get('/', [ReminderController::class, 'emailPage'])->name('admin.emailPage');
                 Route::post('/send', [ReminderController::class, 'sendEmail'])->name('admin.sendUserEmail');
             });
 
-           require __DIR__.'/judges.php';
+            require __DIR__ . '/judges.php';
         });
     });
 
     Route::get('/logout', [AdminAuthController::class, 'logout'])->name('admin.logout');
-    
+
     // Route::get('add', [AdminAuthController::class, 'showAddAdminForm']);
     // Route::post('store', [AdminAuthController::class, 'adminRegister']);
     // Route::delete('delete', [AdminAuthController::class, 'adminDelete']);
@@ -116,11 +117,11 @@ Route::prefix('admin')->group(function(){
 });
 
 // Lusaka Summit Admin Routes
-Route::prefix('lusaka/admin')->group(function(){
+Route::prefix('lusaka/admin')->group(function () {
     Route::get('', [LusakaAdminController::class, 'showLoginForm'])->name('lusaka.admin.login');
     Route::post('login', [LusakaAdminController::class, 'login'])->name('lusaka.admin.login.post');
-    
-    Route::middleware('lusaka_admin_auth')->group(function(){
+
+    Route::middleware('lusaka_admin_auth')->group(function () {
         Route::get('dashboard', [LusakaRegistrationController::class, 'dashboard'])->name('lusaka.admin.dashboard');
         Route::get('attendance', [LusakaRegistrationController::class, 'attendance'])->name('lusaka.admin.attendance');
         Route::get('attendance/export', [LusakaRegistrationController::class, 'exportAttendance'])->name('lusaka.admin.attendance.export');
@@ -178,6 +179,11 @@ Route::get('summit/lusaka-2026/payment/cancel', [LusakaSummitController::class, 
 Route::get('summit/lusaka-2026/slots', [LusakaSummitController::class, 'getRemainingSlots'])->name('summit.slots');
 Route::post('summit/lusaka-2026/sponsorship/download', [LusakaSponsorshipController::class, 'downloadProspectus'])->name('summit.sponsorship.download');
 
+Route::get('awards-summit/payment/success', [AwardsSummitPaymentController::class, 'paymentSuccess'])->name('awards_summit.payment.success');
+Route::get('awards-summit/payment/cancel', [AwardsSummitPaymentController::class, 'paymentCancel'])->name('awards_summit.payment.cancel');
+Route::post('awards-summit/payment/initiate', [AwardsSummitPaymentController::class, 'initiatePayment'])->name('awards_summit.payment.initiate');
+Route::get('awards-summit/reserve/{ticket}', [AwardsSummitPaymentController::class, 'showPayment'])->name('awards_summit.payment');
+
 Route::get('summit/mid-year-2026', [LandingPageController::class, 'showSummitMidYear2026'])->name('show_summit_mid_year_2026');
 
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');
@@ -191,5 +197,5 @@ Route::get('code-of-conduct', [LandingPageController::class, 'CodeOfConduct'])->
 // Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
 Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote');
 Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
-Route::get('logout', [VoterLoginController::class,'logout'])->name('logout');
+Route::get('logout', [VoterLoginController::class, 'logout'])->name('logout');
 Route::post('add/new/nominee', [LandingPageController::class, 'AddNewNominee'])->name('add.nominee_new');
