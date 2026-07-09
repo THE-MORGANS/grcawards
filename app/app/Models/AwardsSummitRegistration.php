@@ -20,6 +20,7 @@ class AwardsSummitRegistration extends Model
         'quantity',
         'amount',
         'currency',
+        'region',
         'payment_status',
         'stripe_session_id',
         'ticket_number',

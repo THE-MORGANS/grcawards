@@ -84,6 +84,7 @@ class AwardsSummitPaymentController extends Controller
                 'quantity' => $data['quantity'],
                 'amount' => $amount,
                 'payment_status' => 'pending',
+                'region' => $data['region'] ?? 'africa',
             ]);
 
             // Stripe Integration

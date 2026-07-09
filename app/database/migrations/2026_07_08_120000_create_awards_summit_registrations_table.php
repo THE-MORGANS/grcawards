@@ -26,6 +26,7 @@ class CreateAwardsSummitRegistrationsTable extends Migration
             $table->decimal('amount', 10, 2);
             $table->string('currency', 3)->default('USD');
             $table->string('payment_status')->default('pending'); // pending, paid, failed
+            $table->string('region')->default('africa'); // africa, europe
             $table->string('stripe_session_id')->nullable();
             $table->string('ticket_number')->nullable()->unique();
             $table->timestamps();
