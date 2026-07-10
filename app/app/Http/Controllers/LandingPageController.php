@@ -344,6 +344,21 @@ class LandingPageController extends Controller
         return view('contents.voter.grc_uk');
     }
 
+    public function showEditionAfrica()
+    {
+        return view('contents.voter.edition_africa');
+    }
+
+    public function showEditionEurope()
+    {
+        return view('contents.voter.edition_europe');
+    }
+
+    public function showTickets()
+    {
+        return view('contents.voter.tickets');
+    }
+
     public function CodeOfConduct()
     {
         return view('contents.voter.code_of_conduct');

@@ -1,227 +1,189 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 @section('title', 'About the Award')
 
 <head>
-	@include('partials.voter.head')
+  @include('partials.voter.head')
+
+  <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
 </head>
 
-<body id="conference-page" style="background-image: url(assets/images/conference_bg.svg);">
-	<!-- =============== PRELOADER =============== -->
-	<div class="page-preloader-cover">
-		<div class="cssload-loader">
-			<div class="cssload-inner" >
-				<img class="ball" src="{{asset('assets/logo.png')}}"/>
-			</div>
-		</div>
-		 
-	</div>
-	<!-- ============== PRELOADER END ============== -->
-	<!-- ================= HEADER ================= -->
-	@include('partials.voter.topbar')
-	<!-- =============== HEADER END =============== -->
-	<!-- Page title -->
-	<div class="page-title" style="background-color:#D4AF37">
-		<div class="container">
-			<div class="breadcrumbs">
-				<ul>
-					<li><a href="{{route('landing.index')}}">Home</a></li>
-					<li>About the award</li>
-				</ul>
-			</div>
-			<h1 class="title">About The Award</h1>
-		</div>
-	</div>
-	<!-- page title -->
+<body>
 
-	<section class="s-news s-single-news" style="background-color: #fff;">
-		<div class="container">
-			<div class="row">
-			<div class="col-12 col-lg-8 blog-cover">
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">GRC & Financial Crime Prevention Awards and Summit</h4>
+  @include('partials.voter.preloader')
+  @include('partials.voter.topbar_new_theme')
+
+  <header class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · About the Award</div>
+      <h1>About <span class="ac">the Award</span></h1>
+      <p>Celebrating global excellence in governance, risk, compliance, fraud &amp; cybercrime prevention — from a
+        first edition in Lagos to a two-continent platform spanning Africa and Europe.</p>
+    </div>
+  </header>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start">
+        <div>
+          <div class="sec-eyebrow">The Initiative</div>
+          <h2 class="sec-title" style="font-size:28px">A purposeful journey to <span class="ac">raise global
+              standards.</span></h2>
+          <p class="sec-intro">The GRC &amp; Financial Crime Prevention Awards are a prestigious annual initiative
+            honouring individuals, institutions and corporate entities demonstrating exceptional leadership,
+            innovation and commitment across governance, risk, compliance, fraud prevention, cybersecurity and
+            financial-crime prevention.</p>
+          <p class="sec-intro">Founded by Dr. Foluso Amusa, PhD, the initiative held its first edition in Lagos in
+            2020. It has since expanded to Europe and beyond, and now runs two flagship editions each year — the
+            Africa Edition in Nairobi and the Europe Edition in London. In 2025 a formal Advisory Council was
+            appointed, alongside an independent, international panel of judges.</p>
         </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p><strong>Celebrating Global Excellence in Governance, Risk, Compliance, Fraud & Cybercrime Prevention</strong></p>
-                <p>The GRC & Financial Crime Prevention Awards are a prestigious annual initiative established to honour outstanding individuals, institutions, and corporate entities that have demonstrated exceptional leadership, innovation, and commitment to advancing the fields of governance, risk management, compliance (GRC), fraud prevention, cybersecurity, and financial crime prevention.</p>
-                <p>Founded by Dr. Foluso Amusa, PhD, the initiative held its first edition in Lagos, Nigeria, in 2020, marking the beginning of a purposeful journey to raise global standards in regulatory integrity and risk governance. Since then, the Awards have expanded to Europe and beyond, with participants and honourees spanning diverse jurisdictions and sectors.</p>
-                <p>In 2025, a formal Advisory Council Board was appointed, composed of distinguished industry leaders and experts from across the globe. Their roles include providing strategic guidance, upholding transparency and integrity in the judging process, and ensuring global relevance. The Awards also feature an independent panel of judges from various countries, bringing regional perspectives and robust sector-specific expertise to the evaluation of nominees.</p>
-                <p>This initiative, championed by the Summit organisers, underscores the urgent need for strong institutional frameworks and effective safeguards across sectors to combat financial crime, enhance digital resilience, promote ethical leadership, and embed regulatory compliance at both national and global levels. These awards are not only celebratory but also strategic — aimed at shaping industry behaviour, recognising impact, and driving positive systemic change.</p>
+        <div class="callout">
+          <h3>Milestones</h3>
+          <div class="sched" style="margin-top:6px">
+            <div class="sr">
+              <div class="t">2020</div>
+              <div class="d">Founded in Lagos, Nigeria</div>
             </div>
-        </div>
-    </div>
-
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Regional and International Recognition</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p>With a strong foundation across emerging markets and global business centres, the GRC & Financial Crime Prevention Awards recognise achievements across a diverse array of industries, sectors, and regulatory environments. The awards are intentionally designed to be inclusive, highlighting excellence across banking, technology, public service, healthcare, extractives, legal, insurance, fintech, cybersecurity, and more — reinforcing the idea that GRC, cybersecurity, and financial crime prevention are foundational to institutional integrity across all domains.</p>
-                <p>The initiative is underpinned by a global vision — to encourage organisations in both developed and developing regions to uphold international best practices in risk governance, regulatory compliance, anti-money laundering (AML), counter-terrorism financing (CTF), ESG integration, and corporate accountability.</p>
+            <div class="sr">
+              <div class="t">2022+</div>
+              <div class="d">Expanded across Europe</div>
             </div>
-        </div>
-    </div>
-
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Awards and Summit Format</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p><strong>Mid-Year GRC & Financial Crime Prevention Summit (Virtual)</strong> – A digital gathering that convenes global experts, professionals, and stakeholders to share insights, explore trends, and discuss evolving regulatory and operational challenges in GRC and financial crime prevention.</p>
-                <p><strong>End-of-Year Awards Gala & Summit (In-Person)</strong> – A high-profile physical event held annually to celebrate winners, showcase global excellence, and convene strategic decision-makers from various sectors for thought leadership and recognition.</p>
-                <p>This hybrid model ensures accessibility, global participation, and multi-sector engagement across time zones and geographies.</p>
+            <div class="sr">
+              <div class="t">2025</div>
+              <div class="d">Advisory Council appointed</div>
             </div>
-        </div>
-    </div>
-
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Objectives of the Awards</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <ul>
-                    <li>Promote Regulatory Adherence – Support organisations in aligning with local and international GRC and financial crime prevention standards through credible recognition and industry benchmarking.</li>
-                    <li>Incentivise Ethical Innovation – Highlight cutting-edge approaches that address emerging risks such as digital fraud, cybercrime, and cross-border compliance challenges.</li>
-                    <li>Foster a Culture of Integrity and Compliance – Recognise institutions that institutionalise ethical conduct, digital resilience, transparency, and effective governance.</li>
-                    <li>Encourage Knowledge Sharing and Benchmarking – Facilitate peer-to-peer learning and strategic alignment through industry-led case studies and recognised best practices.</li>
-                    <li>Enhance Global Reputation and Public Trust – Provide an international platform to demonstrate commitment to compliance, fraud prevention, cybersecurity, and corporate ethics.</li>
-                </ul>
+            <div class="sr">
+              <div class="t">2026</div>
+              <div class="d">Two editions — Nairobi &amp; London</div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <div class="widget widget-archive post-header">
-        <h4 class="title">Key Benefits of Participation</h4>
+  <section class="band cream" id="mission">
+    <div class="wrap">
+      <div class="sec-eyebrow">Vision &amp; Mission</div>
+      <h2 class="sec-title">Building resilient institutions <span class="ac">and ethical leadership.</span></h2>
+      <div class="grid g2" style="margin-top:26px">
+        <div class="card">
+          <h3>Vision</h3>
+          <p style="font-size:15px">To be the premier global platform celebrating excellence and fostering
+            innovation in governance, risk, compliance and financial crime prevention — building resilient
+            institutions and ethical leadership for a safer, transparent and future-ready world.</p>
+        </div>
+        <div class="card">
+          <h3>Mission</h3>
+          <p style="font-size:15px">To convene cross-sector leaders, innovators, regulators and changemakers to
+            recognise outstanding contributions, ignite critical dialogue and champion actionable solutions —
+            aligned with THE MORGANS' commitment to empower sustainable institutions, safeguard global systems and
+            influence transformational policy and practice.</p>
+        </div>
+      </div>
     </div>
-    <div class="post-content">
-        <div class="text" style="text-align: justify;">
-            <ul>
-                <li><strong>🔹 Global Recognition and Prestige:</strong> Awardees gain international visibility and are recognised as leaders in risk management, cybercrime prevention, governance, and ethical innovation.</li>
-                <li><strong>🔹 Benchmarking and Best Practices:</strong> Participants gain insight into global standards and strategies to improve internal systems and align with emerging compliance expectations.</li>
-                <li><strong>🔹 Employee Engagement and Retention:</strong> Recognition boosts morale, reinforces a culture of excellence, and strengthens recruitment and retention efforts.</li>
-                <li><strong>🔹 Enhanced Compliance Culture:</strong> Participation reinforces governance, ethical conduct, and proactive regulatory alignment.</li>
-                <li><strong>🔹 Publicity and Marketing Opportunities:</strong> Award exposure delivers cross-industry visibility, media attention, and communication reach across continents.</li>
-                <li><strong>🔹 Stakeholder Confidence and Investment Readiness:</strong> Recognition builds trust among regulators, investors, and customers by highlighting credible governance and fraud prevention efforts.</li>
-            </ul>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Objectives</div>
+      <h2 class="sec-title">Why these awards <span class="ac">matter.</span></h2>
+      <div class="grid g3" style="margin-top:28px">
+        <div class="card">
+          <div class="k">01</div>
+          <h3>Promote Regulatory Adherence</h3>
+          <p>Support alignment with local and international GRC and financial-crime standards through credible
+            recognition and benchmarking.</p>
         </div>
+        <div class="card">
+          <div class="k">02</div>
+          <h3>Incentivise Ethical Innovation</h3>
+          <p>Highlight cutting-edge approaches addressing digital fraud, cybercrime and cross-border compliance.</p>
+        </div>
+        <div class="card">
+          <div class="k">03</div>
+          <h3>Foster a Culture of Integrity</h3>
+          <p>Recognise institutions embedding ethical conduct, digital resilience, transparency and governance.</p>
+        </div>
+        <div class="card">
+          <div class="k">04</div>
+          <h3>Encourage Benchmarking</h3>
+          <p>Facilitate peer learning and alignment through industry-led case studies and best practice.</p>
+        </div>
+        <div class="card">
+          <div class="k">05</div>
+          <h3>Enhance Public Trust</h3>
+          <p>An international platform demonstrating commitment to compliance, fraud prevention and ethics.</p>
+        </div>
+        <div class="card">
+          <div class="k">06</div>
+          <h3>Two Annual Editions</h3>
+          <p>A virtual Mid-Year Summit and two in-person Awards &amp; Summit editions — accessible, global,
+            multi-sector.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Call for Partnerships & Collaboration</h4>
+  <section class="band cream">
+    <div class="wrap">
+      <div class="sec-eyebrow">Benefits of Participation</div>
+      <h2 class="sec-title">Recognition that <span class="ac">works for you.</span></h2>
+      <div class="grid g3" style="margin-top:26px">
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Global Prestige</h3>
+            <p>International visibility as leaders in risk, governance and ethical innovation.</p>
+          </div>
         </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p>The GRC & Financial Crime Prevention Awards and Summit welcome partnerships and collaborations with:</p>
-                <ul>
-                    <li>Global and regional firms</li>
-                    <li>Regulatory and industry bodies</li>
-                    <li>Academic institutions</li>
-                    <li>Cybersecurity and RegTech companies</li>
-                    <li>Compliance and governance consultants</li>
-                </ul>
-                <p>Together, we can foster knowledge exchange, capacity building, innovation, and sustainable impact across the global GRC and financial crime prevention landscape.</p>
-                <p><strong>Event and Partnership Team:</strong><br>
-                    GRC & Financial Crime Prevention Awards and Summit<br>
-                    <a href="mailto:events@grcfincrimeawards.com">events@grcfincrimeawards.com</a></p>
-            </div>
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Best Practice</h3>
+            <p>Insight into global standards to improve internal systems.</p>
+          </div>
         </div>
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Engagement &amp; Retention</h3>
+            <p>Recognition boosts morale and strengthens retention.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Compliance Culture</h3>
+            <p>Reinforces governance, ethics and proactive alignment.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Publicity</h3>
+            <p>Cross-industry visibility and media reach across continents.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🔹</span>
+          <div>
+            <h3>Stakeholder Confidence</h3>
+            <p>Builds trust among regulators, investors and customers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout navy"
+        style="margin-top:30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+        <div>
+          <h3 style="color:#fff">Call for partnerships &amp; collaboration</h3>
+          <p style="color:#c2cae0;font-size:14px">We welcome firms, regulatory bodies, academic institutions,
+            RegTech companies and consultants.</p>
+        </div>
+        <a class="btn btn-gold" href="{{ route('show_contact') }}">Partner With Us →</a>
+      </div>
     </div>
+  </section>
 
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">About the Award | GRC & FinCrime Prevention Awards & Summit</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p><strong>Dedicated to celebrating businesses thriving in Governance, Risk Management & Compliance and Financial Crime Prevention</strong></p>
-            </div>
-        </div>
-    </div>
+  @include('partials.voter.footer_new_theme')
 
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">About the Summit</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p>The GRC & Financial Crime Prevention Summit is a high-impact, multi-format global event convened to address the evolving challenges and innovations in Governance, Risk Management, Compliance (GRC), Fraud Prevention, Cybersecurity, and Financial Crime Prevention. The Summit brings together a diverse cross-section of senior leaders, regulators, practitioners, policymakers, academics, and technology innovators from across industries and jurisdictions.</p>
-            </div>
-        </div>
-    </div>
+  @include('partials.voter.scripts')
 
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Two Powerful Annual Editions</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <p><strong>Mid-Year Summit (Virtual):</strong> Held each June, this global online gathering is designed to provide inclusive, real-time dialogue on fast-evolving regulatory trends, digital compliance, risk intelligence, and emerging threats. The virtual format ensures participation from every region, fostering accessibility and wide-ranging insight exchange.</p>
-                <p><strong>End-of-Year Awards & Summit (In-Person):</strong> Hosted in December, the flagship physical event takes place in a leading global city, celebrating award honourees, showcasing thought leadership, and convening strategic partners across private and public sectors. It features keynote addresses, panel discussions, fireside chats, and the prestigious GRC & Financial Crime Prevention Awards Gala.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="post-item-cover">
-        <div class="widget widget-archive post-header">
-            <h4 class="title">Summit Themes & Objectives</h4>
-        </div>
-        <div class="post-content">
-            <div class="text" style="text-align: justify;">
-                <ul>
-                    <li>The convergence of AI, ESG, and Digital Compliance</li>
-                    <li>Strengthening AML/CTF frameworks and cross-border collaboration</li>
-                    <li>Responding to cyber threats, regulatory shifts, and fraud risks</li>
-                    <li>Promoting a culture of compliance, ethics, and data accountability</li>
-                    <li>Exploring the role of RegTech, FinTech, SupTech, and blockchain in GRC transformation</li>
-                </ul>
-                <p><strong>What the Summit Offers</strong></p>
-                <ul>
-                    <li>Global thought leadership and expert panels</li>
-                    <li>Live keynote sessions from regulators, CEOs, and compliance leaders</li>
-                    <li>Interactive roundtables and breakout sessions</li>
-                    <li>Cross-sector case studies and innovation showcases</li>
-                    <li>Networking opportunities with decision-makers and peers</li>
-                    <li>Insight into global best practices and regulatory trends</li>
-                </ul>
-                <p><strong>Who Should Attend?</strong></p>
-                <ul>
-                    <li>Chief Compliance Officers & Risk Directors</li>
-                    <li>Financial Crime & AML Experts</li>
-                    <li>ESG & Ethics Leaders</li>
-                    <li>Technology and Cybersecurity Executives</li>
-                    <li>Legal & Regulatory Professionals</li>
-                    <li>Auditors, Investigators, and Governance Specialists</li>
-                    <li>Academia, Policymakers, and Industry Bodies</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-				<!--================= SIDEBAR =================-->
-				@include('partials.voter.sidebar')
-				<!--=============== SIDEBAR END ===============-->
-			</div>
-	</section>
-
-	<!--==================== FOOTER ====================-->
-	@include('partials.voter.footer')
-	<!--================== FOOTER END ==================-->
-
-	<!--=================== TO TOP ===================-->
-	<a class="to-top" href="#home">
-		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
-	</a>
-	<!--================= TO TOP END =================-->
-
-	<!--=================== SCRIPT	===================-->
-	@include('partials.voter.scripts')
 </body>
 
 </html>

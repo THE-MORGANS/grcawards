@@ -1,327 +1,159 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 @section('title', 'Sponsors')
-@section('style')
-<link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
-@endsection
 
 <head>
-    @include('partials.voter.head')
-    <script>window.lintrk('track', { conversion_id: 12608393 });</script>
+  @include('partials.voter.head')
+
+  <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
 </head>
 
-<body id="conference-page">
-    <!-- =============== PRELOADER =============== -->
-    @include('partials.voter.preloader')
-    <!-- ============== PRELOADER END ============== -->
-    <!-- ================= HEADER ================= -->
-    @include('partials.voter.topbar')
-    <!-- =============== HEADER END =============== -->
-    <!-- Page title -->
-    <div class="page-title" style="background-color:#D4AF37">
-        <div class="container">
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{{route('landing.index')}}">Home</a></li>
-                    <li>Sponsors</li>
-                </ul>
-            </div>
-            <h1 class="title">Sponsors</h1>
-        </div>
+<body>
+
+  @include('partials.voter.preloader')
+  @include('partials.voter.topbar_new_theme')
+
+  <header class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Sponsors</div>
+      <h1>Partner with a <span class="ac">two-continent platform.</span></h1>
+      <p>Sponsor the Africa Edition, the Europe Edition, or both — and network with C-suite executives and corporate
+        leaders across the profession, with brand visibility spanning the full pre-event, on-the-night and
+        post-event programme.</p>
     </div>
-    <!-- page title -->
+  </header>
 
-    <section class="s-news s-single-news" style="background-color: #fff;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8 blog-cover">
-                    <div class="widget widget-archive post-header">
-                        <h4 class="title">Our Sponsors</h4>
-                    </div>
-                    <div class="instagram-cover">
-                        
-                        {{-- <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/coca.png')}}" data-src="{{asset('assets/coca.png')}}" alt="img">
-                        </a> --}}
-                        
-                        {{-- <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/gtb.png')}}" data-src="{{asset('assets/images/sponsors/gtb.png')}}" alt="img">
-                        </a> --}}
+  <section class="band white" id="packages">
+    <div class="wrap">
+      <div class="sec-eyebrow">Sponsorship Packages</div>
+      <h2 class="sec-title">Three tiers. <span class="ac">Maximum impact.</span></h2>
+      <div class="price-grid" style="grid-template-columns:repeat(3,1fr);margin-top:34px">
+        <div class="price feat">
+          <div class="flag">Most Visibility</div>
+          <h3>Gold Sponsor</h3>
+          <ul>
+            <li>Awards category named after your organisation</li>
+            <li>Award presentation on your category on the night</li>
+            <li>Colour advert &amp; company profile in the brochure (One Page)</li>
+            <li>Company branding at the venue</li>
+            <li>Logo on all pre-marketing: brochure, web banners, social</li>
+            <li>10-second static advert on screen at the venue</li>
+            <li>Sponsor mention across our social platforms</li>
+            <li>Complimentary VIP tickets (6)</li>
+            <li>Press release announcing the partnership</li>
+            <li>Red-carpet interviews &amp; networking with dignitaries</li>
+          </ul>
+          <a class="btn btn-gold" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
+        </div>
+        <div class="price">
+          <h3>Silver Sponsor</h3>
+          <ul>
+            <li>Awards category named after your organisation</li>
+            <li>Award presentation on your category on the night</li>
+            <li>Colour advert &amp; company profile in the brochure (Half Page)</li>
+            <li>Company branding at the venue</li>
+            <li>Logo on all pre-marketing: brochure, web banners, social</li>
+            <li>10-second static advert on screen at the venue</li>
+            <li>Sponsor mention across our social platforms</li>
+            <li>Complimentary VIP tickets (4)</li>
+            <li>Press release announcing the partnership</li>
+            <li>Red-carpet interviews &amp; networking with dignitaries</li>
+          </ul>
+          <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
+        </div>
+        <div class="price">
+          <h3>Bronze Sponsor</h3>
+          <ul>
+            <li>Awards category named after your organisation</li>
+            <li>Award presentation on your category on the night</li>
+            <li>Colour advert &amp; company profile in the brochure (Quarter Page)</li>
+            <li>Company branding at the venue</li>
+            <li>Logo on all pre-marketing: brochure, web banners, social</li>
+            <li>10-second static advert on screen at the venue</li>
+            <li>Sponsor mention across our social platforms</li>
+            <li>Complimentary VIP tickets (2)</li>
+            <li>Press release announcing the partnership</li>
+            <li>Red-carpet interviews &amp; networking with dignitaries</li>
+          </ul>
+          <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
+        </div>
+      </div>
+      <p class="center" style="color:var(--muted);font-size:13px;margin-top:16px">Multi-edition packages spanning
+        both Nairobi and London are available on request.</p>
+    </div>
+  </section>
 
-                        {{-- <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/slt.png')}}" data-src="{{asset('assets/images/sponsors/slt.png')}}" alt="img">
-                        </a> --}}
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/tolex.png')}}" data-src="{{asset('assets/images/sponsors/tolex.png')}}" alt="img">
-                        </a>
-                      
-                        </a>
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" data-src="{{asset('assets/images/sponsors/oystercheckslogo.png')}}" alt="img">
-                        </a>
+  <section class="band cream" id="becomeASponsor">
+    <div class="wrap">
+      <div class="sec-eyebrow">Why Become a Sponsor?</div>
+      <h2 class="sec-title">Access, influence <span class="ac">and return.</span></h2>
+      <div class="grid g4" style="margin-top:26px">
+        <div class="card icard"><span class="em">📈</span>
+          <div>
+            <h3>Return on Investment</h3>
+            <p>Measurable exposure across a high-value professional audience.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🎯</span>
+          <div>
+            <h3>Audience Insights</h3>
+            <p>Direct access to corporate leaders and their networks.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🤝</span>
+          <div>
+            <h3>Lead Generation</h3>
+            <p>Warm prospects and sales conversations.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🌐</span>
+          <div>
+            <h3>Reach</h3>
+            <p>Website traffic, social reach and focused content.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🏷️</span>
+          <div>
+            <h3>Brand Building</h3>
+            <p>Stand alongside the region's GRC leaders.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">🎤</span>
+          <div>
+            <h3>Thought Leadership</h3>
+            <p>Showcase a product or service to decision-makers.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">💼</span>
+          <div>
+            <h3>C-Suite Network</h3>
+            <p>Network with captains and C-suite on the night.</p>
+          </div>
+        </div>
+        <div class="card icard"><span class="em">📰</span>
+          <div>
+            <h3>Media Exposure</h3>
+            <p>Press coverage and red-carpet opportunities.</p>
+          </div>
+        </div>
+      </div>
+      <div class="callout navy"
+        style="margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
+        <div>
+          <h3 style="color:#fff">Ready to discuss a partnership?</h3>
+          <p style="color:#c2cae0;font-size:14px">Request our full Sponsorship Prospectus or a bespoke multi-edition
+            package.</p>
+        </div>
+        <a class="btn btn-gold" href="mailto:events@grcfincrimeawards.com?subject=Sponsorship%20Enquiry">Request
+          Prospectus →</a>
+      </div>
+    </div>
+  </section>
 
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/tmc_academy.png')}}" data-src="{{asset('assets/images/sponsors/tmc_academy.png')}}" alt="img">
-                        </a>
+  @include('partials.voter.footer_new_theme')
 
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/tmc_company.png')}}" data-src="{{asset('assets/images/sponsors/tmc_company.png')}}" alt="img">
-                        </a>
+  @include('partials.voter.scripts')
 
-                        <a href="#" class="instagram-item">
-                            <img class="rx-lazy" src="{{asset('assets/images/sponsors/tyne_prints.png')}}" data-src="{{asset('assets/images/sponsors/tyne_prints.png')}}" alt="img">
-                        </a>
-
-                    </div>
-
-
-
-                    <div class="post-item-cover">
-
-                        <div class="widget widget-archive post-header" id="sponsorshipPackages">
-                            <h4 class="title">Sponsorship Packages</h4>
-                        </div>
-                        <div class="accordion-wrapper" style="margin-top: 30px;">
-
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="1" />
-                                <label class="accordion-label" for="1">Gold</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <ul style="font-size: 14px;">
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Awards category named after company/organisation.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Award presentation on chosen category on the awards night.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    High qualty colour adverts and company profile in the awards brochure (One Page).
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Company branding at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Logo branding on all pre-marketing materials: brochure, web advertising banners, social media networking sites - Facebook, LinkedIn and instagram.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    10 seconds static advert shown on screen at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Mention as a sponsor on the GRC & Financial Crime Preventiion Awards social media platforms
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Complimentary VIP tickets to the awards event (6)
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Press release announcting partnership
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Red carpet interviews and opportunity to network with dignitaries
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div style="margin-top:10px">
-                                        <a href="https://forms.gle/xzXerKNH8vpaZeaF9" target="_blank" class="btn btn-yellow"><span>Get Started</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="2" />
-                                <label class="accordion-label" for="2">Silver</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-
-                                            <ul style="font-size: 14px;">
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Awards category named after company/organisation.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Award presentation on chosen category on the awards night.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    High qualty colour adverts and company profile in the awards brochure (Half Page).
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Company branding at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Logo branding on all pre-marketing materials: brochure, web advertising banners, social media networking sites - Facebook, LinkedIn and instagram.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    10 seconds static advert shown on screen at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Mention as a sponsor on the GRC & Financial Crime Preventiion Awards social media platforms
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Complimentary VIP tickets to the awards event (4)
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Press release announcting partnership
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Red carpet interviews and opportunity to network with dignitaries
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    <div style="margin-top:10px">
-                                        <a href="https://forms.gle/xzXerKNH8vpaZeaF9" target="_blank" class="btn btn-yellow"><span>Get Started</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="3" />
-                                <label class="accordion-label" for="3">Bronze</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-
-                                            <ul style="font-size: 14px;">
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Awards category named after company/organisation.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Award presentation on chosen category on the awards night.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    High qualty colour adverts and company profile in the awards brochure (Quarter Page).
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Company branding at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Logo branding on all pre-marketing materials: brochure, web advertising banners, social media networking sites - Facebook, LinkedIn and instagram.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    10 seconds static advert shown on screen at awards venue.
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Mention as a sponsor on the GRC & Financial Crime Preventiion Awards social media platforms
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Complimentary VIP tickets to the awards event (2)
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Press release announcting partnership
-                                                </li>
-                                                <li>
-                                                    <i class="mdi mdi-chevron-right"></i>
-                                                    Red carpet interviews and opportunity to network with dignitaries
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div style="margin-top:10px">
-                                        <a href="https://forms.gle/xzXerKNH8vpaZeaF9" target="_blank" class="btn btn-yellow"><span>Get Started</span></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="post-item-cover">
-                        <div class="widget widget-archive post-header" id="becomeASponsor">
-                            <h4 class="title">Why become a sponsor?</h4>
-                        </div>
-                        <div class="post-content">
-                            <div class="text" style="text-align: justify;">
-                                <p>The GRC & Financial Crime Prevention Awards sponsors will have an oppotunity to network at the awards event with over 100 captains and C-suites executives of corporate firms in Nigeria. Other benefits include:</p>
-                                <div class="ticket-contact-cover">
-                                    <div class="ticket-contact-item">
-                                        <ul style="font-size: 14px;">
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Return on investment (ROI)
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Audience Insights
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Direct access to corporate business leaders and networks
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Lead generation
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Social media/website traffic/focused content strategy
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Opportunities for sales closing with warm prospects
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                highlighting a product or service offering
-                                            </li>
-                                            <li>
-                                                <i class="mdi mdi-chevron-right"></i>
-                                                Brand building
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!--================= SIDEBAR =================-->
-                @include('partials.voter.sidebar')
-                <!--=============== SIDEBAR END ===============-->
-            </div>
-    </section>
-
-    <!--==================== FOOTER ====================-->
-    @include('partials.voter.footer')
-    <!--================== FOOTER END ==================-->
-
-    <!--=================== TO TOP ===================-->
-    <a class="to-top" href="#home">
-		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
-	</a>
-    <!--================= TO TOP END =================-->
-
-    <!--=================== SCRIPT	===================-->
-    @include('partials.voter.scripts')
 </body>
 
 </html>

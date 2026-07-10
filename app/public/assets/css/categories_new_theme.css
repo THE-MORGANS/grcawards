@@ -1,0 +1,51 @@
+/* ==========================================================================
+   Sectors & Categories — accordion + nomination form, extends new_theme_design.css
+   ========================================================================== */
+
+.alert-box{padding:14px 18px;border-radius:10px;margin-bottom:22px;font-size:13.5px;}
+.alert-success{background:rgba(16,142,79,.08);border:1px solid rgba(16,142,79,.25);color:#0f7a44;}
+.alert-error{background:rgba(156,36,36,.06);border:1px solid rgba(156,36,36,.2);color:var(--crimson-deep);}
+
+.cat-group{display:flex;flex-direction:column;gap:16px;margin-top:34px;}
+.cat-item{background:#fff;border:1px solid var(--line-soft);border-radius:14px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.cat-item.active{border-color:var(--gold);box-shadow:var(--sh);}
+.cat-header{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;background:none;border:none;cursor:pointer;text-align:left;font-family:var(--sans);}
+.cat-title{font-weight:800;font-size:18px;color:var(--navy);}
+.cat-icon{transition:transform .2s;color:var(--gold-deep);flex:none;font-size:13px;}
+.cat-item.active .cat-icon{transform:rotate(180deg);}
+.cat-content{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.cat-item.active .cat-content{max-height:6000px;}
+.cat-inner{padding:0 26px 26px;}
+.cat-desc{font-size:14px;color:var(--muted);margin-bottom:22px;line-height:1.65;}
+
+.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.sector-card{background:var(--cream);border:1px solid var(--line-soft);border-radius:12px;padding:18px 20px;}
+.sector-name{font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--crimson);margin-bottom:14px;}
+
+.award-item{padding:12px 0;border-bottom:1px dashed var(--line-soft);}
+.award-item:last-child{border-bottom:none;}
+.award-name{font-size:13.5px;font-weight:600;color:var(--ink);}
+.criteria-label{display:inline-block;margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);}
+.criteria-text{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.6;}
+
+.btn-nominate{margin-top:8px;background:none;border:1px solid var(--line-soft);border-radius:20px;padding:6px 14px;font-family:var(--sans);font-size:11.5px;font-weight:600;color:var(--gold-deep);cursor:pointer;transition:.2s;}
+.btn-nominate:hover{border-color:var(--gold);background:rgba(201,162,75,.06);}
+
+.nom-form{margin-top:12px;padding:14px;background:#fff;border:1px solid var(--line-soft);border-radius:10px;}
+.nom-form label{display:block;font-size:11px;font-weight:600;color:var(--navy);margin-bottom:6px;}
+.nom-form input{width:100%;padding:9px 12px;border:1px solid var(--line-soft);border-radius:8px;font-family:var(--sans);font-size:13px;margin-bottom:10px;background:var(--paper);}
+.nom-form input:focus{outline:none;border-color:var(--gold);background:#fff;}
+.nom-actions{display:flex;gap:8px;}
+.btn-submit-nom{background:var(--gold);color:var(--navy);border:none;border-radius:20px;padding:8px 16px;font-family:var(--sans);font-size:12px;font-weight:700;cursor:pointer;}
+.btn-submit-nom:hover{background:var(--gold-soft);}
+.btn-cancel-nom{background:none;border:1px solid var(--line-soft);border-radius:20px;padding:8px 16px;font-family:var(--sans);font-size:12px;font-weight:600;color:var(--muted);cursor:pointer;}
+
+.nominees-block{margin-top:14px;padding-top:14px;border-top:1px solid var(--line-soft);}
+.nominees-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px;}
+.nominee-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.nominee-tag{font-size:12px;padding:4px 10px;background:var(--cream);border-radius:20px;color:var(--ink);}
+.no-nominees{font-size:12px;color:var(--muted);font-style:italic;margin-top:10px;}
+
+@media(max-width:760px){
+  .sector-grid{grid-template-columns:1fr;}
+}

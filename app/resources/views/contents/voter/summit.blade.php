@@ -1,796 +1,276 @@
 <!DOCTYPE html>
-<html lang="zxx">
-@section('title', 'Summit')
+<html lang="en">
+@section('title', 'The Summit Programme')
 
 <head>
-    @include('partials.voter.head')
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/slick.min.css') }}" />
-    <link href="{{asset('assets/css/model-new.css')}}" rel="stylesheet" />
+  @include('partials.voter.head')
 
+  <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
 </head>
 
-<body id="conference-page">
-    <!-- =============== PRELOADER =============== -->
-    @include('partials.voter.preloader')
-    <!-- ============== PRELOADER END ============== -->
-    <!-- ================= HEADER ================= -->
-    @include('partials.voter.topbar')
-    <!-- =============== HEADER END =============== -->
-    <!-- Page title -->
-    <div class="page-title" style="background-color:#D4AF37; height:150px">
-        <div class="container">
-            <div class="breadcrumbs">
-				<ul>
-					<li><a href="{{route('landing.index')}}">Home</a></li>
-					<li>Summit</li>
-				</ul>
-			</div>
-            {{-- <h5 class="title">GRC & FinCrime Prevention Mid-Year Summit 2025
-            </h5> --}}
-        </div>
+<body>
+
+  @include('partials.voter.preloader')
+  @include('partials.voter.topbar_new_theme')
+
+  <header class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · The Summit</div>
+      <h1>The Summit <span class="ac">Programme.</span></h1>
+      <p>A high-impact, multi-format global platform addressing the evolving challenges in governance, risk,
+        compliance, fraud, cybersecurity and financial-crime prevention — convening regulators, practitioners,
+        policymakers, academics and technology innovators across industries and jurisdictions.</p>
+      <div class="cta-row" style="margin-top:20px"><a class="btn btn-gold" href="{{ route('show_tickets') }}">Book
+          Your Place →</a><a class="btn btn-ghost" href="#archive">Past Summits</a></div>
     </div>
-    <!-- page title -->
-    <!-- =========== S-CONFERENCE-COUNTER =========== -->
-    <section id="about" class="s-conference-mission pt-0">
-        <div class="s-our-mission ">
+  </header>
 
-            <div class="container">
-
-                <div class="conference-counter-wrap">
-                    {{-- <div class="conference-counter-cover">
-							<h4>The event will begin through</h4>
-							<div id="" class="clock-timer clock-timer-conference">
-								<div class="clock-item days-item">
-									<span class="days" id="days">30</span>
-									<div class="smalltext">Days</div>
-								</div>
-								<div class="clock-item hours-item">
-									<span class="hours" id="hours">23</span>
-									<div class="smalltext">Hours</div>
-								</div>
-								<div class="clock-item minutes-item">
-									<span class="minutes" id="minutes">59</span>
-									<div class="smalltext">Minutes</div>
-								</div>
-								<div class="clock-item seconds-item">
-									<span class="seconds" id="seconds">37</span>
-									<div class="smalltext">Seconds</div>
-								</div>
-							</div>
-						</div> --}}
-                </div>
-                <br>
-                {{-- <center><img src="{{asset('/assets/summit3.jpeg')}}" width="42%"></center>	 --}}
-                <h2 class="title-conference pt-5"><span>About The Summit</span></h2>
-                {{-- <h5 class="btn btn-primary"> <a href="{{ route('summit_programme') }}"> Go to Summit Programme </a></h5> --}}
-                <div class="row">
-                    <div class="col-lg-6 our-mission-img">
-                        <span>
-                            <img src="assets/img/placeholder-all.png" data-src="assets/img/our-mission-2.svg"
-                                alt="" class="mission-img-effect-1 rx-lazy">
-                            <img class="mission-img rx-lazy" src="assets/img/placeholder-all.png"
-                                data-src="assets/img/img-about-home2.jpg" alt="img">
-                            <img src="assets/img/placeholder-all.png" data-src="assets/img/tringle-gray-little.svg"
-                                alt="" class="about-img-effect-2 rx-lazy">
-                        </span>
-                    </div>
-
-                    <div class="col-12" style="text-align:justify; ">
-                        <ul class="mission-meta p-3" style="display: block">
-                            <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Lagos Marriott Hotel Ikeja 
-                                &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span>
-                            </li>
-                            <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025
-                            </li>
-                            <li><i class="mdi mdi-clock-outline"></i>Time: 10am - 12noon</li>
-                            <li class="pt-3"><i class="mdi mdi-account-outline"></i> <a
-                                    href="{{ route('summit_register') }}" target="_blank" style="font-size:25px">
-                                    REGISTER HERE </a> </li>
-
-                        </ul>
-
-                        <ul class="mission-meta">
-                            <li><i aria-hidden="true" class="mdi mdi-facebook"></i><a
-                                    href="https://web.facebook.com/grcfincrimeawards/posts/pfbid02ByNyK4N1jeNwKTiuvbS9a4AUuLu9X3kkx6Qxj5cRqCL94LFgpQMKcHSpigBEi9Pfl"
-                                    target="_blank"> Follow on Facebook </a> </li>
-                            <li><i aria-hidden="true" class="mdi mdi-instagram "></i><a
-                                    href="https://www.instagram.com/p/CqLlPP2MVi7/?utm_source=ig_web_copy_link"
-                                    target="_blank"> Follow on Instagram </a> </li>
-                            <li><i aria-hidden="true" class="mdi mdi-linkedin"></i><a
-                                    href="https://www.linkedin.com/posts/the-morgans-grc-fin-crime-awards_fis-professionals-finance-activity-7045015444889440256-Jbjz?utm_source=share&utm_medium=member_desktop">
-                                    Follow on LinkedIn</a></li>
-                        </ul>
-
-                        <h4 class="col-12"
-                            style="max-width:1300px;line-height:140%; margin-bottom:32px;padding-left:0;padding-right:0;">
-                            Theme: “Sovereign Systems & Street-Level Compliance: Localising GRC and Financial Crime Prevention for Africa’s Next Frontier.”
-                        </h4>
-
-                        <div class="mission-info-text">
-
-                            <p></p><br>
-                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 About the Summit
-                            </h6>
-                            <p>
-                                The GRC & Financial Crime Prevention  Summit 2025 is a strategic gathering of
-                                industry leaders, innovators, regulators, and professionals committed to safeguarding
-                                institutions and communities from the growing complexities of governance, risk,
-                                compliance (GRC), and financial crime.
-                                Held at a pivotal point in the year, this summit provides an essential pulse-check on
-                                how organisations are adapting to the convergence of AI, ESG, and digital compliance to
-                                stay ahead of emerging threats, regulatory shifts, and technological disruption.
-
-
-                            </p>
-
-
-                            {{-- <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 Why This Theme?
-                            </h5>
-                            <br>
-                            <p class="mb-3"> With rapidly evolving regulatory landscapes, heightened ESG expectations,
-                                and the accelerated adoption of AI technologies, today’s GRC and FinCrime professionals
-                                must navigate a new frontier. This year’s theme focuses on future-proofing our
-                                frameworks by exploring:
-                            </p>
-                            <ul style="list-style: disc">
-                                <li> AI-driven compliance tools and ethical considerations</li>
-
-                                <li> ESG risk as a new compliance frontier</li>
-
-                                <li> The digitalisation of due diligence, reporting, and audit</li>
-
-                                <li> Cross-border data integrity and cyber risk</li>
-
-                                <li> Human-centred governance in an automated world</li>
-                            </ul> --}}
-
-
-                            <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡 What to Expect </h5>
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Keynotes & Leadership Panels
-                            </h6>
-                            <p class=" mb-2"> Hear from global experts and C-level executives shaping the future of
-                                GRC, ESG, and financial crime prevention.
-                            </p>
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Interactive Workshops & Tech
-                                Demos
-
-                            </h6>
-                            <p class=" mb-2"> Gain hands-on insights into AI tools, digital platforms, and ESG
-                                compliance technologies.
-                            </p>
-
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Case Studies & Industry
-                                Spotlights
-                            </h6>
-                            <p class=" mb-2">Learn from real-world implementations across banking, fintech, healthcare,
-                                energy, and public sector landscapes.
-                            </p>
-
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;"> Women in GRC & FinCrime
-                                Prevention Forum
-
-                            </h6>
-                            <p class=" mb-2">A dedicated session spotlighting leadership, innovation, and inclusion.
-
-                            </p>
-
-                            <h6 class="col-12 mb-1" style="padding-left:0;padding-right:0;">Global Regulatory Updates
-                            </h6>
-                            <p class=" mb-2">
-                                Stay ahead of legislative trends with insights from regulators and policy experts.
-                            </p>
-                            <div style="margin-bottom:15px;">
-                                <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#order-of-programme-modal">Order of Programme</a>
-                            </div>
-                            <h5 class="col-12 mb-1 pt-3" style="padding-left:0;padding-right:0;">💡 Who Should Attend?
-                            </h5>
-                            <br>
-                            <ul style="list-style: disc">
-                                <li> GRC, Risk, and Compliance Professionals </li>
-
-                                <li> Financial Crime & AML Specialists</li>
-
-                                <li> Chief Risk & Compliance Officers (CROs, CCOs)</li>
-
-                                <li> ESG & Sustainability Leads</li>
-
-                                <li> Legal, Audit, and Ethics Executives</li>
-
-                                <li> Data & AI Strategy Leaders</li>
-
-                                <li> Regulators, Policymakers, and Law Enforcement</li>
-
-                                <li> Technology and Innovation Officers</li>
-
-                                <li> Academia, Researchers, and Students in GRC-related fields</li>
-                                </li>
-                            </ul>
-
-                        </div>
-
-                        <div class="mission-info-text">
-                            <h6 class="col-12" style="padding-left:0;padding-right:0;"> </h6>
-                            <ol style="list-style-type: lower-roman;padding-right:10px;padding-left:0px;">
-                                Mid-Year Excellence Recognition
-                                This year’s summit will also feature a special Mid-Year Excellence Recognition —
-                                highlighting standout individuals and teams advancing GRC and FinCrime innovation.
-                                Call for Speakers & Sponsors
-                                Interested in joining the conversation as a speaker, partner, or exhibitor?
-                                Reach out to us via [Insert Contact Form or Email] or visit our Sponsorship
-                                Opportunities page.
-                                🌟
-                            </ol>
-                        </div>
-                        <br>
-                            <h6 class="col-12" style="padding-left:0;padding-right:0;">🎯 Why Localisation Matters
-                            </h6>
-                            <p>
-                            For too long, governance, risk, compliance, and financial crime prevention (GRC & FinCrime) frameworks in Africa have been imported from external models. While global standards such as FATF, Basel, and OECD guidelines are essential, they often fail to fully reflect Africa’s diverse legal systems, institutional realities, and socio-economic conditions.
- 
-                            Localising GRC and Financial Crime Prevention means:
-                            
-                            Designing homegrown regulatory systems that meet international expectations while addressing unique local risks.
-                            
-                            Embedding cultural and community realities into compliance practices, ensuring solutions are practical and enforceable.
-                            
-                            Empowering African-led innovation in RegTech, compliance systems, and monitoring tools that reflect local languages, infrastructures, and priorities.
-                            
-                            Strengthening grassroots enforcement so policies move beyond paper into everyday business, banking, and community interactions.
-                            </p>
-
-
-                            <p class="p-3"></p>
-                            <h5 class="col-12 mb-1" style="padding-left:0;padding-right:0;">💡Key Dimensions of Localisation
-                            </h5>
-                            <br>
-                            <ul style="list-style: disc">
-                                <li> 1. Policy and Sovereignty – Crafting regulations that serve African markets first, while engaging responsibly with global partners.</li>
-
-                                <li> 2. Street-Level Compliance – Building compliance literacy among SMEs, fintechs, cooperatives, and informal sectors.</li>
-
-                                <li> 3. Technology and RegTech – Supporting African innovators to create scalable, affordable compliance tools.</li>
-
-                                <li> 4. Capacity and Training – Developing skilled professionals across the continent to close gaps in enforcement and oversight.</li>
-
-                                <li> 5. Sustainable GRC – Aligning compliance efforts with Africa’s development goals, ESG imperatives, and digital transformation.</li>
-                            </ul>
-                    </div>
-                </div>
-            </div>
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Two Formats · One Mission</div>
+      <h2 class="sec-title">A virtual summit each June. <span class="ac">Two galas each winter.</span></h2>
+      <div class="grid g2" style="margin-top:28px">
+        <div class="card icard"><span class="em">💻</span>
+          <div>
+            <h3>Mid-Year Virtual Summit</h3>
+            <p>Held each June, this global online gathering delivers real-time dialogue on fast-evolving regulatory
+              trends, digital compliance, risk intelligence and emerging threats — accessible from every region.</p>
+          </div>
         </div>
-    </section>
-    <!-- ========= S-CONFERENCE-COUNTER END ========= -->
-    <section class="s-our-speaker s-event-schedule pt-0">
-        <div class="container">
-            <h2 class="title-conference"><span>Our Speakers</span></h2>
-            <div class="slider-our-speaker">
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/esosa_balogun.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Esosa Balogun - BSC, FCA, CCSA, CRMA, CIA, MBA 
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Moderator</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                            General Manager, Risk Management, MTN Nigeria
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/esosa-balogun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/rianne_potgieter.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px"> Rianne Potgieter
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CA(SA), CPro(SA), ICCP (CEO, Compliance Institute Southern Africa)</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/rianne-potgieter-ca-sa-cprof-sa-iccp-87019346?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/emeka_offor.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Emeka Offor
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                Erstwhile Executive Secretary/CEO, Nigerian Investment Promotion Commission (NIPC)
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/emekaoffor?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/jameelah_sharrieff.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Jameelah Sharrieff-Ayedun
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                MD/CEO Credit Registry
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/jameelah-sharrieff-ayedun?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/alex_noton.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Alex Noton
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                            Co-founder & CEO, pAIscreen
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/alex-noton-7620b24?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/moyosore_ogunlewe.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Hon. Barr. Moyosore Ogunlewe
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                                Executive Chairman, Kosofe Local Government Area, Lagos State
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/moyosore-ogunlewe-1b020750?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/olusesan_mayokun.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">BLDR Olusesan Mayokun Daini
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                               Fmr. Executive Chairman, Igbogbo Baiyeku LCDA
-                            </p>
-                            <!-- <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/tosinleye_odeyemi.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Tosin-Leye Odeyemi FCA, HCIB
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                             Head, Sustainability Risk & Capital Management, Stanbic IBTC Holdings Plc
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/tosin-leye-odeyemi-fca-hcib-a0b4401?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/beauty_mtonga.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Beauty Mtonga
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Group Head of Risk Human Capital, ABSA Group</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/beauty-mtonga-b773638a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/olayinka_odutola.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Olayinka Odutola (PhD)
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Director General, Association of Enterprise Risk Management Professionals (AERMP)</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/olayinka-odutola-phd-04b38a42/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/bawo_egbakhumeh.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Bawo Egbakhumeh
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">CEO/Registrar - Complliance Institute, Nigeria</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/bawo-egbakhumeh/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/eneni_oduwole.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Eneni Oduwole - QRD, QRE, FCRM, FICRS
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                             CEO | NED | Risk, Strategy & Sustainability | Author
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/enenioduwole/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/abiola_jewoola.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Abiola Jewoola
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Technologist Enthusiast</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/abiola-jewoola-b10b6b11/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/adenike_odukomaiya.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Dr. Adenike Odukomaiya
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Head, Internal Audit - Stanbic IBTC</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/dr-adenike-odukomaiya-45228a40?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/bright_chinweotuto.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Bright Chinweotuto Anyanwu
- 
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Senior Compliance Manager & MLRO, West and Central Africa, Yellow Card</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/anyanwubrightc/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/olubunmi_otti.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Olubunmi Otti, PhD
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Panelist Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">
-                            Zonal Coordinator - FCCPC Southwest Zonal Office, Lagos
-                            </p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/olubunmi-dorcas-otti-9229b1257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="slide-our-speaker">
-                    <div class="our-speaker-item">
-                        <img src="{{asset('/assets/images/speakers/summit_2025/fatumata_soukouna.jpeg')}}"
-                            alt="img">
-                        <div class="speaker-item-info"
-                            style="position: relative;padding-left:15px;padding-right:15px;bottom:40px">
-                            <h3 class="name" style="font-size:18px">Fatumata Soukouna Coker
-                            </h3>
-                            <p class="prof" style="font-size:16px;line-height:1rem;">Keynote Speaker</p>
-                            <p class="prof mt-2" style="font-size:16px;line-height:1rem;">Chairman of the Board, THE CIO & C-SUITE Club Africa</p>
-                            <div class="meta">
-                                <span class="post-tag" style="margin-right:7px;">
-                                    <a href="https://www.linkedin.com/in/dr-nic/" tabindex="-1"
-                                        target="_blank">
-                                        <i class="mdi mdi-linkedin mdi-24px" style="color:#fff"
-                                            aria-hidden="true"></i>
-                                    </a>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <ul class="pt-5">
-                <li><i class="mdi mdi-account-outline"></i> <a href="{{ route('summit_register') }}" target="_blank"
-                        style="font-size:20px"> REGISTER HERE </a> </li>
-                <li><i aria-hidden="true" class="mdi mdi-map-marker-outline mdi-18px"></i>Venue: Lagos Marriott Hotel Ikeja
-                 &nbsp;&nbsp;&nbsp; <span><a href="#" data-bs-toggle="modal" data-bs-target="#direction-modal" style="text-decoration: underline;">Need Directions?</a></span> </li>
-                <li><i aria-hidden="true" class="uil uil-calendar-alt"></i>Date: 7th November, 2025</li>
-                <li><i class="mdi mdi-clock-outline"></i>Time: 10am - 12noon</li>
-
-            </ul>
-
-            <ul class="mission-meta">
-                <li><i aria-hidden="true" class="mdi mdi-facebook"></i><a
-                        href="https://web.facebook.com/grcfincrimeawards/posts/pfbid02ByNyK4N1jeNwKTiuvbS9a4AUuLu9X3kkx6Qxj5cRqCL94LFgpQMKcHSpigBEi9Pfl"
-                        target="_blank"> Follow on Facebook </a> </li>
-                <li><i aria-hidden="true" class="mdi mdi-instagram "></i><a
-                        href="https://www.instagram.com/p/CqLlPP2MVi7/?utm_source=ig_web_copy_link" target="_blank">
-                        Follow on Instagram </a> </li>
-                <li><i aria-hidden="true" class="mdi mdi-linkedin"></i><a
-                        href="https://www.linkedin.com/posts/the-morgans-grc-fin-crime-awards_fis-professionals-finance-activity-7045015444889440256-Jbjz?utm_source=share&utm_medium=member_desktop">
-                        Follow on LinkedIn</a></li>
-            </ul>
+        <div class="card icard"><span class="em">🏆</span>
+          <div>
+            <h3>End-of-Year Awards &amp; Summit</h3>
+            <p>The flagship in-person events — now two editions a year in Nairobi and London — combine a day of
+              keynotes and panels with the prestigious black-tie Gala Awards Ceremony.</p>
+          </div>
         </div>
-    </section>
-
-    <!--==================== FOOTER ====================-->
-    @include('partials.voter.footer')
-    <!--================== FOOTER END ==================-->
-
-    <!-- ================ MODALS ================ -->
-
-    <div class="modal fade" id="direction-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header py-3 px-4 border-bottom-0">
-                    <h5 class="modal-title" id="modal-title">Directions</h5>
-                    <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close-circle mdi-24px" style="color: red;"></i></a>
-                </div>
-
-                <div class="modal-body px-4 pb-4 pt-0">
-                    <section class="s-our-mission s-about-speaker" style="padding:0px">
-                        <div class="row" style="flex-direction: column;">
-                            <div class="col-lg-12 our-mission-info">
-                                <img src="{{asset('/assets/summit_directions.jpeg')}}" alt="direction image" style="width: 100%;height:auto;">
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="modal fade" id="order-of-programme-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header py-3 px-4 border-bottom-0">
-                    <h5 class="modal-title" id="modal-title">Order of Programme</h5>
-                    <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="mdi mdi-close-circle mdi-24px" style="color: red;"></i></a>
-                </div>
-
-                <div class="modal-body px-4 pb-4 pt-0">
-                    <section class="s-our-mission s-about-speaker" style="padding:0px">
-                        <div class="row" style="flex-direction: column;">
-                            <div class="col-lg-12 our-mission-info">
-                                <img src="{{asset('/assets/summit_order_of_programme.jpg')}}" alt="direction image" style="width: 100%;height:auto;">
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
+  <section class="band cream">
+    <div class="wrap">
+      <div class="sec-eyebrow">2026 In-Person Editions</div>
+      <h2 class="sec-title">Two cities. <span class="ac">One standard.</span></h2>
+      <div class="editions" style="margin-top:32px">
+        <a class="edcard eu" href="{{ route('edition.europe') }}">
+          <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <g fill="#C9A24B">
+                <rect x="70" y="82" width="40" height="36" />
+                <rect x="200" y="74" width="30" height="44" />
+                <rect x="252" y="36" width="22" height="82" />
+                <path d="M252 36h22l-11-16z" />
+                <rect x="259" y="46" width="8" height="8" fill="#0E1838" />
+                <rect x="360" y="66" width="44" height="52" />
+                <path d="M360 66q22-34 44 0z" />
+                <rect x="378" y="30" width="8" height="10" />
+                <rect x="380" y="22" width="4" height="10" />
+                <rect x="316" y="80" width="30" height="38" />
+                <rect x="420" y="74" width="26" height="44" />
+                <path d="M462 118V70q0-26 16-30 16 4 16 30v48z" />
+                <rect x="475" y="34" width="6" height="8" />
+                <rect x="512" y="72" width="26" height="46" />
+                <rect x="546" y="60" width="22" height="58" />
+                <path d="M600 118 L636 118 L621 16 Z" />
+                <rect x="619" y="6" width="4" height="12" />
+                <rect x="650" y="66" width="24" height="52" />
+                <rect x="684" y="78" width="30" height="40" />
+                <rect x="768" y="52" width="24" height="66" />
+                <path d="M768 52h24l-12-14z" />
+                <rect x="856" y="52" width="24" height="66" />
+                <path d="M856 52h24l-12-14z" />
+                <rect x="792" y="58" width="64" height="8" />
+                <rect x="792" y="92" width="64" height="6" />
+                <rect x="900" y="76" width="30" height="42" />
+                <rect x="946" y="84" width="28" height="34" />
+              </g>
+              <g fill="none" stroke="#C9A24B" stroke-width="3.4">
+                <circle cx="150" cy="60" r="30" />
+                <circle cx="150" cy="60" r="5" fill="#C9A24B" stroke="none" />
+                <line x1="150" y1="30" x2="150" y2="90" />
+                <line x1="120" y1="60" x2="180" y2="60" />
+                <line x1="129" y1="39" x2="171" y2="81" />
+                <line x1="171" y1="39" x2="129" y2="81" />
+                <line x1="138" y1="86" x2="150" y2="118" />
+                <line x1="162" y1="86" x2="150" y2="118" />
+              </g>
+            </svg></div>
+          <span class="status-pill soon">6 Nov 2026</span>
+          <div class="lbl" style="margin-top:12px">Europe Edition</div>
+          <h3>London, United Kingdom</h3>
+          <div class="city">London Marriott Hotel</div>
+          <div class="row"><span>📅 <b>6 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="acts"><span class="btn btn-navy btn-sm" style="background:#3F6FB0">View Europe Programme
+              →</span></div>
+        </a>
+        <a class="edcard af" href="{{ route('edition.africa') }}">
+          <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
+              xmlns="http://www.w3.org/2000/svg">
+              <g fill="#C9A24B">
+                <path d="M52 118V62M36 48c8 6 16 6 16 6s9 0 17-6c-4-10-17-12-17-12s-12 3-16 12z" />
+                <rect x="50" y="62" width="4" height="56" />
+                <rect x="95" y="76" width="40" height="42" />
+                <rect x="140" y="60" width="30" height="58" />
+                <rect x="176" y="86" width="34" height="32" />
+                <rect x="220" y="42" width="26" height="76" />
+                <rect x="250" y="56" width="20" height="62" />
+                <rect x="278" y="28" width="30" height="90" />
+                <rect x="312" y="60" width="18" height="58" />
+                <rect x="360" y="18" width="42" height="100" rx="3" />
+                <ellipse cx="381" cy="18" rx="34" ry="9" />
+                <rect x="377" y="2" width="8" height="16" />
+                <rect x="422" y="48" width="24" height="70" />
+                <rect x="450" y="34" width="28" height="84" />
+                <rect x="482" y="60" width="20" height="58" />
+                <rect x="508" y="48" width="26" height="70" />
+                <rect x="540" y="26" width="24" height="92" />
+                <rect x="568" y="62" width="30" height="56" />
+                <rect x="604" y="44" width="24" height="74" />
+                <rect x="632" y="58" width="28" height="60" />
+                <rect x="666" y="32" width="26" height="86" />
+                <rect x="696" y="64" width="32" height="54" />
+                <rect x="734" y="48" width="22" height="70" />
+                <rect x="760" y="40" width="28" height="78" />
+                <rect x="794" y="70" width="34" height="48" />
+                <rect x="834" y="52" width="24" height="66" />
+                <rect x="864" y="60" width="30" height="58" />
+                <rect x="900" y="44" width="24" height="74" />
+                <rect x="930" y="66" width="34" height="52" />
+                <rect x="972" y="64" width="4" height="54" />
+                <path d="M958 50c8 6 16 6 16 6s9 0 17-6c-4-10-17-12-17-12s-12 3-16 12z" />
+              </g>
+            </svg></div>
+          <span class="status-pill live">● Voting Live</span>
+          <div class="lbl" style="margin-top:12px">Africa Edition</div>
+          <h3>Nairobi, Kenya</h3>
+          <div class="city">Marriott Hotel · Upper Hill</div>
+          <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="acts"><span class="btn btn-gold btn-sm">View Africa Programme →</span></div>
+        </a>
+      </div>
     </div>
-    <!-- ================ MODALS END ================ -->
-    <!--=================== TO TOP ===================-->
-    <a class="to-top" href="#home">
-        <i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
-    </a>
-    <!--================= TO TOP END =================-->
+  </section>
 
-    <!--=================== SCRIPT	===================-->
-    @include('partials.voter.scripts')
-    <script src="{{asset('assets/js/vendor.min.js')}}"></script>
-    <script src="{{asset('assets/js/app.min.js')}}"></script>
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Mid-Year Virtual Summit · June 2026</div>
+      <h2 class="sec-title">Beyond Compliance Theatre: <span class="ac">exposing invisible risk.</span></h2>
+      <p class="sec-intro">The 7th Annual Mid-Year Virtual Global Summit convened compliance and risk leaders
+        worldwide for a day of candid dialogue — cutting past box-ticking to find genuine signal in the noise:
+        emerging typologies, AI-driven risk, and what "good" compliance really looks like in practice.</p>
+      <div class="grid g4" style="margin-top:26px">
+        <div class="card">
+          <div class="k">🎙️</div>
+          <h3>Global keynotes</h3>
+          <p>Regulators, CCOs and compliance leaders from multiple jurisdictions.</p>
+        </div>
+        <div class="card">
+          <div class="k">💬</div>
+          <h3>Interactive panels</h3>
+          <p>Live roundtables and breakout sessions across time zones.</p>
+        </div>
+        <div class="card">
+          <div class="k">🌐</div>
+          <h3>Fully virtual</h3>
+          <p>Accessible from every region — inclusive, real-time participation.</p>
+        </div>
+        <div class="card">
+          <div class="k">📊</div>
+          <h3>Case studies</h3>
+          <p>Cross-sector innovation showcases and practical takeaways.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("Jun 15, 2023 12:00:00").getTime();
+  <section class="band cream">
+    <div class="wrap">
+      <div class="sec-eyebrow">What the Summit Explores</div>
+      <h2 class="sec-title">The themes shaping <span class="ac">the profession.</span></h2>
+      <div class="grid g2" style="margin-top:26px;align-items:start">
+        <div class="card">
+          <h3>Themes &amp; Objectives</h3>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:6px">
+            <li style="font-size:14px;color:var(--ink);padding-left:16px;position:relative"><span
+                style="position:absolute;left:0;color:var(--gold-deep)">›</span> The convergence of AI, ESG and
+              digital compliance</li>
+            <li style="font-size:14px;color:var(--ink);padding-left:16px;position:relative"><span
+                style="position:absolute;left:0;color:var(--gold-deep)">›</span> Strengthening AML/CTF frameworks and
+              cross-border collaboration</li>
+            <li style="font-size:14px;color:var(--ink);padding-left:16px;position:relative"><span
+                style="position:absolute;left:0;color:var(--gold-deep)">›</span> Responding to cyber threats,
+              regulatory shifts and fraud risks</li>
+            <li style="font-size:14px;color:var(--ink);padding-left:16px;position:relative"><span
+                style="position:absolute;left:0;color:var(--gold-deep)">›</span> Promoting a culture of compliance,
+              ethics and data accountability</li>
+            <li style="font-size:14px;color:var(--ink);padding-left:16px;position:relative"><span
+                style="position:absolute;left:0;color:var(--gold-deep)">›</span> RegTech, FinTech, SupTech and
+              blockchain in GRC transformation</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Who Should Attend</h3>
+          <div class="chips" style="margin-top:10px">
+            <span class="chip">Chief Compliance Officers</span><span class="chip">Risk Directors</span><span
+              class="chip">Financial Crime &amp; AML Experts</span>
+            <span class="chip">ESG &amp; Ethics Leaders</span><span class="chip">Cybersecurity Executives</span><span
+              class="chip">Legal &amp; Regulatory Professionals</span>
+            <span class="chip">Auditors &amp; Investigators</span><span class="chip">Academia &amp;
+              Policymakers</span><span class="chip">RegTech Innovators</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Update the count down every 1 second
-        var x = setInterval(function() {
+  <section class="band white" id="archive">
+    <div class="wrap">
+      <div class="sec-eyebrow">Past Summits</div>
+      <h2 class="sec-title">Seven years of <span class="ac">raising the standard.</span></h2>
+      <p class="sec-intro">Since 2020, the Summit has grown from a single Lagos edition into a global platform.
+        Explore recaps from previous years.</p>
+      <div class="grid g4" style="margin-top:26px">
+        <a class="card" href="{{ route('show_summit') }}">
+          <div class="k">2025</div>
+          <h3>Global Edition</h3>
+          <p>Awards Gala &amp; Summit — view recap →</p>
+        </a>
+        <a class="card" href="{{ route('show_summit_2024') }}">
+          <div class="k">2024</div>
+          <h3>Global Edition</h3>
+          <p>Awards Gala &amp; Summit — view recap →</p>
+        </a>
+        <a class="card" href="{{ route('show_summit_2023') }}">
+          <div class="k">2023</div>
+          <h3>Global Edition</h3>
+          <p>Awards Gala &amp; Summit — view recap →</p>
+        </a>
+        <a class="card" href="{{ route('show_summit_2022') }}">
+          <div class="k">2022</div>
+          <h3>Global Edition</h3>
+          <p>Awards Gala &amp; Summit — view recap →</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            // Get today's date and time
-            var now = new Date().getTime();
+  <section class="band navy">
+    <div class="wrap center">
+      <h2 class="sec-title">Join the next Summit.</h2>
+      <p class="sec-intro" style="margin:14px auto 0">London on 6 November, Nairobi on 20 November 2026. Reserve your
+        place, or register interest for London.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:24px"><a class="btn btn-gold"
+          href="{{ route('show_tickets') }}">Book Tickets</a><a class="btn btn-ghost"
+          href="{{ route('edition.europe') }}">Europe Edition</a><a class="btn btn-ghost"
+          href="{{ route('edition.africa') }}">Africa Edition</a></div>
+    </div>
+  </section>
 
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
+  @include('partials.voter.footer_new_theme')
 
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="demo"
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes
-            document.getElementById("seconds").innerHTML = seconds;
-
-            // If the count down is over, write some text 
-        }, 1000);
-    </script>
+  @include('partials.voter.scripts')
 
 </body>
-
 
 </html>

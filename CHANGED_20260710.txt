@@ -1,0 +1,25 @@
+New files:
+- app\public\assets\css\new_theme_design.css
+- app\public\assets\css\login_new_theme.css
+- app\public\assets\css\payment_new_theme.css
+- app\public\assets\css\categories_new_theme.css
+- app\resources\views\partials\voter\topbar_new_theme.blade.php
+- app\resources\views\partials\voter\footer_new_theme.blade.php
+- app\resources\views\contents\voter\edition_africa.blade.php
+- app\resources\views\contents\voter\edition_europe.blade.php
+- app\resources\views\contents\voter\tickets.blade.php
+
+Updated files:
+- app\routes\web.php
+- app\app\Http\Controllers\LandingPageController.php
+- app\resources\views\contents\voter\index.blade.php
+- app\resources\views\contents\voter\login.blade.php
+- app\resources\views\contents\voter\contact.blade.php
+- app\resources\views\contents\voter\sponsors.blade.php
+- app\resources\views\contents\voter\about_the_award.blade.php
+- app\resources\views\contents\voter\judging_process.blade.php
+- app\resources\views\contents\voter\summit.blade.php
+- app\resources\views\contents\voter\sectors_categories.blade.php
+- app\resources\views\contents\voter\vote.blade.php
+- app\resources\views\contents\voter\awards_summit\payment.blade.php
+- app\public\assets\css\voting_redesign.css

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 @section('title', 'Vote')
 @section('style')
 {{--
 <link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
 --}}
 <link href="{{asset('assets/css/model-new.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{asset('assets/css/new_theme_design.css')}}">
 <link rel="stylesheet" href="{{asset('assets/css/voting_redesign.css')}}">
 @endsection
 {{--
@@ -27,7 +28,7 @@
 	@include('partials.voter.preloader')
 	<!-- ============== PRELOADER END ============== -->
 	<!-- ================= HEADER ================= -->
-	@include('partials.voter.topbar')
+	@include('partials.voter.topbar_new_theme')
 	<!-- =============== HEADER END =============== -->
 	<!-- Page title -->
 	{{-- <div class="page-title" style="background-color:#D4AF37">
@@ -357,19 +358,23 @@
 	</section> -->
 @endif
 
+	<header class="page-hero">
+		<div class="wrap">
+			<div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Vote</div>
+			<h1>GRC &amp; Financial Crime <span class="ac">Awards 2026.</span></h1>
+			<p><strong>Voting eligibility:</strong> the general public is welcome to vote. Voting is open from 25th
+				June and ends 30th August 2026 — only votes in accordance with the voting limit &amp; rules will be
+				recognised.</p>
+			<p>Three (3) nominees will be shortlisted from the votes on each sub-category and deliberated upon by
+				the judges based on defined criteria, in order to select the winners. The winners will be unveiled
+				at the Award Ceremony which will hold in November 2026.</p>
+		</div>
+	</header>
+
 	<section class="s-news s-single-news voting-page-section">
-		<div class="container"> 
+		<div class="container">
 			<div class="row">
 				<div class="col-12 blog-cover">
-					<!-- Hero & Rules Card -->
-					<div class="voting-header-card animate-fade-in">
-						<h2 class="title"><span>GRC Financial Crime Awards 2026</span></h2>
-						<div class="voting-rules-box">
-							<p><strong>VOTING ELIGIBILITY:</strong> The general public is welcome to vote. <strong>Voting will be open from 25th June and ends 30th August, 2026.</strong> Only votes in accordance with the voting limit & rules will be recognised.</p>
-							<p>Three (3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, in order to select the winners. The winners will be unveiled at the Award Ceremony which will hold in November, 2026.</p>
-						</div>
-					</div>
-
 					<!-- Session Message -->
 					@if(Session::has('msg'))
 						<div style="max-width: 955px; margin: 0 auto 20px auto; text-align: center;">
@@ -601,7 +606,7 @@
 		@endif
 	@endforeach
 	<!--==================== FOOTER ====================-->
-	@include('partials.voter.footer')
+	@include('partials.voter.footer_new_theme')
 	<!--================== FOOTER END ==================-->
 
 	<!--=================== TO TOP ===================-->
