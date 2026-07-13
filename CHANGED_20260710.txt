@@ -1,35 +1,34 @@
 New files:
-- app\public\assets\css\new_theme_design.css
-- app\public\assets\css\login_new_theme.css
-- app\public\assets\css\payment_new_theme.css
-- app\public\assets\css\categories_new_theme.css
-- app\resources\views\partials\voter\topbar_new_theme.blade.php
-- app\resources\views\partials\voter\footer_new_theme.blade.php
-- app\resources\views\contents\voter\edition_africa.blade.php
-- app\resources\views\contents\voter\edition_europe.blade.php
-- app\resources\views\contents\voter\tickets.blade.php
-- app\public\assets\css\board_new_theme.css
-- app\public\assets\css\legal_new_theme.css
-- app\config\past_winners.php
+- app\public\assets\css\new_theme_design.css ✅
+- app\public\assets\css\login_new_theme.css ✅
+- app\public\assets\css\payment_new_theme.css ✅
+- app\public\assets\css\categories_new_theme.css ✅
+- app\public\assets\css\board_new_theme.css ✅
+- app\public\assets\css\legal_new_theme.css ✅
+- app\resources\views\partials\voter\topbar_new_theme.blade.php ✅
+- app\resources\views\partials\voter\footer_new_theme.blade.php ✅
+- app\resources\views\contents\voter\edition_africa.blade.php ✅
+- app\resources\views\contents\voter\edition_europe.blade.php ✅
+- app\resources\views\contents\voter\tickets.blade.php ✅
+- app\config\past_winners.php ✅
 
 Updated files:
-- app\routes\web.php
-- app\app\Http\Controllers\LandingPageController.php
-- app\resources\views\contents\voter\index.blade.php
-- app\resources\views\contents\voter\login.blade.php
-- app\resources\views\contents\voter\contact.blade.php
-- app\resources\views\contents\voter\sponsors.blade.php
-- app\resources\views\contents\voter\about_the_award.blade.php
-- app\resources\views\contents\voter\judging_process.blade.php
-- app\resources\views\contents\voter\summit.blade.php
-- app\resources\views\contents\voter\sectors_categories.blade.php
-- app\resources\views\contents\voter\vote.blade.php
-- app\resources\views\contents\voter\awards_summit\payment.blade.php
-- app\resources\views\contents\voter\past_winners.blade.php
-- app\public\assets\css\voting_redesign.css
-- app\resources\views\contents\voter\faqs.blade.php
-- app\resources\views\contents\voter\board_members.blade.php
-- app\resources\views\partials\voter\topbar_new_theme.blade.php
-- app\resources\views\contents\voter\code_of_conduct.blade.php
-- app\resources\views\contents\voter\t_c.blade.php
-- app\resources\views\contents\voter\privacy_policy.blade.php
+- app\routes\web.php ✅
+- app\app\Http\Controllers\LandingPageController.php ✅
+- app\resources\views\contents\voter\index.blade.php ✅
+- app\resources\views\contents\voter\login.blade.php ✅
+- app\resources\views\contents\voter\contact.blade.php ✅
+- app\resources\views\contents\voter\sponsors.blade.php ✅
+- app\resources\views\contents\voter\about_the_award.blade.php ✅
+- app\resources\views\contents\voter\judging_process.blade.php ✅
+- app\resources\views\contents\voter\summit.blade.php ✅
+- app\resources\views\contents\voter\sectors_categories.blade.php ✅
+- app\resources\views\contents\voter\vote.blade.php ✅
+- app\resources\views\contents\voter\awards_summit\payment.blade.php ✅
+- app\resources\views\contents\voter\past_winners.blade.php ✅
+- app\public\assets\css\voting_redesign.css ✅
+- app\resources\views\contents\voter\faqs.blade.php ✅
+- app\resources\views\contents\voter\board_members.blade.php ✅
+- app\resources\views\contents\voter\code_of_conduct.blade.php ✅
+- app\resources\views\contents\voter\t_c.blade.php ✅
+- app\resources\views\contents\voter\privacy_policy.blade.php ✅
