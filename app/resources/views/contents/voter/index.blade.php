@@ -311,6 +311,64 @@
     </div>
   </section>
 
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Past Winners</div>
+      <h2 class="sec-title">Celebrating past <span class="ac">award recipients.</span></h2>
+      <p class="sec-intro">Honouring the individuals and organisations recognised across previous editions of the GRC
+        &amp; Financial Crime Prevention Awards.</p>
+
+      @php
+      // TODO: replace with the real list of past winners.
+      // Each image should be placed in public/assets/images/past_winners/ and referenced by filename below.
+      $pastWinnersAfrica = [
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ];
+      $pastWinnersEurope = [
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
+      ];
+      @endphp
+
+      <div class="honourees-tabs" style="margin-top:32px">
+        <div class="honouree-edition">
+          <div class="honouree-edition-head"><span class="pin af"></span>
+            <h3>Africa Edition — Past Winners</h3>
+          </div>
+          <div class="honouree-row">
+            @foreach($pastWinnersAfrica as $winner)
+            <div class="honouree-card">
+              <img class="honouree-photo" src="{{ asset('assets/images/past_winners/'.$winner['image']) }}"
+                alt="{{ $winner['name'] }}">
+              <div class="honouree-name">{{ $winner['name'] }}</div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+
+        <div class="honouree-edition">
+          <div class="honouree-edition-head"><span class="pin eu"></span>
+            <h3>Europe Edition — Past Winners</h3>
+          </div>
+          <div class="honouree-row">
+            @foreach($pastWinnersEurope as $winner)
+            <div class="honouree-card">
+              <img class="honouree-photo" src="{{ asset('assets/images/past_winners/'.$winner['image']) }}"
+                alt="{{ $winner['name'] }}">
+              <div class="honouree-name">{{ $winner['name'] }}</div>
+            </div>
+            @endforeach
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="band navy">
     <div class="wrap center">
       <div class="sec-eyebrow">Get Involved</div>
