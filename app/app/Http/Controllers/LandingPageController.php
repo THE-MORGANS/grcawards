@@ -359,6 +359,11 @@ class LandingPageController extends Controller
         return view('contents.voter.tickets');
     }
 
+    public function showPastWinners()
+    {
+        return view('contents.voter.past_winners');
+    }
+
     public function CodeOfConduct()
     {
         return view('contents.voter.code_of_conduct');

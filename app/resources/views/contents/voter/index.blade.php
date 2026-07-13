@@ -319,20 +319,8 @@
         &amp; Financial Crime Prevention Awards.</p>
 
       @php
-      // TODO: replace with the real list of past winners.
-      // Each image should be placed in public/assets/images/past_winners/ and referenced by filename below.
-      $pastWinnersAfrica = [
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ];
-      $pastWinnersEurope = [
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ['name' => 'Winner Name', 'image' => 'placeholder.jpg'],
-      ];
+      $pastWinnersAfrica = array_slice(config('past_winners.africa', []), 0, 4);
+      $pastWinnersEurope = array_slice(config('past_winners.europe', []), 0, 4);
       @endphp
 
       <div class="honourees-tabs" style="margin-top:32px">
@@ -366,6 +354,8 @@
           </div>
         </div>
       </div>
+      <div class="center" style="margin-top:26px"><a class="btn btn-navy" href="{{ route('show_past_winners') }}">See
+          More Past Winners →</a></div>
     </div>
   </section>
 

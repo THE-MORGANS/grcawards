@@ -10,6 +10,8 @@ New files:
 - app\resources\views\contents\voter\tickets.blade.php
 - app\public\assets\css\board_new_theme.css
 - app\public\assets\css\legal_new_theme.css
+- app\config\past_winners.php
+- app\resources\views\contents\voter\past_winners.blade.php
 
 Updated files:
 - app\routes\web.php
