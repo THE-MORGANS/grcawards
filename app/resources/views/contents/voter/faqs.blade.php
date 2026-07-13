@@ -1,158 +1,94 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 @section('title', 'FAQs')
-@section('style')
-<link rel="stylesheet" href="{{asset('assets/css/accordion.css')}}">
-@endsection
 
 <head>
-    @include('partials.voter.head')
+  @include('partials.voter.head')
+
+  <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
 </head>
 
-<body id="conference-page">
-    <!-- =============== PRELOADER =============== -->
-    @include('partials.voter.preloader')
-    <!-- ============== PRELOADER END ============== -->
-    <!-- ================= HEADER ================= -->
-    @include('partials.voter.topbar')
-    <!-- =============== HEADER END =============== -->
-    <!-- Page title -->
-    <div class="page-title" style="background-color:#D4AF37">
-        <div class="container">
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="{{route('landing.index')}}">Home</a></li>
-                    <li>FAQs</li>
-                </ul>
-            </div>
-            <h1 class="title">FAQs</h1>
-        </div>
+<body>
+
+  @include('partials.voter.preloader')
+  @include('partials.voter.topbar_new_theme')
+
+  <header class="page-hero">
+    <div class="wrap">
+      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · FAQs</div>
+      <h1>Frequently asked <span class="ac">questions.</span></h1>
+      <p>Everything you need to know about attending, voting, sponsoring and the awards process across both the
+        Africa and Europe editions.</p>
     </div>
-    <!-- page title -->
+  </header>
 
-    <section class="s-news s-single-news" style="background-color: #fff;">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-8 blog-cover">
-                    <div class="widget widget-archive post-header">
-                        <h4 class="title">FAQs</h4>
-                    </div>
-                    <div class="post-item-cover">
-                        <div class="accordion-wrapper" style="margin-top: 30px;">
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="1" />
-                                <label class="accordion-label" for="1">What is the entry criteria?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>Worldwide entries are accepted.<br>Categogry-specific criteria can be found detailed in the category descriptions.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="2" />
-                                <label class="accordion-label" for="2">How much does it cost to enter?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
+  <section class="band white">
+    <div class="wrap">
+      <div class="faq">
+        <details>
+          <summary>How many editions are there in 2026?</summary>
+          <p>Two in-person editions: the Europe Edition in London (6 November 2026, London Marriott Hotel) and the
+            Africa Edition in Nairobi (20 November 2026, Marriott Hotel), plus a virtual Mid-Year Summit. The same
+            six award pillars apply across both.</p>
+        </details>
+        <details>
+          <summary>Where and when is the Africa Edition?</summary>
+          <p>20 November 2026 at the Marriott Hotel, Upper Hill, Nairobi. Summit 10:00–14:00 EAT; Gala Awards
+            16:00–19:00 EAT.</p>
+        </details>
+        <details>
+          <summary>When is the Europe Edition in London?</summary>
+          <p>The London Edition takes place on 6 November 2026 at the London Marriott Hotel. Register your interest
+            to receive ticket details and priority booking.</p>
+        </details>
+        <details>
+          <summary>How do I vote?</summary>
+          <p>Africa Edition public voting runs 15 June – 15 August 2026 on the secure online platform — one vote per
+            person per category. The top 5 per category proceed to independent judging. Europe Edition voting opens
+            later in the year.</p>
+        </details>
+        <details>
+          <summary>What ticket options are available?</summary>
+          <p>Africa: Summit Pass (USD 150), Full Delegate (USD 350), Gala Only (USD 220) and Student (USD 60), with
+            KES equivalents. Europe pricing (GBP) is confirmed shortly ahead of 6 November. Group and table rates
+            are available for both.</p>
+        </details>
+        <details>
+          <summary>How are winners chosen?</summary>
+          <p>Public voting shortlists the top 5 per category; an independent panel of judges then assesses those
+            nominees against published, sector-specific criteria — without conflict or bias — and recommends the
+            top 3 finalists. Winners are announced on the night.</p>
+        </details>
+        <details>
+          <summary>Can my organisation sponsor?</summary>
+          <p>Yes — Gold, Silver and Bronze packages are available per edition, with multi-edition options spanning
+            Nairobi and London. Contact events@grcfincrimeawards.com for the prospectus.</p>
+        </details>
+        <details>
+          <summary>Can I speak or chair a session?</summary>
+          <p>We welcome expressions of interest from senior practitioners, regulators, fintech leaders and academics
+            for both editions. Email events@grcfincrimeawards.com with a short profile and topic.</p>
+        </details>
+        <details>
+          <summary>Do international delegates need a visa?</summary>
+          <p>For Nairobi, many nationalities require a Kenya eVisa/eTA — apply in advance via the official portal.
+            For London, check UK entry requirements for your nationality. We can provide invitation letters on
+            request.</p>
+        </details>
+      </div>
 
-                                            <p>
-                                                Absolutely nothing!
-                                            </p>
-                                        </div>
+      <div class="callout center" style="max-width:820px;margin:30px auto 0">
+        <h3>Still have a question?</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:14px">Our events team is happy to help.</p>
+        <a class="btn btn-crimson" href="{{ route('show_contact') }}">Contact Us →</a>
+      </div>
+    </div>
+  </section>
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="3" />
-                                <label class="accordion-label" for="3">What is the entry deadline?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>The entry deadline is 10th Nov. 2023 at 23:59pm</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="4" />
-                                <label class="accordion-label" for="4">Can I save my entry?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>Yes! Our entry platform allows you to save your application and come back to it before submitting.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="5" />
-                                <label class="accordion-label" for="5">Can I enter more than one category?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>Providing you meet the criteria for each category, yes! You're free to enter as many as you like.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="6" />
-                                <label class="accordion-label" for="6">What are supporting documents?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>The supporting documents are not a compulsory part of the application. It won't count against you if you do not include any, but they can help to illuminate your entry.</p>
-                                            <p>Supporting documents could be testimonials, examples of press coverage, explainer videos, or impact reports, for example.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <!-- <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="7" />
-                                <label class="accordion-label" for="7">Can I alter my application after submitting?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>Yes, you can make changes to your application after submitting right up until the entry deadline.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                            <div class="accordion">
-                                <input class="in-check" type="checkbox" name="radio-a" id="8" />
-                                <label class="accordion-label" for="8">How are winners chosen?</label>
-                                <div class="accordion-content">
-                                    <div class="ticket-contact-cover">
-                                        <div class="ticket-contact-item">
-                                            <p>Three(3) Nominees will be shortlisted from the votes on each sub-category and deliberated upon by the judges based on defined criteria, inorder to select the winners. The winners will be unveiled at the Award Ceremony which will hold on the 10th Nov. 2023.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--================= SIDEBAR =================-->
-                @include('partials.voter.sidebar')
-                <!--=============== SIDEBAR END ===============-->
-            </div>
-    </section>
+  @include('partials.voter.footer_new_theme')
 
-    <!--==================== FOOTER ====================-->
-    @include('partials.voter.footer')
-    <!--================== FOOTER END ==================-->
+  @include('partials.voter.scripts')
 
-    <!--=================== TO TOP ===================-->
-    <a class="to-top" href="#home">
-		<i class="mdi mdi-chevron-double-up" aria-hidden="true"></i>
-	</a>
-    <!--================= TO TOP END =================-->
-
-    <!--=================== SCRIPT	===================-->
-    @include('partials.voter.scripts')
 </body>
 
 </html>

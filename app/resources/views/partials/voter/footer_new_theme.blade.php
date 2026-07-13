@@ -32,7 +32,7 @@
                     <li><a href="{{ route('show_sponsors') }}">Sponsorship</a></li>
                     <li><a href="{{ route('show_sponsors') }}#packages">Packages</a></li>
                     <li><a href="{{ route('show_contact') }}">Speak at the Summit</a></li>
-                    <!-- <li><a href="{{ route('show_faqs') }}">FAQs</a></li> -->
+                    <li><a href="{{ route('show_faqs') }}">FAQs</a></li>
                 </ul>
             </div>
         </div>
@@ -46,11 +46,11 @@
                 <p>85 Great Portland Street, First Floor, London W1W 7LT<br>+44 20 7856 0149 · events@grcfincrimeawards.com
                 </p>
             </div>
-            <div class="off">
+            <!-- <div class="off">
                 <div class="c">Republic of Ireland — Cork</div>
                 <p>21 Gillabbey Terrace, Gillabbey Street, Cork, T12 KPN4<br>+353 87 712 3968 · events@grcfincrimeawards.com
                 </p>
-            </div>
+            </div> -->
         </div>
         <div class="base"><span>THE MORGANS · in association with the IGRCFP © {{ date('Y') }}. All rights
                 reserved.</span><span>events@grcfincrimeawards.com · grcfincrimeawards.com</span></div>

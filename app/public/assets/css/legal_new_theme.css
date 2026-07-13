@@ -1,0 +1,14 @@
+/* ==========================================================================
+   Legal pages (Code of Conduct, Terms & Conditions, Privacy Policy)
+   extends new_theme_design.css, reuses its variables
+   ========================================================================== */
+
+.legal-content{max-width:820px;margin:0 auto;}
+.legal-content h3{font-family:var(--sans);font-weight:800;font-size:18px;color:var(--navy);margin:32px 0 14px;}
+.legal-content h3:first-child{margin-top:0;}
+.legal-content h4{font-family:var(--sans);font-weight:700;font-size:15px;color:var(--gold-deep);margin:20px 0 10px;}
+.legal-content p{font-size:14.5px;line-height:1.75;color:var(--muted);margin-bottom:14px;}
+.legal-content ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:6px 0 18px;}
+.legal-content li{font-size:14px;line-height:1.65;color:var(--ink);padding-left:20px;position:relative;}
+.legal-content li::before{content:"›";position:absolute;left:0;color:var(--gold-deep);font-weight:700;}
+.legal-content .sign-block{margin-top:30px;padding:20px 24px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;font-size:14px;color:var(--navy);font-weight:600;line-height:1.9;}
