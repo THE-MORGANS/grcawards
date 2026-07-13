@@ -11,7 +11,6 @@ New files:
 - app\public\assets\css\board_new_theme.css
 - app\public\assets\css\legal_new_theme.css
 - app\config\past_winners.php
-- app\resources\views\contents\voter\past_winners.blade.php
 
 Updated files:
 - app\routes\web.php
@@ -26,6 +25,7 @@ Updated files:
 - app\resources\views\contents\voter\sectors_categories.blade.php
 - app\resources\views\contents\voter\vote.blade.php
 - app\resources\views\contents\voter\awards_summit\payment.blade.php
+- app\resources\views\contents\voter\past_winners.blade.php
 - app\public\assets\css\voting_redesign.css
 - app\resources\views\contents\voter\faqs.blade.php
 - app\resources\views\contents\voter\board_members.blade.php

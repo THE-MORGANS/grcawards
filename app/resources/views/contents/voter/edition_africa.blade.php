@@ -58,6 +58,21 @@
     </div>
   </section>
 
+  <section class="band cream" style="padding:36px 0">
+    <div class="wrap">
+      <div class="callout" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
+        <div>
+          <span class="status-pill live">● Voting Live</span>
+          <h3 style="margin-top:10px">Public voting is open for the Africa Edition</h3>
+          <p style="color:var(--muted);font-size:14px;max-width:640px">Nominations have closed — cast your vote for
+            the individuals and organisations you believe deserve recognition at the Nairobi Gala. The top 5 per
+            category by public vote proceed to independent judging. Voting closes <b>15 August 2026</b>.</p>
+        </div>
+        <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="band white">
     <div class="wrap">
       <div class="sec-eyebrow">About This Edition</div>
@@ -208,6 +223,101 @@
 
   <section class="band cream">
     <div class="wrap">
+      <div class="sec-eyebrow">Speakers — Africa Edition</div>
+      <h2 class="sec-title">The voices leading <span class="ac">East Africa's GRC conversation.</span></h2>
+      <p class="sec-intro">Keynotes and panellists drawn from banking, fintech, insurance, regulators, legal,
+        RegTech and academia. Names confirmed on a rolling basis.</p>
+      <div class="grid g4" style="margin-top:26px">
+        <div class="spk">
+          <div class="av">CCO</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Group Chief Compliance Officer — Tier-1 Commercial Bank, East Africa</div>
+        </div>
+        <div class="spk">
+          <div class="av">FT</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Head of Compliance &amp; Risk — Mobile Money / Digital Finance Platform</div>
+        </div>
+        <div class="spk">
+          <div class="av">CRO</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Chief Risk Officer — Insurance / Asset Management, Africa</div>
+        </div>
+        <div class="spk">
+          <div class="av">FIU</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Director — Financial Intelligence Unit, East Africa</div>
+        </div>
+        <div class="spk">
+          <div class="av">CB</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Director, Financial Sector Supervision — Central Bank of Kenya or Equivalent</div>
+        </div>
+        <div class="spk">
+          <div class="av">LAW</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Senior Partner, Financial Crime &amp; Compliance — Pan-African Law Firm</div>
+        </div>
+        <div class="spk">
+          <div class="av">RT</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Founder &amp; CEO — East Africa RegTech / Compliance Technology</div>
+        </div>
+        <div class="spk">
+          <div class="av">AC</div>
+          <div class="nm">[To Be Announced]</div>
+          <div class="rl">Professor, Governance Risk &amp; Compliance — Leading East African University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Award Categories — Africa Edition 2026</div>
+      <h2 class="sec-title">Excellence recognised across <span class="ac">every sector of the economy.</span></h2>
+      <p class="sec-intro">Six award pillars spanning every regulated sector — from financial services and fintech
+        to energy, engineering, manufacturing, healthcare, aviation, telecoms and the public sector.</p>
+      <div class="grid g3" style="margin-top:28px">
+        <div class="card">
+          <div class="k">01</div>
+          <h3>GRC &amp; FinCrime Achievement</h3>
+          <p>Banks, microfinance, fintech, insurance and asset management leading on AML/CFT and GRC.</p>
+        </div>
+        <div class="card">
+          <div class="k">02</div>
+          <h3>Sector GRC Excellence</h3>
+          <p>Energy, engineering, manufacturing, healthcare, aviation, telecoms, legal, agriculture &amp; public
+            sector.</p>
+        </div>
+        <div class="card">
+          <div class="k">03</div>
+          <h3>Individual Leadership</h3>
+          <p>Influencers, FinCrime and GRC leaders, cyber champions, auditors and rising stars.</p>
+        </div>
+        <div class="card">
+          <div class="k">04</div>
+          <h3>Women in GRC &amp; FinCrime</h3>
+          <p>Recognising women advancing excellence and equity across the profession.</p>
+        </div>
+        <div class="card">
+          <div class="k">05</div>
+          <h3>Media &amp; Promoters</h3>
+          <p>Reporters, publications, broadcasters and digital media advancing the conversation.</p>
+        </div>
+        <div class="card">
+          <div class="k">06</div>
+          <h3>Providers &amp; Lifetime</h3>
+          <p>Training, advisory, RegTech and recruitment providers — plus the Lifetime Achievement Award.</p>
+        </div>
+      </div>
+      <div class="center" style="margin-top:26px"><a class="btn btn-navy" href="{{ route('show_sect_cat') }}">See All
+          Categories →</a></div>
+    </div>
+  </section>
+
+  <section class="band cream">
+    <div class="wrap">
       <div class="sec-eyebrow">The Venue</div>
       <h2 class="sec-title">Nairobi's address for <span class="ac">international excellence.</span></h2>
       <div class="grid g2" style="margin-top:24px;align-items:start">
@@ -236,13 +346,52 @@
             <div class="lab">🚕 Ride-hailing</div>
             <div class="val">Uber / Bolt 24/7</div>
           </div>
+          <div class="gi">
+            <div class="lab">👥 Capacity</div>
+            <div class="val">Up to 200 guests</div>
+          </div>
+          <div class="gi">
+            <div class="lab">✉️ Contact</div>
+            <div class="val">events@grcfincrimeawards.com</div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">While You're In Nairobi</div>
+      <h2 class="sec-title">Make the most of <span class="ac">your visit.</span></h2>
+      <p class="sec-intro">Upper Hill and the surrounding districts offer excellent dining, shopping, culture and
+        nature — all within easy reach of the venue.</p>
+      <div class="grid g2" style="margin-top:24px">
+        <div>
+          <h3 style="font-size:14px;color:var(--navy);margin-bottom:10px">🍽️ Dining, Shopping &amp; Nightlife</h3>
+          <div class="chips"><span class="chip">Upper Hill &amp; Hurlingham restaurants</span><span class="chip">Yaya
+              Centre</span><span class="chip">Westlands nightlife</span><span class="chip">Two Rivers Mall</span><span
+              class="chip">The Hub, Karen</span></div>
+        </div>
+        <div>
+          <h3 style="font-size:14px;color:var(--navy);margin-bottom:10px">🦒 Culture, Wildlife &amp; Parks</h3>
+          <div class="chips"><span class="chip">Nairobi National Park</span><span class="chip">Giraffe
+              Centre</span><span class="chip">David Sheldrick Wildlife Trust</span><span class="chip">Karen Blixen
+              Museum</span><span class="chip">Uhuru Park</span><span class="chip">Nairobi Arboretum</span></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:26px">
+        <p style="font-size:13.5px;color:var(--muted);margin:0">💡 <b>Tip for international delegates:</b> Nairobi's
+          altitude (~1,795m) and equatorial climate mean mild temperatures year-round (typically 15–25°C in
+          November) — light layers by day, a jacket for cooler evenings. A valid passport and, for many
+          nationalities, an eVisa or e-Travel Authorisation are required for entry into Kenya.</p>
       </div>
     </div>
   </section>
 
   <section class="band navy">
     <div class="wrap center">
+      <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">●
+        Voting Closes 15 August 2026</div>
       <h2 class="sec-title">Be part of the Africa Edition.</h2>
       <div class="cta-row" style="justify-content:center;margin-top:22px"><a class="btn btn-gold"
           href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-ghost"
