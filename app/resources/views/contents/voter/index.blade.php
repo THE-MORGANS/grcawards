@@ -246,6 +246,402 @@
     </div>
   </section>
 
+  <!-- =============== PAST EVENTS SLIDESHOW =============== -->
+  <section class="band white past-events-section">
+    <style>
+      .past-events-section {
+        padding: 60px 0;
+        background: #ffffff;
+      }
+      .events-slideshow-container {
+        position: relative;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+      .slideshow-track-wrap {
+        overflow: hidden;
+        border-radius: 14px;
+        box-shadow: 0 20px 45px rgba(14, 24, 56, 0.14);
+        border: 1px solid var(--line-soft, #ece4d2);
+        background: var(--navy-deep, #0e1838);
+      }
+      .slideshow-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        will-change: transform;
+      }
+      .slideshow-slide {
+        flex: 0 0 100%;
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+      .slide-card {
+        position: relative;
+        width: 100%;
+        height: 440px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: var(--navy-deep, #0e1838);
+        overflow: hidden;
+      }
+      .img-placeholder-box {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #16224c 0%, #0e1838 100%);
+        color: #e2c988;
+        z-index: 1;
+      }
+      .img-placeholder-box::before {
+        content: '';
+        position: absolute;
+        inset: 16px;
+        border: 2px dashed rgba(201, 162, 75, 0.35);
+        border-radius: 10px;
+        pointer-events: none;
+      }
+      .real-slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: none;
+      }
+      .real-slide-img[src]:not([src=""]) {
+        display: block !important;
+        z-index: 5;
+      }
+      .placeholder-content {
+        text-align: center;
+        padding: 20px;
+        max-width: 80%;
+        z-index: 3;
+      }
+      .ph-icon {
+        margin-bottom: 12px;
+        opacity: 0.85;
+        color: var(--gold, #c9a24b);
+      }
+      .ph-title {
+        display: block;
+        font-family: var(--sans);
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+      }
+      .ph-desc {
+        display: block;
+        font-size: 13px;
+        color: #a0aec0;
+      }
+      .ph-desc code {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--gold-soft, #e2c988);
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 12px;
+      }
+
+      .slide-caption {
+        position: relative;
+        z-index: 6;
+        padding: 26px 32px;
+        background: linear-gradient(to top, rgba(14, 24, 56, 0.95) 0%, rgba(14, 24, 56, 0.65) 75%, transparent 100%);
+        color: #ffffff;
+      }
+      .caption-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        color: var(--gold, #c9a24b);
+        margin-bottom: 6px;
+      }
+      .slide-caption h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 6px;
+        font-family: var(--sans);
+      }
+      .slide-caption p {
+        font-size: 14px;
+        color: #cbd5e1;
+        line-height: 1.45;
+        margin: 0;
+      }
+
+      .slideshow-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(22, 34, 76, 0.88);
+        border: 1px solid rgba(201, 162, 75, 0.45);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(4px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      }
+      .slideshow-arrow:hover {
+        background: var(--gold, #c9a24b);
+        color: var(--navy-deep, #0e1838);
+        border-color: var(--gold, #c9a24b);
+        transform: translateY(-50%) scale(1.08);
+      }
+      .slideshow-arrow.prev { left: -18px; }
+      .slideshow-arrow.next { right: -18px; }
+
+      .slideshow-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .slideshow-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cbd5e1;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+      .slideshow-dot.active {
+        background: var(--gold, #c9a24b);
+        width: 28px;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .slide-card { height: 350px; }
+        .slideshow-arrow.prev { left: 4px; }
+        .slideshow-arrow.next { right: 4px; }
+        .slide-caption { padding: 18px 20px; }
+        .slide-caption h3 { font-size: 18px; }
+        .slide-caption p { font-size: 12px; }
+      }
+    </style>
+
+    @php
+      $pastEventImages = [];
+      $pastEventsDir = public_path('assets/images/past_events');
+      if (file_exists($pastEventsDir)) {
+          $files = glob($pastEventsDir . '/*.{jpg,jpeg,png,webp,GIF,JPG,JPEG,PNG,WEBP}', GLOB_BRACE);
+          if ($files) {
+              foreach ($files as $file) {
+                  $pastEventImages[] = asset('assets/images/past_events/' . basename($file));
+              }
+          }
+      }
+    @endphp
+
+    <div class="wrap">
+      <div class="center" style="margin-bottom:28px">
+        <div class="sec-eyebrow">Past Events Gallery</div>
+        <h2 class="sec-title">Highlights from <span class="ac">previous editions.</span></h2>
+        <p class="sec-intro" style="margin:10px auto 0">Celebrating excellence, keynotes, panel discussions, and gala awards ceremonies across our past events.</p>
+      </div>
+
+      <div class="events-slideshow-container">
+        <button type="button" class="slideshow-arrow prev" id="eventsPrevBtn" aria-label="Previous Slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button type="button" class="slideshow-arrow next" id="eventsNextBtn" aria-label="Next Slide">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        <div class="slideshow-track-wrap">
+          <div class="slideshow-track" id="eventsSlideshowTrack">
+
+            @if(count($pastEventImages) > 0)
+              @foreach($pastEventImages as $index => $imgUrl)
+                <div class="slideshow-slide {{ $loop->first ? 'active' : '' }}">
+                  <div class="slide-card">
+                    <img src="{{ $imgUrl }}" alt="Past Event Photo {{ $loop->iteration }}" class="real-slide-img" style="display:block; z-index:5;" />
+                    <div class="slide-caption">
+                      <div class="caption-tag">Past Event Highlight</div>
+                      <h3>GRC & FinCrime Summit</h3>
+                      <p>Highlights from our previous annual awards and summit edition.</p>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+            @else
+              <!-- Fallback placeholders shown when public/assets/images/past_events folder is empty -->
+              <!-- Slide 1 -->
+              <div class="slideshow-slide active">
+                <div class="slide-card">
+                  <div class="img-placeholder-box">
+                    <div class="placeholder-content">
+                      <div class="ph-icon">
+                        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                      </div>
+                      <span class="ph-title">Folder Is Ready!</span>
+                      <span class="ph-desc">Drop your event images into folder: <code>public/assets/images/past_events/</code></span>
+                    </div>
+                  </div>
+                  <div class="slide-caption">
+                    <div class="caption-tag">Auto-Detect Folder</div>
+                    <h3>Drop Images Into Folder</h3>
+                    <p>Simply paste any .jpg, .png, or .webp images into public/assets/images/past_events/ — they will loop automatically!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="slideshow-slide">
+                <div class="slide-card">
+                  <div class="img-placeholder-box">
+                    <div class="placeholder-content">
+                      <div class="ph-icon">
+                        <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                      </div>
+                      <span class="ph-title">Automatic Carousel Loop</span>
+                      <span class="ph-desc">All images added to <code>public/assets/images/past_events/</code> appear instantly</span>
+                    </div>
+                  </div>
+                  <div class="slide-caption">
+                    <div class="caption-tag">Summit Programme</div>
+                    <h3>Keynote Addresses & Panel Sessions</h3>
+                    <p>Industry leaders sharing critical insights on AML/CFT strategies and regulatory compliance.</p>
+                  </div>
+                </div>
+              </div>
+            @endif
+
+          </div>
+        </div>
+
+        <div class="slideshow-dots" id="eventsSlideshowDots"></div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const track = document.getElementById('eventsSlideshowTrack');
+        const slides = document.querySelectorAll('.slideshow-slide');
+        const prevBtn = document.getElementById('eventsPrevBtn');
+        const nextBtn = document.getElementById('eventsNextBtn');
+        const dotsContainer = document.getElementById('eventsSlideshowDots');
+
+        if (!track || slides.length === 0) return;
+
+        let currentIndex = 0;
+        let autoplayTimer = null;
+
+        slides.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.classList.add('slideshow-dot');
+          if (index === 0) dot.classList.add('active');
+          dot.setAttribute('aria-label', `Slide ${index + 1}`);
+          dot.addEventListener('click', () => goToSlide(index));
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('.slideshow-dot');
+
+        function updateSlideshow() {
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+          });
+          slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentIndex);
+          });
+        }
+
+        function goToSlide(index) {
+          currentIndex = index;
+          if (currentIndex >= slides.length) currentIndex = 0;
+          if (currentIndex < 0) currentIndex = slides.length - 1;
+          updateSlideshow();
+          resetAutoplay();
+        }
+
+        function nextSlide() {
+          goToSlide(currentIndex + 1);
+        }
+
+        function prevSlide() {
+          goToSlide(currentIndex - 1);
+        }
+
+        function startAutoplay() {
+          if (!autoplayTimer) {
+            autoplayTimer = setInterval(nextSlide, 4500);
+          }
+        }
+
+        function stopAutoplay() {
+          if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+          }
+        }
+
+        function resetAutoplay() {
+          stopAutoplay();
+          startAutoplay();
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+        if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+        const container = document.querySelector('.events-slideshow-container');
+        if (container) {
+          container.addEventListener('mouseenter', stopAutoplay);
+          container.addEventListener('mouseleave', startAutoplay);
+        }
+
+        let startX = 0;
+        let isSwiping = false;
+
+        track.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+          isSwiping = true;
+          stopAutoplay();
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+          if (!isSwiping) return;
+          const endX = e.changedTouches[0].clientX;
+          const diffX = startX - endX;
+          if (Math.abs(diffX) > 40) {
+            if (diffX > 0) nextSlide();
+            else prevSlide();
+          }
+          isSwiping = false;
+          startAutoplay();
+        }, { passive: true });
+
+        startAutoplay();
+      });
+    </script>
+  </section>
+
   <section class="band white">
     <div class="wrap">
       <div class="sec-eyebrow">Award Pillars</div>
