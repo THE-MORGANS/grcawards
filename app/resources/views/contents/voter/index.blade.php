@@ -35,7 +35,9 @@
       <path d="M600 60 l16 6 -6 -16 z" fill="#E2C988" transform="rotate(28 608 63)" opacity=".9" />
     </svg>
     <div class="wrap">
-      <span class="hero-badge"><span class="dot"></span>THE MORGANS · 7th Annual · Two Editions · 2026</span>
+      <span class="hero-badge" style="margin-bottom: 50px"><span class="dot"></span>
+      <!-- THE MORGANS ·  -->
+      7th Annual · Two Editions · 2026</span>
       <h1>GRC &amp; Financial Crime <span class="ac">excellence,</span><br>recognised across <span class="ac">Africa
           &amp; Europe.</span></h1>
       <p class="lede">Two flagship editions. One global standard. The GRC &amp; Financial Crime Prevention Awards &amp;

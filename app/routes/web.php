@@ -187,6 +187,7 @@ Route::get('awards-summit/payment/success', [AwardsSummitPaymentController::clas
 Route::get('awards-summit/payment/cancel', [AwardsSummitPaymentController::class, 'paymentCancel'])->name('awards_summit.payment.cancel');
 Route::post('awards-summit/payment/initiate', [AwardsSummitPaymentController::class, 'initiatePayment'])->name('awards_summit.payment.initiate');
 Route::get('awards-summit/reserve/{ticket}', [AwardsSummitPaymentController::class, 'showPayment'])->name('awards_summit.payment');
+Route::get('awards-summit/slots', [AwardsSummitPaymentController::class, 'getRemainingSlots'])->name('awards_summit.slots');
 
 Route::get('summit/mid-year-2026', [LandingPageController::class, 'showSummitMidYear2026'])->name('show_summit_mid_year_2026');
 

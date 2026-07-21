@@ -14,6 +14,8 @@ use Stripe\Checkout\Session as StripeSession;
 
 class AwardsSummitPaymentController extends Controller
 {
+    const MAX_SLOTS = 200;
+
     public static $tickets = [
         'summit' => [
             'name' => 'Summit Pass',
@@ -47,10 +49,13 @@ class AwardsSummitPaymentController extends Controller
             abort(404);
         }
 
+        $remaining = $this->calculateRemainingSlots();
+
         return view('contents.voter.awards_summit.payment', [
             'stripe_key' => env('STRIPE_KEY'),
             'ticket_type' => $ticket,
             'ticket' => self::$tickets[$ticket],
+            'remaining_slots' => $remaining,
         ]);
     }
 
@@ -67,6 +72,21 @@ class AwardsSummitPaymentController extends Controller
 
         $ticket = self::$tickets[$data['ticket_type']];
         $amount = $ticket['price'] * $data['quantity'];
+
+        // Check slot availability before proceeding
+        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')->sum('quantity');
+        $requestedSlots = $data['quantity'];
+
+        if (($confirmedSlots + $requestedSlots) > self::MAX_SLOTS) {
+            $remaining = self::MAX_SLOTS - $confirmedSlots;
+            return response()->json([
+                'status' => 'error',
+                'message' => $remaining > 0
+                    ? "Only {$remaining} seat(s) remaining. You requested {$requestedSlots} ticket(s)."
+                    : 'Sorry, all seats have been sold out.',
+                'remaining' => max(0, $remaining),
+            ], 400);
+        }
 
         try {
             DB::beginTransaction();
@@ -149,10 +169,39 @@ class AwardsSummitPaymentController extends Controller
             }
 
             if ($session->payment_status === 'paid' && $registration->payment_status !== 'paid') {
-                $registration->update([
-                    'payment_status' => 'paid',
-                    'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
-                ]);
+                // Use a transaction with locking to safely assign seat numbers
+                DB::transaction(function () use ($registration) {
+                    // Lock paid registrations to prevent race conditions on seat assignment
+                    $highestSeat = AwardsSummitRegistration::where('payment_status', 'paid')
+                        ->whereNotNull('seat_numbers')
+                        ->lockForUpdate()
+                        ->get()
+                        ->flatMap(function ($reg) {
+                            return $reg->seat_numbers ?? [];
+                        })
+                        ->map(function ($seat) {
+                            // Extract the numeric part from "SEAT-001"
+                            return (int) str_replace('SEAT-', '', $seat);
+                        })
+                        ->max();
+
+                    $nextSeatNumber = ($highestSeat ?? 0) + 1;
+
+                    // Generate seat numbers for the quantity purchased
+                    $seatNumbers = [];
+                    for ($i = 0; $i < $registration->quantity; $i++) {
+                        $seatNumbers[] = 'SEAT-' . str_pad($nextSeatNumber + $i, 3, '0', STR_PAD_LEFT);
+                    }
+
+                    $registration->update([
+                        'payment_status' => 'paid',
+                        'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
+                        'seat_numbers' => $seatNumbers,
+                    ]);
+                });
+
+                // Refresh the registration to get the updated data
+                $registration->refresh();
 
                 try {
                     Mail::to($registration->email)->send(new AwardsSummitPaymentConfirmation($registration));
@@ -171,5 +220,27 @@ class AwardsSummitPaymentController extends Controller
     public function paymentCancel()
     {
         return redirect()->route('landing.index')->with('error', 'Payment was cancelled.');
+    }
+
+    /**
+     * Return remaining slot count as JSON for AJAX polling.
+     */
+    public function getRemainingSlots()
+    {
+        $remaining = $this->calculateRemainingSlots();
+
+        return response()->json([
+            'remaining' => $remaining,
+            'total' => self::MAX_SLOTS,
+        ]);
+    }
+
+    /**
+     * Calculate remaining available slots.
+     */
+    private function calculateRemainingSlots()
+    {
+        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')->sum('quantity');
+        return max(0, self::MAX_SLOTS - $confirmedSlots);
     }
 }

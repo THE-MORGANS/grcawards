@@ -26,6 +26,11 @@
   <section class="band cream pay-wrap">
     <div class="wrap">
 
+      {{-- Slots Remaining Indicator --}}
+      <div id="slots-indicator" style="text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:20px;font-weight:600;font-size:14px;background:#E8F5E9;color:#2E7D32;border:1px solid #C8E6C9">
+        <span id="slots-indicator-text">✅ <strong>{{ $remaining_slots }}</strong> of 200 seats available</span>
+      </div>
+
       {{-- Ticket Summary --}}
       <div class="pay-card">
         <h3>Your Selection</h3>
@@ -141,9 +146,47 @@
 
     let quantity = 1;
     let selectedPaymentMethod = 'stripe';
+    let availableSlots = {{ $remaining_slots }};
 
     function formatUSD(amount) {
       return 'USD ' + amount.toLocaleString('en-US');
+    }
+
+    function updateSlotsIndicator(remaining) {
+      const indicator = document.getElementById('slots-indicator');
+      const text = document.getElementById('slots-indicator-text');
+      availableSlots = remaining;
+
+      if (remaining <= 0) {
+        indicator.style.background = '#FFE0E0';
+        indicator.style.color = '#B91C1C';
+        indicator.style.border = '1px solid #FECACA';
+        text.innerHTML = '🚫 SOLD OUT — All 200 seats have been reserved.';
+        document.getElementById('pay-btn').disabled = true;
+        document.getElementById('pay-btn').textContent = 'Sold Out';
+        document.getElementById('pay-btn').style.opacity = '0.5';
+      } else if (remaining <= 20) {
+        indicator.style.background = '#FFF3E0';
+        indicator.style.color = '#E65100';
+        indicator.style.border = '1px solid #FFE0B2';
+        text.innerHTML = '🔥 Only <strong>' + remaining + '</strong> seats left — book now!';
+      } else if (remaining <= 50) {
+        indicator.style.background = '#FFFDE7';
+        indicator.style.color = '#F57F17';
+        indicator.style.border = '1px solid #FFF9C4';
+        text.innerHTML = '⚡ <strong>' + remaining + '</strong> seats remaining — filling up fast!';
+      } else {
+        indicator.style.background = '#E8F5E9';
+        indicator.style.color = '#2E7D32';
+        indicator.style.border = '1px solid #C8E6C9';
+        text.innerHTML = '✅ <strong>' + remaining + '</strong> of 200 seats available';
+      }
+
+      // Cap quantity to available slots
+      if (quantity > availableSlots && availableSlots > 0) {
+        quantity = availableSlots;
+        updateTotal();
+      }
     }
 
     function updateTotal() {
@@ -159,11 +202,18 @@
     });
 
     document.getElementById('qty-plus').addEventListener('click', function () {
-      if (quantity < 20) {
+      const maxQty = Math.min(20, availableSlots);
+      if (quantity < maxQty) {
         quantity++;
         updateTotal();
       }
     });
+
+    // Fetch live slot count on page load
+    fetch("{{ route('awards_summit.slots') }}")
+      .then(r => r.json())
+      .then(data => updateSlotsIndicator(data.remaining))
+      .catch(() => {});
 
     function selectPaymentMethod(element) {
       document.querySelectorAll('.payment-option').forEach(option => {

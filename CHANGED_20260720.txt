@@ -1,0 +1,13 @@
+New files:
+- app\database\migrations\2026_07_20_200000_add_seat_numbers_to_awards_summit_registrations_table.php 
+
+Updated files:
+- app\routes\web.php 
+- app\app\Http\Controllers\AwardsSummitPaymentController.php 
+- app\app\Models\AwardsSummitRegistration.php 
+- app\resources\views\contents\voter\awards_summit\payment.blade.php 
+- app\resources\views\contents\voter\awards_summit\success.blade.php 
+- app\resources\views\contents\voter\sectors_categories.blade.php
+- app\resources\views\contents\voter\index.blade.php
+- app\resources\views\contents\voter\tickets.blade.php 
+- app\resources\views\emails\awards_summit_confirmation.blade.php 

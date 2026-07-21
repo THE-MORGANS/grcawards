@@ -24,5 +24,10 @@ class AwardsSummitRegistration extends Model
         'payment_status',
         'stripe_session_id',
         'ticket_number',
+        'seat_numbers',
+    ];
+
+    protected $casts = [
+        'seat_numbers' => 'array',
     ];
 }

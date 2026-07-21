@@ -31,9 +31,16 @@
 
             <p>We are pleased to confirm that your payment has been successfully processed. Below are your reservation details and ticket information.</p>
 
-            <div class="ticket-info">
+            <div class="ticket-info" style="text-align: center;">
                 <span style="font-size: 12px; color: #777; text-transform: uppercase;">Your Confirmation Number</span><br>
                 <span class="ticket-number">{{ $registration->ticket_number }}</span>
+                
+                <div style="margin-top: 15px;">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={{ urlencode('Reservation ID: ' . $registration->registration_id . "\nName: " . $registration->name) }}" alt="Reservation Barcode" width="140" height="140" style="border: 1px solid #ddd; padding: 8px; background: #ffffff; border-radius: 4px;">
+                    <div style="font-size: 11px; color: #555; margin-top: 5px; font-weight: bold;">
+                        {{ $registration->name }} ({{ $registration->registration_id }})
+                    </div>
+                </div>
             </div>
 
             <table class="details-table">
@@ -53,6 +60,12 @@
                     <td class="label">Amount Paid</td>
                     <td class="value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}</td>
                 </tr>
+                @if($registration->seat_numbers && count($registration->seat_numbers) > 0)
+                <tr>
+                    <td class="label">Seat Number{{ count($registration->seat_numbers) > 1 ? 's' : '' }}</td>
+                    <td class="value" style="color: #C5881E; font-weight: bold; letter-spacing: 1px;">{{ implode(', ', $registration->seat_numbers) }}</td>
+                </tr>
+                @endif
                 <tr>
                     <td class="label">Venue</td>
                     <td class="value">Marriott Hotel, Nairobi</td>

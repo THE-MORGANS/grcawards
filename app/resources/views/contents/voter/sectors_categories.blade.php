@@ -66,9 +66,9 @@
                               @endif
 
                               <div>
-                                <button type="button" class="btn-nominate"
+                                <!-- <button type="button" class="btn-nominate"
                                   onclick="toggleNominationForm(event, '{{ $award->hashid }}')">+ Nominate
-                                  Someone</button>
+                                  Someone</button> -->
                               </div>
 
                               <div id="nomination-form-{{ $award->hashid }}" class="nom-form" style="display:none">

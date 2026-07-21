@@ -30,6 +30,9 @@
       </div>
 
       <div class="tab-panel active" id="tab-af">
+        <div id="slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
+          <span id="slots-text"></span>
+        </div>
         <div class="price-grid">
           <div class="price">
             <h3>Summit Pass</h3>
@@ -198,6 +201,53 @@
       b.classList.add('active');
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
     }));
+
+    // Fetch and display remaining slots
+    function fetchSlots() {
+      fetch("{{ route('awards_summit.slots') }}")
+        .then(r => r.json())
+        .then(data => {
+          const banner = document.getElementById('slots-banner');
+          const text = document.getElementById('slots-text');
+          const remaining = data.remaining;
+          const total = data.total;
+
+          banner.style.display = 'block';
+
+          if (remaining <= 0) {
+            banner.style.background = '#FFE0E0';
+            banner.style.color = '#B91C1C';
+            banner.style.border = '1px solid #FECACA';
+            text.innerHTML = '🚫 SOLD OUT — All ' + total + ' seats have been reserved.';
+            // Disable all Africa Reserve buttons
+            document.querySelectorAll('#tab-af .btn').forEach(btn => {
+              btn.style.pointerEvents = 'none';
+              btn.style.opacity = '0.5';
+              btn.textContent = 'Sold Out';
+            });
+          } else if (remaining <= 20) {
+            banner.style.background = '#FFF3E0';
+            banner.style.color = '#E65100';
+            banner.style.border = '1px solid #FFE0B2';
+            text.innerHTML = '🔥 Only <strong>' + remaining + '</strong> of ' + total + ' seats left — book now!';
+          } else if (remaining <= 50) {
+            banner.style.background = '#FFFDE7';
+            banner.style.color = '#F57F17';
+            banner.style.border = '1px solid #FFF9C4';
+            text.innerHTML = '⚡ <strong>' + remaining + '</strong> of ' + total + ' seats remaining — filling up fast!';
+          } else {
+            banner.style.background = '#E8F5E9';
+            banner.style.color = '#2E7D32';
+            banner.style.border = '1px solid #C8E6C9';
+            text.innerHTML = '✅ <strong>' + remaining + '</strong> of ' + total + ' seats available';
+          }
+        })
+        .catch(() => {
+          // Silently fail — don't block the page if the API is unreachable
+        });
+    }
+
+    fetchSlots();
   </script>
 
 </body>
