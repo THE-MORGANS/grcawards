@@ -11,70 +11,129 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\AwardsSummitPaymentConfirmation;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
+use Illuminate\Validation\Rule;
 
 class AwardsSummitPaymentController extends Controller
 {
     const MAX_SLOTS = 200;
 
     public static $tickets = [
-        'summit' => [
-            'name' => 'Summit Pass',
-            'price' => 100,
-            'subtitle' => 'Morning access only',
-            'description' => 'Full access to the morning Summit programme — keynotes, panel discussions and networking luncheon.',
+        'africa' => [
+            'summit' => [
+                'name' => 'Summit Pass',
+                'price' => 100,
+                'currency' => 'usd',
+                'subtitle' => 'Morning access only',
+                'description' => 'Full access to the morning Summit programme — keynotes, panel discussions and networking luncheon.',
+            ],
+            'full' => [
+                'name' => 'Full Delegate Pass',
+                'price' => 250,
+                'currency' => 'usd',
+                'subtitle' => 'Summit + Gala — Full Day',
+                'description' => 'The complete experience — full day Summit access plus the evening Gala Awards Ceremony, dinner and reception.',
+            ],
+            'gala' => [
+                'name' => 'Gala Only Pass',
+                'price' => 150,
+                'currency' => 'usd',
+                'subtitle' => 'Evening access only',
+                'description' => 'For guests attending only the Gala Awards Ceremony — ideal for VIPs, nominees\' guests and partners.',
+            ],
+            'student' => [
+                'name' => 'Student / Academic',
+                'price' => 60,
+                'currency' => 'usd',
+                'subtitle' => 'Summit access — valid ID required',
+                'description' => 'Discounted access for full-time students and academic staff from accredited institutions across East Africa.',
+            ],
         ],
-        'full' => [
-            'name' => 'Full Delegate Pass',
-            'price' => 250,
-            'subtitle' => 'Summit + Gala — Full Day',
-            'description' => 'The complete experience — full day Summit access plus the evening Gala Awards Ceremony, dinner and reception.',
-        ],
-        'gala' => [
-            'name' => 'Gala Only Pass',
-            'price' => 150,
-            'subtitle' => 'Evening access only',
-            'description' => 'For guests attending only the Gala Awards Ceremony — ideal for VIPs, nominees\' guests and partners.',
-        ],
-        'student' => [
-            'name' => 'Student / Academic',
-            'price' => 60,
-            'subtitle' => 'Summit access — valid ID required',
-            'description' => 'Discounted access for full-time students and academic staff from accredited institutions across East Africa.',
+        'europe' => [
+            'summit' => [
+                'name' => 'Summit Pass',
+                'price' => 75,
+                'currency' => 'gbp',
+                'subtitle' => 'Morning access only',
+                'description' => 'Full access to the morning Summit programme — keynotes, panel discussions and networking luncheon.',
+            ],
+            'full' => [
+                'name' => 'Full Delegate Pass',
+                'price' => 185,
+                'currency' => 'gbp',
+                'subtitle' => 'Summit + Gala — Full Day',
+                'description' => 'The complete experience — full day Summit access plus the evening Gala Awards Ceremony, dinner and reception.',
+            ],
+            'gala' => [
+                'name' => 'Gala Only Pass',
+                'price' => 110,
+                'currency' => 'gbp',
+                'subtitle' => 'Evening access only',
+                'description' => 'For guests attending only the Gala Awards Ceremony — ideal for VIPs, nominees\' guests and partners.',
+            ],
+            'group' => [
+                'name' => 'Group & Tables',
+                'price' => 45,
+                'currency' => 'gbp',
+                'subtitle' => 'Corporate & sponsor tables',
+                'description' => 'Preferential per-seat rate for tables of 10 at the Gala and group delegate bookings.',
+            ],
         ],
     ];
 
-    public function showPayment($ticket)
+    private function regionTickets($region)
     {
-        if (!array_key_exists($ticket, self::$tickets)) {
+        return self::$tickets[$region] ?? null;
+    }
+
+    public function showPayment(Request $request, $ticket)
+    {
+        $region = $request->query('region', 'africa');
+        $tickets = $this->regionTickets($region);
+
+        if (!$tickets || !array_key_exists($ticket, $tickets)) {
             abort(404);
         }
 
-        $remaining = $this->calculateRemainingSlots();
+        $remaining = $this->calculateRemainingSlots($region);
 
         return view('contents.voter.awards_summit.payment', [
             'stripe_key' => env('STRIPE_KEY'),
             'ticket_type' => $ticket,
-            'ticket' => self::$tickets[$ticket],
+            'ticket' => $tickets[$ticket],
+            'region' => $region,
             'remaining_slots' => $remaining,
         ]);
     }
 
     public function initiatePayment(Request $request)
     {
+        $region = $request->input('region', 'africa');
+        $tickets = $this->regionTickets($region);
+
+        if (!$tickets) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Invalid edition selected.',
+            ], 422);
+        }
+
         $data = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:50',
             'organization' => 'nullable|string|max:255',
-            'ticket_type' => 'required|string|in:' . implode(',', array_keys(self::$tickets)),
+            'region' => ['nullable', Rule::in(array_keys(self::$tickets))],
+            'ticket_type' => ['required', 'string', Rule::in(array_keys($tickets))],
             'quantity' => 'required|integer|min:1|max:20',
         ]);
 
-        $ticket = self::$tickets[$data['ticket_type']];
+        $ticket = $tickets[$data['ticket_type']];
         $amount = $ticket['price'] * $data['quantity'];
 
-        // Check slot availability before proceeding
-        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')->sum('quantity');
+        // Check slot availability before proceeding (each edition has its own 200-seat pool)
+        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
+            ->where('region', $region)
+            ->sum('quantity');
         $requestedSlots = $data['quantity'];
 
         if (($confirmedSlots + $requestedSlots) > self::MAX_SLOTS) {
@@ -103,8 +162,9 @@ class AwardsSummitPaymentController extends Controller
                 'ticket_name' => $ticket['name'],
                 'quantity' => $data['quantity'],
                 'amount' => $amount,
+                'currency' => strtoupper($ticket['currency']),
                 'payment_status' => 'pending',
-                'region' => $data['region'] ?? 'africa',
+                'region' => $region,
             ]);
 
             // Stripe Integration
@@ -114,7 +174,7 @@ class AwardsSummitPaymentController extends Controller
                 'payment_method_types' => ['card'],
                 'line_items' => [[
                     'price_data' => [
-                        'currency' => 'usd',
+                        'currency' => $ticket['currency'],
                         'product_data' => [
                             'name' => 'GRC & Financial Crime Prevention Awards & Summit 2026 - ' . $ticket['name'],
                             'description' => $data['quantity'] . ' Ticket(s)',
@@ -142,7 +202,7 @@ class AwardsSummitPaymentController extends Controller
             ]);
         } catch (\Exception $e) {
             DB::rollBack();
-            Log::error('Africa Edition Stripe Payment Initiation Error: ' . $e->getMessage());
+            Log::error(ucfirst($region) . ' Edition Stripe Payment Initiation Error: ' . $e->getMessage());
             return response()->json([
                 'status' => 'error',
                 'message' => 'Failed to initiate payment. Please try again later.',
@@ -172,7 +232,9 @@ class AwardsSummitPaymentController extends Controller
                 // Use a transaction with locking to safely assign seat numbers
                 DB::transaction(function () use ($registration) {
                     // Lock paid registrations to prevent race conditions on seat assignment
+                    // Seat numbers are scoped per edition — each region has its own 200-seat pool
                     $highestSeat = AwardsSummitRegistration::where('payment_status', 'paid')
+                        ->where('region', $registration->region)
                         ->whereNotNull('seat_numbers')
                         ->lockForUpdate()
                         ->get()
@@ -206,13 +268,13 @@ class AwardsSummitPaymentController extends Controller
                 try {
                     Mail::to($registration->email)->send(new AwardsSummitPaymentConfirmation($registration));
                 } catch (\Exception $e) {
-                    Log::error('Africa Edition Confirmation Email Error: ' . $e->getMessage());
+                    Log::error(ucfirst($registration->region) . ' Edition Confirmation Email Error: ' . $e->getMessage());
                 }
             }
 
             return view('contents.voter.awards_summit.success', compact('registration'));
         } catch (\Exception $e) {
-            Log::error('Africa Edition Stripe Payment Success Handling Error: ' . $e->getMessage());
+            Log::error('Awards Summit Stripe Payment Success Handling Error: ' . $e->getMessage());
             return redirect()->route('landing.index')->with('error', 'Error processing payment confirmation.');
         }
     }
@@ -225,22 +287,31 @@ class AwardsSummitPaymentController extends Controller
     /**
      * Return remaining slot count as JSON for AJAX polling.
      */
-    public function getRemainingSlots()
+    public function getRemainingSlots(Request $request)
     {
-        $remaining = $this->calculateRemainingSlots();
+        $region = $request->query('region', 'africa');
+
+        if (!array_key_exists($region, self::$tickets)) {
+            $region = 'africa';
+        }
+
+        $remaining = $this->calculateRemainingSlots($region);
 
         return response()->json([
             'remaining' => $remaining,
             'total' => self::MAX_SLOTS,
+            'region' => $region,
         ]);
     }
 
     /**
-     * Calculate remaining available slots.
+     * Calculate remaining available slots for an edition (each region has its own 200-seat pool).
      */
-    private function calculateRemainingSlots()
+    private function calculateRemainingSlots($region = 'africa')
     {
-        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')->sum('quantity');
+        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
+            ->where('region', $region)
+            ->sum('quantity');
         return max(0, self::MAX_SLOTS - $confirmedSlots);
     }
 }

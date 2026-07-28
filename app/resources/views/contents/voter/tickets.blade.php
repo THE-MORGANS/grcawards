@@ -99,10 +99,13 @@
       </div>
 
       <div class="tab-panel" id="tab-eu">
+        <div id="eu-slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
+          <span id="eu-slots-text"></span>
+        </div>
         <div class="price-grid">
           <div class="price">
             <h3>Summit Pass</h3>
-            <div class="amt"><small></small>TBA</div>
+            <div class="amt"><small>GBP</small> 75</div>
             <div class="sub">Morning access only</div>
             <ul>
               <li>Summit sessions &amp; panels</li>
@@ -110,13 +113,12 @@
               <li>Delegate pack</li>
               <li>Digital certificate</li>
             </ul>
-            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('show_contact') }}">Register Interest
-              →</a>
+            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('awards_summit.payment', ['ticket' => 'summit', 'region' => 'europe']) }}">Reserve →</a>
           </div>
           <div class="price feat">
             <div class="flag">Most Popular</div>
             <h3>Full Delegate Pass</h3>
-            <div class="amt"><small></small>TBA</div>
+            <div class="amt"><small>GBP</small> 185</div>
             <div class="sub">Summit + Gala</div>
             <ul>
               <li>Full Summit programme</li>
@@ -125,11 +127,11 @@
               <li>Gala &amp; formal dinner</li>
               <li>Reserved seating</li>
             </ul>
-            <a class="btn btn-gold" href="{{ route('show_contact') }}">Register Interest →</a>
+            <a class="btn btn-gold" href="{{ route('awards_summit.payment', ['ticket' => 'full', 'region' => 'europe']) }}">Reserve →</a>
           </div>
           <div class="price">
             <h3>Gala Only Pass</h3>
-            <div class="amt"><small></small>TBA</div>
+            <div class="amt"><small>GBP</small> 110</div>
             <div class="sub">Evening access</div>
             <ul>
               <li>Cocktail reception</li>
@@ -137,12 +139,11 @@
               <li>Standard seating</li>
               <li>Digital programme</li>
             </ul>
-            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('show_contact') }}">Register Interest
-              →</a>
+            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('awards_summit.payment', ['ticket' => 'gala', 'region' => 'europe']) }}">Reserve →</a>
           </div>
           <div class="price">
             <h3>Group &amp; Tables</h3>
-            <div class="amt"><small></small>TBA</div>
+            <div class="amt"><small>GBP</small> 45</div>
             <div class="sub">Corporate &amp; sponsor tables</div>
             <ul>
               <li>Tables of 10 at the Gala</li>
@@ -150,13 +151,11 @@
               <li>Preferential pricing</li>
               <li>Priority booking</li>
             </ul>
-            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('show_contact') }}">Register Interest
-              →</a>
+            <a class="btn btn-navy" style="background:#3F6FB0" href="{{ route('awards_summit.payment', ['ticket' => 'group', 'region' => 'europe']) }}">Reserve →</a>
           </div>
         </div>
         <p class="center" style="color:var(--muted);font-size:13px;margin-top:16px">Europe Edition — <b>6 November
-            2026, London Marriott Hotel</b>. Pricing (GBP) is confirmed shortly; register interest for priority
-          booking.</p>
+            2026, London Marriott Hotel</b>.</p>
       </div>
     </div>
   </section>
@@ -202,13 +201,13 @@
       document.getElementById('tab-' + b.dataset.tab).classList.add('active');
     }));
 
-    // Fetch and display remaining slots
-    function fetchSlots() {
-      fetch("{{ route('awards_summit.slots') }}")
+    // Fetch and display remaining slots for a given edition (each has its own 200-seat pool)
+    function fetchSlots(region, bannerId, textId, tabSelector) {
+      fetch("{{ route('awards_summit.slots') }}?region=" + region)
         .then(r => r.json())
         .then(data => {
-          const banner = document.getElementById('slots-banner');
-          const text = document.getElementById('slots-text');
+          const banner = document.getElementById(bannerId);
+          const text = document.getElementById(textId);
           const remaining = data.remaining;
           const total = data.total;
 
@@ -219,8 +218,8 @@
             banner.style.color = '#B91C1C';
             banner.style.border = '1px solid #FECACA';
             text.innerHTML = '🚫 SOLD OUT — All ' + total + ' seats have been reserved.';
-            // Disable all Africa Reserve buttons
-            document.querySelectorAll('#tab-af .btn').forEach(btn => {
+            // Disable all Reserve buttons for this edition
+            document.querySelectorAll(tabSelector + ' .btn').forEach(btn => {
               btn.style.pointerEvents = 'none';
               btn.style.opacity = '0.5';
               btn.textContent = 'Sold Out';
@@ -247,7 +246,8 @@
         });
     }
 
-    fetchSlots();
+    fetchSlots('africa', 'slots-banner', 'slots-text', '#tab-af');
+    fetchSlots('europe', 'eu-slots-banner', 'eu-slots-text', '#tab-eu');
   </script>
 
 </body>

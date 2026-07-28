@@ -18,16 +18,23 @@
     </style>
 </head>
 <body>
+    @php
+        $isEurope = $registration->region === 'europe';
+        $editionLabel = $isEurope ? 'Europe Edition' : 'Africa Edition';
+        $editionPlace = $isEurope ? 'London, United Kingdom' : 'Nairobi, Kenya';
+        $venueLine = $isEurope ? 'London Marriott Hotel, London' : 'Marriott Hotel, Nairobi';
+        $dateLine = $isEurope ? '6 November 2026' : '20 November 2026';
+    @endphp
     <div class="container">
         <div class="header">
             <h2 style="color: #1a1a1a; margin: 0;">GRC & Financial Crime Prevention Awards & Summit 2026</h2>
-            <p style="color: #C5881E; margin: 5px 0; font-weight: 600;">Africa Edition — Nairobi, Kenya</p>
+            <p style="color: #C5881E; margin: 5px 0; font-weight: 600;">{{ $editionLabel }} — {{ $editionPlace }}</p>
         </div>
 
         <div class="content">
             <p>Dear <strong>{{ $registration->name }}</strong>,</p>
 
-            <p>Thank you for reserving your <strong>{{ $registration->ticket_name }}</strong> for the <strong>Africa Edition of the GRC & Financial Crime Prevention Awards & Summit</strong>, taking place at the Marriott Hotel, Nairobi on 20 November 2026.</p>
+            <p>Thank you for reserving your <strong>{{ $registration->ticket_name }}</strong> for the <strong>{{ $editionLabel }} of the GRC & Financial Crime Prevention Awards & Summit</strong>, taking place at the {{ $venueLine }} on {{ $dateLine }}.</p>
 
             <p>We are pleased to confirm that your payment has been successfully processed. Below are your reservation details and ticket information.</p>
 
@@ -68,11 +75,11 @@
                 @endif
                 <tr>
                     <td class="label">Venue</td>
-                    <td class="value">Marriott Hotel, Nairobi</td>
+                    <td class="value">{{ $venueLine }}</td>
                 </tr>
                 <tr>
                     <td class="label">Date</td>
-                    <td class="value">20 November 2026</td>
+                    <td class="value">{{ $dateLine }}</td>
                 </tr>
             </table>
 

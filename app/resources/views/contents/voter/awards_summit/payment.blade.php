@@ -14,12 +14,23 @@
   @include('partials.voter.preloader')
   @include('partials.voter.topbar_new_theme')
 
+  @php
+    $isEurope = $region === 'europe';
+    $currencyLabel = strtoupper($ticket['currency']);
+  @endphp
+
   <header class="page-hero pay-hero">
     <div class="wrap">
       <a href="{{ route('show_tickets') }}" class="pay-back">← Back to Tickets</a>
-      <span class="ed-tag af"><span class="pin af"></span>Africa Edition 2026 · Nairobi</span>
-      <h1>Reserve Your <span class="ac">Pass.</span></h1>
-      <p>Marriott Hotel, Nairobi · 20 November 2026</p>
+      @if($isEurope)
+        <span class="ed-tag eu"><span class="pin eu"></span>Europe Edition 2026 · London</span>
+        <h1>Reserve Your <span class="ac">Pass.</span></h1>
+        <p>London Marriott Hotel · 6 November 2026</p>
+      @else
+        <span class="ed-tag af"><span class="pin af"></span>Africa Edition 2026 · Nairobi</span>
+        <h1>Reserve Your <span class="ac">Pass.</span></h1>
+        <p>Marriott Hotel, Nairobi · 20 November 2026</p>
+      @endif
     </div>
   </header>
 
@@ -41,7 +52,7 @@
             <div class="ticket-summary-name">{{ $ticket['name'] }}</div>
             <div class="ticket-summary-desc">{{ $ticket['description'] }}</div>
           </div>
-          <div class="ticket-summary-price">USD {{ number_format($ticket['price'], 0) }}<span
+          <div class="ticket-summary-price">{{ $currencyLabel }} {{ number_format($ticket['price'], 0) }}<span
               style="font-size:11px;color:var(--muted)"> / ticket</span></div>
         </div>
 
@@ -56,7 +67,7 @@
 
         <div class="total-display">
           <span class="total-label">Total Amount</span>
-          <span class="total-amount" id="total-amount">USD {{ number_format($ticket['price'], 0) }}</span>
+          <span class="total-amount" id="total-amount">{{ $currencyLabel }} {{ number_format($ticket['price'], 0) }}</span>
         </div>
       </div>
 
@@ -143,13 +154,15 @@
     const stripe = Stripe('{{ $stripe_key }}');
     const ticketType = "{{ $ticket_type }}";
     const ticketPrice = "{{ $ticket['price'] }}";
+    const region = "{{ $region }}";
+    const currencyLabel = "{{ $currencyLabel }}";
 
     let quantity = 1;
     let selectedPaymentMethod = 'stripe';
     let availableSlots = {{ $remaining_slots }};
 
-    function formatUSD(amount) {
-      return 'USD ' + amount.toLocaleString('en-US');
+    function formatMoney(amount) {
+      return currencyLabel + ' ' + amount.toLocaleString('en-US');
     }
 
     function updateSlotsIndicator(remaining) {
@@ -191,7 +204,7 @@
 
     function updateTotal() {
       document.getElementById('qty-value').textContent = quantity;
-      document.getElementById('total-amount').textContent = formatUSD(ticketPrice * quantity);
+      document.getElementById('total-amount').textContent = formatMoney(ticketPrice * quantity);
     }
 
     document.getElementById('qty-minus').addEventListener('click', function () {
@@ -210,7 +223,7 @@
     });
 
     // Fetch live slot count on page load
-    fetch("{{ route('awards_summit.slots') }}")
+    fetch("{{ route('awards_summit.slots') }}?region={{ $region }}")
       .then(r => r.json())
       .then(data => updateSlotsIndicator(data.remaining))
       .catch(() => {});
@@ -270,6 +283,7 @@
         organization: document.getElementById('organization').value.trim(),
         ticket_type: ticketType,
         quantity: quantity,
+        region: region,
         _token: csrfToken
       };
 

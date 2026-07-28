@@ -108,7 +108,13 @@
                 <i class="mdi mdi-check-decagram"></i>
             </div>
 
-            <div class="success-kicker">Africa Edition 2026 · Nairobi</div>
+            @php
+                $isEurope = $registration->region === 'europe';
+                $venueLine = $isEurope ? 'London Marriott Hotel, London' : 'Marriott Hotel, Nairobi';
+                $dateLine = $isEurope ? '6 November 2026' : '20 November 2026';
+            @endphp
+
+            <div class="success-kicker">{{ $isEurope ? 'Europe Edition 2026 · London' : 'Africa Edition 2026 · Nairobi' }}</div>
             <h1 class="success-title">Reservation Confirmed!</h1>
             <p class="success-message">
                 Thank you, <strong>{{ $registration->name }}</strong>. Your <strong>{{ $registration->ticket_name }}</strong> for the GRC & Financial Crime Prevention Awards & Summit has been successfully reserved.
@@ -165,11 +171,11 @@
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Venue</span>
-                    <span class="detail-value">Marriott Hotel, Nairobi</span>
+                    <span class="detail-value">{{ $venueLine }}</span>
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Date</span>
-                    <span class="detail-value">20 November 2026</span>
+                    <span class="detail-value">{{ $dateLine }}</span>
                 </div>
             </div>
 
