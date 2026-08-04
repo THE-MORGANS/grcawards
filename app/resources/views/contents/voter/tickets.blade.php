@@ -30,9 +30,9 @@
       </div>
 
       <div class="tab-panel active" id="tab-af">
-        <div id="slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
+        <!-- <div id="slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
           <span id="slots-text"></span>
-        </div>
+        </div> -->
         <div class="price-grid">
           <div class="price">
             <h3>Summit Pass</h3>
@@ -99,9 +99,9 @@
       </div>
 
       <div class="tab-panel" id="tab-eu">
-        <div id="eu-slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
+        <!-- <div id="eu-slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
           <span id="eu-slots-text"></span>
-        </div>
+        </div> -->
         <div class="price-grid">
           <div class="price">
             <h3>Summit Pass</h3>
@@ -246,8 +246,8 @@
         });
     }
 
-    fetchSlots('africa', 'slots-banner', 'slots-text', '#tab-af');
-    fetchSlots('europe', 'eu-slots-banner', 'eu-slots-text', '#tab-eu');
+    // fetchSlots('africa', 'slots-banner', 'slots-text', '#tab-af');
+    // fetchSlots('europe', 'eu-slots-banner', 'eu-slots-text', '#tab-eu');
   </script>
 
 </body>

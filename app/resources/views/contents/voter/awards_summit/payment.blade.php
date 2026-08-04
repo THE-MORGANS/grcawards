@@ -15,21 +15,21 @@
   @include('partials.voter.topbar_new_theme')
 
   @php
-    $isEurope = $region === 'europe';
-    $currencyLabel = strtoupper($ticket['currency']);
+  $isEurope = $region === 'europe';
+  $currencyLabel = strtoupper($ticket['currency']);
   @endphp
 
   <header class="page-hero pay-hero">
     <div class="wrap">
       <a href="{{ route('show_tickets') }}" class="pay-back">← Back to Tickets</a>
       @if($isEurope)
-        <span class="ed-tag eu"><span class="pin eu"></span>Europe Edition 2026 · London</span>
-        <h1>Reserve Your <span class="ac">Pass.</span></h1>
-        <p>London Marriott Hotel · 6 November 2026</p>
+      <span class="ed-tag eu"><span class="pin eu"></span>Europe Edition 2026 · London</span>
+      <h1>Reserve Your <span class="ac">Pass.</span></h1>
+      <p>London Marriott Hotel · 6 November 2026</p>
       @else
-        <span class="ed-tag af"><span class="pin af"></span>Africa Edition 2026 · Nairobi</span>
-        <h1>Reserve Your <span class="ac">Pass.</span></h1>
-        <p>Marriott Hotel, Nairobi · 20 November 2026</p>
+      <span class="ed-tag af"><span class="pin af"></span>Africa Edition 2026 · Nairobi</span>
+      <h1>Reserve Your <span class="ac">Pass.</span></h1>
+      <p>Marriott Hotel, Nairobi · 20 November 2026</p>
       @endif
     </div>
   </header>
@@ -38,9 +38,9 @@
     <div class="wrap">
 
       {{-- Slots Remaining Indicator --}}
-      <div id="slots-indicator" style="text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:20px;font-weight:600;font-size:14px;background:#E8F5E9;color:#2E7D32;border:1px solid #C8E6C9">
+      <!-- <div id="slots-indicator" style="text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:20px;font-weight:600;font-size:14px;background:#E8F5E9;color:#2E7D32;border:1px solid #C8E6C9">
         <span id="slots-indicator-text">✅ <strong>{{ $remaining_slots }}</strong> of 200 seats available</span>
-      </div>
+      </div> -->
 
       {{-- Ticket Summary --}}
       <div class="pay-card">
@@ -159,7 +159,11 @@
 
     let quantity = 1;
     let selectedPaymentMethod = 'stripe';
-    let availableSlots = {{ $remaining_slots }};
+    let availableSlots = {
+      {
+        $remaining_slots
+      }
+    };
 
     function formatMoney(amount) {
       return currencyLabel + ' ' + amount.toLocaleString('en-US');
@@ -207,14 +211,14 @@
       document.getElementById('total-amount').textContent = formatMoney(ticketPrice * quantity);
     }
 
-    document.getElementById('qty-minus').addEventListener('click', function () {
+    document.getElementById('qty-minus').addEventListener('click', function() {
       if (quantity > 1) {
         quantity--;
         updateTotal();
       }
     });
 
-    document.getElementById('qty-plus').addEventListener('click', function () {
+    document.getElementById('qty-plus').addEventListener('click', function() {
       const maxQty = Math.min(20, availableSlots);
       if (quantity < maxQty) {
         quantity++;
@@ -288,14 +292,14 @@
       };
 
       fetch("{{ route('awards_summit.payment.initiate') }}", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-CSRF-TOKEN': csrfToken
-        },
-        body: JSON.stringify(payload)
-      })
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+          },
+          body: JSON.stringify(payload)
+        })
         .then(response => response.json())
         .then(data => {
           if (data.status === 'success') {
