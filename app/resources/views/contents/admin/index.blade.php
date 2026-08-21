@@ -88,9 +88,15 @@
                                     @foreach($awps as $awp)
                                     <tr>
                                         <td>
+                                            @if($awp->status == 1)
                                             <a href="{{route('award.program', $awp->hashid)}}" class="program-name">
                                                 {{$awp->name}}
                                             </a>
+                                            @else
+                                            <span class="program-name text-muted" style="cursor: not-allowed;" title="Activate this program to open it">
+                                                {{$awp->name}}
+                                            </span>
+                                            @endif
                                         </td>
                                         <td><span class="year-pill">{{$awp->year}}</span></td>
                                         <td class="text-muted small">{{ $awp->created_at ? $awp->created_at->format('M d, Y') : 'N/A' }}</td>

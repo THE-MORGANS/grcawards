@@ -32,33 +32,33 @@
                 </a>
             </li>
 
-           @if (Auth::guard('admin')->user()->role_id == 1)
-           <li class="side-nav-item">
-            <a data-bs-toggle="collapse" href="#judgings" aria-expanded="false" aria-controls="judgings" class="side-nav-link">
-                <i class="mdi mdi-clipboard-text-search-outline"></i>
-                <span>Judging Criteria </span>
-                <span class="menu-arrow"></span>
-            </a>
-            <div class="collapse" id="judgings">
-                <ul class="side-nav-second-level">
-                    <li>
-                        <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" >
-                            Create Judging Criteria 
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
-                    </li>
-                </ul>
-            </div>
-        </li>
-          
-        
+            @if (Auth::guard('admin')->user()->role_id == 1)
+            <li class="side-nav-item">
+                <a data-bs-toggle="collapse" href="#judgings" aria-expanded="false" aria-controls="judgings" class="side-nav-link">
+                    <i class="mdi mdi-clipboard-text-search-outline"></i>
+                    <span>Judging Criteria </span>
+                    <span class="menu-arrow"></span>
+                </a>
+                <div class="collapse" id="judgings">
+                    <ul class="side-nav-second-level">
+                        <li>
+                            <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}">
+                                Create Judging Criteria
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
-         
+
+
+
 
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#evaluation" aria-expanded="false" aria-controls="evaluation" class="side-nav-link">
@@ -69,15 +69,17 @@
                 <div class="collapse" id="evaluation">
                     <ul class="side-nav-second-level">
                         <li>
-                            <a href="{{route('admin.get_cat_sec', request()->segment(3))}}">Votes</a>
+                            <a href="{{route('admin.get_cat_sec', request()->segment(3))}}">
+                                Votes & Results
+                            </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#">Results</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </li>
-                
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#settings" aria-expanded="false" aria-controls="settings" class="side-nav-link">
                     <i class="dripicons-gear"></i>
@@ -117,7 +119,7 @@
                 </div>
             </li>
 
-            
+
             <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#summit" aria-expanded="false" aria-controls="people" class="side-nav-link">
                     <i class="uil uil-users-alt"></i>
@@ -151,47 +153,47 @@
 
             @if (Auth::guard('admin')->user()->role_id == 3)
             <li class="side-nav-item">
-             <a data-bs-toggle="collapse" href="#judgings" aria-expanded="false" aria-controls="judgings" class="side-nav-link">
-                 <i class="mdi mdi-clipboard-text-search-outline"></i>
-                 <span>Judging Criteria </span>
-                 <span class="menu-arrow"></span>
-             </a>
-             <div class="collapse" id="judgings">
-                 <ul class="side-nav-second-level">
-                     {{-- <li>
-                         <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" >
-                             Create Judging Criteria 
-                         </a>
-                     </li> --}}
-                     <li>
-                         <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
-                     </li>
-                     {{-- <li>
-                         <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
-                     </li> --}}
-                 </ul>
-             </div>
-         </li>
-
-         @endif
-
-            <li class="side-nav-item">
-                <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
-                    <i class="mdi mdi-database-cog-outline"></i>
-                    <span> Upload Images </span>
+                <a data-bs-toggle="collapse" href="#judgings" aria-expanded="false" aria-controls="judgings" class="side-nav-link">
+                    <i class="mdi mdi-clipboard-text-search-outline"></i>
+                    <span>Judging Criteria </span>
                     <span class="menu-arrow"></span>
                 </a>
-                <div class="collapse" id="data">
+                <div class="collapse" id="judgings">
                     <ul class="side-nav-second-level">
-                        <li>
-                            <a href="{{route('admin.UploadFile')}}">Upload</a>
-                        </li>
-                    </ul>
-                </div>
+                        {{-- <li>
+                         <a href="{{route('admin.load_judging_category_page', request()->segment(3))}}" >
+                        Create Judging Criteria
+                        </a>
+            </li> --}}
+            <li>
+                <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}">Judges Voting</a>
             </li>
+            {{-- <li>
+                         <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
+            </li> --}}
+        </ul>
+    </div>
+    </li>
 
-            
-            {{-- <li class="side-nav-item">
+    @endif
+
+    <li class="side-nav-item">
+        <a data-bs-toggle="collapse" href="#data" aria-expanded="false" aria-controls="data" class="side-nav-link">
+            <i class="mdi mdi-database-cog-outline"></i>
+            <span> Upload Images </span>
+            <span class="menu-arrow"></span>
+        </a>
+        <div class="collapse" id="data">
+            <ul class="side-nav-second-level">
+                <li>
+                    <a href="{{route('admin.UploadFile')}}">Upload</a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
+
+    {{-- <li class="side-nav-item">
                 <a data-bs-toggle="collapse" href="#nominees" aria-expanded="false" aria-controls="data" class="side-nav-link">
                     <i class="mdi mdi-database-cog-outline"></i>
                     <span> Judges Votes </span>
@@ -201,13 +203,13 @@
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="{{route('admin.show_categories',request()->segment(3))}}">View Nominess</a>
-                        </li>
-                    </ul>
-                </div>
-            </li> --}}
-           
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-    <!-- Sidebar -left -->
+    </li>
+    </ul>
+</div>
+</li> --}}
+
+</ul>
+<div class="clearfix"></div>
+</div>
+<!-- Sidebar -left -->
 </div>

@@ -1,0 +1,41 @@
+New files:
+- app\app\Exports\SectorsAwardsExport.php ✅
+- app\public\assets\css\criteria_redesign.css ✅
+
+Updated files:
+- app\app\Http\Controllers\Judges\CreateNominessController.php ✅
+- app\app\Http\Controllers\Judges\JudgesController.php ✅
+- app\app\Http\Controllers\Judges\LoadJudgesController.php ✅
+- app\app\Http\Controllers\VoteCountController.php ✅
+- app\public\assets\css\nominees_redesign.css ✅
+- app\resources\views\contents\admin\cat_sec.blade.php ✅
+- app\resources\views\contents\admin\index.blade.php ✅
+- app\resources\views\contents\admin\judge\ComBankRiskComplainces.blade.php ✅
+- app\resources\views\contents\admin\judge\com_bank_chief_risk_officers.blade.php ✅
+- app\resources\views\contents\admin\judge\com_bank_fraud_awarenesses.blade.php ✅
+- app\resources\views\contents\admin\judge\crime_prevention_advisory_service.blade.php ✅
+- app\resources\views\contents\admin\judge\governors_vote.blade.php ✅
+- app\resources\views\contents\admin\judge\grc_anti_fin_crim_reporters.blade.php ✅
+- app\resources\views\contents\admin\judge\grc_employers.blade.php ✅
+- app\resources\views\contents\admin\judge\grc_solution_providers.blade.php ✅
+- app\resources\views\contents\admin\judge\grc_training_providers.blade.php ✅
+- app\resources\views\contents\admin\judge\judgeCategories.blade.php ✅
+- app\resources\views\contents\admin\judge\medias.blade.php ✅
+- app\resources\views\contents\admin\judge\women_in_grcs.blade.php ✅
+- app\resources\views\contents\admin\judgingCategories.blade.php ✅
+- app\resources\views\contents\admin\sectors_awards.blade.php ✅
+- app\resources\views\contents\admin\table\ComBankRiskComplainces.blade.php ✅
+- app\resources\views\contents\admin\table\com_bank_chief_risk_officers.blade.php ✅
+- app\resources\views\contents\admin\table\com_bank_fraud_awarenesses.blade.php ✅
+- app\resources\views\contents\admin\table\crime_prevention_advisory_service.blade.php ✅
+- app\resources\views\contents\admin\table\governors_votes.blade.php ✅
+- app\resources\views\contents\admin\table\grc_anti_fin_crim_reporters.blade.php ✅
+- app\resources\views\contents\admin\table\grc_employers.blade.php ✅
+- app\resources\views\contents\admin\table\grc_solution_providers.blade.php ✅
+- app\resources\views\contents\admin\table\grc_training_providers.blade.php ✅
+- app\resources\views\contents\admin\table\media_votes.blade.php ✅
+- app\resources\views\contents\admin\table\women_in_grc.blade.php ✅
+- app\resources\views\contents\admin\voteResults\judgeCategories.blade.php ✅
+- app\resources\views\layouts\admin\master.blade.php ✅
+- app\resources\views\partials\admin\sidebar.blade.php ✅
+- app\routes\web.php ✅

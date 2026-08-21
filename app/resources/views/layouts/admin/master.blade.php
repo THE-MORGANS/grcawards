@@ -36,9 +36,6 @@
 
     <!-- scripts -->
     @include('partials.admin.scripts')
-
-    @yield('scripts')
-    
 </body>
 
 </html>

@@ -4,76 +4,103 @@
 
 @section('style')
 <link href="{{asset('assets/css/nominees_redesign.css')}}" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-icons/4.0/line-icons.css" />
 @endsection
 
 @section('content')
-<div class="nominees-container">
-    <!-- Header Section -->
-    <div class="nominees-header">
-        <div>
-            <h1 class="award-title">Judges Voting System</h1>
-            <p class="text-muted mb-0">Award Year: <span class="fw-bold text-dark">{{$currentYear?->year ?? 'N/A'}}</span></p>
-        </div>
-        <div class="text-end">
-            <h4 class="mb-0 fw-bold">Nominees for <span class="award-highlight">{{ $awards[0]->awards->name }} Awards</span></h4>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card nom-hero mb-4">
+                <div class="card-body p-4">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8">
+                            <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}" class="nom-back-link">
+                                <i class="mdi mdi-arrow-left"></i> Return to Judging
+                            </a>
+                            <h2 class="nom-title">Nominees for <span style="color:#c9cff6">{{ $awards[0]->awards->name }} Awards</span></h2>
+                            <p class="nom-subtitle">Judges Voting System &middot; Award Year: {{$currentYear?->year ?? 'N/A'}}</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="d-flex justify-content-lg-end">
+                                <div class="nom-stat">
+                                    <div class="val">{{ count($awards) }}</div>
+                                    <div class="lbl">Nominees</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Table Card -->
-    <div class="nominees-card">
-        <form class="needs-validation" method="POST" action="{{route('admin.StoreNominessVotes',[request()->segment(3)])}}" id="form1">
-            @csrf
-            <div class="table-responsive">
-                <table class="nominees-table">
-                    <thead>
-                        <tr>
-                            <th style="width: 12%">Nominee Name</th>
-                            <th style="width: 5%">Votes</th>
-                            <th style="width: 5%">%</th>
-                            <th style="width: 15%">Profile & GRC Areas</th>
-                            <th style="width: 15%">Innovative Teaching</th>
-                            <th style="width: 12%">Clients</th>
-                            <th style="width: 10%">Client Rating</th>
-                            <th style="width: 10%">Affiliations</th>
-                            <th style="width: 10%">Judges Votes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($awards as $awp)
-                        <tr>
-                            <td class="nominee-name-cell">{{ $awp?->nominee?->name }}</td>
-                            <td><span class="votes-badge">{{ $awp->number_of_votes }}</span></td>
-                            <td><span class="percentage-badge">{{ number_format($awp->percentage_votes, 2) }}%</span></td>
-                            <td class="data-cell small text-muted">{{ $awp->profile_of_the_training_provider_and_areas_of_grc_covered }}</td>
-                            <td class="data-cell small text-muted">{{ $awp->evidence_of_innovative_ways_of_teaching }}</td>
-                            <td class="data-cell small text-muted">{{ $awp->clients_of_training_providers }}</td>
-                            <td class="data-cell small text-muted">{{ $awp->clients_rating_of_training_provider }}</td>
-                            <td class="data-cell small text-muted">{{ $awp->affiliations }}</td>
-                            <td>
-                                <div class="voting-input-wrapper">
-                                    <input type="number" name="judges_votes[]" class="voting-input" placeholder="0" min="1" max="10" required>
-                                    <span class="voting-hint">Score (1-10)</span>
-                                    <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">
-                                </div>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                    <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}">
-                </table>
-            </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
 
-            <!-- Footer Actions -->
-            <div class="p-4 bg-white nominees-footer">
-                <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}" class="btn-back">
-                    <i class="lni lni-arrow-left"></i> Return Back
-                </a>
-                <button type="submit" class="btn-submit-votes" name="submitButton">
-                    <i class="lni lni-checkmark-circle me-1"></i> Submit Awards Votes
-                </button>
+                    <div class="nom-info-banner">
+                        <i class="mdi mdi-information-outline"></i>
+                        <span>Score each nominee from <strong>1&ndash;10</strong>. Every nominee must be scored before you can submit.</span>
+                    </div>
+
+                    <form class="needs-validation" method="POST" action="{{route('admin.StoreNominessVotes',[request()->segment(3)])}}" id="form1">
+                        @csrf
+                        <div class="nom-table-wrap">
+                        <div class="table-responsive">
+                            <table class="nominees-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 12%">Nominee Name</th>
+                                        <th style="width: 5%">Votes</th>
+                                        <th style="width: 5%">%</th>
+                                        <th style="width: 15%">Profile & GRC Areas</th>
+                                        <th style="width: 15%">Innovative Teaching</th>
+                                        <th style="width: 12%">Clients</th>
+                                        <th style="width: 10%">Client Rating</th>
+                                        <th style="width: 10%">Affiliations</th>
+                                        <th style="width: 10%">Judges Votes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($awards as $awp)
+                                    <tr>
+                                        <td class="nominee-name-cell">{{ $awp?->nominee?->name }}</td>
+                                        <td><span class="votes-badge">{{ $awp->number_of_votes }}</span></td>
+                                        <td><span class="percentage-badge">{{ number_format($awp->percentage_votes, 2) }}%</span></td>
+                                        <td class="data-cell">{{ $awp->profile_of_the_training_provider_and_areas_of_grc_covered }}</td>
+                                        <td class="data-cell">{{ $awp->evidence_of_innovative_ways_of_teaching }}</td>
+                                        <td class="data-cell">{{ $awp->clients_of_training_providers }}</td>
+                                        <td class="data-cell">{{ $awp->clients_rating_of_training_provider }}</td>
+                                        <td class="data-cell">{{ $awp->affiliations }}</td>
+                                        <td>
+                                            <div class="voting-input-wrapper">
+                                                <input type="number" name="judges_votes[]" class="voting-input" placeholder="0" min="1" max="10" required>
+                                                <span class="voting-hint">Score (1-10)</span>
+                                                <input type="hidden" name="nominee_ids[]" value="{{$awp->nominee_id}}">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                                <input type="hidden" name="award_id" value="{{$awards[0]->award_id}}">
+                            </table>
+                        </div>
+                        </div>
+
+                        <div class="nom-footer">
+                            <a href="{{route('admin.load_judge_category_page',request()->segment(3))}}" class="btn btn-outline-secondary">
+                                <i class="mdi mdi-arrow-left me-1"></i> Return Back
+                            </a>
+                            <button type="submit" class="btn btn-primary" name="submitButton">
+                                <i class="mdi mdi-check-circle-outline me-1"></i> Submit Awards Votes
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 @endsection

@@ -83,6 +83,7 @@ Route::prefix('admin')->group(function () {
             Route::prefix('votes')->group(function () {
                 Route::get('', [VoteCountController::class, 'getCatSec'])->name('admin.get_cat_sec');
                 Route::get('categories/{category}', [VoteCountController::class, 'getSectorsAwards'])->name('admin.get_sectors_awards');
+                Route::get('categories/{category}/export', [VoteCountController::class, 'exportSectorsAwards'])->name('admin.export_sectors_awards');
             });
 
             Route::prefix('voters')->group(function () {
