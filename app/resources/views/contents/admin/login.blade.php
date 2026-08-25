@@ -3,106 +3,157 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>GRCFinCrimeAwards | Admin Login</title>
+    <title>Admin Login | GRC & Financial Crime Prevention Awards & Summit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
-    <meta content="GRCFinCrimeAwards" name="GRCFinCrimeAwards" />
-    <!-- App favicon -->
+    <meta content="Admin sign-in for the GRC & Financial Crime Prevention Awards & Summit." name="description" />
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.ico')}}">
 
-    <!-- App css -->
-    <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('assets/css/app.min.css')}}" rel="stylesheet" type="text/css" id="light-style" />
-    <link href="{{asset('assets/css/app-dark.min.css')}}" rel="stylesheet" type="text/css" id="dark-style" />
+    <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/login_new_theme.css') }}">
+
+    <style>
+        body.admin-login-bg {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(130% 130% at 50% -25%, var(--cream) 0%, var(--paper) 55%, var(--paper) 100%);
+        }
+
+        .admin-login-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 25px 60px rgba(8, 14, 34, 0.35);
+            overflow: hidden;
+        }
+
+        .admin-login-card .body {
+            padding: 40px 36px;
+        }
+
+        .admin-login-tag {
+            font-family: var(--sans);
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-size: 10.5px;
+            color: var(--gold-deep);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+
+        .admin-login-tag::before {
+            content: "";
+            width: 22px;
+            height: 1px;
+            background: var(--gold-deep);
+        }
+
+        .password-field {
+            position: relative;
+        }
+
+        .password-field input {
+            width: 100%;
+            padding-right: 46px;
+        }
+
+        .password-eye {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 16px;
+            user-select: none;
+        }
+
+        .password-eye:hover {
+            color: var(--gold-deep);
+        }
+
+        .remember-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 4px 0 24px;
+        }
+
+        .remember-row input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--gold-deep);
+            cursor: pointer;
+        }
+
+        .remember-row label {
+            font-size: 13px;
+            color: var(--muted);
+            margin: 0;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body class="loading authentication-bg" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
-    <div class="account-pages pt-1 pt-sm-5 pb-4 pb-sm-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xxl-4 col-lg-5">
-                    <div class="pt-3 pb-3 text-center">
-                        <a href="index.html">
-                            <span><img src="{{asset('/assets/logo.png')}}" alt="" width="100" height="100"></span>
-                        </a>
-                    </div>
-                    <div class="card">
+<body class="loading admin-login-bg" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
 
-                        <!-- Logo -->
+    <div class="wrap" style="max-width:440px;width:100%;padding:40px 24px;margin:0 auto">
 
-                        <div class="card-body p-4">
-
-                            <div class="text-center w-75 m-auto">
-                                <h4 class="text-dark-50 text-center pb-0 fw-bold">Sign In</h4>
-                                <p class="text-muted mb-4">Enter your email address and password to access admin panel.</p>
-                            </div>
-
-                            <form method="POST" action="{{route('admin.loginn')}}">
-                                @csrf
-
-                                <div class="mb-3 form-group">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" type="email" id="email" required placeholder="e.g abcdefgh@ijk.com" autocomplete="email" autofocus>
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3 form-group">
-                                    <a href="pages-recoverpw.html" class="text-muted float-end"><small>Forgot your password?</small></a>
-                                    <label for="password" class="form-label">Password</label>
-                                    <div class="input-group input-group-merge">
-                                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror"" placeholder=" Enter your password" autocomplete="current-password">
-                                        <div class="input-group-text" id="check">
-                                            <span class="password-eye"></span>
-                                        </div>
-                                    </div>
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-
-                                </div>
-
-                                <div class="mb-3 mb-3">
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="checkbox-signin" checked>
-                                        <label class="form-check-label" for="checkbox-signin">Remember me</label>
-                                    </div>
-                                </div>
-
-                                <div class="mb-3 mb-0 text-center">
-                                    <button class="btn btn-primary" type="submit"> Log In </button>
-                                </div>
-
-                            </form>
-                        </div> <!-- end card-body -->
-                    </div>
-                    <!-- end card -->
-
-                    <div class="row mt-3">
-                        <div class="col-12 text-center">
-                            <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-muted ms-1"><b>Sign Up</b></a></p>
-                        </div> <!-- end col -->
-                    </div>
-                    <!-- end row -->
-
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
+        <div style="text-align:center;margin-bottom:28px">
+            <a href="{{ route('landing.index') }}" style="display:inline-block">
+                <img src="{{asset('assets/images/grclogo.png')}}" alt="GRC & Financial Crime Prevention Awards & Summit" style="height:64px;width:auto;margin:0 auto">
+            </a>
         </div>
-        <!-- end container -->
+
+        <div class="admin-login-card">
+            <div class="body">
+                <div class="admin-login-tag">Admin Portal</div>
+                <h1 style="font-family:var(--sans);font-weight:800;font-size:26px;color:var(--navy);margin-bottom:6px">Sign In</h1>
+
+
+                <form method="POST" action="{{route('admin.loginn')}}">
+                    @csrf
+
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input name="email" value="{{ old('email') }}" type="email" id="email" required
+                            placeholder="e.g abcdefgh@ijk.com" autocomplete="email" autofocus>
+                        @error('email')
+                        <div class="field-err">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <div class="password-field">
+                            <input type="password" id="password" name="password"
+                                placeholder="Enter your password" autocomplete="current-password">
+                            <span class="password-eye" id="check">👁</span>
+                        </div>
+                        @error('password')
+                        <div class="field-err">{{ $message }}</div>
+                        @enderror
+                    </div>
+
+                    <div class="remember-row">
+                        <input type="checkbox" id="checkbox-signin" checked>
+                        <label for="checkbox-signin">Remember me</label>
+                    </div>
+
+                    <button class="btn btn-gold btn-block" type="submit">Log In →</button>
+
+                </form>
+            </div>
+        </div>
+
+        <p style="text-align:center;margin-top:24px;font-size:11.5px;letter-spacing:.04em;color:var(--muted)">
+            &copy; {{date('Y')}} GRC &amp; FinCrime Prevention Awards &mdash; The Morgans Consortium</p>
+
     </div>
-    <!-- end page -->
 
-    <footer class="footer footer-alt">
-        2021 © GRCFinCrimeAwards - The Morgans Consortium
-    </footer>
-
-    <!-- bundle -->
     @include('partials.admin.scripts')
 
     <script>

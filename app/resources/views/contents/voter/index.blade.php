@@ -19,10 +19,10 @@
   <header class="hero">
     <svg class="route" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <g opacity=".8">
-        <circle cx="600" cy="230" r="7" fill="#C9A24B" />
-        <circle cx="600" cy="230" r="16" fill="none" stroke="#C9A24B" stroke-width="1.4" opacity=".5" />
-        <circle cx="600" cy="230" r="26" fill="none" stroke="#C9A24B" stroke-width="1" opacity=".3" />
-        <text x="600" y="204" fill="#E2C988" font-family="Poppins,sans-serif" font-size="16" font-weight="600"
+        <circle cx="980" cy="100" r="7" fill="#C9A24B" />
+        <circle cx="980" cy="100" r="16" fill="none" stroke="#C9A24B" stroke-width="1.4" opacity=".5" />
+        <circle cx="980" cy="100" r="26" fill="none" stroke="#C9A24B" stroke-width="1" opacity=".3" />
+        <text x="980" y="150" fill="#E2C988" font-family="Poppins,sans-serif" font-size="16" font-weight="600"
           text-anchor="middle" letter-spacing="1.5">NAIROBI</text>
       </g>
     </svg>

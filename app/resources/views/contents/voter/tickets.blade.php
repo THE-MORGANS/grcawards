@@ -29,7 +29,23 @@
         <!-- <div id="slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
           <span id="slots-text"></span>
         </div> -->
-        <div class="price-grid">
+        <div class="price-grid" style="grid-template-columns:1fr;max-width:400px;margin:0 auto">
+          <div class="price feat" style="text-align:center">
+            <h3>Full Delegate Pass</h3>
+            <div class="amt"><small>USD</small> 250 <small style="color:#8b93b0">/ KES 45,500</small></div>
+            <div class="sub">Summit + Gala</div>
+            <ul style="text-align:left">
+              <li>Full Summit programme</li>
+              <li>Networking luncheon</li>
+              <li>Cocktail reception</li>
+              <li>Gala &amp; formal dinner</li>
+              <li>Reserved seating</li>
+              <li>Delegate pack &amp; certificate</li>
+            </ul>
+            <a class="btn btn-gold" href="https://grcfincrimeawards.com/awards-summit/reserve/full">Reserve →</a>
+          </div>
+
+          <!--
           <div class="price">
             <h3>Summit Pass</h3>
             <div class="amt"><small>USD</small> 100 <small style="color:#8b93b0">/ KES 19,500</small></div>
@@ -41,21 +57,6 @@
               <li>Digital certificate</li>
             </ul>
             <a class="btn btn-navy" href="https://grcfincrimeawards.com/awards-summit/reserve/summit">Reserve →</a>
-          </div>
-          <div class="price feat">
-            <div class="flag">Most Popular</div>
-            <h3>Full Delegate Pass</h3>
-            <div class="amt"><small>USD</small> 250 <small style="color:#8b93b0">/ KES 45,500</small></div>
-            <div class="sub">Summit + Gala</div>
-            <ul>
-              <li>Full Summit programme</li>
-              <li>Networking luncheon</li>
-              <li>Cocktail reception</li>
-              <li>Gala &amp; formal dinner</li>
-              <li>Reserved seating</li>
-              <li>Delegate pack &amp; certificate</li>
-            </ul>
-            <a class="btn btn-gold" href="https://grcfincrimeawards.com/awards-summit/reserve/full">Reserve →</a>
           </div>
           <div class="price">
             <h3>Gala Only Pass</h3>
@@ -81,6 +82,7 @@
             </ul>
             <a class="btn btn-navy" href="https://grcfincrimeawards.com/awards-summit/reserve/student">Reserve →</a>
           </div>
+          -->
         </div>
         <div class="callout"
           style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">

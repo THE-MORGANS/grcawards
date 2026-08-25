@@ -22,3 +22,4 @@ Updated files:
 - app\resources\views\contents\voter\awards_summit\success.blade.php ✅
 - app\resources\views\emails\awards_summit_confirmation.blade.php ✅
 - app\resources\views\emails\judgesRegister.blade.php ✅
+- app\resources\views\contents\admin\login.blade.php ✅
