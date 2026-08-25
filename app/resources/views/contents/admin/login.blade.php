@@ -143,6 +143,21 @@
                         <label for="checkbox-signin">Remember me</label>
                     </div>
 
+                    <div class="callout" style="border-left:5px solid var(--crimson);margin-bottom:18px;padding:16px 18px">
+                        <h3 style="font-size:13.5px;margin-bottom:6px">⚖️ For Judges</h3>
+                        <p style="color:var(--muted);font-size:12px;line-height:1.6;margin:0 0 12px">By signing in,
+                            you confirm you have no personal, professional or commercial relationship with any
+                            nominee in the categories you are assessing. All scores must be submitted independently,
+                            confidentially and without bias, in line with the Awards' published judging criteria —
+                            any conflict of interest must be declared and the affected category recused.</p>
+                        <div style="display:flex;align-items:flex-start;gap:9px">
+                            <input type="checkbox" id="judge-disclaimer" required
+                                style="width:16px;height:16px;margin-top:2px;accent-color:var(--crimson);cursor:pointer;flex:none">
+                            <label for="judge-disclaimer" style="font-size:12px;color:var(--navy);margin:0;cursor:pointer">I
+                                have read and agree to the above.</label>
+                        </div>
+                    </div>
+
                     <button class="btn btn-gold btn-block" type="submit">Log In →</button>
 
                 </form>
