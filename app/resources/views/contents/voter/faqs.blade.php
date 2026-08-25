@@ -17,8 +17,8 @@
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · FAQs</div>
       <h1>Frequently asked <span class="ac">questions.</span></h1>
-      <p>Everything you need to know about attending, voting, sponsoring and the awards process across both the
-        Africa and Europe editions.</p>
+      <p>Everything you need to know about attending, voting, sponsoring and the awards process for the 2026
+        Awards &amp; Summit.</p>
     </div>
   </header>
 
@@ -26,32 +26,20 @@
     <div class="wrap">
       <div class="faq">
         <details>
-          <summary>How many editions are there in 2026?</summary>
-          <p>Two in-person editions: the Europe Edition in London (6 November 2026, London Marriott Hotel) and the
-            Africa Edition in Nairobi (20 November 2026, Marriott Hotel), plus a virtual Mid-Year Summit. The same
-            six award pillars apply across both.</p>
-        </details>
-        <details>
-          <summary>Where and when is the Africa Edition?</summary>
-          <p>20 November 2026 at the Marriott Hotel, Upper Hill, Nairobi. Summit 10:00–14:00 EAT; Gala Awards
-            16:00–19:00 EAT.</p>
-        </details>
-        <details>
-          <summary>When is the Europe Edition in London?</summary>
-          <p>The London Edition takes place on 6 November 2026 at the London Marriott Hotel. Register your interest
-            to receive ticket details and priority booking.</p>
+          <summary>When and where is the 2026 Awards &amp; Summit?</summary>
+          <p>13 November 2026 at the Marriott Hotel, Upper Hill, Nairobi — Summit 10:00–14:00 EAT; Gala Awards
+            16:00–19:00 EAT — plus a virtual Mid-Year Summit each June. Six award pillars apply across the
+            programme.</p>
         </details>
         <details>
           <summary>How do I vote?</summary>
-          <p>Africa Edition public voting runs 15 June – 15 August 2026 on the secure online platform — one vote per
-            person per category. The top 5 per category proceed to independent judging. Europe Edition voting opens
-            later in the year.</p>
+          <p>Public voting runs 15 June – 15 August 2026 on the secure online platform — one vote per person per
+            category. The top 5 per category proceed to independent judging.</p>
         </details>
         <details>
           <summary>What ticket options are available?</summary>
-          <p>Africa: Summit Pass (USD 150), Full Delegate (USD 350), Gala Only (USD 220) and Student (USD 60), with
-            KES equivalents. Europe pricing (GBP) is confirmed shortly ahead of 6 November. Group and table rates
-            are available for both.</p>
+          <p>Summit Pass (USD 100 / KES 19,500), Full Delegate Pass (USD 250 / KES 45,500), Gala Only Pass (USD 150
+            / KES 28,600) and Student / Academic (USD 60 / KES 7,800). Group and table rates are available.</p>
         </details>
         <details>
           <summary>How are winners chosen?</summary>
@@ -61,19 +49,18 @@
         </details>
         <details>
           <summary>Can my organisation sponsor?</summary>
-          <p>Yes — Gold, Silver and Bronze packages are available per edition, with multi-edition options spanning
-            Nairobi and London. Contact events@grcfincrimeawards.com for the prospectus.</p>
+          <p>Yes — Gold, Silver and Bronze packages are available. Contact events@grcfincrimeawards.com for the
+            prospectus.</p>
         </details>
         <details>
           <summary>Can I speak or chair a session?</summary>
-          <p>We welcome expressions of interest from senior practitioners, regulators, fintech leaders and academics
-            for both editions. Email events@grcfincrimeawards.com with a short profile and topic.</p>
+          <p>We welcome expressions of interest from senior practitioners, regulators, fintech leaders and academics.
+            Email events@grcfincrimeawards.com with a short profile and topic.</p>
         </details>
         <details>
           <summary>Do international delegates need a visa?</summary>
-          <p>For Nairobi, many nationalities require a Kenya eVisa/eTA — apply in advance via the official portal.
-            For London, check UK entry requirements for your nationality. We can provide invitation letters on
-            request.</p>
+          <p>Many nationalities require a Kenya eVisa/eTA — apply in advance via the official portal. We can provide
+            invitation letters on request.</p>
         </details>
       </div>
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', 'Africa Edition 2026 — Nairobi | GRC & Financial Crime Prevention Awards & Summit')
+@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit — Nairobi, Kenya | 13 November 2026')
 
 <head>
   @include('partials.voter.head')
@@ -15,13 +15,11 @@
 
   <header class="page-hero">
     <div class="wrap">
-      <span class="ed-tag af"><span class="pin af"></span>Africa Edition</span>
-      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · <a
-          href="{{ route('landing.index') }}#editions">Editions</a> · Nairobi</div>
-      <h1>Africa Edition 2026 — <span class="ac">Nairobi.</span></h1>
-      <p>East Africa Rising: building resilient institutions and compliance ecosystems fit for the future. For the
-        first time in seven years, the Awards &amp; Summit travels to Nairobi — East Africa's foremost financial and
-        innovation hub.</p>
+      <span class="ed-tag af"><span class="pin af"></span>THE GLOBAL PERIMETER · 13 November 2026</span>
+      <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Nairobi</div>
+      <h1>7th Annual Global Awards &amp; Summit — <span class="ac">Nairobi.</span></h1>
+      <p>THE GLOBAL PERIMETER: building resilient institutions across borders. A global platform, an African home —
+        the Awards &amp; Summit convenes in Nairobi, East Africa's foremost financial and innovation hub.</p>
       <div class="cta-row" style="margin-top:20px"><a class="btn btn-gold" href="{{ route('show_vote') }}">Cast Your
           Vote →</a><a class="btn btn-ghost" href="{{ route('show_tickets') }}">Book Tickets</a></div>
     </div>
@@ -32,11 +30,11 @@
       <div class="glance">
         <div class="gi">
           <div class="lab">Theme</div>
-          <div class="val">East Africa Rising</div>
+          <div class="val">The Global Perimeter</div>
         </div>
         <div class="gi">
           <div class="lab">Date</div>
-          <div class="val">20 Nov 2026</div>
+          <div class="val">13 Nov 2026</div>
         </div>
         <div class="gi">
           <div class="lab">Summit</div>
@@ -63,7 +61,7 @@
       <div class="callout" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
         <div>
           <span class="status-pill live">● Voting Live</span>
-          <h3 style="margin-top:10px">Public voting is open for the Africa Edition</h3>
+          <h3 style="margin-top:10px">Public voting is open</h3>
           <p style="color:var(--muted);font-size:14px;max-width:640px">Nominations have closed — cast your vote for
             the individuals and organisations you believe deserve recognition at the Nairobi Gala. The top 5 per
             category by public vote proceed to independent judging. Voting closes <b>15 August 2026</b>.</p>
@@ -75,8 +73,8 @@
 
   <section class="band white">
     <div class="wrap">
-      <div class="sec-eyebrow">About This Edition</div>
-      <h2 class="sec-title">East Africa is writing <span class="ac">its own rulebook.</span></h2>
+      <div class="sec-eyebrow">About This Event</div>
+      <h2 class="sec-title">A global perimeter, <span class="ac">anchored in Africa.</span></h2>
       <p class="sec-intro">Regulators, bankers, fintech leaders, compliance professionals and policymakers gather for
         a day of rigorous dialogue and recognition — building homegrown solutions that reflect the region's own
         economic, cultural and institutional realities.</p>
@@ -111,7 +109,7 @@
 
   <section class="band cream">
     <div class="wrap">
-      <div class="sec-eyebrow">The Day — 20 November 2026</div>
+      <div class="sec-eyebrow">The Day — 13 November 2026</div>
       <h2 class="sec-title">A morning of ideas. <span class="ac">An evening of recognition.</span></h2>
       <div class="sched" style="margin-top:26px">
         <div class="sr">
@@ -223,8 +221,8 @@
 
   <section class="band cream">
     <div class="wrap">
-      <div class="sec-eyebrow">Speakers — Africa Edition</div>
-      <h2 class="sec-title">The voices leading <span class="ac">East Africa's GRC conversation.</span></h2>
+      <div class="sec-eyebrow">Speakers — 2026 Programme</div>
+      <h2 class="sec-title">The voices leading <span class="ac">the global GRC conversation.</span></h2>
       <p class="sec-intro">Keynotes and panellists drawn from banking, fintech, insurance, regulators, legal,
         RegTech and academia. Names confirmed on a rolling basis.</p>
       <div class="grid g4" style="margin-top:26px">
@@ -274,7 +272,7 @@
 
   <section class="band white">
     <div class="wrap">
-      <div class="sec-eyebrow">Award Categories — Africa Edition 2026</div>
+      <div class="sec-eyebrow">Award Categories — 2026</div>
       <h2 class="sec-title">Excellence recognised across <span class="ac">every sector of the economy.</span></h2>
       <p class="sec-intro">Six award pillars spanning every regulated sector — from financial services and fintech
         to energy, engineering, manufacturing, healthcare, aviation, telecoms and the public sector.</p>
@@ -392,7 +390,7 @@
     <div class="wrap center">
       <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">●
         Voting Closes 15 August 2026</div>
-      <h2 class="sec-title">Be part of the Africa Edition.</h2>
+      <h2 class="sec-title">Be part of THE GLOBAL PERIMETER.</h2>
       <div class="cta-row" style="justify-content:center;margin-top:22px"><a class="btn btn-gold"
           href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-ghost"
           href="{{ route('show_tickets') }}">Book Tickets</a></div>

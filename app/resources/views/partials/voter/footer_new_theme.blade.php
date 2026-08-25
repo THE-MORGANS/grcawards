@@ -3,16 +3,14 @@
     <div class="wrap">
         <div class="top">
             <div class="brand"><img src="{{ asset('assets/images/grclogo.png') }}" alt="GRC & FinCrime Prevention Awards & Summit">
-                <p>Celebrating global excellence in governance, risk, compliance and financial crime prevention — across two
-                    annual editions.</p>
-                <div class="eds"><span class="e"><span class="pin af"></span>Africa · Nairobi 2026</span><span class="e"><span
-                            class="pin eu"></span>Europe · London · 6 Nov 2026</span></div>
+                <p>Celebrating global excellence in governance, risk, compliance and financial crime prevention —
+                    through one flagship annual gathering.</p>
+                <div class="eds"><span class="e"><span class="pin af"></span>Nairobi, Kenya · 13 Nov 2026</span></div>
             </div>
             <div>
-                <h5>Editions</h5>
+                <h5>The Event</h5>
                 <ul>
-                    <li><a href="{{ route('edition.africa') }}">Africa — Nairobi</a></li>
-                    <li><a href="{{ route('edition.europe') }}">Europe — London</a></li>
+                    <li><a href="{{ route('edition.africa') }}">Nairobi 2026</a></li>
                     <!-- <li><a href="{{ route('summit_programme') }}">Summit Programme</a></li> -->
                     <li><a href="{{ route('show_tickets') }}">Tickets &amp; Booking</a></li>
                 </ul>

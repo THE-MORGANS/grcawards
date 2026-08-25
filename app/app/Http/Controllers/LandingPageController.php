@@ -349,11 +349,6 @@ class LandingPageController extends Controller
         return view('contents.voter.edition_africa');
     }
 
-    public function showEditionEurope()
-    {
-        return view('contents.voter.edition_europe');
-    }
-
     public function showTickets()
     {
         return view('contents.voter.tickets');

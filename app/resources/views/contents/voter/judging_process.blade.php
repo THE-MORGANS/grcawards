@@ -18,7 +18,7 @@
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Judges &amp; Process</div>
       <h1>Independent judging. <span class="ac">Uncompromising integrity.</span></h1>
       <p>An Advisory Council and an independent, international panel of judges uphold transparency and rigour —
-        assessing shortlisted nominees against published, sector-specific criteria across both editions.</p>
+        assessing shortlisted nominees against published, sector-specific criteria.</p>
     </div>
   </header>
 
@@ -77,7 +77,7 @@
       <h2 class="sec-title">A global panel of <span class="ac">distinguished experts.</span></h2>
       <p class="sec-intro">Appointed in 2025, the Advisory Council provides strategic guidance and upholds
         transparency. An independent panel of judges from multiple countries brings regional perspective and
-        sector-specific expertise. Members for 2026 are announced on a rolling basis across both editions.</p>
+        sector-specific expertise. Members for 2026 are announced on a rolling basis.</p>
       <div class="grid g4" style="margin-top:28px">
         <div class="spk">
           <div class="av">AC</div>

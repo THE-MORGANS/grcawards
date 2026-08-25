@@ -28,10 +28,10 @@
 
       <div class="callout"
         style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px">
-        <p style="margin:0;font-size:14px;color:var(--muted)"><b style="color:var(--navy)">This login is for the
-            Africa Edition.</b> Looking to vote in the Europe Edition instead?</p>
+        <p style="margin:0;font-size:14px;color:var(--muted)"><b style="color:var(--navy)">This login is for the voting
+            Africa nominees.</b> Looking to vote for Europe nominees instead?</p>
         <a class="btn btn-navy btn-sm" href="https://eu.grcfincrimeawards.com/vote" style="background:#3F6FB0">Vote —
-          Europe Edition →</a>
+          Europe Nominees →</a>
       </div>
 
       <div class="login-split">
@@ -75,10 +75,10 @@
               <input id="email" type="email" name="email" placeholder="yourname@example.com"
                 value="{{ old('email') }}">
               @error('email')
-                <div class="field-err">{{ $message }}</div>
+              <div class="field-err">{{ $message }}</div>
               @enderror
               @if(Session::has('danger'))
-                <div class="field-err">{{ session('danger') }}</div>
+              <div class="field-err">{{ session('danger') }}</div>
               @endif
             </div>
 
@@ -96,7 +96,7 @@
               </div>
               <input id="captcha" type="text" name="captcha" placeholder="Enter the code shown above" required>
               @error('captcha')
-                <div class="field-err">{{ $message }}</div>
+              <div class="field-err">{{ $message }}</div>
               @enderror
             </div>
 

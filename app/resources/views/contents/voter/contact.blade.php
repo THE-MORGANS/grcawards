@@ -17,8 +17,8 @@
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Contact</div>
       <h1>Let's <span class="ac">talk.</span></h1>
-      <p>Questions about either edition — tickets, nominations, judging, speaking or sponsorship? Reach the events
-        team, or any of our three international offices.</p>
+      <p>Questions about the 2026 Awards &amp; Summit — tickets, nominations, judging, speaking or sponsorship? Reach
+        the events team, or any of our three international offices.</p>
     </div>
   </header>
 
@@ -55,8 +55,8 @@
           <div class="sec-eyebrow">Send a Message</div>
           <h2 class="sec-title" style="font-size:28px">We'll reply <span class="ac">within 3 business days.</span>
           </h2>
-          <p class="sec-intro">Africa Edition representatives: <b>Joyce</b> +254 724 222 016 · <b>Julius</b> +254 710
-            540 354. For the Europe Edition, email the London office to register interest.</p>
+          <p class="sec-intro">Event representatives: <b>Joyce</b> +254 724 222 016 · <b>Julius</b> +254 710
+            540 354.</p>
         </div>
         <div class="card">
           <div class="form-row">
@@ -79,26 +79,16 @@
               <input placeholder="Your organisation">
             </div>
           </div>
-          <div class="form-row">
-            <div class="field">
-              <label>Edition</label>
-              <select>
-                <option>Africa — Nairobi</option>
-                <option>Europe — London</option>
-                <option>Both editions</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Enquiry type</label>
-              <select>
-                <option>Tickets &amp; booking</option>
-                <option>Sponsorship</option>
-                <option>Speaking interest</option>
-                <option>Nominations &amp; judging</option>
-                <option>Media &amp; press</option>
-                <option>General</option>
-              </select>
-            </div>
+          <div class="field">
+            <label>Enquiry type</label>
+            <select>
+              <option>Tickets &amp; booking</option>
+              <option>Sponsorship</option>
+              <option>Speaking interest</option>
+              <option>Nominations &amp; judging</option>
+              <option>Media &amp; press</option>
+              <option>General</option>
+            </select>
           </div>
           <div class="field">
             <label>Message</label>

@@ -109,12 +109,11 @@
             </div>
 
             @php
-                $isEurope = $registration->region === 'europe';
-                $venueLine = $isEurope ? 'London Marriott Hotel, London' : 'Marriott Hotel, Nairobi';
-                $dateLine = $isEurope ? '6 November 2026' : '20 November 2026';
+                $venueLine = 'Marriott Hotel, Nairobi';
+                $dateLine = '13 November 2026';
             @endphp
 
-            <div class="success-kicker">{{ $isEurope ? 'Europe Edition 2026 · London' : 'Africa Edition 2026 · Nairobi' }}</div>
+            <div class="success-kicker">Nairobi, Kenya · 13 November 2026</div>
             <h1 class="success-title">Reservation Confirmed!</h1>
             <p class="success-message">
                 Thank you, <strong>{{ $registration->name }}</strong>. Your <strong>{{ $registration->ticket_name }}</strong> for the GRC & Financial Crime Prevention Awards & Summit has been successfully reserved.

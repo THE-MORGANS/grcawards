@@ -18,7 +18,7 @@
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · About the Award</div>
       <h1>About <span class="ac">the Award</span></h1>
       <p>Celebrating global excellence in governance, risk, compliance, fraud &amp; cybercrime prevention — from a
-        first edition in Lagos to a two-continent platform spanning Africa and Europe.</p>
+        first edition in Lagos to a flagship global gathering hosted annually in Nairobi, Kenya.</p>
     </div>
   </header>
 
@@ -34,8 +34,8 @@
             innovation and commitment across governance, risk, compliance, fraud prevention, cybersecurity and
             financial-crime prevention.</p>
           <p class="sec-intro">Founded by Dr. Foluso Amusa, PhD, the initiative held its first edition in Lagos in
-            2020. It has since expanded to Europe and beyond, and now runs two flagship editions each year — the
-            Africa Edition in Nairobi and the Europe Edition in London. In 2025 a formal Advisory Council was
+            2020. It has since grown into a global platform for the profession, now hosted annually in Nairobi,
+            Kenya — East Africa's foremost financial and innovation hub. In 2025 a formal Advisory Council was
             appointed, alongside an independent, international panel of judges.</p>
         </div>
         <div class="callout">
@@ -55,7 +55,7 @@
             </div>
             <div class="sr">
               <div class="t">2026</div>
-              <div class="d">Two editions — Nairobi &amp; London</div>
+              <div class="d">THE GLOBAL PERIMETER — Nairobi, Kenya</div>
             </div>
           </div>
         </div>
@@ -118,8 +118,8 @@
         </div>
         <div class="card">
           <div class="k">06</div>
-          <h3>Two Annual Editions</h3>
-          <p>A virtual Mid-Year Summit and two in-person Awards &amp; Summit editions — accessible, global,
+          <h3>One Global Gathering</h3>
+          <p>A virtual Mid-Year Summit and one flagship in-person Awards &amp; Summit — accessible, global,
             multi-sector.</p>
         </div>
       </div>

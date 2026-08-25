@@ -40,7 +40,7 @@
         <div class="card icard"><span class="em">🏆</span>
           <div>
             <h3>End-of-Year Awards &amp; Summit</h3>
-            <p>The flagship in-person events — now two editions a year in Nairobi and London — combine a day of
+            <p>The flagship in-person event — hosted annually in Nairobi, Kenya — combines a day of
               keynotes and panels with the prestigious black-tie Gala Awards Ceremony.</p>
           </div>
         </div>
@@ -50,60 +50,9 @@
 
   <section class="band cream">
     <div class="wrap">
-      <div class="sec-eyebrow">2026 In-Person Editions</div>
-      <h2 class="sec-title">Two cities. <span class="ac">One standard.</span></h2>
-      <div class="editions" style="margin-top:32px">
-        <a class="edcard eu" href="{{ route('edition.europe') }}">
-          <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
-              xmlns="http://www.w3.org/2000/svg">
-              <g fill="#C9A24B">
-                <rect x="70" y="82" width="40" height="36" />
-                <rect x="200" y="74" width="30" height="44" />
-                <rect x="252" y="36" width="22" height="82" />
-                <path d="M252 36h22l-11-16z" />
-                <rect x="259" y="46" width="8" height="8" fill="#0E1838" />
-                <rect x="360" y="66" width="44" height="52" />
-                <path d="M360 66q22-34 44 0z" />
-                <rect x="378" y="30" width="8" height="10" />
-                <rect x="380" y="22" width="4" height="10" />
-                <rect x="316" y="80" width="30" height="38" />
-                <rect x="420" y="74" width="26" height="44" />
-                <path d="M462 118V70q0-26 16-30 16 4 16 30v48z" />
-                <rect x="475" y="34" width="6" height="8" />
-                <rect x="512" y="72" width="26" height="46" />
-                <rect x="546" y="60" width="22" height="58" />
-                <path d="M600 118 L636 118 L621 16 Z" />
-                <rect x="619" y="6" width="4" height="12" />
-                <rect x="650" y="66" width="24" height="52" />
-                <rect x="684" y="78" width="30" height="40" />
-                <rect x="768" y="52" width="24" height="66" />
-                <path d="M768 52h24l-12-14z" />
-                <rect x="856" y="52" width="24" height="66" />
-                <path d="M856 52h24l-12-14z" />
-                <rect x="792" y="58" width="64" height="8" />
-                <rect x="792" y="92" width="64" height="6" />
-                <rect x="900" y="76" width="30" height="42" />
-                <rect x="946" y="84" width="28" height="34" />
-              </g>
-              <g fill="none" stroke="#C9A24B" stroke-width="3.4">
-                <circle cx="150" cy="60" r="30" />
-                <circle cx="150" cy="60" r="5" fill="#C9A24B" stroke="none" />
-                <line x1="150" y1="30" x2="150" y2="90" />
-                <line x1="120" y1="60" x2="180" y2="60" />
-                <line x1="129" y1="39" x2="171" y2="81" />
-                <line x1="171" y1="39" x2="129" y2="81" />
-                <line x1="138" y1="86" x2="150" y2="118" />
-                <line x1="162" y1="86" x2="150" y2="118" />
-              </g>
-            </svg></div>
-          <span class="status-pill soon">6 Nov 2026</span>
-          <div class="lbl" style="margin-top:12px">Europe Edition</div>
-          <h3>London, United Kingdom</h3>
-          <div class="city">London Marriott Hotel</div>
-          <div class="row"><span>📅 <b>6 November 2026</b></span><span>🕙 Summit + Gala</span></div>
-          <div class="acts"><span class="btn btn-navy btn-sm" style="background:#3F6FB0">View Europe Programme
-              →</span></div>
-        </a>
+      <div class="sec-eyebrow">2026 In-Person Edition</div>
+      <h2 class="sec-title">Nairobi. <span class="ac">One standard.</span></h2>
+      <div style="margin-top:32px;max-width:460px;margin-left:auto;margin-right:auto">
         <a class="edcard af" href="{{ route('edition.africa') }}">
           <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
               xmlns="http://www.w3.org/2000/svg">
@@ -142,11 +91,11 @@
               </g>
             </svg></div>
           <span class="status-pill live">● Voting Live</span>
-          <div class="lbl" style="margin-top:12px">Africa Edition</div>
+          <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
           <div class="city">Marriott Hotel · Upper Hill</div>
-          <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
-          <div class="acts"><span class="btn btn-gold btn-sm">View Africa Programme →</span></div>
+          <div class="row"><span>📅 <b>13 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="acts"><span class="btn btn-gold btn-sm">View Full Programme →</span></div>
         </a>
       </div>
     </div>
@@ -258,12 +207,10 @@
   <section class="band navy">
     <div class="wrap center">
       <h2 class="sec-title">Join the next Summit.</h2>
-      <p class="sec-intro" style="margin:14px auto 0">London on 6 November, Nairobi on 20 November 2026. Reserve your
-        place, or register interest for London.</p>
+      <p class="sec-intro" style="margin:14px auto 0">Nairobi, Kenya on 13 November 2026. Reserve your place.</p>
       <div class="cta-row" style="justify-content:center;margin-top:24px"><a class="btn btn-gold"
           href="{{ route('show_tickets') }}">Book Tickets</a><a class="btn btn-ghost"
-          href="{{ route('edition.europe') }}">Europe Edition</a><a class="btn btn-ghost"
-          href="{{ route('edition.africa') }}">Africa Edition</a></div>
+          href="{{ route('edition.africa') }}">Full Programme</a></div>
     </div>
   </section>
 

@@ -6,12 +6,7 @@
             for="nav-check"><span></span><span></span><span></span></label>
         <ul class="nav-links">
             <li><a class="{{request()->is('/') ? 'active' : '' }}" href="{{route('landing.index')}}">Home</a></li>
-            <li class="has-drop"><a class="{{request()->is('edition/*') ? 'active' : '' }}" href="{{route('landing.index')}}#editions">Editions</a>
-                <ul class="drop">
-                    <li><a class="{{request()->is('edition/africa') ? 'active' : '' }}" href="{{route('edition.africa')}}"><span class="pin af"></span>Africa Edition — Nairobi</a></li>
-                    <li><a class="{{request()->is('edition/europe') ? 'active' : '' }}" href="{{route('edition.europe')}}"><span class="pin eu"></span>Europe Edition — London</a></li>
-                </ul>
-            </li>
+            <li><a class="{{request()->is('event') ? 'active' : '' }}" href="{{route('edition.africa')}}">Nairobi 2026</a></li>
             <li class="has-drop"><a class="{{request()->is('the-award/*') || request()->is('judges/*') ? 'active' : '' }}" href="{{route('about_the_award')}}">The Award</a>
                 <ul class="drop">
                     <li><a class="{{request()->is('the-award/about-the-award') ? 'active' : '' }}" href="{{route('about_the_award')}}">About the Award</a></li>

@@ -143,8 +143,7 @@ Route::get('voters/{voter}/verify', [VoterLoginController::class, 'voterVerify']
 Route::get('login', [VoterLoginController::class, 'showLoginForm'])->name('show_login_form');
 Route::post('login', [VoterLoginController::class, 'login'])->name('login');
 Route::get('/', [LandingPageController::class, 'showLandingIndex'])->name('landing.index');
-Route::get('edition/africa', [LandingPageController::class, 'showEditionAfrica'])->name('edition.africa');
-Route::get('edition/europe', [LandingPageController::class, 'showEditionEurope'])->name('edition.europe');
+Route::get('event', [LandingPageController::class, 'showEditionAfrica'])->name('edition.africa');
 Route::get('tickets', [LandingPageController::class, 'showTickets'])->name('show_tickets');
 Route::get('past-winners', [LandingPageController::class, 'showPastWinners'])->name('show_past_winners');
 Route::get('the-award/about-the-award', [LandingPageController::class, 'showAboutTheAward'])->name('about_the_award');

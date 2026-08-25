@@ -16,8 +16,8 @@
   <header class="page-hero">
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Sponsors</div>
-      <h1>Partner with a <span class="ac">two-continent platform.</span></h1>
-      <p>Sponsor the Africa Edition, the Europe Edition, or both — and network with C-suite executives and corporate
+      <h1>Partner with a <span class="ac">global platform.</span></h1>
+      <p>Sponsor the 2026 Awards &amp; Summit in Nairobi — and network with C-suite executives and corporate
         leaders across the profession, with brand visibility spanning the full pre-event, on-the-night and
         post-event programme.</p>
     </div>
@@ -78,8 +78,8 @@
           <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
         </div>
       </div>
-      <p class="center" style="color:var(--muted);font-size:13px;margin-top:16px">Multi-edition packages spanning
-        both Nairobi and London are available on request.</p>
+      <p class="center" style="color:var(--muted);font-size:13px;margin-top:16px">Custom package tiers are available
+        on request.</p>
     </div>
   </section>
 
@@ -141,7 +141,7 @@
         style="margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
         <div>
           <h3 style="color:#fff">Ready to discuss a partnership?</h3>
-          <p style="color:#c2cae0;font-size:14px">Request our full Sponsorship Prospectus or a bespoke multi-edition
+          <p style="color:#c2cae0;font-size:14px">Request our full Sponsorship Prospectus or a bespoke
             package.</p>
         </div>
         <a class="btn btn-gold" href="mailto:events@grcfincrimeawards.com?subject=Sponsorship%20Enquiry">Request

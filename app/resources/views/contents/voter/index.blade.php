@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', 'Africa Edition — GRC & Financial Crime Prevention Awards & Summit 2026 | Nairobi')
+@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit | Nairobi, Kenya · 13 November 2026')
 
 <head>
   @include('partials.voter.head')
@@ -18,46 +18,40 @@
 
   <header class="hero">
     <svg class="route" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <path d="M250 170 Q620 20 960 300" fill="none" stroke="#C9A24B" stroke-width="2" stroke-dasharray="3 9"
-        opacity=".55" />
       <g opacity=".8">
-        <circle cx="250" cy="170" r="6" fill="#C9A24B" />
-        <circle cx="250" cy="170" r="13" fill="none" stroke="#C9A24B" stroke-width="1.4" opacity=".5" />
-        <text x="250" y="150" fill="#E2C988" font-family="Poppins,sans-serif" font-size="15" font-weight="600"
-          text-anchor="middle" letter-spacing="1">LONDON</text>
+        <circle cx="600" cy="230" r="7" fill="#C9A24B" />
+        <circle cx="600" cy="230" r="16" fill="none" stroke="#C9A24B" stroke-width="1.4" opacity=".5" />
+        <circle cx="600" cy="230" r="26" fill="none" stroke="#C9A24B" stroke-width="1" opacity=".3" />
+        <text x="600" y="204" fill="#E2C988" font-family="Poppins,sans-serif" font-size="16" font-weight="600"
+          text-anchor="middle" letter-spacing="1.5">NAIROBI</text>
       </g>
-      <g opacity=".8">
-        <circle cx="960" cy="300" r="6" fill="#C9A24B" />
-        <circle cx="960" cy="300" r="13" fill="none" stroke="#C9A24B" stroke-width="1.4" opacity=".5" />
-        <text x="960" y="336" fill="#E2C988" font-family="Poppins,sans-serif" font-size="15" font-weight="600"
-          text-anchor="middle" letter-spacing="1">NAIROBI</text>
-      </g>
-      <path d="M600 60 l16 6 -6 -16 z" fill="#E2C988" transform="rotate(28 608 63)" opacity=".9" />
     </svg>
     <div class="wrap">
       <span class="hero-badge" style="margin-bottom: 50px"><span class="dot"></span>
         <!-- THE MORGANS ·  -->
-        7th Annual · Two Editions · 2026</span>
-      <h1>GRC &amp; Financial Crime <span class="ac">excellence,</span><br>recognised across <span class="ac">Africa
-          &amp; Europe.</span></h1>
-      <p class="lede">Two flagship editions. One global standard. The GRC &amp; Financial Crime Prevention Awards &amp;
-        Summit convenes regulators, bankers, fintech leaders and compliance professionals in Nairobi and London to raise
-        the bar for governance, risk and integrity worldwide.</p>
-      <div class="cta-row"><a class="btn btn-gold" href="#editions">Explore the Editions →</a><a class="btn btn-ghost"
+        7th Annual · Nairobi, Kenya · 13 November 2026</span>
+      <div style="font-family:var(--sans);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">
+        The Global Perimeter</div>
+      <h1>GRC &amp; Financial Crime Prevention <span class="ac">Global Awards &amp; Summit.</span></h1>
+      <p class="lede"><strong>Building Resilient Institutions Across Borders.</strong> A Global Platform. An African
+        Home. The GRC &amp; Financial Crime Prevention Awards &amp; Summit convenes regulators, bankers, fintech
+        leaders and compliance professionals in Nairobi, Kenya to raise the bar for governance, risk and integrity
+        worldwide.</p>
+      <div class="cta-row"><a class="btn btn-gold" href="#venue">Explore the Event →</a><a class="btn btn-ghost"
           href="{{ route('show_vote') }}">Cast Your Vote</a></div>
     </div>
   </header>
 
-  <section class="band white" id="editions">
+  <section class="band white" id="venue">
     <div class="wrap">
       <div class="center">
-        <div class="sec-eyebrow">2026 Editions</div>
-        <h2 class="sec-title">Two continents. <span class="ac">One global standard.</span></h2>
-        <p class="sec-intro" style="margin:14px auto 0">Choose your edition. Each brings the full Awards &amp; Summit
-          experience — a morning of rigorous dialogue and an evening of well-earned recognition — tailored to its
-          region's regulatory landscape.</p>
+        <div class="sec-eyebrow">13 November 2026 — Nairobi, Kenya</div>
+        <h2 class="sec-title">One flagship gathering. <span class="ac">A global standard.</span></h2>
+        <p class="sec-intro" style="margin:14px auto 0">THE GLOBAL PERIMETER brings the full Awards &amp; Summit
+          experience to Nairobi — a morning of rigorous dialogue and an evening of well-earned recognition, uniting
+          the profession from across the world in one African home.</p>
       </div>
-      <div class="editions" style="margin-top:36px">
+      <div style="margin-top:36px">
         <a class="edcard af" href="{{ route('edition.africa') }}">
           <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
               xmlns="http://www.w3.org/2000/svg">
@@ -95,69 +89,12 @@
                 <path d="M958 50c8 6 16 6 16 6s9 0 17-6c-4-10-17-12-17-12s-12 3-16 12z" />
               </g>
             </svg></div>
-          <span class="status-pill live">● Voting Live</span>
-          <div class="lbl" style="margin-top:12px">Africa Edition</div>
+          <span class="status-pill live" style="align-self:flex-end">● Voting Live</span>
+          <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
           <div class="city">Marriott Hotel · Upper Hill</div>
-          <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
-          <div class="acts"><span class="btn btn-gold btn-sm">View Africa Edition →</span></div>
-        </a>
-        <a class="edcard eu" href="{{ route('edition.europe') }}">
-          <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
-              xmlns="http://www.w3.org/2000/svg">
-              <g fill="#C9A24B">
-                <rect x="70" y="82" width="40" height="36" />
-                <rect x="200" y="74" width="30" height="44" />
-                <!-- Big Ben -->
-                <rect x="252" y="36" width="22" height="82" />
-                <path d="M252 36h22l-11-16z" />
-                <rect x="259" y="46" width="8" height="8" fill="#0E1838" />
-                <!-- St Paul's -->
-                <rect x="360" y="66" width="44" height="52" />
-                <path d="M360 66q22-34 44 0z" />
-                <rect x="378" y="30" width="8" height="10" />
-                <rect x="380" y="22" width="4" height="10" />
-                <rect x="316" y="80" width="30" height="38" />
-                <rect x="420" y="74" width="26" height="44" />
-                <!-- Gherkin -->
-                <path d="M462 118V70q0-26 16-30 16 4 16 30v48z" />
-                <rect x="475" y="34" width="6" height="8" />
-                <rect x="512" y="72" width="26" height="46" />
-                <rect x="546" y="60" width="22" height="58" />
-                <!-- The Shard (tallest) -->
-                <path d="M600 118 L636 118 L621 16 Z" />
-                <rect x="619" y="6" width="4" height="12" />
-                <rect x="650" y="66" width="24" height="52" />
-                <rect x="684" y="78" width="30" height="40" />
-                <!-- Tower Bridge -->
-                <rect x="768" y="52" width="24" height="66" />
-                <path d="M768 52h24l-12-14z" />
-                <rect x="856" y="52" width="24" height="66" />
-                <path d="M856 52h24l-12-14z" />
-                <rect x="792" y="58" width="64" height="8" />
-                <rect x="792" y="92" width="64" height="6" />
-                <rect x="900" y="76" width="30" height="42" />
-                <rect x="946" y="84" width="28" height="34" />
-              </g>
-              <g fill="none" stroke="#C9A24B" stroke-width="3.4">
-                <!-- London Eye -->
-                <circle cx="150" cy="60" r="30" />
-                <circle cx="150" cy="60" r="5" fill="#C9A24B" stroke="none" />
-                <line x1="150" y1="30" x2="150" y2="90" />
-                <line x1="120" y1="60" x2="180" y2="60" />
-                <line x1="129" y1="39" x2="171" y2="81" />
-                <line x1="171" y1="39" x2="129" y2="81" />
-                <line x1="138" y1="86" x2="150" y2="118" />
-                <line x1="162" y1="86" x2="150" y2="118" />
-              </g>
-            </svg></div>
-          <span class="status-pill soon">Save the Date</span>
-          <div class="lbl" style="margin-top:12px">Europe Edition</div>
-          <h3>London, United Kingdom</h3>
-          <div class="city">London Marriott Hotel</div>
-          <div class="row"><span>📅 <b>6 November 2026</b></span><span>🕙 Summit + Gala</span></div>
-          <div class="acts"><span class="btn btn-navy btn-sm" style="background:#3F6FB0">View Europe Edition →</span>
-          </div>
+          <div class="row"><span>📅 <b>13 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="acts"><span class="btn btn-gold btn-sm">View Full Details →</span></div>
         </a>
       </div>
     </div>
@@ -171,8 +108,8 @@
           <div class="l">Annual Edition</div>
         </div>
         <div class="st">
-          <div class="n">2</div>
-          <div class="l">Global Editions</div>
+          <div class="n">1</div>
+          <div class="l">Global Venue</div>
         </div>
         <div class="st">
           <div class="n">6</div>
@@ -211,8 +148,8 @@
     <div class="wrap">
       <div class="sec-eyebrow">Awards Process — 2026</div>
       <h2 class="sec-title">How nominees become <span class="ac">award recipients.</span></h2>
-      <p class="sec-intro">A transparent, four-stage journey applied consistently across both editions — combining
-        public voice with independent, conflict-free judging.</p>
+      <p class="sec-intro">A transparent, four-stage journey — combining public voice with independent, conflict-free
+        judging.</p>
       <div class="timeline" style="margin-top:32px">
         <div class="tl"><span class="num">01</span>
           <div class="status">✓ Completed</div>
@@ -224,7 +161,7 @@
         <div class="tl"><span class="num">02</span>
           <div class="status">● Live now</div>
           <h3>Public Voting</h3>
-          <div class="when">Africa: 15 Jun – 15 Aug</div>
+          <div class="when">15 Jun – 15 Aug</div>
           <p>The public votes; the top 5 per category by public vote proceed to independent judging. One vote per person
             per category.</p>
         </div>
@@ -728,32 +665,13 @@
         &amp; Financial Crime Prevention Awards.</p>
 
       @php
-      $pastWinnersAfrica = array_slice(config('past_winners.africa', []), 0, 4);
-      $pastWinnersEurope = array_slice(config('past_winners.europe', []), 0, 4);
+      $pastWinners = array_slice(array_merge(config('past_winners.africa', []), config('past_winners.europe', [])), 0, 8);
       @endphp
 
       <div class="honourees-tabs" style="margin-top:32px">
         <div class="honouree-edition">
-          <div class="honouree-edition-head"><span class="pin af"></span>
-            <h3>Africa Edition — Past Winners</h3>
-          </div>
           <div class="honouree-row">
-            @foreach($pastWinnersAfrica as $winner)
-            <div class="honouree-card">
-              <img class="honouree-photo" src="{{ asset('assets/images/past_winners/'.$winner['image']) }}"
-                alt="{{ $winner['name'] }}">
-              <div class="honouree-name">{{ $winner['name'] }}</div>
-            </div>
-            @endforeach
-          </div>
-        </div>
-
-        <div class="honouree-edition">
-          <div class="honouree-edition-head"><span class="pin eu"></span>
-            <h3>Europe Edition — Past Winners</h3>
-          </div>
-          <div class="honouree-row">
-            @foreach($pastWinnersEurope as $winner)
+            @foreach($pastWinners as $winner)
             <div class="honouree-card">
               <img class="honouree-photo" src="{{ asset('assets/images/past_winners/'.$winner['image']) }}"
                 alt="{{ $winner['name'] }}">
@@ -772,8 +690,8 @@
     <div class="wrap center">
       <div class="sec-eyebrow">Get Involved</div>
       <h2 class="sec-title">Vote. Attend. <span class="ac">Partner.</span></h2>
-      <p class="sec-intro" style="margin:14px auto 0">Cast your vote in the Africa Edition, reserve your place in
-        Nairobi, register interest for London, or partner with us as a sponsor.</p>
+      <p class="sec-intro" style="margin:14px auto 0">Cast your vote, reserve your place in Nairobi, or partner with
+        us as a sponsor.</p>
       <div class="cta-row" style="justify-content:center;margin-top:26px">
         <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-gold" href="{{ route('show_tickets') }}">Book
           Tickets</a><a class="btn btn-ghost" href="{{ route('show_sponsors') }}">Become a Sponsor</a>

@@ -15,22 +15,15 @@
   @include('partials.voter.topbar_new_theme')
 
   @php
-  $isEurope = $region === 'europe';
   $currencyLabel = strtoupper($ticket['currency']);
   @endphp
 
   <header class="page-hero pay-hero">
     <div class="wrap">
       <a href="{{ route('show_tickets') }}" class="pay-back">← Back to Tickets</a>
-      @if($isEurope)
-      <span class="ed-tag eu"><span class="pin eu"></span>Europe Edition 2026 · London</span>
+      <span class="ed-tag af"><span class="pin af"></span>Nairobi, Kenya · 13 November 2026</span>
       <h1>Reserve Your <span class="ac">Pass.</span></h1>
-      <p>London Marriott Hotel · 6 November 2026</p>
-      @else
-      <span class="ed-tag af"><span class="pin af"></span>Africa Edition 2026 · Nairobi</span>
-      <h1>Reserve Your <span class="ac">Pass.</span></h1>
-      <p>Marriott Hotel, Nairobi · 20 November 2026</p>
-      @endif
+      <p>Marriott Hotel, Nairobi · 13 November 2026</p>
     </div>
   </header>
 

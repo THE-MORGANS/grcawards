@@ -28,7 +28,7 @@
                         <br> Please find below your confidential login credentials to access the Judges Voting Platform and begin the evaluation process:
 
                         <br>
-                        Africa Edition: <a href="https://grcfincrimeawards.com/admin/login">Login Here</a>
+                        <a href="https://grcfincrimeawards.com/admin/login">Login Here</a>
                     </p>
     <table width="100%">
     <tbody><tr>

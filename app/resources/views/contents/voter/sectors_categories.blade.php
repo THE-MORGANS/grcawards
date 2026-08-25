@@ -18,8 +18,8 @@
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Sectors &amp; Categories</div>
       <h1>Excellence recognised across <span class="ac">every sector.</span></h1>
-      <p>Six pillars spanning every regulated sector — applied consistently across both the Africa and Europe
-        editions. Browse the categories below, and nominate a candidate directly into the official list.</p>
+      <p>Six pillars spanning every regulated sector. Browse the categories below, and nominate a candidate directly
+        into the official list.</p>
     </div>
   </header>
 
@@ -118,9 +118,8 @@
       <div class="callout navy"
         style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
         <div>
-          <h3 style="color:#fff">Africa Edition voting is live</h3>
-          <p style="color:#c2cae0;font-size:14px">Vote before 15 August 2026. Europe Edition nominations are in
-            progress — register interest to take part.</p>
+          <h3 style="color:#fff">Voting is live</h3>
+          <p style="color:#c2cae0;font-size:14px">Vote before 15 August 2026.</p>
         </div>
         <a class="btn btn-gold" href="{{ route('show_vote') }}">Vote Now →</a>
       </div>
