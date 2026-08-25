@@ -19,8 +19,8 @@
 </head>
 <body>
     @php
-        $venueLine = 'Marriott Hotel, Nairobi';
-        $dateLine = '13 November 2026';
+        $venueLine = 'Radisson Blu Hotel, Nairobi';
+        $dateLine = '20 November 2026';
     @endphp
     <div class="container">
         <div class="header">

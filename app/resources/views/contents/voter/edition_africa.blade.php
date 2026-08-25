@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit — Nairobi, Kenya | 13 November 2026')
+@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit — Nairobi, Kenya | 20 November 2026')
 
 <head>
   @include('partials.voter.head')
@@ -15,7 +15,7 @@
 
   <header class="page-hero">
     <div class="wrap">
-      <span class="ed-tag af"><span class="pin af"></span>THE GLOBAL PERIMETER · 13 November 2026</span>
+      <span class="ed-tag af"><span class="pin af"></span>THE GLOBAL PERIMETER · 20 November 2026</span>
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Nairobi</div>
       <h1>7th Annual Global Awards &amp; Summit — <span class="ac">Nairobi.</span></h1>
       <p>THE GLOBAL PERIMETER: building resilient institutions across borders. A global platform, an African home —
@@ -34,15 +34,15 @@
         </div>
         <div class="gi">
           <div class="lab">Date</div>
-          <div class="val">13 Nov 2026</div>
+          <div class="val">20 Nov 2026</div>
         </div>
         <div class="gi">
           <div class="lab">Summit</div>
-          <div class="val">10:00–14:00 EAT</div>
+          <div class="val">09:00–15:00 EAT</div>
         </div>
         <div class="gi">
           <div class="lab">Gala</div>
-          <div class="val">16:00–19:00 EAT</div>
+          <div class="val">18:00–21:00 EAT</div>
         </div>
         <div class="gi">
           <div class="lab">Dress</div>
@@ -50,7 +50,7 @@
         </div>
         <div class="gi">
           <div class="lab">Venue</div>
-          <div class="val">Marriott, Nairobi</div>
+          <div class="val">Radisson Blu, Nairobi</div>
         </div>
       </div>
     </div>
@@ -109,44 +109,51 @@
 
   <section class="band cream">
     <div class="wrap">
-      <div class="sec-eyebrow">The Day — 13 November 2026</div>
-      <h2 class="sec-title">A morning of ideas. <span class="ac">An evening of recognition.</span></h2>
-      <div class="sched" style="margin-top:26px">
-        <div class="sr">
-          <div class="t">09:00</div>
-          <div class="d">Registration &amp; welcome coffee</div>
+      <div class="sec-eyebrow">Who the Summit Is For</div>
+      <h2 class="sec-title">GRC is not <span class="ac">a sector.</span></h2>
+      <p class="sec-intro">It is the infrastructure through which responsible institutions are governed. Financial
+        crime is not solely a banking problem. Legal liability does not stop at national borders. Cyber risk does
+        not respect industry boundaries. Third-party risk travels through entire supply chains. And institutional
+        resilience cannot be owned by a single department.</p>
+      <div class="grid g3" style="margin-top:28px">
+        <div class="card">
+          <h3>Financial Services</h3>
+          <p>Banking · Insurance · FinTech · Payments · Microfinance · Asset Management · Capital Markets · Digital
+            Assets · Pensions</p>
         </div>
-        <div class="sr">
-          <div class="t">10:00</div>
-          <div class="d"><b>Summit opens</b> — Keynote: East Africa Rising</div>
+        <div class="card">
+          <h3>Legal &amp; Professional Services</h3>
+          <p>Law Firms · In-House Legal · General Counsel · Company Secretaries · Accountancy · Audit · Consulting ·
+            Insolvency · Forensics · Investigations</p>
         </div>
-        <div class="sr">
-          <div class="t">10:30</div>
-          <div class="d">Summit sessions &amp; panel discussions</div>
+        <div class="card">
+          <h3>Technology &amp; Telecommunications</h3>
+          <p>Technology · Telecoms · Cybersecurity · Cloud · AI · Data · Digital Identity · RegTech · Platforms</p>
         </div>
-        <div class="sr">
-          <div class="t">12:30</div>
-          <div class="d">Networking luncheon</div>
+        <div class="card">
+          <h3>Energy, Extractives &amp; Infrastructure</h3>
+          <p>Oil &amp; Gas · Mining · Energy · Utilities · Engineering · Construction · Infrastructure</p>
         </div>
-        <div class="sr">
-          <div class="t">13:30</div>
-          <div class="d">Afternoon roundtables &amp; sessions</div>
+        <div class="card">
+          <h3>Real Estate &amp; Property</h3>
+          <p>Development · Real Estate · Estate Agency · Property Investment · Housing · Facilities Management</p>
         </div>
-        <div class="sr">
-          <div class="t">14:00</div>
-          <div class="d"><b>Summit closes</b></div>
+        <div class="card">
+          <h3>Healthcare &amp; Life Sciences</h3>
+          <p>Healthcare · Pharmaceuticals · Medical Technology · Health Insurance · Research</p>
         </div>
-        <div class="sr">
-          <div class="t">16:00</div>
-          <div class="d">Cocktail reception &amp; welcome drinks</div>
+        <div class="card">
+          <h3>Consumer &amp; Commercial</h3>
+          <p>Retail · E-commerce · Manufacturing · FMCG · Hospitality · Media · Entertainment · Sports</p>
         </div>
-        <div class="sr">
-          <div class="t">17:00</div>
-          <div class="d"><b>Gala Awards Ceremony opens</b> · presentations &amp; formal dinner</div>
+        <div class="card">
+          <h3>Transport &amp; Global Trade</h3>
+          <p>Aviation · Maritime · Ports · Shipping · Logistics · Freight · Automotive · International Trade</p>
         </div>
-        <div class="sr">
-          <div class="t">19:00</div>
-          <div class="d"><b>Gala closes</b></div>
+        <div class="card">
+          <h3>Public &amp; Third Sectors</h3>
+          <p>Government · Regulators · Law Enforcement · State-Owned Enterprises · NGOs · Charities · Development ·
+            Education</p>
         </div>
       </div>
     </div>
@@ -154,64 +161,197 @@
 
   <section class="band white">
     <div class="wrap">
+      <div class="sec-eyebrow">Global Summit — 20 November 2026 · 09:00–15:00 EAT</div>
+      <h2 class="sec-title">Cross-sector <span class="ac">by design.</span></h2>
+      <p class="sec-intro">Governance, risk, compliance and financial crime are no longer challenges belonging
+        exclusively to banks. The 2026 Summit is built for financial services and the wider economy alike — legal
+        and professional services, technology and telecoms, energy and extractives, healthcare, real estate,
+        transport and trade, government and the third sector.</p>
+      <div class="sched" style="margin-top:26px">
+        <div class="sr">
+          <div class="t">08:00</div>
+          <div class="d">Registration, welcome breakfast &amp; cross-sector networking</div>
+        </div>
+        <div class="sr">
+          <div class="t">09:00</div>
+          <div class="d"><b>Global Opening</b> — Welcome to Nairobi and to the 7th Annual Global Awards &amp;
+            Summit</div>
+        </div>
+        <div class="sr">
+          <div class="t">09:10</div>
+          <div class="d"><b>Convener's Address</b> — From Lagos to Nairobi: six years of heritage, a seventh-year
+            transformation, one global community</div>
+        </div>
+        <div class="sr">
+          <div class="t">09:25</div>
+          <div class="d"><b>Host Country Welcome</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">09:40</div>
+          <div class="d"><b>Opening keynote — THE GLOBAL PERIMETER</b> · establishing GRC as an enterprise and
+            societal issue, not a financial-services compliance discipline</div>
+        </div>
+        <div class="sr">
+          <div class="t">10:00</div>
+          <div class="d">Governance &amp; Board Leadership — <b>Global Leadership Panel: Governing Beyond
+              Borders</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">10:40</div>
+          <div class="d">Legal, Enforcement &amp; Corporate Accountability — <b>When Compliance Becomes a Legal
+              Question</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">11:20</div>
+          <div class="d">Networking &amp; refreshment break</div>
+        </div>
+        <div class="sr">
+          <div class="t">11:40</div>
+          <div class="d">Financial Crime, AML/CFT &amp; Fraud — <b>Financial Crime Doesn't Stop at the Bank</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">12:20</div>
+          <div class="d">Cross-Sector &amp; Cross-Border Cooperation — <b>Beyond Financial Services: Why GRC Is Now
+              Everyone's Business</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">13:00</div>
+          <div class="d">AI, Cyber, Data &amp; Emerging Technology — <b>AI, Cyber, RegTech &amp; the Intelligent
+              Enterprise</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">13:40</div>
+          <div class="d">Cross-Sector &amp; Cross-Border Cooperation — <b>Across the Corridor: Global Corridors
+              Dialogue</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">14:20</div>
+          <div class="d">Risk &amp; Institutional Resilience — <b>Closing Boardroom: The Resilient
+              Institution</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">14:50</div>
+          <div class="d"><b>THE NAIROBI DECLARATION</b> — a global call for resilient institutions, closing
+            conclusions from Nairobi 2026</div>
+        </div>
+        <div class="sr">
+          <div class="t">15:00</div>
+          <div class="d"><b>Global Summit closes</b></div>
+        </div>
+        <div class="sr">
+          <div class="t">15:00</div>
+          <div class="d"><b>Summit–Gala intermission</b> — a three-hour protected break: delegate refresh, ballroom
+            transformation, awards setup, technical rehearsal and media coordination</div>
+        </div>
+        <div class="sr">
+          <div class="t">17:15</div>
+          <div class="d">Red carpet &amp; global reception</div>
+        </div>
+        <div class="sr">
+          <div class="t">18:00</div>
+          <div class="d"><b>Global Awards Gala</b> — five chapters: Governance &amp; Organisational Excellence ·
+            Compliance &amp; Financial Crime Prevention · Legal, Professional &amp; Cross-Sector · Technology,
+            Innovation, Women &amp; Emerging Leadership · Global Honours</div>
+        </div>
+        <div class="sr">
+          <div class="t">21:00</div>
+          <div class="d"><b>Formal event closes</b></div>
+        </div>
+      </div>
+      <p class="sec-intro" style="margin-top:20px;font-size:13px">Global Summit 09:00–15:00 EAT. Global Awards Gala
+        18:00–21:00 EAT. Every session belongs to one of nine programme themes. Programme provisional; speakers
+        confirmed on a rolling basis.</p>
+    </div>
+  </section>
+
+  <section class="band white">
+    <div class="wrap">
       <div class="sec-eyebrow">Summit Sessions</div>
-      <h2 class="sec-title">Eight sessions. <span class="ac">Every sector.</span></h2>
+      <h2 class="sec-title">Seven panels. <span class="ac">Nine programme themes.</span></h2>
       <div style="margin-top:28px">
         <div class="sessions">
           <div class="ses">
             <div class="no">01</div>
             <div>
-              <h4>Regulatory Pulse: Navigating East Africa's AML/CFT &amp; Compliance Landscape</h4>
-              <span class="tag">Regulatory Intelligence</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Governance &amp; Board Leadership</div>
+              <h4>Global Leadership Panel — Governing Beyond Borders</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Regulator · Board/CEO · General Counsel
+                · CRO/CCO · Public Sector · Industry leader. Cross-border expectations, corporate accountability,
+                regulatory fragmentation, institutional resilience.</p>
+              <span class="tag">Plenary</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">02</div>
             <div>
-              <h4>Homegrown Solutions: GRC Frameworks That Reflect African Market Realities</h4>
-              <span class="tag">Governance &amp; Culture</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Legal, Enforcement &amp; Corporate Accountability</div>
+              <h4>When Compliance Becomes a Legal Question</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Senior Counsel · General Counsel ·
+                Regulator · Prosecutor · CCO/MLRO. Corporate criminal liability, personal accountability, privilege,
+                cross-border investigations, professional enablers, beneficial ownership.</p>
+              <span class="tag">Flagship</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">03</div>
             <div>
-              <h4>The Financial Crime Threat: From Mobile-Money Fraud to Trade-Based Laundering</h4>
-              <span class="tag">FinCrime Disruption</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Financial Crime, AML/CFT &amp; Fraud</div>
+              <h4>Financial Crime Doesn't Stop at the Bank</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Banking · Legal · Telecoms/Technology ·
+                Real Estate/Extractives · Law Enforcement. Following money, assets, companies and professional
+                enablers across industries.</p>
+              <span class="tag">Flagship</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">04</div>
             <div>
-              <h4>Digital Finance &amp; Crypto: Compliance in a Mobile-First Economy</h4>
-              <span class="tag">Technology &amp; Innovation</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Cross-Sector &amp; Cross-Border Cooperation</div>
+              <h4>Beyond Financial Services — Why GRC Is Now Everyone's Business</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Telecoms · Energy &amp; Mining ·
+                Healthcare · Technology · Manufacturing · Transport · Real Estate. Enterprise risk, anti-bribery,
+                third-party and supply-chain integrity, ESG, whistleblowing, board oversight.</p>
+              <span class="tag">Flagship</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">05</div>
             <div>
-              <h4>Governance &amp; Accountability: Board-Level Responsibility in African Institutions</h4>
-              <span class="tag">Governance &amp; Culture</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                AI, Cyber, Data &amp; Emerging Technology</div>
+              <h4>AI, Cyber, RegTech &amp; the Intelligent Enterprise</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">AI governance, deepfakes, synthetic
+                identity, algorithmic accountability, model risk, digital identity, responsible AI — across every
+                industry.</p>
+              <span class="tag">Panel</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">06</div>
             <div>
-              <h4>Women Leading GRC: Advancing Gender Equity in the Compliance Profession</h4>
-              <span class="tag">Leadership &amp; Diversity</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Cross-Sector &amp; Cross-Border Cooperation</div>
+              <h4>Across the Corridor — Global Corridors Dialogue</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Africa · UK/Europe · Middle
+                East/International · Multinational corporate. Trade, capital, sanctions, supply chains, corporate
+                structures, cross-border investigations and regulatory cooperation.</p>
+              <span class="tag">Panel</span>
             </div>
           </div>
           <div class="ses">
             <div class="no">07</div>
             <div>
-              <h4>RegTech for Africa: Practical Technology Adoption for Constrained Environments</h4>
-              <span class="tag">Technology &amp; Innovation</span>
-            </div>
-          </div>
-          <div class="ses">
-            <div class="no">08</div>
-            <div>
-              <h4>Building the Next Generation: Talent, Education &amp; the Future of African GRC</h4>
-              <span class="tag">Leadership &amp; Diversity</span>
+              <div style="font-family:var(--sans);font-size:10.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">
+                Risk &amp; Institutional Resilience</div>
+              <h4>Closing Boardroom — The Resilient Institution</h4>
+              <p style="font-size:12.5px;color:var(--muted);margin-top:5px">Board Director · General Counsel · CRO ·
+                CCO/MLRO · CISO · Internal Audit. Breaking the silos between governance, legal, risk, compliance,
+                cyber and financial crime.</p>
+              <span class="tag">Boardroom</span>
             </div>
           </div>
         </div>
@@ -320,12 +460,22 @@
       <h2 class="sec-title">Nairobi's address for <span class="ac">international excellence.</span></h2>
       <div class="grid g2" style="margin-top:24px;align-items:start">
         <div>
-          <p class="sec-intro" style="margin-top:0">The Marriott Hotel, Nairobi sits in Upper Hill — the city's
-            financial and diplomatic heart, minutes from the CBD and both airports. World-class conference and
-            banqueting facilities make it the natural home for East Africa's premier GRC gathering.</p>
-          <div class="chips" style="margin-top:18px"><span class="chip">Grand ballroom</span><span
-              class="chip">Exhibition spaces</span><span class="chip">High-spec AV</span><span
-              class="chip">On-site accommodation</span><span class="chip">~10 min from CBD</span></div>
+          <p class="sec-intro" style="margin-top:0">The Radisson Blu sits on Elgon Road in Upper Hill — Nairobi's
+            business and financial district, home to the regional offices of international banks, development
+            finance institutions, regulators and multilaterals. It offers one of the largest conference facilities
+            in Kenya: fourteen meeting spaces totalling 1,419 sq m, a 150 sq m exhibition area, and the 590 sq m
+            Mount Kilimanjaro Ballroom.</p>
+          <p class="sec-intro">271 guest rooms and suites are on site — worth booking, given a delegate day that
+            runs from 08:00 registration to a 21:00 close.</p>
+          <div class="chips" style="margin-top:18px"><span class="chip">Mount Kilimanjaro Ballroom</span><span
+              class="chip">14 meeting spaces</span><span class="chip">150 sq m exhibition area</span><span
+              class="chip">271 guest rooms</span><span class="chip">~10 min from CBD</span></div>
+          <div class="callout" style="margin-top:20px">
+            <p style="font-size:13.5px;color:var(--muted);margin:0">🧳 A delegate travel pack — covering visa
+              guidance, negotiated hotel rates, airport transfers and a suggested arrival schedule — is issued on
+              registration. Most nationalities require a Kenya eVisa or Electronic Travel Authorisation; apply at
+              least three weeks ahead.</p>
+          </div>
         </div>
         <div class="glance" style="grid-template-columns:1fr 1fr">
           <div class="gi">

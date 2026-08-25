@@ -27,9 +27,38 @@
       <div class="faq">
         <details>
           <summary>When and where is the 2026 Awards &amp; Summit?</summary>
-          <p>13 November 2026 at the Marriott Hotel, Upper Hill, Nairobi — Summit 10:00–14:00 EAT; Gala Awards
-            16:00–19:00 EAT — plus a virtual Mid-Year Summit each June. Six award pillars apply across the
-            programme.</p>
+          <p>20 November 2026 at the Radisson Blu Hotel, Upper Hill, Nairobi — Global Summit 09:00–15:00 EAT; Global
+            Awards Gala 18:00–21:00 EAT — plus a virtual Mid-Year Summit each June. Six award pillars apply across
+            the programme.</p>
+        </details>
+        <details>
+          <summary>Who is this for?</summary>
+          <p>MLROs, chief compliance officers, chief risk officers and heads of financial crime; board and audit
+            committee members; regulators, supervisors and financial intelligence units; correspondent banking,
+            sanctions and trade finance leads; and RegTech, fintech and payments risk leadership. The delegate list
+            is weighted toward second-line leadership and supervisors rather than vendors.</p>
+        </details>
+        <details>
+          <summary>Is this an African event or a global one?</summary>
+          <p>It is a global event hosted in Africa. Nairobi is the host city for 2026 — that is a role, not a
+            boundary. The programme, the speaker list and the judging panel are recruited internationally by design,
+            across African markets, the UK and Europe, and international institutions.</p>
+        </details>
+        <details>
+          <summary>Will Nairobi host every year?</summary>
+          <p>Africa is the permanent home of the Global Awards &amp; Summit; the host city rotates. Nairobi hosts the
+            7th Annual edition — the 2027 host city will be announced after Nairobi.</p>
+        </details>
+        <details>
+          <summary>Can organisations outside Africa be nominated?</summary>
+          <p>Yes. All principal categories are open to international entries and assessed by the same panel against
+            the same published criteria. Categories with a defined regional scope are marked as such on the entry
+            form.</p>
+        </details>
+        <details>
+          <summary>Can I nominate my own team?</summary>
+          <p>Yes — self-nomination is welcome and common. Entry guidance and the criteria for each pillar are
+            published alongside the nomination form.</p>
         </details>
         <details>
           <summary>How do I vote?</summary>
@@ -38,8 +67,8 @@
         </details>
         <details>
           <summary>What ticket options are available?</summary>
-          <p>Summit Pass (USD 100 / KES 19,500), Full Delegate Pass (USD 250 / KES 45,500), Gala Only Pass (USD 150
-            / KES 28,600) and Student / Academic (USD 60 / KES 7,800). Group and table rates are available.</p>
+          <p>One ticket, the whole day — the Full Delegate Pass (USD 250 / KES 32,500) covers the Global Summit
+            09:00–15:00 and the Global Awards Gala 18:00–21:00. 10% off early bookings and groups of ten.</p>
         </details>
         <details>
           <summary>How are winners chosen?</summary>
@@ -49,8 +78,8 @@
         </details>
         <details>
           <summary>Can my organisation sponsor?</summary>
-          <p>Yes — Gold, Silver and Bronze packages are available. Contact events@grcfincrimeawards.com for the
-            prospectus.</p>
+          <p>Yes — Global Headline, Programme, Awards and Hospitality Partner tiers are available. Contact
+            events@grcfincrimeawards.com for the prospectus.</p>
         </details>
         <details>
           <summary>Can I speak or chair a session?</summary>

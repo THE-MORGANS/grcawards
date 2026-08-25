@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit | Nairobi, Kenya · 13 November 2026')
+@section('title', '7th Annual GRC & Financial Crime Prevention Global Awards & Summit | Nairobi, Kenya · 20 November 2026')
 
 <head>
   @include('partials.voter.head')
@@ -29,14 +29,15 @@
     <div class="wrap">
       <span class="hero-badge" style="margin-bottom: 50px"><span class="dot"></span>
         <!-- THE MORGANS ·  -->
-        7th Annual · Nairobi, Kenya · 13 November 2026</span>
+        7th Annual · Nairobi, Kenya · 20 November 2026 · Radisson Blu Hotel</span>
       <div style="font-family:var(--sans);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">
         The Global Perimeter</div>
       <h1>GRC &amp; Financial Crime Prevention <span class="ac">Global Awards &amp; Summit.</span></h1>
-      <p class="lede"><strong>Building Resilient Institutions Across Borders.</strong> A Global Platform. An African
-        Home. The GRC &amp; Financial Crime Prevention Awards &amp; Summit convenes regulators, bankers, fintech
-        leaders and compliance professionals in Nairobi, Kenya to raise the bar for governance, risk and integrity
-        worldwide.</p>
+      <p style="font-family:var(--sans);font-weight:600;font-size:16px;letter-spacing:0.01em;color:#fff;margin:14px 0 0">
+        Cross-sector. Cross-border. Global.</p>
+      <p class="lede">Building Resilient Institutions Across Borders. A Global Platform. An African Home. Bringing
+        together regulators, policymakers, financial institutions, corporate leaders, law enforcement, technology
+        innovators and GRC and financial crime professionals from Africa and across the world.</p>
       <div class="cta-row"><a class="btn btn-gold" href="#venue">Explore the Event →</a><a class="btn btn-ghost"
           href="{{ route('show_vote') }}">Cast Your Vote</a></div>
     </div>
@@ -45,7 +46,7 @@
   <section class="band white" id="venue">
     <div class="wrap">
       <div class="center">
-        <div class="sec-eyebrow">13 November 2026 — Nairobi, Kenya</div>
+        <div class="sec-eyebrow">20 November 2026 — Nairobi, Kenya</div>
         <h2 class="sec-title">One flagship gathering. <span class="ac">A global standard.</span></h2>
         <p class="sec-intro" style="margin:14px auto 0">THE GLOBAL PERIMETER brings the full Awards &amp; Summit
           experience to Nairobi — a morning of rigorous dialogue and an evening of well-earned recognition, uniting
@@ -92,11 +93,54 @@
           <span class="status-pill live" style="align-self:flex-end">● Voting Live</span>
           <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
-          <div class="city">Marriott Hotel · Upper Hill</div>
-          <div class="row"><span>📅 <b>13 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="city">Radisson Blu Hotel · Upper Hill</div>
+          <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
           <div class="acts"><span class="btn btn-gold btn-sm">View Full Details →</span></div>
         </a>
       </div>
+      <div class="callout" style="margin-top:32px">
+        <h3>Seven years of building this.</h3>
+        <p style="font-size:15px;color:var(--ink);margin-bottom:10px">For six years, the GRC &amp; Financial Crime
+          Prevention Awards &amp; Summit established its foundations in Lagos, Nigeria, building a growing community
+          of leaders and practitioners committed to strengthening governance, risk, compliance and financial crime
+          prevention.</p>
+        <p style="font-size:15px;color:var(--ink);margin-bottom:0">In 2026, the platform enters a new chapter. The
+          7th Annual GRC &amp; Financial Crime Prevention Global Awards &amp; Summit is hosted in Nairobi, Kenya —
+          marking the evolution of the platform into one annual global flagship, hosted in Africa and connected to
+          the world.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream">
+    <div class="wrap">
+      <div class="sec-eyebrow">Where This Came From</div>
+      <h2 class="sec-title">Six years in Lagos. A seventh in Nairobi. <span class="ac">A permanent home in
+          Africa.</span></h2>
+      <p class="sec-intro">The host city rotates. The home does not.</p>
+      <div class="grid g3" style="margin-top:28px">
+        <div class="card" style="border-top:3px solid var(--line-soft)">
+          <div style="font-family:var(--sans);font-weight:700;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)">
+            Years 1–6</div>
+          <h3>Lagos</h3>
+          <p>Six editions established the platform, the award pillars and the community that built it.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--crimson)">
+          <div style="font-family:var(--sans);font-weight:700;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--crimson)">
+            Year 7 — 2026</div>
+          <h3>Nairobi</h3>
+          <p>The first host outside Nigeria, and the point at which the platform becomes a single global flagship.</p>
+        </div>
+        <div class="card" style="border-top:3px solid var(--gold)">
+          <div style="font-family:var(--sans);font-weight:700;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-deep)">
+            Year 8 Onward</div>
+          <h3>Africa, Rotating</h3>
+          <p>One annual Global Awards &amp; Summit, hosted across strategically significant African markets, with
+            international forums year-round.</p>
+        </div>
+      </div>
+      <p style="text-align:center;font-family:var(--sans);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin-top:32px">Established
+        in Lagos &nbsp;&middot;&nbsp; Growing across Africa &nbsp;&middot;&nbsp; Connecting the world</p>
     </div>
   </section>
 
@@ -109,7 +153,7 @@
         </div>
         <div class="st">
           <div class="n">1</div>
-          <div class="l">Global Venue</div>
+          <div class="l">Global Edition</div>
         </div>
         <div class="st">
           <div class="n">6</div>
@@ -131,6 +175,10 @@
     <div class="wrap center">
       <div class="sec-eyebrow">Trusted Across the Profession</div>
       <h2 class="sec-title">Recognising the leaders <span class="ac">raising the standard.</span></h2>
+      <p class="sec-intro" style="margin:14px auto 0">Not a vendor showcase. MLROs, chief compliance officers, chief
+        risk officers and heads of financial crime; board and audit committee members; regulators, supervisors and
+        financial intelligence units; correspondent banking, sanctions and trade finance leads; and RegTech, fintech
+        and payments risk leadership — whose work crosses African, European and international markets.</p>
     </div>
     <div class="marquee" style="margin-top:30px">
       <div class="track">
@@ -632,6 +680,23 @@
     </div>
   </section>
 
+  <section class="band navy">
+    <div class="wrap center">
+      <div class="sec-eyebrow">The Judging Panel</div>
+      <h2 class="sec-title">Independent, <span class="ac">and visibly so.</span></h2>
+      <p class="sec-intro" style="margin:14px auto 0;color:#c2cae0">Recognition is only worth what the panel is
+        worth. The 2026 Global Awards are assessed by an independent panel constituted internationally — drawn from
+        regulators, supervisory bodies, financial institutions, academia and practice across Africa, Europe and
+        international markets. Judges declare conflicts and recuse from any category in which their organisation is
+        nominated; criteria are published in advance and applied uniformly to every entry, and panel members are
+        named publicly.</p>
+      <p style="font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gold-soft);margin:16px auto 0;max-width:560px">One
+        panel. One published set of criteria. Every entry assessed the same way.</p>
+      <div style="margin-top:26px"><a class="btn btn-gold" href="{{ route('judging_process') }}">See the Judging
+          Process →</a></div>
+    </div>
+  </section>
+
   <section class="band cream">
     <div class="wrap">
       <div class="sec-eyebrow">Past Honourees</div>
@@ -690,8 +755,21 @@
     <div class="wrap center">
       <div class="sec-eyebrow">Get Involved</div>
       <h2 class="sec-title">Vote. Attend. <span class="ac">Partner.</span></h2>
+      <p style="font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-soft);margin:14px auto 0">A
+        Global Platform. An African Home.</p>
+      <p style="font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-soft);opacity:0.85;margin:6px auto 0">Spirit
+        of Excellence Distilled&hellip;</p>
       <p class="sec-intro" style="margin:14px auto 0">Cast your vote, reserve your place in Nairobi, or partner with
         us as a sponsor.</p>
+      <div class="callout"
+        style="max-width:420px;margin:26px auto 0;text-align:center;background:rgba(255,255,255,0.04);border-color:rgba(201,162,75,0.35)">
+        <div class="sec-eyebrow" style="margin-bottom:8px">One Ticket. The Whole Day.</div>
+        <div style="font-family:var(--serif);font-size:30px;color:var(--gold-soft)">USD 250 <span
+            style="color:#8b93b0;font-size:0.6em">/</span> KES 32,500</div>
+        <p style="font-size:13px;color:#c2cae0;margin-top:8px">Full Delegate Pass — Global Summit 09:00–15:00 and
+          Global Awards Gala 18:00–21:00.<br><strong style="color:var(--gold-soft)">10% off early bookings and
+            groups of ten.</strong></p>
+      </div>
       <div class="cta-row" style="justify-content:center;margin-top:26px">
         <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-gold" href="{{ route('show_tickets') }}">Book
           Tickets</a><a class="btn btn-ghost" href="{{ route('show_sponsors') }}">Become a Sponsor</a>

@@ -26,54 +26,67 @@
   <section class="band white" id="packages">
     <div class="wrap">
       <div class="sec-eyebrow">Sponsorship Packages</div>
-      <h2 class="sec-title">Three tiers. <span class="ac">Maximum impact.</span></h2>
-      <div class="price-grid" style="grid-template-columns:repeat(3,1fr);margin-top:34px">
+      <h2 class="sec-title">One platform. <span class="ac">One partnership conversation.</span></h2>
+      <p class="sec-intro">Partners are associated with a single annual global flagship — one programme, one
+        ceremony, one judging panel, and one room containing the regulators, chief compliance and risk officers,
+        board members and technology leadership who set financial crime standards across Africa, Europe and
+        international markets.</p>
+      <div class="price-grid" style="margin-top:34px">
         <div class="price feat">
           <div class="flag">Most Visibility</div>
-          <h3>Gold Sponsor</h3>
+          <h3>Global Headline Partner</h3>
+          <p class="sub">Naming rights across the Summit and Awards</p>
           <ul>
+            <li>Naming rights across the Summit and the Gala Awards Ceremony</li>
+            <li>Opening keynote platform &amp; full delegate allocation</li>
             <li>Awards category named after your organisation</li>
             <li>Award presentation on your category on the night</li>
-            <li>Colour advert &amp; company profile in the brochure (One Page)</li>
+            <li>Colour advert &amp; company profile in the brochure (Full Page)</li>
             <li>Company branding at the venue</li>
             <li>Logo on all pre-marketing: brochure, web banners, social</li>
-            <li>10-second static advert on screen at the venue</li>
-            <li>Sponsor mention across our social platforms</li>
-            <li>Complimentary VIP tickets (6)</li>
+            <li>Complimentary VIP tickets (8)</li>
             <li>Press release announcing the partnership</li>
             <li>Red-carpet interviews &amp; networking with dignitaries</li>
           </ul>
           <a class="btn btn-gold" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
         </div>
         <div class="price">
-          <h3>Silver Sponsor</h3>
+          <h3>Programme Partner</h3>
+          <p class="sub">Named ownership of a programme anchor</p>
+          <ul>
+            <li>Named ownership of a keynote or a full session movement</li>
+            <li>Speaking slot within your sponsored session</li>
+            <li>Colour advert &amp; company profile in the brochure (Half Page)</li>
+            <li>Company branding at the venue &amp; session signage</li>
+            <li>Logo on all pre-marketing: brochure, web banners, social</li>
+            <li>Complimentary VIP tickets (5)</li>
+            <li>Press release announcing the partnership</li>
+          </ul>
+          <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
+        </div>
+        <div class="price">
+          <h3>Awards Partner</h3>
+          <p class="sub">Category sponsorship &amp; trophy association</p>
           <ul>
             <li>Awards category named after your organisation</li>
             <li>Award presentation on your category on the night</li>
-            <li>Colour advert &amp; company profile in the brochure (Half Page)</li>
+            <li>Stage presentation &amp; trophy association</li>
+            <li>Colour advert &amp; company profile in the brochure (Quarter Page)</li>
             <li>Company branding at the venue</li>
-            <li>Logo on all pre-marketing: brochure, web banners, social</li>
-            <li>10-second static advert on screen at the venue</li>
-            <li>Sponsor mention across our social platforms</li>
-            <li>Complimentary VIP tickets (4)</li>
-            <li>Press release announcing the partnership</li>
+            <li>Complimentary VIP tickets (3)</li>
             <li>Red-carpet interviews &amp; networking with dignitaries</li>
           </ul>
           <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
         </div>
         <div class="price">
-          <h3>Bronze Sponsor</h3>
+          <h3>Hospitality Partner</h3>
+          <p class="sub">Dinner, reception &amp; delegate hospitality</p>
           <ul>
-            <li>Awards category named after your organisation</li>
-            <li>Award presentation on your category on the night</li>
-            <li>Colour advert &amp; company profile in the brochure (Quarter Page)</li>
-            <li>Company branding at the venue</li>
-            <li>Logo on all pre-marketing: brochure, web banners, social</li>
-            <li>10-second static advert on screen at the venue</li>
-            <li>Sponsor mention across our social platforms</li>
+            <li>Naming association with the cocktail reception or Gala dinner</li>
+            <li>Branded hospitality touchpoints — welcome drinks, menus, table cards</li>
+            <li>Company branding at the reception &amp; dinner area</li>
             <li>Complimentary VIP tickets (2)</li>
-            <li>Press release announcing the partnership</li>
-            <li>Red-carpet interviews &amp; networking with dignitaries</li>
+            <li>Sponsor mention across our social platforms</li>
           </ul>
           <a class="btn btn-navy" href="https://forms.gle/xzXerKNH8vpaZeaF9">Get Started →</a>
         </div>

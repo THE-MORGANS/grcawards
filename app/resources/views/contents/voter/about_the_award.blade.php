@@ -17,8 +17,9 @@
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · About the Award</div>
       <h1>About <span class="ac">the Award</span></h1>
-      <p>Celebrating global excellence in governance, risk, compliance, fraud &amp; cybercrime prevention — from a
-        first edition in Lagos to a flagship global gathering hosted annually in Nairobi, Kenya.</p>
+      <p>Celebrating global excellence in governance, risk, compliance, fraud &amp; cybercrime prevention — from six
+        founding editions in Lagos to a single annual global flagship, hosted for the first time outside Nigeria in
+        Nairobi, Kenya.</p>
     </div>
   </header>
 
@@ -34,9 +35,13 @@
             innovation and commitment across governance, risk, compliance, fraud prevention, cybersecurity and
             financial-crime prevention.</p>
           <p class="sec-intro">Founded by Dr. Foluso Amusa, PhD, the initiative held its first edition in Lagos in
-            2020. It has since grown into a global platform for the profession, now hosted annually in Nairobi,
-            Kenya — East Africa's foremost financial and innovation hub. In 2025 a formal Advisory Council was
-            appointed, alongside an independent, international panel of judges.</p>
+            2020, running six consecutive editions there and building the community, the award pillars and the
+            standards that define it. In 2025 a formal Advisory Council was appointed, alongside an independent,
+            international panel of judges.</p>
+          <p class="sec-intro">In 2026, the platform enters a new chapter. The 7th Annual GRC &amp; Financial Crime
+            Prevention Global Awards &amp; Summit is hosted in Nairobi, Kenya — the first host city outside Nigeria,
+            and the point at which the platform becomes a single annual global flagship. Africa is its permanent
+            home; the host city rotates each year.</p>
         </div>
         <div class="callout">
           <h3>Milestones</h3>
@@ -46,8 +51,8 @@
               <div class="d">Founded in Lagos, Nigeria</div>
             </div>
             <div class="sr">
-              <div class="t">2022+</div>
-              <div class="d">Expanded across Europe</div>
+              <div class="t">2020–25</div>
+              <div class="d">Six editions established in Lagos</div>
             </div>
             <div class="sr">
               <div class="t">2025</div>
@@ -55,7 +60,7 @@
             </div>
             <div class="sr">
               <div class="t">2026</div>
-              <div class="d">THE GLOBAL PERIMETER — Nairobi, Kenya</div>
+              <div class="d">7th Edition — first hosted outside Nigeria, in Nairobi</div>
             </div>
           </div>
         </div>

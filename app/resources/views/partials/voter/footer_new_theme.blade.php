@@ -5,7 +5,7 @@
             <div class="brand"><img src="{{ asset('assets/images/grclogo.png') }}" alt="GRC & FinCrime Prevention Awards & Summit">
                 <p>Celebrating global excellence in governance, risk, compliance and financial crime prevention —
                     through one flagship annual gathering.</p>
-                <div class="eds"><span class="e"><span class="pin af"></span>Nairobi, Kenya · 13 Nov 2026</span></div>
+                <div class="eds"><span class="e"><span class="pin af"></span>Nairobi, Kenya · 20 Nov 2026</span></div>
             </div>
             <div>
                 <h5>The Event</h5>

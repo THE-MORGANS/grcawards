@@ -109,11 +109,11 @@
             </div>
 
             @php
-                $venueLine = 'Marriott Hotel, Nairobi';
-                $dateLine = '13 November 2026';
+                $venueLine = 'Radisson Blu Hotel, Nairobi';
+                $dateLine = '20 November 2026';
             @endphp
 
-            <div class="success-kicker">Nairobi, Kenya · 13 November 2026</div>
+            <div class="success-kicker">Nairobi, Kenya · 20 November 2026</div>
             <h1 class="success-title">Reservation Confirmed!</h1>
             <p class="success-message">
                 Thank you, <strong>{{ $registration->name }}</strong>. Your <strong>{{ $registration->ticket_name }}</strong> for the GRC & Financial Crime Prevention Awards & Summit has been successfully reserved.

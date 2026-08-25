@@ -21,9 +21,9 @@
   <header class="page-hero pay-hero">
     <div class="wrap">
       <a href="{{ route('show_tickets') }}" class="pay-back">← Back to Tickets</a>
-      <span class="ed-tag af"><span class="pin af"></span>Nairobi, Kenya · 13 November 2026</span>
+      <span class="ed-tag af"><span class="pin af"></span>Nairobi, Kenya · 20 November 2026</span>
       <h1>Reserve Your <span class="ac">Pass.</span></h1>
-      <p>Marriott Hotel, Nairobi · 13 November 2026</p>
+      <p>Radisson Blu Hotel, Nairobi · 20 November 2026</p>
     </div>
   </header>
 

@@ -28,7 +28,7 @@
   <section class="band white">
     <div class="wrap">
       <div class="sec-eyebrow">Two Formats · One Mission</div>
-      <h2 class="sec-title">A virtual summit each June. <span class="ac">Two galas each winter.</span></h2>
+      <h2 class="sec-title">A virtual summit each June. <span class="ac">One gala each winter.</span></h2>
       <div class="grid g2" style="margin-top:28px">
         <div class="card icard"><span class="em">💻</span>
           <div>
@@ -40,8 +40,9 @@
         <div class="card icard"><span class="em">🏆</span>
           <div>
             <h3>End-of-Year Awards &amp; Summit</h3>
-            <p>The flagship in-person event — hosted annually in Nairobi, Kenya — combines a day of
-              keynotes and panels with the prestigious black-tie Gala Awards Ceremony.</p>
+            <p>The flagship in-person event — one annual global gathering hosted across Africa, with Nairobi, Kenya
+              as the host for the 7th edition — combines a day of keynotes and panels with the prestigious black-tie
+              Gala Awards Ceremony.</p>
           </div>
         </div>
       </div>
@@ -52,6 +53,7 @@
     <div class="wrap">
       <div class="sec-eyebrow">2026 In-Person Edition</div>
       <h2 class="sec-title">Nairobi. <span class="ac">One standard.</span></h2>
+      <p class="sec-intro">The host city rotates each year; Africa is the permanent home.</p>
       <div style="margin-top:32px;max-width:460px;margin-left:auto;margin-right:auto">
         <a class="edcard af" href="{{ route('edition.africa') }}">
           <div class="ed-sky"><svg viewBox="0 0 1000 118" preserveAspectRatio="xMidYMax meet"
@@ -93,8 +95,8 @@
           <span class="status-pill live">● Voting Live</span>
           <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
-          <div class="city">Marriott Hotel · Upper Hill</div>
-          <div class="row"><span>📅 <b>13 November 2026</b></span><span>🕙 Summit + Gala</span></div>
+          <div class="city">Radisson Blu Hotel · Upper Hill</div>
+          <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
           <div class="acts"><span class="btn btn-gold btn-sm">View Full Programme →</span></div>
         </a>
       </div>
@@ -207,7 +209,7 @@
   <section class="band navy">
     <div class="wrap center">
       <h2 class="sec-title">Join the next Summit.</h2>
-      <p class="sec-intro" style="margin:14px auto 0">Nairobi, Kenya on 13 November 2026. Reserve your place.</p>
+      <p class="sec-intro" style="margin:14px auto 0">Nairobi, Kenya on 20 November 2026. Reserve your place.</p>
       <div class="cta-row" style="justify-content:center;margin-top:24px"><a class="btn btn-gold"
           href="{{ route('show_tickets') }}">Book Tickets</a><a class="btn btn-ghost"
           href="{{ route('edition.africa') }}">Full Programme</a></div>

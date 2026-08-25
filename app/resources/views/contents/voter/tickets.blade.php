@@ -17,8 +17,8 @@
     <div class="wrap">
       <div class="crumb"><a href="{{ route('landing.index') }}">Home</a> · Tickets</div>
       <h1>Reserve your place — <span class="ac">Nairobi, Kenya.</span></h1>
-      <p>Tickets cover the morning Summit and the evening Gala Awards Ceremony on 13 November 2026. Booking is open
-        now.</p>
+      <p>One ticket, the whole day. Global Summit 09:00–15:00 and Global Awards Gala 18:00–21:00 on 20 November
+        2026. Booking is open now.</p>
     </div>
   </header>
 
@@ -32,12 +32,12 @@
         <div class="price-grid" style="grid-template-columns:1fr;max-width:400px;margin:0 auto">
           <div class="price feat" style="text-align:center">
             <h3>Full Delegate Pass</h3>
-            <div class="amt"><small>USD</small> 250 <small style="color:#8b93b0">/ KES 45,500</small></div>
-            <div class="sub">Summit + Gala</div>
+            <div class="amt"><small>USD</small> 250 <small style="color:#8b93b0">/ KES 32,500</small></div>
+            <div class="sub">Global Summit 09:00–15:00 + Global Awards Gala 18:00–21:00</div>
             <ul style="text-align:left">
               <li>Full Summit programme</li>
-              <li>Networking luncheon</li>
-              <li>Cocktail reception</li>
+              <li>Networking breakfast &amp; refreshment breaks</li>
+              <li>Red carpet &amp; global reception</li>
               <li>Gala &amp; formal dinner</li>
               <li>Reserved seating</li>
               <li>Delegate pack &amp; certificate</li>
@@ -51,7 +51,7 @@
             <div class="amt"><small>USD</small> 100 <small style="color:#8b93b0">/ KES 19,500</small></div>
             <div class="sub">Morning access only</div>
             <ul>
-              <li>Summit sessions 10:00–14:00</li>
+              <li>Summit sessions 09:00–15:00</li>
               <li>Networking luncheon</li>
               <li>Delegate pack</li>
               <li>Digital certificate</li>
@@ -89,7 +89,7 @@
           <div>
             <h3>Group &amp; table bookings</h3>
             <p style="color:var(--muted);font-size:14px">Reserve a table of 10 at the Gala, or group Full Delegate
-              Passes — 10% off groups of 6+.</p>
+              Passes — 10% off early bookings and groups of ten.</p>
           </div>
           <a class="btn btn-crimson" href="mailto:events@grcfincrimeawards.com?subject=Group%20Booking">Enquire
             →</a>
