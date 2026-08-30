@@ -26,4 +26,5 @@ Route::prefix('judges')->group(function(){
     Route::post('nominess/store', [StoreNominessVotesController::class, 'StoreNominessVotes'])->name('admin.StoreNominessVotes');
 
     Route::middleware('judge')->get('top-nominees', [TopNomineesController::class, 'ViewTopNominees'])->name('admin.top_nominees');
+    Route::middleware('judge')->post('top-nominees/vote', [TopNomineesController::class, 'SubmitVote'])->name('admin.top_nominees.vote');
 });

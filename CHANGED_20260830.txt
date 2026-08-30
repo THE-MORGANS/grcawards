@@ -2,9 +2,13 @@ New files:
 - app\app\Http\Middleware\EnsureJudge.php (lines 1-26)
 - app\app\Http\Controllers\Judges\TopNomineesController.php (lines 1-66)
 - app\resources\views\contents\admin\judge\top_nominees.blade.php (lines 1-133)
+- app\database\migrations\2026_08_30_140326_add_comment_to_judges_votes_table.php (lines 1-32)
 
 Updated files:
 - app\app\Http\Kernel.php (line 67)
-- app\routes\judges.php (lines 4-5, 28-29)
-- app\resources\views\partials\admin\sidebar.blade.php (lines 174-176)
+- app\routes\judges.php (lines 4-5, 28-29, 30)
+- app\resources\views\partials\admin\sidebar.blade.php (lines 174-176, 56-58 added: Top Nominees link in admin role_id==1 block)
 - app\app\Models\VoteCount.php (lines 17-23)
+- app\app\Models\JudgesVotes.php (line 12)
+- app\app\Http\Controllers\Judges\TopNomineesController.php (lines 7-8, 18, 38-112)
+- app\resources\views\contents\admin\judge\top_nominees.blade.php (lines 9-33, 39 removed, 63-93, 109, 114-117, 143-220, 267-431)
