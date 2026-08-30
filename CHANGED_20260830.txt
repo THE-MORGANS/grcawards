@@ -1,0 +1,10 @@
+New files:
+- app\app\Http\Middleware\EnsureJudge.php (lines 1-26)
+- app\app\Http\Controllers\Judges\TopNomineesController.php (lines 1-66)
+- app\resources\views\contents\admin\judge\top_nominees.blade.php (lines 1-133)
+
+Updated files:
+- app\app\Http\Kernel.php (line 67)
+- app\routes\judges.php (lines 4-5, 28-29)
+- app\resources\views\partials\admin\sidebar.blade.php (lines 174-176)
+- app\app\Models\VoteCount.php (lines 17-23)

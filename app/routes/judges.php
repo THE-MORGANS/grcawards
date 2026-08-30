@@ -1,8 +1,8 @@
 <?php 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Judges\
-{JudgesController, NomineeVotesResultController, NominessDetailsController, NominessVotesController, AddJudgesController, 
-    LoadJudgesController, StoreNominessVotesController, UpdateAdminController, CreateNominessController
+{JudgesController, NomineeVotesResultController, NominessDetailsController, NominessVotesController, AddJudgesController,
+    LoadJudgesController, StoreNominessVotesController, UpdateAdminController, CreateNominessController, TopNomineesController
 };
 
 Route::prefix('judges')->group(function(){
@@ -24,4 +24,6 @@ Route::prefix('judges')->group(function(){
     Route::get('nominees/{category_id}', [NominessVotesController::class, 'ViewNominessVotes'])->name('admin.view_nominess_awards'); 
     Route::get('nomineesresults/{award_id}', [NomineeVotesResultController::class, 'ViewNominessVotesResults'])->name('admin.view_nominess_awards_results'); 
     Route::post('nominess/store', [StoreNominessVotesController::class, 'StoreNominessVotes'])->name('admin.StoreNominessVotes');
+
+    Route::middleware('judge')->get('top-nominees', [TopNomineesController::class, 'ViewTopNominees'])->name('admin.top_nominees');
 });

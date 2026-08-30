@@ -171,6 +171,9 @@
             {{-- <li>
                          <a href="{{route('admin.load_judge_category_page_results',request()->segment(3))}}">View Awards Results</a>
             </li> --}}
+            <li>
+                <a href="{{route('admin.top_nominees',request()->segment(3))}}">Top Nominees</a>
+            </li>
         </ul>
     </div>
     </li>

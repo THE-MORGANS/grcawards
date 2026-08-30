@@ -14,5 +14,11 @@ class VoteCount extends Model
         'nominee_id', 'award_id', 'award_program_id', 'voteCount'
     ];
 
-    
+    public function nominee(){
+        return $this->belongsTo(Nominee::class, 'nominee_id');
+    }
+
+    public function award(){
+        return $this->belongsTo(Award::class, 'award_id');
+    }
 }
