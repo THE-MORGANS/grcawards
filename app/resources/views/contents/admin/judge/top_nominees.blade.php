@@ -6,19 +6,37 @@
 <link href="{{asset('assets/css/nominees_redesign.css')}}" rel="stylesheet" type="text/css" />
 <style>
     .cat-card { margin-bottom: 1.5rem; }
-    .cat-card .card-header { background: #f7f8fc; border-bottom: 1px solid #eef2f7; padding: 14px 20px; }
+    .cat-card .card-header {
+        background: #f7f8fc; border-bottom: 1px solid #eef2f7; padding: 14px 20px;
+        display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    }
     .cat-card .card-header h5 { margin: 0; font-size: 15px; font-weight: 700; color: #313a46; }
+    .view-criteria-btn { border-radius: 30px; font-size: 12px; flex-shrink: 0; }
+
+    /* Criteria modal */
+    .criteria-html-content h1,
+    .criteria-html-content h2,
+    .criteria-html-content h3 {
+        color: #313a46;
+        font-weight: 700;
+        margin-top: 1.25rem;
+        margin-bottom: 0.6rem;
+    }
+    .criteria-html-content ul,
+    .criteria-html-content ol {
+        padding-left: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+    .criteria-html-content strong {
+        color: #727cf5;
+        font-weight: 700;
+    }
     .rank-badge {
         display: inline-flex; align-items: center; justify-content: center;
         width: 26px; height: 26px; border-radius: 50%;
         background: #f1f3fa; color: #6c757d; font-weight: 700; font-size: 12px;
     }
     .rank-badge.top3 { background: rgba(114,124,245,.12); color: #727cf5; }
-    .tie-badge {
-        background: rgba(255,188,0,.1); color: #b58a00; border: 1px solid rgba(255,188,0,.25);
-        padding: 2px 8px; border-radius: 30px; font-size: 10.5px; font-weight: 700;
-        text-transform: uppercase; letter-spacing: .03em; margin-left: 8px;
-    }
     .sector-heading {
         display: flex; align-items: center; gap: 10px;
         margin: 28px 0 14px;
@@ -82,6 +100,10 @@
             <div class="card cat-card">
                 <div class="card-header">
                     <h5>{{ $category['award']->name ?? 'Untitled Award' }}</h5>
+                    <button class="btn btn-sm btn-outline-secondary view-criteria-btn" data-name="{{ $category['award']->name }}" data-index="{{ $category['award']->id }}" onClick="openCriteriaModal(this)">
+                        <i class="mdi mdi-information-outline me-1"></i> View Criteria
+                    </button>
+                    <template id="criteria-template-{{ $category['award']->id }}">{!! $category['award']->criteria !!}</template>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
@@ -103,9 +125,6 @@
                                     </td>
                                     <td class="nominee-name-cell">
                                         {{ $nominee->nominee?->name }}
-                                        @if ($rank > 5)
-                                        <span class="tie-badge">Tied for 5th</span>
-                                        @endif
                                     </td>
                                     <td><span class="votes-badge">{{ $nominee->voteCount }}</span></td>
                                 </tr>
@@ -130,4 +149,44 @@
     </div>
     @endforelse
 </div>
+
+<!-- Criteria Modal -->
+<div class="modal fade" id="criteriaModal" tabindex="-1" aria-labelledby="criteriaModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="criteriaModalLabel">Award Criteria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalAwardName" class="mb-4 fw-bold text-primary"></h4>
+                <div id="modalCriteriaBody" class="criteria-html-content">
+                    <!-- Content injected via JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('scripts')
+<script>
+function openCriteriaModal(element) {
+    const awardName = element.getAttribute('data-name');
+    const index = element.getAttribute('data-index');
+
+    const template = document.getElementById(`criteria-template-${index}`);
+    const modalBody = document.getElementById('modalCriteriaBody');
+    const modalTitle = document.getElementById('modalAwardName');
+
+    modalTitle.innerText = awardName;
+    modalBody.innerHTML = template.innerHTML;
+
+    const myModal = new bootstrap.Modal(document.getElementById('criteriaModal'));
+    myModal.show();
+}
+</script>
 @endsection
