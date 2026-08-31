@@ -92,6 +92,74 @@
 
   <section class="band white">
     <div class="wrap">
+      <div class="sec-eyebrow">Panel of Judges</div>
+      <h2 class="sec-title">An independent, international <span class="ac">panel of judges.</span></h2>
+      <p class="sec-intro">Scoring every shortlisted nominee against published, sector-specific criteria — without
+        conflict, bias or visibility of other judges' scores.</p>
+      @php
+        $judges = [
+            ['name' => 'Esosa Balogun', 'image' => 'esosa-balogun.jpg', 'role' => 'Chair, Panel of Judges'],
+            ['name' => 'Jayden Yoon', 'image' => 'jayden-yoon.jpg'],
+            ['name' => 'Kenneth Ashiabuchi', 'image' => 'kenneth-ashiabuchi.jpg'],
+            ['name' => 'Ndidi Ahiauzu', 'image' => 'ndidi-ahiauzu.jpg'],
+            ['name' => 'Banke Ogunbodede', 'image' => 'banke-ogunbodede.jpg'],
+            ['name' => 'Said Katarzyna', 'image' => 'said-katarzyna.jpg'],
+            ['name' => 'Daniel Wynne', 'image' => 'daniel-wynne.jpg'],
+            ['name' => 'Priju Sham', 'image' => null],
+            ['name' => 'Tarun Sukhija', 'image' => 'tarun-sukhija.jpg'],
+            ['name' => 'Handan Tokdogan', 'image' => 'handan-tokdogan.jpg'],
+            ['name' => 'Helentung Chambers', 'image' => 'helentung-chambers.jpg'],
+            ['name' => 'Emer McPartland', 'image' => 'emer-mcpartland.jpg'],
+            ['name' => 'Sinead Halhed-Moran Walsh', 'image' => 'sinead-halhed-moran-walsh.jpg'],
+            ['name' => 'Claire Convallaria', 'image' => 'claire-convallaria.jpg'],
+            ['name' => 'Gbugbemi Atimomo', 'image' => 'gbugbemi-atimomo.jpg'],
+            ['name' => 'Dayo Adeyemi', 'image' => null],
+            ['name' => 'Ope Osiyemi', 'image' => 'ope-osiyemi.jpg'],
+            ['name' => 'Emmanuel Michael', 'image' => 'emmanuel-michael.jpg'],
+            ['name' => 'Temitope Yusuff', 'image' => 'temitope-yusuff.jpg'],
+            ['name' => 'Ebuwa Babajide', 'image' => 'ebuwa-babajide.jpg'],
+            ['name' => 'Sunny Ukeachu', 'image' => 'sunny-ukeachu.jpg'],
+            ['name' => 'Yahya Oubrahim', 'image' => 'yahya-oubrahim.jpg'],
+            ['name' => 'Abraham Awe', 'image' => 'abraham-awe.jpg'],
+            ['name' => 'Femi Mosaku-Johnson', 'image' => 'femi-mosaku-johnson.jpg'],
+            ['name' => 'Joash Ombati', 'image' => 'joash-ombati.jpg'],
+            ['name' => 'Richard Mayungbe', 'image' => 'richard-mayungbe.jpg'],
+            ['name' => 'Meryem Bouzoubaa', 'image' => 'meryem-bouzoubaa.jpg'],
+            ['name' => 'Emeka Offor', 'image' => 'emeka-offor.jpg'],
+            ['name' => 'Raksha Beecum-Khadaroo', 'image' => 'raksha-beecum-khadaroo.jpg'],
+            ['name' => 'Babongile Mthwthwa', 'image' => 'babongile-mthwthwa.jpg'],
+            ['name' => 'Catherine Jeruto', 'image' => 'catherine-jeruto.jpg'],
+            ['name' => 'Tayo Felix Ogunneye', 'image' => 'tayo-felix-ogunneye.jpg'],
+            ['name' => 'Craig Skinner', 'image' => 'craig-skinner.jpg'],
+            ['name' => 'Paolo Rovatti', 'image' => null],
+            ['name' => 'Izabella Ferreira Pinto de Calvaho', 'image' => 'izabella-ferreira-pinto-de-calvaho.jpg'],
+            ['name' => 'Brendan Greiner', 'image' => 'brendan-greiner.jpg'],
+            ['name' => 'Kenneth Oguzie', 'image' => 'kenneth-oguzie.jpg'],
+            ['name' => 'Olu Ajayi', 'image' => 'olu-ajayi.jpg'],
+        ];
+      @endphp
+      <div class="grid g4" style="margin-top:26px">
+        @foreach ($judges as $judge)
+        <div class="spk">
+          <div class="av">
+            @if ($judge['image'])
+            <img src="{{ asset('assets/images/judges/'.$judge['image']) }}" alt="{{ $judge['name'] }}" loading="lazy">
+            @else
+            {{ collect(explode(' ', $judge['name']))->map(fn($w) => mb_substr($w, 0, 1))->join('') }}
+            @endif
+          </div>
+          <div class="nm">{{ $judge['name'] }}</div>
+          @if (!empty($judge['role']))
+          <div class="rl">{{ $judge['role'] }}</div>
+          @endif
+        </div>
+        @endforeach
+      </div>
+    </div>
+  </section>
+
+  <section class="band cream">
+    <div class="wrap">
       <div class="sec-eyebrow">Objectives</div>
       <h2 class="sec-title">Why these awards <span class="ac">matter.</span></h2>
       <div class="grid g3" style="margin-top:28px">
