@@ -64,8 +64,7 @@
                                 </ul>
                             </li>
                             <li class="{{request()->is('vote') ? 'active-page' : '' }}">
-                                <a href="{{route('show_vote')}}">vote</a>
-                                {{-- <a href="#">vote</a> --}}
+                                <a href="{{route('show_login_form')}}">voting closed</a>
                             </li>
                             <li class="{{request()->is('advisory/board-members') ? 'active-page' : '' }}"><a href="{{route('board_members')}}">Advisory Council </a></li>
                             <li class="dropdown {{request()->is('judges/*') ? 'active-page' : ''}}">

@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'lusaka_admin_auth' => \App\Http\Middleware\LusakaAdminAuth::class,
         'judge' => \App\Http\Middleware\EnsureJudge::class,
+        'voting_closed' => \App\Http\Middleware\VotingClosed::class,
     ];
 }

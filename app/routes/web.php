@@ -137,11 +137,11 @@ Route::prefix('lusaka/admin')->group(function () {
 // require __DIR__.'/Ukroutes.php';
 
 Route::get('register', [VoterRegisterController::class, 'showRegisterForm'])->name('show_register_form');
-Route::post('register', [VoterRegisterController::class, 'register'])->name('register');
+Route::post('register', [VoterRegisterController::class, 'register'])->name('register')->middleware('voting_closed');
 Route::get('register/success', [VoterRegisterController::class, 'showPostRegisterForm'])->name('register_success');
 Route::get('voters/{voter}/verify', [VoterLoginController::class, 'voterVerify'])->name('verify_voter');
 Route::get('login', [VoterLoginController::class, 'showLoginForm'])->name('show_login_form');
-Route::post('login', [VoterLoginController::class, 'login'])->name('login');
+Route::post('login', [VoterLoginController::class, 'login'])->name('login')->middleware('voting_closed');
 Route::get('/', [LandingPageController::class, 'showLandingIndex'])->name('landing.index');
 Route::get('event', [LandingPageController::class, 'showEditionAfrica'])->name('edition.africa');
 Route::get('tickets', [LandingPageController::class, 'showTickets'])->name('show_tickets');
@@ -170,8 +170,8 @@ Route::get('winners/2025', [LandingPageController::class, 'showWinners2025'])->n
 Route::get('media/pictures', [LandingPageController::class, 'showPicturesCategories'])->name('show_pictures_categories');
 Route::get('media/pictures/{award_program}', [LandingPageController::class, 'showPictures'])->name('show_pictures');
 
-Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware('auth:voter');
-Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards');
+Route::get('vote/{category?}', [LandingPageController::class, 'showVote'])->name('show_vote')->middleware(['voting_closed', 'auth:voter']);
+Route::get('{category}/vote', [VoteController::class, 'showVotingPage'])->name('show_awards')->middleware('voting_closed');
 Route::get('summit/wigrc-2026', [LandingPageController::class, 'showSummitWGRC2026'])->name('show_summit_wgrc_2026');
 Route::get('summit/grc-summit-2026', [LandingPageController::class, 'showSummitLusaka2026'])->name('show_summit_2026');
 
@@ -200,7 +200,7 @@ Route::get('summit/register', [LandingPageController::class, 'SummitRegister'])-
 Route::post('summit/register/submit', [LandingPageController::class, 'SubmitRegisterForm'])->name('grcformRegister');
 Route::get('code-of-conduct', [LandingPageController::class, 'CodeOfConduct'])->name('CodeOfConduct');
 // Route::get('{award}/vote/{nominee}', [VoteController::class, 'addVote'])->name('add.vote');
-Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote');
-Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote');
+Route::post('/vote/nominees', [VoteController::class, 'addVote'])->name('add.vote')->middleware('voting_closed');
+Route::get('{award}/vote/media/{nominee}', [VoteController::class, 'addMediaVote'])->name('add.media.vote')->middleware('voting_closed');
 Route::get('logout', [VoterLoginController::class, 'logout'])->name('logout');
 Route::post('add/new/nominee', [LandingPageController::class, 'AddNewNominee'])->name('add.nominee_new');

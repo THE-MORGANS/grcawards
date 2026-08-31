@@ -1,0 +1,15 @@
+New files:
+- app\app\Http\Middleware\VotingClosed.php (lines 1-25)
+
+Updated files:
+- app\app\Http\Kernel.php (line 68)
+- app\routes\web.php (lines 140, 144, 173-174, 203-204 - added voting_closed middleware to register/login/vote routes)
+
+- app\resources\views\partials\voter\topbar_new_theme.blade.php (lines 22, 33)
+- app\resources\views\partials\voter\topbar.blade.php (line 67)
+
+- app\resources\views\contents\voter\login.blade.php (lines 20-95, form replaced with Voting Has Closed notice)
+- app\resources\views\contents\voter\index.blade.php (lines 42, 93, 210, 213, 217, 757, 762-763, 774)
+- app\resources\views\contents\voter\edition_africa.blade.php (lines 23, 62-69, 540-543)
+- app\resources\views\contents\voter\sectors_categories.blade.php (lines 121-124)
+- app\resources\views\contents\voter\past_winners.blade.php (lines 47-50)

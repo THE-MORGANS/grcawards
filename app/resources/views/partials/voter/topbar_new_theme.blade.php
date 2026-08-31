@@ -19,7 +19,7 @@
             <li><a class="{{request()->is('summit*') ? 'active' : '' }}" href="{{route('show_summit')}}">Summit</a></li>
             <li><a class="{{request()->is('sponsors') ? 'active' : '' }}" href="{{route('show_sponsors')}}">Sponsors</a></li>
             <li><a class="{{request()->is('advisory/governing-council') ? 'active' : '' }}" href="{{route('board_members')}}">Advisory Council </a></li>
-            <li><a class="{{request()->is('vote*') ? 'active' : '' }}" href="{{route('show_vote')}}">Vote</a></li>
+            <li><a class="{{request()->is('vote*') ? 'active' : '' }}" href="{{route('show_login_form')}}">Vote</a></li>
             <li><a class="{{request()->is('tickets') ? 'active' : '' }}" href="{{route('show_tickets')}}">Tickets</a></li>
             <li class="has-drop"><a class="{{request()->is('code-of-conduct') || request()->is('others/*') ? 'active' : '' }}" href="{{route('show_faqs')}}">Others</a>
                 <ul class="drop">
@@ -30,6 +30,6 @@
                 </ul>
             </li>
         </ul>
-        <div class="nav-cta"><a class="btn btn-crimson btn-sm" href="{{route('show_vote')}}">Vote Now →</a></div>
+        <div class="nav-cta"><a class="btn btn-crimson btn-sm" href="{{route('show_login_form')}}">Voting Closed</a></div>
     </div>
 </div>

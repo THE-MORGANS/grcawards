@@ -44,10 +44,10 @@
       </div>
 
       <div class="callout center" style="max-width:820px;margin:36px auto 0">
-        <h3>Ready to make your mark?</h3>
-        <p style="color:var(--muted);font-size:14px;margin-bottom:14px">Cast your vote or nominate an
-          organisation for the 2026 edition.</p>
-        <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote →</a>
+        <h3>The 2026 edition has moved to judging.</h3>
+        <p style="color:var(--muted);font-size:14px;margin-bottom:14px">Nominations and public voting have closed —
+          winners will be announced live at the Gala.</p>
+        <a class="btn btn-crimson" href="{{ route('show_tickets') }}">Book Your Gala Ticket →</a>
       </div>
     </div>
   </section>

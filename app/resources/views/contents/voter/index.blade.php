@@ -39,7 +39,7 @@
         together regulators, policymakers, financial institutions, corporate leaders, law enforcement, technology
         innovators and GRC and financial crime professionals from Africa and across the world.</p>
       <div class="cta-row"><a class="btn btn-gold" href="#venue">Explore the Event →</a><a class="btn btn-ghost"
-          href="{{ route('show_vote') }}">Cast Your Vote</a></div>
+          href="{{ route('show_login_form') }}">Voting Has Closed</a></div>
     </div>
   </header>
 
@@ -90,7 +90,7 @@
                 <path d="M958 50c8 6 16 6 16 6s9 0 17-6c-4-10-17-12-17-12s-12 3-16 12z" />
               </g>
             </svg></div>
-          <span class="status-pill live" style="align-self:flex-end">● Voting Live</span>
+          <span class="status-pill soon" style="align-self:flex-end">Voting Closed</span>
           <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
           <div class="city">Radisson Blu Hotel · Upper Hill</div>
@@ -207,14 +207,14 @@
             pillars.</p>
         </div>
         <div class="tl"><span class="num">02</span>
-          <div class="status">● Live now</div>
+          <div class="status">✓ Completed</div>
           <h3>Public Voting</h3>
           <div class="when">15 Jun – 15 Aug</div>
-          <p>The public votes; the top 5 per category by public vote proceed to independent judging. One vote per person
+          <p>The public voted; the top 5 per category by public vote proceed to independent judging. One vote per person
             per category.</p>
         </div>
         <div class="tl"><span class="num">03</span>
-          <div class="status">Next</div>
+          <div class="status">● Live now</div>
           <h3>Independent Judging</h3>
           <div class="when">Aug – Oct 2026</div>
           <p>Judges score each shortlisted nominee against published, sector-specific criteria — without conflict, bias
@@ -754,13 +754,13 @@
   <section class="band navy">
     <div class="wrap center">
       <div class="sec-eyebrow">Get Involved</div>
-      <h2 class="sec-title">Vote. Attend. <span class="ac">Partner.</span></h2>
+      <h2 class="sec-title">Attend. <span class="ac">Partner.</span></h2>
       <p style="font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-soft);margin:14px auto 0">A
         Global Platform. An African Home.</p>
       <p style="font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-soft);opacity:0.85;margin:6px auto 0">Spirit
         of Excellence Distilled&hellip;</p>
-      <p class="sec-intro" style="margin:14px auto 0">Cast your vote, reserve your place in Nairobi, or partner with
-        us as a sponsor.</p>
+      <p class="sec-intro" style="margin:14px auto 0">Voting has closed — reserve your place in Nairobi, or partner
+        with us as a sponsor.</p>
       <div class="callout"
         style="max-width:420px;margin:26px auto 0;text-align:center;background:rgba(255,255,255,0.04);border-color:rgba(201,162,75,0.35)">
         <div class="sec-eyebrow" style="margin-bottom:8px">One Ticket. The Whole Day.</div>
@@ -771,7 +771,7 @@
             groups of ten.</strong></p>
       </div>
       <div class="cta-row" style="justify-content:center;margin-top:26px">
-        <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-gold" href="{{ route('show_tickets') }}">Book
+        <a class="btn btn-gold" href="{{ route('show_tickets') }}">Book
           Tickets</a><a class="btn btn-ghost" href="{{ route('show_sponsors') }}">Become a Sponsor</a>
       </div>
     </div>

@@ -20,8 +20,7 @@
       <h1>7th Annual Global Awards &amp; Summit — <span class="ac">Nairobi.</span></h1>
       <p>THE GLOBAL PERIMETER: building resilient institutions across borders. A global platform, an African home —
         the Awards &amp; Summit convenes in Nairobi, East Africa's foremost financial and innovation hub.</p>
-      <div class="cta-row" style="margin-top:20px"><a class="btn btn-gold" href="{{ route('show_vote') }}">Cast Your
-          Vote →</a><a class="btn btn-ghost" href="{{ route('show_tickets') }}">Book Tickets</a></div>
+      <div class="cta-row" style="margin-top:20px"><a class="btn btn-gold" href="{{ route('show_tickets') }}">Book Tickets →</a></div>
     </div>
   </header>
 
@@ -60,13 +59,13 @@
     <div class="wrap">
       <div class="callout" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px">
         <div>
-          <span class="status-pill live">● Voting Live</span>
-          <h3 style="margin-top:10px">Public voting is open</h3>
-          <p style="color:var(--muted);font-size:14px;max-width:640px">Nominations have closed — cast your vote for
+          <span class="status-pill soon">Voting Closed</span>
+          <h3 style="margin-top:10px">Public voting has closed</h3>
+          <p style="color:var(--muted);font-size:14px;max-width:640px">Thank you to everyone who cast a vote for
             the individuals and organisations you believe deserve recognition at the Nairobi Gala. The top 5 per
-            category by public vote proceed to independent judging. Voting closes <b>15 August 2026</b>.</p>
+            category by public vote now proceed to independent judging.</p>
         </div>
-        <a class="btn btn-crimson" href="{{ route('show_vote') }}">Cast Your Vote →</a>
+        <a class="btn btn-crimson" href="{{ route('show_login_form') }}">Learn More →</a>
       </div>
     </div>
   </section>
@@ -538,11 +537,10 @@
 
   <section class="band navy">
     <div class="wrap center">
-      <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">●
-        Voting Closes 15 August 2026</div>
+      <div style="font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">
+        Voting Has Closed</div>
       <h2 class="sec-title">Be part of THE GLOBAL PERIMETER.</h2>
       <div class="cta-row" style="justify-content:center;margin-top:22px"><a class="btn btn-gold"
-          href="{{ route('show_vote') }}">Cast Your Vote</a><a class="btn btn-ghost"
           href="{{ route('show_tickets') }}">Book Tickets</a></div>
     </div>
   </section>

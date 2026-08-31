@@ -118,10 +118,10 @@
       <div class="callout navy"
         style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
         <div>
-          <h3 style="color:#fff">Voting is live</h3>
-          <p style="color:#c2cae0;font-size:14px">Vote before 15 August 2026.</p>
+          <h3 style="color:#fff">Voting has closed</h3>
+          <p style="color:#c2cae0;font-size:14px">Thank you to everyone who took part — winners will be announced at the Gala.</p>
         </div>
-        <a class="btn btn-gold" href="{{ route('show_vote') }}">Vote Now →</a>
+        <a class="btn btn-gold" href="{{ route('show_login_form') }}">Learn More →</a>
       </div>
     </div>
   </section>
