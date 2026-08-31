@@ -910,8 +910,8 @@ section.band {
     transform: translateY(-3px);
 }
 .spk .av {
-    width: 60px;
-    height: 60px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     margin: 0 auto 12px;
     display: flex;
@@ -920,9 +920,16 @@ section.band {
     font-family: var(--sans);
     font-weight: 700;
     color: var(--navy);
-    font-size: 16px;
+    font-size: 26px;
     background: linear-gradient(135deg, #eadfc4, #f6efe0);
     border: 1px solid var(--line);
+    overflow: hidden;
+}
+.spk .av img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 .spk.intl .av {
     background: linear-gradient(135deg, #d7def0, #eef1f9);

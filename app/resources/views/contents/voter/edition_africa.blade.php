@@ -363,48 +363,84 @@
       <div class="sec-eyebrow">Speakers — 2026 Programme</div>
       <h2 class="sec-title">The voices leading <span class="ac">the global GRC conversation.</span></h2>
       <p class="sec-intro">Keynotes and panellists drawn from banking, fintech, insurance, regulators, legal,
-        RegTech and academia. Names confirmed on a rolling basis.</p>
+        RegTech and academia.</p>
+      @php
+      $speakers = [
+      ['name' => 'Sunny Ukeachu', 'role' => 'Founder/CEO Mitiget', 'image' => 'sunny-ukeachu.jpg'],
+      ['name' => 'Femi Jaiyeola', 'role' => 'Chief Risk Officer, Access Bank', 'image' => 'femi-jaiyeola.jpg'],
+      ['name' => 'Hon. Femi Saheed', 'role' => 'Member, house of Assembly Lagos state', 'image' => 'hon-femi-saheed.jpg'],
+      ['name' => 'Funmilayo Ekundayo', 'role' => 'MD/CEO, STL Trustees Ltd', 'image' => 'funmilayo-ekundayo.jpg'],
+      ['name' => 'Dr. Emmanuel Abolo', 'role' => 'Group MD/CEO The Risk Management Academy ltd', 'image' => 'dr-emmanuel-abolo.jpg'],
+      ['name' => 'Temitayo Sogbola', 'role' => 'GRC & Assurance Expert', 'image' => 'temitayo-sogbola.jpg'],
+      ['name' => 'Florence Abraham', 'role' => 'CEO Dynamic-Directions & EFIFA Partners', 'image' => 'florence-abraham.jpg'],
+      ['name' => 'Pattisson Boleigha', 'role' => 'GRC/AML Expert', 'image' => 'pattisson-boleigha.jpg'],
+      ['name' => 'Nneka Nwaka', 'role' => 'Chief Compliance Officer, Moment Holdings Ltd', 'image' => 'nneka-nwaka.jpg'],
+      ['name' => 'Lokesh Joshi', 'role' => 'Founder Grokalp H2CNT', 'image' => 'lokesh-joshi.jpg'],
+      ['name' => 'Chinelo Ubah', 'role' => 'Head of Financial Crime Compliance, Ecobank Transnational', 'image' => 'chinelo-ubah.jpg'],
+      ['name' => 'Sina Olaosun', 'role' => 'CCO @ SunTrust Bank', 'image' => 'sina-olaosun.jpg'],
+      ['name' => 'Jide Ibitayo', 'role' => 'Company Secretary/Group Legal Counsel @ Mutual Benefits assurance', 'image' => 'jide-ibitayo.jpg'],
+      ['name' => 'Debo Aderoju', 'role' => 'CEO Fair Money', 'image' => 'debo-aderoju.jpg'],
+      ['name' => 'Doyin Odunfa', 'role' => 'Founde/CEO Digital Jewels', 'image' => 'doyin-odunfa.jpg'],
+      ['name' => 'Abiola Jewoola', 'role' => 'Chief Commercial Officer/Cybersecurity Expert', 'image' => 'abiola-jewoola.jpg'],
+      ['name' => 'Jerry Wong', 'role' => 'Digital Transformational leader', 'image' => 'jerry-wong.jpg'],
+      ['name' => 'Yele Okeremi', 'role' => 'CEO Precise Financial systems', 'image' => 'yele-okeremi.jpg'],
+      ['name' => 'Temitope Yusuff', 'role' => 'Governance, RIsk & Control Expert', 'image' => 'temitope-yusuff.jpg'],
+      ['name' => 'Stephanie Usoh', 'role' => 'Prosecutor EFCC', 'image' => 'stephanie-usoh.jpg'],
+      ['name' => 'Daniel Saliba', 'role' => 'Compliance & Financial Crime Prevention Expert', 'image' => 'daniel-saliba.jpg'],
+      ['name' => 'Ezekiel Oseni', 'role' => 'Executive Director (Risk Mgmt)', 'image' => 'ezekiel-oseni.jpg'],
+      ['name' => 'Blaise Ijebor', 'role' => 'Director, Risk Management Department and Chief Risk Officer', 'image' => 'blaise-ijebor.jpg'],
+      ['name' => 'Rianne Potgieter', 'role' => 'CEO IFCA', 'image' => 'rianne-potgieter.jpg'],
+      ['name' => 'Ndidi Ahiauzu', 'role' => 'Group Money Laundering Reporting Officer @ British Business Bank', 'image' => 'ndidi-ahiauzu.jpg'],
+      ['name' => 'Eneni Oduwole', 'role' => 'Chairman Board Risk & Compliance committee, Baobab Nig Ltd', 'image' => 'eneni-oduwole.jpg'],
+      ['name' => 'Adeoluwa Akomolafe', 'role' => 'Information Technology and Cyber Security Leadership', 'image' => 'adeoluwa-akomolafe.jpg'],
+      ['name' => 'Mr. Tolulope Odukale', 'role' => 'Partner, KPMG', 'image' => 'mr-tolulope-odukale.jpg'],
+      ['name' => 'Bright Chinweotuto Anyawu', 'role' => 'CCO, Yellow Card Financials Nig Ltd', 'image' => 'bright-chinweotuto-anyawu.jpg'],
+      ['name' => 'Tosin Leye-Odeyemi', 'role' => 'Head, Personal Banking, Stanbic IBTC', 'image' => 'tosin-leye-odeyemi.jpg'],
+      ['name' => 'Bawo Egbakhumeh', 'role' => 'CEO Compliance Institute Nigeria', 'image' => 'bawo-egbakhumeh.jpg'],
+      ['name' => 'Olubunmi Otti', 'role' => 'Executive Compliance FCCPC', 'image' => 'olubunmi-otti.jpg'],
+      ['name' => 'Kersi Porbunderwala', 'role' => 'World Class Cybersecurity Expert', 'image' => 'kersi-porbunderwala.jpg'],
+      ['name' => 'Fiona Figuera', 'role' => 'Director/head of compliance & MLRO Capital Markets Elite Group', 'image' => 'fiona-figuera.jpg'],
+      ['name' => 'Aoife Mansfield', 'role' => 'MD Athru Group', 'image' => 'aoife-mansfield.jpg'],
+      ['name' => 'Yvonne Mothibi', 'role' => 'CEO IRMSA', 'image' => 'yvonne-mothibi.jpg'],
+      ['name' => 'Matthew Beale', 'role' => 'GRC & Cybersecurity Expert', 'image' => 'matthew-beale.jpg'],
+      ['name' => 'Dr. Tetiana Dmytrenko', 'role' => 'Chairperson, Ukrainian Modern Digital Science', 'image' => 'dr-tetiana-dmytrenko.jpg'],
+      ['name' => 'Oleksiy Feshchenko', 'role' => 'Cybercrime, AML/CFT, Compliance Expert', 'image' => 'oleksiy-feshchenko.jpg'],
+      ['name' => 'Edidiong Akan', 'role' => 'CCO, Stanbic IBTC Pension', 'image' => 'edidiong-akan.jpg'],
+      ['name' => 'Chris Akolo', 'role' => 'Founder & CEO - Reporthub Ltd', 'image' => 'chris-akolo.jpg'],
+      ['name' => 'Oonagh Van den Berg', 'role' => 'Founder/CEO, Virtual Risk Solutions (VRS)', 'image' => 'oonagh-van-den-berg.jpg'],
+      ['name' => 'Kev Brear', 'role' => 'Founder/CEO, @Orange Dragon Services', 'image' => 'kev-brear.jpg'],
+      ['name' => 'Dr. Vincent O. Olatunji', 'role' => 'National Commissioner & CEO, Nigeria Data Protection Commission- NDPC', 'image' => 'dr-vincent-o-olatunji.jpg'],
+      ['name' => 'Prof. Ehi Esoimeme', 'role' => 'Financial Crime Compliance & Managing Partner, E-FOUR AND AAF', 'image' => 'prof-ehi-esoimeme.jpg'],
+      ['name' => 'Salaheddine Elgbouri', 'role' => 'Africa AML Compliance Director', 'image' => 'salaheddine-elgbouri.jpg'],
+      ['name' => 'Adenike Odukomaiya', 'role' => 'Head, Internal Audit- Stanbic IBTC', 'image' => 'adenike-odukomaiya.jpg'],
+      ['name' => 'Sarah Lloyd', 'role' => 'Chief Risk Officer, Absa Bank, Zambia', 'image' => 'sarah-lloyd.jpg'],
+      ['name' => 'Dr Nishal Khusial', 'role' => 'Head of Digital Forensics & AI Enablement, Forza Mazars, SA', 'image' => 'dr-nishal-khusial.jpg'],
+      ['name' => 'Grace Tabea Letseka', 'role' => 'Head of Resilience & Data, FNB SA', 'image' => 'grace-tabea-letseka.jpg'],
+      ['name' => 'Warren Manuel', 'role' => 'Digital Identity Expert', 'image' => 'warren-manuel.jpg'],
+      ['name' => 'Marilia Aires', 'role' => 'Advisory Board Member, Fundación ¿Hay Derecho?', 'image' => 'marilia-aires.jpg'],
+      ['name' => 'Diksha Pandey', 'role' => 'GRC Global Thought Leader & Asst. Professor, Christ University, Delhi NCR', 'image' => 'diksha-pandey.jpg'],
+      ['name' => 'Martins Ogbolu', 'role' => 'Executive Head of Compliance, Vodacom, SA', 'image' => 'martins-ogbolu.jpg'],
+      ['name' => 'Writam Chakraborty', 'role' => 'IRB Advisor & Risk Management Expert- True North Partners', 'image' => 'writam-chakraborty.jpg'],
+      ['name' => 'Dr Mulilo Kabesha', 'role' => 'Attorney General, Zambia', 'image' => 'dr-mulilo-kabesha.jpg'],
+      ['name' => 'Mizinga Melu', 'role' => 'MD/CEO, ABSA Zambia', 'image' => 'mizinga-melu.jpg'],
+      ['name' => 'Mothophatlheng Philip Rakgwale', 'role' => 'President & Chairman, SAIGA', 'image' => 'mothophatlheng-philip-rakgwale.jpg'],
+      ['name' => 'Mosope Keating', 'role' => 'Investment Strategy, Treasury Control & Wealth Mgmt, SAPETRO', 'image' => 'mosope-keating.jpg'],
+      ['name' => 'Lesego Bannalotlhe', 'role' => 'GRC Expert', 'image' => 'lesego-bannalotlhe.jpg'],
+      ['name' => 'Beauty Mtonga', 'role' => 'Group Head, Risk Human Capital, Absa Group', 'image' => 'beauty-mtonga.jpg'],
+      ['name' => 'Lydia Nasilele Simakando', 'role' => 'Post Master General, Post Office Zambia & CEO/Managing Consultant, Metric Risk Solutions', 'image' => 'lydia-nasilele-simakando.jpg'],
+      ['name' => 'Patience Mabilo', 'role' => 'Engagement Professional, Adept Advisory', 'image' => 'patience-mabilo.jpg'],
+      ['name' => 'Anita Cuchamano', 'role' => 'Cybersecurity- Women in Tech & Digital Transformation', 'image' => 'anita-cuchamano.jpg'],
+      ['name' => 'Susiku Nasinda', 'role' => 'Assurance Associate Director -Climate change & Sustainability, EY', 'image' => 'susiku-nasinda.jpg'],
+      ];
+      @endphp
       <div class="grid g4" style="margin-top:26px">
+        @foreach ($speakers as $speaker)
         <div class="spk">
-          <div class="av">CCO</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Group Chief Compliance Officer — Tier-1 Commercial Bank, East Africa</div>
+          <div class="av"><img src="{{ asset('assets/images/speakers/awards_summit/'.$speaker['image']) }}" alt="{{ $speaker['name'] }}" loading="lazy"></div>
+          <div class="nm">{{ $speaker['name'] }}</div>
+          <div class="rl">{{ $speaker['role'] }}</div>
         </div>
-        <div class="spk">
-          <div class="av">FT</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Head of Compliance &amp; Risk — Mobile Money / Digital Finance Platform</div>
-        </div>
-        <div class="spk">
-          <div class="av">CRO</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Chief Risk Officer — Insurance / Asset Management, Africa</div>
-        </div>
-        <div class="spk">
-          <div class="av">FIU</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Director — Financial Intelligence Unit, East Africa</div>
-        </div>
-        <div class="spk">
-          <div class="av">CB</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Director, Financial Sector Supervision — Central Bank of Kenya or Equivalent</div>
-        </div>
-        <div class="spk">
-          <div class="av">LAW</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Senior Partner, Financial Crime &amp; Compliance — Pan-African Law Firm</div>
-        </div>
-        <div class="spk">
-          <div class="av">RT</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Founder &amp; CEO — East Africa RegTech / Compliance Technology</div>
-        </div>
-        <div class="spk">
-          <div class="av">AC</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Professor, Governance Risk &amp; Compliance — Leading East African University</div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
