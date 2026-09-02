@@ -63,7 +63,7 @@ class AdminLoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        //
+        \App\Models\JudgeAuditLog::record($user, 'login');
     }
 
     protected function sendFailedLoginResponse(Request $request)

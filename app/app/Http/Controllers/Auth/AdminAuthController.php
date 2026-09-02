@@ -138,6 +138,7 @@ class AdminAuthController extends Controller
     } 
     
     public function logout(){
+       \App\Models\JudgeAuditLog::record(Auth::guard('admin')->user(), 'logout');
        Auth('admin')->logout();
       return redirect()->route('admin.login');
     }

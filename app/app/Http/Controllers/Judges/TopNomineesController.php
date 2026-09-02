@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Judges;
 
 use App\Http\Controllers\Controller;
 use App\Models\Award;
+use App\Models\JudgeAuditLog;
 use App\Models\JudgesVotes;
 use App\Models\Nominee;
 use App\Models\NomineeEvidence;
@@ -111,6 +112,9 @@ class TopNomineesController extends Controller
                 'comment' => $comment !== '' ? $comment : null,
             ]);
         }
+
+        $awardProgramId = Hashids::connection('awardProgram')->decode($award_program_id)[0] ?? null;
+        JudgeAuditLog::record(auth('admin')->user(), 'vote', $award_id, $awardProgramId);
 
         $request->session()->flash('success', 'Your vote has been submitted successfully.');
         return redirect()->back();

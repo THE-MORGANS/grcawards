@@ -21,6 +21,7 @@ use App\Http\Controllers\LusakaSponsorshipController;
 use App\Http\Controllers\Auth\LusakaAdminController;
 use App\Http\Controllers\LusakaRegistrationController;
 use App\Http\Controllers\AwardsSummitPaymentController;
+use App\Http\Controllers\AuditLogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,6 +102,10 @@ Route::prefix('admin')->group(function () {
             Route::prefix('emails')->group(function () {
                 Route::get('/', [ReminderController::class, 'emailPage'])->name('admin.emailPage');
                 Route::post('/send', [ReminderController::class, 'sendEmail'])->name('admin.sendUserEmail');
+            });
+
+            Route::prefix('audit-logs')->group(function () {
+                Route::get('', [AuditLogController::class, 'index'])->name('admin.audit_logs');
             });
 
             require __DIR__ . '/judges.php';

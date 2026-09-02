@@ -153,6 +153,13 @@
                 </div>
             </li>
 
+            <li class="side-nav-item">
+                <a href="{{route('admin.audit_logs', request()->segment(3))}}" class="side-nav-link">
+                    <i class="mdi mdi-shield-search"></i>
+                    <span> Judge Audit Log </span>
+                </a>
+            </li>
+
             @endif
 
             @if (Auth::guard('admin')->user()->role_id == 3)
