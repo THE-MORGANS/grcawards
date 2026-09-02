@@ -42,7 +42,27 @@
         padding: 4px 10px; border-radius: 30px; text-decoration: none;
     }
     .evidence-sources a:hover { background: rgba(114,124,245,.12); }
-    .evidence-note { font-size: 12px; color: #98a6ad; margin: 0; }
+    .evidence-note { font-size: 12px; color: #98a6ad; margin: 0 0 10px; }
+
+    .evidence-flag {
+        font-size: 12px; font-weight: 600; padding: 8px 12px; border-radius: 6px; margin-bottom: 10px;
+        background: #fff8e6; color: #96751f; border: 1px solid rgba(255,188,0,.25);
+    }
+    .evidence-flag strong { text-transform: uppercase; font-size: 10.5px; letter-spacing: .03em; display: block; margin-bottom: 2px; }
+
+    .adverse-block { border: 1px solid #eef2f7; border-radius: 6px; padding: 10px 12px; margin-top: 6px; }
+    .adverse-block-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .adverse-badge {
+        display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+        padding: 2px 9px; border-radius: 30px;
+    }
+    .adverse-badge.none { background: rgba(10,207,151,.1); color: #0acf97; }
+    .adverse-badge.low, .adverse-badge.moderate { background: rgba(255,188,0,.1); color: #b58a00; }
+    .adverse-badge.high, .adverse-badge.critical { background: rgba(250,71,71,.1); color: #fa4747; }
+    .adverse-date { font-size: 11px; color: #98a6ad; }
+    .adverse-summary { font-size: 12.5px; color: #313a46; line-height: 1.6; margin-bottom: 6px; }
+    .adverse-treatment { font-size: 12px; color: #6c757d; line-height: 1.6; margin: 0; }
+    .adverse-treatment strong { color: #313a46; }
 
     /* Criteria modal */
     .criteria-html-content h1,
@@ -233,6 +253,34 @@
                                                     @endif
                                                     @if($item->verification_note)
                                                     <p class="evidence-note"><strong>Judge should still verify:</strong> {{ $item->verification_note }}</p>
+                                                    @endif
+                                                    @if($item->competition_status && !str_contains(strtolower($item->competition_status), 'ready'))
+                                                    <div class="evidence-flag"><strong>Status</strong>{{ $item->competition_status }}</div>
+                                                    @endif
+                                                    @if($item->eligibility_treatment && (str_contains(strtoupper($item->eligibility_treatment), 'EXCLUD') || str_contains(strtoupper($item->eligibility_treatment), 'HOLD')))
+                                                    <div class="evidence-flag"><strong>Eligibility</strong>{{ $item->eligibility_treatment }}</div>
+                                                    @endif
+                                                    @if($item->adverse_materiality)
+                                                    @php
+                                                        $matLower = strtolower($item->adverse_materiality);
+                                                        $matClass = (str_contains($matLower, 'critical') || str_contains($matLower, 'high'))
+                                                            ? 'critical'
+                                                            : ((str_contains($matLower, 'moderate') || str_contains($matLower, 'medium') || str_contains($matLower, 'low')) ? 'moderate' : 'none');
+                                                    @endphp
+                                                    <div class="adverse-block">
+                                                        <div class="adverse-block-head">
+                                                            <span class="adverse-badge {{ $matClass }}">Adverse media: {{ $item->adverse_materiality }}</span>
+                                                            @if($item->adverse_event_date)<span class="adverse-date">{{ $item->adverse_event_date }}</span>@endif
+                                                        </div>
+                                                        @if($item->adverse_summary)<p class="adverse-summary">{{ $item->adverse_summary }}</p>@endif
+                                                        @if($item->adverse_source_1 || $item->adverse_source_2)
+                                                        <div class="evidence-sources">
+                                                            @if($item->adverse_source_1)<a href="{{ $item->adverse_source_1 }}" target="_blank" rel="noopener">Adverse source 1</a>@endif
+                                                            @if($item->adverse_source_2)<a href="{{ $item->adverse_source_2 }}" target="_blank" rel="noopener">Adverse source 2</a>@endif
+                                                        </div>
+                                                        @endif
+                                                        @if($item->judge_materiality_treatment)<p class="adverse-treatment"><strong>Judge treatment:</strong> {{ $item->judge_materiality_treatment }}</p>@endif
+                                                    </div>
                                                     @endif
                                                 </div>
                                                 @empty

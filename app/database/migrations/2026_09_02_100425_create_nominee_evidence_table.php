@@ -23,11 +23,11 @@ class CreateNomineeEvidenceTable extends Migration
             $table->string('assessment')->nullable();
             $table->string('strength')->nullable();
             $table->string('primary_source')->nullable();
-            $table->string('primary_url')->nullable();
+            $table->text('primary_url')->nullable();
             $table->string('authority_source')->nullable();
-            $table->string('authority_url')->nullable();
+            $table->text('authority_url')->nullable();
             $table->string('secondary_source')->nullable();
-            $table->string('secondary_url')->nullable();
+            $table->text('secondary_url')->nullable();
             $table->text('verification_note')->nullable();
             $table->text('eligibility_treatment')->nullable();
             $table->text('vote_tie_note')->nullable();
@@ -36,8 +36,8 @@ class CreateNomineeEvidenceTable extends Migration
             $table->string('adverse_materiality')->nullable();
             $table->text('adverse_summary')->nullable();
             $table->string('adverse_event_date')->nullable();
-            $table->string('adverse_source_1')->nullable();
-            $table->string('adverse_source_2')->nullable();
+            $table->text('adverse_source_1')->nullable();
+            $table->text('adverse_source_2')->nullable();
             $table->text('judge_materiality_treatment')->nullable();
             $table->timestamps();
 
