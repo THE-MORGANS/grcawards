@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Award;
 use App\Models\JudgesVotes;
 use App\Models\Nominee;
+use App\Models\NomineeEvidence;
 use App\Models\VoteCount;
 use Illuminate\Http\Request;
 use Vinkla\Hashids\Facades\Hashids;
@@ -39,12 +40,18 @@ class TopNomineesController extends Controller
                 ->get()
                 ->keyBy('nominee_id');
 
+            $evidence = NomineeEvidence::where('award_id', $award->id)
+                ->orderBy('weight', 'desc')
+                ->get()
+                ->groupBy('nominee_id');
+
             $categories[] = [
                 'award' => $award,
                 'sector' => $award->sector?->name ?? 'Uncategorised',
                 'nominees' => $this->topFiveWithTies($votes),
                 'already_voted' => $myVotes->isNotEmpty(),
                 'my_votes' => $myVotes,
+                'evidence' => $evidence,
             ];
         }
 

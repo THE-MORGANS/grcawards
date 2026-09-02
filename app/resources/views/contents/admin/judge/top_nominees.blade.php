@@ -12,6 +12,37 @@
     }
     .cat-card .card-header h5 { margin: 0; font-size: 15px; font-weight: 700; color: #313a46; }
     .view-criteria-btn { border-radius: 30px; font-size: 12px; flex-shrink: 0; }
+    .nominee-links { display: flex; align-items: center; gap: 10px; margin-top: 3px; flex-wrap: wrap; }
+    .view-criteria-link {
+        display: inline-flex; align-items: center; gap: 3px; border: none; background: none; padding: 0;
+        font-size: 11px; font-weight: 600; color: #727cf5;
+    }
+    .view-criteria-link:hover { text-decoration: underline; }
+    .view-criteria-link i { font-size: 12px; }
+    .view-criteria-link.has-evidence { color: #0acf97; }
+
+    /* Evidence modal */
+    .evidence-item { padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #eef2f7; }
+    .evidence-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .evidence-item-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .evidence-item-head h5 { font-size: 14px; font-weight: 700; color: #313a46; margin: 0; }
+    .evidence-weight {
+        background: rgba(114,124,245,.1); color: #727cf5; font-size: 11px; font-weight: 700;
+        padding: 2px 9px; border-radius: 30px; flex-shrink: 0;
+    }
+    .evidence-strength {
+        display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em;
+        background: rgba(255,188,0,.1); color: #b58a00; padding: 2px 8px; border-radius: 30px; margin-bottom: 8px;
+    }
+    .evidence-assessment { font-size: 12.5px; font-style: italic; color: #6c757d; margin-bottom: 8px; }
+    .evidence-text { font-size: 13px; color: #313a46; line-height: 1.6; margin-bottom: 10px; }
+    .evidence-sources { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .evidence-sources a {
+        font-size: 11.5px; font-weight: 600; color: #727cf5; background: #f1f3fa;
+        padding: 4px 10px; border-radius: 30px; text-decoration: none;
+    }
+    .evidence-sources a:hover { background: rgba(114,124,245,.12); }
+    .evidence-note { font-size: 12px; color: #98a6ad; margin: 0; }
 
     /* Criteria modal */
     .criteria-html-content h1,
@@ -164,8 +195,50 @@
                                         <td>
                                             <span class="rank-badge @if($rank <= 3) top3 @endif">{{ $rank }}</span>
                                         </td>
+                                        @php
+                                            $nomineeEvidence = $category['evidence'][$nominee->nominee_id] ?? collect();
+                                        @endphp
                                         <td class="nominee-name-cell">
                                             {{ $nominee->nominee?->name }}
+                                            <div class="nominee-links">
+                                                <button type="button" class="view-criteria-link" data-name="{{ $category['award']->name }}" data-index="{{ $category['award']->id }}" onClick="openCriteriaModal(this)">
+                                                    <i class="mdi mdi-information-outline"></i> Criteria
+                                                </button>
+                                                <button type="button" class="view-criteria-link @if($nomineeEvidence->isNotEmpty()) has-evidence @endif" data-name="{{ $nominee->nominee?->name }}" data-index="{{ $category['award']->id }}-{{ $nominee->nominee_id }}" onClick="openEvidenceModal(this)">
+                                                    <i class="mdi mdi-file-search-outline"></i> Evidence @if($nomineeEvidence->isNotEmpty())({{ $nomineeEvidence->count() }})@endif
+                                                </button>
+                                            </div>
+                                            <template id="evidence-template-{{ $category['award']->id }}-{{ $nominee->nominee_id }}">
+                                                @forelse ($nomineeEvidence as $item)
+                                                <div class="evidence-item">
+                                                    <div class="evidence-item-head">
+                                                        <h5>{{ $item->criterion }}</h5>
+                                                        @if($item->weight)<span class="evidence-weight">{{ $item->weight }}%</span>@endif
+                                                    </div>
+                                                    @if($item->strength)
+                                                    <span class="evidence-strength">{{ $item->strength }}</span>
+                                                    @endif
+                                                    @if($item->assessment)
+                                                    <p class="evidence-assessment">{{ $item->assessment }}</p>
+                                                    @endif
+                                                    @if($item->evidence)
+                                                    <p class="evidence-text">{{ $item->evidence }}</p>
+                                                    @endif
+                                                    @if($item->primary_url || $item->authority_url || $item->secondary_url)
+                                                    <div class="evidence-sources">
+                                                        @if($item->primary_url)<a href="{{ $item->primary_url }}" target="_blank" rel="noopener">{{ $item->primary_source ?: 'Primary Source' }}</a>@endif
+                                                        @if($item->authority_url)<a href="{{ $item->authority_url }}" target="_blank" rel="noopener">{{ $item->authority_source ?: 'Authority Source' }}</a>@endif
+                                                        @if($item->secondary_url)<a href="{{ $item->secondary_url }}" target="_blank" rel="noopener">{{ $item->secondary_source ?: 'Secondary Source' }}</a>@endif
+                                                    </div>
+                                                    @endif
+                                                    @if($item->verification_note)
+                                                    <p class="evidence-note"><strong>Judge should still verify:</strong> {{ $item->verification_note }}</p>
+                                                    @endif
+                                                </div>
+                                                @empty
+                                                <p class="text-muted mb-0">No evidence on file for this nominee yet.</p>
+                                                @endforelse
+                                            </template>
                                         </td>
                                         <td><span class="votes-badge">{{ $nominee->voteCount }}</span></td>
                                         @php
@@ -265,6 +338,27 @@
     </div>
 </div>
 
+<!-- Evidence Modal -->
+<div class="modal fade" id="evidenceModal" tabindex="-1" aria-labelledby="evidenceModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="evidenceModalLabel">Evidence &amp; Sources</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4 id="modalEvidenceNomineeName" class="mb-4 fw-bold text-primary"></h4>
+                <div id="modalEvidenceBody">
+                    <!-- Content injected via JS -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Comment Modal -->
 <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="commentModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -301,6 +395,21 @@ function openCriteriaModal(element) {
     modalBody.innerHTML = template.innerHTML;
 
     const myModal = new bootstrap.Modal(document.getElementById('criteriaModal'));
+    myModal.show();
+}
+
+function openEvidenceModal(element) {
+    const nomineeName = element.getAttribute('data-name');
+    const index = element.getAttribute('data-index');
+
+    const template = document.getElementById(`evidence-template-${index}`);
+    const modalBody = document.getElementById('modalEvidenceBody');
+    const modalTitle = document.getElementById('modalEvidenceNomineeName');
+
+    modalTitle.innerText = nomineeName;
+    modalBody.innerHTML = template.innerHTML;
+
+    const myModal = new bootstrap.Modal(document.getElementById('evidenceModal'));
     myModal.show();
 }
 

@@ -1,0 +1,16 @@
+New files:
+- app\database\migrations\2026_09_02_100425_create_nominee_evidence_table.php (lines 1-47)
+- app\app\Models\NomineeEvidence.php (lines 1-29)
+
+Updated files:
+- app\app\Http\Controllers\Judges\TopNomineesController.php (lines 9, 43-48, 54 - load NomineeEvidence per award/nominee)
+- app\resources\views\contents\admin\judge\top_nominees.blade.php (lines 15-45, 198-201, 203-241, 341-361, 401-415 - "Evidence" button, modal, template per nominee, JS, CSS)
+
+Data import (not a file change, run once from local scratch scripts, not checked in):
+- Imported C:\Users\USER\Downloads\AFRICA GRCFinCrimePrev Africa 2026 Comprehensive Judges Review with Evidence_Sources.xlsx
+  (all 6 "*Review" sheets: Achievement, Excellence, Promoters, Providers, Lifetime, Women)
+  into the new nominee_evidence table, matched to existing nominees/awards by name+sector.
+  991 of 1065 rows matched (93%) across 146 distinct nominees. 74 rows left unmatched
+  (8 unique nominee names — either not present in our nominees table under that sector,
+  or in one case ("Leadway Pensure") ambiguous because two identical-named nominee rows
+  exist in the Pension Industry sector) — these were skipped rather than guessed.
