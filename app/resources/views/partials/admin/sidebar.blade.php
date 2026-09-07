@@ -116,8 +116,14 @@
                 </a>
                 <div class="collapse" id="people">
                     <ul class="side-nav-second-level">
-                        <li>
+                        <!-- <li>
                             <a href="{{route('admin.get_judges', request()->segment(3))}}">View Judges</a>
+                        </li> -->
+                        <li>
+                            <a href="{{route('admin.audit_logs', request()->segment(3))}}">Audits Log</a>
+                        </li>
+                        <li>
+                            <a href="{{route('admin.judge_feedback.index', request()->segment(3))}}">Feedbacks</a>
                         </li>
                     </ul>
                 </div>
@@ -151,20 +157,6 @@
                         </li>
                     </ul>
                 </div>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="{{route('admin.audit_logs', request()->segment(3))}}" class="side-nav-link">
-                    <i class="mdi mdi-shield-search"></i>
-                    <span> Judge Audit Log </span>
-                </a>
-            </li>
-
-            <li class="side-nav-item">
-                <a href="{{route('admin.judge_feedback.index', request()->segment(3))}}" class="side-nav-link">
-                    <i class="mdi mdi-clipboard-text-multiple-outline"></i>
-                    <span> Judge Feedback </span>
-                </a>
             </li>
 
             @endif
