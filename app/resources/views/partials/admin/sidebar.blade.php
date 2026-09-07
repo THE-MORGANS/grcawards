@@ -74,7 +74,7 @@
                     <ul class="side-nav-second-level">
                         <li>
                             <a href="{{route('admin.get_cat_sec', request()->segment(3))}}">
-                                Votes & Results
+                                Public Votes Results
                             </a>
                         </li>
                         <!-- <li>
@@ -160,6 +160,13 @@
                 </a>
             </li>
 
+            <li class="side-nav-item">
+                <a href="{{route('admin.judge_feedback.index', request()->segment(3))}}" class="side-nav-link">
+                    <i class="mdi mdi-clipboard-text-multiple-outline"></i>
+                    <span> Judge Feedback </span>
+                </a>
+            </li>
+
             @endif
 
             @if (Auth::guard('admin')->user()->role_id == 3)
@@ -188,6 +195,13 @@
             </li>
         </ul>
     </div>
+    </li>
+
+    <li class="side-nav-item">
+        <a href="{{route('admin.judge_feedback_survey', request()->segment(3))}}" class="side-nav-link">
+            <i class="mdi mdi-clipboard-text-multiple-outline"></i>
+            <span> Post-Evaluation Survey </span>
+        </a>
     </li>
 
     @endif

@@ -1,0 +1,56 @@
+New module: Judges Post-Evaluation Feedback Survey
+
+New files:
+- app\config\judge_feedback_survey.php
+  (single source of truth: all 61 questions, section headers, types — multiple_choice /
+  scale / long_answer —, options/scale labels, and required flags. Both the form view and
+  server-side validation read from this file, so wording/required-ness only changes here.
+  Required questions = 1–18, 25–40, 42–54 per spec (47 total) — note Q29 is a long-answer
+  question that falls inside the "25–40 mandatory" range, so it's required even though it's
+  free text; flagged this to the user as the one place the spec was ambiguous.)
+- app\database\migrations\2026_09_04_090000_create_judge_feedback_surveys_table.php
+  (judge_feedback_surveys: admin_id, award_program_id, region, answers JSON, testimonial_text,
+  testimonial_consent, timestamps. Unique key on (admin_id, award_program_id) — one
+  submission per judge per edition. Q60/Q61 get their own columns rather than living in the
+  JSON blob, so testimonials can be queried/exported directly.)
+- app\app\Models\JudgeFeedbackSurvey.php
+- app\app\Http\Controllers\Judges\JudgeFeedbackSurveyController.php
+  (judge-facing: show the form or an "already submitted" state; submit() re-validates
+  every required question server-side against the same config, rejects duplicates.)
+- app\app\Http\Controllers\JudgeFeedbackSurveyAdminController.php
+  (admin-facing: paginated list of submissions + a per-submission detail view rendering
+  every answer against the config, section by section.)
+- app\resources\views\contents\admin\judge\feedback_survey.blade.php
+  (judge form — single long page, sectioned, scale questions render as 1–5/0–10 radio
+  pills with labels, multiple-choice as radio lists, long answers as textareas. Q24 only
+  reveals itself when Q23 = "Yes", via a small vanilla-JS show_if handler driven by the
+  question's `show_if` config.)
+- app\resources\views\contents\admin\judge_feedback_admin_list.blade.php
+- app\resources\views\contents\admin\judge_feedback_admin_detail.blade.php
+
+Updated files:
+- app\routes\judges.php (admin.judge_feedback_survey GET/POST, judge-only middleware)
+- app\routes\web.php (admin.judge_feedback.index / .show, under
+  admin/award-programs/{award_program}/judge-feedback)
+- app\resources\views\partials\admin\sidebar.blade.php
+  ("Post-Evaluation Survey" link in the judge (role_id 3) menu block; "Judge Feedback"
+  link in the super-admin (role_id 1) menu block, next to the Judge Audit Log link added
+  earlier)
+- app\app\Http\Controllers\Judges\TopNomineesController.php (ViewTopNominees now also
+  passes $feedbackSubmitted, checking whether the current judge already has a survey row
+  for this award program)
+- app\resources\views\contents\admin\judge\top_nominees.blade.php (shows a "you're done
+  voting — share your feedback" banner once votedPercentage hits 100%, only if the judge
+  hasn't already submitted the survey; links to the survey page)
+
+Migration run on both local databases (grcawards + grcawards_uk, table cloned via
+CREATE TABLE ... LIKE into the second). Smoke-tested end-to-end via tinker: built a full
+answers set from the config, created a row, re-fetched it with eager-loaded judge exactly
+as the admin list/detail controllers do, confirmed the JSON round-trips correctly and the
+testimonial fields land in their own columns, confirmed the duplicate-submission check
+works, then deleted the test row. All 5 new/edited Blade files compile cleanly. All 4
+routes (judge show/submit, admin index/show) confirmed registered via route:list.
+
+Note: CHANGED_20260902.txt was deleted from the repo (presumably after deploying that
+day's work) and CHANGED_20260903.txt is gone from disk too — not something I touched;
+starting fresh here for today.

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Judges;
 use App\Http\Controllers\Controller;
 use App\Models\Award;
 use App\Models\JudgeAuditLog;
+use App\Models\JudgeFeedbackSurvey;
 use App\Models\JudgesVotes;
 use App\Models\Nominee;
 use App\Models\NomineeEvidence;
@@ -64,7 +65,9 @@ class TopNomineesController extends Controller
         $votedCategories = collect($categories)->where('already_voted', true)->count();
         $votedPercentage = $totalCategories > 0 ? round(($votedCategories / $totalCategories) * 100) : 0;
 
-        return view('contents.admin.judge.top_nominees', compact('sectors', 'totalCategories', 'votedCategories', 'votedPercentage'))
+        $feedbackSubmitted = JudgeFeedbackSurvey::where(['admin_id' => $judgeId, 'award_program_id' => $award_program])->exists();
+
+        return view('contents.admin.judge.top_nominees', compact('sectors', 'totalCategories', 'votedCategories', 'votedPercentage', 'feedbackSubmitted'))
             ->with(['award_program' => $award_program_id]);
     }
 

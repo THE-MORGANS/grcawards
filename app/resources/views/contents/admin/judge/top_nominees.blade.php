@@ -174,6 +174,20 @@
         </div>
     </div>
 
+    @if($votedPercentage == 100 && !$feedbackSubmitted)
+    <div class="row">
+        <div class="col-12">
+            <div class="alert d-flex align-items-center justify-content-between flex-wrap gap-2" style="background:#f1f3fa; border:1px solid rgba(114,124,245,.25); border-radius:10px;">
+                <div>
+                    <strong style="color:#313a46;">You've voted in every category — thank you.</strong>
+                    <span style="color:#6c757d;"> We'd appreciate 5–7 minutes of your feedback on the judging process.</span>
+                </div>
+                <a href="{{ route('admin.judge_feedback_survey', $award_program) }}" class="btn btn-sm btn-primary">Share Feedback</a>
+            </div>
+        </div>
+    </div>
+    @endif
+
     @forelse ($sectors as $sectorName => $categories)
     <div class="sector-heading">
         <h4>{{ $sectorName }}</h4>
