@@ -23,6 +23,7 @@ use App\Http\Controllers\LusakaRegistrationController;
 use App\Http\Controllers\AwardsSummitPaymentController;
 use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\JudgeFeedbackSurveyAdminController;
+use App\Http\Controllers\AwardWinnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -112,6 +113,12 @@ Route::prefix('admin')->group(function () {
             Route::prefix('judge-feedback')->group(function () {
                 Route::get('', [JudgeFeedbackSurveyAdminController::class, 'index'])->name('admin.judge_feedback.index');
                 Route::get('{submission}', [JudgeFeedbackSurveyAdminController::class, 'show'])->name('admin.judge_feedback.show');
+            });
+
+            Route::prefix('winners')->group(function () {
+                Route::get('', [AwardWinnerController::class, 'categories'])->name('admin.winners');
+                Route::get('award/{award_id}', [AwardWinnerController::class, 'winners'])->name('admin.winners.show');
+                Route::get('{category_id}', [AwardWinnerController::class, 'sectorsAwards'])->name('admin.winners.sectors');
             });
 
             require __DIR__ . '/judges.php';

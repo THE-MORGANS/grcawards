@@ -82,6 +82,11 @@
                                 Judges Votes Results
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.winners', request()->segment(3))}}">
+                                Award Winners
+                            </a>
+                        </li>
                         <!-- <li>
                             <a href="#">Results</a>
                         </li> -->

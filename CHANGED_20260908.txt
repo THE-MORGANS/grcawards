@@ -1,0 +1,12 @@
+NEW:
+app/app/Http/Controllers/AwardWinnerController.php
+app/resources/views/contents/admin/award_winners/categories.blade.php
+app/resources/views/contents/admin/award_winners/sectors_awards.blade.php
+app/resources/views/contents/admin/award_winners/show.blade.php
+app/resources/views/contents/admin/award_winners/partials/_podium.blade.php
+app/resources/views/contents/admin/award_winners/partials/_podium_style.blade.php
+app/resources/views/contents/admin/award_winners/partials/_podium_scripts.blade.php
+
+UPDATED:
+app/routes/web.php
+app/resources/views/partials/admin/sidebar.blade.php
