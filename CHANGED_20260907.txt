@@ -1,0 +1,48 @@
+Sidebar tweaks + new module: Judges Votes Results
+
+Sidebar (app\resources\views\partials\admin\sidebar.blade.php):
+- Judges group: "View Judges" commented out (HTML comment, matching the file's existing
+  convention for disabled items); "Audit Log" and "Feedback" links added in its place,
+  pointing at the routes added on 2026-09-04 (previously stand-alone top-level items —
+  removed those now that they live inside the Judges group).
+- Evaluation group: new "Judges Votes Results" link, alongside the existing
+  "Public Votes Results" link.
+
+New module — Judges Votes Results (view how judges scored nominees, admin-only):
+Researched first via a subagent to confirm nothing like this already existed — there are
+two OTHER "results" systems in the codebase (a legacy per-award-type JSON-column system
+under NomineeVotesResultController/NomineeResults trait, and TopNomineesController which
+only ever shows a judge their OWN votes) but neither shows a per-judge/per-nominee
+breakdown across all judges. Built new, reusing the existing Category -> Sector/Awards
+drill-down pattern from VoteCountController (Public Votes Results) for visual/URL
+consistency, sourced from the JudgesVotes table instead of the public Vote table.
+
+New files:
+- app\app\Http\Controllers\Judges\JudgeResultsController.php
+  (categories(): per-category count of distinct judges + total scores cast.
+  sectorsAwards(): per-award nominee leaderboard ranked by average judge score
+  (AVG(CAST(votes AS DECIMAL)), grouped by award_id+nominee_id) instead of vote count.
+  awardResults(): the new piece — every nominee a judge scored for one award, sorted by
+  average score, each expandable to see exactly which judge gave which score/comment,
+  via judge_id -> Admin::fullname (judge_id in JudgesVotes points at admins.id, not the
+  separate judges-profile table).)
+- app\resources\views\contents\admin\judges_votes_results\categories.blade.php
+- app\resources\views\contents\admin\judges_votes_results\sectors_awards.blade.php
+- app\resources\views\contents\admin\judges_votes_results\award.blade.php
+  (nominee cards, Bootstrap-collapse per nominee revealing a judge-by-judge table —
+  chosen over a judge x nominee matrix since judge counts (up to ~38 on the Europe side)
+  would make a matrix table unreadably wide.)
+
+Updated:
+- app\routes\judges.php (admin.judges_votes_results / .sectors / .award — admin-guard,
+  not judge-middleware, since this is for admins reviewing rather than judges voting.
+  Note: the award route uses a literal "award/{award_id}" segment and had to be
+  registered BEFORE the generic "{category_id}" route, otherwise Laravel would match
+  "award" as a category_id — caught this before it shipped.)
+
+Testing: full pipeline exercised against real local JudgesVotes rows (22 rows across 4
+awards already in local grcawards) — controller methods called directly and their
+returned view data inspected (correct sort order, correct judge names resolved, correct
+counts), then all three views fully rendered end-to-end with a faked request context
+(needed so the layout's sidebar links, which read request()->segment(3), resolve
+correctly outside a real HTTP request) — all rendered without error.

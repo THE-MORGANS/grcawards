@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Judges\
 {JudgesController, NomineeVotesResultController, NominessDetailsController, NominessVotesController, AddJudgesController,
     LoadJudgesController, StoreNominessVotesController, UpdateAdminController, CreateNominessController, TopNomineesController,
-    JudgeFeedbackSurveyController
+    JudgeFeedbackSurveyController, JudgeResultsController
 };
 
 Route::prefix('judges')->group(function(){
@@ -31,4 +31,8 @@ Route::prefix('judges')->group(function(){
 
     Route::middleware('judge')->get('feedback-survey', [JudgeFeedbackSurveyController::class, 'show'])->name('admin.judge_feedback_survey');
     Route::middleware('judge')->post('feedback-survey', [JudgeFeedbackSurveyController::class, 'submit'])->name('admin.judge_feedback_survey.submit');
+
+    Route::get('votes-results', [JudgeResultsController::class, 'categories'])->name('admin.judges_votes_results');
+    Route::get('votes-results/award/{award_id}', [JudgeResultsController::class, 'awardResults'])->name('admin.judges_votes_results.award');
+    Route::get('votes-results/{category_id}', [JudgeResultsController::class, 'sectorsAwards'])->name('admin.judges_votes_results.sectors');
 });

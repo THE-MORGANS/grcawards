@@ -77,6 +77,11 @@
                                 Public Votes Results
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.judges_votes_results', request()->segment(3))}}">
+                                Judges Votes Results
+                            </a>
+                        </li>
                         <!-- <li>
                             <a href="#">Results</a>
                         </li> -->
