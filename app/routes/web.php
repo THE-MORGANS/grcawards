@@ -24,6 +24,7 @@ use App\Http\Controllers\AwardsSummitPaymentController;
 use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\JudgeFeedbackSurveyAdminController;
 use App\Http\Controllers\AwardWinnerController;
+use App\Http\Controllers\VoteSummaryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,6 +114,12 @@ Route::prefix('admin')->group(function () {
             Route::prefix('judge-feedback')->group(function () {
                 Route::get('', [JudgeFeedbackSurveyAdminController::class, 'index'])->name('admin.judge_feedback.index');
                 Route::get('{submission}', [JudgeFeedbackSurveyAdminController::class, 'show'])->name('admin.judge_feedback.show');
+            });
+
+            Route::prefix('summary')->group(function () {
+                Route::get('', [VoteSummaryController::class, 'index'])->name('admin.vote_summary');
+                Route::get('export', [VoteSummaryController::class, 'export'])->name('admin.vote_summary.export');
+                Route::get('pdf', [VoteSummaryController::class, 'pdf'])->name('admin.vote_summary.pdf');
             });
 
             Route::prefix('winners')->group(function () {

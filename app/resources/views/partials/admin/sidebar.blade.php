@@ -87,6 +87,11 @@
                                 Award Winners
                             </a>
                         </li>
+                        <li>
+                            <a href="{{route('admin.vote_summary', request()->segment(3))}}">
+                                Vote Summary Report
+                            </a>
+                        </li>
                         <!-- <li>
                             <a href="#">Results</a>
                         </li> -->

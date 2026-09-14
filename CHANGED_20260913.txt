@@ -1,0 +1,13 @@
+NEW:
+app/app/Http/Controllers/VoteSummaryController.php
+app/app/Exports/VoteSummaryExport.php
+app/app/Exports/Sheets/VoteSummaryOverviewSheet.php
+app/app/Exports/Sheets/VoteSummaryCategorySheet.php
+app/resources/views/contents/admin/vote_summary.blade.php
+app/resources/views/contents/admin/vote_summary_pdf.blade.php
+
+UPDATED:
+app/routes/web.php
+app/resources/views/partials/admin/sidebar.blade.php
+app/composer.json
+app/composer.lock
