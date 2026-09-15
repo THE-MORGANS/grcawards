@@ -18,6 +18,7 @@ use App\Models\CustomAwardNominee;
 use Illuminate\Support\Facades\DB;
 use App\Models\Gallery;
 use App\Models\SummitRegistration;
+use App\Services\AwardResultsCalculator;
 use Illuminate\Support\Facades\Auth;
 
 class LandingPageController extends Controller
@@ -373,5 +374,70 @@ class LandingPageController extends Controller
     public function VisionMission()
     {
         return view('contents.voter.vision');
+    }
+
+    /**
+     * Public "Top 3 Finalists" page. The top 3 per award are the exact same
+     * top 3 the admin Award Winners page computes — AwardResultsCalculator's
+     * Overall Score = (Judges' Avg/10 x 75%) + (Public Vote Share x 25%) —
+     * not a separate public-votes-only leaderboard. Both pages now share one
+     * calculation so they can never disagree.
+     *
+     * The set of 3 names is shown, but NOT their order: rank 1 in this
+     * calculation is the actual pending winner, and the site's own process
+     * (see the home page timeline, stage 04) promises the winner is revealed
+     * for the first time at the Gala — publishing the order here would spoil
+     * that. Names are listed alphabetically instead. Ties at the 3rd-place
+     * score are all included rather than arbitrarily cut.
+     */
+    public function showTopNominees()
+    {
+        $award_program = AwardProgram::where('status', 1)->latest()->first();
+
+        $categories = $award_program
+            ? Category::where('award_program_id', $award_program->id)->get()
+            : collect();
+
+        foreach ($categories as $category) {
+            $category->hashid = Hashids::connection('category')->encode($category->id);
+
+            foreach ($category->sectors as $sector) {
+                $sector->hashid = Hashids::connection('sector')->encode($sector->id);
+
+                foreach ($sector->awards as $award) {
+                    $award->hashid = Hashids::connection('award')->encode($award->id);
+
+                    $award->top_nominees = $this->topThreeFinalists($award);
+                }
+            }
+        }
+
+        return view('contents.voter.top_nominees')->with([
+            'categories' => $categories,
+            'award_program' => $award_program,
+        ]);
+    }
+
+    /**
+     * The top 3 nominees for an award by AwardResultsCalculator's overall
+     * score (ties at the cutoff included), names only, alphabetical order.
+     */
+    private function topThreeFinalists(Award $award)
+    {
+        $results = AwardResultsCalculator::computeAwardResults($award)['results']
+            ->filter(fn ($r) => $r['overall'] > 0)
+            ->values();
+
+        if ($results->isEmpty()) {
+            return collect();
+        }
+
+        $thirdPlaceScore = $results->slice(0, 3)->last()['overall'];
+
+        return $results
+            ->filter(fn ($r) => $r['overall'] >= $thirdPlaceScore)
+            ->pluck('nominee_name')
+            ->sort()
+            ->values();
     }
 }

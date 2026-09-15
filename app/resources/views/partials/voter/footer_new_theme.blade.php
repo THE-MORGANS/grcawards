@@ -21,6 +21,7 @@
                     <li><a href="{{ route('about_the_award') }}">About the Award</a></li>
                     <li><a href="{{ route('about_the_award') }}#mission">Vision &amp; Mission</a></li>
                     <li><a href="{{ route('show_sect_cat') }}">Sectors &amp; Categories</a></li>
+                    <li><a href="{{ route('show_top_nominees') }}">Top 3 Finalists</a></li>
                     <li><a href="{{ route('judging_process') }}">Judges &amp; Process</a></li>
                 </ul>
             </div>

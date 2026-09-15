@@ -484,8 +484,10 @@
           <p>Training, advisory, RegTech and recruitment providers — plus the Lifetime Achievement Award.</p>
         </div>
       </div>
-      <div class="center" style="margin-top:26px"><a class="btn btn-navy" href="{{ route('show_sect_cat') }}">See All
-          Categories →</a></div>
+      <div class="center" style="margin-top:26px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a class="btn btn-navy" href="{{ route('show_sect_cat') }}">See All Categories →</a>
+        <a class="btn btn-gold" href="{{ route('show_top_nominees') }}">See Top 3 Finalists →</a>
+      </div>
     </div>
   </section>
 

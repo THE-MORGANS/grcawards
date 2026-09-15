@@ -39,7 +39,7 @@
         together regulators, policymakers, financial institutions, corporate leaders, law enforcement, technology
         innovators and GRC and financial crime professionals from Africa and across the world.</p>
       <div class="cta-row"><a class="btn btn-gold" href="#venue">Explore the Event →</a><a class="btn btn-ghost"
-          href="{{ route('show_login_form') }}">Voting Has Closed</a></div>
+          href="{{ route('show_top_nominees') }}">See This Year's Top 3 Finalists</a></div>
     </div>
   </header>
 
@@ -227,6 +227,9 @@
           <p>The top 3 finalists per category are recognised at the black-tie Gala; only the winner is revealed on the
             evening.</p>
         </div>
+      </div>
+      <div class="center" style="margin-top:30px">
+        <a class="btn btn-gold" href="{{ route('show_top_nominees') }}">See This Year's Top 3 Finalists →</a>
       </div>
     </div>
   </section>

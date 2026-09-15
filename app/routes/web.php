@@ -174,6 +174,7 @@ Route::get('past-winners', [LandingPageController::class, 'showPastWinners'])->n
 Route::get('the-award/about-the-award', [LandingPageController::class, 'showAboutTheAward'])->name('about_the_award');
 Route::get('the-award/uk-awards', [LandingPageController::class, 'showAboutUKAwards'])->name('about_uk_awards');
 Route::get('the-award/sectors-and-categories', [LandingPageController::class, 'showSectorsAndCategories'])->name('show_sect_cat');
+Route::get('the-award/top-nominees', [LandingPageController::class, 'showTopNominees'])->name('show_top_nominees');
 Route::get('the-award/the-organizers', [LandingPageController::class, 'showTheOrganizers'])->name('show_organizers');
 Route::get('the-award/contact-us', [LandingPageController::class, 'showContactUs'])->name('show_contact');
 Route::get('judges/meet-our-judges', [LandingPageController::class, 'showJudges'])->name('meet_judges');

@@ -20,6 +20,7 @@
             <li><a class="{{request()->is('sponsors') ? 'active' : '' }}" href="{{route('show_sponsors')}}">Sponsors</a></li>
             <li><a class="{{request()->is('advisory/governing-council') ? 'active' : '' }}" href="{{route('board_members')}}">Advisory Council </a></li>
             <li><a class="{{request()->is('vote*') ? 'active' : '' }}" href="{{route('show_login_form')}}">Vote</a></li>
+            <li><a class="{{request()->is('the-award/top-nominees') ? 'active' : '' }}" href="{{route('show_top_nominees')}}">Top 3 Finalists</a></li>
             <li><a class="{{request()->is('tickets') ? 'active' : '' }}" href="{{route('show_tickets')}}">Tickets</a></li>
             <li class="has-drop"><a class="{{request()->is('code-of-conduct') || request()->is('others/*') ? 'active' : '' }}" href="{{route('show_faqs')}}">Others</a>
                 <ul class="drop">

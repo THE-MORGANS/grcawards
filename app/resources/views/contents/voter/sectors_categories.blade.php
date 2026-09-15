@@ -121,7 +121,7 @@
           <h3 style="color:#fff">Voting has closed</h3>
           <p style="color:#c2cae0;font-size:14px">Thank you to everyone who took part — winners will be announced at the Gala.</p>
         </div>
-        <a class="btn btn-gold" href="{{ route('show_login_form') }}">Learn More →</a>
+        <a class="btn btn-gold" href="{{ route('show_top_nominees') }}">See Top 3 Finalists →</a>
       </div>
     </div>
   </section>
@@ -131,18 +131,17 @@
   @include('partials.voter.scripts')
 
   <script>
+    // Each category toggles independently — deliberately NOT closing sibling
+    // categories. Auto-closing another (possibly much taller) open category
+    // at the same time it opens this one meant two competing height
+    // transitions ran concurrently right above the click point, and the
+    // page would visibly lurch as they raced each other. Letting items
+    // stay open removes the concurrent-collapse entirely, which removes
+    // the jump.
     function toggleCatAccordion(event, header) {
       if (event) event.preventDefault();
-      const group = header.closest('.cat-group');
       const item = header.parentElement;
       const isOpen = item.classList.contains('active');
-
-      group.querySelectorAll('.cat-item').forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.cat-header').setAttribute('aria-expanded', 'false');
-        }
-      });
 
       if (isOpen) {
         item.classList.remove('active');
@@ -150,6 +149,9 @@
       } else {
         item.classList.add('active');
         header.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(() => {
+          header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
       }
     }
 
