@@ -31,7 +31,7 @@
       <h2 class="sec-title">This year's <span class="ac">shortlists.</span></h2>
 
       <div class="tn-note">
-        <span class="ico">🏆</span>
+        <span class="ico">🎖️</span>
         <span><b>These are not the winners.</b> Each shortlist is the actual top 3 by overall score — judges' scores
           (75%) plus the public vote (25%) — the same calculation that decides the winner. The order is
           intentionally not shown here so nothing is given away before the Gala.</span>
@@ -62,7 +62,7 @@
                       @else
                         @foreach($sector->awards as $award)
                           <div class="award-item">
-                            <div class="award-name">🏆 {{ $award->name }}</div>
+                            <div class="award-name">🎖️ {{ $award->name }}</div>
 
                             @if($award->top_nominees->isEmpty())
                               <p class="top3-empty">Results not available yet</p>
