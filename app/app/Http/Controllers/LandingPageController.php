@@ -377,11 +377,12 @@ class LandingPageController extends Controller
     }
 
     /**
-     * Public "Top 3 Finalists" page. The top 3 per award are the exact same
-     * top 3 the admin Award Winners page computes — AwardResultsCalculator's
-     * Overall Score = (Judges' Avg/10 x 75%) + (Public Vote Share x 25%) —
-     * not a separate public-votes-only leaderboard. Both pages now share one
-     * calculation so they can never disagree.
+     * Public "Top 3 Finalists" page, split by region. The top 3 per award are
+     * the exact same top 3 the admin Award Winners page computes —
+     * AwardResultsCalculator's Overall Score = (Judges' Avg/10 x 75%) +
+     * (Public Vote Share x 25%) — not a separate public-votes-only
+     * leaderboard. Both pages now share one calculation so they can never
+     * disagree.
      *
      * The set of 3 names is shown, but NOT their order: rank 1 in this
      * calculation is the actual pending winner, and the site's own process
@@ -389,13 +390,42 @@ class LandingPageController extends Controller
      * for the first time at the Gala — publishing the order here would spoil
      * that. Names are listed alphabetically instead. Ties at the 3rd-place
      * score are all included rather than arbitrarily cut.
+     *
+     * Region = database connection, not a column. Africa is the main
+     * 'grcawards' database (Laravel's default connection); Europe is the
+     * separate 'grcawards_uk' database on the same server. If the Europe
+     * connection is unreachable or empty, that tab just shows no results —
+     * it never breaks the Africa side.
      */
     public function showTopNominees()
     {
-        $award_program = AwardProgram::where('status', 1)->latest()->first();
+        $regions = [
+            $this->buildRegionData('africa', 'Africa', null),
+            $this->buildRegionData('europe', 'Europe', 'grcawards_uk'),
+        ];
+
+        return view('contents.voter.top_nominees')->with([
+            'regions' => $regions,
+        ]);
+    }
+
+    /**
+     * Categories/sectors/awards/top-3 for one region, all fetched on the
+     * given database connection ($connection = null means the default
+     * connection). Hashids are per-region-prefixed in the view (raw IDs can
+     * collide across two independent databases), so only the raw hashid is
+     * built here.
+     */
+    private function buildRegionData($key, $label, $connection)
+    {
+        try {
+            $award_program = AwardProgram::on($connection)->where('status', 1)->latest()->first();
+        } catch (\Throwable $e) {
+            $award_program = null;
+        }
 
         $categories = $award_program
-            ? Category::where('award_program_id', $award_program->id)->get()
+            ? Category::on($connection)->where('award_program_id', $award_program->id)->get()
             : collect();
 
         foreach ($categories as $category) {
@@ -412,10 +442,12 @@ class LandingPageController extends Controller
             }
         }
 
-        return view('contents.voter.top_nominees')->with([
-            'categories' => $categories,
+        return [
+            'key' => $key,
+            'label' => $label,
             'award_program' => $award_program,
-        ]);
+            'categories' => $categories,
+        ];
     }
 
     /**

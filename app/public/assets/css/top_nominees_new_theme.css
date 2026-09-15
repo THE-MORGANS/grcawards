@@ -21,3 +21,15 @@
 .top3-empty { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 10px; }
 
 .tn-hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+
+.tn-region-tabs { display: flex; gap: 8px; margin-top: 28px; border-bottom: 1px solid var(--line-soft); }
+.tn-region-tab {
+    font-family: var(--sans); font-size: 13.5px; font-weight: 700; color: var(--muted);
+    background: none; border: none; border-bottom: 2px solid transparent;
+    padding: 10px 4px; margin-bottom: -1px; cursor: pointer; transition: color .2s, border-color .2s;
+}
+.tn-region-tab:hover { color: var(--navy); }
+.tn-region-tab.active { color: var(--crimson); border-bottom-color: var(--gold); }
+
+.tn-region-panel { display: none; }
+.tn-region-panel.active { display: block; }

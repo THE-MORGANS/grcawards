@@ -27,7 +27,7 @@
 
   <section class="band white">
     <div class="wrap">
-      <div class="sec-eyebrow">Finalists — {{ $award_program->year ?? '2026' }}</div>
+      <div class="sec-eyebrow">Finalists — 2026</div>
       <h2 class="sec-title">This year's <span class="ac">shortlists.</span></h2>
 
       <div class="tn-note">
@@ -37,53 +37,72 @@
           intentionally not shown here so nothing is given away before the Gala.</span>
       </div>
 
-      @if($categories->isEmpty())
-        <p class="no-nominees" style="margin-top:30px">Results will appear here once voting data is available.</p>
-      @endif
+      <div class="tn-region-tabs" role="tablist">
+        @foreach($regions as $region)
+          <button type="button" class="tn-region-tab {{ $loop->first ? 'active' : '' }}"
+            data-region-tab="{{ $region['key'] }}" role="tab"
+            aria-selected="{{ $loop->first ? 'true' : 'false' }}"
+            onclick="switchRegion(event, '{{ $region['key'] }}')">
+            {{ $region['label'] }}
+          </button>
+        @endforeach
+      </div>
 
-      <div class="cat-group">
-        @foreach($categories as $category)
-          <div class="cat-item {{ $loop->first ? 'active' : '' }}">
-            <button type="button" class="cat-header" aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
-              aria-controls="content-{{ $category->hashid }}" onclick="toggleCatAccordion(event, this)">
-              <span class="cat-title">{{ $category->name }}</span>
-              <span class="cat-icon">▾</span>
-            </button>
+      @foreach($regions as $region)
+        <div class="tn-region-panel {{ $loop->first ? 'active' : '' }}" data-region-panel="{{ $region['key'] }}">
 
-            <div id="content-{{ $category->hashid }}" class="cat-content">
-              <div class="cat-inner">
-                <div class="sector-grid">
-                  @foreach($category->sectors as $sector)
-                    <div class="sector-card">
-                      <div class="sector-name">{{ $sector->id == 12 ? 'General Categories' : $sector->name }}</div>
+          @if($region['categories']->isEmpty())
+            <p class="no-nominees" style="margin-top:30px">
+              Results for {{ $region['label'] }} will appear here once voting data is available.
+            </p>
+          @else
+            <div class="cat-group">
+              @foreach($region['categories'] as $category)
+                <div class="cat-item {{ $loop->first ? 'active' : '' }}">
+                  <button type="button" class="cat-header" aria-expanded="{{ $loop->first ? 'true' : 'false' }}"
+                    aria-controls="content-{{ $region['key'] }}-{{ $category->hashid }}" onclick="toggleCatAccordion(event, this)">
+                    <span class="cat-title">{{ $category->name }}</span>
+                    <span class="cat-icon">▾</span>
+                  </button>
 
-                      @if($sector->awards->isEmpty())
-                        <p class="no-nominees">Awaiting category details...</p>
-                      @else
-                        @foreach($sector->awards as $award)
-                          <div class="award-item">
-                            <div class="award-name">🎖️ {{ $award->name }}</div>
+                  <div id="content-{{ $region['key'] }}-{{ $category->hashid }}" class="cat-content">
+                    <div class="cat-inner">
+                      <div class="sector-grid">
+                        @foreach($category->sectors as $sector)
+                          <div class="sector-card">
+                            <div class="sector-name">{{ $sector->id == 12 ? 'General Categories' : $sector->name }}</div>
 
-                            @if($award->top_nominees->isEmpty())
-                              <p class="top3-empty">Results not available yet</p>
+                            @if($sector->awards->isEmpty())
+                              <p class="no-nominees">Awaiting category details...</p>
                             @else
-                              <div class="top3-list">
-                                @foreach($award->top_nominees as $name)
-                                  <div class="top3-item"><span class="dot"></span><span>{{ $name }}</span></div>
-                                @endforeach
-                              </div>
+                              @foreach($sector->awards as $award)
+                                <div class="award-item">
+                                  <div class="award-name">🎖️ {{ $award->name }}</div>
+
+                                  @if($award->top_nominees->isEmpty())
+                                    <p class="top3-empty">Results not available yet</p>
+                                  @else
+                                    <div class="top3-list">
+                                      @foreach($award->top_nominees as $name)
+                                        <div class="top3-item"><span class="dot"></span><span>{{ $name }}</span></div>
+                                      @endforeach
+                                    </div>
+                                  @endif
+                                </div>
+                              @endforeach
                             @endif
                           </div>
                         @endforeach
-                      @endif
+                      </div>
                     </div>
-                  @endforeach
+                  </div>
                 </div>
-              </div>
+              @endforeach
             </div>
-          </div>
-        @endforeach
-      </div>
+          @endif
+
+        </div>
+      @endforeach
     </div>
   </section>
 
@@ -106,6 +125,20 @@
   @include('partials.voter.scripts')
 
   <script>
+    function switchRegion(event, key) {
+      if (event) event.preventDefault();
+
+      document.querySelectorAll('.tn-region-tab').forEach(tab => {
+        const isMatch = tab.getAttribute('data-region-tab') === key;
+        tab.classList.toggle('active', isMatch);
+        tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+      });
+
+      document.querySelectorAll('.tn-region-panel').forEach(panel => {
+        panel.classList.toggle('active', panel.getAttribute('data-region-panel') === key);
+      });
+    }
+
     // Each category toggles independently — deliberately NOT closing sibling
     // categories. Auto-closing another (possibly much taller) open category
     // at the same time it opens this one meant two competing height

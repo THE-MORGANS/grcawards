@@ -19,10 +19,20 @@ class AwardResultsCalculator
      * Shared by the admin Award Winners pages (AwardWinnerController) and the
      * public Top 3 Finalists page (LandingPageController) so both always show
      * the exact same ranking, computed once, one way.
+     *
+     * Region-aware: whatever connection $award was fetched on (e.g. Award::on
+     * ('grcawards_uk')->find(...)) is the connection every related query below
+     * runs on too, so an Award from the UK/Europe database is scored entirely
+     * against that database's own nominees/votes/judges_votes, never mixed
+     * with the main one. $award->getConnectionName() is null for the default
+     * connection, which Nominee::on(null) etc. treat as "use the default" —
+     * so this is a no-op change for existing (single-database) callers.
      */
     public static function computeAwardResults(Award $award)
     {
-        $nominees = Nominee::where('award_program_id', $award->award_program_id)
+        $connection = $award->getConnectionName();
+
+        $nominees = Nominee::on($connection)->where('award_program_id', $award->award_program_id)
             ->get()
             ->filter(function ($nominee) use ($award) {
                 $awardIds = json_decode($nominee->award_ids) ?? [];
@@ -30,9 +40,9 @@ class AwardResultsCalculator
             })
             ->values();
 
-        $judgesVotes = JudgesVotes::where('award_id', $award->id)->get()->groupBy('nominee_id');
+        $judgesVotes = JudgesVotes::on($connection)->where('award_id', $award->id)->get()->groupBy('nominee_id');
 
-        $publicCounts = Vote::where('award_id', $award->id)
+        $publicCounts = Vote::on($connection)->where('award_id', $award->id)
             ->select('nominee_id', DB::raw('count(*) as total'))
             ->groupBy('nominee_id')
             ->pluck('total', 'nominee_id');
