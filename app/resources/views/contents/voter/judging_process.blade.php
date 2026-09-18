@@ -78,6 +78,14 @@
       <p class="sec-intro">An independent panel of judges from multiple countries brings regional perspective and
         sector-specific expertise to the 2026 judging process.</p>
 
+
+
+      <!--['name' => 'Dayo Adeyemi', 'image' => 'dayo-adeyemi.jpg'],-->
+      <!--['name' => 'Emeka Offor', 'image' => 'emeka-offor.jpg'],-->
+      <!--['name' => 'Jayden Yoon', 'image' => 'jayden-yoon.jpg'],-->
+      <!--['name' => 'Priju Sham', 'image' => 'priju-sham.jpg'],-->
+
+
       @php
       $judges = [
       ['name' => 'Esosa Balogun', 'image' => 'esosa-balogun.jpg', 'role' => 'Chair, Panel of Judges'],
@@ -85,7 +93,7 @@
       ['name' => 'Ndidi Ahiauzu', 'image' => 'ndidi-ahiauzu.jpg'],
       ['name' => 'Banke Ogunbodede', 'image' => 'banke-ogunbodede.jpg'],
       ['name' => 'Gbugbemi Atimomo', 'image' => 'gbugbemi-atimomo.jpg'],
-      ['name' => 'Dayo Adeyemi', 'image' => 'dayo-adeyemi.jpg'],
+
       ['name' => 'Ope Osiyemi', 'image' => 'ope-osiyemi.jpg'],
       ['name' => 'Emmanuel Michael', 'image' => 'emmanuel-michael.jpg'],
       ['name' => 'Temitope Yusuff', 'image' => 'temitope-yusuff.jpg'],
@@ -94,7 +102,7 @@
       ['name' => 'Abraham Awe', 'image' => 'abraham-awe.jpg'],
       ['name' => 'Femi Mosaku-Johnson', 'image' => 'femi-mosaku-johnson.jpg'],
       ['name' => 'Richard Mayungbe', 'image' => 'richard-mayungbe.jpg'],
-      ['name' => 'Emeka Offor', 'image' => 'emeka-offor.jpg'],
+
       ['name' => 'Tayo Felix Ogunneye', 'image' => 'tayo-felix-ogunneye.jpg'],
       ['name' => 'Kenneth Oguzie', 'image' => 'kenneth-oguzie.jpg'],
       ['name' => 'Olu Ajayi', 'image' => 'olu-ajayi.jpg'],
@@ -105,11 +113,11 @@
       ['name' => 'Babongile Mthwthwa', 'image' => 'babongile-mthwthwa.jpg'],
       ['name' => 'Catherine Jeruto', 'image' => 'catherine-jeruto.jpg'],
       ['name' => 'Shehu Ibrahim Idris', 'image' => 'shehu-ibrahim-idris.jpg'],
-      ['name' => 'Faithful Kumbula', 'image' => 'faithful-kumbula.jpg'],
-      ['name' => 'Jayden Yoon', 'image' => 'jayden-yoon.jpg'],
+      ['name' => 'Faithful Kumbula', 'image' => 'faithful-kumbula.jpeg'],
+
       ['name' => 'Said Katarzyna', 'image' => 'said-katarzyna.jpg'],
       ['name' => 'Daniel Wynne', 'image' => 'daniel-wynne.jpg'],
-      ['name' => 'Priju Sham', 'image' => 'priju-sham.jpg'],
+
       ['name' => 'Tarun Sukhija', 'image' => 'tarun-sukhija.jpg'],
       ['name' => 'Handan Tokdogan', 'image' => 'handan-tokdogan.jpg'],
       ['name' => 'Helentung Chambers', 'image' => 'helentung-chambers.jpg'],
@@ -120,17 +128,17 @@
       ['name' => 'Paolo Rovatti', 'image' => 'paolo-rovatti.jpg'],
       ['name' => 'Izabella Ferreira Pinto de Calvaho', 'image' => 'izabella-ferreira-pinto-de-calvaho.jpg'],
       ['name' => 'Brendan Greiner', 'image' => 'brendan-greiner.jpg'],
-      ['name' => 'Debbie Rawson', 'image' => 'debbie-rawson.jpg'],
-      ['name' => 'Justin Smith', 'image' => 'justin-smith.jpg'],
-      ['name' => 'Michelle Grandison', 'image' => 'michelle-grandison.jpg'],
+      ['name' => 'Debbie Rawson', 'image' => 'debbie-rawson.jpeg'],
+      ['name' => 'Justin Smith', 'image' => 'justin-smith.jpeg'],
+      ['name' => 'Michelle Grandison', 'image' => 'michelle-grandison.jpeg'],
       ['name' => 'Ninah Mwende', 'image' => 'ninah-mwende.jpg'],
-      ['name' => 'Rajitha Prabhakaran', 'image' => 'rajitha-prabhakaran.jpg'],
-      ['name' => 'Shoaib Masood', 'image' => 'shoaib-masood.jpg'],
+      ['name' => 'Rajitha Prabhakaran', 'image' => 'rajitha-prabhakaran.png'],
+      ['name' => 'Shoaib Masood', 'image' => 'shoaib-masood.png'],
       ['name' => 'Adnal Sanli', 'image' => 'adnal-sanli.jpg'],
-      ['name' => 'Muklesur Bharuya', 'image' => 'muklesur-bharuya.jpg'],
-      ['name' => 'Rehman Noormohamed', 'image' => 'rehman-noormohamed.jpg'],
-      ['name' => 'Mukesh Malhotra', 'image' => 'mukesh-malhotra.jpg'],
-      ['name' => 'Oumila Sibartie', 'image' => 'oumila-sibartie.jpg'],
+      ['name' => 'Muklesur Bharuya', 'image' => 'muklesur-bharuya.png'],
+      ['name' => 'Rehman Noormohamed', 'image' => 'rehman-noormohamed.jpeg'],
+      ['name' => 'Mukesh Malhotra', 'image' => 'mukesh-malhotra.jpeg'],
+      ['name' => 'Oumila Sibartie', 'image' => 'oumila-sibartie.jpeg'],
       ];
       @endphp
       <div class="grid g4" style="margin-top:28px">
