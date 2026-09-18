@@ -347,7 +347,37 @@ class LandingPageController extends Controller
 
     public function showEditionAfrica()
     {
-        return view('contents.voter.edition_africa');
+        return view('contents.voter.edition_africa')->with([
+            'speakerCount' => $this->nairobiSpeakerCount(),
+        ]);
+    }
+
+    /**
+     * Nairobi 2026 speaker announcement graphics — each image is a full
+     * branded flyer (name, title, bio already baked in by design), so there
+     * is no separate name/role data to attach; the page just displays them,
+     * a thumbnail grid opening into a lightbox for the full-resolution read.
+     * Numbered 1..N to match public/assets/images/speakers/nairobi_2026/{thumb,full}.
+     */
+    public function showEventSpeakers()
+    {
+        $count = $this->nairobiSpeakerCount();
+
+        $speakers = collect(range(1, $count))->map(fn ($n) => [
+            'thumb' => asset("assets/images/speakers/nairobi_2026/thumb/{$n}.jpg"),
+            'full' => asset("assets/images/speakers/nairobi_2026/full/{$n}.jpg"),
+        ]);
+
+        return view('contents.voter.speakers_nairobi_2026')->with([
+            'speakers' => $speakers,
+        ]);
+    }
+
+    private function nairobiSpeakerCount()
+    {
+        $dir = public_path('assets/images/speakers/nairobi_2026/full');
+
+        return is_dir($dir) ? count(glob($dir . '/*.jpg')) : 0;
     }
 
     public function showTickets()

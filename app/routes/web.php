@@ -169,6 +169,7 @@ Route::get('login', [VoterLoginController::class, 'showLoginForm'])->name('show_
 Route::post('login', [VoterLoginController::class, 'login'])->name('login')->middleware('voting_closed');
 Route::get('/', [LandingPageController::class, 'showLandingIndex'])->name('landing.index');
 Route::get('event', [LandingPageController::class, 'showEditionAfrica'])->name('edition.africa');
+Route::get('event/speakers-nairobi-2026', [LandingPageController::class, 'showEventSpeakers'])->name('edition.africa.speakers');
 Route::get('tickets', [LandingPageController::class, 'showTickets'])->name('show_tickets');
 Route::get('past-winners', [LandingPageController::class, 'showPastWinners'])->name('show_past_winners');
 Route::get('the-award/about-the-award', [LandingPageController::class, 'showAboutTheAward'])->name('about_the_award');

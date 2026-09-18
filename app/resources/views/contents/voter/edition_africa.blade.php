@@ -6,6 +6,7 @@
   @include('partials.voter.head')
 
   <link rel="stylesheet" href="{{ asset('assets/css/new_theme_design.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/css/speakers_nairobi_2026.css') }}">
 </head>
 
 <body>
@@ -358,12 +359,30 @@
     </div>
   </section>
 
+  @if($speakerCount > 0)
+  <section class="band white">
+    <div class="wrap">
+      <div class="sec-eyebrow">Nairobi 2026</div>
+      <h2 class="sec-title">This year's <span class="ac">speakers.</span></h2>
+      <p class="sec-intro">The confirmed line-up for THE GLOBAL PERIMETER — Nairobi, 20 November 2026.</p>
+      <div class="spk-teaser-strip">
+        @for ($i = 1; $i <= min(8, $speakerCount); $i++)
+          <img src="{{ asset('assets/images/speakers/nairobi_2026/thumb/'.$i.'.jpg') }}" alt="Speaker {{ $i }}" loading="lazy">
+        @endfor
+      </div>
+      <div class="center" style="margin-top:24px">
+        <a class="btn btn-gold" href="{{ route('edition.africa.speakers') }}">Meet All Speakers →</a>
+      </div>
+    </div>
+  </section>
+  @endif
+
   <section class="band cream">
     <div class="wrap">
-      <div class="sec-eyebrow">Speakers — 2026 Programme</div>
-      <h2 class="sec-title">The voices leading <span class="ac">the global GRC conversation.</span></h2>
-      <p class="sec-intro">Keynotes and panellists drawn from banking, fintech, insurance, regulators, legal,
-        RegTech and academia.</p>
+      <div class="sec-eyebrow">Speakers — Past Editions</div>
+      <h2 class="sec-title">Voices from <span class="ac">previous editions.</span></h2>
+      <p class="sec-intro">A look back at keynotes and panellists from earlier editions in Lagos — drawn from
+        banking, fintech, insurance, regulators, legal, RegTech and academia.</p>
       @php
       $speakers = [
       ['name' => 'Sunny Ukeachu', 'role' => 'Founder/CEO Mitiget', 'image' => 'sunny-ukeachu.jpg'],
