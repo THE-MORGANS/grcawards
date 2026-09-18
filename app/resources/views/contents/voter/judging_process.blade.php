@@ -75,50 +75,85 @@
     <div class="wrap">
       <div class="sec-eyebrow">Advisory Council &amp; Judges</div>
       <h2 class="sec-title">A global panel of <span class="ac">distinguished experts.</span></h2>
-      <p class="sec-intro">Appointed in 2025, the Advisory Council provides strategic guidance and upholds
-        transparency. An independent panel of judges from multiple countries brings regional perspective and
-        sector-specific expertise. Members for 2026 are announced on a rolling basis.</p>
+      <p class="sec-intro">An independent panel of judges from multiple countries brings regional perspective and
+        sector-specific expertise to the 2026 judging process.</p>
+
+      @php
+      $judges = [
+      ['name' => 'Esosa Balogun', 'image' => 'esosa-balogun.jpg', 'role' => 'Chair, Panel of Judges'],
+      ['name' => 'Kenneth Ashiabuchi', 'image' => 'kenneth-ashiabuchi.jpg'],
+      ['name' => 'Ndidi Ahiauzu', 'image' => 'ndidi-ahiauzu.jpg'],
+      ['name' => 'Banke Ogunbodede', 'image' => 'banke-ogunbodede.jpg'],
+      ['name' => 'Gbugbemi Atimomo', 'image' => 'gbugbemi-atimomo.jpg'],
+      ['name' => 'Dayo Adeyemi', 'image' => 'dayo-adeyemi.jpg'],
+      ['name' => 'Ope Osiyemi', 'image' => 'ope-osiyemi.jpg'],
+      ['name' => 'Emmanuel Michael', 'image' => 'emmanuel-michael.jpg'],
+      ['name' => 'Temitope Yusuff', 'image' => 'temitope-yusuff.jpg'],
+      ['name' => 'Ebuwa Babajide', 'image' => 'ebuwa-babajide.jpg'],
+      ['name' => 'Sunny Ukeachu', 'image' => 'sunny-ukeachu.jpg'],
+      ['name' => 'Abraham Awe', 'image' => 'abraham-awe.jpg'],
+      ['name' => 'Femi Mosaku-Johnson', 'image' => 'femi-mosaku-johnson.jpg'],
+      ['name' => 'Richard Mayungbe', 'image' => 'richard-mayungbe.jpg'],
+      ['name' => 'Emeka Offor', 'image' => 'emeka-offor.jpg'],
+      ['name' => 'Tayo Felix Ogunneye', 'image' => 'tayo-felix-ogunneye.jpg'],
+      ['name' => 'Kenneth Oguzie', 'image' => 'kenneth-oguzie.jpg'],
+      ['name' => 'Olu Ajayi', 'image' => 'olu-ajayi.jpg'],
+      ['name' => 'Yahya Oubrahim', 'image' => 'yahya-oubrahim.jpg'],
+      ['name' => 'Joash Ombati', 'image' => 'joash-ombati.jpg'],
+      ['name' => 'Meryem Bouzoubaa', 'image' => 'meryem-bouzoubaa.jpg'],
+      ['name' => 'Raksha Beecum-Khadaroo', 'image' => 'raksha-beecum-khadaroo.jpg'],
+      ['name' => 'Babongile Mthwthwa', 'image' => 'babongile-mthwthwa.jpg'],
+      ['name' => 'Catherine Jeruto', 'image' => 'catherine-jeruto.jpg'],
+      ['name' => 'Shehu Ibrahim Idris', 'image' => 'shehu-ibrahim-idris.jpg'],
+      ['name' => 'Faithful Kumbula', 'image' => 'faithful-kumbula.jpg'],
+      ['name' => 'Jayden Yoon', 'image' => 'jayden-yoon.jpg'],
+      ['name' => 'Said Katarzyna', 'image' => 'said-katarzyna.jpg'],
+      ['name' => 'Daniel Wynne', 'image' => 'daniel-wynne.jpg'],
+      ['name' => 'Priju Sham', 'image' => 'priju-sham.jpg'],
+      ['name' => 'Tarun Sukhija', 'image' => 'tarun-sukhija.jpg'],
+      ['name' => 'Handan Tokdogan', 'image' => 'handan-tokdogan.jpg'],
+      ['name' => 'Helentung Chambers', 'image' => 'helentung-chambers.jpg'],
+      ['name' => 'Emer McPartland', 'image' => 'emer-mcpartland.jpg'],
+      ['name' => 'Sinead Halhed-Moran Walsh', 'image' => 'sinead-halhed-moran-walsh.jpg'],
+      ['name' => 'Claire Convallaria', 'image' => 'claire-convallaria.jpg'],
+      ['name' => 'Craig Skinner', 'image' => 'craig-skinner.jpg'],
+      ['name' => 'Paolo Rovatti', 'image' => 'paolo-rovatti.jpg'],
+      ['name' => 'Izabella Ferreira Pinto de Calvaho', 'image' => 'izabella-ferreira-pinto-de-calvaho.jpg'],
+      ['name' => 'Brendan Greiner', 'image' => 'brendan-greiner.jpg'],
+      ['name' => 'Debbie Rawson', 'image' => 'debbie-rawson.jpg'],
+      ['name' => 'Justin Smith', 'image' => 'justin-smith.jpg'],
+      ['name' => 'Michelle Grandison', 'image' => 'michelle-grandison.jpg'],
+      ['name' => 'Ninah Mwende', 'image' => 'ninah-mwende.jpg'],
+      ['name' => 'Rajitha Prabhakaran', 'image' => 'rajitha-prabhakaran.jpg'],
+      ['name' => 'Shoaib Masood', 'image' => 'shoaib-masood.jpg'],
+      ['name' => 'Adnal Sanli', 'image' => 'adnal-sanli.jpg'],
+      ['name' => 'Muklesur Bharuya', 'image' => 'muklesur-bharuya.jpg'],
+      ['name' => 'Rehman Noormohamed', 'image' => 'rehman-noormohamed.jpg'],
+      ['name' => 'Mukesh Malhotra', 'image' => 'mukesh-malhotra.jpg'],
+      ['name' => 'Oumila Sibartie', 'image' => 'oumila-sibartie.jpg'],
+      ];
+      @endphp
       <div class="grid g4" style="margin-top:28px">
+        @foreach ($judges as $judge)
         <div class="spk">
-          <div class="av">AC</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Advisory Council — Governance</div>
+          <div class="av">
+            @php
+            $initials = collect(explode(' ', $judge['name']))->map(fn($w) => mb_substr($w, 0, 1))->join('');
+            @endphp
+            @if ($judge['image'])
+            <img src="{{ asset('assets/images/judges/'.$judge['image']) }}" alt="{{ $judge['name'] }}" loading="lazy"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">{{ $initials }}</span>
+            @else
+            {{ $initials }}
+            @endif
+          </div>
+          <div class="nm">{{ $judge['name'] }}</div>
+          @if (!empty($judge['role']))
+          <div class="rl">{{ $judge['role'] }}</div>
+          @endif
         </div>
-        <div class="spk">
-          <div class="av">AC</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Advisory Council — Financial Crime</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Banking &amp; AML/CFT</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Fintech &amp; RegTech</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Public Sector &amp; Anti-Corruption</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Legal &amp; Investigations</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Cybersecurity &amp; Data</div>
-        </div>
-        <div class="spk">
-          <div class="av">JG</div>
-          <div class="nm">[To Be Announced]</div>
-          <div class="rl">Judge — Academia &amp; Research</div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
