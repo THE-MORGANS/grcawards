@@ -359,23 +359,33 @@
     </div>
   </section>
 
-  @if($speakerCount > 0)
+  @php
+  $speakerTeaser = [
+  ['image' => '1.jpg'],
+  ['image' => '2.jpg'],
+  ['image' => '3.jpg'],
+  ['image' => '4.jpg'],
+  ['image' => '5.jpg'],
+  ['image' => '6.jpg'],
+  ['image' => '7.jpg'],
+  ['image' => '8.jpg'],
+  ];
+  @endphp
   <section class="band white">
     <div class="wrap">
       <div class="sec-eyebrow">Nairobi 2026</div>
       <h2 class="sec-title">This year's <span class="ac">speakers.</span></h2>
       <p class="sec-intro">The confirmed line-up for THE GLOBAL PERIMETER — Nairobi, 20 November 2026.</p>
       <div class="spk-teaser-strip">
-        @for ($i = 1; $i <= min(8, $speakerCount); $i++)
-          <img src="{{ asset('assets/images/speakers/nairobi_2026/thumb/'.$i.'.jpg') }}" alt="Speaker {{ $i }}" loading="lazy">
-        @endfor
+        @foreach ($speakerTeaser as $index => $speaker)
+          <img src="{{ asset('assets/images/speakers/nairobi_2026/thumb/'.$speaker['image']) }}" alt="Speaker {{ $index + 1 }}" loading="lazy">
+        @endforeach
       </div>
       <div class="center" style="margin-top:24px">
         <a class="btn btn-gold" href="{{ route('edition.africa.speakers') }}">Meet All Speakers →</a>
       </div>
     </div>
   </section>
-  @endif
 
   <section class="band cream">
     <div class="wrap">

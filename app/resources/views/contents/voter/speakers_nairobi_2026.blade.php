@@ -29,13 +29,41 @@
       <div class="sec-eyebrow">Nairobi 2026</div>
       <h2 class="sec-title">The <span class="ac">line-up.</span></h2>
 
-      @if($speakers->isEmpty())
+      @php
+      $speakers = [
+      ['image' => '1.jpg'],
+      ['image' => '2.jpg'],
+      ['image' => '3.jpg'],
+      ['image' => '4.jpg'],
+      ['image' => '5.jpg'],
+      ['image' => '6.jpg'],
+      ['image' => '7.jpg'],
+      ['image' => '8.jpg'],
+      ['image' => '9.jpg'],
+      ['image' => '10.jpg'],
+      ['image' => '11.jpg'],
+      ['image' => '12.jpg'],
+      ['image' => '13.jpg'],
+      ['image' => '14.jpg'],
+      ['image' => '15.jpg'],
+      ['image' => '16.jpg'],
+      ['image' => '17.jpg'],
+      ['image' => '18.jpg'],
+      ['image' => '19.jpg'],
+      ['image' => '20.jpg'],
+      ['image' => '21.jpg'],
+      ['image' => '22.jpg'],
+      ['image' => '23.jpg'],
+      ];
+      @endphp
+
+      @if(empty($speakers))
         <p class="no-nominees" style="margin-top:30px">Speaker announcements are coming soon.</p>
       @else
         <div class="spk-grid">
           @foreach($speakers as $index => $speaker)
             <button type="button" class="spk-card" onclick="openSpeakerLightbox({{ $index }})" aria-label="View speaker {{ $index + 1 }}">
-              <img src="{{ $speaker['thumb'] }}" alt="Speaker {{ $index + 1 }}" loading="lazy">
+              <img src="{{ asset('assets/images/speakers/nairobi_2026/thumb/'.$speaker['image']) }}" alt="Speaker {{ $index + 1 }}" loading="lazy">
             </button>
           @endforeach
         </div>
@@ -60,7 +88,7 @@
 
   @include('partials.voter.scripts')
 
-  @if($speakers->isNotEmpty())
+  @if(!empty($speakers))
   <div class="spk-lightbox" id="spkLightbox" role="dialog" aria-modal="true">
     <button type="button" class="spk-lightbox-close" onclick="closeSpeakerLightbox()" aria-label="Close">&times;</button>
     <button type="button" class="spk-lightbox-nav spk-lightbox-prev" onclick="navSpeakerLightbox(-1)" aria-label="Previous">&#8249;</button>
@@ -70,7 +98,7 @@
   </div>
 
   <script>
-    const spkFulls = @json($speakers->pluck('full'));
+    const spkFulls = @json(collect($speakers)->map(fn($s) => asset('assets/images/speakers/nairobi_2026/full/'.$s['image'])));
     let spkIndex = 0;
 
     function openSpeakerLightbox(index) {
