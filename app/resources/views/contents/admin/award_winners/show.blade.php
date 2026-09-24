@@ -77,7 +77,7 @@
                     </div>
                 </div>
 
-                @include('contents.admin.award_winners.partials._podium', ['award' => $award, 'winners' => $winners, 'totalPublicVotes' => $totalPublicVotes, 'totalJudges' => $totalJudges, 'compact' => false])
+                @include('contents.admin.award_winners.partials._podium', ['award' => $award, 'winners' => $winners, 'totalPublicVotes' => $totalPublicVotes, 'totalJudges' => $totalJudges, 'demotions' => $demotions, 'compact' => false])
             </div>
         </div>
     </div>
@@ -86,4 +86,28 @@
 
 @section('scripts')
 @include('contents.admin.award_winners.partials._podium_scripts')
+
+@if(Session::has('success'))
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
+@if($errors->any())
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.error("{{ $errors->first() }}");
+</script>
+@endif
 @endsection

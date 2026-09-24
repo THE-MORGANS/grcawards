@@ -25,4 +25,27 @@ function exportWinnersPodium(captureId, filename, btn) {
         alert('Could not generate PDF. Please try the Print option instead.');
     });
 }
+
+// A page can show several podiums at once (sector overview), each with its
+// own demote modal (id'd per award to avoid collisions) — this handler is
+// registered once and, on every trigger click, populates whichever modal
+// that specific trigger points to via its data-bs-target, rather than
+// relying on a single global element id.
+$(document).ready(function ($) {
+    $(document).on('click', '[data-action="demote"]', function () {
+        var target = $($(this).data('bs-target'));
+        target.find('[data-field="nominee-id"]').val($(this).data('nominee-id'));
+        target.find('[data-field="nominee-name"]').text($(this).data('nominee-name'));
+    });
+
+    // Loading state on the confirm-demotion submit — a full page redirect
+    // follows, so the button just needs to stay disabled/spinning until
+    // then rather than ever being reset.
+    $(document).on('submit', '.wn-demote-confirm-form', function () {
+        var btn = $(this).find('button[type="submit"]');
+        btn.prop('disabled', true);
+        btn.find('.wn-btn-label').text('Demoting...');
+        btn.prepend('<i class="mdi mdi-loading mdi-spin me-1"></i>');
+    });
+});
 </script>

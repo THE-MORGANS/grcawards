@@ -124,11 +124,18 @@
                                                 <h5 class="award-card-title">{{$award->name}}</h5>
                                             </div>
 
+                                            <div class="award-card-actions text-center" style="display:none;">
+                                                <a href="{{ route('admin.winners.show', ['award_program' => $award_program, 'award_id' => $award->hashid]) }}" class="btn btn-gold btn-sm">
+                                                    <i class="mdi mdi-arrow-expand"></i> View Full Details
+                                                </a>
+                                            </div>
+
                                             @include('contents.admin.award_winners.partials._podium', [
                                                 'award' => $award,
                                                 'winners' => $awardData['winners'],
                                                 'totalPublicVotes' => $awardData['total_public_votes'],
                                                 'totalJudges' => $awardData['total_judges'],
+                                                'demotions' => $awardData['demotions'],
                                                 'compact' => true,
                                             ])
                                         </div>
@@ -154,4 +161,28 @@
 
 @section('scripts')
 @include('contents.admin.award_winners.partials._podium_scripts')
+
+@if(Session::has('success'))
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
+@if($errors->any())
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.error("{{ $errors->first() }}");
+</script>
+@endif
 @endsection

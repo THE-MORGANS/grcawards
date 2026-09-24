@@ -125,6 +125,8 @@ Route::prefix('admin')->group(function () {
             Route::prefix('winners')->group(function () {
                 Route::get('', [AwardWinnerController::class, 'categories'])->name('admin.winners');
                 Route::get('award/{award_id}', [AwardWinnerController::class, 'winners'])->name('admin.winners.show');
+                Route::post('award/{award_id}/demote', [AwardWinnerController::class, 'demote'])->name('admin.winners.demote');
+                Route::delete('award/{award_id}/demote/{demotion}', [AwardWinnerController::class, 'undoDemote'])->name('admin.winners.demote.undo');
                 Route::get('{category_id}', [AwardWinnerController::class, 'sectorsAwards'])->name('admin.winners.sectors');
             });
 

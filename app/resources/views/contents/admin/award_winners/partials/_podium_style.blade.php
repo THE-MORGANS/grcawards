@@ -82,6 +82,22 @@
 
     .wn-capture { background: #f7f8fc; border-radius: 16px; padding: 1px; }
 
+    /* Inside an award-card (sector overview list), the podium is already
+       nested in a bordered white card — its own card chrome (border,
+       background, .wn-capture's grey backdrop) just stacks a second and
+       third box on top of the first with almost no gap between them,
+       reading as one over-cluttered edge rather than three cards. Drop
+       the inner chrome there and let .award-card be the only boundary. */
+    .award-card .wn-capture { background: none; padding: 0; border-radius: 0; }
+    .award-card .wn-podium-wrap.is-compact {
+        background: none;
+        border: none;
+        border-radius: 0;
+        padding: 18px 0 0;
+        margin-top: 4px;
+    }
+    .award-card .wn-podium-wrap.is-compact::before { left: 0; right: 0; border-radius: 3px; }
+
     .wn-mini-export {
         display: inline-flex; align-items: center; gap: 5px;
         margin-top: 12px; background: none; border: none; padding: 0;
@@ -92,5 +108,30 @@
     @media print {
         .side-nav, .navbar-custom, .footer, .wn-export-row, .wn-mini-export { display: none !important; }
         .content-page { margin-left: 0 !important; }
+    }
+
+    /* Demotion UI */
+    .wn-demote-trigger {
+        font-size: 10.5px; font-weight: 600; color: #c0392b; text-decoration: none;
+        display: inline-flex; align-items: center; gap: 3px; opacity: .7; transition: opacity .15s; margin-top: 4px;
+    }
+    .wn-demote-trigger:hover { opacity: 1; color: #c0392b; text-decoration: underline; }
+
+    .wn-demoted-badge {
+        display: inline-flex; align-items: center; gap: 4px;
+        font-size: 10px; font-weight: 700; color: #b0691f; background: rgba(176,105,31,.1);
+        border-radius: 20px; padding: 3px 10px; margin: 4px 0 0; cursor: help;
+    }
+
+    .wn-demotion-history { margin-top: 26px; border-top: 1px solid #eef2f7; padding-top: 18px; }
+    .wn-demotion-history h6 { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #98a6ad; margin-bottom: 12px; }
+    .wn-demotion-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px dashed #eef2f7; }
+    .wn-demotion-row:last-child { border-bottom: none; }
+    .wn-demotion-row .nm { font-size: 12.5px; font-weight: 700; color: #313a46; }
+    .wn-demotion-row .meta { font-size: 11px; color: #98a6ad; margin: 2px 0 4px; }
+    .wn-demotion-row .reason { font-size: 12px; color: #6c757d; }
+
+    @media print {
+        .wn-demote-trigger, .wn-demotion-history form { display: none !important; }
     }
 </style>

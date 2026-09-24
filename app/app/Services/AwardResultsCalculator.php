@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Award;
+use App\Models\AwardDemotion;
 use App\Models\JudgesVotes;
 use App\Models\Nominee;
 use App\Models\Vote;
@@ -72,10 +73,70 @@ class AwardResultsCalculator
             ];
         })->sortByDesc('overall')->values();
 
+        [$results, $demotions] = static::applyDemotions($results, $award, $connection);
+
         return [
             'results' => $results,
             'total_public_votes' => $totalPublicVotes,
             'total_judges' => $judgesVotes->flatten()->pluck('judge_id')->unique()->count(),
+            'demotions' => $demotions,
         ];
+    }
+
+    /**
+     * Admin demotions are an append-only log, not a stored position — every
+     * demotion just swaps a nominee with whoever is directly below them at
+     * that moment, in the order the demotions were recorded. Replaying them
+     * on top of the natural (score) ranking on every computation is what
+     * makes "demote 1st" cascade correctly (2nd becomes 1st) and keeps
+     * everything self-consistent even as scores keep changing.
+     */
+    private static function applyDemotions($results, Award $award, $connection)
+    {
+        $demotions = AwardDemotion::on($connection)
+            ->where('award_id', $award->id)
+            ->with(['admin', 'nominee'])
+            ->orderBy('id')
+            ->get();
+
+        $ranked = $results->values()->map(function ($row, $i) {
+            $row['natural_rank'] = $i + 1;
+            return $row;
+        })->all();
+
+        foreach ($demotions as $demotion) {
+            $index = null;
+            foreach ($ranked as $i => $row) {
+                if ($row['nominee_id'] == $demotion->nominee_id) {
+                    $index = $i;
+                    break;
+                }
+            }
+
+            if ($index !== null && isset($ranked[$index + 1])) {
+                [$ranked[$index], $ranked[$index + 1]] = [$ranked[$index + 1], $ranked[$index]];
+            }
+        }
+
+        $latestDemotionByNominee = $demotions->groupBy('nominee_id')->map->last();
+
+        foreach ($ranked as $i => &$row) {
+            $row['final_rank'] = $i + 1;
+            $row['demoted'] = false;
+
+            $latest = $latestDemotionByNominee->get($row['nominee_id']);
+            if ($latest && $row['final_rank'] > $row['natural_rank']) {
+                $row['demoted'] = true;
+                $row['demotion'] = [
+                    'id' => $latest->id,
+                    'reason' => $latest->reason,
+                    'admin_name' => optional($latest->admin)->fullname,
+                    'created_at' => $latest->created_at,
+                ];
+            }
+        }
+        unset($row);
+
+        return [collect($ranked), $demotions];
     }
 }
