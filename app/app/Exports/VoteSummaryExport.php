@@ -3,6 +3,7 @@
 namespace App\Exports;
 
 use App\Exports\Sheets\VoteSummaryCategorySheet;
+use App\Exports\Sheets\VoteSummaryDemotionsSheet;
 use App\Exports\Sheets\VoteSummaryOverviewSheet;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
@@ -20,6 +21,7 @@ class VoteSummaryExport implements WithMultipleSheets
         return [
             new VoteSummaryOverviewSheet($this->data),
             new VoteSummaryCategorySheet($this->data['categoryBreakdown']),
+            new VoteSummaryDemotionsSheet($this->data['demotions']),
         ];
     }
 }

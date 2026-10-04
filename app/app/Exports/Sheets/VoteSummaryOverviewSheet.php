@@ -24,6 +24,7 @@ class VoteSummaryOverviewSheet implements FromArray, WithHeadings, WithStyles, W
         $voterTurnout = $d['votersCount'] > 0 ? round(($d['votersWhoVoted'] / $d['votersCount']) * 100, 1) : 0;
 
         return [
+            ['Region', ($d['region'] ?? 'africa') === 'europe' ? 'Europe' : 'Africa'],
             ['Award Program', $d['awardProgram']->name ?? 'N/A'],
             ['Year', $d['awardProgram']->year ?? 'N/A'],
             ['Report Generated', now()->format('d M Y, h:i A')],
@@ -42,6 +43,7 @@ class VoteSummaryOverviewSheet implements FromArray, WithHeadings, WithStyles, W
             ['Categories', $d['categoriesCount']],
             ['Sectors', $d['sectorsCount']],
             ['Awards', $d['awardsCount']],
+            ['Demotions', $d['demotionsCount'] ?? 0],
             [''],
             ['Scoring Formula', "Overall Score = (Judges' Average / 10 x 75%) + (Public Vote Share x 25%)"],
         ];
@@ -64,7 +66,7 @@ class VoteSummaryOverviewSheet implements FromArray, WithHeadings, WithStyles, W
 
         return [
             1 => ['font' => ['bold' => true, 'size' => 14]],
-            5 => ['font' => ['bold' => true]],
+            7 => ['font' => ['bold' => true]],
         ];
     }
 }

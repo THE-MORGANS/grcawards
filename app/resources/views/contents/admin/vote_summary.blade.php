@@ -5,7 +5,7 @@
 @section('style')
 <link href="{{asset('assets/css/dashboard_redesign.css')}}" rel="stylesheet" type="text/css" />
 <style>
-    .vs-wrapper { padding: 0 0 2rem; animation: fadeIn .5s ease-out; }
+    .vs-wrapper { padding: 1.5rem 0 2rem; animation: fadeIn .5s ease-out; }
 
     .vs-hero {
         background: linear-gradient(135deg, #1e2a5e 0%, #4b3f8f 50%, #764ba2 100%);
@@ -50,6 +50,19 @@
     .vs-export-btn:hover { transform: translateY(-2px); color: #4b3f8f; box-shadow: 0 8px 20px rgba(0,0,0,.2); }
     .vs-export-btn-pdf { background: #ea4c7a; color: #fff; }
     .vs-export-btn-pdf:hover { color: #fff; }
+
+    .vs-region-tabs { display: inline-flex; gap: .3rem; background: #fff; border: 1px solid #eef0f7; border-radius: 30px; padding: .3rem; margin-bottom: 1.25rem; box-shadow: 0 1px 3px rgba(20,20,50,.05); }
+    .vs-region-tab {
+        border: none; background: transparent; color: #4a5268; font-size: .82rem; font-weight: 700;
+        padding: .5rem 1.3rem; border-radius: 30px; text-decoration: none; transition: all .15s ease;
+        cursor: pointer; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .vs-region-tab:hover { background: #f1f1fa; color: #202a44; text-decoration: none; }
+    .vs-region-tab.active { background: linear-gradient(135deg, #4b3f8f, #764ba2); color: #fff; box-shadow: 0 4px 10px rgba(75,63,143,.3); }
+    .vs-region-tab.active:hover { color: #fff; }
+
+    .vs-region-empty { background: #fff; border: 1px solid #eef0f7; border-radius: 18px; padding: 3rem 1.5rem; text-align: center; color: #8891a5; margin-bottom: 1.75rem; }
+    .vs-region-empty i { font-size: 2.2rem; display: block; margin-bottom: .6rem; opacity: .5; }
 
     .vs-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1.1rem; margin-bottom: 1.75rem; }
     .vs-kpi {
@@ -121,6 +134,9 @@
     .vs-share-bar-fill { height: 100%; border-radius: 30px; background: linear-gradient(90deg, #727cf5, #6a3ce8); }
     .vs-empty { text-align: center; padding: 3rem 1rem; color: #a3abbd; }
     .vs-empty i { font-size: 2.2rem; display: block; margin-bottom: .6rem; opacity: .5; }
+
+    /* Demotion activity */
+    .vs-demotion-reason { color: #6c7488; max-width: 320px; display: block; }
 </style>
 @endsection
 
@@ -133,26 +149,44 @@
 
 <div class="vs-wrapper">
 
+    <div class="vs-region-tabs" role="tablist">
+        <a href="{{ route('admin.vote_summary', $award_program) }}?region=africa" class="vs-region-tab {{ $region === 'africa' ? 'active' : '' }}" role="tab" aria-selected="{{ $region === 'africa' ? 'true' : 'false' }}">
+            Africa
+        </a>
+        <a href="{{ route('admin.vote_summary', $award_program) }}?region=europe" class="vs-region-tab {{ $region === 'europe' ? 'active' : '' }}" role="tab" aria-selected="{{ $region === 'europe' ? 'true' : 'false' }}">
+            Europe
+        </a>
+    </div>
+
     <div class="vs-hero">
         <div class="vs-hero-content">
             <div class="vs-hero-title">Vote Summary Report</div>
             <p class="vs-hero-sub">{{ $awardProgram->name ?? 'Award Program' }} &middot; {{ $awardProgram->year ?? '' }}</p>
             <div class="vs-hero-chips">
+                <span class="vs-chip"><i class="mdi mdi-earth"></i> {{ $region === 'europe' ? 'Europe' : 'Africa' }}</span>
                 <span class="vs-chip"><i class="mdi mdi-shape-outline"></i> {{ $categoriesCount }} Categories</span>
                 <span class="vs-chip"><i class="mdi mdi-layers-outline"></i> {{ $sectorsCount }} Sectors</span>
                 <span class="vs-chip"><i class="mdi mdi-trophy-outline"></i> {{ $awardsCount }} Awards</span>
+                <span class="vs-chip"><i class="mdi mdi-arrow-down-bold-circle-outline"></i> {{ $demotionsCount }} {{ \Illuminate\Support\Str::plural('Demotion', $demotionsCount) }}</span>
                 <span class="vs-chip"><i class="mdi mdi-clock-outline"></i> Generated {{ now()->format('d M Y, h:i A') }}</span>
             </div>
         </div>
         <div class="vs-export-group">
-            <a href="{{ route('admin.vote_summary.pdf', $award_program) }}" class="vs-export-btn vs-export-btn-pdf">
+            <a href="{{ route('admin.vote_summary.pdf', $award_program) }}?region={{ $region }}" class="vs-export-btn vs-export-btn-pdf">
                 <i class="mdi mdi-file-pdf-box"></i> Export PDF
             </a>
-            <a href="{{ route('admin.vote_summary.export', $award_program) }}" class="vs-export-btn">
+            <a href="{{ route('admin.vote_summary.export', $award_program) }}?region={{ $region }}" class="vs-export-btn">
                 <i class="mdi mdi-file-excel-outline"></i> Export Excel
             </a>
         </div>
     </div>
+
+    @if(!$awardProgram)
+    <div class="vs-region-empty">
+        <i class="mdi mdi-database-search-outline"></i>
+        No active award program found for {{ $region === 'europe' ? 'Europe' : 'Africa' }} yet. Results will appear here once one is available.
+    </div>
+    @endif
 
     <!-- KPI Grid -->
     <div class="vs-kpi-grid">
@@ -305,6 +339,44 @@
                                 </div>
                             </div>
                         </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        @endif
+    </div>
+
+    <!-- Demotion activity -->
+    <div class="vs-table-wrap mt-4">
+        <div class="vs-card-title mb-1">Demotion Activity</div>
+        <div class="vs-card-desc">Nominees whose podium position was overridden by an admin, and why</div>
+
+        @if($demotions->isEmpty())
+        <div class="vs-empty">
+            <i class="mdi mdi-check-decagram-outline"></i>
+            No demotions recorded for this award program.
+        </div>
+        @else
+        <div class="table-responsive">
+            <table class="vs-cat-table">
+                <thead>
+                    <tr>
+                        <th>Nominee</th>
+                        <th>Award</th>
+                        <th>Reason</th>
+                        <th>Demoted By</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($demotions as $d)
+                    <tr>
+                        <td class="vs-cat-name">{{ optional($d->nominee)->name ?? 'Unknown nominee' }}</td>
+                        <td>{{ optional($d->award)->name ?? '—' }}</td>
+                        <td><span class="vs-demotion-reason">{{ $d->reason }}</span></td>
+                        <td>{{ optional($d->admin)->fullname ?? 'an admin' }}</td>
+                        <td>{{ $d->created_at->format('d M Y, h:i A') }}</td>
                     </tr>
                     @endforeach
                 </tbody>

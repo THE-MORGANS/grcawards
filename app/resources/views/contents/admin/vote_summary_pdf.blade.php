@@ -76,6 +76,16 @@
     .share-track { background-color: #eef0f7; border-radius: 6px; height: 7px; width: 100px; }
     .share-fill { background-color: #6a5ec7; height: 7px; border-radius: 6px; }
 
+    /* Demotion table */
+    table.demo-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+    table.demo-table th {
+        background-color: #f7f7fb; text-align: left; font-size: 8.5px; text-transform: uppercase; letter-spacing: .03em;
+        color: #8891a5; padding: 6px 8px; border-bottom: 1.5px solid #ececf6;
+    }
+    table.demo-table td { padding: 7px 8px; font-size: 9px; border-bottom: 1px solid #f1f1f7; color: #333c53; }
+    table.demo-table tr { page-break-inside: avoid; }
+    .demo-name { font-weight: 700; color: #202a44; }
+
     .footer-note { margin-top: 18px; font-size: 8px; color: #b3b8c6; text-align: center; }
 </style>
 </head>
@@ -85,8 +95,10 @@
         <p class="header-title">Vote Summary Report</p>
         <p class="header-sub">{{ $awardProgram->name ?? 'Award Program' }} &middot; {{ $awardProgram->year ?? '' }}</p>
         <p class="header-meta">
+            Region: {{ $region === 'europe' ? 'Europe' : 'Africa' }} &nbsp;&bull;&nbsp;
             {{ $categoriesCount }} Categories &nbsp;&bull;&nbsp; {{ $sectorsCount }} Sectors &nbsp;&bull;&nbsp;
-            {{ $awardsCount }} Awards &nbsp;&bull;&nbsp; Generated {{ now()->format('d M Y, h:i A') }}
+            {{ $awardsCount }} Awards &nbsp;&bull;&nbsp; {{ $demotionsCount }} {{ \Illuminate\Support\Str::plural('Demotion', $demotionsCount) }} &nbsp;&bull;&nbsp;
+            Generated {{ now()->format('d M Y, h:i A') }}
         </p>
     </div>
 
@@ -187,6 +199,36 @@
                 <td>
                     <div class="share-track"><div class="share-fill" style="width: {{ round(($row['public_votes'] / $maxCatVotes) * 100) }}%;"></div></div>
                 </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+    @endif
+
+    <div class="section-title">Demotion Activity</div>
+    <div class="section-desc">Nominees whose podium position was overridden by an admin, and why</div>
+
+    @if($demotions->isEmpty())
+        <p style="color:#a3abbd;">No demotions recorded for this award program.</p>
+    @else
+    <table class="demo-table">
+        <thead>
+            <tr>
+                <th>Nominee</th>
+                <th>Award</th>
+                <th>Reason</th>
+                <th>Demoted By</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($demotions as $d)
+            <tr>
+                <td class="demo-name">{{ optional($d->nominee)->name ?? 'Unknown nominee' }}</td>
+                <td>{{ optional($d->award)->name ?? '—' }}</td>
+                <td>{{ $d->reason }}</td>
+                <td>{{ optional($d->admin)->fullname ?? 'an admin' }}</td>
+                <td>{{ $d->created_at->format('d M Y, h:i A') }}</td>
             </tr>
             @endforeach
         </tbody>
