@@ -141,7 +141,7 @@ class VoteSummaryController extends Controller
         $awardsCount = $awardIds->count();
 
         $categoryBreakdown = $this->categoryBreakdown($awpId, $connection);
-        $votesTrend = $this->votesTrend($awardIds, $connection);
+        $votingWindow = $this->votingWindow($awardIds, $connection, $publicVotesCount);
         $demotions = AwardDemotion::on($connection)
             ->whereIn('award_id', $awardIds)
             ->with(['nominee', 'award', 'admin'])
@@ -165,7 +165,7 @@ class VoteSummaryController extends Controller
             'sectorsCount' => $sectorsCount,
             'awardsCount' => $awardsCount,
             'categoryBreakdown' => $categoryBreakdown,
-            'votesTrend' => $votesTrend,
+            'votingWindow' => $votingWindow,
             'demotions' => $demotions,
             'demotionsCount' => $demotions->count(),
         ];
@@ -195,7 +195,7 @@ class VoteSummaryController extends Controller
             'sectorsCount' => 0,
             'awardsCount' => 0,
             'categoryBreakdown' => collect(),
-            'votesTrend' => $this->votesTrend(collect(), null),
+            'votingWindow' => $this->votingWindow(collect(), null, 0),
             'demotions' => collect(),
             'demotionsCount' => 0,
         ];
@@ -218,26 +218,31 @@ class VoteSummaryController extends Controller
         })->sortByDesc('public_votes')->values();
     }
 
-    private function votesTrend($awardIds, $connection)
+    /**
+     * Voting has a hard close date — a "last 14 days" trend chart anchored
+     * on today() would just show 14 days of silence once that date has
+     * passed. A fixed historical window (when voting actually opened and
+     * closed, and how many votes came in per day on average) stays true
+     * forever instead of going stale the moment voting ends.
+     */
+    private function votingWindow($awardIds, $connection, $publicVotesCount)
     {
-        $start = now()->subDays(13)->startOfDay();
+        $first = Vote::on($connection)->whereIn('award_id', $awardIds)->min('created_at');
+        $last = Vote::on($connection)->whereIn('award_id', $awardIds)->max('created_at');
 
-        $raw = Vote::on($connection)->whereIn('award_id', $awardIds)
-            ->where('created_at', '>=', $start)
-            ->selectRaw('DATE(created_at) as d, COUNT(*) as c')
-            ->groupBy('d')
-            ->pluck('c', 'd');
-
-        $trend = [];
-        for ($i = 13; $i >= 0; $i--) {
-            $date = now()->subDays($i);
-            $key = $date->format('Y-m-d');
-            $trend[] = [
-                'label' => $date->format('d M'),
-                'count' => (int) ($raw[$key] ?? 0),
-            ];
+        if (!$first || !$last) {
+            return ['opened' => null, 'closed' => null, 'days' => 0, 'avgPerDay' => 0];
         }
 
-        return $trend;
+        $opened = \Illuminate\Support\Carbon::parse($first);
+        $closed = \Illuminate\Support\Carbon::parse($last);
+        $days = max(1, $opened->startOfDay()->diffInDays($closed->copy()->startOfDay()) + 1);
+
+        return [
+            'opened' => $opened,
+            'closed' => $closed,
+            'days' => $days,
+            'avgPerDay' => round($publicVotesCount / $days, 1),
+        ];
     }
 }

@@ -96,6 +96,11 @@
     .vs-row-formula { grid-template-columns: 1fr 1fr; }
     @media (max-width: 992px) { .vs-row-trend, .vs-row-formula { grid-template-columns: 1fr; } }
 
+    .vs-window-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.1rem; height: 100%; align-content: center; }
+    .vs-window-stat { background: #f7f8fc; border-radius: 12px; padding: 1rem 1.1rem; }
+    .vs-window-lbl { color: #8891a5; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .3rem; }
+    .vs-window-val { color: #202a44; font-size: 1.25rem; font-weight: 800; }
+
     .vs-gauge-pair { display: flex; flex-direction: column; gap: 1.25rem; height: 100%; justify-content: center; }
     .vs-gauge-item { display: flex; align-items: center; gap: 1rem; }
     .vs-gauge-chart { width: 110px; min-width: 110px; }
@@ -234,9 +239,33 @@
     <!-- Trend + Turnout -->
     <div class="vs-row vs-row-trend">
         <div class="vs-card">
-            <div class="vs-card-title">Public Voting Activity</div>
-            <div class="vs-card-desc">Votes cast per day over the last 14 days</div>
-            <div id="vs-trend-chart"></div>
+            <div class="vs-card-title">Voting Window</div>
+            <div class="vs-card-desc">When public voting was open for this program</div>
+            @if($votingWindow['opened'])
+            <div class="vs-window-stats">
+                <div class="vs-window-stat">
+                    <div class="vs-window-lbl">Opened</div>
+                    <div class="vs-window-val">{{ $votingWindow['opened']->format('d M Y') }}</div>
+                </div>
+                <div class="vs-window-stat">
+                    <div class="vs-window-lbl">Closed</div>
+                    <div class="vs-window-val">{{ $votingWindow['closed']->format('d M Y') }}</div>
+                </div>
+                <div class="vs-window-stat">
+                    <div class="vs-window-lbl">Duration</div>
+                    <div class="vs-window-val">{{ $votingWindow['days'] }} {{ \Illuminate\Support\Str::plural('day', $votingWindow['days']) }}</div>
+                </div>
+                <div class="vs-window-stat">
+                    <div class="vs-window-lbl">Avg. Votes / Day</div>
+                    <div class="vs-window-val">{{ number_format($votingWindow['avgPerDay'], 1) }}</div>
+                </div>
+            </div>
+            @else
+            <div class="vs-empty">
+                <i class="mdi mdi-calendar-remove-outline"></i>
+                No public votes recorded yet.
+            </div>
+            @endif
         </div>
         <div class="vs-card">
             <div class="vs-card-title">Participation</div>
@@ -392,24 +421,8 @@
 <script src="{{ asset('assets/js/vendor/apexcharts.min.js') }}"></script>
 <script>
     (function () {
-        var trendLabels = @json(collect($votesTrend)->pluck('label'));
-        var trendData = @json(collect($votesTrend)->pluck('count'));
         var catLabels = @json($categoryBreakdown->pluck('name'));
         var catData = @json($categoryBreakdown->pluck('public_votes'));
-
-        // Voting activity trend
-        new ApexCharts(document.querySelector('#vs-trend-chart'), {
-            chart: { type: 'area', height: 260, toolbar: { show: false }, fontFamily: 'inherit' },
-            series: [{ name: 'Votes', data: trendData }],
-            xaxis: { categories: trendLabels, labels: { style: { fontSize: '11px' } } },
-            yaxis: { labels: { formatter: function (v) { return Math.round(v); } } },
-            dataLabels: { enabled: false },
-            stroke: { curve: 'smooth', width: 2.5 },
-            colors: ['#727cf5'],
-            fill: { type: 'gradient', gradient: { shadeIntensity: 1, opacityFrom: .45, opacityTo: .05, stops: [0, 90, 100] } },
-            grid: { borderColor: '#f1f3fa', strokeDashArray: 4 },
-            tooltip: { theme: 'light' },
-        }).render();
 
         // Category bar chart
         new ApexCharts(document.querySelector('#vs-category-chart'), {
