@@ -45,8 +45,16 @@
             <div class="ticket-summary-name">{{ $ticket['name'] }}</div>
             <div class="ticket-summary-desc">{{ $ticket['description'] }}</div>
           </div>
-          <div class="ticket-summary-price">{{ $currencyLabel }} {{ number_format($ticket['price'], 0) }}<span
-              style="font-size:11px;color:var(--muted)"> / ticket</span></div>
+          <div style="text-align:right">
+            @if(!empty($ticket['original_price']))
+            <div style="font-size:12px;color:var(--muted);text-decoration:line-through">{{ $currencyLabel }} {{ number_format($ticket['original_price'], 0) }}</div>
+            @endif
+            <div class="ticket-summary-price">{{ $currencyLabel }} {{ number_format($ticket['price'], 0) }}<span
+                style="font-size:11px;color:var(--muted)"> / ticket</span></div>
+            @if(!empty($ticket['original_price']))
+            <div style="font-size:11px;color:var(--crimson);font-weight:700">Early Bird — ends 31 Oct 2026</div>
+            @endif
+          </div>
         </div>
 
         <div class="field-row">
@@ -152,11 +160,7 @@
 
     let quantity = 1;
     let selectedPaymentMethod = 'stripe';
-    let availableSlots = {
-      {
-        $remaining_slots
-      }
-    };
+    let availableSlots = {{ $remaining_slots }};
 
     function formatMoney(amount) {
       return currencyLabel + ' ' + amount.toLocaleString('en-US');

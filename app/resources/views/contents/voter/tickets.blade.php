@@ -31,8 +31,18 @@
         </div> -->
         <div class="price-grid" style="grid-template-columns:1fr;max-width:400px;margin:0 auto">
           <div class="price feat" style="text-align:center">
+            @if($promoActive)
+            <span class="flag">Early Bird — ends 31 Oct 2026</span>
+            @endif
             <h3>Full Delegate Pass</h3>
+            @if($promoActive)
+            <div class="amt" style="margin-bottom:0;">
+              <small style="text-decoration:line-through;color:#8b93b0;">USD 250 / KES 32,500</small>
+            </div>
+            <div class="amt" style="margin-top:0;"><small>USD</small> 115 <small style="color:#8b93b0">/ KES 15,000</small></div>
+            @else
             <div class="amt"><small>USD</small> 250 <small style="color:#8b93b0">/ KES 32,500</small></div>
+            @endif
             <div class="sub">Global Summit 09:00–15:00 + Global Awards Gala 18:00–21:00</div>
             <ul style="text-align:left">
               <li>Full Summit programme</li>

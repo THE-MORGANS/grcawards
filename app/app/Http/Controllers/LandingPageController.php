@@ -355,9 +355,19 @@ class LandingPageController extends Controller
         return view('contents.voter.speakers_nairobi_2026');
     }
 
+    /**
+     * Early bird promo: USD 115 / KES 15,000 instead of the standard USD 250
+     * / KES 32,500, until 31 Oct 2026 (inclusive). Date-gated here rather than
+     * in the view so the page reverts to standard pricing on its own once the
+     * promo ends — no follow-up edit needed.
+     */
     public function showTickets()
     {
-        return view('contents.voter.tickets');
+        $promoEndsAt = \Illuminate\Support\Carbon::create(2026, 10, 31, 23, 59, 59);
+
+        return view('contents.voter.tickets', [
+            'promoActive' => now()->lte($promoEndsAt),
+        ]);
     }
 
     public function showPastWinners()

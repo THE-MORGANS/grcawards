@@ -80,9 +80,29 @@ class AwardsSummitPaymentController extends Controller
         ],
     ];
 
+    /**
+     * Early bird promo on the Africa Full Delegate Pass — USD 115 (KES
+     * 15,000 equivalent) instead of USD 250, until 31 Oct 2026 inclusive.
+     * Applied here, upstream of both showPayment() and initiatePayment(), so
+     * the price shown on the payment page and the amount actually charged by
+     * Stripe can never drift apart — same price everywhere, same promo
+     * window as the /tickets page (LandingPageController::showTickets).
+     */
     private function regionTickets($region)
     {
-        return self::$tickets[$region] ?? null;
+        $tickets = self::$tickets[$region] ?? null;
+
+        if ($tickets && $region === 'africa' && isset($tickets['full']) && $this->fullPassPromoActive()) {
+            $tickets['full']['original_price'] = $tickets['full']['price'];
+            $tickets['full']['price'] = 115;
+        }
+
+        return $tickets;
+    }
+
+    private function fullPassPromoActive()
+    {
+        return now()->lte(\Illuminate\Support\Carbon::create(2026, 10, 31, 23, 59, 59));
     }
 
     public function showPayment(Request $request, $ticket)
