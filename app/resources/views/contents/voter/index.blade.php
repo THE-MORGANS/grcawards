@@ -43,6 +43,21 @@
     </div>
   </header>
 
+  <section class="band navy">
+    <div class="wrap center">
+      <div class="sec-eyebrow">7th Annual · Global Edition</div>
+      <h2 class="sec-title">The official <span class="ac">event banner.</span></h2>
+      <div style="margin:28px auto 0;max-width:420px">
+        <img src="{{ asset('assets/images/event-banner-nairobi-2026.png') }}"
+          alt="GRC &amp; Financial Crime Prevention Global Awards &amp; Summit — Nairobi, 20 November 2026"
+          style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(201,162,75,.4);box-shadow:0 24px 60px rgba(0,0,0,.45)">
+      </div>
+      <div class="cta-row" style="justify-content:center;margin-top:28px">
+        <a class="btn btn-gold" href="{{ route('show_tickets') }}">Reserve Your Pass →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="band white" id="venue">
     <div class="wrap">
       <div class="center">
