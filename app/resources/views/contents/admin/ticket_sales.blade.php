@@ -105,7 +105,7 @@
             <input type="text" name="search" class="form-control form-control-sm" placeholder="Search name, email, reg. / ticket no."
                 value="{{ $filters['search'] }}" style="max-width:260px">
 
-            <select name="region" class="form-select form-select-sm" onchange="this.form.submit()">
+            <select name="region" class="form-select form-select-sm" onchange="this.form.submit()" style="display:none">
                 <option value="">All regions</option>
                 <option value="africa" @selected($filters['region'] === 'africa')>Africa</option>
                 <option value="europe" @selected($filters['region'] === 'europe')>Europe</option>
