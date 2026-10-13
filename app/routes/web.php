@@ -130,6 +130,11 @@ Route::prefix('admin')->group(function () {
                 Route::get('{category_id}', [AwardWinnerController::class, 'sectorsAwards'])->name('admin.winners.sectors');
             });
 
+            Route::prefix('ticket-sales')->group(function () {
+                Route::get('', [AwardsSummitPaymentController::class, 'adminIndex'])->name('admin.ticket_sales');
+                Route::get('export', [AwardsSummitPaymentController::class, 'adminExport'])->name('admin.ticket_sales.export');
+            });
+
             require __DIR__ . '/judges.php';
         });
     });

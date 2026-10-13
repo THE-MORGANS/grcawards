@@ -174,6 +174,13 @@
                 </div>
             </li>
 
+            <li class="side-nav-item">
+                <a href="{{route('admin.ticket_sales', request()->segment(3))}}" class="side-nav-link">
+                    <i class="mdi mdi-ticket-confirmation-outline"></i>
+                    <span> Ticket Sales </span>
+                </a>
+            </li>
+
             @endif
 
             @if (Auth::guard('admin')->user()->role_id == 3)

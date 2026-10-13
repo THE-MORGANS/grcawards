@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AwardsSummitRegistration;
+use App\Exports\TicketSalesExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -12,6 +13,7 @@ use App\Mail\AwardsSummitPaymentConfirmation;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
 use Illuminate\Validation\Rule;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AwardsSummitPaymentController extends Controller
 {
@@ -333,5 +335,78 @@ class AwardsSummitPaymentController extends Controller
             ->where('region', $region)
             ->sum('quantity');
         return max(0, self::MAX_SLOTS - $confirmedSlots);
+    }
+
+    /**
+     * Admin: list ticket purchase records (every attempt, not just paid ones,
+     * so pending/failed Stripe sessions are visible too). Not scoped to an
+     * award program — registrations have no award_program_id, they're keyed
+     * by region only — the {award_program} route segment is carried along
+     * purely so the page sits inside the usual admin nav/breadcrumb context.
+     */
+    public function adminIndex(Request $request, $award_program)
+    {
+        $registrations = $this->filteredRegistrations($request)
+            ->orderByDesc('created_at')
+            ->paginate(25)
+            ->withQueryString();
+
+        $stats = [
+            'total' => $this->filteredRegistrations($request)->count(),
+            'paid' => $this->filteredRegistrations($request)->where('payment_status', 'paid')->count(),
+            'pending' => $this->filteredRegistrations($request)->where('payment_status', 'pending')->count(),
+            'failed' => $this->filteredRegistrations($request)->where('payment_status', 'failed')->count(),
+            'seatsSold' => $this->filteredRegistrations($request)->where('payment_status', 'paid')->sum('quantity'),
+            'revenue' => $this->filteredRegistrations($request)->where('payment_status', 'paid')
+                ->selectRaw('currency, SUM(amount) as total')
+                ->groupBy('currency')
+                ->pluck('total', 'currency'),
+        ];
+
+        $ticketTypes = AwardsSummitRegistration::select('ticket_type', 'ticket_name')
+            ->distinct()
+            ->orderBy('ticket_name')
+            ->get();
+
+        return view('contents.admin.ticket_sales', [
+            'registrations' => $registrations,
+            'stats' => $stats,
+            'ticketTypes' => $ticketTypes,
+            'award_program' => $award_program,
+            'filters' => [
+                'region' => $request->input('region'),
+                'status' => $request->input('status'),
+                'ticket_type' => $request->input('ticket_type'),
+                'search' => $request->input('search'),
+            ],
+        ]);
+    }
+
+    public function adminExport(Request $request, $award_program)
+    {
+        $registrations = $this->filteredRegistrations($request)->orderByDesc('created_at')->get();
+
+        return Excel::download(
+            new TicketSalesExport($registrations),
+            'ticket_sales_' . date('Y-m-d_His') . '.xlsx'
+        );
+    }
+
+    private function filteredRegistrations(Request $request)
+    {
+        $search = $request->input('search');
+
+        return AwardsSummitRegistration::query()
+            ->when($request->filled('region'), fn ($q) => $q->where('region', $request->input('region')))
+            ->when($request->filled('status'), fn ($q) => $q->where('payment_status', $request->input('status')))
+            ->when($request->filled('ticket_type'), fn ($q) => $q->where('ticket_type', $request->input('ticket_type')))
+            ->when($request->filled('search'), function ($q) use ($search) {
+                $q->where(function ($q2) use ($search) {
+                    $q2->where('name', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%")
+                        ->orWhere('registration_id', 'like', "%{$search}%")
+                        ->orWhere('ticket_number', 'like', "%{$search}%");
+                });
+            });
     }
 }
