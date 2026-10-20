@@ -1,0 +1,17 @@
+NEW:
+app/config/paypal.php
+app/database/migrations/2026_10_15_120000_add_payment_method_to_awards_summit_registrations_table.php
+app/public/assets/images/tickets-qr-code.jpg
+
+UPDATED:
+app/app/Exports/TicketSalesExport.php
+app/app/Http/Controllers/AwardsSummitPaymentController.php
+app/app/Models/AwardsSummitRegistration.php
+app/composer.json
+app/composer.lock
+app/resources/views/contents/admin/ticket_sales.blade.php
+app/resources/views/contents/voter/awards_summit/payment.blade.php
+app/resources/views/contents/voter/tickets.blade.php
+app/routes/web.php
+
+composer require srmklive/paypal:2.0.20

@@ -22,7 +22,9 @@ class AwardsSummitRegistration extends Model
         'currency',
         'region',
         'payment_status',
+        'payment_method',
         'stripe_session_id',
+        'paypal_order_id',
         'ticket_number',
         'seat_numbers',
     ];

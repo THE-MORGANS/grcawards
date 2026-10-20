@@ -14,6 +14,7 @@ use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
 use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Facades\Excel;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class AwardsSummitPaymentController extends Controller
 {
@@ -186,6 +187,7 @@ class AwardsSummitPaymentController extends Controller
                 'amount' => $amount,
                 'currency' => strtoupper($ticket['currency']),
                 'payment_status' => 'pending',
+                'payment_method' => 'stripe',
                 'region' => $region,
             ]);
 
@@ -222,7 +224,7 @@ class AwardsSummitPaymentController extends Controller
                 'status' => 'success',
                 'checkout_url' => $checkoutSession->url,
             ]);
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             DB::rollBack();
             Log::error(ucfirst($region) . ' Edition Stripe Payment Initiation Error: ' . $e->getMessage());
             return response()->json([
@@ -251,51 +253,11 @@ class AwardsSummitPaymentController extends Controller
             }
 
             if ($session->payment_status === 'paid' && $registration->payment_status !== 'paid') {
-                // Use a transaction with locking to safely assign seat numbers
-                DB::transaction(function () use ($registration) {
-                    // Lock paid registrations to prevent race conditions on seat assignment
-                    // Seat numbers are scoped per edition — each region has its own 200-seat pool
-                    $highestSeat = AwardsSummitRegistration::where('payment_status', 'paid')
-                        ->where('region', $registration->region)
-                        ->whereNotNull('seat_numbers')
-                        ->lockForUpdate()
-                        ->get()
-                        ->flatMap(function ($reg) {
-                            return $reg->seat_numbers ?? [];
-                        })
-                        ->map(function ($seat) {
-                            // Extract the numeric part from "SEAT-001"
-                            return (int) str_replace('SEAT-', '', $seat);
-                        })
-                        ->max();
-
-                    $nextSeatNumber = ($highestSeat ?? 0) + 1;
-
-                    // Generate seat numbers for the quantity purchased
-                    $seatNumbers = [];
-                    for ($i = 0; $i < $registration->quantity; $i++) {
-                        $seatNumbers[] = 'SEAT-' . str_pad($nextSeatNumber + $i, 3, '0', STR_PAD_LEFT);
-                    }
-
-                    $registration->update([
-                        'payment_status' => 'paid',
-                        'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
-                        'seat_numbers' => $seatNumbers,
-                    ]);
-                });
-
-                // Refresh the registration to get the updated data
-                $registration->refresh();
-
-                try {
-                    Mail::to($registration->email)->send(new AwardsSummitPaymentConfirmation($registration));
-                } catch (\Exception $e) {
-                    Log::error(ucfirst($registration->region) . ' Edition Confirmation Email Error: ' . $e->getMessage());
-                }
+                $this->finalizeRegistrationPayment($registration);
             }
 
             return view('contents.voter.awards_summit.success', compact('registration'));
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
             Log::error('Awards Summit Stripe Payment Success Handling Error: ' . $e->getMessage());
             return redirect()->route('landing.index')->with('error', 'Error processing payment confirmation.');
         }
@@ -304,6 +266,208 @@ class AwardsSummitPaymentController extends Controller
     public function paymentCancel()
     {
         return redirect()->route('landing.index')->with('error', 'Payment was cancelled.');
+    }
+
+    /**
+     * PayPal Integration — same redirect-based checkout shape as Stripe:
+     * create an order, send the buyer to PayPal's hosted approval page, then
+     * capture on return. Reuses the Stripe flow's registration record,
+     * validation and slot-check logic; only the gateway call differs.
+     */
+    public function initiatePaypalPayment(Request $request)
+    {
+        $region = $request->input('region', 'africa');
+        $tickets = $this->regionTickets($region);
+
+        if (!$tickets) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Invalid edition selected.',
+            ], 422);
+        }
+
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:50',
+            'organization' => 'nullable|string|max:255',
+            'region' => ['nullable', Rule::in(array_keys(self::$tickets))],
+            'ticket_type' => ['required', 'string', Rule::in(array_keys($tickets))],
+            'quantity' => 'required|integer|min:1|max:20',
+        ]);
+
+        $ticket = $tickets[$data['ticket_type']];
+        $amount = $ticket['price'] * $data['quantity'];
+
+        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
+            ->where('region', $region)
+            ->sum('quantity');
+        $requestedSlots = $data['quantity'];
+
+        if (($confirmedSlots + $requestedSlots) > self::MAX_SLOTS) {
+            $remaining = self::MAX_SLOTS - $confirmedSlots;
+            return response()->json([
+                'status' => 'error',
+                'message' => $remaining > 0
+                    ? "Only {$remaining} seat(s) remaining. You requested {$requestedSlots} ticket(s)."
+                    : 'Sorry, all seats have been sold out.',
+                'remaining' => max(0, $remaining),
+            ], 400);
+        }
+
+        try {
+            DB::beginTransaction();
+
+            $registrationId = 'GRC-' . strtoupper(Str::random(8));
+
+            $registration = AwardsSummitRegistration::create([
+                'registration_id' => $registrationId,
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'phone' => $data['phone'] ?? null,
+                'organization' => $data['organization'] ?? null,
+                'ticket_type' => $data['ticket_type'],
+                'ticket_name' => $ticket['name'],
+                'quantity' => $data['quantity'],
+                'amount' => $amount,
+                'currency' => strtoupper($ticket['currency']),
+                'payment_status' => 'pending',
+                'payment_method' => 'paypal',
+                'region' => $region,
+            ]);
+
+            $provider = new PayPalClient();
+            $provider->getAccessToken();
+
+            $order = $provider->createOrder([
+                'intent' => 'CAPTURE',
+                'application_context' => [
+                    'return_url' => route('awards_summit.payment.paypal.success'),
+                    'cancel_url' => route('awards_summit.payment.paypal.cancel'),
+                    'brand_name' => 'GRC & Financial Crime Prevention Awards & Summit',
+                    'user_action' => 'PAY_NOW',
+                ],
+                'purchase_units' => [[
+                    'reference_id' => $registrationId,
+                    'description' => 'GRC & Financial Crime Prevention Awards & Summit 2026 - ' . $ticket['name'] . ' x' . $data['quantity'],
+                    'amount' => [
+                        'currency_code' => strtoupper($ticket['currency']),
+                        'value' => number_format($amount, 2, '.', ''),
+                    ],
+                ]],
+            ]);
+
+            $approveUrl = collect($order['links'] ?? [])->firstWhere('rel', 'approve')['href'] ?? null;
+
+            if (empty($order['id']) || !$approveUrl) {
+                throw new \Exception('PayPal did not return an order id / approval link: ' . json_encode($order));
+            }
+
+            $registration->update(['paypal_order_id' => $order['id']]);
+
+            DB::commit();
+
+            return response()->json([
+                'status' => 'success',
+                'checkout_url' => $approveUrl,
+            ]);
+        } catch (\Throwable $e) {
+            DB::rollBack();
+            Log::error(ucfirst($region) . ' Edition PayPal Payment Initiation Error: ' . $e->getMessage());
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Failed to initiate payment. Please try again later.',
+            ], 500);
+        }
+    }
+
+    public function paypalPaymentSuccess(Request $request)
+    {
+        $orderId = $request->query('token');
+
+        if (!$orderId) {
+            return redirect()->route('landing.index')->with('error', 'Invalid session.');
+        }
+
+        try {
+            $registration = AwardsSummitRegistration::where('paypal_order_id', $orderId)->first();
+
+            if (!$registration) {
+                return redirect()->route('landing.index')->with('error', 'Registration not found.');
+            }
+
+            if ($registration->payment_status !== 'paid') {
+                $provider = new PayPalClient();
+                $provider->getAccessToken();
+                $capture = $provider->capturePaymentOrder($orderId);
+
+                if (($capture['status'] ?? null) === 'COMPLETED') {
+                    $this->finalizeRegistrationPayment($registration);
+                } else {
+                    Log::error('Awards Summit PayPal Capture Not Completed: ' . json_encode($capture));
+                    return redirect()->route('landing.index')->with('error', 'Payment could not be confirmed. Please contact us if you were charged.');
+                }
+            }
+
+            return view('contents.voter.awards_summit.success', compact('registration'));
+        } catch (\Throwable $e) {
+            Log::error('Awards Summit PayPal Payment Success Handling Error: ' . $e->getMessage());
+            return redirect()->route('landing.index')->with('error', 'Error processing payment confirmation.');
+        }
+    }
+
+    public function paypalPaymentCancel()
+    {
+        return redirect()->route('landing.index')->with('error', 'Payment was cancelled.');
+    }
+
+    /**
+     * Marks a registration paid and assigns seat numbers — shared by both
+     * the Stripe and PayPal success handlers so the seat-locking logic
+     * (and the confirmation email) only exists once.
+     */
+    private function finalizeRegistrationPayment(AwardsSummitRegistration $registration)
+    {
+        DB::transaction(function () use ($registration) {
+            // Lock paid registrations to prevent race conditions on seat assignment
+            // Seat numbers are scoped per edition — each region has its own 200-seat pool
+            $highestSeat = AwardsSummitRegistration::where('payment_status', 'paid')
+                ->where('region', $registration->region)
+                ->whereNotNull('seat_numbers')
+                ->lockForUpdate()
+                ->get()
+                ->flatMap(function ($reg) {
+                    return $reg->seat_numbers ?? [];
+                })
+                ->map(function ($seat) {
+                    // Extract the numeric part from "SEAT-001"
+                    return (int) str_replace('SEAT-', '', $seat);
+                })
+                ->max();
+
+            $nextSeatNumber = ($highestSeat ?? 0) + 1;
+
+            // Generate seat numbers for the quantity purchased
+            $seatNumbers = [];
+            for ($i = 0; $i < $registration->quantity; $i++) {
+                $seatNumbers[] = 'SEAT-' . str_pad($nextSeatNumber + $i, 3, '0', STR_PAD_LEFT);
+            }
+
+            $registration->update([
+                'payment_status' => 'paid',
+                'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
+                'seat_numbers' => $seatNumbers,
+            ]);
+        });
+
+        // Refresh the registration to get the updated data
+        $registration->refresh();
+
+        try {
+            Mail::to($registration->email)->send(new AwardsSummitPaymentConfirmation($registration));
+        } catch (\Exception $e) {
+            Log::error(ucfirst($registration->region) . ' Edition Confirmation Email Error: ' . $e->getMessage());
+        }
     }
 
     /**
@@ -377,6 +541,7 @@ class AwardsSummitPaymentController extends Controller
                 'region' => $request->input('region'),
                 'status' => $request->input('status'),
                 'ticket_type' => $request->input('ticket_type'),
+                'payment_method' => $request->input('payment_method'),
                 'search' => $request->input('search'),
             ],
         ]);
@@ -400,6 +565,7 @@ class AwardsSummitPaymentController extends Controller
             ->when($request->filled('region'), fn ($q) => $q->where('region', $request->input('region')))
             ->when($request->filled('status'), fn ($q) => $q->where('payment_status', $request->input('status')))
             ->when($request->filled('ticket_type'), fn ($q) => $q->where('ticket_type', $request->input('ticket_type')))
+            ->when($request->filled('payment_method'), fn ($q) => $q->where('payment_method', $request->input('payment_method')))
             ->when($request->filled('search'), function ($q) use ($search) {
                 $q->where(function ($q2) use ($search) {
                     $q2->where('name', 'like', "%{$search}%")

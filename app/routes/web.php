@@ -223,6 +223,10 @@ Route::post('awards-summit/payment/initiate', [AwardsSummitPaymentController::cl
 Route::get('awards-summit/reserve/{ticket}', [AwardsSummitPaymentController::class, 'showPayment'])->name('awards_summit.payment');
 Route::get('awards-summit/slots', [AwardsSummitPaymentController::class, 'getRemainingSlots'])->name('awards_summit.slots');
 
+Route::post('awards-summit/payment/paypal/initiate', [AwardsSummitPaymentController::class, 'initiatePaypalPayment'])->name('awards_summit.payment.paypal.initiate');
+Route::get('awards-summit/payment/paypal/success', [AwardsSummitPaymentController::class, 'paypalPaymentSuccess'])->name('awards_summit.payment.paypal.success');
+Route::get('awards-summit/payment/paypal/cancel', [AwardsSummitPaymentController::class, 'paypalPaymentCancel'])->name('awards_summit.payment.paypal.cancel');
+
 Route::get('summit/mid-year-2026', [LandingPageController::class, 'showSummitMidYear2026'])->name('show_summit_mid_year_2026');
 
 Route::get('summit/', [LandingPageController::class, 'showSummit'])->name('show_summit');

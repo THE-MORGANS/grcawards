@@ -104,6 +104,13 @@
           <a class="btn btn-crimson" href="mailto:events@grcfincrimeawards.com?subject=Group%20Booking">Enquire
             →</a>
         </div>
+
+        <div style="margin-top:32px;text-align:center">
+          <p style="color:var(--muted);font-size:13px;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;margin-bottom:14px">
+            Prefer your phone?</p>
+          <img src="{{ asset('assets/images/tickets-qr-code.jpg') }}" alt="QR code to book your GRC &amp; Financial Crime Prevention Awards &amp; Summit ticket"
+            style="display:block;width:100%;max-width:220px;margin:0 auto;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.18)">
+        </div>
       </div>
     </div>
   </section>

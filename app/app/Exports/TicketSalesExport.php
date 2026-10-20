@@ -28,7 +28,7 @@ class TicketSalesExport implements FromCollection, WithHeadings, WithMapping, Wi
     {
         return [
             'Registration ID', 'Name', 'Email', 'Phone', 'Organization', 'Ticket Type',
-            'Quantity', 'Amount', 'Currency', 'Status', 'Region', 'Ticket Number',
+            'Quantity', 'Amount', 'Currency', 'Status', 'Payment Method', 'Region', 'Ticket Number',
             'Seat Numbers', 'Purchased At',
         ];
     }
@@ -46,6 +46,7 @@ class TicketSalesExport implements FromCollection, WithHeadings, WithMapping, Wi
             $registration->amount,
             strtoupper($registration->currency),
             ucfirst($registration->payment_status),
+            ucfirst($registration->payment_method ?? 'stripe'),
             ucfirst($registration->region),
             $registration->ticket_number,
             $registration->seat_numbers ? implode(', ', $registration->seat_numbers) : '',

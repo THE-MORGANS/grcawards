@@ -114,14 +114,21 @@
               <div class="payment-option-desc">Secure card payment (Worldwide)</div>
             </div>
           </div>
-          <div class="payment-option" data-method="paystack" onclick="selectPaymentMethod(this)">
+          <div class="payment-option" data-method="paypal" onclick="selectPaymentMethod(this)">
+            <div class="payment-radio"></div>
+            <div>
+              <div class="payment-option-name">PayPal</div>
+              <div class="payment-option-desc">Pay with your PayPal balance, card or bank (Worldwide)</div>
+            </div>
+          </div>
+          <div class="payment-option" data-method="paystack" onclick="selectPaymentMethod(this)" style="display:none">
             <div class="payment-radio"></div>
             <div>
               <div class="payment-option-name">Paystack</div>
               <div class="payment-option-desc">Fast payments (Africa) — coming soon</div>
             </div>
           </div>
-          <div class="payment-option" data-method="flutterwave" onclick="selectPaymentMethod(this)">
+          <div class="payment-option" data-method="flutterwave" onclick="selectPaymentMethod(this)" style="display:none">
             <div class="payment-radio"></div>
             <div>
               <div class="payment-option-name">Flutterwave</div>
@@ -264,8 +271,8 @@
         return;
       }
 
-      if (selectedPaymentMethod !== 'stripe') {
-        alert(`${selectedPaymentMethod} integration is coming soon. Please use Stripe.`);
+      if (selectedPaymentMethod !== 'stripe' && selectedPaymentMethod !== 'paypal') {
+        alert(`${selectedPaymentMethod} integration is coming soon. Please use Stripe or PayPal.`);
         return;
       }
 
@@ -288,7 +295,11 @@
         _token: csrfToken
       };
 
-      fetch("{{ route('awards_summit.payment.initiate') }}", {
+      const initiateUrl = selectedPaymentMethod === 'paypal'
+        ? "{{ route('awards_summit.payment.paypal.initiate') }}"
+        : "{{ route('awards_summit.payment.initiate') }}";
+
+      fetch(initiateUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

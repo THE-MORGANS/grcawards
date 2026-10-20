@@ -48,7 +48,7 @@
       <div class="sec-eyebrow">7th Annual · Global Edition</div>
       <h2 class="sec-title">The official <span class="ac">event banner.</span></h2>
       <div style="margin:28px auto 0;max-width:420px">
-        <img src="{{ asset('assets/images/event-banner-nairobi-2026.png') }}"
+        <img src="{{ asset('assets/images/event-banner-nairobi-2026.jpeg') }}"
           alt="GRC &amp; Financial Crime Prevention Global Awards &amp; Summit — Nairobi, 20 November 2026"
           style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(201,162,75,.4);box-shadow:0 24px 60px rgba(0,0,0,.45)">
       </div>

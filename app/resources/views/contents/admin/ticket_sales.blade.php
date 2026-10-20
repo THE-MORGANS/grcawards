@@ -125,6 +125,12 @@
                 @endforeach
             </select>
 
+            <select name="payment_method" class="form-select form-select-sm" onchange="this.form.submit()">
+                <option value="">All payment methods</option>
+                <option value="stripe" @selected($filters['payment_method'] === 'stripe')>Stripe</option>
+                <option value="paypal" @selected($filters['payment_method'] === 'paypal')>PayPal</option>
+            </select>
+
             <button type="submit" class="btn btn-sm btn-primary">Filter</button>
             @if(array_filter($filters))
             <a href="{{ route('admin.ticket_sales', $award_program) }}" class="btn btn-sm btn-light">Clear</a>
@@ -147,6 +153,7 @@
                         <th>Qty</th>
                         <th>Amount</th>
                         <th>Status</th>
+                        <th>Method</th>
                         <th style="display:none">Region</th>
                         <th>Ticket No.</th>
                         <th>Seats</th>
@@ -165,6 +172,7 @@
                         <td>{{ $r->quantity }}</td>
                         <td class="ts-amount">{{ strtoupper($r->currency) }} {{ number_format($r->amount, 2) }}</td>
                         <td><span class="ts-status-badge {{ $r->payment_status }}">{{ $r->payment_status }}</span></td>
+                        <td class="ts-muted">{{ ucfirst($r->payment_method ?? 'stripe') }}</td>
                         <td style="display:none"><span class="ts-region-tag">{{ ucfirst($r->region) }}</span></td>
                         <td class="ts-muted">{{ $r->ticket_number ?: '—' }}</td>
                         <td class="ts-muted">{{ $r->seat_numbers ? implode(', ', $r->seat_numbers) : '—' }}</td>
