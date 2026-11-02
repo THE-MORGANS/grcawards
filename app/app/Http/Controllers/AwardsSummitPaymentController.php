@@ -44,11 +44,11 @@ class AwardsSummitPaymentController extends Controller
                 'description' => 'For guests attending only the Gala Awards Ceremony — ideal for VIPs, nominees\' guests and partners.',
             ],
             'student' => [
-                'name' => 'Student / Academic',
-                'price' => 60,
+                'name' => 'Student Promo',
+                'price' => 100,
                 'currency' => 'usd',
-                'subtitle' => 'Summit access — valid ID required',
-                'description' => 'Discounted access for full-time students and academic staff from accredited institutions across East Africa.',
+                'subtitle' => 'Summit + Gala — Full Day — valid ID required',
+                'description' => 'Discounted full-day access — Summit programme plus the evening Gala Awards Ceremony — for full-time students and academic staff from accredited institutions across East Africa.',
             ],
         ],
         'europe' => [
