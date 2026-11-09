@@ -45,7 +45,7 @@ class AwardsSummitPaymentController extends Controller
             ],
             'student' => [
                 'name' => 'Student Promo',
-                'price' => 100,
+                'price' => 77,
                 'currency' => 'usd',
                 'subtitle' => 'Summit + Gala — Full Day — valid ID required',
                 'description' => 'Discounted full-day access — Summit programme plus the evening Gala Awards Ceremony — for full-time students and academic staff from accredited institutions across East Africa.',

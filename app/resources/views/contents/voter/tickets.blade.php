@@ -84,7 +84,7 @@
 
           <div class="price" style="text-align:center">
             <h3>Student Promo</h3>
-            <div class="amt"><small>USD</small> 100 <small style="color:#8b93b0">/ KES 13,000</small></div>
+            <div class="amt"><small>USD</small> 77 <small style="color:#8b93b0">/ KES 10,000</small></div>
             <div class="sub">Global Summit 09:00–15:00 + Global Awards Gala 18:00–21:00 — valid ID required</div>
             <ul style="text-align:left">
               <li>Full Summit programme</li>
