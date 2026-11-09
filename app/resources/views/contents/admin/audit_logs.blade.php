@@ -60,10 +60,10 @@
         <form method="GET" class="audit-filter-bar">
             <label for="event" class="mb-0 fw-semibold" style="font-size: 13px; color: #6c757d;">Event</label>
             <select name="event" id="event" class="form-select form-select-sm" onchange="this.form.submit()">
-                <option value="" @selected(!$eventFilter)>All events</option>
-                <option value="login" @selected($eventFilter === 'login')>Login</option>
-                <option value="logout" @selected($eventFilter === 'logout')>Logout</option>
-                <option value="vote" @selected($eventFilter === 'vote')>Vote</option>
+                <option value="" {{ !$eventFilter ? 'selected' : '' }}>All events</option>
+                <option value="login" {{ $eventFilter === 'login' ? 'selected' : '' }}>Login</option>
+                <option value="logout" {{ $eventFilter === 'logout' ? 'selected' : '' }}>Logout</option>
+                <option value="vote" {{ $eventFilter === 'vote' ? 'selected' : '' }}>Vote</option>
             </select>
             @if($eventFilter)
             <a href="{{ route('admin.audit_logs', $award_program) }}" class="btn btn-sm btn-light">Clear</a>

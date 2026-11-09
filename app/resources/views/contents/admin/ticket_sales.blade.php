@@ -107,28 +107,29 @@
 
             <select name="region" class="form-select form-select-sm" onchange="this.form.submit()" style="display:none">
                 <option value="">All regions</option>
-                <option value="africa" @selected($filters['region'] === 'africa')>Africa</option>
-                <option value="europe" @selected($filters['region'] === 'europe')>Europe</option>
+                <option value="africa" {{ $filters['region'] === 'africa' ? 'selected' : '' }}>Africa</option>
+                <option value="europe" {{ $filters['region'] === 'europe' ? 'selected' : '' }}>Europe</option>
             </select>
 
             <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
                 <option value="">All statuses</option>
-                <option value="paid" @selected($filters['status'] === 'paid')>Paid</option>
-                <option value="pending" @selected($filters['status'] === 'pending')>Pending</option>
-                <option value="failed" @selected($filters['status'] === 'failed')>Failed</option>
+                <option value="paid" {{ $filters['status'] === 'paid' ? 'selected' : '' }}>Paid</option>
+                <option value="pending" {{ $filters['status'] === 'pending' ? 'selected' : '' }}>Pending</option>
+                <option value="failed" {{ $filters['status'] === 'failed' ? 'selected' : '' }}>Failed</option>
             </select>
 
             <select name="ticket_type" class="form-select form-select-sm" onchange="this.form.submit()">
                 <option value="">All ticket types</option>
                 @foreach($ticketTypes as $t)
-                <option value="{{ $t->ticket_type }}" @selected($filters['ticket_type'] === $t->ticket_type)>{{ $t->ticket_name }}</option>
+                <option value="{{ $t->ticket_type }}" {{ $filters['ticket_type'] === $t->ticket_type ? 'selected' : '' }}>{{ $t->ticket_name }}</option>
                 @endforeach
             </select>
 
             <select name="payment_method" class="form-select form-select-sm" onchange="this.form.submit()">
                 <option value="">All payment methods</option>
-                <option value="stripe" @selected($filters['payment_method'] === 'stripe')>Stripe</option>
-                <option value="paypal" @selected($filters['payment_method'] === 'paypal')>PayPal</option>
+                <option value="stripe" {{ $filters['payment_method'] === 'stripe' ? 'selected' : '' }}>Stripe</option>
+                <option value="paypal" {{ $filters['payment_method'] === 'paypal' ? 'selected' : '' }}>PayPal</option>
+                <option value="complimentary" {{ $filters['payment_method'] === 'complimentary' ? 'selected' : '' }}>Complimentary</option>
             </select>
 
             <button type="submit" class="btn btn-sm btn-primary">Filter</button>
