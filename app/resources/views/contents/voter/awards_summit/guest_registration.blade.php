@@ -44,7 +44,7 @@
       <h3>Your Details</h3>
       <!-- <p class="card-sub">{{ $remaining }} seat(s) remaining — registration is free.</p> -->
 
-      <form method="POST" action="{{ route('awards_summit.guest.register') }}">
+      <form method="POST" action="{{ route('awards_summit.guest.register') }}" onsubmit="return handleGuestRegistrationSubmit(this)">
         @csrf
 
         <div class="field-row">
@@ -90,7 +90,9 @@
         </div>
 
         <div style="max-width:640px;margin:20px auto 0">
-          <button type="submit" class="btn btn-gold confirm-button">Complete Registration</button>
+          <button type="submit" class="btn btn-gold confirm-button" id="guest-register-btn">
+            <span id="guest-register-btn-text">Complete Registration</span>
+          </button>
 
           <div class="pay-terms">
             By registering, you agree to our <a href="{{ route('show_tc') }}">Terms of Service</a> and
@@ -106,6 +108,42 @@
 
   @include('partials.voter.footer_new_theme')
   @include('partials.voter.scripts')
+
+  <style>
+    .btn-spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      margin-right: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: guest-btn-spin 0.7s linear infinite;
+      vertical-align: middle;
+    }
+
+    @keyframes guest-btn-spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+  <script>
+    function handleGuestRegistrationSubmit(form) {
+      const btn = document.getElementById('guest-register-btn');
+      const btnText = document.getElementById('guest-register-btn-text');
+
+      if (btn.disabled) {
+        return false;
+      }
+
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+      btn.style.cursor = 'not-allowed';
+      btnText.innerHTML = '<span class="btn-spinner"></span>Submitting...';
+
+      return true;
+    }
+  </script>
 
 </body>
 
