@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Mail\AwardsSummitPaymentConfirmation;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
@@ -18,7 +20,6 @@ use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class AwardsSummitPaymentController extends Controller
 {
-    const MAX_SLOTS = 200;
 
     public static $tickets = [
         'africa' => [
@@ -117,7 +118,7 @@ class AwardsSummitPaymentController extends Controller
             abort(404);
         }
 
-        $remaining = $this->calculateRemainingSlots($region);
+        $remaining = AwardsSummitRegistration::remainingSlots($region);
 
         return view('contents.voter.awards_summit.payment', [
             'stripe_key' => env('STRIPE_KEY'),
@@ -154,19 +155,16 @@ class AwardsSummitPaymentController extends Controller
         $amount = $ticket['price'] * $data['quantity'];
 
         // Check slot availability before proceeding (each edition has its own 200-seat pool)
-        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
-            ->where('region', $region)
-            ->sum('quantity');
         $requestedSlots = $data['quantity'];
+        $remaining = AwardsSummitRegistration::remainingSlots($region);
 
-        if (($confirmedSlots + $requestedSlots) > self::MAX_SLOTS) {
-            $remaining = self::MAX_SLOTS - $confirmedSlots;
+        if ($requestedSlots > $remaining) {
             return response()->json([
                 'status' => 'error',
                 'message' => $remaining > 0
                     ? "Only {$remaining} seat(s) remaining. You requested {$requestedSlots} ticket(s)."
                     : 'Sorry, all seats have been sold out.',
-                'remaining' => max(0, $remaining),
+                'remaining' => $remaining,
             ], 400);
         }
 
@@ -299,19 +297,16 @@ class AwardsSummitPaymentController extends Controller
         $ticket = $tickets[$data['ticket_type']];
         $amount = $ticket['price'] * $data['quantity'];
 
-        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
-            ->where('region', $region)
-            ->sum('quantity');
         $requestedSlots = $data['quantity'];
+        $remaining = AwardsSummitRegistration::remainingSlots($region);
 
-        if (($confirmedSlots + $requestedSlots) > self::MAX_SLOTS) {
-            $remaining = self::MAX_SLOTS - $confirmedSlots;
+        if ($requestedSlots > $remaining) {
             return response()->json([
                 'status' => 'error',
                 'message' => $remaining > 0
                     ? "Only {$remaining} seat(s) remaining. You requested {$requestedSlots} ticket(s)."
                     : 'Sorry, all seats have been sold out.',
-                'remaining' => max(0, $remaining),
+                'remaining' => $remaining,
             ], 400);
         }
 
@@ -428,40 +423,7 @@ class AwardsSummitPaymentController extends Controller
      */
     private function finalizeRegistrationPayment(AwardsSummitRegistration $registration)
     {
-        DB::transaction(function () use ($registration) {
-            // Lock paid registrations to prevent race conditions on seat assignment
-            // Seat numbers are scoped per edition — each region has its own 200-seat pool
-            $highestSeat = AwardsSummitRegistration::where('payment_status', 'paid')
-                ->where('region', $registration->region)
-                ->whereNotNull('seat_numbers')
-                ->lockForUpdate()
-                ->get()
-                ->flatMap(function ($reg) {
-                    return $reg->seat_numbers ?? [];
-                })
-                ->map(function ($seat) {
-                    // Extract the numeric part from "SEAT-001"
-                    return (int) str_replace('SEAT-', '', $seat);
-                })
-                ->max();
-
-            $nextSeatNumber = ($highestSeat ?? 0) + 1;
-
-            // Generate seat numbers for the quantity purchased
-            $seatNumbers = [];
-            for ($i = 0; $i < $registration->quantity; $i++) {
-                $seatNumbers[] = 'SEAT-' . str_pad($nextSeatNumber + $i, 3, '0', STR_PAD_LEFT);
-            }
-
-            $registration->update([
-                'payment_status' => 'paid',
-                'ticket_number' => 'TCK-' . strtoupper(Str::random(10)),
-                'seat_numbers' => $seatNumbers,
-            ]);
-        });
-
-        // Refresh the registration to get the updated data
-        $registration->refresh();
+        $registration->assignSeatAndMarkPaid();
 
         try {
             Mail::to($registration->email)->send(new AwardsSummitPaymentConfirmation($registration));
@@ -481,24 +443,11 @@ class AwardsSummitPaymentController extends Controller
             $region = 'africa';
         }
 
-        $remaining = $this->calculateRemainingSlots($region);
-
         return response()->json([
-            'remaining' => $remaining,
-            'total' => self::MAX_SLOTS,
+            'remaining' => AwardsSummitRegistration::remainingSlots($region),
+            'total' => AwardsSummitRegistration::MAX_SLOTS,
             'region' => $region,
         ]);
-    }
-
-    /**
-     * Calculate remaining available slots for an edition (each region has its own 200-seat pool).
-     */
-    private function calculateRemainingSlots($region = 'africa')
-    {
-        $confirmedSlots = AwardsSummitRegistration::where('payment_status', 'paid')
-            ->where('region', $region)
-            ->sum('quantity');
-        return max(0, self::MAX_SLOTS - $confirmedSlots);
     }
 
     /**
@@ -555,6 +504,35 @@ class AwardsSummitPaymentController extends Controller
             new TicketSalesExport($registrations),
             'ticket_sales_' . date('Y-m-d_His') . '.xlsx'
         );
+    }
+
+    /**
+     * Admin: permanently delete a registration (invalid/duplicate/test
+     * entries). Requires the admin to re-enter their own password — a
+     * confirm() dialog alone is too easy to click through by accident on a
+     * destructive, unrecoverable action. Safe to delete regardless of
+     * status — seat numbers are assigned by "max existing seat + 1", never
+     * reused/renumbered, so removing a row never shifts or corrupts anyone
+     * else's seat. If it was 'paid', the seat it held simply becomes
+     * available again since remainingSlots() recounts from whatever 'paid'
+     * rows still exist.
+     */
+    public function adminDestroy(Request $request, $award_program, $registration)
+    {
+        $request->validate([
+            'password' => ['required', 'string'],
+        ]);
+
+        if (!Hash::check($request->input('password'), Auth::guard('admin')->user()->password)) {
+            return redirect()->back()->withErrors(['password' => 'Incorrect password — registration was not deleted.']);
+        }
+
+        $reg = AwardsSummitRegistration::findOrFail($registration);
+        $reg->delete();
+
+        session()->flash('success', "Registration for {$reg->name} ({$reg->registration_id}) has been deleted.");
+
+        return redirect()->back();
     }
 
     private function filteredRegistrations(Request $request)

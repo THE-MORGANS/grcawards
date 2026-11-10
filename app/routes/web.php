@@ -25,6 +25,7 @@ use App\Http\Controllers\AuditLogController;
 use App\Http\Controllers\JudgeFeedbackSurveyAdminController;
 use App\Http\Controllers\AwardWinnerController;
 use App\Http\Controllers\VoteSummaryController;
+use App\Http\Controllers\GuestRegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -133,6 +134,7 @@ Route::prefix('admin')->group(function () {
             Route::prefix('ticket-sales')->group(function () {
                 Route::get('', [AwardsSummitPaymentController::class, 'adminIndex'])->name('admin.ticket_sales');
                 Route::get('export', [AwardsSummitPaymentController::class, 'adminExport'])->name('admin.ticket_sales.export');
+                Route::delete('{registration}', [AwardsSummitPaymentController::class, 'adminDestroy'])->name('admin.ticket_sales.destroy');
             });
 
             require __DIR__ . '/judges.php';
@@ -222,6 +224,9 @@ Route::get('awards-summit/payment/cancel', [AwardsSummitPaymentController::class
 Route::post('awards-summit/payment/initiate', [AwardsSummitPaymentController::class, 'initiatePayment'])->name('awards_summit.payment.initiate');
 Route::get('awards-summit/reserve/{ticket}', [AwardsSummitPaymentController::class, 'showPayment'])->name('awards_summit.payment');
 Route::get('awards-summit/slots', [AwardsSummitPaymentController::class, 'getRemainingSlots'])->name('awards_summit.slots');
+
+Route::get('awards-summit/guest-registration', [GuestRegistrationController::class, 'showForm'])->name('awards_summit.guest.show');
+Route::post('awards-summit/guest-registration', [GuestRegistrationController::class, 'register'])->name('awards_summit.guest.register');
 
 Route::post('awards-summit/payment/paypal/initiate', [AwardsSummitPaymentController::class, 'initiatePaypalPayment'])->name('awards_summit.payment.paypal.initiate');
 Route::get('awards-summit/payment/paypal/success', [AwardsSummitPaymentController::class, 'paypalPaymentSuccess'])->name('awards_summit.payment.paypal.success');

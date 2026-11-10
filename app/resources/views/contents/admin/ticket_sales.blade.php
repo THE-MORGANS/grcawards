@@ -55,6 +55,12 @@
     .ts-empty i { font-size: 40px; display: block; margin-bottom: 10px; opacity: .5; }
 
     .ts-pagination { padding: 16px 20px; }
+
+    .ts-delete-btn {
+        background: none; border: none; color: #c3cbd4; font-size: 16px; padding: 4px 6px;
+        border-radius: 6px; cursor: pointer; transition: all .15s;
+    }
+    .ts-delete-btn:hover { color: #fa5c7c; background: rgba(250,92,124,.1); }
 </style>
 @endsection
 
@@ -130,6 +136,7 @@
                 <option value="stripe" {{ $filters['payment_method'] === 'stripe' ? 'selected' : '' }}>Stripe</option>
                 <option value="paypal" {{ $filters['payment_method'] === 'paypal' ? 'selected' : '' }}>PayPal</option>
                 <option value="complimentary" {{ $filters['payment_method'] === 'complimentary' ? 'selected' : '' }}>Complimentary</option>
+                <option value="guest" {{ $filters['payment_method'] === 'guest' ? 'selected' : '' }}>Guest</option>
             </select>
 
             <button type="submit" class="btn btn-sm btn-primary">Filter</button>
@@ -159,6 +166,7 @@
                         <th>Ticket No.</th>
                         <th>Seats</th>
                         <th>Purchased</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -178,10 +186,45 @@
                         <td class="ts-muted">{{ $r->ticket_number ?: '—' }}</td>
                         <td class="ts-muted">{{ $r->seat_numbers ? implode(', ', $r->seat_numbers) : '—' }}</td>
                         <td class="ts-muted">{{ $r->created_at->format('d M Y, h:i A') }}</td>
+                        <td>
+                            <button type="button" class="ts-delete-btn" title="Delete registration"
+                                data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $r->id }}">
+                                <i class="mdi mdi-trash-can-outline"></i>
+                            </button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+
+            @foreach($registrations as $r)
+            <div class="modal fade" id="delete-modal-{{ $r->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="POST" action="{{ route('admin.ticket_sales.destroy', ['award_program' => $award_program, 'registration' => $r->id]) }}">
+                            @csrf
+                            @method('DELETE')
+                            <div class="modal-header py-3 px-4 border-bottom-0">
+                                <h5 class="modal-title">Delete Registration</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body px-4 pb-2 pt-0">
+                                <p class="text-muted small mb-3">
+                                    You're about to permanently delete <strong>{{ $r->name }}</strong>'s registration
+                                    ({{ $r->registration_id }}). This cannot be undone. Enter your admin password to confirm.
+                                </p>
+                                <label class="form-label">Password <span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" name="password" required autocomplete="current-password">
+                            </div>
+                            <div class="modal-footer px-4 pb-4">
+                                <button type="button" class="btn btn-light me-1" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-danger">Delete Registration</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
         <div class="ts-pagination">
             {{ $registrations->links('pagination::bootstrap-4') }}
@@ -189,4 +232,30 @@
         @endif
     </div>
 </div>
+@endsection
+
+@section('scripts')
+@if(Session::has('success'))
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.success("{{ session('success') }}");
+</script>
+@endif
+
+@if($errors->any())
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.error("{{ $errors->first() }}");
+</script>
+@endif
 @endsection

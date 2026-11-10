@@ -21,6 +21,7 @@
     @php
         $venueLine = 'Radisson Blu Hotel, Nairobi';
         $dateLine = '20 November 2026';
+        $isFree = (float) $registration->amount == 0;
     @endphp
     <div class="container">
         <div class="header">
@@ -33,7 +34,11 @@
 
             <p>Thank you for reserving your <strong>{{ $registration->ticket_name }}</strong> for the <strong>GRC & Financial Crime Prevention Awards & Summit</strong>, taking place at the {{ $venueLine }} on {{ $dateLine }}.</p>
 
+            @if($isFree)
+            <p>We are pleased to confirm your registration. Below are your reservation details and ticket information.</p>
+            @else
             <p>We are pleased to confirm that your payment has been successfully processed. Below are your reservation details and ticket information.</p>
+            @endif
 
             <div class="ticket-info" style="text-align: center;">
                 <span style="font-size: 12px; color: #777; text-transform: uppercase;">Your Confirmation Number</span><br>
@@ -61,8 +66,8 @@
                     <td class="value">{{ $registration->quantity }}</td>
                 </tr>
                 <tr>
-                    <td class="label">Amount Paid</td>
-                    <td class="value">{{ strtoupper($registration->currency) }} {{ number_format($registration->amount, 2) }}</td>
+                    <td class="label">{{ $isFree ? 'Registration Fee' : 'Amount Paid' }}</td>
+                    <td class="value">{{ $isFree ? 'Complimentary' : strtoupper($registration->currency) . ' ' . number_format($registration->amount, 2) }}</td>
                 </tr>
                 @if($registration->seat_numbers && count($registration->seat_numbers) > 0)
                 <tr>
