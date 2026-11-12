@@ -61,6 +61,13 @@
         border-radius: 6px; cursor: pointer; transition: all .15s;
     }
     .ts-delete-btn:hover { color: #fa5c7c; background: rgba(250,92,124,.1); }
+
+    .ts-resend-btn {
+        background: none; border: none; color: #c3cbd4; font-size: 16px; padding: 4px 6px;
+        border-radius: 6px; cursor: pointer; transition: all .15s;
+    }
+    .ts-resend-btn:hover { color: #4a8df6; background: rgba(74,141,246,.1); }
+    .ts-resend-btn:disabled { opacity: .35; cursor: not-allowed; }
 </style>
 @endsection
 
@@ -135,8 +142,8 @@
                 <option value="">All payment methods</option>
                 <option value="stripe" {{ $filters['payment_method'] === 'stripe' ? 'selected' : '' }}>Stripe</option>
                 <option value="paypal" {{ $filters['payment_method'] === 'paypal' ? 'selected' : '' }}>PayPal</option>
-                <option value="complimentary" {{ $filters['payment_method'] === 'complimentary' ? 'selected' : '' }}>Complimentary</option>
                 <option value="guest" {{ $filters['payment_method'] === 'guest' ? 'selected' : '' }}>Guest</option>
+                <option value="manual" {{ $filters['payment_method'] === 'manual' ? 'selected' : '' }}>Manual</option>
             </select>
 
             <button type="submit" class="btn btn-sm btn-primary">Filter</button>
@@ -187,6 +194,14 @@
                         <td class="ts-muted">{{ $r->seat_numbers ? implode(', ', $r->seat_numbers) : '—' }}</td>
                         <td class="ts-muted">{{ $r->created_at->format('d M Y, h:i A') }}</td>
                         <td>
+                            <form method="POST" action="{{ route('admin.ticket_sales.resend', ['award_program' => $award_program, 'registration' => $r->id]) }}"
+                                style="display:inline" onsubmit="return confirm('Resend the confirmation email to {{ $r->email }}?')">
+                                @csrf
+                                <button type="submit" class="ts-resend-btn" title="{{ $r->payment_status === 'paid' ? 'Resend confirmation email' : 'Only paid registrations can be resent a confirmation email' }}"
+                                    {{ $r->payment_status !== 'paid' ? 'disabled' : '' }}>
+                                    <i class="mdi mdi-email-send-outline"></i>
+                                </button>
+                            </form>
                             <button type="button" class="ts-delete-btn" title="Delete registration"
                                 data-bs-toggle="modal" data-bs-target="#delete-modal-{{ $r->id }}">
                                 <i class="mdi mdi-trash-can-outline"></i>
@@ -256,6 +271,18 @@
         "preventOpenDuplicates": true
     }
     toastr.error("{{ $errors->first() }}");
+</script>
+@endif
+
+@if(Session::has('error'))
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "preventDuplicates": true,
+        "preventOpenDuplicates": true
+    }
+    toastr.error("{{ session('error') }}");
 </script>
 @endif
 @endsection

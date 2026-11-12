@@ -51,6 +51,20 @@ class AwardsSummitPaymentController extends Controller
                 'subtitle' => 'Summit + Gala — Full Day — valid ID required',
                 'description' => 'Discounted full-day access — Summit programme plus the evening Gala Awards Ceremony — for full-time students and academic staff from accredited institutions across East Africa.',
             ],
+            'discount_a' => [
+                'name' => 'Guest Discount Plan A',
+                'price' => 23,
+                'currency' => 'usd',
+                'subtitle' => 'Summit + Gala — Full Day — guest discount rate',
+                'description' => 'Discounted full-day access — Summit programme plus the evening Gala Awards Ceremony — at a preferential guest rate.',
+            ],
+            'discount_b' => [
+                'name' => 'Guest Discount Plan B',
+                'price' => 38,
+                'currency' => 'usd',
+                'subtitle' => 'Summit + Gala — Full Day — guest discount rate',
+                'description' => 'Discounted full-day access — Summit programme plus the evening Gala Awards Ceremony — at a preferential guest rate.',
+            ],
         ],
         'europe' => [
             'summit' => [
@@ -531,6 +545,31 @@ class AwardsSummitPaymentController extends Controller
         $reg->delete();
 
         session()->flash('success', "Registration for {$reg->name} ({$reg->registration_id}) has been deleted.");
+
+        return redirect()->back();
+    }
+
+    /**
+     * Re-sends the exact same confirmation email a registrant got on
+     * successful registration/payment — useful when they say they never
+     * received it. Only makes sense for 'paid' rows, since ticket_number
+     * and seat_numbers (shown in the email) are only assigned at that point.
+     */
+    public function adminResendConfirmation($award_program, $registration)
+    {
+        $reg = AwardsSummitRegistration::findOrFail($registration);
+
+        if ($reg->payment_status !== 'paid') {
+            return redirect()->back()->with('error', "Cannot resend — {$reg->name}'s registration is not yet paid/confirmed.");
+        }
+
+        try {
+            Mail::to($reg->email)->send(new AwardsSummitPaymentConfirmation($reg));
+            session()->flash('success', "Confirmation email resent to {$reg->email}.");
+        } catch (\Exception $e) {
+            Log::error(ucfirst($reg->region) . ' Edition Resend Confirmation Email Error: ' . $e->getMessage());
+            session()->flash('error', 'Failed to resend the confirmation email. Please try again.');
+        }
 
         return redirect()->back();
     }

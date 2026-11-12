@@ -29,7 +29,7 @@
         <!-- <div id="slots-banner" class="slots-banner" style="display:none;text-align:center;padding:14px 20px;border-radius:8px;margin-bottom:24px;font-weight:600;font-size:15px;transition:all .3s ease">
           <span id="slots-text"></span>
         </div> -->
-        <div class="price-grid" style="grid-template-columns:repeat(2, 1fr);max-width:720px;margin:0 auto">
+        <div class="price-grid" style="grid-template-columns:repeat(2, 1fr);max-width:720px;margin:0 auto 24px">
           <div class="price feat" style="text-align:center">
             @if($promoActive)
             <span class="flag">Early Bird — ends 31 Oct 2026</span>
@@ -96,6 +96,34 @@
             <a class="btn btn-navy" href="https://grcfincrimeawards.com/awards-summit/reserve/student">Reserve →</a>
           </div>
         </div>
+
+        <div class="price-grid" style="grid-template-columns:repeat(2, 1fr);max-width:720px;margin:0 auto">
+          <div class="price" style="text-align:center">
+            <h3>Guest Discount Plan A</h3>
+            <div class="amt"><small>USD</small> 23 <small style="color:#8b93b0">/ KES 3,000</small></div>
+            <div class="sub">Global Summit 09:00–15:00 + Global Awards Gala 18:00–21:00 — guest discount rate</div>
+            <ul style="text-align:left">
+              <li>Full Summit programme</li>
+              <li>Networking breakfast &amp; refreshment breaks</li>
+              <li>Gala &amp; formal dinner</li>
+            </ul>
+            <a class="btn btn-navy" href="https://grcfincrimeawards.com/awards-summit/reserve/discount_a">Reserve →</a>
+          </div>
+
+          <div class="price" style="text-align:center">
+            <h3>Guest Discount Plan B</h3>
+            <div class="amt"><small>USD</small> 38 <small style="color:#8b93b0">/ KES 5,000</small></div>
+            <div class="sub">Global Summit 09:00–15:00 + Global Awards Gala 18:00–21:00 — guest discount rate</div>
+            <ul style="text-align:left">
+              <li>Full Summit programme</li>
+              <li>Networking breakfast &amp; refreshment breaks</li>
+              <li>Gala &amp; formal dinner</li>
+              <li>Delegate pack &amp; certificate</li>
+            </ul>
+            <a class="btn btn-navy" href="https://grcfincrimeawards.com/awards-summit/reserve/discount_b">Reserve →</a>
+          </div>
+        </div>
+
         <div class="callout"
           style="margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
           <div>

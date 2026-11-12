@@ -135,6 +135,7 @@ Route::prefix('admin')->group(function () {
                 Route::get('', [AwardsSummitPaymentController::class, 'adminIndex'])->name('admin.ticket_sales');
                 Route::get('export', [AwardsSummitPaymentController::class, 'adminExport'])->name('admin.ticket_sales.export');
                 Route::delete('{registration}', [AwardsSummitPaymentController::class, 'adminDestroy'])->name('admin.ticket_sales.destroy');
+                Route::post('{registration}/resend-confirmation', [AwardsSummitPaymentController::class, 'adminResendConfirmation'])->name('admin.ticket_sales.resend');
             });
 
             require __DIR__ . '/judges.php';
