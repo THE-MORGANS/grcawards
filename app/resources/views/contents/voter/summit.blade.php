@@ -95,7 +95,7 @@
           <span class="status-pill live">● Voting Live</span>
           <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
-          <div class="city">Radisson Blu Hotel · Upper Hill</div>
+          <div class="city">The Concord Hotel & Suites · Parklands</div>
           <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
           <div class="acts"><span class="btn btn-gold btn-sm">View Full Programme →</span></div>
         </a>

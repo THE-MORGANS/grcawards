@@ -19,7 +19,7 @@
       <a href="{{ route('landing.index') }}" class="pay-back">← Back to Home</a>
       <span class="ed-tag af"><span class="pin af"></span>Nairobi, Kenya · 20 November 2026</span>
       <h1>Guest <span class="ac">Registration.</span></h1>
-      <p>Radisson Blu Hotel, Nairobi · 20 November 2026 — Special registration, no ticket purchase required.</p>
+      <p>The Concord Hotel & Suites, Nairobi · 20 November 2026 — Special registration, no ticket purchase required.</p>
     </div>
   </header>
 

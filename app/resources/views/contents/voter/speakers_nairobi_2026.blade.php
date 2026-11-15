@@ -77,7 +77,7 @@
         style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px">
         <div>
           <h3 style="color:#fff">Join them in Nairobi.</h3>
-          <p style="color:#c2cae0;font-size:14px">20 November 2026 · Radisson Blu Hotel, Upper Hill.</p>
+          <p style="color:#c2cae0;font-size:14px">20 November 2026 · The Concord Hotel & Suites, Parklands.</p>
         </div>
         <a class="btn btn-gold" href="{{ route('show_tickets') }}">Book Tickets</a>
       </div>

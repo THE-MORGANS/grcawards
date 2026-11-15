@@ -23,7 +23,7 @@
       <a href="{{ route('show_tickets') }}" class="pay-back">← Back to Tickets</a>
       <span class="ed-tag af"><span class="pin af"></span>Nairobi, Kenya · 20 November 2026</span>
       <h1>Reserve Your <span class="ac">Pass.</span></h1>
-      <p>Radisson Blu Hotel, Nairobi · 20 November 2026</p>
+      <p>The Concord Hotel & Suites, Nairobi · 20 November 2026</p>
     </div>
   </header>
 

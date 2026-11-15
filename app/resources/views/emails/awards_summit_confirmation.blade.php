@@ -19,7 +19,7 @@
 </head>
 <body>
     @php
-        $venueLine = 'Radisson Blu Hotel, Nairobi';
+        $venueLine = 'The Concord Hotel & Suites, 31 Wangapala Road, off Fourth Parklands, Nairobi';
         $dateLine = '20 November 2026';
         $isFree = (float) $registration->amount == 0;
     @endphp
@@ -85,7 +85,9 @@
                 </tr>
             </table>
 
-            <p style="margin-top: 30px;">Please present this confirmation number at the registration desk upon arrival at the venue to collect your delegate pack and badge.</p>
+            <p style="margin-top: 20px;">For directions, facilities and more about the venue, visit <a href="https://www.theconcordhotels.com/" target="_blank" rel="noopener noreferrer" style="color: #C5881E;">theconcordhotels.com</a>.</p>
+
+            <p style="margin-top: 20px;">Please present this confirmation number at the registration desk upon arrival at the venue to collect your delegate pack and badge.</p>
 
             <center>
                 <a href="{{ route('landing.index') }}" class="button">Visit Summit Website</a>

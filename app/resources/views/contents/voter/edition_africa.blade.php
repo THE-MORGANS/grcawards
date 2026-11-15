@@ -50,7 +50,7 @@
         </div>
         <div class="gi">
           <div class="lab">Venue</div>
-          <div class="val">Radisson Blu, Nairobi</div>
+          <div class="val">The Concord Hotel &amp; Suites, Nairobi</div>
         </div>
       </div>
     </div>
@@ -526,16 +526,14 @@
       <h2 class="sec-title">Nairobi's address for <span class="ac">international excellence.</span></h2>
       <div class="grid g2" style="margin-top:24px;align-items:start">
         <div>
-          <p class="sec-intro" style="margin-top:0">The Radisson Blu sits on Elgon Road in Upper Hill — Nairobi's
-            business and financial district, home to the regional offices of international banks, development
-            finance institutions, regulators and multilaterals. It offers one of the largest conference facilities
-            in Kenya: fourteen meeting spaces totalling 1,419 sq m, a 150 sq m exhibition area, and the 590 sq m
-            Mount Kilimanjaro Ballroom.</p>
-          <p class="sec-intro">271 guest rooms and suites are on site — worth booking, given a delegate day that
-            runs from 08:00 registration to a 21:00 close.</p>
-          <div class="chips" style="margin-top:18px"><span class="chip">Mount Kilimanjaro Ballroom</span><span
-              class="chip">14 meeting spaces</span><span class="chip">150 sq m exhibition area</span><span
-              class="chip">271 guest rooms</span><span class="chip">~10 min from CBD</span></div>
+          <p class="sec-intro" style="margin-top:0">The Awards &amp; Summit moves to <strong>The Concord Hotel &amp;
+              Suites</strong>, 31 Wangapala Road, off Fourth Parklands — conveniently located in the Parklands area
+            of Nairobi, with easy access to the CBD and both of the city's airports.</p>
+          <p class="sec-intro">For full details on facilities, directions and getting there, visit the hotel's own
+            website: <a href="https://www.theconcordhotels.com/" target="_blank" rel="noopener noreferrer">theconcordhotels.com</a>.
+          </p>
+          <div class="chips" style="margin-top:18px"><span class="chip">31 Wangapala Road</span><span
+              class="chip">Off Fourth Parklands</span><span class="chip">Nairobi, Kenya</span></div>
           <div class="callout" style="margin-top:20px">
             <p style="font-size:13.5px;color:var(--muted);margin:0">🧳 A delegate travel pack — covering visa
               guidance, negotiated hotel rates, airport transfers and a suggested arrival schedule — is issued on
@@ -545,16 +543,12 @@
         </div>
         <div class="glance" style="grid-template-columns:1fr 1fr">
           <div class="gi">
-            <div class="lab">✈️ From JKIA</div>
-            <div class="val">~25–40 min</div>
+            <div class="lab">📍 Address</div>
+            <div class="val">31 Wangapala Rd</div>
           </div>
           <div class="gi">
-            <div class="lab">🛩️ From Wilson</div>
-            <div class="val">~10–15 min</div>
-          </div>
-          <div class="gi">
-            <div class="lab">🏙️ From CBD</div>
-            <div class="val">~10 min</div>
+            <div class="lab">🌐 Hotel Website</div>
+            <div class="val"><a href="https://www.theconcordhotels.com/" target="_blank" rel="noopener noreferrer">theconcordhotels.com</a></div>
           </div>
           <div class="gi">
             <div class="lab">🚕 Ride-hailing</div>
@@ -577,14 +571,13 @@
     <div class="wrap">
       <div class="sec-eyebrow">While You're In Nairobi</div>
       <h2 class="sec-title">Make the most of <span class="ac">your visit.</span></h2>
-      <p class="sec-intro">Upper Hill and the surrounding districts offer excellent dining, shopping, culture and
+      <p class="sec-intro">Parklands and the surrounding districts offer excellent dining, shopping, culture and
         nature — all within easy reach of the venue.</p>
       <div class="grid g2" style="margin-top:24px">
         <div>
           <h3 style="font-size:14px;color:var(--navy);margin-bottom:10px">🍽️ Dining, Shopping &amp; Nightlife</h3>
-          <div class="chips"><span class="chip">Upper Hill &amp; Hurlingham restaurants</span><span class="chip">Yaya
-              Centre</span><span class="chip">Westlands nightlife</span><span class="chip">Two Rivers Mall</span><span
-              class="chip">The Hub, Karen</span></div>
+          <div class="chips"><span class="chip">Parklands restaurants</span><span class="chip">Westlands
+              nightlife</span><span class="chip">Sarit Centre</span><span class="chip">Two Rivers Mall</span></div>
         </div>
         <div>
           <h3 style="font-size:14px;color:var(--navy);margin-bottom:10px">🦒 Culture, Wildlife &amp; Parks</h3>

@@ -29,7 +29,7 @@
     <div class="wrap">
       <span class="hero-badge" style="margin-bottom: 50px"><span class="dot"></span>
         <!-- THE MORGANS ·  -->
-        7th Annual · Nairobi, Kenya · 20 November 2026 · Radisson Blu Hotel</span>
+        7th Annual · Nairobi, Kenya · 20 November 2026 · The Concord Hotel & Suites</span>
       <div style="font-family:var(--sans);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:10px">
         The Global Perimeter</div>
       <h1>GRC &amp; Financial Crime Prevention <span class="ac">Global Awards &amp; Summit.</span></h1>
@@ -48,7 +48,7 @@
       <div class="sec-eyebrow">7th Annual · Global Edition</div>
       <h2 class="sec-title">The official <span class="ac">event banner.</span></h2>
       <div style="margin:28px auto 0;max-width:420px">
-        <img src="{{ asset('assets/images/event-banner-nairobi-2026.jpeg') }}"
+        <img src="{{ asset('assets/images/event-banner-nairobi-20261115.jpeg') }}"
           alt="GRC &amp; Financial Crime Prevention Global Awards &amp; Summit — Nairobi, 20 November 2026"
           style="width:100%;height:auto;border-radius:14px;border:1px solid rgba(201,162,75,.4);box-shadow:0 24px 60px rgba(0,0,0,.45)">
       </div>
@@ -108,7 +108,7 @@
           <span class="status-pill soon" style="align-self:flex-end">Voting Closed</span>
           <div class="lbl" style="margin-top:12px">7th Annual Awards &amp; Summit</div>
           <h3>Nairobi, Kenya</h3>
-          <div class="city">Radisson Blu Hotel · Upper Hill</div>
+          <div class="city">The Concord Hotel & Suites · Parklands</div>
           <div class="row"><span>📅 <b>20 November 2026</b></span><span>🕙 Summit + Gala</span></div>
           <div class="acts"><span class="btn btn-gold btn-sm">View Full Details →</span></div>
         </a>

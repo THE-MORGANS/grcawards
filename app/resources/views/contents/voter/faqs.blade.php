@@ -27,7 +27,7 @@
       <div class="faq">
         <details>
           <summary>When and where is the 2026 Awards &amp; Summit?</summary>
-          <p>20 November 2026 at the Radisson Blu Hotel, Upper Hill, Nairobi — Global Summit 09:00–15:00 EAT; Global
+          <p>20 November 2026 at The Concord Hotel &amp; Suites, Parklands, Nairobi — Global Summit 09:00–15:00 EAT; Global
             Awards Gala 18:00–21:00 EAT — plus a virtual Mid-Year Summit each June. Six award pillars apply across
             the programme.</p>
         </details>

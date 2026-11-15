@@ -109,7 +109,7 @@
             </div>
 
             @php
-                $venueLine = 'Radisson Blu Hotel, Nairobi';
+                $venueLine = 'The Concord Hotel & Suites, 31 Wangapala Road, off Fourth Parklands, Nairobi';
                 $dateLine = '20 November 2026';
             @endphp
 
@@ -170,7 +170,7 @@
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Venue</span>
-                    <span class="detail-value">{{ $venueLine }}</span>
+                    <span class="detail-value">{{ $venueLine }} — <a href="https://www.theconcordhotels.com/" target="_blank" rel="noopener noreferrer">theconcordhotels.com</a></span>
                 </div>
                 <div class="detail-row">
                     <span class="detail-label">Date</span>
