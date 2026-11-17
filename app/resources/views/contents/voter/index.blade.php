@@ -17,6 +17,12 @@
   @include('partials.voter.topbar_new_theme')
 
   <header class="hero">
+    <div class="hero-slider">
+      <div class="hero-slide active" style="background-image:url('{{ asset('assets/images/hero-slide-1.jpg') }}')"></div>
+      <div class="hero-slide" style="background-image:url('{{ asset('assets/images/hero-slide-2.jpg') }}')"></div>
+      <div class="hero-slide" style="background-image:url('{{ asset('assets/images/hero-slide-3.jpg') }}')"></div>
+      <div class="hero-slide" style="background-image:url('{{ asset('assets/images/hero-slide-4.jpg') }}')"></div>
+    </div>
     <svg class="route" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <g opacity=".8">
         <circle cx="980" cy="100" r="7" fill="#C9A24B" />
@@ -799,6 +805,19 @@
 
   @include('partials.voter.footer_new_theme')
 
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.hero-slide');
+      if (slides.length < 2) return;
+
+      let current = 0;
+      setInterval(function () {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 6000);
+    })();
+  </script>
 
 </body>
 

@@ -366,6 +366,34 @@ a {
     opacity: 0.85;
     pointer-events: none;
 }
+.hero-slider {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.6s ease-in-out;
+}
+.hero-slide.active {
+    opacity: 1;
+}
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        130% 130% at 50% -25%,
+        rgba(20, 28, 54, 0.55) 0%,
+        rgba(11, 16, 33, 0.62) 46%,
+        rgba(6, 9, 20, 0.7) 100%
+    );
+}
 .skyline {
     position: absolute;
     left: 0;
