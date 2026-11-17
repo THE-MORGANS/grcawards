@@ -481,7 +481,6 @@ class AwardsSummitPaymentController extends Controller
         $stats = [
             'total' => $this->filteredRegistrations($request)->count(),
             'paid' => $this->filteredRegistrations($request)->where('payment_status', 'paid')->count(),
-            'pending' => $this->filteredRegistrations($request)->where('payment_status', 'pending')->count(),
             'failed' => $this->filteredRegistrations($request)->where('payment_status', 'failed')->count(),
             'seatsSold' => $this->filteredRegistrations($request)->where('payment_status', 'paid')->sum('quantity'),
             'revenue' => $this->filteredRegistrations($request)->where('payment_status', 'paid')
@@ -579,6 +578,7 @@ class AwardsSummitPaymentController extends Controller
         $search = $request->input('search');
 
         return AwardsSummitRegistration::query()
+            ->where('payment_status', '!=', 'pending')
             ->when($request->filled('region'), fn ($q) => $q->where('region', $request->input('region')))
             ->when($request->filled('status'), fn ($q) => $q->where('payment_status', $request->input('status')))
             ->when($request->filled('ticket_type'), fn ($q) => $q->where('ticket_type', $request->input('ticket_type')))

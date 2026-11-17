@@ -76,7 +76,7 @@
     <div class="ts-header">
         <div>
             <h1>Event Ticket Sales</h1>
-            <p>Every Awards &amp; Summit ticket purchase attempt — paid, pending and failed — across both editions.</p>
+            <p>Every Awards &amp; Summit ticket purchase attempt — paid and failed — across both editions.</p>
         </div>
         <a href="{{ route('admin.ticket_sales.export', array_merge(['award_program' => $award_program], $filters)) }}" class="ts-export-btn">
             <i class="mdi mdi-file-excel-outline"></i> Export Excel
@@ -92,10 +92,6 @@
             <div class="ts-kpi-label">Paid</div>
             <div class="ts-kpi-value">{{ number_format($stats['paid']) }}</div>
             <div class="ts-kpi-sub">{{ number_format($stats['seatsSold']) }} seat(s) sold</div>
-        </div>
-        <div class="ts-kpi pending">
-            <div class="ts-kpi-label">Pending</div>
-            <div class="ts-kpi-value">{{ number_format($stats['pending']) }}</div>
         </div>
         <div class="ts-kpi failed">
             <div class="ts-kpi-label">Failed</div>
@@ -127,7 +123,6 @@
             <select name="status" class="form-select form-select-sm" onchange="this.form.submit()">
                 <option value="">All statuses</option>
                 <option value="paid" {{ $filters['status'] === 'paid' ? 'selected' : '' }}>Paid</option>
-                <option value="pending" {{ $filters['status'] === 'pending' ? 'selected' : '' }}>Pending</option>
                 <option value="failed" {{ $filters['status'] === 'failed' ? 'selected' : '' }}>Failed</option>
             </select>
 
